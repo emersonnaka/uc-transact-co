@@ -47,7 +47,7 @@ AGENTS.md                           Day 2 — architect + developer, committed 3
 dbt/models/staging/                 Day 2 — stg_orders.sql + _raw_sources.yml, committed
 ```
 
-New tonight: `storage/tasks/` (the task graph) and one more staging model built
+New tonight: `tasks/` (the task graph) and one more staging model built
 from a packet rather than from a plan line.
 
 ## The programme — eight movements
@@ -144,8 +144,8 @@ step · Structure (mermaid) · Do live · Show the evidence · Gate · Recovery.
 | `01-plausible-plan.md` | **NEW A**, disposable | three divergent builds of item 7 | none — discarded |
 | `02-tasks-pack.md` | **NEW B** | one Task-Spec, six zones, human-edited | `tasks/T-20260812-daily-gross-ordered.md` |
 | `03-bdd-and-evals.md` | continue B | Gherkin scenario + runnable bash eval | evals inside `T-001` |
-| `04-decompose.md` | continue B as architect | `tasks.md` index + 4–6 packets | `storage/tasks/` graph |
-| `05-ready-set.md` | continue B | dependency graph, ready packets named | `tasks.md` ordering |
+| `04-decompose.md` | continue B as architect | `tasks/_state.yaml` index + 4–6 packets | `tasks/` graph |
+| `05-ready-set.md` | continue B | dependency graph, ready packets named | `tasks/_state.yaml` ordering |
 | `06-execute-one.md` | **NEW C**, developer | exit check green, one commit | second staging model |
 | `07-reflection.md` | no agent | three commitment lines | team learning |
 
@@ -183,7 +183,7 @@ three. The line that lands:
 
 ### 06 — the payoff
 
-Session C receives only `storage/tasks/T-00N.md` and `AGENTS.md`. No plan, no
+Session C receives only `tasks/T-20260812-<slug>.md` and `AGENTS.md`. No plan, no
 transcript, no chat memory. It builds, runs the exit check, and stops. Then run
 the exit check yourself in the terminal so the room sees the same `0` the agent
 saw.
@@ -234,6 +234,25 @@ sign-off and the seal breaks. Act 2 slide 23 is this.
 One objective with no "and". One area of the codebase. Verifiable by the steps
 it already contains. Ends in a single clean commit. If the title needs "and" to
 be honest, it is two packets.
+
+### The two-layer index — `tasks/_state.yaml`
+
+Movements 04 and 05 run on two layers, and the split is the whole reason the
+graph scales:
+
+- **`tasks/_state.yaml`** — a lean index, one line per packet: `id`, `title`,
+  `status`, spec path, `depends_on`. It must fit on one screen.
+- **`tasks/T-20260812-<slug>.md`** — one full Task-Spec per packet, opened only
+  once that packet is chosen.
+
+Reason: an agent scanning a hundred full specs to choose its next unit burns the
+context it needs to do the work. Cheap choosing, expensive doing, and never both
+in the same file. This is derivable without opening a single zone, because
+`depends_on` lives in the frontmatter.
+
+Sizing that pays off here: **wide and shallow beats narrow and deep** — a shallow
+graph has more ready packets at any moment, so the loop is never starved.
+Deck: Act 4 slide 34 draws both layers; Act 5 reads order out of the index alone.
 
 ## Assessment — does Task-Spec match where atomic tasks are going?
 
