@@ -39,7 +39,7 @@ Explain briefly:
   machine without your opinion.
 - **Neither side may dangle.** Every `B-N` needs at least one eval that names it,
   and every eval must name at least one `B-N`. The validation card is where that
-  mapping is written down, and `validate-task-spec.sh` walks it in both
+  mapping is written down, and `taskspec validate` walks it in both
   directions and fails the file on any unmatched node.
 - The exit check is one command. It returns 0 or the work is not done.
 
@@ -142,8 +142,16 @@ eval_1 && eval_2 && eval_3
 Run it once, now, and let it fail:
 
 ```bash
-bash -c 'source /dev/stdin <<< "$(sed -n "/^eval_1()/,/^}/p;/^eval_2()/,/^}/p;/^eval_3()/,/^}/p" tasks/T-20260812-daily-gross-ordered.md)"; eval_1 && eval_2 && eval_3'; echo "exit=$?"
+# extract the three eval functions from the spec's Success Criteria block
+awk '/^## Success Criteria/{s=1} s&&/^```bash/{f=1;next} f&&/^```/{exit} f' \
+  tasks/T-20260812-daily-gross-ordered.md > /tmp/d3-evals.sh
+source /tmp/d3-evals.sh
+eval_1 && eval_2 && eval_3; echo "exit=$?"
 ```
+
+Verified against this repository: `eval_1` returns 0 because the project already
+parses, `eval_2` returns non-zero because the model does not exist yet, so the
+combined exit is **non-zero for the right reason**. That is the number to read out.
 
 ## Show the evidence
 
@@ -169,10 +177,17 @@ exit check returning non-zero, and say:
 
 ## Recovery
 
-If the eval extraction one-liner is awkward on the night, keep a copy of the
-three functions in a scratch file and source it directly — the teaching point
-is the returned number, not the shell plumbing. Announce the scratch file as
-**prepared** if you use it.
+The extraction above already writes to a scratch file on purpose — three legible
+lines beat one clever line on a projector, and the earlier one-liner form was
+removed because it broke. If even that is awkward on the night, paste the three
+functions straight into the shell and call them; the teaching point is the
+returned number, not the shell plumbing. Announce any pre-written scratch file as
+**prepared** if you use one.
+
+Do not reintroduce a `sed "/^eval_1()/,/^}/p"` range here. These evals are
+one-line functions, so no line begins with `}`; the range runs to end-of-file,
+swallows the closing code fence, and bash fails with a syntax error instead of
+the clean non-zero this checkpoint is built to show.
 
 **BREAK comes after 03** — leave the Task-Spec on the projector.
 

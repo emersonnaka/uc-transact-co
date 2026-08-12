@@ -97,7 +97,7 @@ foundation evidence; it is not a second, independent quickstart.
 | --- | --- | --- | --- | --- | --- |
 | Foundation investigation | What is true, what is inferred, and what remains a human decision? | [`live/d1/`](live/d1/) | [`presentation/d1.html`](presentation/d1.html) | Context inventory, ontology note, technical brief, investigation skill | Executed |
 | Harness and authority | What may the agent do, through which tools, paths, and gates? | [`live/d2/`](live/d2/) | [`presentation/d2.html`](presentation/d2.html) | Harness contract, bounded roles, sketch plans, one controlled dbt build, scaffold skill | Executed |
-| Specification and decomposition | What does done mean in a form a machine can answer? | [`live/d3/`](live/d3/) | [`presentation/d3.html`](presentation/d3.html) | Task-Spec, runnable evals, task graph, one bounded packet execution | Built; execution started, not complete |
+| The Task — specification and decomposition | What does done mean in a form a machine can answer? | [`live/d3/`](live/d3/) | [`presentation/d3.html`](presentation/d3.html) | Task-Spec, runnable evals, task graph, one bounded packet compared across 2–3 available engines | Built; execution started, not complete |
 
 The first two modules produced five baseline-specific artifacts under
 `storage/specs/` and the Day 2 `stg_orders` model. Those artifacts are now

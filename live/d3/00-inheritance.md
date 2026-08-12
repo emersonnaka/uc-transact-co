@@ -40,13 +40,31 @@ Explain briefly:
 
 ## Do live
 
+First, the reset — run this **before the room is watching**. The repository ships
+one Task-Spec from an earlier rehearsal (`tasks/T-20260812-daily-gross-ordered.md`,
+committed in `0bd3e09`), and checkpoint 02's whole teaching beat is the room
+watching that file get typed. Archive it rather than delete it: `tmp/` is
+gitignored, so it survives as the **prepared** fallback, and `git checkout --
+tasks/` restores the committed copy afterwards.
+
 ```bash
-git status --short
+mkdir -p tmp/prepared
+[ -e tasks ]     && mv tasks     tmp/prepared/tasks-prerehearsal
+[ -e .taskspec ] && mv .taskspec tmp/prepared/taskspec-prerehearsal
+rm -f dbt/models/staging/stg_daily_gross_ordered.sql
+git status --short          # expect: deleted tasks/… — that is the reset, not a mistake
+```
+
+Then, with the room watching:
+
+```bash
 git rev-parse --short HEAD
 make status
 ls -la storage/specs/
 make dbt-check
-test ! -d tasks && echo "tasks absent — correct"
+taskspec version
+test ! -e tasks && echo "tasks absent — correct"
+test ! -e dbt/models/staging/stg_daily_gross_ordered.sql && echo "tonight's model absent — correct"
 ```
 
 Then open the raw material and scroll to its blocked rows:
@@ -72,7 +90,10 @@ Say:
 - Environment healthy; four entities visible.
 - Five specs present and readable, including both Day 2 plans.
 - `make dbt-check` passes with the Day 2 staging model.
-- `tasks/` does not exist yet — if a rehearsal left one behind, remove it now.
+- `tasks/` and `.taskspec/` are absent, and `dbt/models/staging/` holds only
+  `_raw_sources.yml` and `stg_orders.sql`. The reset block above is what makes
+  this true — the repository ships a rehearsal Task-Spec, so this gate cannot
+  pass on a fresh checkout without it.
 - `taskspec version` prints **3.7.0**. Checkpoint 04 depends on it; a missing CLI
   must surface here at 20:00, not at 21:30 in front of the room.
 - The plan's BLOCKED rows were read aloud.

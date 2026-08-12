@@ -102,6 +102,13 @@ first hand-authored Task-Spec as tracked session evidence. At checkpoint 04,
 the architect proposes and reviews the manifest without writing files; a human
 approves it, and the facilitator uses `taskspec` to extend the graph.
 
+**To run the night again from a clean spot**, checkpoint 00 opens with a reset
+block that archives that tracked spec to `tmp/prepared/` before the room is
+watching, so checkpoint 02 is a real first authoring rather than a re-edit.
+`git checkout -- tasks/` restores the committed copy afterwards. Skip the reset
+only if you intend to present the file as already-inherited evidence — but then
+checkpoint 02's "typed in front of the room" gate no longer applies.
+
 ## Shared boundaries
 
 - Postgres access stays read-only (`analytics_ro`); DuckDB `raw.*` is the mirror.

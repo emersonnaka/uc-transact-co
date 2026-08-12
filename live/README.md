@@ -10,7 +10,7 @@ can continue.
 | --- | --- | --- | --- |
 | Day 1 · Foundation | [`d1/README.md`](d1/README.md) | [`../presentation/d1.html`](../presentation/d1.html) | Executed; specs 1–3 are tracked evidence |
 | Day 2 · Harness | [`d2/README.md`](d2/README.md) | [`../presentation/d2.html`](../presentation/d2.html) | Executed; specs 4–5 and `stg_orders` are committed |
-| Day 3 · Specification | [`d3/README.md`](d3/README.md) | [`../presentation/d3.html`](../presentation/d3.html) | Execution started locally; first Task-Spec exists, graph and second model are incomplete |
+| Day 3 · The Task | [`d3/README.md`](d3/README.md) | [`../presentation/d3.html`](../presentation/d3.html) | Execution started locally; first Task-Spec exists, graph and second model are incomplete |
 
 Days 1 and 2 preserve the exact sequence that produced the inherited artifacts;
 their preflight states are historical, not the current `main` preflight. Start

@@ -70,18 +70,24 @@ git status --short --untracked-files=all dbt/
 ### Move C — the same spec, a second and a third engine
 
 This is the beat the room remembers, and it is the whole portability argument
-made physical. Stash engine A's file so each engine starts from the same place,
-then hand the **identical spec** to two more engines:
+made physical. Move engine A's file out of the writable path so each engine
+starts from the same place, then hand the **identical spec** to one or two more
+engines:
 
 ```bash
-mkdir -p /tmp/d3-engines
-cp dbt/models/staging/stg_daily_gross_ordered.sql /tmp/d3-engines/A-claude.sql
-git checkout -- dbt/models/staging/ 2>/dev/null || rm -f dbt/models/staging/stg_daily_gross_ordered.sql
+engine_artifact_dir=$(mktemp -d /tmp/transactco-d3-engines.XXXXXX)
+mv dbt/models/staging/stg_daily_gross_ordered.sql "$engine_artifact_dir/A-first.sql"
+test ! -e dbt/models/staging/stg_daily_gross_ordered.sql
 ```
 
 Give each engine the same two files and nothing else — the spec and `AGENTS.md`.
-Use whichever engines you actually have wired; Codex and Kimi are already
-installed here:
+Use only engines that pass the live preflight. Binary presence is not a
+credential or a successful run:
+
+```bash
+command -v codex
+command -v kimi
+```
 
 ```text
 Você é o developer definido em AGENTS.md.
@@ -93,18 +99,43 @@ check do próprio packet e me mostre o código de saída.
 Não leia nenhum outro arquivo de plano. Não invente escopo.
 ```
 
-After each engine finishes, capture its file and run the **same** check:
+After each engine finishes, run the **same packet exit check**, then the dbt
+project gate. This is the exact command introduced at checkpoint 03:
 
 ```bash
-cp dbt/models/staging/stg_daily_gross_ordered.sql /tmp/d3-engines/B-codex.sql   # then C-kimi.sql
-make dbt-check; echo "exit=$?"
+awk '/^## Success Criteria/{s=1} s&&/^```bash/{f=1;next} f&&/^```/{exit} f' \
+  tasks/T-20260812-daily-gross-ordered.md > /tmp/d3-evals.sh
+source /tmp/d3-evals.sh
+eval_1 && eval_2 && eval_3
+packet_exit_code=$?
+echo "exit=$packet_exit_code"
+test "$packet_exit_code" -eq 0
+make dbt-check
 ```
 
-Finally, put the three files side by side:
+After a non-final engine passes, move its model into the evidence directory
+before starting the next engine. After the final engine passes, copy it so the
+checkout retains one valid model:
 
 ```bash
-diff -u /tmp/d3-engines/A-claude.sql /tmp/d3-engines/B-codex.sql | head -40
-wc -l /tmp/d3-engines/*.sql
+cp dbt/models/staging/stg_daily_gross_ordered.sql "$engine_artifact_dir/B-second.sql"
+# Stop here for two engines; the valid model remains in place.
+# Or prepare a clean path for optional engine C while preserving B-second.sql:
+mv dbt/models/staging/stg_daily_gross_ordered.sql "$engine_artifact_dir/B-runtime.sql"
+# After engine C passes, leave its valid model in place:
+cp dbt/models/staging/stg_daily_gross_ordered.sql "$engine_artifact_dir/C-final.sql"
+```
+
+Run the `mv` and C line only when a third engine is available. Otherwise stop
+after the first copy.
+
+Finally, put the two or three files side by side. A diff may be empty or
+non-empty; neither outcome is the gate:
+
+```bash
+diff -u "$engine_artifact_dir/A-first.sql" "$engine_artifact_dir/B-second.sql" | head -40
+shasum -a 256 "$engine_artifact_dir"/*.sql
+wc -l "$engine_artifact_dir"/*.sql
 ```
 
 Two rules, both borrowed from Task-Spec's own multi-engine guide
@@ -131,10 +162,10 @@ Four things, in this order:
 2. The exit check returning **0**, from the agent and then from your terminal.
 3. The refusal for item 10: it cites `2-ontology.md`, names Finance, and no file
    was written.
-4. **The three engines' files, open side by side**, then the same exit code under
-   each. Let the room read the diff for a few seconds before you say anything —
-   the SQL is visibly different and the number is visibly identical. That silence
-   is the argument.
+4. **The available engines' files, open side by side**, then the same exit code
+   under each. Let the room inspect the diff before you say anything. The SQL
+   may differ or match; the claim is only that the identical contract produced
+   the same independently checked result.
 
 Say:
 
@@ -143,8 +174,9 @@ Say:
 
 Then, on the engines:
 
-> Three engines wrote three different files. Not one of them decided whether it
-> was finished. The exit check did, and it said the same thing three times.
+> Different engines received the same contract. Not one of them decided whether
+> it was finished. The exit check did, and it returned zero for every available
+> run.
 
 ## Gate
 
@@ -154,7 +186,8 @@ Then, on the engines:
 - Item 10 was refused with its owner named, and no file was written.
 - The developer session never read the transform plan.
 - **Move C:** at least two engines received the identical spec and each reached
-  `exit 0` on the same exit check; their three SQL files were shown to differ.
+  `exit 0` on the same exit check; their SQL files were compared without treating
+  textual difference or equality as the result.
 - Any engine that could not run was announced as `unavailable`, not as a pass.
 
 ## Recovery
@@ -164,5 +197,16 @@ answer — point it back at the spec's exit-check section. That correction is th
 teaching beat of the night. If the build fails its own eval, leave the failure
 visible and read the eval out loud: a gate that catches a real miss is worth
 more than a rehearsed pass.
+
+If a later engine is unavailable or fails after the current model was moved
+out, restore the last passing artifact before leaving the checkpoint:
+
+```bash
+cp "$engine_artifact_dir/A-first.sql" dbt/models/staging/stg_daily_gross_ordered.sql
+make dbt-check
+```
+
+If engine B passed, restore `B-second.sql` instead. The named recovery file must
+exist and have reached exit 0; never restore an unverified candidate.
 
 Next: [`07-reflection.md`](07-reflection.md).

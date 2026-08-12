@@ -70,6 +70,22 @@ therefore safe to dispatch together. Blocked holes are not emitted by either
 `ready` form, so the generated state index plus the status-change metric are the
 explicit proof that Revenue was recorded, withheld, and routed to Finance.
 
+**Pre-empt the question you will get.** `tasks/_state.yaml` reports `ready: 5`
+while `taskspec ready` prints only two rows, and someone will notice. They are
+not the same measurement, and the difference is the lesson:
+
+- `_state.yaml`'s `ready:` counts specs whose **status field** says `ready` — six
+  authored units, one blocked, five nominally available.
+- `taskspec ready` prints the **frontier**: of those five, only the ones whose
+  `depends_on` is actually satisfied. It says so itself —
+  `(3 ready spec(s) hidden — blocked by an unmet depends_on)`.
+
+Rehearsed on this repository: five units, four of them declaring
+`depends_on: [T-20260812-reconcile-join]`, produce a **two-wide frontier with
+three hidden** — which is exactly the two-then-three wave split the crank slide
+draws. Say it plainly: *status is a label a human wrote; the frontier is a fact
+the graph computed.*
+
 The comparison is the beat. If the agent's table matches the tool, the graph
 decided and the agent merely read it. If it differs, the agent guessed — and the
 tool is the arbiter, exactly as `dbt-check` was on Day 2.

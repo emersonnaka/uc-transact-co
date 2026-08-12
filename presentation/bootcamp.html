@@ -635,40 +635,6 @@ body::after {
   text-align: center;
 }
 
-/* Trust stack */
-.stack-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(360px, 0.88fr);
-  gap: clamp(38px, 5vw, 78px);
-  align-items: center;
-  margin-top: clamp(18px, 3vh, 34px);
-}
-.trust-stack { display: flex; flex-direction: column-reverse; gap: 7px; }
-.trust-layer {
-  display: grid;
-  grid-template-columns: 110px 1fr auto;
-  gap: 16px;
-  align-items: center;
-  min-height: 70px;
-  padding: 12px 17px;
-  border: 1px solid color-mix(in srgb, var(--lc, var(--purple)) 34%, transparent);
-  border-left: 3px solid var(--lc, var(--purple));
-  background: linear-gradient(90deg, color-mix(in srgb, var(--lc, var(--purple)) 9%, transparent), rgba(17,17,20,0.7));
-}
-.layer-k { color: var(--lc, var(--purple)); font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
-.layer-name { font-family: var(--font-display); font-size: clamp(21px, 2.3vw, 32px); line-height: 1; }
-.layer-proof { color: var(--dim); font-family: var(--font-editorial); font-size: clamp(11px, 1vw, 13.5px); font-style: italic; text-align: right; }
-.boundary-panel {
-  padding: clamp(20px, 3vh, 30px);
-  border: 1px solid rgba(239,98,93,0.34);
-  background: linear-gradient(180deg, rgba(239,98,93,0.085), rgba(17,17,20,0.8));
-}
-.boundary-panel .big-x { color: var(--red); font-family: var(--font-display); font-size: clamp(68px, 8vw, 112px); line-height: 0.75; }
-.boundary-panel h3 { margin-top: 14px; font-family: var(--font-display); font-size: clamp(27px, 3vw, 42px); line-height: 1; }
-.boundary-panel p { margin-top: 12px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(13px, 1.2vw, 17px); line-height: 1.45; }
-.boundary-panel p b { color: var(--text); font-weight: 600; }
-.boundary-chip { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 7px; }
-
 /* Five nights */
 .night-grid {
   display: grid;
@@ -1134,6 +1100,92 @@ body::after {
 /* Night archetype chip */
 .night-arch { position: relative; z-index: 1; margin-top: 7px; font-family: var(--font-mono); font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--na, var(--purple)); }
 
+/* Current vs modern */
+.thennow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 64px minmax(0, 1fr);
+  gap: clamp(12px, 1.6vw, 26px);
+  align-items: stretch;
+  margin-top: clamp(20px, 3.2vh, 36px);
+}
+.tn-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(16px, 2.4vh, 26px) clamp(14px, 1.5vw, 24px);
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(17,17,20,0.86), rgba(17,17,20,0.72));
+}
+.tn-panel.legacy { border-color: rgba(239,98,93,0.4); border-top: 3px solid var(--red); }
+.tn-panel.modern { border-color: rgba(157,139,255,0.44); border-top: 3px solid var(--purple); box-shadow: 0 0 46px -20px rgba(157,139,255,0.75); }
+.tn-k { font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tkc, var(--purple)); }
+.tn-name { margin-top: 10px; font-family: var(--font-display); font-size: clamp(24px, 2.6vw, 38px); line-height: 1; }
+.tn-sub { margin-top: 8px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(11.5px, 1.05vw, 14px); line-height: 1.38; }
+.tn-flow { margin-top: clamp(12px, 2vh, 20px); display: flex; flex-direction: column; }
+.tn-node {
+  padding: clamp(9px, 1.4vh, 13px) clamp(10px, 1vw, 14px);
+  border-left: 3px solid var(--tnc, var(--red));
+  background: linear-gradient(90deg, color-mix(in srgb, var(--tnc, var(--red)) 8%, transparent), rgba(8,8,10,0.4));
+}
+.tn-node + .tn-node { margin-top: 7px; }
+.tn-node strong { display: block; font-family: var(--font-mono); font-size: clamp(8.5px, 0.8vw, 10px); letter-spacing: 0.08em; text-transform: uppercase; color: var(--text); }
+.tn-node span { display: block; margin-top: 4px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(10.5px, 0.95vw, 12.5px); line-height: 1.32; }
+.tn-arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+.tn-arrow .line { flex: 1; width: 2px; border-radius: 2px; background: linear-gradient(180deg, var(--red), var(--purple)); opacity: 0.7; }
+
+/* Midnight bonus */
+.bonus-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(30px, 4.5vw, 80px);
+  align-items: center;
+  margin-top: clamp(18px, 3vh, 34px);
+}
+.bonus-clock {
+  position: relative;
+  padding: clamp(22px, 3.4vh, 36px) clamp(20px, 2vw, 34px);
+  border: 1px solid rgba(223,189,85,0.55);
+  background:
+    repeating-linear-gradient(0deg, rgba(223,189,85,0.035) 0, rgba(223,189,85,0.035) 1px, transparent 1px, transparent 5px),
+    linear-gradient(180deg, rgba(223,189,85,0.12), rgba(17,17,20,0.86));
+  box-shadow: 0 0 56px -22px rgba(223,189,85,0.85);
+  text-align: center;
+}
+.bonus-k { color: var(--gold); font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.bonus-zero {
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-size: clamp(84px, 10vw, 158px);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #f5df94 0%, var(--gold) 60%, #aa8322 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.bonus-note { margin-top: 18px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(13px, 1.25vw, 17px); line-height: 1.42; }
+.bonus-sessions { display: flex; flex-direction: column; gap: 8px; }
+.bonus-session {
+  display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: center;
+  padding: clamp(12px, 1.9vh, 18px) clamp(13px, 1.3vw, 20px);
+  border: 1px solid rgba(223,189,85,0.3);
+  border-left: 3px solid var(--gold);
+  background: linear-gradient(90deg, rgba(223,189,85,0.07), rgba(17,17,20,0.8));
+  transition: transform 400ms var(--spring), border-color 400ms ease;
+}
+.bonus-session:hover { transform: translateX(4px); border-color: rgba(223,189,85,0.55); }
+.bonus-n { color: var(--gold); font-family: var(--font-mono); font-size: 10px; font-weight: 700; }
+.bonus-name { font-family: var(--font-display); font-size: clamp(20px, 2.1vw, 30px); line-height: 1; }
+.bonus-copy { margin-top: 5px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(11.5px, 1.05vw, 14px); line-height: 1.38; }
+.bonus-exclusive {
+  margin-top: 10px;
+  padding: clamp(11px, 1.8vh, 16px) clamp(13px, 1.4vw, 20px);
+  border: 1px dashed rgba(223,189,85,0.5);
+  color: #c5c0aa;
+  font-family: var(--font-editorial);
+  font-size: clamp(12.5px, 1.15vw, 16px);
+  line-height: 1.4;
+}
+.bonus-exclusive b { color: var(--gold); font-weight: 600; }
+
 /* Entrance motion */
 body.motion-ready .reveal > * {
   opacity: 0;
@@ -1181,6 +1233,8 @@ body.motion-ready .reveal.reset > * { transition: none !important; }
   .arch { min-height: 178px; }
   .collapse-fig, .value-grid { margin-top: 16px; }
   .rung { min-height: max(165px, calc(var(--rh) - 40px)); }
+  .thennow, .bonus-stage { margin-top: 14px; }
+  .bonus-zero { font-size: clamp(60px, 8.5vw, 116px); }
 }
 
 @media (max-width: 900px) {
@@ -1200,7 +1254,7 @@ body.motion-ready .reveal.reset > * { transition: none !important; }
   .hero-grid { grid-template-columns: 1fr; min-height: calc(100dvh - 110px); }
   .hero-copy { align-self: end; padding-bottom: 18px; }
   .hero-copy .display { max-width: 9ch; }
-  .shift-grid, .crossing, .stack-layout, .fit-layout, .offer-layout { grid-template-columns: 1fr; gap: 28px; }
+  .shift-grid, .crossing, .fit-layout, .offer-layout { grid-template-columns: 1fr; gap: 28px; }
   .failure-flow { grid-template-columns: 1fr; gap: 0; }
   .failure-flow::before { left: 7px; right: auto; top: 10px; bottom: 10px; width: 1px; height: auto; }
   .flow-node { display: grid; grid-template-columns: 28px 115px 1fr; gap: 10px; align-items: center; text-align: left; padding: 8px 0; }
@@ -1215,8 +1269,6 @@ body.motion-ready .reveal.reset > * { transition: none !important; }
   .factory { grid-template-columns: 1fr 1fr; }
   .factory-node:not(:last-child)::after { display: none; }
   .human-rail { grid-template-columns: 1fr; }
-  .trust-layer { grid-template-columns: 90px 1fr; }
-  .layer-proof { grid-column: 2; text-align: left; }
   .night-grid { grid-template-columns: 1fr; }
   .night { min-height: 240px; }
   .artifact-grid, .arsenal-grid { grid-template-columns: 1fr; }
@@ -1241,6 +1293,10 @@ body.motion-ready .reveal.reset > * { transition: none !important; }
   .arch-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .value-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .source-line { font-size: 7px; }
+  .thennow { grid-template-columns: 1fr; }
+  .tn-arrow { flex-direction: row; }
+  .tn-arrow .line { flex: 1; width: auto; height: 2px; background: linear-gradient(90deg, var(--red), var(--purple)); }
+  .bonus-stage { grid-template-columns: 1fr; gap: 22px; }
 }
 
 @media (max-width: 560px) {
@@ -1255,6 +1311,8 @@ body.motion-ready .reveal.reset > * { transition: none !important; }
   .rmgrid, .collapse-fig, .arch-grid, .value-grid { grid-template-columns: 1fr; }
   .rings-viz svg { max-height: 46vh; }
   .offer-line { grid-template-columns: 82px 1fr; }
+  .bonus-session { grid-template-columns: 34px 1fr; }
+  .bonus-zero { font-size: clamp(72px, 26vw, 130px); }
 }
 
 @media print {
@@ -1538,10 +1596,45 @@ body.motion-ready .reveal.reset > * { transition: none !important; }
     <aside class="speaker-notes" hidden>Do not present NorthWind Pay as a customer name. It is the public teaching-case name for a production-derived scenario.</aside>
   </section>
 
-  <section class="slide" id="slide-10" data-act="CASE" data-accent="gold" aria-labelledby="s10-title">
+  <section class="slide" id="slide-10" data-act="CASE" data-accent="purple" aria-labelledby="s10-title">
+    <div class="wrap reveal">
+      <div class="kicker">The problem, in architecture</div>
+      <h2 class="headline" id="s10-title" style="margin-top:10px;">Same money. Two architectures. <span class="gradient-purple">One of them can explain itself.</span></h2>
+      <div class="thennow" aria-label="Current legacy architecture versus the modern agentic architecture">
+        <div class="tn-panel legacy">
+          <div class="tn-k" style="--tkc:var(--red);">Current · what exists today</div>
+          <div class="tn-name">The legacy chain</div>
+          <div class="tn-sub">Rules live in four places. No single place can prove the close.</div>
+          <div class="tn-flow">
+            <div class="tn-node" style="--tnc:var(--red);"><strong>SFTP raw files</strong><span>positional layouts · overpunch · PII in the source feed</span></div>
+            <div class="tn-node" style="--tnc:#d26891;"><strong>Java core</strong><span>years of business rules buried in code — no one knows them all</span></div>
+            <div class="tn-node" style="--tnc:#bd70c7;"><strong>Stored procedures</strong><span>logic split between database and application — truth is distributed</span></div>
+            <div class="tn-node" style="--tnc:var(--gold);"><strong>Manual close</strong><span>people reconcile outputs because the system cannot explain itself</span></div>
+          </div>
+        </div>
+        <div class="tn-arrow" aria-hidden="true"><div class="line"></div><span class="tag" style="--tc:var(--purple);">5 nights</span><div class="line"></div></div>
+        <div class="tn-panel modern">
+          <div class="tn-k" style="--tkc:var(--purple);">Modern · what you build this week</div>
+          <div class="tn-name">The evidence-gated factory</div>
+          <div class="tn-sub">One governed chain where every hand-off leaves proof.</div>
+          <div class="tn-flow">
+            <div class="tn-node" style="--tnc:var(--purple);"><strong>Governed ingestion</strong><span>harness + task-spec · PII handled by design, not by hope</span></div>
+            <div class="tn-node" style="--tnc:#858edb;"><strong>Bronze → Silver → Gold</strong><span>staged, typed, testable — the rules visible in one place</span></div>
+            <div class="tn-node" style="--tnc:var(--cyan);"><strong>FastAPI + MCP</strong><span>one data product serving humans and agents</span></div>
+            <div class="tn-node" style="--tnc:var(--green);"><strong>Golden-match + evals</strong><span>every close proven cent-for-cent before acceptance</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="ladder-verdict" style="margin-top:clamp(14px,2.2vh,24px);">You do not rewrite the rules. <b>You make them visible, testable, and owned.</b></p>
+      <p class="source-line">Derived from the official Bootcamp case (NorthWind Pay) and the Day-2/Day-3 architecture material: Task-Spec, harness, evals, golden-match, and the Seamwise migration grammar.</p>
+    </div>
+    <aside class="speaker-notes" hidden>Left column lists where the rules hide; right column lists where they become visible. Every node on the right is a thing the participant physically builds during the week — not an aspirational diagram.</aside>
+  </section>
+
+  <section class="slide" id="slide-11" data-act="CASE" data-accent="gold" aria-labelledby="s11-title">
     <div class="wrap reveal">
       <div class="kicker">The proof mechanism</div>
-      <h2 class="headline" id="s10-title" style="margin-top:10px;">Who proves the new close? <span class="gradient-gold">The legacy system.</span></h2>
+      <h2 class="headline" id="s11-title" style="margin-top:10px;">Who proves the new close? <span class="gradient-gold">The legacy system.</span></h2>
       <p class="subhead" style="margin-top:14px;">The old output becomes a test oracle. Every translated result must survive a cent-for-cent comparison.</p>
       <div class="match-layout">
         <div class="match-system legacy" style="--mc:var(--gold);">
@@ -1564,10 +1657,10 @@ body.motion-ready .reveal.reset > * { transition: none !important; }
     <aside class="speaker-notes" hidden>Golden-match is powerful because it gives the migration an executable baseline. Keep the caveat visible: equivalence is not semantic approval.</aside>
   </section>
 
-  <section class="slide" id="slide-11" data-act="SYSTEM" data-accent="purple" aria-labelledby="s11-title">
+  <section class="slide" id="slide-12" data-act="SYSTEM" data-accent="purple" aria-labelledby="s12-title">
     <div class="wrap reveal">
       <div class="kicker">The system you build</div>
-      <h2 class="headline" id="s11-title" style="margin-top:10px;">The factory is not a model. <span class="gradient-purple">It is the contract around the model.</span></h2>
+      <h2 class="headline" id="s12-title" style="margin-top:10px;">The factory is not a model. <span class="gradient-purple">It is the contract around the model.</span></h2>
       <div class="factory" aria-label="Evidence-gated agentic factory architecture">
         <div class="factory-node"><div class="factory-n">01</div><div class="factory-name">Intent</div><div class="factory-copy">One bounded outcome, clear exclusions, named owners.</div><div class="factory-gate">human defines</div></div>
         <div class="factory-node"><div class="factory-n">02</div><div class="factory-name">Task-Spec</div><div class="factory-copy">Behavior, writable paths, budgets, and executable proof.</div><div class="factory-gate">body sealed</div></div>
@@ -1584,33 +1677,6 @@ body.motion-ready .reveal.reset > * { transition: none !important; }
       <p class="source-line">Architecture synthesized from plan/semana.md, Day 2 harness boundaries, and Day 3 Task-Spec mechanics.</p>
     </div>
     <aside class="speaker-notes" hidden>Walk left to right. The model is deliberately absent from the headline because capability without the surrounding contract is not the product.</aside>
-  </section>
-
-  <section class="slide" id="slide-12" data-act="SYSTEM" data-accent="red" aria-labelledby="s12-title">
-    <div class="wrap reveal">
-      <div class="kicker">Calibrated autonomy</div>
-      <h2 class="headline" id="s12-title" style="margin-top:10px;">Autonomy rises only after <span class="gradient-purple">proof exists.</span></h2>
-      <div class="stack-layout">
-        <div class="trust-stack" aria-label="Trust stack from evidence to accepted execution">
-          <div class="trust-layer" style="--lc:var(--cyan);"><div class="layer-k">Evidence</div><div class="layer-name">What is physically true</div><div class="layer-proof">selected context · reproducible facts</div></div>
-          <div class="trust-layer" style="--lc:var(--gold);"><div class="layer-k">Authority</div><div class="layer-name">What the agent may do</div><div class="layer-proof">roles · tools · paths · stop rules</div></div>
-          <div class="trust-layer" style="--lc:var(--purple);"><div class="layer-k">Atomic work</div><div class="layer-name">What done means</div><div class="layer-proof">behavior ↔ evals · exit check</div></div>
-          <div class="trust-layer" style="--lc:var(--green);"><div class="layer-k">Loop</div><div class="layer-name">What may repeat</div><div class="layer-proof">retry · observe · escalate · learn</div></div>
-        </div>
-        <div class="boundary-panel">
-          <div class="big-x">×</div>
-          <h3>Meaning cannot be automated into existence.</h3>
-          <p>In the TransactCo practice case, Postgres can prove amounts and statuses. It cannot decide what <b>Revenue</b> means. Finance owns that decision.</p>
-          <div class="boundary-chip">
-            <span class="tag" style="--tc:var(--red);">Revenue · unresolved</span>
-            <span class="tag" style="--tc:var(--gold);">owner · Finance</span>
-            <span class="tag" style="--tc:var(--green);">refusal · pass</span>
-          </div>
-        </div>
-      </div>
-      <p class="source-line">plan/semana.md and repository truth boundary: physical measurements are evidence; business meaning remains human-owned.</p>
-    </div>
-    <aside class="speaker-notes" hidden>This is why the Bootcamp is not selling zero responsibility. It removes humans from repetitive execution, not meaning, governance, or acceptance.</aside>
   </section>
 
   <section class="slide" id="slide-13" data-act="PROGRAM" data-accent="purple" aria-labelledby="s13-title">
@@ -1682,10 +1748,10 @@ body.motion-ready .reveal.reset > * { transition: none !important; }
         <div class="value-cell" style="--vc:var(--purple);"><div class="value-n">20h</div><div class="value-l"><b>Guided live build</b> — five nights, 19:30–23:30, every hour on the same cumulative system.</div></div>
         <div class="value-cell" style="--vc:var(--gold);"><div class="value-n">4 yrs</div><div class="value-l"><b>The official promise</b> — what a team took four years to build, you build in five nights.</div></div>
         <div class="value-cell" style="--vc:var(--cyan);"><div class="value-n">5+</div><div class="value-l"><b>Artifacts you keep</b> — Second Brain, OntoLayer, AgentSpec, Task-Spec, and the multi-engine harness.</div></div>
-        <div class="value-cell" style="--vc:var(--green);"><div class="value-n">R$1,297</div><div class="value-l"><b>With coupon DESLIVE</b> — reference R$1,997. Seven days unconditional guarantee.</div></div>
+        <div class="value-cell" style="--vc:var(--green);"><div class="value-n">R$ 1.497</div><div class="value-l"><b>À vista</b> — reference R$ 1.997. Seven days unconditional guarantee.</div></div>
       </div>
       <p class="ladder-verdict" style="margin-top:clamp(14px,2.2vh,24px);">The guarantee is not about the videos. <b>It is about whether the gates work on your machine.</b></p>
-      <p class="source-line">20h = 5 × 4h official schedule. “Four years” claim: official page og:description. Price, coupon, and guarantee: current landing page, captured 12 Aug 2026.</p>
+      <p class="source-line">20h = 5 × 4h official schedule. “Four years” claim: official page og:description. Price per owner update, 12 Aug 2026; guarantee per landing page.</p>
     </div>
     <aside class="speaker-notes" hidden>Every number on this slide is either arithmetic from the official schedule or a verbatim official-page claim. Do not add urgency beyond the fixed dates.</aside>
   </section>
@@ -1700,7 +1766,7 @@ body.motion-ready .reveal.reset > * { transition: none !important; }
         <article class="tool"><div class="tool-name">AgentSpec</div><div class="tool-copy">Spec-driven data engineering roles and workflows.</div></article>
         <article class="tool"><div class="tool-name">Task-Spec</div><div class="tool-copy">Atomic work where behavior and executable proof cannot dangle.</div></article>
         <article class="tool"><div class="tool-name">Multi-Model Harness</div><div class="tool-copy">Different engines, fixed contracts, and one evidence boundary.</div><div class="engine-row" aria-label="Supported model engines"><img src="../assets/claude-code-icon.png" alt="Claude Code"><img src="../assets/codex.png" alt="Codex"><img src="../assets/kimi.png" alt="Kimi"></div></article>
-        <article class="tool"><div class="tool-name">Converge</div><div class="tool-copy">The operating method that carries intent through structure, decomposition, harness, execution, proof, and acceptance.</div></article>
+        <article class="tool"><div class="tool-name">Seamwise</div><div class="tool-copy">The migration grammar — cut the system along its natural seam, pass by pass, with proof at every pass.</div></article>
       </div>
       <p class="stack-note">Open-source local data stack. Existing model subscriptions are separate.</p>
       <p class="source-line">Current official Bootcamp arsenal and FAQ, with the open-source claim limited to the local data stack.</p>
@@ -1754,14 +1820,39 @@ body.motion-ready .reveal.reset > * { transition: none !important; }
     <aside class="speaker-notes" hidden>Keep the facilitator story subordinate to the method. The credibility move is the willingness to let criteria, not charisma, decide what passes.</aside>
   </section>
 
-  <section class="slide" id="slide-20" data-act="JOIN" data-accent="purple" aria-labelledby="s20-title">
+  <section class="slide" id="slide-20" data-act="BONUS" data-accent="gold" aria-labelledby="s20-title">
+    <div class="wrap reveal">
+      <div class="kicker">Today only · until 00:00</div>
+      <h2 class="headline" id="s20-title" style="margin-top:10px;max-width:26ch;">Buy before midnight tonight — unlock four sessions <span class="gradient-gold">announced nowhere else.</span></h2>
+      <div class="bonus-stage">
+        <div class="bonus-clock">
+          <div class="bonus-k">The deadline · tonight</div>
+          <div class="bonus-zero">00:00</div>
+          <p class="bonus-note">When the clock passes, the offer closes with it.</p>
+        </div>
+        <div>
+          <div class="bonus-sessions">
+            <div class="bonus-session"><div class="bonus-n">01</div><div><div class="bonus-name">Task-Spec</div><div class="bonus-copy">Atomic work where behavior and executable proof cannot dangle.</div></div></div>
+            <div class="bonus-session"><div class="bonus-n">02</div><div><div class="bonus-name">Seamwise</div><div class="bonus-copy">The migration grammar — cut the system along its natural seam, pass by pass.</div></div></div>
+            <div class="bonus-session"><div class="bonus-n">03</div><div><div class="bonus-name">Converge</div><div class="bonus-copy">The operating method from intent to acceptance, end to end.</div></div></div>
+            <div class="bonus-session"><div class="bonus-n">04</div><div><div class="bonus-name">Warner Chaves</div><div class="bonus-copy">Live session · Pythian</div></div></div>
+          </div>
+          <div class="bonus-exclusive">These sessions are <b>not announced anywhere else</b> — this is the only place the offer exists.</div>
+        </div>
+      </div>
+      <p class="source-line">Offer copy supplied by the owner for today's launch window. Session topics mirror the Bootcamp arsenal (Task-Spec, Converge) and the Day-2 migration method (Seamwise); the Warner Chaves (Pythian) session was added per owner.</p>
+    </div>
+    <aside class="speaker-notes" hidden>State the deadline once and move on. The exclusivity claim is the owner's own copy — do not add invented scarcity beyond what is written here. PT-BR original: “Quem comprar até 00:00 Hs de hoje terá acesso a 3 Sessões Exclusivas do DataShip sobre (Task-Spec, Seamwise e Converge), isso não é divulgado em nenhum outro lugar.” Warner Chaves (Pythian) session added per owner.</aside>
+  </section>
+
+  <section class="slide" id="slide-21" data-act="JOIN" data-accent="purple" aria-labelledby="s21-title">
     <div class="wrap reveal">
       <div class="kicker">Registration open</div>
-      <h2 class="headline" id="s20-title" style="margin-top:10px;max-width:20ch;">Five live nights to cross from AI-assisted work to <span class="gradient-purple">evidence-gated delivery.</span></h2>
+      <h2 class="headline" id="s21-title" style="margin-top:10px;max-width:20ch;">Five live nights to cross from AI-assisted work to <span class="gradient-purple">evidence-gated delivery.</span></h2>
       <div class="offer-layout">
         <div>
-          <div class="offer-price">R$1,297</div>
-          <div class="offer-was">Reference price <s>R$1,997</s></div>
+          <div class="offer-price">R$ 1.497,00</div>
+          <div class="offer-was">À vista · Reference price <s>R$ 1.997</s></div>
           <div class="offer-coupon">coupon DESLIVE applied at checkout</div>
         </div>
         <div class="offer-panel">
@@ -1772,12 +1863,12 @@ body.motion-ready .reveal.reset > * { transition: none !important; }
           <a class="offer-cta" href="https://sun.eduzz.com/7WXGBB2D0A?cupom=DESLIVE" target="_blank" rel="noopener noreferrer">
             <span>Join the cohort</span><span aria-hidden="true">↗</span>
           </a>
-          <div class="offer-fine">Current landing-page offer captured 12 Aug 2026. Checkout determines final terms.</div>
+          <div class="offer-fine">Offer updated 12 Aug 2026 per owner. Checkout determines final terms.</div>
         </div>
       </div>
-      <p class="source-line">Official Bootcamp page and Eduzz checkout link. No seat count, countdown, or invented deadline.</p>
+      <p class="source-line">Official Bootcamp page and Eduzz checkout link. Midnight bonus per owner's launch instruction.</p>
     </div>
-    <aside class="speaker-notes" hidden>State the offer once. Dates, format, current landing-page price, coupon, and guarantee are the only urgency or risk-reversal claims.</aside>
+    <aside class="speaker-notes" hidden>State the offer once. Dates, format, price (R$ 1.497,00 à vista), and guarantee are the claims; the midnight bonus is the owner's own copy.</aside>
   </section>
 
 </main>
