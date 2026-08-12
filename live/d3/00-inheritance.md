@@ -72,7 +72,9 @@ Say:
 - Environment healthy; four entities visible.
 - Five specs present and readable, including both Day 2 plans.
 - `make dbt-check` passes with the Day 2 staging model.
-- `tasks/` does not exist yet.
+- `tasks/` does not exist yet — if a rehearsal left one behind, remove it now.
+- `taskspec version` prints **3.7.0**. Checkpoint 04 depends on it; a missing CLI
+  must surface here at 20:00, not at 21:30 in front of the room.
 - The plan's BLOCKED rows were read aloud.
 
 ## Recovery

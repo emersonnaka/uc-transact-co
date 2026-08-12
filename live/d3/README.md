@@ -47,9 +47,9 @@ flowchart LR
 | [`01`](01-plausible-plan.md) | **NEW A** | The plan is not the work | Three divergent plans for item 7 | None — session discarded |
 | [`02`](02-task-spec.md) | **NEW B** | Anatomy of a Task-Spec | `T-20260812-daily-gross-ordered.md`, six zones, human-edited | `tasks/T-20260812-daily-gross-ordered.md` |
 | [`03`](03-bdd-and-evals.md) | Continue B | Two halves of done | Scenario + pre-build exit check returning non-zero | Evals inside `T-20260812-daily-gross-ordered` |
-| [`04`](04-decompose.md) | Continue B as architect | Item 7 becomes a graph | Index + 4–6 packets | `tasks/` graph |
+| [`04`](04-decompose.md) | Continue B as architect | Item 7 becomes a graph | TaskPlan preview → approval → `batch`, then `dod` + `lint` | `tasks/` graph |
 | ✦ | No agent | Giveaway → crank | Deck only — 2 slides, ~21:50, 3 min | None — the crank clip is **pre-recorded** |
-| [`05`](05-ready-set.md) | Continue B | The ready set | Dependency order justified | `_state.yaml` ordering |
+| [`05`](05-ready-set.md) | Continue B | The ready set | Agent predicts, `taskspec ready` adjudicates | `_state.yaml` ordering |
 | [`06`](06-execute-one.md) | **NEW C** — developer | One packet, one iteration | Exit check returns 0 + refusal holds | Second staging model |
 | [`07`](07-reflection.md) | No agent | Turn three closes | Participant commitments | Team learning |
 
@@ -85,8 +85,13 @@ storage/specs/
 ├── 4-plan-transform.md     # Day 2 — TONIGHT'S RAW MATERIAL, read-only
 └── 5-plan-serve.md         # Day 2 — read-only tonight
 
+.taskspec/config             # created by taskspec init at checkpoint 04
+
 tasks/
-├── _state.yaml              # derived index, rebuilt at checkpoint 04
+├── .plans/
+│   └── transform-5-8.yaml   # the TaskPlan/v1 manifest — reviewed, then approved
+├── _state.yaml              # derived index, rebuilt by taskspec rebuild-state
+├── _metrics.jsonl           # append-only status log — carries the item-10 refusal
 └── T-20260812-*.md          # one Task-Spec per atomic change
 
 dbt/models/staging/          # already holds stg_orders from Day 2
@@ -99,7 +104,10 @@ creates it live inside the contract's writable path.
 
 - Postgres access stays read-only (`analytics_ro`); DuckDB `raw.*` is the mirror.
 - All five inherited specs are read-only tonight; no checkpoint may overwrite them.
-- Writable paths tonight: `tasks/` and `dbt/models/staging/` only.
+- Writable paths tonight: `tasks/` (including `tasks/.plans/`), `.taskspec/`, and
+  `dbt/models/staging/` only.
+- Checkpoints 04 and 05 use the real `taskspec` CLI (v3.7.0, MIT) — the same tool
+  given away at 21:50. Checkpoint 00 gates on `taskspec version`.
 - Item 10 of the transform plan cannot become a task while `Revenue` is
   `unresolved` — the refusal at checkpoint 06 is the success state.
 - Session A demonstrates the divergence and is discarded.

@@ -37,8 +37,12 @@ Explain briefly:
 - Shallow graphs keep the ready set large; a chain of three is a smell that the
   split went too far or an intermediate packet does too little.
 - The loop never asks a human what to do next — it asks the index.
+- A `blocked` unit is never ready. That is how the item-10 refusal survives into
+  dispatch: `taskspec ready` will not offer it, no matter who asks.
 
 ## Do live
+
+Ask the agent to **predict**, before anyone runs anything:
 
 ```text
 A partir de tasks/_state.yaml, produza uma tabela com no máximo 8 linhas:
@@ -49,17 +53,29 @@ alfabética. Aponte qual packet o loop pegaria primeiro e por quê. Não execute
 nada.
 ```
 
-Then verify the claim against the file, in the terminal:
+Then let the tool compute the same answer, and compare the two on screen:
 
 ```bash
-grep -n 'depends_on' tasks/_state.yaml
+taskspec ready              # the frontier: dependencies satisfied, not blocked
+taskspec ready --all        # everything, including what ready just hid
+taskspec lint               # the DAG, plus write-disjoint groups
 ```
+
+`taskspec ready` prints one line per unit it would hand to an executor, and a
+count of what it withheld — `(N ready spec(s) hidden — blocked by an unmet
+depends_on)`. `lint` adds the concurrency partition: the groups that write to
+disjoint paths and are therefore safe to dispatch together.
+
+The comparison is the beat. If the agent's table matches the tool, the graph
+decided and the agent merely read it. If it differs, the agent guessed — and the
+tool is the arbiter, exactly as `dbt-check` was on Day 2.
 
 ## Show the evidence
 
-The table, and then the one line that matters: which packet is first, justified
-only by `depends_on`. Point at a packet that is *not* ready and name what it is
-waiting for.
+The agent's table beside `taskspec ready`, and then the one line that matters:
+which packet is first, justified only by `depends_on`. Point at a packet that is
+*not* ready and name what it is waiting for. Then point at what is missing from
+both lists — the revenue unit, still blocked, still owned by Finance.
 
 Say:
 
@@ -69,9 +85,12 @@ Say:
 ## Gate
 
 - A table of at most 8 rows exists, on screen.
+- `taskspec ready` ran, and its frontier was compared against the agent's table.
 - Every "ready" verdict traces to `depends_on`, not to intuition.
 - The first packet was named, with its justification.
 - At least one not-ready packet was shown, with the dependency it waits on.
+- The blocked revenue unit appears in `taskspec ready --all` and **not** in
+  `taskspec ready`.
 - No dependency chain is deeper than two.
 
 ## Recovery
@@ -80,5 +99,9 @@ If the agent orders by business priority or by list position, reject it in one
 line — *"justifique apenas pelo grafo"* — and regenerate. If a chain of three
 appears, say so out loud: it is evidence that checkpoint 04 split too
 aggressively, and it is a better teaching moment than a clean graph.
+
+If the agent's prediction and `taskspec ready` disagree, do not smooth it over —
+that disagreement is the most valuable thing on screen tonight. Read both, then
+say which one you would bet a migration on, and why.
 
 Next: [`06-execute-one.md`](06-execute-one.md).
