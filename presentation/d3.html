@@ -2747,45 +2747,45 @@ body.anim-ready .reveal.reveal-reset > * { transition: none !important; }
           <div class="title-rule" style="background:var(--purple);box-shadow:0 0 22px rgba(167,139,250,0.7);" aria-hidden="true"></div>
           <h1 class="display" style="font-size:clamp(58px,9.6vw,138px);">The Task</h1>
           <p class="title-sub">
-            <b>TransactCo</b> again — the rails are standing, the plans are on disk.
-            Tonight the plan becomes work an agent can finish and prove finished.
-            The question is what <b>done</b> means.
+            <b>TransactCo</b> again. The controls are in place, and the plans are saved.
+            Tonight we turn one plan item into work an agent can finish and verify.
+            The question is simple: what does <b>done</b> mean?
           </p>
         </div>
 
         <div>
-          <span class="fnd-label">The four rails · tonight</span>
+          <span class="fnd-label">The four building blocks · tonight</span>
           <ol class="spine">
             <li class="sp" style="--c:var(--accent);">
               <span class="sp-dot" aria-hidden="true"></span>
               <div>
                 <div class="sp-head"><span class="sp-n">01</span><span class="sp-name">Intent</span></div>
-                <div class="sp-job">one objective, no “and” — plus the PRD around it</div>
+                <div class="sp-job">one clear objective, plus only the context it needs</div>
               </div>
             </li>
             <li class="sp" style="--c:var(--cyan);">
               <span class="sp-dot" aria-hidden="true"></span>
               <div>
                 <div class="sp-head"><span class="sp-n">02</span><span class="sp-name">Behavior</span></div>
-                <div class="sp-job">B-N in Given / When / Then — a human signs it</div>
+                <div class="sp-job">Given / When / Then statements a human can approve</div>
               </div>
             </li>
             <li class="sp" style="--c:var(--purple);">
               <span class="sp-dot" aria-hidden="true"></span>
               <div>
                 <div class="sp-head"><span class="sp-n">03</span><span class="sp-name">Evals</span></div>
-                <div class="sp-job">evals bound to behaviors — bash returns 0</div>
+                <div class="sp-job">checks tied to each behavior — bash returns 0</div>
               </div>
             </li>
             <li class="sp" style="--c:var(--gold);">
               <span class="sp-dot" aria-hidden="true"></span>
               <div>
                 <div class="sp-head"><span class="sp-n">04</span><span class="sp-name">Graph</span></div>
-                <div class="sp-job">the seal + the graph — authority, made portable</div>
+                <div class="sp-job">a sealed approval and a clear dependency graph</div>
               </div>
             </li>
           </ol>
-          <p class="spine-note">Same grammar as the last two nights — <b>why, contract, evidence, gate</b> — moved from construction to specification.</p>
+          <p class="spine-note">Same pattern as the last two nights: <b>why, contract, evidence, gate</b>. Tonight we apply it to one task.</p>
         </div>
 
       </div>
@@ -2820,7 +2820,7 @@ body.anim-ready .reveal.reveal-reset > * { transition: none !important; }
           </div>
           <div class="ct" style="--ck:var(--green);">
             <span class="ct-k">Output</span>
-            <span class="ct-v">One Task-Spec, a task graph, one executed spec by 23:00.</span>
+            <span class="ct-v">One Task-Spec, a task graph, and one executed packet by 23:00.</span>
           </div>
         </div>
       </div>
@@ -2840,10 +2840,10 @@ Talk track: open on the question — it is the whole night in two lines. Day 1 a
       <div class="cols" style="--cols:0.92fr 1.08fr;align-items:center;gap:clamp(24px,3vw,64px);">
 
         <div>
-          <span class="tag" style="--tag-c:var(--green);">The inheritance · night two</span>
+          <span class="tag" style="--tag-c:var(--green);">What Day 2 left us</span>
           <h2 class="h2" style="font-size:clamp(36px,5.2vw,74px);margin-top:clamp(10px,1.7vh,18px);">What survived <span style="color:var(--green);">the night</span></h2>
           <p class="lede" style="max-width:48ch;margin-top:clamp(14px,2.4vh,24px);font-size:clamp(14px,1.45vw,20px);">
-            Two sessions are gone — Day 1's investigation and Day 2's build. The evidence is not.
+            The Day 1 and Day 2 sessions are over, but their evidence is still here:
             <b>Five files under <span style="font-family:var(--font-mono);font-size:0.9em;">storage/specs/</span>,
             two roles in <span style="font-family:var(--font-mono);font-size:0.9em;">AGENTS.md</span>,
             one model already passing its gate.</b>
@@ -2856,13 +2856,13 @@ Talk track: open on the question — it is the whole night in two lines. Day 1 a
           </div>
           <div class="callout" style="--co-c:var(--green);margin-top:clamp(16px,2.6vh,28px);max-width:52ch;">
             <div class="co-k">the gap, named</div>
-            <div class="co-b">The plan enumerates the work and orders it. <b>Not one of its
-            items says what done means.</b> That gap is tonight's whole programme.</div>
+            <div class="co-b">The plan lists and orders the work. <b>But no item says how to
+            know when the work is done.</b> That is tonight's gap.</div>
           </div>
         </div>
 
         <div>
-          <span class="kick" style="--kc:var(--text-mute);">The manifest — two nights, one chain of custody</span>
+          <span class="kick" style="--kc:var(--text-mute);">What remains after two nights</span>
           <div class="flow">
 
             <div class="fl-node" style="--fc:var(--cyan);">
@@ -2874,7 +2874,7 @@ Talk track: open on the question — it is the whole night in two lines. Day 1 a
 
             <div class="fl-node" style="--fc:var(--gold);">
               <div class="fl-k">AGENTS.md + dbt/models/staging/ · Day 2</div>
-              <div class="fl-name">The rails, standing</div>
+              <div class="fl-name">The controls still work</div>
               <div class="fl-note">architect + developer · stg_orders passing <span style="font-family:var(--font-mono);">make dbt-check</span> · <span class="st st-evi">committed</span></div>
             </div>
             <div class="fl-arrow" style="--fa:var(--gold);--fb:var(--purple);" aria-hidden="true"></div>
@@ -2882,19 +2882,19 @@ Talk track: open on the question — it is the whole night in two lines. Day 1 a
             <div class="fl-node" style="--fc:var(--purple);">
               <div class="fl-k">storage/specs/4-plan-transform.md · Day 2</div>
               <div class="fl-name">Ten items, three BLOCKED</div>
-              <div class="fl-note">each item names its evidence · blocked rows name Finance · <span class="st" style="--sv:var(--gold);">sketch — confirmed by no one</span></div>
+              <div class="fl-note">each item names its evidence · blocked rows name Finance · <span class="st" style="--sv:var(--gold);">draft — not yet approved</span></div>
             </div>
             <div class="fl-arrow" style="--fa:var(--purple);--fb:var(--green);" aria-hidden="true"></div>
 
             <div class="fl-node is-end" style="--fc:var(--green);border-color:var(--green);box-shadow:inset 0 1px 0 rgba(255,255,255,0.07),0 0 44px -14px rgba(63,185,80,0.6);">
               <div class="fl-k">tonight</div>
               <div class="fl-name">The raw material</div>
-              <div class="fl-note">the transform plan enters as input — and leaves as a task graph with one packet executed</div>
+              <div class="fl-note">we turn the transform plan into a task graph and execute one packet</div>
             </div>
 
           </div>
           <p class="lede" style="font-size:clamp(11px,1.02vw,13.5px);margin-top:clamp(11px,1.8vh,18px);">
-            We verify all of it live in Movement 01. <b>Yesterday's outputs are tonight's inputs — turn three.</b>
+            We verify all of it live in Movement 01. <b>Yesterday's output becomes tonight's starting point.</b>
           </p>
         </div>
 
@@ -2923,8 +2923,8 @@ Talk track: same move as the last two nights — inheritance before work. Walk t
           <h2 class="display" style="font-size:clamp(34px,5vw,70px);margin-top:clamp(8px,1.4vh,14px);">The programme</h2>
         </div>
         <p class="note" style="font-size:clamp(12px,1.15vw,16px);max-width:44ch;text-align:right;line-height:1.45;">
-          Eight movements, six trips into the repository, one gap running through all of them.
-          <b style="color:var(--purple);font-style:normal;">The spec and its two halves of done own the middle of the night.</b>
+          Eight movements and six visits to the repository, all focused on one gap.
+          <b style="color:var(--purple);font-style:normal;">In the middle, we define done for humans and machines.</b>
         </p>
       </div>
 
@@ -2991,14 +2991,14 @@ Talk track: same move as the last two nights — inheritance before work. Walk t
         <div class="prow pc-gold">
           <span class="prow-num">✦</span>
           <span class="prow-time">21:50</span>
-          <span class="prow-name">Task-Spec, given away — then the crank <span class="prow-gloss">one giveaway · one pre-recorded preview · 3 min</span></span>
+          <span class="prow-name">Task-Spec giveaway + loop preview <span class="prow-gloss">free tool · pre-recorded preview · 3 min</span></span>
           <span class="prow-live">—</span>
         </div>
 
         <div class="prow pc-cyan">
           <span class="prow-num">05</span>
           <span class="prow-time">22:00</span>
-          <span class="prow-name">The ready set <span class="prow-gloss">dependencies decide order — wide and shallow beats narrow and deep</span></span>
+          <span class="prow-name">The ready set <span class="prow-gloss">dependencies decide order — more ready work, fewer long chains</span></span>
           <span class="prow-live">▶ <b>05</b></span>
         </div>
 
@@ -3022,7 +3022,7 @@ Talk track: same move as the last two nights — inheritance before work. Walk t
         <p class="note" style="font-size:clamp(12px,1.15vw,16px);max-width:70ch;line-height:1.45;">
           Every <b style="color:var(--text);font-style:normal;">▶</b> is a numbered file in
           <b style="color:var(--text);font-style:normal;font-family:var(--font-mono);font-size:0.92em;">live/d3/</b> —
-          same discipline as the last two nights: one bounded action, one named proof, one visible gate.
+          the same rule as the last two nights: one bounded action, one named proof, one visible gate.
         </p>
         <span class="eyebrow" style="color:var(--text-mute);">20:00–23:00 &nbsp;·&nbsp; 8 checkpoints &nbsp;·&nbsp; 1 giveaway</span>
       </div>
@@ -3050,15 +3050,15 @@ Talk track: same map as the last two nights, read in under a minute. Point at th
             Yesterday we authorized. <span style="color:var(--purple);">Tonight we specify.</span>
           </h2>
           <p class="lede" style="max-width:52ch;margin-top:clamp(14px,2.4vh,24px);font-size:clamp(14px,1.45vw,20px);">
-            Day 2 ended with rails standing and a plan on disk — ten items, evidence named,
-            three rows blocked. Before anything is handed to an agent, four minutes on the layer
-            between a plan and an autonomous build: <b>what done means, in a form a machine can answer.</b>
+            Day 2 ended with the controls in place and a ten-item plan on disk. The evidence is named,
+            and three rows are blocked. Before we hand anything to an agent, we define
+            <b>done in a form a machine can check.</b>
           </p>
           <div style="display:flex;gap:clamp(9px,1vw,15px);flex-wrap:wrap;margin-top:clamp(16px,2.6vh,28px);">
             <span class="tag" style="--tag-c:var(--purple);">1 spec</span>
             <span class="tag" style="--tag-c:var(--accent);">6 zones</span>
-            <span class="tag" style="--tag-c:var(--red);">1 quiet villain</span>
-            <span class="tag" style="--tag-c:var(--silver);">0 checkpoints</span>
+            <span class="tag" style="--tag-c:var(--red);">1 subtle problem</span>
+            <span class="tag" style="--tag-c:var(--silver);">0 commands</span>
           </div>
         </div>
 
@@ -3068,22 +3068,22 @@ Talk track: same map as the last two nights, read in under a minute. Point at th
 
             <div class="fl-node" style="--fc:var(--red);">
               <div class="fl-k">The reality</div>
-              <div class="fl-name">A plan briefs no one</div>
-              <div class="fl-note">item 7 is defensible line by line — and permits three different builds, all claiming done</div>
+              <div class="fl-name">A plan lists work; it does not define done</div>
+              <div class="fl-note">item 7 looks reasonable, but still allows three different builds to claim success</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--red);--fb:var(--purple);" aria-hidden="true"></div>
 
             <div class="fl-node" style="--fc:var(--purple);">
               <div class="fl-k">The name</div>
-              <div class="fl-name">The spec: two halves of done</div>
-              <div class="fl-note">behaviour a human signs, proof a machine runs — for exactly one objective</div>
+              <div class="fl-name">A complete spec has two parts</div>
+              <div class="fl-note">behavior a human approves and proof a machine runs — for one objective</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--purple);--fb:var(--accent);" aria-hidden="true"></div>
 
             <div class="fl-node" style="--fc:var(--accent);">
               <div class="fl-k">The economics</div>
-              <div class="fl-name">The window is finite. The unit shrank.</div>
-              <div class="fl-note">Spec Kit, Kiro, Tessl — no coordination, same four phases: specify · plan · tasks · implement</div>
+              <div class="fl-name">The context window is finite, so the task gets smaller</div>
+              <div class="fl-note">Spec Kit, Kiro, and Tessl use the same four phases: specify · plan · tasks · implement</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--accent);--fb:var(--green);" aria-hidden="true"></div>
 
@@ -3116,18 +3116,18 @@ Talk track: name the callback first — turn three of the same flywheel, not a n
     <div class="aurora aurora--purple" aria-hidden="true"><b></b></div>
     <div class="wrap rings-layout">
       <div class="rings-copy reveal">
-        <span class="tag" style="--tag-c:var(--purple);">The map · night three · one ring hotter</span>
+        <span class="tag" style="--tag-c:var(--purple);">The map · night three · one step deeper</span>
         <h2 class="h2">A prompt asks. <span class="grad-purple">A spec binds.</span></h2>
-        <p class="lede">One ring hotter than last night. Context and Graph came on Day 1, the harness
-        last night — and every one of them existed so the innermost ring could stop being a request.
-        <b>Tonight it carries a done that a machine can check.</b></p>
+        <p class="lede">We go one step deeper than last night. Day 1 gave us context and a graph;
+        Day 2 gave us the harness. Now the inner ring becomes more than a request:
+        <b>it defines done in a way a machine can check.</b></p>
 
         <div class="ring-decision" style="border-left-color:var(--purple);">
-          <h3 style="color:var(--purple);">Prompt → Spec — from a request to a contract.</h3>
-          <p>A prompt asks for work. A spec says what <b>done</b> means — behaviour a human signs,
-          proof a machine runs. On Day 1 this ring could only ask, because nothing yet had the
-          authority to bind an agent. <b>Three nights of that authority is what makes tonight possible.</b></p>
-          <p><b>Loop and Eval stay dim</b> until Day 4 — you cannot loop over packets that cannot verify themselves.</p>
+          <h3 style="color:var(--purple);">From a request to a clear work contract.</h3>
+          <p>A prompt asks for work. A spec defines <b>done</b>: behavior a human approves and
+          proof a machine runs. Day 1 could only ask. The context, contract, and roles we built
+          since then give the spec authority.</p>
+          <p><b>Loop and Eval wait for Day 4.</b> First, every packet must be able to check itself.</p>
         </div>
         <div class="src">Ring model as presented on Days 1–2. Earned = practiced against TransactCo with artifacts on disk. Harness earned at Day 2 (contract · roles · bounded build); Revenue remains a Finance-owned open decision.</div>
         <aside class="speaker-notes" hidden>[Sources]
@@ -3204,16 +3204,16 @@ Talk track: the room owns this figure by now, so put it up and give it ten secon
       <div class="rings-copy reveal">
         <span class="tag" style="--tag-c:var(--purple);">Spec = Behaviour + Proof</span>
         <h2 class="h2" style="font-size:clamp(24px,3vw,40px);line-height:1.14;">Half of done is signed.<br><span class="grad-purple">Half of done is run.</span></h2>
-        <p class="lede">A spec answers to two readers. A human signs what must be true — in language
-        a stakeholder could check. A machine runs the proof — one command, returning 0 or not.
-        <b>Both halves in one file, for exactly one objective.</b></p>
+        <p class="lede">A spec has two readers. A human approves what must be true in plain language.
+        A machine runs one command to check it.
+        <b>Both parts live in one file for one objective.</b></p>
 
         <div class="ring-decision" style="border-left-color:var(--purple);">
-          <h3 style="color:var(--purple);">Miss either half and it is not a spec.</h3>
-          <p>Behaviour with no eval is a <b>wish</b> — nobody can check it. An eval with no behaviour
-          tests something nobody asked for. <b>The validator rejects both</b>, which is Movement 03.</p>
-          <p><b>Zones 4 to 6 are neither half.</b> They are the boundary — what must not be touched,
-          what nobody may guess, and the way back if it goes wrong.</p>
+          <h3 style="color:var(--purple);">If either part is missing, the spec is incomplete.</h3>
+          <p>Behavior without an eval cannot be checked. An eval without a behavior tests something
+          nobody requested. <b>The validator rejects both</b> in Movement 03.</p>
+          <p><b>Zones 4 to 6 set the boundaries:</b> what not to touch, what not to guess,
+          and how to recover if something goes wrong.</p>
         </div>
         <div class="src">Zone grouping and the bidirectional rule per ~/GitHub/task-spec spec/task-spec-v3.md (Zone 2 Behavior, Zone 3 Contract / The Moat, "The traceability rule (bidirectional)"). Two-halves framing per plan/semana.md §15. The sizing rule — split a title that needs the word "and" — belongs to decomposition and is taught at Act 4, not here.</div>
         <aside class="speaker-notes" hidden>[Sources]
@@ -3305,10 +3305,10 @@ Talk track: read the headline twice, because it is the whole night in eight word
       <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:34px;">
         <div>
           <span class="tag" style="--tag-c:var(--purple);">The same figure · in code</span>
-          <h2 class="h2" style="font-size:clamp(34px,4.9vw,70px);margin-top:clamp(10px,1.7vh,18px);">A mention is read. <span class="grad-purple">A contract briefs.</span></h2>
+          <h2 class="h2" style="font-size:clamp(34px,4.9vw,70px);margin-top:clamp(10px,1.7vh,18px);">A plan names the work. <span class="grad-purple">A Task-Spec guides it.</span></h2>
         </div>
         <p class="lede" style="max-width:40ch;text-align:right;font-size:clamp(15px,1.5vw,21px);">Left: item 7 exactly as the plan states it.
-        Right: the same work as a Task-Spec. <b>Only one of them can brief an agent.</b></p>
+        Right: the same work as a Task-Spec. <b>Only one tells the agent exactly what to do and prove.</b></p>
       </div>
 
       <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(12px,1.4vw,24px);align-items:stretch;margin-top:clamp(16px,2.6vh,28px);">
@@ -3351,9 +3351,9 @@ Talk track: read the headline twice, because it is the whole night in eight word
       </div>
 
       <div class="callout" style="--co-c:var(--gold);margin-top:clamp(16px,2.6vh,28px);text-align:center;">
-        <div class="co-b" style="font-size:clamp(14.5px,1.4vw,20px);">At checkpoint 01 the left panel goes to three fresh sessions, verbatim.
-        <b>Three defensible plans come back — and nothing executes.</b> The right panel is what
-        we write by hand at Movement 02, so that can never happen again.</div>
+        <div class="co-b" style="font-size:clamp(14.5px,1.4vw,20px);">At checkpoint 01, three fresh sessions receive the left panel exactly as written.
+        <b>They return three reasonable plans, and nothing runs.</b> In Movement 02, we write the
+        right panel by hand to remove that ambiguity.</div>
       </div>
 
       <div class="src">Item 7 quoted verbatim from storage/specs/4-plan-transform.md. Six-zone structure and the hmac-sha256-v2 seal per Task-Spec v3.7.0 (~/GitHub/task-spec, spec/task-spec-v3.md); anatomy taught hands-on at movement 02 (live/d3/02-task-spec.md).</div>
@@ -3373,7 +3373,7 @@ Talk track: read the left panel once, generously — praise it, it earned its ev
 
         <div>
           <span class="tag" style="--tag-c:var(--gold);">Act 0 · last night, on the record</span>
-          <h2 class="h2" style="font-size:clamp(34px,4.8vw,66px);margin-top:clamp(10px,1.7vh,18px);">The rails held. <span style="color:var(--gold);">Something is still missing.</span></h2>
+          <h2 class="h2" style="font-size:clamp(34px,4.8vw,66px);margin-top:clamp(10px,1.7vh,18px);">The controls worked. <span style="color:var(--gold);">One thing is still missing.</span></h2>
 
           <div class="pullquote" style="--pq-c:var(--gold);margin-top:clamp(18px,2.8vh,32px);">
             <p class="pq-text" style="font-size:clamp(21px,2.4vw,36px);">I will stop at the semantic point —<br>while the decision is not made.</p>
@@ -3386,8 +3386,8 @@ Talk track: read the left panel once, generously — praise it, it earned its ev
           </div>
 
           <p class="lede" style="max-width:48ch;margin-top:clamp(16px,2.6vh,28px);">
-            Both outcomes on the record were correct — the build that landed and the build that
-            stopped itself. <b>Neither tells an agent when its work is finished.</b>
+            Both outcomes were correct: one build passed, and one request stopped at the boundary.
+            <b>But neither tells an agent how to know when its work is finished.</b>
           </p>
         </div>
 
@@ -3423,8 +3423,8 @@ Talk track: read the left panel once, generously — praise it, it earned its ev
 
           <div class="callout" style="--co-c:var(--gold);margin-top:clamp(12px,2vh,18px);">
             <div class="co-k">what changes tonight</div>
-            <div class="co-b">Not a flaw in the harness — <b>the file the harness never claimed to be.</b>
-            Tonight we write it: done, defined per unit of work.</div>
+            <div class="co-b">The harness worked as designed. <b>It was never meant to define done.</b>
+            Tonight we add the missing file: one definition of done for one unit of work.</div>
           </div>
         </div>
 
@@ -3446,9 +3446,9 @@ Talk track: this slide is the room's own memory — same move as Day 2's Igor sl
       <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:34px;">
         <div>
           <span class="tag" style="--tag-c:var(--purple);">The true WHY · in numbers</span>
-          <h2 class="h2" style="font-size:clamp(34px,4.8vw,66px);margin-top:clamp(10px,1.7vh,18px);">Same plan. <span class="grad-purple">Different unit.</span></h2>
+          <h2 class="h2" style="font-size:clamp(34px,4.8vw,66px);margin-top:clamp(10px,1.7vh,18px);">Same plan. <span class="grad-purple">Smaller unit of work.</span></h2>
         </div>
-        <p class="lede" style="max-width:35ch;text-align:right;">Not a process preference — <b>a context argument.</b> The window is finite; the unit must close inside it.</p>
+        <p class="lede" style="max-width:35ch;text-align:right;">This is about context, not process. <b>The context window is finite,</b> so the task must fit inside it.</p>
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,1.6vw,28px);margin-top:clamp(20px,3.2vh,34px);">
@@ -3472,7 +3472,7 @@ Talk track: this slide is the room's own memory — same move as Day 2's Igor sl
         </div>
       </div>
 
-      <p class="market-meaning">A plan is how humans agree. A packet is how an agent finishes. <b>The window is finite — the unit has to close inside it.</b></p>
+      <p class="market-meaning">A plan helps humans agree. A packet helps an agent finish. <b>The task must fit inside the agent's context window.</b></p>
 
       <div class="src">R$ 422k: last night's recording at ≈01:40:51 — the spread between the largest and smallest revenue candidate, per the skill teachback; reconciles with storage/specs/3-technical-brief.md (R$ 1,403,044.31 − R$ 980,870.44 = R$ 422,173.87). Phase convergence: GitHub Spec Kit (specify→plan→tasks→implement), AWS Kiro (requirements→design→tasks), Tessl (spec-as-source) — per martinfowler.com SDD tooling analysis. Context-rot argument and one-packet-per-iteration discipline per ralphloop.sh.</div>
       <aside class="speaker-notes" hidden>[Sources]
@@ -3500,8 +3500,8 @@ Talk track: mirror of Day 2's WHY slide — three numbers, walked left to right,
             The plan is <span style="color:var(--green);">not the work</span>
           </h2>
           <p class="lede" style="max-width:48ch;margin-top:clamp(14px,2.4vh,24px);font-size:clamp(14px,1.45vw,20px);">
-            Day 2's villain was loud — an agent claiming authority nobody gave it. Tonight's is quiet:
-            <b>a plan item that would pass any code review and still permits three different builds.</b>
+            Day 2's problem was obvious: an agent claimed authority it did not have. Tonight's is subtler:
+            <b>a reasonable plan item still allows three different builds.</b>
           </p>
           <div style="display:flex;gap:clamp(9px,1vw,15px);flex-wrap:wrap;margin-top:clamp(16px,2.6vh,28px);">
             <span class="tag" style="--tag-c:var(--green);">10 items</span>
@@ -3516,23 +3516,23 @@ Talk track: mirror of Day 2's WHY slide — three numbers, walked left to right,
           <div class="flow">
 
             <div class="fl-node" style="--fc:var(--red);">
-              <div class="fl-k">the villain, quiet</div>
-              <div class="fl-name">Item 7 would pass your review</div>
-              <div class="fl-note">names its evidence · cites a number · marks its block — and still permits three builds, all claiming done</div>
+              <div class="fl-k">the subtle problem</div>
+              <div class="fl-name">Item 7 looks ready for review</div>
+              <div class="fl-note">it names evidence, cites a number, and marks a block — yet still allows three builds to claim done</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--red);--fb:var(--cyan);" aria-hidden="true"></div>
 
             <div class="fl-node" style="--fc:var(--cyan);">
               <div class="fl-k">checkpoint 00 · live</div>
               <div class="fl-name">The inheritance, verified</div>
-              <div class="fl-note">make status · ls storage/specs/ · make dbt-check — each proves something real; what none proves is what done means</div>
+              <div class="fl-note">make status · ls storage/specs/ · make dbt-check — each proves something real, but none defines done</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--cyan);--fb:var(--purple);" aria-hidden="true"></div>
 
             <div class="fl-node" style="--fc:var(--purple);">
               <div class="fl-k">checkpoint 01 · live</div>
               <div class="fl-name">One item, three builds</div>
-              <div class="fl-note">the same verbatim text into three fresh sessions — three defensible plans, nothing executes</div>
+              <div class="fl-note">three fresh sessions receive the same text — three reasonable plans return, and nothing runs</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--purple);--fb:var(--green);" aria-hidden="true"></div>
 
@@ -3568,11 +3568,11 @@ Talk track: name the villain once, quietly — Day 2's was loud, tonight's would
         <div style="flex:1 1 clamp(420px,58%,1160px);min-width:0;">
           <span class="tag" style="--tag-c:var(--green);">▶ Go live · checkpoint 00</span>
           <h2 class="h2" style="font-size:clamp(32px,4.7vw,66px);margin-top:clamp(10px,1.7vh,18px);">
-            The inheritance, <span style="color:var(--green);">verified</span>
+            What we inherited, <span style="color:var(--green);">verified</span>
           </h2>
         </div>
         <p class="lede" style="flex:0 1 33ch;max-width:33ch;text-align:right;font-size:clamp(12.5px,1.2vw,17px);">
-          Three commands, run live, in order. Everything they prove is real — <b>and none of it is what the night needs: done, defined.</b>
+          We run three commands live. Each proves something real, <b>but none defines done.</b>
         </p>
       </div>
 
@@ -3591,7 +3591,7 @@ Talk track: name the villain once, quietly — Day 2's was loud, tonight's would
 
             <div class="gl-grid" style="flex:1;align-content:space-between;">
               <span class="gl-k">The question</span>
-              <span class="gl-v">Did two nights of evidence survive — and is the construction site where Day 2 left it?</span>
+              <span class="gl-v">Are the last two nights of evidence still here, and is the repository in the expected state?</span>
 
               <span class="gl-k">Session</span>
               <span class="gl-v"><b>No agent.</b> Terminal only — the first agent session opens at checkpoint 01.</span>
@@ -3611,7 +3611,7 @@ Talk track: name the villain once, quietly — Day 2's was loud, tonight's would
           </div>
 
           <p class="lede" style="font-size:clamp(11px,1.02vw,13.5px);">
-            The specs are time-relative — we are proving <b>presence and shape</b>, never a fixed number.
+            The specs are time-relative. We prove <b>that the files exist and have the expected structure</b>, not a fixed number.
           </p>
 
         </div>
@@ -3629,14 +3629,14 @@ Talk track: name the villain once, quietly — Day 2's was loud, tonight's would
 
             <div class="fl-node" style="--fc:var(--cyan);">
               <div class="fl-k">ls storage/specs/ · provable</div>
-              <div class="fl-name">The inheritance is on disk</div>
-              <div class="fl-note">five specs with real timestamps — presence and shape, never content</div>
+              <div class="fl-name">The files are on disk</div>
+              <div class="fl-note">five specs with real timestamps — this proves they exist, not that their meaning is approved</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--cyan);--fb:var(--purple);" aria-hidden="true"></div>
 
             <div class="fl-node" style="--fc:var(--purple);">
               <div class="fl-k">make dbt-check · provable</div>
-              <div class="fl-name">The rails still parse</div>
+              <div class="fl-name">The Day 2 model still parses</div>
               <div class="fl-note">the Day 2 staging model compiles — syntax, not semantics</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--purple);--fb:var(--red);" aria-hidden="true"></div>
@@ -3690,7 +3690,7 @@ Talk track: run the three commands live, in the checkpoint's order, and let the 
           <p class="lede" style="max-width:48ch;margin-top:clamp(14px,2.4vh,24px);font-size:clamp(14px,1.45vw,20px);">
             <span style="font-family:var(--font-mono);font-size:0.9em;">storage/specs/4-plan-transform.md</span> is Day 2's exit artifact —
             the plan we inherit. Every item names its evidence; every block names its owner, Finance.
-            <b>Item 7 is the one tonight attacks.</b>
+            <b>Tonight we test whether item 7 is precise enough.</b>
           </p>
           <div class="code" data-lang="item 7 · verbatim" style="border-color:rgba(63,185,80,0.45);font-size:clamp(10.5px,1vw,13px);line-height:1.9;padding:clamp(24px,3.4vh,36px) clamp(16px,1.6vw,26px) clamp(16px,2.4vh,24px);"><span class="c"># storage/specs/4-plan-transform.md · row 7</span>
 
@@ -3704,7 +3704,7 @@ Talk track: run the three commands live, in the checkpoint's order, and let the 
           <div style="display:flex;gap:clamp(9px,1vw,15px);flex-wrap:wrap;margin-top:clamp(16px,2.6vh,28px);">
             <span class="tag" style="--tag-c:var(--green);">10 items</span>
             <span class="tag" style="--tag-c:var(--red);">3 blocked · Finance named</span>
-            <span class="tag" style="--tag-c:var(--silver);">0 done criteria</span>
+            <span class="tag" style="--tag-c:var(--silver);">0 completion checks</span>
           </div>
         </div>
 
@@ -3799,7 +3799,7 @@ Talk track: frame the artifact first — this is Day 2's exit, the best plan the
           </h2>
         </div>
         <p class="lede" style="flex:0 1 33ch;max-width:33ch;text-align:right;font-size:clamp(12.5px,1.2vw,17px);">
-          The same verbatim text goes into three fresh sessions. Three plans come back. <b>Nothing executes — nothing is written.</b>
+          Three fresh sessions receive the same text. Three plans come back. <b>Nothing runs, and nothing is written.</b>
         </p>
       </div>
 
@@ -3818,7 +3818,7 @@ Talk track: frame the artifact first — this is Day 2's exit, the best plan the
 
             <div class="gl-grid" style="flex:1;align-content:space-between;">
               <span class="gl-k">The question</span>
-              <span class="gl-v">Given one plan item and nothing else — do three fresh sessions build the same thing?</span>
+              <span class="gl-v">If three fresh sessions receive only this plan item, do they propose the same build?</span>
 
               <span class="gl-k">Session</span>
               <span class="gl-v"><b>NEW — Session A, disposable.</b> Three fresh contexts; discarded the moment the checkpoint ends.</span>
@@ -3830,10 +3830,10 @@ Talk track: frame the artifact first — this is Day 2's exit, the best plan the
               <span class="gl-v">plans only — <b>no file written, no dbt run, no model.</b> Execution is the line not to cross.</span>
 
               <span class="gl-k">Proof that counts</span>
-              <span class="gl-v">three plans side by side — and nobody in the room can call any of them wrong</span>
+              <span class="gl-v">three plans side by side — each one is reasonable on its own</span>
 
               <span class="gl-k">Come back when</span>
-              <span class="gl-v">the room can circle the divergences itself: statuses · upstream model · label</span>
+              <span class="gl-v">the room can point to the three differences: statuses · upstream model · label</span>
             </div>
           </div>
 
@@ -3908,8 +3908,8 @@ Talk track: paste the prompt live, three times, exactly as the checkpoint writes
           </h2>
         </div>
         <p class="lede" style="max-width:40ch;text-align:right;font-size:clamp(14px,1.4vw,19px);">
-          The three plans disagree on three axes. Each reading is defensible on its own —
-          <b>the plan never says which is right.</b>
+          The three plans make different choices in three places. Each choice is reasonable on its own,
+          <b>because the plan never says which one is right.</b>
         </p>
       </div>
 
@@ -4059,9 +4059,9 @@ Talk track: land the line slowly — read it once, whole, then once more as two 
             Anatomy of <span style="color:var(--accent);">a Task-Spec</span>
           </h2>
           <p class="lede" style="max-width:52ch;margin-top:clamp(14px,2.4vh,24px);font-size:clamp(14px,1.45vw,20px);">
-            Movement 01 watched one plan item become three defensible builds. This act is the file
-            that closes that gap — for exactly one atomic change it binds <b>what may be touched,
-            what behavior counts as success, what proves it, and who authorized it.</b>
+            Movement 01 showed that one plan item can lead to three reasonable builds. A Task-Spec
+            removes that ambiguity for one small change. It states <b>what may change, what success
+            looks like, how to prove it, and who approved it.</b>
           </p>
           <div style="display:flex;gap:clamp(9px,1vw,15px);flex-wrap:wrap;margin-top:clamp(16px,2.6vh,28px);">
             <span class="tag" style="--tag-c:var(--accent);">6 zones</span>
@@ -4072,20 +4072,20 @@ Talk track: land the line slowly — read it once, whole, then once more as two 
         </div>
 
         <div>
-          <span class="kick" style="--kc:var(--text-mute);">Four commitments before any typing</span>
+          <span class="kick" style="--kc:var(--text-mute);">Four things to make clear before we type</span>
           <div class="flow">
 
             <div class="fl-node" style="--fc:var(--red);">
               <div class="fl-k">The gap</div>
               <div class="fl-name">One item, three builds</div>
-              <div class="fl-note">a plan line briefs no one — three engineers ship three different marts, and all three claim done</div>
+              <div class="fl-note">a plan line does not guide the builder — three engineers can ship three different results and all claim done</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--red);--fb:var(--accent);" aria-hidden="true"></div>
 
             <div class="fl-node" style="--fc:var(--accent);">
               <div class="fl-k">The structure</div>
-              <div class="fl-name">Six zones, not a longer prompt</div>
-              <div class="fl-note">each zone has exactly one reader — a human signs half of the file, a machine runs half</div>
+              <div class="fl-name">Six clear zones, not a longer prompt</div>
+              <div class="fl-note">each zone has a clear reader — a human approves behavior, and a machine runs the proof</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--accent);--fb:var(--gold);" aria-hidden="true"></div>
 
@@ -4123,13 +4123,13 @@ Talk track: the gap is fresh — fifteen minutes ago three sessions took the sam
            style="justify-content:center;align-items:center;text-align:center;background-image:radial-gradient(ellipse at 50% 50%,rgba(74,158,255,0.10) 0%,transparent 70%);">
     <div class="aurora aurora--blue" aria-hidden="true"><b></b></div>
     <div class="wrap reveal" style="max-width:1500px;">
-      <div class="a2-marker">act 2 · where everything reduces to</div>
+      <div class="a2-marker">act 2 · the smallest unit of work</div>
       <h1 class="a2-giant" style="margin-top:clamp(6px,1vh,14px);">1.</h1>
       <div class="a2-atomh" style="margin-top:clamp(10px,1.8vh,20px);">The Atom</div>
       <p class="lede" style="max-width:56ch;margin:clamp(16px,2.4vh,28px) auto 0;font-size:clamp(17px,1.9vw,25px);line-height:1.5;">
-        Before the harness, before the loop, before the factory — there is <b>one unit of work.</b>
-        Every autonomous system that ships is only as good as the atom it runs.</p>
-      <div class="a2-rule" style="margin-top:clamp(24px,3.6vh,44px);">get this wrong — and no model, no harness, no loop can save it</div>
+        Before the harness, the loop, or the factory, there is <b>one unit of work.</b>
+        Here, the atom means the smallest task an agent can finish and verify.</p>
+      <div class="a2-rule" style="margin-top:clamp(24px,3.6vh,44px);">if this unit is unclear, every layer built on top of it will struggle</div>
       <div class="src" style="border-top:0;margin-top:clamp(20px,3vh,34px);">Framing from the operator's harness-engineering deck, Act 0. Tonight the atom has a name and a repository: Task-Spec v3.7.0.</div>
       <aside class="speaker-notes" hidden>[Sources]
 Operator harness-engineering deck — Act 0, "The Atom" (slide 2): act-marker, giant gradient numeral, ruled warning.
@@ -4142,12 +4142,12 @@ Talk track: three seconds of silence. The numeral is the argument — everything
     <div class="aurora aurora--blue" aria-hidden="true"><b></b></div>
     <div class="wrap reveal" style="max-width:1740px;">
       <div class="a2-marker" style="text-align:left;">act 2 · why the atom, why now</div>
-      <div class="a2-label">the constraint in software just moved — upstream</div>
+      <div class="a2-label">the main constraint moved from code generation to task definition</div>
       <h2 class="h2" style="font-size:clamp(32px,4.8vw,62px);margin-top:clamp(8px,1.4vh,14px);max-width:26ch;">
         The model isn't the bottleneck anymore. <span class="grad-gold">The task is.</span></h2>
       <p class="lede" style="max-width:78ch;margin-top:clamp(8px,1.3vh,14px);font-size:clamp(13px,1.4vw,19px);">
-        Once model capability crossed a threshold, code generation became a commodity — Claude, Codex and Kimi all do it.
-        The hard part stopped being <i>writing the code</i> and became <b>defining the unit of work</b> you hand the machine.</p>
+        Claude, Codex, and Kimi can all generate code. The harder problem is now
+        <b>defining a clear unit of work</b> for the machine.</p>
 
       <div class="a2-arc" style="margin-top:clamp(6px,1vh,12px);">
         <div class="a2-arcline" aria-hidden="true"></div>
@@ -4161,14 +4161,14 @@ Talk track: three seconds of silence. The numeral is the argument — everything
           <div class="a2-arcstop" style="--acc:var(--accent);--acg:rgba(74,158,255,.4);">
             <div class="a2-arcdot">⇄</div>
             <div class="a2-arcera">2025 → 2026</div>
-            <div class="a2-archead">Generation got commoditized</div>
-            <div class="a2-arcbody">Agents draft, debug and iterate across whole repos. The model is <b>no longer scarce</b> — three engines do it interchangeably.</div>
+            <div class="a2-archead">Many engines can generate code</div>
+            <div class="a2-arcbody">Agents draft, debug, and work across repositories. <b>Several engines can now do the job.</b></div>
           </div>
           <div class="a2-arcstop" style="--acc:var(--gold);--acg:rgba(212,175,55,.4);">
             <div class="a2-arcdot">◆</div>
             <div class="a2-arcera">the limit today</div>
-            <div class="a2-archead">The task is the constraint</div>
-            <div class="a2-arcbody">Quality is now a function of <b>specification completeness</b>, not model intelligence. Underspecify → plausible-but-wrong output.</div>
+            <div class="a2-archead">The task definition is the constraint</div>
+            <div class="a2-arcbody">Quality now depends heavily on <b>how clearly the task is specified</b>. Missing details produce plausible but wrong work.</div>
           </div>
         </div>
       </div>
@@ -4192,25 +4192,25 @@ Talk track: walk the arc left to right, ten seconds a stop — the room lived th
   <section class="slide" data-act="ACT 2" data-act-name="Where the field converged" data-accent="accent">
     <div class="aurora aurora--blue" aria-hidden="true"><b></b></div>
     <div class="wrap reveal" style="max-width:1760px;">
-      <div class="a2-eb" style="--ebc:var(--gold);"><b>act 2</b> · not my opinion</div>
+      <div class="a2-eb" style="--ebc:var(--gold);"><b>act 2</b> · what the field is converging on</div>
       <h2 class="h2" style="font-size:clamp(32px,4.4vw,60px);margin-top:clamp(10px,1.7vh,18px);">
-        The unit of work is the spec — <span class="grad-gold">not the file.</span></h2>
+        The unit of work is the spec — <span class="grad-gold">not one code file.</span></h2>
 
       <div class="a2-num" style="margin-top:clamp(18px,2.8vh,30px);">
         <div class="a2-nc" style="--nc:var(--accent);">
-          <span class="a2-nr">I · the new unit</span>
+          <span class="a2-nr">I · the stable record</span>
           <div class="a2-nt">Spec, not file</div>
           <div class="a2-nb">“The specification, not the implementation, is <b>the stable artifact of record</b>.”</div>
           <div class="a2-ns">M. Monperrus · “The Specification Is the Program”</div>
         </div>
         <div class="a2-nc" style="--nc:var(--cyan);">
-          <span class="a2-nr">II · the field moved</span>
+          <span class="a2-nr">II · the industry moved</span>
           <div class="a2-nt">90,000 stars</div>
           <div class="a2-nb">GitHub Spec Kit, May 2026. Kiro, OpenSpec, Tessl — <b>every agent ecosystem now ships a spec layer.</b></div>
           <div class="a2-ns">J. Langvad Nilsson · Jun 2026</div>
         </div>
         <div class="a2-nc" style="--nc:var(--red);">
-          <span class="a2-nr">III · the trust gap</span>
+          <span class="a2-nr">III · the confidence gap</span>
           <div class="a2-nt">87% vs 34%</div>
           <div class="a2-nb">Confident they could trace an incident to AI code — <b>versus actually able to.</b></div>
           <div class="a2-ns">GitLab · Jun 2026 · n=1,528</div>
@@ -4230,8 +4230,8 @@ Talk track: walk the arc left to right, ten seconds a stop — the room lived th
       </div>
 
       <div class="callout" style="--co-c:var(--gold);margin-top:clamp(16px,2.6vh,28px);">
-        <div class="co-k">the gap nobody closes</div>
-        <div class="co-b">Everyone names the same unit. <b>Almost nobody makes it carry its own proof.</b> That is tonight.</div>
+        <div class="co-k">the remaining gap</div>
+        <div class="co-b">Many tools use a spec as the unit of work. <b>Far fewer make that spec carry its own proof.</b> That is tonight's focus.</div>
       </div>
 
       <div class="src">Monperrus, "Bootstrapping Coding Agents: The Specification Is the Program". Spec Kit 90k stars per J. Langvad Nilsson, Jun 2026. GitLab AI Accountability Report 2026 (n=1,528): 87% confident vs 34% able. METR, "Measuring AI Ability to Complete Long Tasks" — ~90% success at 10–15 min scope. SlopCodeBench arXiv 2603.24755 — erosion in 80% of trajectories, 48 repos. OneDayAgent arXiv 2608.05013 — decomposition 0.771→0.804; verification 0.804.</div>
@@ -4247,7 +4247,7 @@ Talk track: top row is the field, bottom row is the physics. Sixty seconds: use 
     <div class="aurora aurora--blue" aria-hidden="true"><b></b></div>
     <div class="wrap reveal" style="max-width:1720px;">
       <div class="a2-marker">act 2 · the experiment · run before tonight</div>
-      <div class="a2-eb" style="--ebc:var(--accent);margin-top:clamp(8px,1.3vh,14px);"><b>nine models</b> · one pinned repository · nobody saw anybody else's answer</div>
+      <div class="a2-eb" style="--ebc:var(--accent);margin-top:clamp(8px,1.3vh,14px);"><b>nine models</b> · the same repository · independent answers</div>
       <h2 class="h2" style="font-size:clamp(32px,4.6vw,62px);margin-top:clamp(10px,1.7vh,18px);">
         Nine models. One question. <span class="grad">Eight agreed.</span></h2>
 
@@ -4255,22 +4255,22 @@ Talk track: top row is the field, bottom row is the physics. Sixty seconds: use 
         <div class="a2-rmcard" style="--rmc2:var(--accent);--rmg2:linear-gradient(135deg,var(--accent),#cfd8dc,#ffffff);">
           <div class="a2-rmnum">I</div>
           <div class="a2-rmeyebrow">The Verdict</div>
-          <div class="a2-rmh3">One thesis, eight voices</div>
+          <div class="a2-rmh3">Eight usable answers reached one conclusion</div>
           <div class="a2-rmquote">A portable contract for one bounded unit of work — not a model, not a sandbox, not a scheduler, not a tracker.</div>
           <div class="a2-rmfoot"><span class="a2-rmpill">consensus · 8 of 8 · conf 62–85</span></div>
         </div>
         <div class="a2-rmcard" style="--rmc2:var(--green);--rmg2:linear-gradient(135deg,var(--green),#ffffff,var(--accent));">
           <div class="a2-rmnum">II</div>
           <div class="a2-rmeyebrow">The Mechanism</div>
-          <div class="a2-rmh3">Done is an exit code</div>
-          <div class="a2-rmquote">The eval decides “done” — not the agent's prose report. Behavior binds to proof through B-N ⇄ verifies.</div>
+          <div class="a2-rmh3">The exit code decides done</div>
+          <div class="a2-rmquote">The eval decides “done,” not the agent's written report. Each behavior points to its proof through B-N ⇄ verifies.</div>
           <div class="a2-rmfoot"><span class="a2-rmpill">Gemini Pro · 85 · Grok 4.5 · 78</span></div>
         </div>
         <div class="a2-rmcard" style="--rmc2:var(--red);--rmg2:linear-gradient(135deg,var(--red),#ffffff,var(--gold));">
           <div class="a2-rmnum">III</div>
           <div class="a2-rmeyebrow">The Refusal</div>
-          <div class="a2-rmh3">Failed closed</div>
-          <div class="a2-rmquote">“No source, no analysis.” One model could not reach the repository — and stopped, rather than answer from memory.</div>
+          <div class="a2-rmh3">It stopped instead of guessing</div>
+          <div class="a2-rmquote">“No source, no analysis.” One model could not reach the repository, so it stopped rather than answer from memory.</div>
           <div class="a2-rmfoot"><span class="a2-rmpill" style="background:var(--red);">DeepSeek Flash · SOURCE_ACCESS=FAILED</span></div>
         </div>
       </div>
@@ -4312,7 +4312,7 @@ Talk track: three cards, left to right — what they agreed, how it works, and t
 
       <div class="a2-oba">
         <div class="a2-ocol a2-oraw">
-          <div class="a2-octag" style="color:var(--red);">▲ the ticket · reads fine — leaves 4 decisions to a guess</div>
+          <div class="a2-octag" style="color:var(--red);">▲ the ticket · sounds clear, but leaves 4 decisions undefined</div>
 <pre><span class="c"># TRANS-418 · </span><span class="n">sprint 34</span><span class="c"> · </span><span class="s">3 points</span><span class="c"> · </span><span class="k">@you</span>
 <span class="k">Title:</span>  <span class="w">Daily gross ordered</span>
 <span class="k">Body:</span>   Build the <span class="n">daily gross-ordered</span>
@@ -4370,7 +4370,7 @@ Talk track: read the ticket and ask if the room would accept it in planning — 
       <div class="a2-marker" style="text-align:left;">act 2 · the anatomy · who authors what</div>
       <div class="a2-label">two zones are yours · four are structure · one seal around the whole body</div>
       <h2 class="h2" style="font-size:clamp(28px,4vw,52px);margin-top:clamp(6px,1.2vh,12px);max-width:32ch;">
-        Two zones carry your judgment. <span class="grad">The other four are structure.</span></h2>
+        You decide two zones. <span class="grad">The file structures the other four.</span></h2>
 
       <svg viewBox="0 0 1600 452" role="img" style="width:100%;height:auto;max-height:50vh;display:block;margin-top:clamp(10px,1.8vh,18px);overflow:visible;"
            aria-label="A Task-Spec drawn as two halves inside one gold sealed envelope. On the left, the two zones a human writes: Intent and Behavior. In the centre, a large double-headed arrow labelled B-N binds to verifies, marked neither may dangle. On the right, the four zones the file carries: Contract as the wide moat plate on top, then Guardrails, Operations and Reversal side by side beneath it.">
@@ -4456,8 +4456,8 @@ Talk track: read the ticket and ask if the room would accept it in planning — 
 
       <div class="callout" style="--co-c:var(--green);margin-top:clamp(10px,1.6vh,18px);">
         <div class="co-k">the line between a ticket and an atom</div>
-        <div class="co-b">Every task format is readable. <b>Only zone 3 is executable</b> — so a failed gate sends the work back,
-        and never has to ask a human.</div>
+        <div class="co-b">All six zones are readable. <b>Only zone 3 runs as a check.</b>
+        If that check fails, the work goes back without asking a human to judge it.</div>
       </div>
 
       <div class="src">Six zones per ~/GitHub/task-spec spec/task-spec-v3.md (File anatomy; Zone 1 lean ≈100 lines; the bidirectional B-N ⇄ verifies rule enforced by <code>taskspec validate</code>; Zone 6 required on the full profile only). Authorship split after the operator's harness-engineering deck, "who authors what".</div>
@@ -4477,34 +4477,34 @@ Talk track: point left, then right — two zones are yours, four are structure. 
           <span class="tag" style="--tag-c:var(--gold);">The bridge · Day 2 → Day 3</span>
           <h2 class="h2" style="font-size:clamp(32px,4.6vw,64px);margin-top:clamp(10px,1.7vh,18px);">Authority, <span class="grad-gold">sealed to the body.</span></h2>
         </div>
-        <p class="lede" style="max-width:38ch;text-align:right;">Last night ended with a human confirming a contract
-        <b>out loud</b>. The seal makes that yes tamper-evident — change one character after approval and it breaks.</p>
+        <p class="lede" style="max-width:38ch;text-align:right;">Last night, a human approved the contract
+        <b>out loud</b>. The seal ties that approval to the exact file. Change the file, and the seal breaks.</p>
       </div>
 
       <div class="cols" style="--cols:0.94fr 1.06fr;align-items:stretch;gap:clamp(20px,2.4vw,44px);margin-top:clamp(13px,2.1vh,22px);">
 
         <div>
-          <span class="kick" style="--kc:var(--text-mute);">the envelope · three rules</span>
+          <span class="kick" style="--kc:var(--text-mute);">the seal · three rules</span>
           <div class="flow">
 
             <div class="fl-node" style="--fc:var(--gold);">
               <div class="fl-k">rule 1 · one writer</div>
-              <div class="fl-name">Only the gate stamps</div>
-              <div class="fl-note"><code>taskspec gate --stamp</code> validates the structure and the eval bash, then writes <code>signed_off</code>, <code>signed_off_by</code>, <code>signed_off_at</code>, <code>signed_off_sig</code> — a hand-edited YAML stamp is rejected</div>
+              <div class="fl-name">Only the gate can add the stamp</div>
+              <div class="fl-note"><code>taskspec gate --stamp</code> checks the structure and eval bash, then writes the <code>signed_off*</code> fields. A hand-edited stamp is rejected.</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--gold);--fb:var(--accent);" aria-hidden="true"></div>
 
             <div class="fl-node" style="--fc:var(--accent);">
               <div class="fl-k">rule 2 · exact coverage</div>
-              <div class="fl-name">Body + authorization, nothing else</div>
-              <div class="fl-note">the HMAC covers the body plus paths, dependencies, effort, backend, agent, budgets — <code>status</code> and <code>accepted*</code> stay outside, so progress never reads as tampering</div>
+              <div class="fl-name">The seal covers the work and its authority</div>
+              <div class="fl-note">the HMAC covers the body, paths, dependencies, effort, backend, agent, and budgets. Progress fields stay outside the seal.</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--accent);--fb:var(--green);" aria-hidden="true"></div>
 
             <div class="fl-node" style="--fc:var(--green);">
               <div class="fl-k">rule 3 · a second envelope</div>
-              <div class="fl-name">Acceptance is written separately</div>
-              <div class="fl-note"><code>accepted: true</code> comes from acceptance alone — never from the executor that did the work</div>
+              <div class="fl-name">Acceptance is a separate decision</div>
+              <div class="fl-note">only the acceptance step writes <code>accepted: true</code> — never the executor that did the work</div>
             </div>
 
           </div>
@@ -4558,8 +4558,8 @@ Talk track: start with the memory — yesterday a human said yes out loud, and t
       <div class="a2-marker" style="text-align:left;">act 2 · the closed loop</div>
       <div class="a2-label">author → validate → pre-gate → dispatch → execute → accept</div>
       <h2 class="h2" style="font-size:clamp(28px,4vw,52px);margin-top:clamp(6px,1.2vh,12px);max-width:36ch;">
-        Six steps. Each one <span class="grad">emits what the next consumes.</span>
-        The last one <span class="grad-gold">closes the loop.</span></h2>
+        Six steps. Each one <span class="grad">produces the input for the next.</span>
+        The last step <span class="grad-gold">checks the result again.</span></h2>
 
       <svg viewBox="0 0 1600 490" role="img" style="width:100%;height:auto;max-height:53vh;display:block;margin-top:clamp(10px,1.8vh,20px);overflow:visible;"
            aria-label="The Task-Spec closed loop as six glowing spheres evenly spaced left to right: Author, Validate, Pre-gate which stamps signed_off, Dispatch, Execute, and a larger gold Accept sphere ringed by rerun rings. Between every pair sits a centred chip naming the artifact handed forward, and a soft dotted gold-to-silver arc returns from Accept to Author, closing the loop on the next ready leaf.">
@@ -4662,8 +4662,8 @@ Talk track: start with the memory — yesterday a human said yes out loud, and t
       </svg>
 
       <div class="a2-goldco" style="margin-top:clamp(10px,1.6vh,18px);">
-        <div class="a2-cob">Every agent framework ships the first five — <i>even run the tests.</i> Almost none ship the sixth.
-        <b>Accept re-runs the evals with the agent gone</b> — turning “the model says it's done” into a rerun that proves it.</div>
+        <div class="a2-cob">Many agent frameworks cover the first five steps, including tests. Fewer include the sixth.
+        <b>Accept re-runs the evals after the agent has finished</b>, so completion is proved by a fresh check.</div>
       </div>
 
       <div class="src">Steps and stamps per ~/GitHub/task-spec v3.7.0 (f027899): plan/batch → validate/dod → gate --stamp (writes signed_off*) → handoff --backend (credential-free, digest-bound) → any conformant executor → accept --stamp (ACCEPTED=1; evals rerun, scope audited, seal re-verified). Ball-sequence composition after presentation/d2.html, "Seamwise".</div>
@@ -4681,12 +4681,12 @@ Talk track: read the arrows, not the balls — each label is the artifact one st
       <div class="a2-marker" style="text-align:left;">act 2 · v3.7.0 · MIT · github.com/luanmorenommaciel/task-spec</div>
       <div class="a2-label">bounded workspace · execution contract · executable proof · authorization envelope</div>
       <h2 class="h2" style="font-size:clamp(28px,4vw,52px);margin-top:clamp(6px,1.2vh,12px);max-width:32ch;">
-        Four layers. <span class="grad">Every one ends in a command.</span></h2>
+        Four layers. <span class="grad">Each one has a command that checks it.</span></h2>
 
       <div class="a2-lay">
         <div class="a2-laycard" style="--lyc:var(--red);">
           <div class="a2-layhead"><span class="a2-layn">01</span><span class="a2-layt">Bounded workspace</span></div>
-          <div class="a2-layq">Where the executor may write — and what acceptance must reject.</div>
+          <div class="a2-layq">Where the executor may write, and what must be rejected.</div>
           <div class="a2-layrow"><span class="a2-layf">touches_paths</span><span class="a2-layp">PRE-gate</span></div>
           <div class="a2-layrow"><span class="a2-layf">creates_paths</span><span class="a2-layp">blast-radius</span></div>
           <div class="a2-layrow"><span class="a2-layf">Do-Not-Touch</span><span class="a2-layp">scope audit</span></div>
@@ -4694,7 +4694,7 @@ Talk track: read the arrows, not the balls — each label is the artifact one st
 
         <div class="a2-laycard" style="--lyc:var(--accent);">
           <div class="a2-layhead"><span class="a2-layn">02</span><span class="a2-layt">Execution contract</span></div>
-          <div class="a2-layq">What the unit means — and how much autonomy it receives.</div>
+          <div class="a2-layq">What the task means and how much freedom the agent has.</div>
           <div class="a2-layrow"><span class="a2-layf">goal · context</span><span class="a2-layp">validate</span></div>
           <div class="a2-layrow"><span class="a2-layf">effort · XS→XXL</span><span class="a2-layp">lint · ready</span></div>
           <div class="a2-layrow"><span class="a2-layf">budget_iterations</span><span class="a2-layp">agent contract</span></div>
@@ -4710,7 +4710,7 @@ Talk track: read the arrows, not the balls — each label is the artifact one st
 
         <div class="a2-laycard" style="--lyc:var(--gold);">
           <div class="a2-layhead"><span class="a2-layn">04</span><span class="a2-layt">Authorization envelope</span></div>
-          <div class="a2-layq">Whether body and authority still match human sign-off.</div>
+          <div class="a2-layq">Whether the file still matches what the human approved.</div>
           <div class="a2-layrow"><span class="a2-layf">signed_off*</span><span class="a2-layp">TIER=1</span></div>
           <div class="a2-layrow"><span class="a2-layf">hmac-sha256-v2</span><span class="a2-layp">seal verify</span></div>
           <div class="a2-layrow"><span class="a2-layf">accepted*</span><span class="a2-layp">ACCEPTED=1</span></div>
@@ -4727,9 +4727,9 @@ Talk track: read the arrows, not the balls — each label is the artifact one st
       </div>
 
       <div class="callout" style="--co-c:var(--red);margin-top:clamp(12px,2vh,20px);">
-        <div class="co-k">still missing · say it first</div>
-        <div class="co-b"><b>Real multi-engine CI is still not run</b> — the nine-family matrix exists, every family disabled.
-        <code>eval-audit</code> now covers baseline and mutation discrimination. <b>Shipped is not proved.</b></div>
+        <div class="co-k">what is still unproven</div>
+        <div class="co-b"><b>Real multi-engine CI has not run yet.</b> The nine-family matrix exists, but every family is disabled.
+        <code>eval-audit</code> checks baselines and mutations. <b>A shipped feature is not the same as real-world proof.</b></div>
       </div>
 
       <div class="src">Layer framing and capabilities per ~/GitHub/task-spec README.md ("Inside one atomic task" and the Feature matrix) at v3.7.0 (f027899). Proof column condensed from the matrix's deterministic-proof entries. Open hole per release/evidence.json (<code>real_engine_matrix: not_run</code>). Judgment limits per plan/semana.md §15.6.</div>
@@ -4754,7 +4754,7 @@ Talk track: four cards, one sentence each — where it may write, what it means,
           </h2>
         </div>
         <p class="lede" style="flex:0 1 33ch;max-width:33ch;text-align:right;font-size:clamp(12.5px,1.2vw,17px);">
-          Terminal and editor visible. <b>Nothing prepared. No generator. No paste.</b> 15–20 minutes, unhurried.
+          The terminal and editor stay visible. <b>We type it live: no generator and no paste.</b> Allow 15–20 minutes.
         </p>
       </div>
 
@@ -4780,59 +4780,59 @@ Talk track: four cards, one sentence each — where it may write, what it means,
               <span class="gl-v"><code>mkdir -p tasks</code>, then type <code>tasks/T-20260812-daily-gross-ordered.md</code> —
               frontmatter and Zones 1, 4, 5 now. <b>Zones 2 and 3 are deferred to checkpoint 03, on purpose.</b></span>
 
-              <span class="gl-k">The restraint</span>
+              <span class="gl-k">Scope limit</span>
               <span class="gl-v">Item 7 names a <b>mart</b>; the contract authorizes <code>dbt/models/staging/</code> only.
-              The spec <b>scopes down instead of widening the contract.</b></span>
+              The spec <b>stays inside that boundary instead of expanding the contract.</b></span>
 
               <span class="gl-k">Evidence</span>
               <span class="gl-v"><code>git status --short tasks/</code> — one new file, typed in front of the room.
               <b>Nothing else in the repository changed.</b></span>
 
               <span class="gl-k">Gate</span>
-              <span class="gl-v">Each of checkpoint 01's three divergences is now answered in writing — and
-              <b>the room felt the manual cost, keystroke by keystroke.</b></span>
+              <span class="gl-v">All three differences from checkpoint 01 are now answered in writing.
+              <b>The room sees how much deliberate work that takes.</b></span>
 
               <span class="gl-k">Come back when</span>
-              <span class="gl-v">The room can say what done means for this task — precisely enough that bash returns 0, or it does not.</span>
+              <span class="gl-v">the room can explain done for this task clearly enough for bash to return 0 or fail</span>
             </div>
           </div>
 
         </div>
 
         <div style="display:flex;flex-direction:column;min-width:0;">
-          <span class="kick" style="--kc:var(--text-mute);">What the room watches — twenty minutes, four moves</span>
+          <span class="kick" style="--kc:var(--text-mute);">What the room watches — four steps</span>
           <div class="flow" style="flex:1;">
 
             <div class="fl-node" style="--fc:var(--accent);">
-              <div class="fl-k">move 1 · the skeleton</div>
-              <div class="fl-name">Frontmatter lands first</div>
-              <div class="fl-note"><code>effort: S</code> · <code>budget_iterations: 15</code> · <code>agent: any</code> — sizing is a decision, not a label</div>
+              <div class="fl-k">step 1 · the file structure</div>
+              <div class="fl-name">Write the frontmatter first</div>
+              <div class="fl-note"><code>effort: S</code> · <code>budget_iterations: 15</code> · <code>agent: any</code> — choose the size; do not guess it</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--accent);--fb:var(--red);flex:1 1 auto;height:auto;min-height:clamp(10px,1.6vh,18px);" aria-hidden="true"></div>
 
             <div class="fl-node" style="--fc:var(--red);">
-              <div class="fl-k">move 2 · the boundary</div>
-              <div class="fl-name">Zones 4 and 5 are boundaries, not proofs</div>
+              <div class="fl-k">step 2 · the boundaries</div>
+              <div class="fl-name">Write what the task must not do</div>
               <div class="fl-note">never named "Revenue" · refunds counted, never subtracted · <code>storage/specs/</code> and <code>control/</code> untouched</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--red);--fb:var(--gold);flex:1 1 auto;height:auto;min-height:clamp(10px,1.6vh,18px);" aria-hidden="true"></div>
 
             <div class="fl-node" style="--fc:var(--gold);">
-              <div class="fl-k">move 3 · the intent</div>
-              <div class="fl-name">Goal + Context, against the evidence</div>
+              <div class="fl-k">step 3 · the goal and context</div>
+              <div class="fl-name">Tie the task to the evidence</div>
               <div class="fl-note">candidate 1 on the record — <b>R$ 1,403,044.31 / 868 orders</b> — and the three divergences closed in writing</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--gold);--fb:var(--green);flex:1 1 auto;height:auto;min-height:clamp(10px,1.6vh,18px);" aria-hidden="true"></div>
 
             <div class="fl-node is-end" style="--fc:var(--green);">
-              <div class="fl-k">deferred · on purpose</div>
+              <div class="fl-k">step 4 · stop on purpose</div>
               <div class="fl-name">Zones 2 and 3 wait for Movement 03</div>
-              <div class="fl-note">behavior and proof get their own act — the file is honest about being unfinished</div>
+              <div class="fl-note">behavior and proof come next — the file clearly shows that it is not complete yet</div>
             </div>
 
           </div>
           <p class="lede" style="font-size:clamp(11px,1.02vw,13.5px);margin-top:clamp(11px,1.8vh,18px);">
-            The hard part is not typing — <b>it is deciding what done means precisely enough to be checked.</b>
+            Typing is not the hard part. <b>The hard part is defining done clearly enough to check.</b>
           </p>
         </div>
 
@@ -4887,39 +4887,39 @@ Talk track: checkpoint discipline — new session B, the human types, nothing pr
 
           <div class="sk-grid">
             <span class="gl-k">Skill</span>
-            <span class="gl-v">Turn a plausible plan item into <b style="color:var(--purple);">one atomic Task-Spec</b> — six zones that bind intent, behavior, proof, and authority for exactly one change.</span>
+            <span class="gl-v">Turn a reasonable plan item into <b style="color:var(--purple);">one small, self-contained Task-Spec</b> with a clear goal, behavior, proof, and approval.</span>
 
             <span class="gl-k">When to use</span>
-            <span class="gl-v">Any time a plan item permits <b style="color:var(--purple);">more than one defensible build</b> — before it reaches an agent, not after.</span>
+            <span class="gl-v">Use it when a plan item allows <b style="color:var(--purple);">more than one reasonable interpretation</b> — before an agent starts work.</span>
 
             <span class="gl-k">Inputs</span>
             <span class="gl-v">The plan item with its evidence · the contract's writable paths · the ontology's unresolved terms — Revenue stays out.</span>
 
             <span class="gl-k">Method</span>
-            <span class="gl-v"><b style="color:var(--purple);">Intent → Behavior → Proof → Seal</b> — name what the change means, what a human signs, what a machine runs; then the gate binds authority to the body.</span>
+            <span class="gl-v"><b style="color:var(--purple);">Intent → Behavior → Proof → Seal</b> — state the goal, the behavior a human approves, and the check a machine runs; then seal the approval to the file.</span>
 
             <span class="gl-k">Output</span>
-            <span class="gl-v">One file at <code>status: ready</code> — and a room that knows exactly what the Movement-04 template will generate.</span>
+            <span class="gl-v">One file at <code>status: ready</code>, with a structure the Movement-04 tool can repeat.</span>
           </div>
 
           <div class="sk-grid">
             <span class="gl-k">Gate · Intent</span>
-            <span class="gl-v">One objective, no "and" — <b style="color:var(--purple);">effort S, a runnable leaf.</b> If the title needs "and" to be honest, it is two specs.</span>
+            <span class="gl-v">One objective, no "and" — <b style="color:var(--purple);">effort S, small enough to run on its own.</b> If the title needs "and," write two specs.</span>
 
             <span class="gl-k">Gate · Behavior</span>
             <span class="gl-v">Every B-N readable by the decision's owner — <b style="color:var(--purple);">a stakeholder signs behavior, never bash.</b></span>
 
             <span class="gl-k">Gate · Proof</span>
-            <span class="gl-v">Every eval terminal and idempotent, each carrying <code>verifies: [B-N]</code> — the exit check is one command returning 0.</span>
+            <span class="gl-v">Every eval is repeatable and machine-answerable. Each carries <code>verifies: [B-N]</code>, and one exit command returns 0 only when they pass.</span>
 
             <span class="gl-k">Gate · Seal</span>
             <span class="gl-v"><code>taskspec gate --stamp</code> or the spec does not run — <b style="color:var(--purple);">signed_off* is written by the gate, never by hand.</b></span>
 
             <span class="gl-k">Stays manual</span>
-            <span class="gl-v">Deciding what done means — the template types the skeleton in seconds; <b style="color:var(--purple);">the twenty minutes of judgment is still yours.</b></span>
+            <span class="gl-v">The template creates the structure in seconds. <b style="color:var(--purple);">You still decide what done means.</b></span>
 
             <span class="gl-k">Failure it prevents</span>
-            <span class="gl-v">An agent reporting success on a build three engineers would have shipped <b style="color:var(--red);">three different ways</b> — and calling it done.</span>
+            <span class="gl-v">An agent claiming success when three engineers could still build the same request <b style="color:var(--red);">three different ways</b>.</span>
           </div>
 
         </div>
@@ -4927,10 +4927,10 @@ Talk track: checkpoint discipline — new session B, the human types, nothing pr
       </div>
 
       <div class="callout" style="--co-c:var(--purple);margin-top:clamp(14px,2.3vh,24px);">
-        <div class="co-k">what became true in movement 02</div>
-        <div class="co-b">This is the direct sequel of Day 2's <b>S1 · the harness contract</b>. That card bounded what the
-        agent may <b>do</b>; this one defines what <b>done</b> means for one unit of work. Movement 03 splits the spec
-        open — behavior a human signs, proof a machine runs, <b>bound so neither may dangle.</b></div>
+        <div class="co-k">what movement 02 added</div>
+        <div class="co-b">Day 2's harness contract defined what the agent may <b>do</b>.
+        This Task-Spec defines <b>done</b> for one unit of work. Movement 03 connects behavior a human approves
+        to proof a machine runs, so <b>neither side is left unpaired.</b></div>
       </div>
 
       <div class="src">Card filled from artifacts, never from memory: the Task-Spec typed at checkpoint 02 (live/d3/02-task-spec.md) and the format itself (~/GitHub/task-spec spec/task-spec-v3.md — six zones, validation card, exit check, signed-off envelope). Day-2 sibling card: S1 · the harness contract (presentation/d2.html, Act 2).</div>
@@ -4958,13 +4958,13 @@ Talk track: fill this card from what just happened on screen, not from the slide
             Neither may <span style="color:var(--gold);">dangle</span>
           </h2>
           <p class="lede" style="max-width:50ch;margin-top:clamp(14px,2.4vh,24px);font-size:clamp(14px,1.45vw,20px);">
-            Done has two readers. Finance can't read bash — and a machine can't run a sentence.
-            Task-Spec writes both, then ties them together with a rule. <b>Nothing is left hanging.</b>
+            Done has two readers. Finance needs plain language; a machine needs a runnable check.
+            Task-Spec includes both and links them with one rule. <b>Nothing is left unpaired.</b>
           </p>
           <div style="display:flex;gap:clamp(9px,1vw,15px);flex-wrap:wrap;margin-top:clamp(16px,2.6vh,28px);">
             <span class="tag" style="--tag-c:var(--cyan);">2 behaviors</span>
             <span class="tag" style="--tag-c:var(--gold);">3 evals</span>
-            <span class="tag" style="--tag-c:var(--green);">1 rule · both ways</span>
+            <span class="tag" style="--tag-c:var(--green);">1 rule · checked both ways</span>
             <span class="tag" style="--tag-c:var(--red);">0 loose ends</span>
           </div>
         </div>
@@ -4982,8 +4982,8 @@ Talk track: fill this card from what just happened on screen, not from the slide
 
             <div class="fl-node" style="--fc:var(--red);">
               <div class="fl-k">the gap</div>
-              <div class="fl-name">Each half can't read the other</div>
-              <div class="fl-note">bash means nothing to Finance · prose means nothing to a machine</div>
+              <div class="fl-name">Each reader needs a different format</div>
+              <div class="fl-note">Finance reads the behavior · the machine runs the proof</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--red);--fb:var(--purple);" aria-hidden="true"></div>
 
@@ -4997,7 +4997,7 @@ Talk track: fill this card from what just happened on screen, not from the slide
             <div class="fl-node is-end" style="--fc:var(--gold);border-color:var(--gold);box-shadow:inset 0 1px 0 rgba(255,255,255,0.07),0 0 44px -14px rgba(212,175,55,0.6);">
               <div class="fl-k">the rule, in CI</div>
               <div class="fl-name">Neither may dangle</div>
-              <div class="fl-note"><code>taskspec validate</code> walks the graph both ways and fails anything left unpaired</div>
+              <div class="fl-note"><code>taskspec validate</code> checks both directions and fails any behavior or eval without a match</div>
             </div>
 
           </div>
@@ -5026,7 +5026,7 @@ Talk track: two readers, one file. Finance signs the sentence; the machine runs 
           <h2 class="h2" style="font-size:clamp(36px,5.2vw,72px);margin-top:clamp(10px,1.7vh,18px);">Done has <span style="color:var(--gold);">two readers</span></h2>
         </div>
         <p class="lede" style="max-width:36ch;text-align:right;">
-          A check Finance can't read. A sentence a machine can't run. <b>The spec writes both — then ties them together.</b>
+          Finance reads a clear sentence. The machine runs a clear check. <b>The spec includes both and links them.</b>
         </p>
       </div>
 
@@ -5047,7 +5047,7 @@ Talk track: two readers, one file. Finance signs the sentence; the machine runs 
 
         <div class="a3-bind">
           <div class="a3-bind-plate">
-            <div class="a3-bind-k">the bind</div>
+            <div class="a3-bind-k">the link</div>
             <div class="a3-bind-title">Neither<br><em>may dangle</em></div>
             <div class="a3-bind-s">both ways · or it fails</div>
           </div>
@@ -5070,7 +5070,7 @@ Talk track: two readers, one file. Finance signs the sentence; the machine runs 
 
       <div class="a3-why">
         <span class="tag" style="--tag-c:var(--gold);">why both</span>
-        <p>Finance can't read bash. A machine can't run a sentence. One file writes both — <b>so nothing dangles.</b></p>
+        <p>Finance approves the behavior. A machine runs the proof. One file connects both, <b>so nothing is left unpaired.</b></p>
       </div>
 
       <div class="src">Task-Spec v3.7.0 — Zone 2 (Behavior) is signed by a human; Zone 3 (Contract / The Moat) is the proof a machine runs. Scenario and evals from live/d3/03-bdd-and-evals.md (Do live).</div>
@@ -5112,7 +5112,7 @@ Talk track: no jargon. Left is a sentence a person signs — read the scenario o
 
         <!-- the gate — valid pairs pass through -->
         <rect x="430" y="40" width="360" height="210" rx="16" fill="rgba(212,175,55,0.07)" stroke="rgba(212,175,55,0.5)" stroke-width="1.4"/>
-        <text x="610" y="92" fill="#d4af37" font-family="Fira Code" font-size="11" font-weight="700" letter-spacing="2.2" text-anchor="middle">VALIDATE-TASK-SPEC.SH</text>
+        <text x="610" y="92" fill="#d4af37" font-family="Fira Code" font-size="11" font-weight="700" letter-spacing="2.2" text-anchor="middle">TASKSPEC VALIDATE</text>
         <text x="610" y="128" fill="#eaedf2" font-family="Instrument Serif" font-size="28" text-anchor="middle">Both ways</text>
         <text x="610" y="158" fill="#c9b778" font-family="Newsreader" font-style="italic" font-size="15" text-anchor="middle">walks the graph · unpaired fails</text>
         <text x="610" y="198" fill="#6e7a8c" font-family="Fira Code" font-size="12" text-anchor="middle">every B-N → ≥1 eval</text>
@@ -5132,7 +5132,7 @@ Talk track: no jargon. Left is a sentence a person signs — read the scenario o
 
         <rect x="24" y="280" width="320" height="56" rx="12" fill="rgba(248,81,73,0.05)" stroke="#f85149" stroke-opacity=".75" stroke-width="1.25" stroke-dasharray="6 5"/>
         <text x="40" y="304" fill="#f85149" font-family="Fira Code" font-size="13" font-weight="700">B-3</text>
-        <text x="78" y="306" fill="#f85149" font-family="Instrument Serif" font-size="20">a hole</text>
+        <text x="78" y="306" fill="#f85149" font-family="Instrument Serif" font-size="20">no matching eval</text>
         <text x="40" y="326" fill="#c07070" font-family="Newsreader" font-style="italic" font-size="13">an unproven behaviour</text>
 
         <!-- evals -->
@@ -5153,8 +5153,8 @@ Talk track: no jargon. Left is a sentence a person signs — read the scenario o
 
         <rect x="976" y="280" width="320" height="56" rx="12" fill="rgba(248,81,73,0.05)" stroke="#f85149" stroke-opacity=".75" stroke-width="1.25" stroke-dasharray="6 5"/>
         <text x="992" y="304" fill="#f85149" font-family="Fira Code" font-size="13" font-weight="700">eval_4</text>
-        <text x="1056" y="306" fill="#f85149" font-family="Instrument Serif" font-size="18">scope creep</text>
-        <text x="992" y="326" fill="#c07070" font-family="Newsreader" font-style="italic" font-size="13">proves nothing promised</text>
+        <text x="1056" y="306" fill="#f85149" font-family="Instrument Serif" font-size="18">no matching behavior</text>
+        <text x="992" y="326" fill="#c07070" font-family="Newsreader" font-style="italic" font-size="13">checks something not promised</text>
 
         <!-- solid binds — cards first, then arrows -->
         <g fill="none" stroke="#22d3ee" stroke-width="2.1" stroke-linecap="round">
@@ -5183,7 +5183,7 @@ Talk track: no jargon. Left is a sentence a person signs — read the scenario o
         <text x="820" y="348" fill="#c07070" font-family="Newsreader" font-style="italic" font-size="13" text-anchor="middle">no behaviour</text>
       </svg>
 
-      <p class="a3-trace-punch">A hole on the left. Scope creep on the right. <b>Neither may dangle.</b></p>
+      <p class="a3-trace-punch">A behavior without proof. A check outside the agreed scope. <b>Both are rejected.</b></p>
 
       <div class="src">Behavior and eval text from the archived ACT 3 build source at b626ef8^:plan/d3-act-prompts.md; the rule from spec/task-spec-v3.md — every B-N verified by ≥1 eval carrying verifies: [B-N]; every eval maps to ≥1 B-N. eval_3 names revenue only to forbid it.</div>
       <aside class="speaker-notes" hidden>[Sources]
@@ -5202,7 +5202,7 @@ Talk track: walk the graph left to right. B-1 is proved twice — eval_1 and eva
           <span class="tag" style="--tag-c:var(--gold);">Movement 03 · the rule</span>
           <h2 class="h2" style="font-size:clamp(34px,4.8vw,66px);margin-top:clamp(10px,1.7vh,18px);">What makes an eval <span style="color:var(--gold);">terminal</span></h2>
         </div>
-        <p class="lede" style="max-width:37ch;text-align:right;">Terminal just means <b>the machine can answer it alone</b> — yes or no, no human in the loop. If it can't, it's a draft.</p>
+        <p class="lede" style="max-width:37ch;text-align:right;">A terminal eval gives <b>a final yes-or-no answer without human judgment.</b> If it cannot, it is still a draft.</p>
       </div>
 
       <div class="a3-critgrid">
@@ -5213,13 +5213,13 @@ Talk track: walk the graph left to right. B-1 is proved twice — eval_1 and eva
           <div class="a3-crit-anti">Not terminal when it reads a <b>live dashboard</b> — the number moves while you look.</div>
         </div>
         <div class="a3-crit" style="--cc:var(--gold);">
-          <div class="a3-crit-n">02 · Idempotent</div>
+          <div class="a3-crit-n">02 · Idempotent · safe to rerun</div>
           <div class="a3-crit-name">Run it twice, same result</div>
           <div class="a3-crit-def">Running it changes <b>nothing</b> — not the answer, not the code.</div>
           <div class="a3-crit-anti">Not terminal when it <b>edits the file it's checking</b>.</div>
         </div>
         <div class="a3-crit" style="--cc:var(--purple);">
-          <div class="a3-crit-n">03 · Non-flaky</div>
+          <div class="a3-crit-n">03 · Reliable</div>
           <div class="a3-crit-name">Fails only for a real reason</div>
           <div class="a3-crit-def">It fails because the behavior is <b>missing or broken</b> — never because the network blinked.</div>
           <div class="a3-crit-anti">Not terminal when it <b>times out on a cold cache</b>.</div>
@@ -5233,7 +5233,7 @@ Talk track: walk the graph left to right. B-1 is proved twice — eval_1 and eva
       </div>
 
       <div class="a3-test">
-        <span class="a3-test-k">the only test</span>
+        <span class="a3-test-k">the deciding question</span>
         <span class="a3-test-q">Can a machine answer yes or no — without a human judging?</span>
         <span class="a3-test-a">If not, <b>rewrite it.</b></span>
       </div>
@@ -5256,11 +5256,11 @@ Talk track: four properties, read quickly. The fourth is the whole slide: machin
         <div style="flex:1 1 clamp(420px,58%,1160px);min-width:0;">
           <span class="tag" style="--tag-c:var(--green);">▶ Go live · movement 03</span>
           <h2 class="h2" style="font-size:clamp(32px,4.7vw,66px);margin-top:clamp(10px,1.7vh,18px);">
-            Run the eval <span style="color:var(--red);">before the build</span>
+            Run the exit check <span style="color:var(--red);">before the build</span>
           </h2>
         </div>
         <p class="lede" style="flex:0 1 34ch;max-width:34ch;text-align:right;font-size:clamp(12.5px,1.2vw,17px);">
-          The exit check runs before anything is built — and comes back non-zero. <b>That failing number proves the gate is real.</b>
+          We run the exit check before anything is built. It fails, as it should. <b>That proves the gate can catch missing work.</b>
         </p>
       </div>
 
@@ -5279,7 +5279,7 @@ Talk track: four properties, read quickly. The fourth is the whole slide: machin
 
             <div class="gl-grid" style="flex:1;align-content:space-between;">
               <span class="gl-k">The question</span>
-              <span class="gl-v">Can we say &ldquo;done&rdquo; before building anything? <b>No.</b> Can we still run the gate? <b>Yes.</b></span>
+              <span class="gl-v">Is the work done before we build it? <b>No.</b> Can we already test the definition of done? <b>Yes.</b></span>
 
               <span class="gl-k">Session</span>
               <span class="gl-v"><b>Continue Session B.</b> The human types the scenario; the agent may draft the bash once it's signed.</span>
@@ -5288,13 +5288,13 @@ Talk track: four properties, read quickly. The fourth is the whole slide: machin
               <span class="gl-v">Fill the four deferred sections in order — <b>Behaviors</b>, <b>Success Criteria</b>, <b>Validation Card</b>, <b>Exit Check</b>. Then run it, <b>now</b>.</span>
 
               <span class="gl-k">Proof that counts</span>
-              <span class="gl-v"><b>exit ≠ 0</b>, on screen. A gate that fails before the build is a gate you can trust.</span>
+              <span class="gl-v"><b>exit ≠ 0</b>, on screen. The check correctly detects that the model is still missing.</span>
 
               <span class="gl-k">If it breaks</span>
-              <span class="gl-v">Keep the functions in a scratch file and source it — <b>announce it as prepared</b>. The number is the point, not the plumbing.</span>
+              <span class="gl-v">Keep the functions in a scratch file and source it — <b>announce it as prepared</b>. The exit code is the point, not the shell details.</span>
 
               <span class="gl-k">Come back when</span>
-              <span class="gl-v">The room can say why a failing number is a working gate — and who, in their company, would sign the scenario.</span>
+              <span class="gl-v">the room can explain why this failure is correct and name who would approve the behavior</span>
             </div>
           </div>
 
@@ -5371,52 +5371,52 @@ Talk track: run it now — the scenario is typed, the evals derived. Do not buil
             One spec took fifteen minutes. <span style="color:var(--purple);">A backlog has hundreds.</span>
           </h2>
           <p class="lede" style="max-width:52ch;margin-top:clamp(14px,2.4vh,24px);font-size:clamp(14px,1.45vw,20px);">
-            Movement 02 wrote one spec by hand — a craft object. A plan has ten items; a real
-            backlog has hundreds. Decomposition turns the spec into <b>a system</b> — and the
-            boundary comes with it.
+            Movement 02 wrote one spec by hand. A real backlog can contain hundreds of items.
+            Decomposition turns that careful one-off into <b>a repeatable task graph</b>, while
+            keeping the same boundaries.
           </p>
           <div style="display:flex;gap:clamp(9px,1vw,15px);flex-wrap:wrap;margin-top:clamp(16px,2.6vh,28px);">
             <span class="tag" style="--tag-c:var(--purple);">items 5–8 → 4–6 packets</span>
-            <span class="tag" style="--tag-c:var(--accent);">1 lean index</span>
-            <span class="tag" style="--tag-c:var(--cyan);">wide &gt; deep</span>
-            <span class="tag" style="--tag-c:var(--red);">1 refusal stands</span>
+            <span class="tag" style="--tag-c:var(--accent);">1 small index</span>
+            <span class="tag" style="--tag-c:var(--cyan);">more parallel work · fewer long chains</span>
+            <span class="tag" style="--tag-c:var(--red);">1 refusal preserved</span>
           </div>
         </div>
 
         <div>
-          <span class="kick" style="--kc:var(--text-mute);">Four beats — cost, scale, answer, boundary</span>
+          <span class="kick" style="--kc:var(--text-mute);">Four points — cost, scale, solution, boundary</span>
           <div class="flow">
 
             <div class="fl-node" style="--fc:var(--accent);">
               <div class="fl-k">The cost · movement 02</div>
               <div class="fl-name">Fifteen minutes, one spec</div>
-              <div class="fl-note">every field decided by a human — worth it once, impossible at backlog scale</div>
+              <div class="fl-note">a human made every decision — useful once, but too slow for hundreds of tasks</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--accent);--fb:var(--purple);" aria-hidden="true"></div>
 
             <div class="fl-node" style="--fc:var(--purple);">
               <div class="fl-k">The scale</div>
-              <div class="fl-name">Ten items tonight — hundreds in the wild</div>
-              <div class="fl-note">no agent can read a hundred full specs just to choose its next unit</div>
+              <div class="fl-name">Ten items tonight; real backlogs can have hundreds</div>
+              <div class="fl-note">an agent should not read every full spec just to choose its next task</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--purple);--fb:var(--cyan);" aria-hidden="true"></div>
 
             <div class="fl-node" style="--fc:var(--cyan);">
-              <div class="fl-k">The answer · the upgrade</div>
+              <div class="fl-k">The solution</div>
               <div class="fl-name">Two layers, one graph</div>
-              <div class="fl-note">a lean index for choosing · one full spec per unit for doing</div>
+              <div class="fl-note">a small index for choosing · one full spec for doing the selected task</div>
             </div>
             <div class="fl-arrow" style="--fa:var(--cyan);--fb:var(--red);" aria-hidden="true"></div>
 
             <div class="fl-node" style="--fc:var(--red);">
               <div class="fl-k">The boundary</div>
               <div class="fl-name">Item 10, asked for on purpose</div>
-              <div class="fl-note">revenue cannot become ready — a definition-free BLOCKED hole names Finance</div>
+              <div class="fl-note">Revenue cannot become ready — a BLOCKED placeholder records Finance as the owner without inventing a definition</div>
             </div>
 
           </div>
           <p class="lede" style="font-size:clamp(11px,1.02vw,13.5px);margin-top:clamp(11px,1.8vh,18px);">
-            The graph is materialized live after human approval. <b>The refusal is part of the build.</b>
+            The tool creates the graph only after human approval. <b>Keeping the refusal is part of a correct result.</b>
           </p>
         </div>
 
@@ -5440,7 +5440,7 @@ Talk track: after the break, re-anchor on the cost: the room watched a human spe
           <span class="tag" style="--tag-c:var(--purple);">The upgrade · a two-layer index</span>
           <h2 class="h2" style="font-size:clamp(40px,5.4vw,74px);margin-top:clamp(10px,1.7vh,18px);">Two layers, <span class="grad-purple">one graph.</span></h2>
         </div>
-        <p class="lede" style="max-width:42ch;text-align:right;">An agent that scans a hundred full specs to choose its next unit has already burned the context it needs to do the work. <b>The index makes choosing cheap.</b></p>
+        <p class="lede" style="max-width:42ch;text-align:right;">If an agent reads a hundred full specs just to choose its next task, it wastes the context needed for the work. <b>The index keeps selection small and fast.</b></p>
       </div>
 
       <div class="a4-layers">
@@ -5473,7 +5473,7 @@ Talk track: after the break, re-anchor on the cost: the room watched a human spe
               <span class="a4-idx-t" style="grid-column:1/-1;">··· &nbsp;a real backlog has hundreds — each is still one line</span>
             </div>
           </div>
-          <p class="a4-thin">Thin on purpose: id, title, status, spec path, <b>depends_on</b> — nothing else. Every field beyond that would be read on the loop's dime.</p>
+          <p class="a4-thin">Small on purpose: id, title, status, spec path, and <b>depends_on</b>. The loop opens the full spec only after choosing a packet.</p>
         </div>
 
         <!-- middle · the pointer -->
@@ -5534,7 +5534,7 @@ Talk track: after the break, re-anchor on the cost: the room watched a human spe
 
       <div class="a4-sizeband">
         <span class="tag" style="--tag-c:var(--purple);">the sizing rule</span>
-        <p>Wide and shallow beats narrow and deep — <b>a shallow graph hands the loop more ready packets at any moment.</b></p>
+        <p>Prefer more parallel tasks and fewer long chains. <b>A shallow graph gives the loop more ready packets at once.</b></p>
       </div>
 
       <div class="src">Index fields (id · title · status · spec path · depends_on) per plan/semana.md §15.5; wide-and-shallow sizing per ralphloop.sh. The six zones per ~/GitHub/task-spec spec/task-spec-v3.md (Zone 1 Intent … Zone 6 Reversal); depends_on and touches_paths are frontmatter fields, not a zone — which is why the index can be derived without opening a zone. Packet ids and the dependency calls shown are the architect's — made explicit, which is the point.</div>
@@ -5561,10 +5561,10 @@ Talk track: draw the asymmetry before explaining it — left is almost nothing, 
         <div class="gl-grid">
           <div class="gl-k">session</div>
           <div class="gl-v"><b>Session B — architect</b>: judgment, no Bash. The facilitator drives the CLI.</div>
-          <div class="gl-k">the cut</div>
+          <div class="gl-k">split the work</div>
           <div class="gl-v">Items <b>5–8</b> → TaskPlan preview → human approval → <b>4–6 packets</b>.</div>
-          <div class="gl-k">then</div>
-          <div class="gl-v">Item <b>10</b> gets no definition: a <b>BLOCKED hole</b>, never ready, owner Finance.</div>
+          <div class="gl-k">preserve the boundary</div>
+          <div class="gl-v">Item <b>10</b> gets no invented definition. It stays <b>BLOCKED</b>, never ready, with Finance as owner.</div>
         </div>
       </div>
 
@@ -5717,8 +5717,8 @@ Talk track: run the flow exactly as the checkpoint does — the architect propos
           </h2>
         </div>
         <p class="lede" style="max-width:40ch;text-align:right;">
-          Movement 02 cost fifteen minutes by hand. This is the tool that carries the
-          shape — <b>so the next spec starts at the deciding, not at the typing.</b>
+          Movement 02 took fifteen minutes by hand. This tool creates the same structure,
+          <b>so the next spec starts with decisions instead of blank-page typing.</b>
         </p>
       </div>
 
@@ -5745,14 +5745,14 @@ Talk track: run the flow exactly as the checkpoint does — the architect propos
 
         <div>
           <div class="panel" style="--pk:var(--purple);">
-            <div class="panel-k">What it does</div>
+            <div class="panel-k">What the tool does</div>
             <div class="gl-grid" style="grid-template-columns:clamp(92px,8.2vw,124px) minmax(0,1fr);gap:clamp(6px,1vh,10px) clamp(12px,1.4vw,22px);margin-top:clamp(10px,1.6vh,15px);">
-              <div class="gl-k">the skeleton</div>
-              <div class="gl-v">Frontmatter plus six zones, in order — a new spec opens with its
-                shape already decided, so writing starts at the deciding.</div>
+              <div class="gl-k">file structure</div>
+              <div class="gl-v">It creates frontmatter plus six zones in the correct order,
+                so you can focus on the decisions.</div>
               <div class="gl-k">the gate</div>
-              <div class="gl-v"><code>validate</code> refuses a dangling behavior or a dangling eval;
-                <code>gate --stamp</code> writes the seal. <b>Both run without you.</b></div>
+              <div class="gl-v"><code>validate</code> rejects any behavior or eval without a match.
+                <code>gate --stamp</code> writes the seal. <b>Both are automated.</b></div>
               <div class="gl-k">anywhere</div>
               <div class="gl-v">Plain markdown, MIT. Swap the engine, keep the spec —
                 <b>same rule as AGENTS.md.</b></div>
@@ -5760,19 +5760,19 @@ Talk track: run the flow exactly as the checkpoint does — the architect propos
           </div>
 
           <div class="panel" style="--pk:var(--red);">
-            <div class="panel-k">What it cannot do</div>
+            <div class="panel-k">What still needs human judgment</div>
             <div style="margin-top:clamp(7px,1.1vh,10px);">
               <div class="a4-cant">
                 <span class="a4-cant-x">✕</span>
-                <span class="a4-cant-t"><b>size a packet</b> — the “and” rule is a judgment; the template can only ask the question</span>
+                <span class="a4-cant-t"><b>size a packet</b> — the template can flag “and,” but a person decides where to split</span>
               </div>
               <div class="a4-cant">
                 <span class="a4-cant-x">✕</span>
-                <span class="a4-cant-t"><b>judge an eval</b> — it cannot tell whether a check is genuinely terminal, or just green</span>
+                <span class="a4-cant-t"><b>judge an eval</b> — it cannot tell whether a green check truly proves the behavior</span>
               </div>
               <div class="a4-cant">
                 <span class="a4-cant-x">✕</span>
-                <span class="a4-cant-t"><b>write the scenario</b> — no template writes a Given / When / Then that Finance would sign</span>
+                <span class="a4-cant-t"><b>write the scenario</b> — a person must write behavior Finance would actually approve</span>
               </div>
             </div>
           </div>
@@ -5785,7 +5785,7 @@ Talk track: run the flow exactly as the checkpoint does — the architect propos
       <div class="callout" style="--co-c:var(--purple);margin-top:clamp(11px,1.8vh,20px);">
         <div class="co-k">take it home</div>
         <div class="co-b">Tonight's specs are TransactCo's; the tool is yours — <b>MIT, v3.7.0, install it tonight</b>.
-          What it cannot decide stays with you: <b>structure is free, judgment is not.</b></div>
+          The tool provides the structure. <b>You still provide the judgment.</b></div>
       </div>
 
       <div class="src">Task-Spec v3.7.0 (MIT) — clone + <code>install.sh --copy</code> from ~/GitHub/task-spec README.md §Installation (the v3.7.0 release tag is not yet published). <code>taskspec init</code> creates the workspace; <code>taskspec new my-first-task S any</code> writes the six-zone scaffold. The three cannots are stated in plan/semana.md §15.6 and repeated here verbatim — the giveaway does not oversell.</div>
@@ -5915,6 +5915,76 @@ Talk track: say PRE-RECORDED before you say anything else — the whole night's 
     </div>
   </section>
 
+
+
+  <section class="slide" data-act="✦ BOOTCAMP" data-act-name="Switching decks" data-accent="gold"
+           style="justify-content:center;">
+    <div class="aurora aurora--gold" aria-hidden="true"><b></b></div>
+
+    <div class="ts-preview" aria-hidden="true">
+      <div class="ts-ring" style="width:430px;height:430px;"></div>
+      <div class="ts-orbit" style="--sd:26s;">
+        <div class="ts-dot" style="top:-215px;left:0;--dc:var(--gold);"></div>
+        <div class="ts-dot" style="top:107px;left:-186px;--dc:var(--purple);"></div>
+        <div class="ts-dot" style="top:107px;left:186px;--dc:var(--cyan);"></div>
+      </div>
+      <div class="ts-ring" style="width:640px;height:640px;"></div>
+      <div class="ts-orbit" style="--sd:40s;">
+        <div class="ts-dot" style="top:-320px;left:0;--dc:var(--green);"></div>
+        <div class="ts-dot" style="top:0;left:320px;--dc:var(--gold);"></div>
+        <div class="ts-dot" style="top:320px;left:0;--dc:var(--accent);"></div>
+        <div class="ts-dot" style="top:0;left:-320px;--dc:var(--gold);"></div>
+      </div>
+    </div>
+
+    <div class="reveal" style="position:relative;z-index:2;width:100%;max-width:1520px;margin:0 auto;text-align:center;">
+
+      <span class="tag" style="--tag-c:var(--gold);">21:50 · five minutes · then straight back to the graph</span>
+
+      <div class="title-rule" style="background:var(--gold);box-shadow:0 0 22px rgba(212,175,55,0.7);margin:clamp(18px,2.8vh,30px) auto 0;" aria-hidden="true"></div>
+
+      <h2 class="display" style="font-size:clamp(34px,4.8vw,68px);margin-top:clamp(16px,2.6vh,30px);line-height:1.08;letter-spacing:-1px;">
+        You have been holding one sixth of it<br>
+        <span class="grad-gold">all night.</span>
+      </h2>
+
+      <p class="note" style="margin-top:clamp(16px,2.6vh,28px);font-size:clamp(14px,1.35vw,19px);line-height:1.5;max-width:66ch;margin-left:auto;margin-right:auto;">
+        Task-Spec is <b style="color:var(--text);font-style:normal;">item 04 of six</b>. It is yours to keep — MIT,
+        installed, and already working against a repository you did not write.
+        <b style="color:var(--text);font-style:normal;">The other five, and the case they were built on, are the Bootcamp.</b>
+      </p>
+
+      <div style="display:flex;gap:clamp(6px,0.7vw,10px);flex-wrap:wrap;justify-content:center;margin-top:clamp(18px,2.8vh,30px);">
+        <span class="tag" style="--tag-c:var(--silver);">01 Second Brain</span>
+        <span class="tag" style="--tag-c:var(--silver);">02 OntoLayer</span>
+        <span class="tag" style="--tag-c:var(--silver);">03 AgentSpec</span>
+        <span class="tag" style="--tag-c:var(--green);">04 Task-Spec · yours tonight</span>
+        <span class="tag" style="--tag-c:var(--silver);">05 Multi-Model Harness</span>
+        <span class="tag" style="--tag-c:var(--silver);">06 Converge</span>
+      </div>
+
+      <div style="max-width:940px;margin:clamp(20px,3.2vh,36px) auto 0;padding:clamp(14px,2.1vh,22px) clamp(18px,1.8vw,30px);
+                  border:1px solid rgba(212,175,55,0.4);border-radius:14px;
+                  background:linear-gradient(100deg,rgba(212,175,55,0.08),transparent 70%);">
+        <div style="font-family:var(--font-mono);font-size:clamp(8.5px,0.8vw,10.5px);font-weight:800;letter-spacing:2.6px;
+                    text-transform:uppercase;color:var(--gold);">Switching decks &nbsp;→&nbsp; presentation/bootcamp.html</div>
+        <p style="margin-top:clamp(8px,1.3vh,13px);font-family:var(--font-editorial);font-size:clamp(14px,1.35vw,19px);
+                  line-height:1.4;color:var(--text-dim);">
+          Five live nights against <b style="color:var(--text);font-weight:600;">NorthWind Pay</b> — a real payments migration.
+          <b style="color:var(--text);font-weight:600;">Intent enters. Evidence-gated software leaves.</b>
+        </p>
+      </div>
+
+      <div class="src" style="max-width:70ch;margin:clamp(16px,2.4vh,26px) auto 0;text-align:center;border-top:0;padding-top:0;">Placed immediately after the crank, at the widest point between the felt cost of one hand-written spec and a loop consuming five. Movements 05 and 06 follow, so the offer is a beat inside the evening and never its destination. Arsenal framing and the six-item disclosure per plan/semana.md §15; terms live in presentation/bootcamp.html, not here.</div>
+
+      <aside class="speaker-notes" hidden>[Sources]
+plan/semana.md §15 — the Bootcamp beat sits at 21:50, immediately after movement 04, never at the close.
+presentation/bootcamp.html — the deck this hands off to; slide 01 opens on "Intent enters. Evidence-gated software leaves."
+live/d3/04-decompose.md — the giveaway and the crank, the two slides before this one.
+[/Sources]
+Talk track: this slide is a door, not a pitch — do not sell on it. The room is at its warmest right here: two slides ago you gave them the tool, one slide ago they watched the loop run five specs without being asked, and they have just felt the twenty minutes it cost them to write one by hand. Read the headline, then pause. The reveal is the arsenal strip: they did not know Task-Spec was one of six, and finding that out is the whole beat. Say it plainly — you have been using one sixth of the arsenal all night, against a real repository, and it is yours to keep. Then name the deck switch out loud so nobody thinks the night is ending: five minutes, then we go straight back to the ready set. Switch to bootcamp.html here. When you come back, resume at Act 5 — and say "as I was saying" so the return is obvious. Do not price anything on this slide; the terms live in the Bootcamp deck.</aside>
+    </div>
+  </section>
 
 <!-- ════════════════════ ACT 5 · The ready set ════════════════════ -->
   <section class="slide" data-act="ACT 5" data-act-name="The ready set" data-accent="cyan"
@@ -6613,13 +6683,13 @@ Talk track: open Session C empty. Paste Action A. Wait for the exit check, then 
 
       <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:clamp(20px,2.4vw,48px);">
         <div>
-          <span class="tag" style="--tag-c:var(--green);">Live · three engines, one exit check</span>
+          <span class="tag" style="--tag-c:var(--green);">Live · 2–3 available engines, one exit check</span>
           <h2 class="h2" style="font-size:clamp(28px,3.8vw,54px);margin-top:clamp(8px,1.3vh,14px);">
             Same spec. <span class="grad-green">Any engine.</span>
           </h2>
         </div>
         <p class="lede" style="max-width:38ch;text-align:right;font-size:clamp(13px,1.2vw,17px);">
-          Three dialects. One packet. <b>None of them get to rewrite it — and none of them
+          Up to three dialects. One packet. <b>None of them get to rewrite it — and none of them
           get to decide whether they are done.</b>
         </p>
       </div>
@@ -6650,7 +6720,7 @@ Talk track: open Session C empty. Paste Action A. Wait for the exit check, then 
         </div>
 
         <div>
-          <svg class="a6-fig" viewBox="0 0 1000 720" role="img" aria-label="One spec at the centre. Three engines sit on a shared ring — Claude Code at the top, Codex lower left, Kimi lower right — each with the same label stack radiating outward. All three read the same spec.">
+          <svg class="a6-fig" viewBox="0 0 1000 720" role="img" aria-label="One spec at the centre. Up to three available engines sit on a shared ring — Claude Code at the top, Codex lower left, Kimi lower right. Each available engine receives the same spec and exit check; unavailable engines are not counted as passes.">
             <defs>
               <radialGradient id="a6-eng" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#3fb950" stop-opacity=".42"/><stop offset="100%" stop-color="#3fb950" stop-opacity=".08"/></radialGradient>
               <filter id="a6-eg" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
@@ -6663,12 +6733,12 @@ Talk track: open Session C empty. Paste Action A. Wait for the exit check, then 
             <line x1="436" y1="404" x2="318" y2="462" stroke="#22d3ee" stroke-opacity=".35" stroke-width="1.4"/>
             <line x1="564" y1="404" x2="682" y2="462" stroke="#3fb950" stroke-opacity=".45" stroke-width="1.4"/>
 
-            <!-- three engines · same icon, same three-line stack, labels radiate OUT -->
+            <!-- up to three available engines · same contract, labels radiate OUT -->
             <g transform="translate(500, 122)">
               <circle r="44" fill="#111114" stroke="#4a9eff" stroke-width="1.6" filter="url(#a6-eg)"/>
               <image href="../assets/claude-code-icon.png" x="-22" y="-22" width="44" height="44"/>
             </g>
-            <text x="500" y="22" fill="#7dc4ff" font-family="Fira Code" font-size="10" font-weight="700" letter-spacing="2" text-anchor="middle">ORCHESTRATOR</text>
+            <text x="500" y="22" fill="#7dc4ff" font-family="Fira Code" font-size="10" font-weight="700" letter-spacing="2" text-anchor="middle">ENGINE A</text>
             <text x="500" y="42" fill="#eaedf2" font-family="Instrument Serif" font-size="22" text-anchor="middle">Claude Code</text>
             <text x="500" y="58" fill="#69a8dc" font-family="Newsreader" font-style="italic" font-size="13" text-anchor="middle">CLAUDE.md · same spec</text>
 
@@ -6676,7 +6746,7 @@ Talk track: open Session C empty. Paste Action A. Wait for the exit check, then 
               <circle r="44" fill="#111114" stroke="#22d3ee" stroke-width="1.6" filter="url(#a6-eg)"/>
               <image href="../assets/codex.png" x="-22" y="-22" width="44" height="44"/>
             </g>
-            <text x="283" y="554" fill="#8ae4f2" font-family="Fira Code" font-size="10" font-weight="700" letter-spacing="2" text-anchor="middle">REVIEWER</text>
+            <text x="283" y="554" fill="#8ae4f2" font-family="Fira Code" font-size="10" font-weight="700" letter-spacing="2" text-anchor="middle">ENGINE B</text>
             <text x="283" y="576" fill="#eaedf2" font-family="Instrument Serif" font-size="22" text-anchor="middle">Codex</text>
             <text x="283" y="594" fill="#74c8d5" font-family="Newsreader" font-style="italic" font-size="13" text-anchor="middle">AGENTS.md · same spec</text>
 
@@ -6684,7 +6754,7 @@ Talk track: open Session C empty. Paste Action A. Wait for the exit check, then 
               <circle r="44" fill="#111114" stroke="#3fb950" stroke-width="1.6" filter="url(#a6-eg)"/>
               <image href="../assets/kimi.png" x="-22" y="-22" width="44" height="44"/>
             </g>
-            <text x="717" y="554" fill="#9fe0aa" font-family="Fira Code" font-size="10" font-weight="700" letter-spacing="2" text-anchor="middle">EXECUTOR</text>
+            <text x="717" y="554" fill="#9fe0aa" font-family="Fira Code" font-size="10" font-weight="700" letter-spacing="2" text-anchor="middle">ENGINE C</text>
             <text x="717" y="576" fill="#eaedf2" font-family="Instrument Serif" font-size="22" text-anchor="middle">Kimi</text>
             <text x="717" y="594" fill="#83c98f" font-family="Newsreader" font-style="italic" font-size="13" text-anchor="middle">AGENTS.md · same spec</text>
 
@@ -6701,25 +6771,25 @@ Talk track: open Session C empty. Paste Action A. Wait for the exit check, then 
       <div class="a4b-cmp" style="grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(12px,1.9vh,20px);">
         <div class="a4b-cc" style="--cc:var(--accent);">
           <div class="a4b-cc-k">engine A · claude code</div>
-          <div class="a4b-cc-n">exit 0</div>
-          <div class="a4b-cc-b">Its own SQL, its own formatting. <b>Same exit check.</b></div>
+          <div class="a4b-cc-n">live result</div>
+          <div class="a4b-cc-b">SQL may match or differ. <b>Same exit check.</b></div>
         </div>
         <div class="a4b-cc" style="--cc:var(--cyan);">
           <div class="a4b-cc-k">engine B · codex</div>
-          <div class="a4b-cc-n">exit 0</div>
-          <div class="a4b-cc-b">Different SQL. <b>Same exit check.</b></div>
+          <div class="a4b-cc-n">live result</div>
+          <div class="a4b-cc-b">Pass only on exit 0. <b>Same exit check.</b></div>
         </div>
         <div class="a4b-cc" style="--cc:var(--green);">
           <div class="a4b-cc-k">engine C · kimi</div>
-          <div class="a4b-cc-n">exit 0</div>
-          <div class="a4b-cc-b">Different SQL again. <b>Same exit check.</b></div>
+          <div class="a4b-cc-n">live result</div>
+          <div class="a4b-cc-b">Or unavailable — never inferred. <b>Same exit check.</b></div>
         </div>
       </div>
 
       <p class="note" style="margin-top:clamp(5px,0.9vh,10px);font-size:clamp(12px,1.12vw,16px);line-height:1.38;">
-        Expected shape — live numbers replace these. Three different files,
-        <b style="color:var(--text);font-style:normal;">one exit code that answers for all three</b>.
-        Compare the outcome, never the writing style; an engine you could not run is
+        Expected shape — live statuses replace these. Files may match or differ;
+        <b style="color:var(--text);font-style:normal;">the same exit check answers for every available run</b>.
+        Compare the verified outcome, never the writing style; an engine you could not run is
         <b style="color:var(--silver);font-style:normal;">unavailable</b>, never a pass.
       </p>
 
@@ -6730,7 +6800,7 @@ presentation/d2.html — “Same rails, any engine”.
 AGENTS.md / CLAUDE.md — contract dialects.
 live/d3/06-execute-one.md — Session C reads this file only.
 [/Sources]
-Talk track: point at the spec first — that is what every engine receives, byte for byte. Then the triad on the ring, then the three cells: this is the beat the room remembers. Open all three diffs side by side and let them look — the SQL is visibly different in all three, indentation, CTE names, column order, all of it. Then say the line: none of that matters, because none of them got to decide whether they were done. The exit check did, and it returned the same number three times. If an engine did not run, say UNAVAILABLE out loud and leave the cell grey — Task-Spec's own rule is that a missing runner is never a pass, and borrowing that rule in public costs nothing and buys everything. Do not chain the engines — that is Day 4.</aside>
+Talk track: point at the spec first — that is what every engine receives, byte for byte. Then the triad on the ring, then the cells for the engines that actually ran. Open the available files side by side and let the room inspect them; do not promise that their SQL will differ. The claim is only that none of the engines got to decide whether they were done: the identical exit check did, and every green cell must show its real zero. If an engine did not run, say UNAVAILABLE out loud and leave the cell grey — Task-Spec's own rule is that a missing runner is never a pass. Do not chain the engines — that is Day 4.</aside>
     </div>
   </section>
 
