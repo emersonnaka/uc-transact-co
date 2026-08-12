@@ -3278,25 +3278,25 @@ Talk track: the room owns this figure by now, so put it up and give it ten secon
     <div class="aurora aurora--purple" aria-hidden="true"><b></b></div>
     <div class="wrap rings-layout">
       <div class="rings-copy reveal">
-        <span class="tag" style="--tag-c:var(--purple);">The equation · inside tonight's ring</span>
-        <h2 class="h2">Spec = Behaviour +<br><span class="grad-purple">Proof</span></h2>
-        <p class="lede">The map showed the spec as one ring. Zoom in: at the core, the packet — one
-        objective, one fresh iteration. Around it, four gates that turn a mention into a contract.
-        <b>Half of done is signed. Half of done is run.</b></p>
+        <span class="tag" style="--tag-c:var(--purple);">Spec = Behaviour + Proof</span>
+        <h2 class="h2" style="font-size:clamp(24px,3vw,40px);line-height:1.14;">Half of done is signed.<br><span class="grad-purple">Half of done is run.</span></h2>
+        <p class="lede">A spec answers to two readers. A human signs what must be true — in language
+        a stakeholder could check. A machine runs the proof — one command, returning 0 or not.
+        <b>Both halves in one file, for exactly one objective.</b></p>
 
         <div class="ring-decision" style="border-left-color:var(--purple);">
-          <h3 style="color:var(--purple);">Two halves, one file.</h3>
-          <p>The half a human <b>signs</b> — intent and behaviour — and the half a machine
-          <b>runs</b> — evals and the exit check. Tonight's spec writes both, for exactly one objective.</p>
-          <p><b>The working rule</b> — from the decomposition playbook: if the title needs the word
-          “and” to be honest, it is two packets.</p>
+          <h3 style="color:var(--purple);">Miss either half and it is not a spec.</h3>
+          <p>Behaviour with no eval is a <b>wish</b> — nobody can check it. An eval with no behaviour
+          tests something nobody asked for. <b>The validator rejects both</b>, which is Movement 03.</p>
+          <p><b>Zones 4 to 6 are neither half.</b> They are the boundary — what must not be touched,
+          what nobody may guess, and the way back if it goes wrong.</p>
         </div>
-        <div class="src">Packet anatomy per ralphloop.sh (one objective, files to inspect, ordered steps, machine-checkable criteria); two-halves framing per plan/d3-agenda.md — BDD signed by the decision owner, evals derived from it.</div>
+        <div class="src">Zone grouping and the bidirectional rule per ~/GitHub/task-spec spec/task-spec-v3.md (Zone 2 Behavior, Zone 3 Contract / The Moat, "The traceability rule (bidirectional)"). Two-halves framing per plan/semana.md §15. The sizing rule — split a title that needs the word "and" — belongs to decomposition and is taught at Act 4, not here.</div>
         <aside class="speaker-notes" hidden>[Sources]
 https://ralphloop.sh/blog/break-prd-into-agent-tasks/ — atomic packet anatomy, split-on-and rule.
 ~/GitHub/task-spec — spec/task-spec-v3.md: six zones, four layers, bidirectional B-N traceability.
 [/Sources]
-Talk track: same center as the previous slide — we zoomed into the purple ring. The dashed orbit spins: the spec's own loop — read, build, verify, commit. The four arcs are the spec's zone groups, and at Movement 02 they become a file written by hand. Land on the split: behaviour is signed by the human who owns the decision; proof runs without one. Both halves, or it is not a spec.</aside>
+Talk track: read the headline twice, because it is the whole night in eight words — half of done is signed, half of done is run. Then use the figure to show WHERE each half lives: the top two arcs are the signed half, bottom right is the run half, bottom left is neither. Name the readers, not the zones: a human signs zone 2 because a stakeholder has to be able to read it; a machine runs zone 3 because nobody should have to be asked. Then the failure modes, slowly — behaviour with no eval is a wish, an eval with no behaviour tests something nobody asked for, and the validator refuses the file either way. That refusal is Movement 03, so plant it and move. Do not teach the sizing rule here; it belongs to Act 4.</aside>
       </div>
 
       <div class="rings-viz reveal">
@@ -3320,7 +3320,7 @@ Talk track: same center as the previous slide — we zoomed into the purple ring
           <circle cx="287.9" cy="239.9" r="14" fill="#4a9eff"/>
           <text x="287.9" y="244.6" fill="#000" font-family="Fira Code" font-size="12.5" font-weight="bold" text-anchor="middle">1</text>
           <text x="358" y="288" fill="#7dc4ff" font-family="Fira Code" font-size="10.5" font-weight="bold" letter-spacing="2.2" text-anchor="middle">ZONE 1 · INTENT</text>
-          <text x="358" y="316" fill="#eaedf2" font-family="Instrument Serif" font-size="23" text-anchor="middle">What, exactly</text>
+          <text x="358" y="316" fill="#eaedf2" font-family="Instrument Serif" font-size="23" text-anchor="middle">What, and why</text>
           <text x="358" y="340" fill="#69a8dc" font-family="Newsreader" font-style="italic" font-size="12.5" text-anchor="middle">goal · context · effort · touches_paths</text>
 
           <!-- gate 2 · behaviour · top-right quadrant -->
@@ -3338,7 +3338,7 @@ Talk track: same center as the previous slide — we zoomed into the purple ring
           <circle cx="287.9" cy="664.1" r="14" fill="#d4af37"/>
           <text x="287.9" y="668.8" fill="#000" font-family="Fira Code" font-size="12.5" font-weight="bold" text-anchor="middle">4</text>
           <text x="358" y="580" fill="#e8d391" font-family="Fira Code" font-size="10.5" font-weight="bold" letter-spacing="2.2" text-anchor="middle">ZONES 4–6 · GUARDRAILS+</text>
-          <text x="358" y="608" fill="#eaedf2" font-family="Instrument Serif" font-size="23" text-anchor="middle">Where it sits</text>
+          <text x="358" y="608" fill="#eaedf2" font-family="Instrument Serif" font-size="23" text-anchor="middle">What is out of bounds</text>
           <text x="358" y="632" fill="#c9b778" font-family="Newsreader" font-style="italic" font-size="12.5" text-anchor="middle">do-not-touch · open questions · rollback</text>
 
           <!-- gate 4 · proof · bottom-right quadrant -->
@@ -3368,7 +3368,7 @@ Talk track: same center as the previous slide — we zoomed into the purple ring
           <text x="500" y="447" fill="#fff" font-family="Instrument Serif" font-size="38" text-anchor="middle">Packet</text>
           <text x="500" y="473" fill="#e6dcff" font-family="Fira Code" font-size="11" text-anchor="middle">one fresh iteration</text>
 
-          <text x="500" y="884" fill="#9d8bc8" font-family="Fira Code" font-size="11.5" font-style="italic" text-anchor="middle" opacity=".9">six zones, sealed by hmac — and at Movement 02 they become a file, written by hand</text>
+          <text x="500" y="884" fill="#9d8bc8" font-family="Fira Code" font-size="11.5" font-style="italic" text-anchor="middle" opacity=".9">six zones, one file — and at Movement 02 the room watches it typed by hand</text>
         </svg>
       </div>
     </div>
