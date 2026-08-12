@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: raw
+    description: >
+      DuckDB mirror of Postgres public.*, landed read-only. Physical evidence
+      only; carries no business meaning (see storage/specs/1-context.md).
+    schema: raw
+    tables:
+      - name: orders
+        description: One row per order line. Denormalized on purpose.
+        columns:
+          - name: order_id
+          - name: customer_id
+          - name: product_id
+          - name: quantity
+          - name: unit_price
+          - name: discount
+          - name: total_amount
+          - name: status
+          - name: channel
+          - name: ordered_at
+          - name: updated_at
+          - name: ingested_at

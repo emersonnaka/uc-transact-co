@@ -19,5 +19,20 @@ choose a definition for it.
 
 ## Agents
 
+### architect — judgment, no hands
+- job: reviews every plan before it runs
+- reads: the repo, the confirmed contract, storage/specs/*
+- tools: read, grep, make psql-ro
+- bash: denied — verdicts, not edits
+- writes: nothing
+- stops: any semantic decision — Revenue meaning is owned by Finance
+
+### developer — execution, bounded hands
+- job: builds what the approved plan enumerates
+- reads: the contract, the plans, the diff
+- tools: read, write, bash — inside the contract only
+- writes: dbt/models/staging/ and nothing else
+- done: make dbt-check passes, then claim it — never before
+
 <!-- Entries below are written live at checkpoint live/d2/03-agent-pair.md,
      against the harness contract confirmed at checkpoint 02. -->
