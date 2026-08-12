@@ -1,6 +1,3 @@
--- Rename and cast only. All six statuses and all three clocks pass through
--- untouched: filtering or grouping them is decision D1/D2 (owner: Finance).
-
 select
     cast(order_id as bigint)            as order_id,
     cast(customer_id as bigint)         as customer_id,
