@@ -772,6 +772,14 @@ body::after {
   background: radial-gradient(circle, color-mix(in srgb, var(--rmc) 20%, transparent) 0%, transparent 70%);
 }
 .rmcard > * { position: relative; z-index: 1; }
+/* Eight glass cards over the animating aurora make the compositor re-sample and
+   re-blur every backdrop on every frame, which reads as flicker. Dense grids trade
+   the blur for a near-opaque panel — the backdrop is a smooth gradient, so blurring
+   it was near-invisible anyway. */
+.rmgrid--flat .rmcard {
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+  background: linear-gradient(135deg, rgba(26,26,31,0.94), rgba(18,18,21,0.90));
+}
 .rmcard:hover {
   transform: translateY(-5px); border-color: var(--rmc);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 18px 44px -20px rgba(0,0,0,0.62), 0 0 46px -16px var(--rmc);
@@ -3279,7 +3287,7 @@ Talk track: fill this card from what just happened on screen, not from the slide
       them is everything above it — <b>and every layer is a file or a setting you can point at.</b></p>
     </div>
 
-    <div class="rmgrid" style="grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(18px,2.8vh,30px);">
+    <div class="rmgrid rmgrid--flat" style="grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(18px,2.8vh,30px);">
 
       <div class="rmcard" style="--rmc:var(--gold);">
         <div class="rm-head">
