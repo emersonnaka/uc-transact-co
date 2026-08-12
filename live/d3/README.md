@@ -1,9 +1,9 @@
 # Day 3 — The Task: The Unit of Work
 
-> **Repository state:** Day 3 is built and execution has started locally. Its
-> first Task-Spec is tracked session evidence; the task graph and second
-> staging model are not complete. The five inherited specs and Day 2 staging
-> model remain committed inputs.
+> **Repository state:** Day 3 is built and rehearsed. `tasks/` is untracked and
+> absent from a clean checkout, so the night starts empty; the task graph and the
+> second staging model are produced live. The five inherited specs and the Day 2
+> staging model are committed inputs.
 
 The question carried through the session is:
 
@@ -48,7 +48,7 @@ flowchart LR
 | [`02`](02-task-spec.md) | **NEW B** | Anatomy of a Task-Spec | `T-20260812-daily-gross-ordered.md`, six zones, human-edited | `tasks/T-20260812-daily-gross-ordered.md` |
 | [`03`](03-bdd-and-evals.md) | Continue B | Two halves of done | Scenario + pre-build exit check returning non-zero | Evals inside `T-20260812-daily-gross-ordered` |
 | [`04`](04-decompose.md) | Continue B as architect | Item 7 becomes a graph | TaskPlan preview → approval → `batch`, then `dod` + `lint` | `tasks/` graph |
-| ✦ | No agent | Giveaway → crank | Deck only — 2 slides, ~21:50, 3 min | None — the crank clip is **pre-recorded** |
+| ✦ | No agent | Giveaway → crank → Bootcamp handoff | Deck only — 3 slides, ~21:50, 5 min | None — crank clip **pre-recorded**; deck switches to `bootcamp.html` |
 | [`05`](05-ready-set.md) | Continue B | The ready set | Agent predicts, `taskspec ready` adjudicates | `_state.yaml` ordering |
 | [`06`](06-execute-one.md) | **NEW C** — developer | One packet, one iteration | Exit check returns 0 + refusal holds + **the same spec through 2–3 engines** | Second staging model |
 | [`07`](07-reflection.md) | No agent | Turn three closes | Participant commitments | Team learning |
@@ -97,17 +97,15 @@ tasks/
 dbt/models/staging/          # already holds stg_orders from Day 2
 ```
 
-`tasks/` did not exist before checkpoint 02. The current worktree contains the
-first hand-authored Task-Spec as tracked session evidence. At checkpoint 04,
-the architect proposes and reviews the manifest without writing files; a human
-approves it, and the facilitator uses `taskspec` to extend the graph.
+`tasks/` does not exist before checkpoint 02 and is not tracked — the earlier
+rehearsal spec was removed in `4e8e265`, so a clean checkout starts empty and
+checkpoint 02 is a real first authoring. At checkpoint 04 the architect proposes
+and reviews the manifest without writing files; a human approves it, and the
+facilitator uses `taskspec` to extend the graph.
 
-**To run the night again from a clean spot**, checkpoint 00 opens with a reset
-block that archives that tracked spec to `tmp/prepared/` before the room is
-watching, so checkpoint 02 is a real first authoring rather than a re-edit.
-`git checkout -- tasks/` restores the committed copy afterwards. Skip the reset
-only if you intend to present the file as already-inherited evidence — but then
-checkpoint 02's "typed in front of the room" gate no longer applies.
+Checkpoint 00 still opens with an idempotent reset block that archives any
+`tasks/` or `.taskspec/` left by a rehearsal into `tmp/prepared/`. Run it every
+time; the archived copy is the **prepared** fallback if checkpoint 02 goes wrong.
 
 ## Shared boundaries
 
@@ -131,9 +129,11 @@ checkpoint 02's "typed in front of the room" gate no longer applies.
 - Session C is the developer: receives only its Task-Spec and `AGENTS.md`.
 - Instructor `_control`, injection, scoring, and reveal surfaces remain closed.
 - Label any fallback artifact **prepared**.
-- The giveaway and crank are two deck slides between checkpoints 04 and 05.
-  The crank clip is pre-recorded and must be announced as such; there is no
-  pricing or offer slide in the current deck.
+- Three deck slides sit between checkpoints 04 and 05: the giveaway, the crank,
+  and the Bootcamp handoff. The crank clip is pre-recorded and must be announced
+  as such. The handoff slide carries no pricing — it switches to
+  `presentation/bootcamp.html`, and the night resumes at Act 5 afterwards. The
+  only pricing in `d3.html` is one neutral line on the closing slide.
 
 ## Language
 

@@ -40,12 +40,12 @@ Explain briefly:
 
 ## Do live
 
-First, the reset — run this **before the room is watching**. The repository ships
-one Task-Spec from an earlier rehearsal (`tasks/T-20260812-daily-gross-ordered.md`,
-committed in `0bd3e09`), and checkpoint 02's whole teaching beat is the room
-watching that file get typed. Archive it rather than delete it: `tmp/` is
-gitignored, so it survives as the **prepared** fallback, and `git checkout --
-tasks/` restores the committed copy afterwards.
+First, the reset — run this **before the room is watching**. `tasks/` is no longer
+tracked (the rehearsal spec was removed in `4e8e265`), so a clean checkout already
+satisfies this gate. Run the block anyway: it is idempotent, and it catches the one
+thing that actually bites — residue from a rehearsal you did five minutes ago.
+Archive rather than delete, because `tmp/` is gitignored and the archived spec is
+your **prepared** fallback if checkpoint 02 goes wrong.
 
 ```bash
 mkdir -p tmp/prepared
@@ -91,9 +91,8 @@ Say:
 - Five specs present and readable, including both Day 2 plans.
 - `make dbt-check` passes with the Day 2 staging model.
 - `tasks/` and `.taskspec/` are absent, and `dbt/models/staging/` holds only
-  `_raw_sources.yml` and `stg_orders.sql`. The reset block above is what makes
-  this true — the repository ships a rehearsal Task-Spec, so this gate cannot
-  pass on a fresh checkout without it.
+  `_raw_sources.yml` and `stg_orders.sql`. A clean checkout satisfies this; the
+  reset block above exists to clear rehearsal residue.
 - `taskspec version` prints **3.7.0**. Checkpoint 04 depends on it; a missing CLI
   must surface here at 20:00, not at 21:30 in front of the room.
 - The plan's BLOCKED rows were read aloud.

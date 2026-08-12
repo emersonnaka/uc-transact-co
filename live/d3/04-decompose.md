@@ -221,8 +221,8 @@ exactly as checkpoint 02 was written by hand. Do not ask the architect to write
 files. Announce the fallback as **prepared** and say plainly that the tool is
 what the room is being given, not what the lesson depends on.
 
-Two deck slides follow this checkpoint, in order, at roughly 21:50 — about
-three minutes total, then straight back to the graph:
+Three deck slides follow this checkpoint, in order, at roughly 21:50 — about
+five minutes total, then straight back to the graph:
 
 1. **The giveaway** — Task-Spec is free, MIT, v3.7.0, installed from source. The
    room has now watched it plan, refuse, generate and prove. Say plainly what it
@@ -232,7 +232,14 @@ three minutes total, then straight back to the graph:
    in two dependency-respecting waves. Say "pre-recorded" before anything else;
    describing it as live would cost the night its whole credibility argument.
 
-The current deck has no ladder, pricing, or offer slide. Return directly to the
-ready set.
+3. **The Bootcamp handoff** — the disclosure that Task-Spec is item 04 of six,
+   and the deck switch. It carries no price: say the five-minute frame out loud so
+   nobody thinks the night is ending, present `presentation/bootcamp.html`, then
+   come back and resume at Act 5 with "as I was saying".
+
+There is no ladder or offer slide inside `d3.html` — the terms live in the
+Bootcamp deck. The only pricing anywhere in `d3.html` is one neutral closing line
+on the final slide (dates and the coupon), and that is deliberate: one ask reads
+as an offer, two read as a funnel. Return directly to the ready set.
 
 Next: [`05-ready-set.md`](05-ready-set.md).
