@@ -1,4 +1,4 @@
-# Day 3 — The Spec: The Unit of Work
+# Day 3 — The Task: The Unit of Work
 
 > **Repository state:** Day 3 is built and execution has started locally. Its
 > first Task-Spec is tracked session evidence; the task graph and second

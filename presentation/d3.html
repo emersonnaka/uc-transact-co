@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
-<meta name="description" content="Day 3 — The Spec. Intent, behaviour, evals and the task graph: the unit of work, built against TransactCo.">
-<title>Day 3 · The Spec — Intent · Behaviour · Evals · The Task Graph</title>
+<meta name="description" content="Day 3 — The Task. Intent, behaviour, evals and decomposition: the unit of work an agent can finish and prove finished, built against TransactCo.">
+<title>Day 3 · The Task — Intent · Behaviour · Evals · The Graph</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308080a'/%3E%3Cpath d='M16 6l7 10-7 10-7-10z' fill='%23d4af37'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2736,7 +2736,7 @@ body.anim-ready .reveal.reveal-reset > * { transition: none !important; }
 
   <!-- ═══════════ S01 · TITLE ═══════════ -->
 <!-- ════════════════════ OPENING · the room arrives ════════════════════ -->
-  <section class="slide" data-act="OPENING" data-act-name="The Spec" data-accent="purple">
+  <section class="slide" data-act="OPENING" data-act-name="The Task" data-accent="purple">
     <div class="aurora aurora--purple" aria-hidden="true"><b></b></div>
     <div class="reveal" style="position:relative;z-index:2;width:100%;">
 
@@ -2745,7 +2745,7 @@ body.anim-ready .reveal.reveal-reset > * { transition: none !important; }
       <div class="title-grid" style="margin-top:clamp(20px,3.4vh,38px);">
         <div>
           <div class="title-rule" style="background:var(--purple);box-shadow:0 0 22px rgba(167,139,250,0.7);" aria-hidden="true"></div>
-          <h1 class="display" style="font-size:clamp(58px,9.6vw,138px);">The Spec</h1>
+          <h1 class="display" style="font-size:clamp(58px,9.6vw,138px);">The Task</h1>
           <p class="title-sub">
             <b>TransactCo</b> again — the rails are standing, the plans are on disk.
             Tonight the plan becomes work an agent can finish and prove finished.
@@ -4460,7 +4460,7 @@ Talk track: read the ticket and ask if the room would accept it in planning — 
         and never has to ask a human.</div>
       </div>
 
-      <div class="src">Six zones per ~/GitHub/task-spec spec/task-spec-v3.md (File anatomy; Zone 1 lean ≈100 lines; the bidirectional B-N ⇄ verifies rule enforced by validate-task-spec.sh; Zone 6 required on the full profile only). Authorship split after the operator's harness-engineering deck, "who authors what".</div>
+      <div class="src">Six zones per ~/GitHub/task-spec spec/task-spec-v3.md (File anatomy; Zone 1 lean ≈100 lines; the bidirectional B-N ⇄ verifies rule enforced by <code>taskspec validate</code>; Zone 6 required on the full profile only). Authorship split after the operator's harness-engineering deck, "who authors what".</div>
       <aside class="speaker-notes" hidden>[Sources]
 ~/GitHub/task-spec spec/task-spec-v3.md — zones 1–6, the bidirectional traceability rule, profiles.
 Operator harness-engineering deck — "The human writes two zones" framing.
@@ -4728,16 +4728,16 @@ Talk track: read the arrows, not the balls — each label is the artifact one st
 
       <div class="callout" style="--co-c:var(--red);margin-top:clamp(12px,2vh,20px);">
         <div class="co-k">still missing · say it first</div>
-        <div class="co-b">All eight models flagged the same two gaps: <b>real multi-engine CI</b> and <b>anti-gaming evidence</b>.
-        <b>Shipped is not proved.</b></div>
+        <div class="co-b"><b>Real multi-engine CI is still not run</b> — the nine-family matrix exists, every family disabled.
+        <code>eval-audit</code> now covers baseline and mutation discrimination. <b>Shipped is not proved.</b></div>
       </div>
 
-      <div class="src">Layer framing and capabilities per ~/GitHub/task-spec README.md ("Inside one atomic task" and the Feature matrix) at v3.7.0 (f027899). Proof column condensed from the matrix's deterministic-proof entries. Judgment limits per plan/semana.md §15.6.</div>
+      <div class="src">Layer framing and capabilities per ~/GitHub/task-spec README.md ("Inside one atomic task" and the Feature matrix) at v3.7.0 (f027899). Proof column condensed from the matrix's deterministic-proof entries. Open hole per release/evidence.json (<code>real_engine_matrix: not_run</code>). Judgment limits per plan/semana.md §15.6.</div>
       <aside class="speaker-notes" hidden>[Sources]
-~/GitHub/task-spec README.md — the four visual layers and the fourteen-row feature matrix, v3.7.0 (f027899).
-git show b626ef8^:Reveal/synthesis/consensus.md — item 8: multi-engine CI and anti-gaming evidence remain missing.
+~/GitHub/task-spec README.md — the four visual layers and the fifteen-row feature matrix, v3.7.0 (f027899).
+~/GitHub/task-spec release/evidence.json — real_engine_matrix: not_run; eval-audit shipped in 3.7.0.
 [/Sources]
-Talk track: four cards, one sentence each — where it may write, what it means, what proves it, who authorized it. Do not read the field rows; they are there to be photographed. The strip underneath is the portability story in five chips. Then the red callout, unsoftened: the eight models that praised the format named the same two holes. A giveaway that ships with its own P0 list is the honest kind.</aside>
+Talk track: four cards, one sentence each — where it may write, what it means, what proves it, who authorized it. Do not read the field rows; they are there to be photographed. The strip underneath is the portability story in five chips. Then the red callout, unsoftened: anti-gaming has a command now; a live nine-engine pass does not. A giveaway that ships with its own open hole is the honest kind.</aside>
     </div>
   </section>
 
@@ -4997,7 +4997,7 @@ Talk track: fill this card from what just happened on screen, not from the slide
             <div class="fl-node is-end" style="--fc:var(--gold);border-color:var(--gold);box-shadow:inset 0 1px 0 rgba(255,255,255,0.07),0 0 44px -14px rgba(212,175,55,0.6);">
               <div class="fl-k">the rule, in CI</div>
               <div class="fl-name">Neither may dangle</div>
-              <div class="fl-note"><code>validate-task-spec.sh</code> walks the graph both ways and fails anything left unpaired</div>
+              <div class="fl-note"><code>taskspec validate</code> walks the graph both ways and fails anything left unpaired</div>
             </div>
 
           </div>
@@ -5099,7 +5099,7 @@ Talk track: no jargon. Left is a sentence a person signs — read the scenario o
       </div>
 
       <svg class="a3-trace" viewBox="0 0 1320 430" role="img"
-           aria-label="Traceability graph. B-1 is verified by eval_1 and eval_2. B-2 is verified by eval_3. B-3 has no eval — a hole. eval_4 has no behavior — scope creep. validate-task-spec.sh rejects both unpaired sides.">
+           aria-label="Traceability graph. B-1 is verified by eval_1 and eval_2. B-2 is verified by eval_3. B-3 has no eval — a hole. eval_4 has no behavior — scope creep. taskspec validate rejects both unpaired sides.">
         <defs>
           <marker id="a3-mCy" viewBox="0 0 10 10" refX="9.2" refY="5" markerWidth="7.2" markerHeight="7.2" orient="auto"><path d="M0.4,1.1 L9.4,5 L0.4,8.9 Z" fill="#22d3ee"/></marker>
           <marker id="a3-mGo" viewBox="0 0 10 10" refX="9.2" refY="5" markerWidth="7.2" markerHeight="7.2" orient="auto"><path d="M0.4,1.1 L9.4,5 L0.4,8.9 Z" fill="#d4af37"/></marker>
@@ -5734,9 +5734,10 @@ Talk track: run the flow exactly as the checkpoint does — the architect propos
 <span class="k">bash</span> <span class="s">"$HOME/.local/share/task-spec-src/install.sh"</span> --target <span class="s">"$PWD"</span> --copy
 <span class="k">export</span> PATH=<span class="s">"$HOME/.local/bin:$PATH"</span>
 
-<span class="c"># 3 · prove it before you trust it</span>
+<span class="c"># 3 · prove it, then open a leaf</span>
 <span class="n">taskspec demo</span>                  <span class="c"># the whole lifecycle, in isolation</span>
-<span class="n">taskspec init</span> T-20260812-my-first-task
+<span class="n">taskspec init</span>                   <span class="c"># workspace only — not a spec</span>
+<span class="n">taskspec new</span> my-first-task S any
 
 <span class="g">→ frontmatter + six zones, already shaped.
   The deciding is still yours.</span>
@@ -5787,7 +5788,7 @@ Talk track: run the flow exactly as the checkpoint does — the architect propos
           What it cannot decide stays with you: <b>structure is free, judgment is not.</b></div>
       </div>
 
-      <div class="src">Task-Spec v3.7.0 (MIT) — install commands verbatim from ~/GitHub/task-spec README.md §Installation (source checkout; the v3.7.0 release tag is not yet published, which is why this is a clone and not a package manager). Six zones per spec/task-spec-v3.md. The three cannots are stated in plan/semana.md §15.6 and repeated here verbatim — the giveaway does not oversell.</div>
+      <div class="src">Task-Spec v3.7.0 (MIT) — clone + <code>install.sh --copy</code> from ~/GitHub/task-spec README.md §Installation (the v3.7.0 release tag is not yet published). <code>taskspec init</code> creates the workspace; <code>taskspec new my-first-task S any</code> writes the six-zone scaffold. The three cannots are stated in plan/semana.md §15.6 and repeated here verbatim — the giveaway does not oversell.</div>
       <aside class="speaker-notes" hidden>[Sources]
 plan/semana.md §15.8 — giveaway beat 1: real install line; the three cannots, verbatim.
 ~/GitHub/task-spec — README.md §Installation (the commands on screen); spec/task-spec-v3.md (the six zones).

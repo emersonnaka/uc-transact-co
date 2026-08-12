@@ -127,7 +127,7 @@ semantic boundary is a success state.
 | `06` | Practice becomes scaffold | Generated tree, empty stubs | Temporary scaffold |
 | `07` | Distill the learning | Three commitment lines | Team learning |
 
-### Night 3 — the spec (built, execution started but not complete)
+### Night 3 — the task (built, execution started but not complete)
 
 The question carried through the session: the plan says ten items — which one
 can be handed to an agent tonight, and how will anyone know it is done without
@@ -139,10 +139,10 @@ asking? "Done" is two halves: behaviour a human signs and proof a machine runs.
 | `01` | Paste one plausible plan item | Three divergent builds, nothing executed | None — session discarded |
 | `02` | Hand-write a Task-Spec | One spec, six zones, human-edited | `tasks/T-20260812-daily-gross-ordered.md` |
 | `03` | Split done in two | Gherkin scenario + runnable bash eval | Evals inside the spec |
-| `04` | Decompose item 7 | Index + 4–6 packets | `tasks/` graph |
+| `04` | Decompose item 7 | TaskPlan preview → human approval → 4–6 packets | `tasks/` graph |
 | ✦ | Giveaway → crank | Two deck slides, ~21:50, 3 min | None — the crank clip is **pre-recorded** |
 | `05` | Name the ready set | Dependency order justified | `tasks/_state.yaml` ordering |
-| `06` | Execute one packet | Exit check returns 0 + refusal holds | Second staging model |
+| `06` | Execute one packet | Same exit check returns 0 across 2–3 available engines + refusal holds | Second staging model |
 | `07` | Distill the learning | Three commitment lines | Team learning |
 
 Session discipline across all nights: session A is the villain and is
@@ -279,7 +279,7 @@ changes one signature accent.
 | --- | ---: | --- | --- |
 | `d1.html` | 49 | 1 — the foundations | blue/cyan |
 | `d2.html` | 41 | 2 — the harness | gold |
-| `d3.html` | 47 | 3 — the spec | purple |
+| `d3.html` | 47 | 3 — the task | purple |
 
 Rules any engine building on a deck must hold to:
 
@@ -404,7 +404,7 @@ rehearsal’s values as universal expectations.
 | Surface | Sign-off evidence | Boundary |
 | --- | --- | --- |
 | `live/` | All three runbooks have session boundaries, bounded prompts, evidence selections, gates, and recovery | A rehearsed prompt can still vary by model |
-| `presentation/` | Current d3 opens with 47 slides, no duplicate ids, and no console errors; the earlier 49-slide baseline passed at 1600×900 | The fixed 1211×880 in-app viewport reports narrow-screen overflow on slides 12, 26, 32, 34, and 40; it cannot re-prove the 1600×900 target |
+| `presentation/` | Current d3 opens with 47 slides, no duplicate ids, and no console errors; the earlier 49-slide baseline passed at 1600×900 | A fresh content-bounds check at the fixed 1211×880 in-app viewport reports horizontal overflow on slide 23 and vertical overflow on slides 26 and 40; it cannot re-prove the 1600×900 target |
 | `skills/` | Skill metadata validates; unit fixtures cover success and failure; package validator returns `CHECK_INVESTIGATION=PASS` | Structural validity is not semantic approval |
 | `src/` | Bootstrap, unit contracts, delivery verification, ontology CLI, landing parity, and `dbt-check` pass | Participant dbt models, agents, and detector remain intentionally absent |
 | `storage/specs/` | Five artifacts meet their checkpoint budgets, preserve unresolved meaning, and are tracked since `b2e5108` | Hand-authored baseline-specific evidence, not versioned truth |
@@ -438,7 +438,9 @@ and label any fallback artifact **prepared**.
 
 Night 3 specifics: if a discarded villain session wrote files, archive them
 under `tmp/` before checkpoint 02; if a rehearsal left a `tasks/` directory,
-archive it under `tmp/` and let the architect create the graph live; rehearse
+archive it under `tmp/`. The architect proposes and reviews the graph without
+writing; the human approves it and the facilitator materializes it with
+`taskspec`. Rehearse
 `06-execute-one.md` end to end and reset the artifacts it creates (the second
 staging model and its exit check) so the live run starts clean.
 
@@ -488,7 +490,7 @@ The invariant across every module is the same: the agent may perform bounded
 work, evidence may support claims, and accountable humans retain decisions the
 system cannot legitimately make.
 
-## 15. Night 3 build — specification and decomposition
+## 15. Night 3 build — the task: specification and decomposition
 
 This section is the consolidated build document for Night 3, incorporated on
 2026-08-12 after Day 2 executed end to end. The former standalone agenda was
@@ -561,8 +563,8 @@ decides. Break after movement 03, contract left on the projector.
 | 04 | 21:30 | Decomposition — item 7 becomes a graph | `04` | lookup table plus per-task specs |
 | ✦ | 21:50 | **Giveaway → crank** | — | free tool, then a 90-second pre-recorded preview |
 | 05 | 22:00 | The ready set — dependencies and order | `05` | wide and shallow beats narrow and deep |
-| 06 | 22:20 | One packet, one iteration, one bounded change | `06` | fresh context, exit check, stop |
-| 07 | 22:50 | The boundary survives decomposition | `07` | Revenue cannot become a task |
+| 06 | 22:20 | One packet, one iteration, one bounded change | `06` | fresh context, same spec across 2–3 available engines, exit check, stop |
+| 07 | 22:50 | The boundary survives decomposition | `07` | Revenue cannot become ready or executable |
 
 ### 15.4 Deck acts — as-built inventory
 
@@ -571,10 +573,12 @@ enumeration-close slides were removed. The earlier 49-slide baseline was
 measured at 1600×900 with zero overflow, no duplicate ids, and balanced
 `<style data-act="N">` blocks; that result is historical, not proof for the
 current 47-slide file. A fresh in-app check found 47 slides, no duplicate ids,
-and no console errors. Its fixed 1211×880 viewport reports overflow on slides
-12, 26, 32, 34, and 40; because it cannot resize, this is narrow-screen
-evidence rather than a fresh 1600×900 verdict. Retired act sources remain
-available through Git history.
+and no console errors. A content-bounds check at its fixed 1211×880 viewport
+reports 31 px of horizontal overflow on slide 23, 22 px of vertical overflow on
+slide 26, and 48 px of vertical overflow on slide 40. Intentional decorative
+aurora overscan was excluded. Because the app cannot resize, this is
+narrow-screen evidence rather than a fresh 1600×900 verdict. Retired act
+sources remain available through Git history.
 
 | Slides | Act | Accent | Content |
 | ---: | --- | --- | --- |
@@ -626,8 +630,9 @@ writes it; only `accept --stamp` writes `accepted*`. Change one character of the
 body after sign-off and the seal breaks. Act 2 slide 23 is this.
 
 **The rule that makes a packet atomic.** One objective with no "and". One area
-of the codebase. Verifiable by the steps it already contains. Ends in a single
-clean commit. If the title needs "and" to be honest, it is two packets.
+of the codebase. Verifiable by the steps it already contains. Ends in one
+bounded change behind its own gates. If the title needs "and" to be honest, it
+is two packets.
 
 **The two-layer index — `tasks/_state.yaml`.**
 
@@ -645,6 +650,14 @@ Sizing that pays off here: **wide and shallow beats narrow and deep** — a
 shallow graph has more ready packets at any moment, so the loop is never
 starved. Deck: Act 4 slide 34 draws both layers; Act 5 reads order out of the
 index alone.
+
+Checkpoint 04 keeps the Day 2 roles intact: the architect proposes a
+`TaskPlan/v1` manifest in chat and reviews it without Bash or file writes. A
+human approves the exact YAML, the facilitator saves it and runs `taskspec
+plan` before `taskspec batch`, and Task-Spec materializes only that approved
+map. An unresolved semantic item may exist only as a definition-free blocked
+hole; `tasks/_state.yaml` and `_metrics.jsonl` prove it was withheld and routed
+to Finance.
 
 ### 15.6 Assessment — does Task-Spec match where atomic tasks are going?
 
@@ -678,8 +691,9 @@ The three things it still cannot do are judgment, and they are the Bootcamp:
 
 **The gap that is real — and it is not in the tool.** `Revenue` is
 `unresolved`, owner Finance. No zone, no eval and no validator can close that.
-Item 10 cannot become a task tonight, and the refusal at movement 06 is the
-success state.
+Item 10 cannot become ready or executable tonight. Task-Spec may preserve it as
+a definition-free `blocked` hole with Finance named; the refusal at movement 06
+is the success state.
 
 **TransactCo's own scenario, for the room:**
 
@@ -777,7 +791,8 @@ exceptions are enumerated in `.gitignore`. Committed as `b2e5108`; `git show
 - [ ] The ready set was named before any packet was worked.
 - [ ] A fresh developer session executed one packet from files alone and its
       exit check returned 0.
-- [ ] Item 10 was requested and refused — Revenue still cannot become a task.
+- [ ] Item 10 was requested and refused — only a definition-free blocked hole
+      exists; Revenue still cannot become ready or executable.
 - [ ] The room wrote three commitment lines.
 
 ### 15.12 Sources
