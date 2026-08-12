@@ -40,7 +40,7 @@ Explain briefly:
 
 ## Do live
 
-Fill the three deferred sections of `tasks/T-20260812-daily-gross-ordered.md`. Type the scenario;
+Fill the four deferred sections of `tasks/T-20260812-daily-gross-ordered.md`. Type the scenario;
 it is the half a human signs:
 
 ```gherkin

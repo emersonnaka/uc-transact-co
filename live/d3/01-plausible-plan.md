@@ -93,4 +93,4 @@ question: *"Quais pedidos exatamente entram na soma, e por quê?"* The divergenc
 surfaces immediately. If a session tries to execute, interrupt it and name the
 boundary — the overreach lesson belongs to Day 2, not here.
 
-Next: [`02-tasks-pack.md`](02-tasks-pack.md).
+Next: [`02-task-spec.md`](02-task-spec.md).

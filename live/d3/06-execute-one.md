@@ -9,7 +9,7 @@ That isolation is the proof: if the spec works, it works from files.
 ## Why this step
 
 Everything so far was specification. This is the test. One packet, one fresh
-context, one commit — and the agent decides it is finished by running its own
+context, one bounded change — and the agent decides it is finished by running its own
 exit check, not by asking. Then the same session is asked for the one thing that
 cannot be built, and the boundary holds after a full night of decomposition.
 
@@ -21,7 +21,7 @@ flowchart LR
     B --> C[Builds inside staging/]
     C --> D[Runs exit check]
     D --> E{Returns 0?}
-    E -->|Yes| F[Commit and stop]
+    E -->|Yes| F[Gate passes · stop]
     G[Item 10 requested] --> H[REFUSED — no file]
 
     classDef build fill:#DBEAFE,stroke:#2563EB,color:#172554

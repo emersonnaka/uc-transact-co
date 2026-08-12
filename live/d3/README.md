@@ -1,5 +1,9 @@
 # Day 3 — The Spec: The Unit of Work
 
+> **Repository state:** Day 3 is built, but execution is not complete. Its five
+> inherited specs and Day 2 staging model are committed; no completed task graph
+> or second staging model is committed.
+
 The question carried through the session is:
 
 > The plan says ten items. Which one can I hand to an agent tonight — and how
@@ -38,10 +42,10 @@ flowchart LR
 
 | Step | Session | Deck cue | Demo evidence | Durable result |
 | ---: | --- | --- | --- | --- |
-| [`00`](00-inheritance.md) | No agent | What survived the night | Five specs, rails intact, empty-shell parse | Baseline only |
+| [`00`](00-inheritance.md) | No agent | What survived the night | Five specs, rails intact, parse with the Day 2 model | Baseline only |
 | [`01`](01-plausible-plan.md) | **NEW A** | The plan is not the work | Three divergent plans for item 7 | None — session discarded |
-| [`02`](02-tasks-pack.md) | **NEW B** | Anatomy of a Task-Spec | `T-20260812-daily-gross-ordered.md`, six zones, human-edited | `tasks/T-20260812-daily-gross-ordered.md` |
-| [`03`](03-bdd-and-evals.md) | Continue B | Two halves of done | Scenario + eval returning 0 | Evals inside `T-20260812-daily-gross-ordered` |
+| [`02`](02-task-spec.md) | **NEW B** | Anatomy of a Task-Spec | `T-20260812-daily-gross-ordered.md`, six zones, human-edited | `tasks/T-20260812-daily-gross-ordered.md` |
+| [`03`](03-bdd-and-evals.md) | Continue B | Two halves of done | Scenario + pre-build exit check returning non-zero | Evals inside `T-20260812-daily-gross-ordered` |
 | [`04`](04-decompose.md) | Continue B as architect | Item 7 becomes a graph | Index + 4–6 packets | `tasks/` graph |
 | ✦ | No agent | Giveaway → crank → offer | Deck only — 3 slides, ~21:50, 5 min | None — the crank clip is **pre-recorded** |
 | [`05`](05-ready-set.md) | Continue B | The ready set | Dependency order justified | `_state.yaml` ordering |
@@ -125,6 +129,6 @@ spec line into the prompt or back.
 - [ ] Item 10 was requested and refused — Revenue still cannot become a task.
 - [ ] The room filled the three commitment lines.
 
-The planning source is [`../../plan/d3-agenda.md`](../../plan/d3-agenda.md); the
+The planning source is [`../../plan/semana.md`](../../plan/semana.md); the
 deck is [`../../presentation/d3.html`](../../presentation/d3.html). Day 2's
 runbook ([`../d2/`](../d2/)) remains the format precedent.

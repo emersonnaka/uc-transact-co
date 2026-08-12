@@ -125,7 +125,7 @@ git status --short tasks/
 
 ## Show the evidence
 
-The pack on screen, and the three divergences from checkpoint 01 resolved in
+The spec on screen, and the three divergences from checkpoint 01 resolved in
 it, one by one: the statuses are named, the upstream model is named, the label's
 home is named. Hold one beat and say:
 
@@ -144,8 +144,9 @@ home is named. Hold one beat and say:
 ## Recovery
 
 If typing live stalls, keep going — slow typing teaches better than fast
-pasting. Only if the editor session breaks entirely, restore with
-`git checkout -- tasks/` and retype Goal and Context first; Behaviors and
-Success Criteria belong to checkpoint 03 anyway.
+pasting. Only if the editor session breaks entirely, move the incomplete spec
+under ignored `tmp/` as a clearly labeled recovery artifact, then retype Goal
+and Context first; Behaviors and Success Criteria belong to checkpoint 03
+anyway.
 
 Next: [`03-bdd-and-evals.md`](03-bdd-and-evals.md).
