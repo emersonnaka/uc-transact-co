@@ -40,6 +40,9 @@ storage/specs/2-ontology.md         Day 1 — read-only · Revenue unresolved, D
 storage/specs/3-technical-brief.md  Day 1 — read-only
 storage/specs/4-plan-transform.md   Day 2 — TONIGHT'S RAW MATERIAL, 10 items, 3 BLOCKED
 storage/specs/5-plan-serve.md       Day 2 — read-only tonight
+                                    (both translated to English 2026-08-12 to
+                                     match specs 1–3; structure and evidence
+                                     IDs unchanged)
 AGENTS.md                           Day 2 — architect + developer, committed 3858c8c
 dbt/models/staging/                 Day 2 — stg_orders.sql + _raw_sources.yml, committed
 ```
@@ -121,11 +124,13 @@ carries `[Sources]` + talk track in a hidden `speaker-notes` aside.
   green, red.
 - Revenue stays unresolved. Item 10 is refused at ACT 6, never built. The
   refusal is a success state.
-- Language: deck copy and this document are English; live prompts and any
-  text quoted from `storage/specs/` or the session recordings stay in
-  Portuguese, verbatim. Never translate a quoted prompt, plan item, or
-  transcript line — the deck already follows this (e.g. the agent's refusal
-  quote on slide 8).
+- Language: **all deck copy visible on a slide is English**, including quotes
+  translated from the session recordings — d2 set this convention (Igor's
+  question appears in English on the slide, with the Portuguese original kept in
+  the hidden `speaker-notes`). Follow it exactly: translate on the slide, cite
+  the original in the notes. `storage/specs/` is English, so any spec text
+  quoted on a slide is already verbatim. Only the prompt wrappers pasted live
+  in `live/d3/` are PT-BR, because the room speaks Portuguese.
 
 ## Checkpoint sequence — `live/d3/`
 
@@ -151,27 +156,23 @@ specification work, C is a fresh developer that receives only files.
 Paste item 7 verbatim as if it were a ticket, three times, into three fresh
 contexts (or the same context reset). Say nothing else.
 
-**The prompt below is in Portuguese by design — do not translate it.** Live
-prompts across `live/d1/` and `live/d2/` are delivered in PT-BR (the room's
-language), and the inner quote is item 7 verbatim from `4-plan-transform.md`
-— translating it would break the premise that the agent receives exactly what
-the plan says.
+**The prompt wrapper stays in Portuguese — the room's language, same as Days 1
+and 2. The quoted item stays in English**, because `4-plan-transform.md` is now
+English and the quote must be verbatim. Canonical version lives in
+[`../live/d3/01-plausible-plan.md`](../live/d3/01-plausible-plan.md); keep the
+two in sync.
 
 ```text
-Implemente o item 7 do plano de transformação:
+Implemente o item 7 do plano de transformação em storage/specs/4-plan-transform.md:
 
-"mart_daily_gross_ordered — soma por ordered_at, pedidos não cancelados;
-grão = dia calendário UTC, rotulado como janela técnica"
+"mart_daily_gross_ordered — sum by ordered_at, non-cancelled orders;
+grain = UTC calendar day, labeled as a technical window"
 
-Apresente apenas o seu plano em no máximo 6 linhas. Não execute.
+Apresente apenas o seu plano de implementação em no máximo 6 linhas
+numeradas. Não execute nada e não escreva nenhum arquivo.
 ```
 
-English gloss, for reference only: *Implement item 7 of the transform plan:
-"mart_daily_gross_ordered — sum by ordered_at, non-cancelled orders; grain =
-UTC calendar day, labelled as a technical window". Present only your plan, 6
-numbered lines maximum. Do not execute yet.*
-
-Expect divergence on: which statuses count as "não cancelados" (non-cancelled), whether the
+Expect divergence on: which statuses count as non-cancelled, whether the
 mart reads `stg_orders` or `int_orders_payments_reconciled`, whether the
 technical-window label is a column, a model name, or a comment. Circle the
 three. The line that lands:
@@ -310,9 +311,12 @@ when it arrives after a gift and lasts one sentence.
 
 ## Today's build order
 
-1. `live/d3/README.md` — sequence table, output budgets, completion gate.
-2. `live/d3/00-inheritance.md` … `07-reflection.md` — eight checkpoints.
-3. `plan/` decision: add BDD to the Tasks Pack template and ship the index layer.
+1. ~~`live/d3/README.md`~~ — **built**: sequence table, output budgets, gate.
+2. ~~`live/d3/00-inheritance.md` … `07-reflection.md`~~ — **built**, eight
+   checkpoints, cross-references verified against the deck and the specs.
+3. `plan/` decision: add BDD to the Tasks Pack template and ship the index
+   layer. Checkpoints 02–04 already demonstrate both by hand; the template
+   itself is the checkpoint-04 giveaway and still needs packaging.
 4. `presentation/d3.html` — **OPENING + ACT 0 built and render-verified**
    (9 slides, 1600×900, no invented classes). Remaining: ACT 1 → CLOSE per the
    act map above — buildable act by act, by any engine, on top of the existing
