@@ -90,16 +90,16 @@ Evidence: `4-plan-transform.md` item 7 · brief candidate 1
 (R$ 1,403,044.31 / 868 orders).
 
 ## Behaviors
-(written at checkpoint 03)
+(zone 2 — written at checkpoint 03)
 
 ## Success Criteria
-(written at checkpoint 03)
+(zone 3 — written at checkpoint 03)
 
 ## Validation Card
-(written at checkpoint 03)
+(zone 3 — written at checkpoint 03)
 
 ## Exit Check
-(written at checkpoint 03)
+(zone 3 — written at checkpoint 03)
 
 ## Anti-Patterns
 - **Don't name it revenue** — Revenue is unresolved and owned by Finance.
@@ -116,6 +116,13 @@ Evidence: `4-plan-transform.md` item 7 · brief candidate 1
 
 Zones 4 and 5 are written now because they are boundaries, not proofs. Zone 6
 (Rollback, Observability) is `full`-profile only and this task is `standard`.
+
+Four sections stay empty on purpose, and it is worth naming them so the room sees
+the shape of the gap rather than an unfinished file: **`## Behaviors`** (zone 2)
+and **`## Success Criteria`**, **`## Validation Card`**, **`## Exit Check`**
+(zone 3). Those are the two halves of done, and checkpoint 03 fills all four in
+that order. Say it plainly: *the boundary is written, the proof is not — so right
+now this file still cannot tell anyone when it is finished.*
 
 Then show what changed:
 

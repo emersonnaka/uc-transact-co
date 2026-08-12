@@ -1,8 +1,9 @@
 # Day 3 — The Spec: The Unit of Work
 
-> **Repository state:** Day 3 is built, but execution is not complete. Its five
-> inherited specs and Day 2 staging model are committed; no completed task graph
-> or second staging model is committed.
+> **Repository state:** Day 3 is built and execution has started locally. Its
+> first Task-Spec exists as untracked session evidence; the task graph and second
+> staging model are not complete. The five inherited specs and Day 2 staging
+> model remain committed inputs.
 
 The question carried through the session is:
 
@@ -47,7 +48,7 @@ flowchart LR
 | [`02`](02-task-spec.md) | **NEW B** | Anatomy of a Task-Spec | `T-20260812-daily-gross-ordered.md`, six zones, human-edited | `tasks/T-20260812-daily-gross-ordered.md` |
 | [`03`](03-bdd-and-evals.md) | Continue B | Two halves of done | Scenario + pre-build exit check returning non-zero | Evals inside `T-20260812-daily-gross-ordered` |
 | [`04`](04-decompose.md) | Continue B as architect | Item 7 becomes a graph | Index + 4–6 packets | `tasks/` graph |
-| ✦ | No agent | Giveaway → crank → offer | Deck only — 3 slides, ~21:50, 5 min | None — the crank clip is **pre-recorded** |
+| ✦ | No agent | Giveaway → crank | Deck only — 2 slides, ~21:50, 3 min | None — the crank clip is **pre-recorded** |
 | [`05`](05-ready-set.md) | Continue B | The ready set | Dependency order justified | `_state.yaml` ordering |
 | [`06`](06-execute-one.md) | **NEW C** — developer | One packet, one iteration | Exit check returns 0 + refusal holds | Second staging model |
 | [`07`](07-reflection.md) | No agent | Turn three closes | Participant commitments | Team learning |
@@ -106,8 +107,9 @@ creates it live inside the contract's writable path.
 - Session C is the developer: receives only its Task-Spec and `AGENTS.md`.
 - Instructor `_control`, injection, scoring, and reveal surfaces remain closed.
 - Label any fallback artifact **prepared**.
-- The commercial peak is three deck slides between checkpoints 04 and 05, never
-  at the close. The crank clip is pre-recorded and must be announced as such.
+- The giveaway and crank are two deck slides between checkpoints 04 and 05.
+  The crank clip is pre-recorded and must be announced as such; there is no
+  pricing or offer slide in the current deck.
 
 ## Language
 

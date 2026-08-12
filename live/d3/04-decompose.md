@@ -93,8 +93,8 @@ If a packet comes back oversized or with "and" in the title, reject it in one
 line and regenerate — the correction is itself a teaching beat. Do not edit the
 packet by hand; the architect owns its own revision.
 
-Three deck slides follow this checkpoint, in order, at roughly 21:50 — the
-night's commercial peak, five minutes total, and then straight back to the graph:
+Two deck slides follow this checkpoint, in order, at roughly 21:50 — about
+three minutes total, then straight back to the graph:
 
 1. **The giveaway** — Task-Spec is free, MIT, v3.7.0, installed from source. Say
    plainly what it cannot do: size a packet, judge whether an eval is genuinely
@@ -102,8 +102,8 @@ night's commercial peak, five minutes total, and then straight back to the graph
 2. **The crank** — a **pre-recorded** clip of the loop consuming this same graph
    in two dependency-respecting waves. Say "pre-recorded" before anything else;
    describing it as live would cost the night its whole credibility argument.
-3. **The ladder and the offer** — levels 0–5, the room is at 3, tonight was the
-   first move to 4. Task-Spec is item 04 of the Bootcamp's six. Offer stated once,
-   then stop.
+
+The current deck has no ladder, pricing, or offer slide. Return directly to the
+ready set.
 
 Next: [`05-ready-set.md`](05-ready-set.md).

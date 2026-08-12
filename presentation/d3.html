@@ -2455,8 +2455,7 @@ body.anim-ready .reveal.reveal-reset > * { transition: none !important; }
 }
 </style>
 <style data-act="4b">
-/* ACT 4 · beats 2–3 · the crank and the offer
- * The commercial peak sits inside Act 4, never at the close.
+/* ACT 4 · beat 2 · the crank
  * Act-local selectors only, every one a4b- prefixed. */
 
 .a4b-fig { width: 100%; height: auto; display: block; }
@@ -2503,85 +2502,11 @@ body.anim-ready .reveal.reveal-reset > * { transition: none !important; }
 }
 .a4b-cc-b b { color: var(--text); font-weight: 600; }
 
-/* ── the ladder ── */
-.a4b-lad { margin-top: clamp(10px,1.6vh,18px); border-top: 1px solid var(--rule); }
-.a4b-lr {
-  display: grid; grid-template-columns: clamp(30px,2.8vw,42px) minmax(0,0.86fr) minmax(0,1.25fr);
-  gap: clamp(9px,1vw,17px); align-items: baseline;
-  padding: clamp(7px,1.15vh,12px) clamp(9px,0.9vw,14px);
-  border-bottom: 1px solid var(--rule);
-}
-.a4b-ln {
-  font-family: var(--font-display); font-style: normal;
-  font-size: clamp(17px,1.8vw,26px); line-height: 1; color: var(--text-mute);
-}
-.a4b-lname {
-  font-family: var(--font-editorial); font-size: clamp(12.5px,1.2vw,17px);
-  line-height: 1.28; color: var(--text-dim);
-}
-.a4b-lg {
-  font-family: var(--font-mono); font-size: clamp(9.5px,0.9vw,12px);
-  line-height: 1.34; color: var(--text-mute);
-}
-.a4b-lr.is-here {
-  background: linear-gradient(96deg, rgba(212,175,55,0.13), rgba(212,175,55,0.02) 78%);
-  border-left: 2px solid var(--gold); border-radius: 4px;
-}
-.a4b-lr.is-here .a4b-ln { color: var(--gold); font-size: clamp(21px,2.2vw,32px); }
-.a4b-lr.is-here .a4b-lname { color: var(--text); font-weight: 600; }
-.a4b-lr.is-here .a4b-lg { color: #e6cf8a; }
-.a4b-lr.is-goal .a4b-ln, .a4b-lr.is-goal .a4b-lname { color: var(--text); }
-.a4b-lr:last-child { border-bottom: 0; }
-
-/* ── the arsenal disclosure ── */
-.a4b-ars { display: flex; flex-wrap: wrap; gap: clamp(5px,0.6vw,9px); margin-top: clamp(8px,1.3vh,13px); }
-.a4b-ac {
-  font-family: var(--font-mono); font-size: clamp(8.5px,0.82vw,10.5px);
-  font-weight: 600; letter-spacing: 0.6px;
-  padding: 5px 9px; border-radius: 6px;
-  border: 1px solid var(--border-bright); color: var(--text-mute);
-  background: rgba(255,255,255,0.014);
-}
-.a4b-ac.is-yours {
-  border-color: var(--green); color: #0b0b0e; background: var(--green); font-weight: 800;
-}
-
-/* ── the offer · a colophon, not a pricing card ── */
-.a4b-offer {
-  margin-top: clamp(12px,1.9vh,20px); padding-top: clamp(12px,1.9vh,20px);
-  border-top: 1px solid rgba(212,175,55,0.4);
-}
-.a4b-o-row { display: flex; align-items: flex-end; gap: clamp(14px,1.6vw,26px); flex-wrap: wrap; }
-.a4b-o-was {
-  font-family: var(--font-mono); font-size: clamp(11px,1.05vw,14.5px);
-  color: var(--text-mute); text-decoration: line-through; padding-bottom: clamp(5px,0.8vh,9px);
-}
-.a4b-o-now {
-  font-family: var(--font-display); font-style: normal;
-  font-size: clamp(38px,4.6vw,70px); line-height: 0.9; letter-spacing: -2.5px; color: var(--gold);
-}
-.a4b-o-cup {
-  font-family: var(--font-mono); font-size: clamp(9px,0.86vw,11.5px);
-  font-weight: 800; letter-spacing: 2px;
-  color: #0b0b0e; background: var(--gold); padding: 6px 11px; border-radius: 6px;
-  margin-bottom: clamp(5px,0.8vh,9px);
-}
-.a4b-o-meta {
-  margin-top: clamp(8px,1.3vh,13px);
-  font-family: var(--font-editorial); font-size: clamp(12px,1.16vw,16.5px);
-  line-height: 1.4; color: var(--text-dim);
-}
-.a4b-o-meta b { color: var(--text); font-weight: 600; font-style: normal; }
-
 @media (max-width: 1080px) {
   .a4b-cmp { grid-template-columns: 1fr; }
-  .a4b-lr { grid-template-columns: 30px minmax(0,1fr); }
-  .a4b-lr .a4b-lg { grid-column: 2; }
 }
 @media (max-height: 980px) {
-  .a4b-lr { padding: clamp(5px,0.85vh,9px) clamp(8px,0.9vw,13px); }
   .a4b-cc-n { font-size: clamp(26px,3vw,44px); }
-  .a4b-o-now { font-size: clamp(32px,3.8vw,56px); }
   .a4b-band { padding: clamp(8px,1.3vh,13px) clamp(12px,1.4vw,18px); }
 }
 </style>
@@ -3067,7 +2992,7 @@ Talk track: same move as the last two nights — inheritance before work. Walk t
         <div class="prow pc-gold">
           <span class="prow-num">✦</span>
           <span class="prow-time">21:50</span>
-          <span class="prow-name">Task-Spec, given away — then the crank <span class="prow-gloss">the night's one giveaway, and one offer · 5 min</span></span>
+          <span class="prow-name">Task-Spec, given away — then the crank <span class="prow-gloss">one giveaway · one pre-recorded preview · 3 min</span></span>
           <span class="prow-live">—</span>
         </div>
 
@@ -4109,12 +4034,12 @@ Talk track: this figure is the act's visual thesis — read it left to right. On
       <div class="next-hook" style="max-width:1180px;margin:clamp(26px,4.2vh,46px) auto 0;text-align:left;">
         <span class="hook-n">Next · movement 02</span>
         <p class="hook-copy">Anatomy of a Task-Spec — <b>six zones, one atomic change, written by hand.</b>
-        The fix for a line that only mentions: live/d3/02-tasks-pack.md.</p>
+        The fix for a line that only mentions: live/d3/02-task-spec.md.</p>
       </div>
-      <div class="src" style="text-align:left;">The closing line per live/d3/01-plausible-plan.md §Show the evidence, verbatim. Next movement per plan/semana.md §15.3 — movement 02, checkpoint live/d3/02-tasks-pack.md.</div>
+      <div class="src" style="text-align:left;">The closing line per live/d3/01-plausible-plan.md §Show the evidence, verbatim. Next movement per plan/semana.md §15.3 — movement 02, checkpoint live/d3/02-task-spec.md.</div>
       <aside class="speaker-notes" hidden>[Sources]
 live/d3/01-plausible-plan.md — “Every one of these is defensible… mentioned”, verbatim.
-plan/semana.md §15.3: Anatomy of a Task-Spec, checkpoint live/d3/02-tasks-pack.md.
+plan/semana.md §15.3: Anatomy of a Task-Spec, checkpoint live/d3/02-task-spec.md.
 [/Sources]
 Talk track: land the line slowly — read it once, whole, then once more as two halves: specified is something a machine can check; mentioned is something a reviewer can admire. Point at the three chips: one line of plan, three axes, three builds — and none of them wrong. Then hand off to movement 02: the spec is the fix, and the room will feel its cost in fifteen minutes.</aside>
     </div>
@@ -4185,10 +4110,10 @@ Talk track: land the line slowly — read it once, whole, then once more as two 
         </div>
 
       </div>
-      <div class="src">Six-zone anatomy per ~/GitHub/task-spec spec/task-spec-v3.md (File anatomy); four layers per its README, "Inside one atomic task". Live checkpoint: live/d3/02-tasks-pack.md. Villain evidence: Movement 01, live/d3/01-plausible-plan.md.</div>
+      <div class="src">Six-zone anatomy per ~/GitHub/task-spec spec/task-spec-v3.md (File anatomy); four layers per its README, "Inside one atomic task". Live checkpoint: live/d3/02-task-spec.md. Villain evidence: Movement 01, live/d3/01-plausible-plan.md.</div>
       <aside class="speaker-notes" hidden>[Sources]
 ~/GitHub/task-spec — spec/task-spec-v3.md (six zones, field reference), README.md (four layers), docs/concepts/signed-off.md (the envelope).
-live/d3/02-tasks-pack.md — the checkpoint this act ends on; live/d3/01-plausible-plan.md — the three builds it answers.
+live/d3/02-task-spec.md — the checkpoint this act ends on; live/d3/01-plausible-plan.md — the three builds it answers.
 plan/semana.md §15.3 — movement 02, the felt cost.
 [/Sources]
 Talk track: the gap is fresh — fifteen minutes ago three sessions took the same plan line and diverged. Walk the four commitments slowly; they are the act's table of contents. Dwell on the third: the seal is the Day 2 contract made durable — the human said yes out loud last night, and tonight that yes becomes bytes that break when the body changes. Close on the fourth: the scaffolder exists and we are deliberately not using it yet; the room types first, so the Movement-04 template has a price they have felt.</aside>
@@ -5087,7 +5012,7 @@ Talk track: fill this card from what just happened on screen, not from the slide
       <aside class="speaker-notes" hidden>[Sources]
 ~/GitHub/task-spec — spec/task-spec-v3.md: Zone 2 (Behavior), Zone 3 (Contract / The Moat), and &ldquo;The traceability rule (bidirectional)&rdquo;.
 live/d3/03-bdd-and-evals.md — the live checkpoint that writes the scenario and derives the evals.
-plan/d3-act-prompts.md — ACT 3, &ldquo;Neither may dangle&rdquo;.
+git show b626ef8^:plan/d3-act-prompts.md — archived ACT 3 build source, &ldquo;Neither may dangle&rdquo;.
 [/Sources]
 Talk track: two readers, one file. Finance signs the sentence; the machine runs the check. The problem: neither can read the other's half. The fix is the last node — a rule that ties them together and fails anything left hanging. That is the whole act; the next slide explains the two halves in plain terms.</aside>
     </div>
@@ -5153,7 +5078,7 @@ Talk track: two readers, one file. Finance signs the sentence; the machine runs 
       <aside class="speaker-notes" hidden>[Sources]
 live/d3/03-bdd-and-evals.md — "Done has two readers"; the scenario and evals typed live.
 ~/GitHub/task-spec — spec/task-spec-v3.md: Zone 2 (Behavior) and Zone 3 (Contract / The Moat).
-plan/d3-act-prompts.md — ACT 3 narrative: "Done has two readers".
+git show b626ef8^:plan/d3-act-prompts.md — archived ACT 3 narrative: "Done has two readers".
 [/Sources]
 Talk track: no jargon. Left is a sentence a person signs — read the scenario once. Right is a check a machine runs — three evals, one exit. The gold bind in the middle is the whole act: neither may dangle. Close on the band: Finance can't read bash, a machine can't run a sentence. The next slide shows the rule that holds them together.</aside>
     </div>
@@ -5261,10 +5186,10 @@ Talk track: no jargon. Left is a sentence a person signs — read the scenario o
 
       <p class="a3-trace-punch">A hole on the left. Scope creep on the right. <b>Neither may dangle.</b></p>
 
-      <div class="src">Behavior and eval text from plan/d3-act-prompts.md (ACT 3); the rule from spec/task-spec-v3.md — every B-N verified by ≥1 eval carrying verifies: [B-N]; every eval maps to ≥1 B-N. eval_3 names revenue only to forbid it.</div>
+      <div class="src">Behavior and eval text from the archived ACT 3 build source at b626ef8^:plan/d3-act-prompts.md; the rule from spec/task-spec-v3.md — every B-N verified by ≥1 eval carrying verifies: [B-N]; every eval maps to ≥1 B-N. eval_3 names revenue only to forbid it.</div>
       <aside class="speaker-notes" hidden>[Sources]
 ~/GitHub/task-spec — spec/task-spec-v3.md: Zone 2 (Behavior), Zone 3 (Contract / The Moat), &ldquo;The traceability rule (bidirectional)&rdquo;.
-plan/d3-act-prompts.md — ACT 3: B-1 / B-2 statements and eval_1..3 with verifies: links, verbatim.
+git show b626ef8^:plan/d3-act-prompts.md — archived ACT 3 B-1 / B-2 statements and eval_1..3 with verifies: links, verbatim.
 [/Sources]
 Talk track: walk the graph left to right. B-1 is proved twice — eval_1 and eval_2, both cyan, both named. B-2 is proved once, in gold. Then the two broken links: B-3 is a behaviour no eval proves — a hole; eval_4 proves something the spec never promised — scope creep. Both stop dead at the gold gate. The whole act is that centre plate: neither may dangle.</aside>
     </div>
@@ -5324,7 +5249,7 @@ Talk track: four properties, read quickly. The fourth is the whole slide: machin
     </div>
   </section>
 
-  <section class="slide" data-act="ACT 3" data-act-name="GO LIVE · Run the exit check before the build" data-accent="gold" style="padding-top:clamp(12px,2vh,26px);padding-bottom:clamp(12px,2vh,26px);">
+  <section class="slide" data-act="ACT 3" data-act-name="GO LIVE · Run the exit check before the build" data-accent="gold" style="padding-top:clamp(9px,1.5vh,20px);padding-bottom:clamp(9px,1.5vh,20px);">
     <div class="aurora aurora--gold" aria-hidden="true"><b></b></div>
     <div class="reveal" style="position:relative;z-index:2;width:100%;max-width:1860px;margin:0 auto;">
 
@@ -5361,7 +5286,7 @@ Talk track: four properties, read quickly. The fourth is the whole slide: machin
               <span class="gl-v"><b>Continue Session B.</b> The human types the scenario; the agent may draft the bash once it's signed.</span>
 
               <span class="gl-k">We run</span>
-              <span class="gl-v">Fill the three sections of <code>tasks/T-20260812-daily-gross-ordered.md</code> — behavior, evals, exit check. Then run the exit check, <b>now</b>.</span>
+              <span class="gl-v">Fill the four deferred sections in order — <b>Behaviors</b>, <b>Success Criteria</b>, <b>Validation Card</b>, <b>Exit Check</b>. Then run it, <b>now</b>.</span>
 
               <span class="gl-k">Proof that counts</span>
               <span class="gl-v"><b>exit ≠ 0</b>, on screen. A gate that fails before the build is a gate you can trust.</span>
@@ -5426,14 +5351,14 @@ exit=<span class="a3-n">1</span></div>
       <aside class="speaker-notes" hidden>[Sources]
 live/d3/03-bdd-and-evals.md — Do live, Show the evidence, Gate, Recovery (scratch file, announced as prepared).
 Makefile — dbt-check: dbt debug + dbt parse; passes with nothing built.
-plan/d3-act-prompts.md — ACT 3 go-live: &ldquo;Run the exit check before the build&rdquo;.
+git show b626ef8^:plan/d3-act-prompts.md — archived ACT 3 go-live: &ldquo;Run the exit check before the build&rdquo;.
 [/Sources]
 Talk track: run it now — the scenario is typed, the evals derived. Do not build anything. Read the terminal top to bottom: the command, then the number. Say the checkpoint line out loud: nothing is built yet, so it fails — that's correct. Three evals: one passes because the project still parses, one fails because the behaviour doesn't exist yet, one passes because the boundary already holds. The number is non-zero and that's the proof: the gate can fail, so its zero will mean something. Then the room answers the strip — a failing number is a working gate.</aside>
     </div>
   </section>
 
 
-<!-- ════════════════════ ACT 4 · Item 7 becomes a graph → the giveaway, the crank, the offer ════════════════════ -->
+<!-- ════════════════════ ACT 4 · Item 7 becomes a graph → the giveaway and the crank ════════════════════ -->
   <section class="slide" data-act="ACT 4" data-act-name="Item 7 becomes a graph" data-accent="purple"
            style="justify-content:center;align-items:flex-start;text-align:left;">
     <div class="aurora aurora--purple" aria-hidden="true"><b></b></div>
@@ -5497,9 +5422,9 @@ Talk track: run it now — the scenario is typed, the evals derived. Do not buil
         </div>
 
       </div>
-      <div class="src">The fifteen minutes per live/d3/02-tasks-pack.md; the cut (items 5–8 → 4–6 packets plus the index) and the deliberate item-10 ask per live/d3/04-decompose.md. The two-layer upgrade per plan/semana.md §15.5.</div>
+      <div class="src">The fifteen minutes per live/d3/02-task-spec.md; the cut (items 5–8 → 4–6 packets plus the index) and the deliberate item-10 ask per live/d3/04-decompose.md. The two-layer upgrade per plan/semana.md §15.5.</div>
       <aside class="speaker-notes" hidden>[Sources]
-live/d3/02-tasks-pack.md — the hand-written spec and its felt cost.
+live/d3/02-task-spec.md — the hand-written spec and its felt cost.
 live/d3/04-decompose.md — the decomposition prompt, the gate, the deliberate item-10 ask.
 plan/semana.md §15.5–15.6 — the two-layer index and related-items assessment.
 [/Sources]
@@ -5773,7 +5698,7 @@ Talk track: draw the asymmetry before explaining it — left is almost nothing, 
       <aside class="speaker-notes" hidden>[Sources]
 live/d3/04-decompose.md — the decomposition prompt, the deliberate second ask, the gate.
 storage/specs/4-plan-transform.md — items 5–8 verbatim on the left rail; item 10's BLOCKED row.
-Naming: the plan writes these models as mart_*, but the Day 2 contract only authorizes dbt/models/staging/ — so the packets name stg_*. That rename is the architect's, it is inside the contract, and live/d3/02-tasks-pack.md uses the same one. If the room asks, say exactly that.
+Naming: the plan writes these models as mart_*, but the Day 2 contract only authorizes dbt/models/staging/ — so the packets name stg_*. That rename is the architect's, it is inside the contract, and live/d3/02-task-spec.md uses the same one. If the room asks, say exactly that.
 plan/semana.md §15.5 — the two-layer index; item 7's model spec written at checkpoint 02.
 [/Sources]
 Talk track: run the cut first, exactly as the checkpoint does — items 5 to 8 in, five packets out. Point at the fork on item 5: one "and" became two packets, that is the whole sizing rule. The gold bus matters more than the purple edges: whether the marts read the reconciled join was a three-way argument at checkpoint 01; here it is one explicit edge, decided by the architect, written down. Then the second ask, verbatim in Portuguese: "Agora crie o packet para o item 10 — o modelo revenue." Let the refusal land in silence: no packet, no eval — a red row in the index with an owner.</aside>
@@ -5869,7 +5794,7 @@ plan/semana.md §15.8 — Bootcamp beat 1: real install line; the three cannots,
 ~/GitHub/task-spec — README.md §Installation (the commands on screen); spec/task-spec-v3.md (the six zones).
 presentation/d2.html — the BriefSpec giveaway slide (ACT 5): the sibling this one is shaped after.
 [/Sources]
-Talk track: this is a gift, not a pitch — say that first, exactly like Day 2. One sentence on what is free: Task-Spec, v3.7.0, MIT, install it tonight. Then slow down on the red panel: read all three cannots, one breath each — size a packet, judge an eval, write a scenario Finance would sign. That list is not a weakness; it is the honest boundary of any template, and it is why the room's fifteen minutes at movement 02 were spent deciding, not typing. Do not price anything here. The next two slides are the crank and the offer — ninety seconds and three minutes — and then the night goes straight back to the ready set.</aside>
+Talk track: this is a gift, not a pitch — say that first, exactly like Day 2. One sentence on what is free: Task-Spec, v3.7.0, MIT, install it tonight. Then slow down on the red panel: read all three cannots, one breath each — size a packet, judge an eval, write a scenario Finance would sign. That list is not a weakness; it is the honest boundary of any template, and it is why the room's fifteen minutes at movement 02 were spent deciding, not typing. Do not price anything here. The next slide is the pre-recorded crank; then the night goes straight back to the ready set.</aside>
     </div>
   </section>
 
@@ -5987,139 +5912,6 @@ plan/semana.md §15.8 — Bootcamp beat 2: the crank is the desire beat; PRE-REC
 presentation/d3.html — ACT 4 "Two layers, one graph": the index these waves are read from.
 [/Sources]
 Talk track: say PRE-RECORDED before you say anything else — the whole night's credibility argument is evidence over claims, and describing this as live would destroy it in one sentence. Then play it and narrate three things only: wave 1 opened because two packets declared no dependencies; the gate is an eval returning 0, not a person; wave 2 opened itself. Point at the red row last — the refusal survives the loop, exactly as it survived decomposition. Then the two numbers: one spec, twenty minutes, versus five specs, two waves. Do not explain the loop's internals; that is Day 4. Ninety seconds, then move.</aside>
-    </div>
-  </section>
-
-  <section class="slide" data-act="ACT 4" data-act-name="Level three feels like a downgrade" data-accent="gold"
-           style="padding-top:clamp(18px,2.6vh,36px);padding-bottom:clamp(18px,2.6vh,36px);">
-    <div class="aurora aurora--gold" aria-hidden="true"><b></b></div>
-    <div class="wrap reveal" style="max-width:1700px;">
-
-      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:34px;">
-        <div>
-          <span class="tag" style="--tag-c:var(--gold);">beat 3 · three minutes</span>
-          <h2 class="h2" style="font-size:clamp(26px,3.4vw,46px);margin-top:clamp(8px,1.3vh,14px);">
-            Almost everyone parks at level three.<br><span class="grad-gold">It feels like a downgrade.</span>
-          </h2>
-        </div>
-        <p class="lede" style="max-width:40ch;text-align:right;">
-          Five levels of code automation, mapped to the driving levels.
-          <b>Find your own row before I say anything else.</b>
-        </p>
-      </div>
-
-      <div class="cols" style="--cols:1.1fr 1fr;margin-top:clamp(10px,1.7vh,18px);">
-
-        <div class="a4b-lad">
-          <div class="a4b-lr">
-            <div class="a4b-ln">0</div><div class="a4b-lname">Manual</div>
-            <div class="a4b-lg">every character needs your approval</div>
-          </div>
-          <div class="a4b-lr">
-            <div class="a4b-ln">1</div><div class="a4b-lname">Delegated tasks</div>
-            <div class="a4b-lg">“write a test for this”</div>
-          </div>
-          <div class="a4b-lr">
-            <div class="a4b-ln">2</div><div class="a4b-lname">Pairing in flow</div>
-            <div class="a4b-lg">where most “AI-native” developers live</div>
-          </div>
-          <div class="a4b-lr is-here">
-            <div class="a4b-ln">3</div><div class="a4b-lname">You became a manager</div>
-            <div class="a4b-lg">← the room is here · life becomes reviewing diffs</div>
-          </div>
-          <div class="a4b-lr is-goal">
-            <div class="a4b-ln">4</div><div class="a4b-lname">You became a PM</div>
-            <div class="a4b-lg">you write the spec, review the plan, come back in 12 hours</div>
-          </div>
-          <div class="a4b-lr">
-            <div class="a4b-ln">5</div><div class="a4b-lname">The autonomous factory</div>
-            <div class="a4b-lg">specs in, validated software out</div>
-          </div>
-
-          <p class="note" style="margin-top:clamp(14px,2.2vh,24px);font-size:clamp(13px,1.26vw,18px);line-height:1.45;">
-            No tool on this ladder moves you up a row.
-            <b style="color:var(--gold);font-style:normal;">A spec that answers for itself does</b> —
-            which is the thing you spent twenty minutes writing at 20:35.
-          </p>
-        </div>
-
-        <div>
-          <div class="panel" style="--pk:var(--gold);">
-            <div class="panel-k">where tonight sits on that ladder</div>
-            <div class="gl-grid" style="grid-template-columns:clamp(74px,6.6vw,104px) minmax(0,1fr);gap:clamp(6px,1vh,10px) clamp(12px,1.4vw,20px);margin-top:clamp(9px,1.5vh,14px);">
-              <div class="gl-k">3 → 4</div>
-              <div class="gl-v">A Task-Spec whose exit check answers for itself. <b>That is tonight</b> —
-                you stopped reviewing diffs and started signing behaviour.</div>
-              <div class="gl-k">4 → 5</div>
-              <div class="gl-v">Five nights against <b>NorthWind Pay</b> — a real payments migration where the
-                legacy system is the oracle and every number is validated <i>centavo por centavo</i>.</div>
-            </div>
-          </div>
-
-          <div style="margin-top:clamp(11px,1.8vh,18px);">
-            <span class="kick" style="--kc:var(--text-mute);">the disclosure · Task-Spec is item 04 of six</span>
-            <div class="a4b-ars">
-              <span class="a4b-ac">01 Second Brain</span>
-              <span class="a4b-ac">02 OntoLayer</span>
-              <span class="a4b-ac">03 AgentSpec</span>
-              <span class="a4b-ac is-yours">04 Task-Spec · yours tonight</span>
-              <span class="a4b-ac">05 Multi-Model Harness</span>
-              <span class="a4b-ac">06 Converge</span>
-            </div>
-            <p class="note" style="margin-top:clamp(8px,1.3vh,12px);font-size:clamp(12px,1.14vw,16px);line-height:1.4;">
-              You have been using one sixth of the arsenal all night, against a real repository.
-              <b style="color:var(--text);font-style:normal;">It is yours to keep.</b> The Bootcamp is the other five, plus the case they were built on.
-            </p>
-          </div>
-
-          <div class="a4b-offer">
-            <div class="a4b-o-row">
-              <span class="a4b-o-was">R$1.997</span>
-              <span class="a4b-o-now">R$1.297</span>
-              <span class="a4b-o-cup">cupom DESLIVE</span>
-            </div>
-            <div class="a4b-o-meta">
-              <b>24–28/08</b>, seg–sex, <b>19h30–23h30</b> ao vivo · cinco noites ·
-              garantia de <b>7 dias</b> incondicional.
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="src">Ladder: Dan Shapiro's five levels of code automation mapped to the NHTSA autonomous-driving levels, as framed on the Bootcamp page (engenhariadadosacademy.ai/bootcamp/engenharia-agentica-v1) and recorded in plan/semana.md §15.8. Arsenal: six items, Task-Spec is 04 — the one given away tonight. Offer terms verbatim from the plan: 24–28/08, 19h30–23h30, de R$1.997 por R$1.297 com o cupom DESLIVE, garantia de 7 dias, checkout Eduzz. Stated once; no second ask before the close.</div>
-      <aside class="speaker-notes" hidden>[Sources]
-plan/semana.md §15.8 — Bootcamp beat 3: the ladder, arsenal disclosure, offer terms, and "What must not happen".
-https://www.engenhariadadosacademy.ai/bootcamp/engenharia-agentica-v1 — the ladder framing and the six-item arsenal.
-[/Sources]
-Talk track: put the ladder up and stop talking. Let them find their own row — ten seconds of silence does more than any sentence here. Then say the line the page says, because it is true and they feel it: almost everyone parks at level three, and it feels like a downgrade. Place tonight exactly: writing a spec whose exit check answers for itself is the first move from three to four — they did that at 20:35, by hand, and it hurt. Then the disclosure, plainly: Task-Spec is item four of six, they have been holding one sixth of the arsenal all night, and it is theirs to keep. Then the offer, once, in one breath — dates, hours, price, coupon, guarantee. Then stop. No benefit stacking, no urgency, no second CTA. Next slide returns to the graph and the night continues.</aside>
-    </div>
-  </section>
-
-  <section class="slide" data-act="ACT 4" data-act-name="Enumeration ends here" data-accent="purple"
-           style="justify-content:center;">
-    <div class="aurora aurora--purple" aria-hidden="true"><b></b></div>
-    <div class="reveal" style="position:relative;z-index:2;width:100%;max-width:1500px;margin:0 auto;text-align:center;">
-      <span class="tag" style="--tag-c:var(--purple);">Act 4 · close</span>
-      <h2 class="display" style="font-size:clamp(34px,4.6vw,64px);margin-top:clamp(18px,3vh,34px);line-height:1.08;letter-spacing:-1px;">
-        Every unit has a name.<br>
-        None of them has <span class="grad-purple">an order yet.</span>
-      </h2>
-      <p class="note" style="margin-top:clamp(18px,3vh,32px);font-size:clamp(13.5px,1.3vw,18px);line-height:1.5;max-width:64ch;margin-left:auto;margin-right:auto;">
-        Four items cut, five packets on the shelf, one refusal filed with an owner.
-        The index enumerates — it does not choose. What runs first is still undecided, on purpose.
-      </p>
-      <div class="next-hook" style="max-width:960px;margin-left:auto;margin-right:auto;text-align:left;">
-        <span class="hook-n">Next · Act 5 · 22:00</span>
-        <p class="hook-copy">The ready set — <b>unblocked ∩ highest priority</b>, named from
-          <b>depends_on</b> alone. The wide, shallow graph pays off.</p>
-      </div>
-      <div class="src" style="text-align:left;">Next movement per plan/semana.md §15.3 — 05 · The ready set (live/d3/05-ready-set.md): order is derived from the graph's own depends_on edges, never from a project manager.</div>
-      <aside class="speaker-notes" hidden>[Sources]
-plan/semana.md §15.3 and §15.5 — movement 05; wide and shallow beats narrow and deep.
-live/d3/05-ready-set.md — the checkpoint the next act opens.
-[/Sources]
-Talk track: close the act in under a minute. The inventory is complete: five packets, one refusal, all of them one line each in the index. Name what is deliberately missing: order. No one has said what runs first — and the point of the next act is that no one has to; the graph already knows. Do not preview the ready-set math; the teaser line is enough.</aside>
     </div>
   </section>
 
@@ -6630,7 +6422,7 @@ Talk track: name the turn first — everything until now was specification; this
         <div class="src">Isolation rule per live/d3/06-execute-one.md — Session C receives only tasks/T-20260812-daily-gross-ordered.md and AGENTS.md. The window argument: plan/semana.md §15.7.</div>
         <aside class="speaker-notes" hidden>[Sources]
 live/d3/06-execute-one.md — Session C isolation; “the agent does not ask whether it is done”.
-live/d3/02-tasks-pack.md — spec id T-20260812-daily-gross-ordered.
+live/d3/02-task-spec.md — spec id T-20260812-daily-gross-ordered.
 plan/semana.md §15.7 — finite window, unit of work.
 AGENTS.md — developer role, writable path dbt/models/staging/.
 [/Sources]
