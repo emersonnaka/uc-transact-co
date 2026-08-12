@@ -1,4 +1,4 @@
-# 02 — Write the Tasks Pack by Hand
+# 02 — Write the Task-Spec by Hand
 
 ## Session
 
@@ -8,21 +8,22 @@ tedium is the lesson: the giveaway at checkpoint 04 prices it.
 
 ## Why this step
 
-Checkpoint 01 proved the plan item permits three builds. The pack closes that
-gap by naming, for exactly one objective, what a human signs and what a machine
-runs. Seven fields. Written once, by hand, so the room knows what a generator
-would be generating.
+Checkpoint 01 proved the plan item permits three builds. A Task-Spec closes that
+gap by binding, for exactly one atomic change, what may be touched, what
+behavior counts as success, what proves it, and who authorized it. Six zones.
+Written once, by hand, so the room knows what the generator would be generating.
 
 ## Structure
 
 ```mermaid
 flowchart LR
-    A[Item 7, ambiguous] --> B[Intent + PRD]
-    B --> C[BDD — human signs]
-    C --> D[Evals + exit — machine runs]
-    D --> E[Card + related]
-    E --> F{Could three engineers diverge?}
-    F -->|No| G[Specified]
+    A[Item 7, ambiguous] --> B[Z1 Intent]
+    B --> C[Z2 Behavior — human signs]
+    C --> D[Z3 Contract — machine runs]
+    D --> E[Z4-6 Guardrails · Ops · Reversal]
+    E --> F[signed_off · hmac-sha256-v2]
+    F --> G{Could three engineers diverge?}
+    G -->|No| H[Specified]
 
     classDef fail fill:#FEE2E2,stroke:#DC2626,color:#7F1D1D
     classDef human fill:#FEF3C7,stroke:#D97706,color:#78350F
@@ -31,71 +32,95 @@ flowchart LR
     class A fail
     class B,C human
     class D,E machine
-    class F gate
-    class G gate
+    class F,G gate
+    class H gate
 ```
 
 Explain briefly:
 
-- Fields 1–3 are written or signed by a human; 4–6 let the agent answer "am I
-  done?" without asking; field 7 lets a hundred packets order themselves.
-- One objective, no "and". If the title needs "and" to be honest, it is two.
-- The pack is files, so it survives the engine swap exactly like `AGENTS.md`.
+- Zones 1–2 are written or signed by a human; zone 3 lets the agent answer
+  "am I done?" without asking; zones 4–6 hold the boundary, the open questions,
+  and the way back.
+- `effort` is the sizing rule, not a label: `XS`/`S`/`M`/`L` are runnable
+  leaves; `XL`/`XXL` cannot be executed at all and must carry `children`.
+- The seal is the Day 2 sequel: `signed_off` is bound by HMAC to the exact body,
+  so changing one character after approval breaks it. Authority stops being a
+  memory.
+- The spec is files, so it survives the engine swap exactly like `AGENTS.md`.
 
 ## Do live
 
-Create the directory and the pack in the editor, typing every field:
+Create the directory and the spec in the editor, typing every zone:
 
 ```bash
-mkdir -p storage/tasks
+mkdir -p tasks
 ```
 
-Then write `storage/tasks/T-001.md`. The narrowest honest scope for item 7 is
+Then write `tasks/T-20260812-daily-gross-ordered.md`. The narrowest honest scope for item 7 is
 the aggregate itself — the label decision from checkpoint 01 becomes explicit:
 
 ```markdown
 ---
-id: T-001
-title: mart_daily_gross_ordered aggregates non-cancelled orders by ordered_at
+id: T-20260812-daily-gross-ordered
+title: Aggregate non-cancelled order totals by ordered_at
 status: ready
+effort: S
+budget_iterations: 15
+agent: any
 depends_on: []
-touches_paths: [dbt/models/staging/]
-do_not_touch: [storage/specs/, src/transactco/control/]
+touches_paths: []
+creates_paths: [dbt/models/staging/stg_daily_gross_ordered.sql]
+source_note: storage/specs/4-plan-transform.md
+created: 2026-08-12
+tags: [dbt, staging, transactco]
 ---
 
-## Intent
+## Goal
 Produce one daily aggregate of non-cancelled order totals, labeled by its
 physical basis and never as Revenue.
 
-## PRD
+## Context
 Reads `stg_orders` (Day 2, committed). Sums `total_amount` grouped by the UTC
-calendar day of `ordered_at`. Excludes `cancelled`. The technical-window label
-lives in the model name and its schema description — not in a comment.
+calendar day of `ordered_at`. Excludes `cancelled`.
+Lands in `dbt/models/staging/`: item 7 names a *mart*, but the Day 2 contract
+authorizes `dbt/models/staging/` only, and `4-plan-transform.md` states the
+marts layer needs a scope extension at its own checkpoint. This spec scopes
+down rather than widening the contract.
 Evidence: `4-plan-transform.md` item 7 · brief candidate 1
 (R$ 1,403,044.31 / 868 orders).
 
-## BDD
+## Behaviors
 (written at checkpoint 03)
 
-## Evals
+## Success Criteria
 (written at checkpoint 03)
 
-## Exit check
+## Validation Card
 (written at checkpoint 03)
 
-## Validation card
-retry: max 3 iterations · circuit breaker after 2 passes with no progress
-agent contract: read the pack, build, verify, emit pass | fail | blocked
+## Exit Check
+(written at checkpoint 03)
 
-## Related
-depends_on: none — stg_orders already exists and passes its gate
-blocks: T-002 (captured payments mart shares the grain decision)
+## Anti-Patterns
+- **Don't name it revenue** — Revenue is unresolved and owned by Finance.
+  Label the aggregate by its physical basis instead.
+- **Don't net returns into the total** — refunds are counted, never subtracted.
+
+## Do-Not-Touch
+- `storage/specs/` — Day 1 and Day 2 evidence, read-only tonight
+- `src/transactco/control/` — instructor surface
+
+## Open Questions
+(none — this task is fully specified)
 ```
+
+Zones 4 and 5 are written now because they are boundaries, not proofs. Zone 6
+(Rollback, Observability) is `full`-profile only and this task is `standard`.
 
 Then show what changed:
 
 ```bash
-git status --short storage/tasks/
+git status --short tasks/
 ```
 
 ## Show the evidence
@@ -110,8 +135,8 @@ home is named. Hold one beat and say:
 
 ## Gate
 
-- `storage/tasks/T-001.md` exists, typed in front of the room.
-- All seven fields are present; three are deliberately marked for checkpoint 03.
+- `tasks/T-20260812-daily-gross-ordered.md` exists, typed in front of the room.
+- Zones 1, 4 and 5 are complete; zones 2 and 3 are deliberately deferred to checkpoint 03.
 - Each of checkpoint 01's three divergences is now answered in writing.
 - Nothing else in the repository changed.
 - The room felt the manual cost.
@@ -120,7 +145,7 @@ home is named. Hold one beat and say:
 
 If typing live stalls, keep going — slow typing teaches better than fast
 pasting. Only if the editor session breaks entirely, restore with
-`git checkout -- storage/tasks/` and retype Intent and PRD first; the BDD and
-evals belong to checkpoint 03 anyway.
+`git checkout -- tasks/` and retype Goal and Context first; Behaviors and
+Success Criteria belong to checkpoint 03 anyway.
 
 Next: [`03-bdd-and-evals.md`](03-bdd-and-evals.md).

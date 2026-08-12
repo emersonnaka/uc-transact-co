@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="description" content="Bootcamp Agentic Engineering in Practice. Five live nights building an evidence-gated agentic software factory.">
+<title>Bootcamp Agentic Engineering in Practice</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2308080a'/%3E%3Cpath d='M16 5l10 6v10l-10 6-10-6V11z' fill='%239d8bff'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%2308080a'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #08080a;
+  --surface: #111114;
+  --surface-2: #19191e;
+  --surface-3: #212127;
+  --line: rgba(164, 153, 220, 0.16);
+  --line-bright: rgba(177, 164, 242, 0.34);
+  --text: #eaedf2;
+  --dim: #7a8090;
+  --mute: #4d5260;
+  --purple: #9d8bff;
+  --purple-2: #c0b6ff;
+  --purple-dim: rgba(157, 139, 255, 0.11);
+  --gold: #dfbd55;
+  --gold-dim: rgba(223, 189, 85, 0.11);
+  --green: #54c56a;
+  --green-dim: rgba(84, 197, 106, 0.10);
+  --red: #ef625d;
+  --red-dim: rgba(239, 98, 93, 0.10);
+  --cyan: #4ccfe0;
+  --cyan-dim: rgba(76, 207, 224, 0.10);
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-editorial: 'Newsreader', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'Fira Code', 'SF Mono', Consolas, monospace;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --spring: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { color-scheme: dark; background: var(--bg); }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+button, a { font: inherit; }
+a { color: inherit; }
+::selection { background: var(--purple); color: var(--bg); }
+:focus-visible { outline: 2px solid var(--purple); outline-offset: 4px; }
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.034;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSczMDAnIGhlaWdodD0nMzAwJz48ZmlsdGVyIGlkPSduJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nMC43NScgbnVtT2N0YXZlcz0nNCcgc3RpdGNoVGlsZXM9J3N0aXRjaCcvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSczMDAnIGhlaWdodD0nMzAwJyBmaWx0ZXI9J3VybCgjbiknLz48L3N2Zz4=");
+}
+
+.atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.atmosphere::before,
+.atmosphere::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  mix-blend-mode: screen;
+}
+.atmosphere::before {
+  width: 48vw;
+  height: 48vw;
+  left: -14vw;
+  top: -22vw;
+  background: radial-gradient(circle, rgba(157,139,255,0.15), transparent 66%);
+  animation: drift-a 24s ease-in-out infinite alternate;
+}
+.atmosphere::after {
+  width: 38vw;
+  height: 38vw;
+  right: -12vw;
+  bottom: -18vw;
+  background: radial-gradient(circle, rgba(76,207,224,0.08), transparent 66%);
+  animation: drift-b 30s ease-in-out infinite alternate;
+}
+@keyframes drift-a { to { transform: translate3d(8vw, 7vh, 0) scale(1.12); } }
+@keyframes drift-b { to { transform: translate3d(-7vw, -6vh, 0) scale(1.14); } }
+
+.grid-floor {
+  position: absolute;
+  left: 50%;
+  bottom: -17%;
+  width: 155%;
+  height: 62%;
+  transform: translateX(-50%) perspective(1000px) rotateX(64deg);
+  transform-origin: 50% 0;
+  background-image:
+    linear-gradient(rgba(157,139,255,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(157,139,255,0.055) 1px, transparent 1px);
+  background-size: 62px 62px;
+  -webkit-mask-image: radial-gradient(ellipse 58% 95% at 50% 0%, #08080a 4%, transparent 70%);
+  mask-image: radial-gradient(ellipse 58% 95% at 50% 0%, #08080a 4%, transparent 70%);
+}
+
+.deck {
+  position: relative;
+  z-index: 2;
+  height: 100dvh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.deck::-webkit-scrollbar { display: none; }
+.slide {
+  position: relative;
+  min-height: 100dvh;
+  height: 100dvh;
+  overflow: hidden;
+  isolation: isolate;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(30px, 4.7vh, 60px) clamp(38px, 5.8vw, 112px);
+}
+.slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(760px circle at var(--mx, 56%) var(--my, 36%), rgba(174,160,255,0.065), transparent 62%);
+  transition: opacity 800ms ease;
+}
+.slide.is-active::after { opacity: 1; }
+
+.wrap { width: 100%; max-width: 1640px; margin: 0 auto; }
+.kicker {
+  font-family: var(--font-mono);
+  font-size: clamp(9px, 0.83vw, 11px);
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--purple-2);
+}
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(54px, 8vw, 116px);
+  letter-spacing: -0.025em;
+  line-height: 0.9;
+  text-wrap: balance;
+}
+.headline {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(34px, 5vw, 70px);
+  letter-spacing: -0.018em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+.subhead {
+  max-width: 56ch;
+  color: var(--dim);
+  font-family: var(--editorial, var(--font-editorial));
+  font-size: clamp(15px, 1.45vw, 20px);
+  line-height: 1.55;
+}
+.italic { font-family: var(--font-editorial); font-style: italic; }
+.purple { color: var(--purple-2); }
+.gold { color: var(--gold); }
+.green { color: var(--green); }
+.red { color: var(--red); }
+.cyan { color: var(--cyan); }
+.dim { color: var(--dim); }
+.mono { font-family: var(--font-mono); }
+.rule { height: 1px; background: var(--line); border: 0; }
+.gradient-purple {
+  background: linear-gradient(135deg, #d6d0ff 0%, var(--purple) 54%, #7662e8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gradient-gold {
+  background: linear-gradient(135deg, #f5df94 0%, var(--gold) 60%, #aa8322 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 25px;
+  padding: 4px 10px;
+  border: 1px solid color-mix(in srgb, var(--tc, var(--purple)) 42%, transparent);
+  background: color-mix(in srgb, var(--tc, var(--purple)) 8%, transparent);
+  color: var(--tc, var(--purple-2));
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: clamp(8px, 0.72vw, 9.5px);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.source-line {
+  margin-top: clamp(12px, 1.8vh, 18px);
+  padding-top: clamp(8px, 1.1vh, 11px);
+  border-top: 1px solid var(--line);
+  color: var(--mute);
+  font-family: var(--font-mono);
+  font-size: clamp(7.5px, 0.65vw, 9px);
+  line-height: 1.45;
+  letter-spacing: 0.025em;
+}
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--cyan));
+  box-shadow: 0 0 14px rgba(157,139,255,0.55);
+  transition: width 240ms var(--ease);
+}
+.counter {
+  position: fixed;
+  right: clamp(18px, 2.2vw, 32px);
+  bottom: clamp(16px, 2.2vh, 26px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--dim);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+.counter strong { color: var(--text); font-weight: 700; }
+.counter-act {
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: var(--purple);
+  color: var(--bg);
+  font-size: 8.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.tracker {
+  position: fixed;
+  right: clamp(10px, 1.1vw, 16px);
+  top: 50%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transform: translateY(-50%);
+}
+.tracker button {
+  appearance: none;
+  width: 5px;
+  height: 5px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: rgba(234,237,242,0.18);
+  cursor: pointer;
+  transition: height 240ms var(--spring), background 240ms ease;
+}
+.tracker button:hover { background: rgba(234,237,242,0.55); }
+.tracker button.current { height: 21px; background: var(--purple); }
+
+/* Hero */
+.hero-media {
+  position: absolute;
+  inset: 0 0 0 48%;
+  z-index: -1;
+  overflow: hidden;
+}
+.hero-media::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(90deg, var(--bg) 0%, rgba(8,8,10,0.92) 10%, rgba(8,8,10,0.32) 56%, rgba(8,8,10,0.12) 100%),
+    linear-gradient(180deg, rgba(8,8,10,0.28), rgba(8,8,10,0.08) 50%, rgba(8,8,10,0.66));
+}
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 44%;
+  filter: saturate(0.82) contrast(1.05) brightness(0.8);
+  transform: scale(1.03);
+  transition: transform 7s var(--ease);
+}
+.slide.is-active .hero-media img { transform: scale(1.09); }
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+  align-items: center;
+  min-height: 76vh;
+}
+.hero-copy { position: relative; z-index: 3; max-width: 900px; }
+.hero-copy .display { max-width: 10ch; margin-top: clamp(20px, 3vh, 34px); }
+.hero-sub {
+  max-width: 42ch;
+  margin-top: clamp(18px, 2.8vh, 30px);
+  color: #a3a6b1;
+  font-family: var(--font-editorial);
+  font-size: clamp(17px, 1.6vw, 23px);
+  line-height: 1.45;
+}
+.hero-meta { display: flex; gap: 8px; flex-wrap: wrap; margin-top: clamp(20px, 3.2vh, 34px); }
+
+/* Trust bottleneck */
+.shift-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(500px, 1.22fr);
+  gap: clamp(40px, 6vw, 104px);
+  align-items: center;
+  margin-top: clamp(22px, 3.4vh, 38px);
+}
+.thesis-line {
+  display: grid;
+  grid-template-columns: 115px 1fr;
+  gap: 18px;
+  padding: clamp(14px, 2vh, 20px) 0;
+  border-top: 1px solid var(--line);
+}
+.thesis-line:last-child { border-bottom: 1px solid var(--line); }
+.thesis-key {
+  color: var(--purple-2);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.thesis-copy {
+  color: var(--dim);
+  font-family: var(--font-editorial);
+  font-size: clamp(14px, 1.3vw, 18px);
+  line-height: 1.45;
+}
+.thesis-copy b { color: var(--text); font-weight: 600; }
+.failure-flow {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 7px;
+}
+.failure-flow::before {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 44px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--purple), var(--red));
+  opacity: 0.55;
+}
+.flow-node { position: relative; z-index: 1; text-align: center; }
+.flow-dot {
+  width: 15px;
+  height: 15px;
+  margin: 37px auto 18px;
+  border: 3px solid var(--bg);
+  border-radius: 50%;
+  background: var(--nc, var(--purple));
+  box-shadow: 0 0 18px color-mix(in srgb, var(--nc, var(--purple)) 48%, transparent);
+}
+.flow-name {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.8vw, 26px);
+  line-height: 1;
+}
+.flow-note {
+  margin-top: 7px;
+  color: var(--dim);
+  font-family: var(--font-editorial);
+  font-size: clamp(11px, 1vw, 13.5px);
+  line-height: 1.35;
+}
+
+/* Operational ladder */
+.ladder {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  align-items: end;
+  margin-top: clamp(24px, 4vh, 46px);
+}
+.rung {
+  position: relative;
+  min-height: var(--rh);
+  padding: clamp(14px, 2vh, 22px) clamp(12px, 1.25vw, 18px);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--rc, var(--purple));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--rc, var(--purple)) 9%, transparent), rgba(17,17,20,0.82) 58%);
+  display: flex;
+  flex-direction: column;
+  transition: transform 450ms var(--spring), border-color 450ms ease;
+}
+.rung:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--rc, var(--purple)) 58%, transparent); }
+.rung.trap {
+  border-color: rgba(239,98,93,0.54);
+  box-shadow: 0 0 34px -18px rgba(239,98,93,0.8);
+}
+.rung.target {
+  border-color: rgba(157,139,255,0.58);
+  box-shadow: 0 0 34px -18px rgba(157,139,255,0.72);
+}
+.rung-n {
+  width: fit-content;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: var(--rc, var(--purple));
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 800;
+}
+.rung-name { margin-top: 13px; font-family: var(--font-display); font-size: clamp(19px, 2vw, 29px); line-height: 1; }
+.rung-copy { margin-top: 8px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(11px, 1vw, 13.5px); line-height: 1.38; }
+.rung-foot { margin-top: auto; padding-top: 12px; color: var(--rc, var(--purple)); font-family: var(--font-mono); font-size: 8.5px; letter-spacing: 0.08em; text-transform: uppercase; }
+.ladder-verdict { margin-top: clamp(18px, 2.8vh, 30px); text-align: center; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(15px, 1.45vw, 20px); font-style: italic; }
+.ladder-verdict b { color: var(--text); font-style: normal; font-weight: 600; }
+
+/* Guided crossing */
+.crossing {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: clamp(46px, 7vw, 120px);
+  align-items: center;
+  margin-top: clamp(20px, 3vh, 34px);
+}
+.crossing-main { max-width: 720px; }
+.crossing-main .display { font-size: clamp(52px, 7vw, 100px); }
+.crossing-main .italic { display: block; margin-bottom: 8px; color: var(--purple-2); font-size: clamp(18px, 1.8vw, 26px); }
+.cross-list { border-top: 1px solid var(--line); }
+.cross-item {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 18px;
+  align-items: baseline;
+  padding: clamp(16px, 2.6vh, 26px) 0;
+  border-bottom: 1px solid var(--line);
+}
+.cross-n { color: var(--purple); font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; }
+.cross-copy { font-family: var(--font-editorial); font-size: clamp(16px, 1.55vw, 22px); line-height: 1.35; }
+.cross-copy b { color: var(--purple-2); font-weight: 500; }
+.cross-copy span { color: var(--dim); font-size: 0.78em; font-style: italic; }
+
+/* Brownfield case */
+.case-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background:
+    linear-gradient(180deg, rgba(8,8,10,0.74), rgba(8,8,10,0.58) 45%, rgba(8,8,10,0.88)),
+    url('https://www.engenhariadadosacademy.ai/images/bootcamp/hero-factory.webp') center 43% / cover no-repeat;
+  filter: saturate(0.64) contrast(1.08) brightness(0.72);
+}
+.case-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(8,8,10,0.96), rgba(8,8,10,0.58) 54%, rgba(8,8,10,0.38));
+}
+.topology {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: clamp(20px, 3.4vh, 38px);
+}
+.topo-node {
+  position: relative;
+  min-height: 165px;
+  padding: clamp(16px, 2.4vh, 24px) clamp(14px, 1.5vw, 22px);
+  border: 1px solid color-mix(in srgb, var(--tc, var(--purple)) 40%, transparent);
+  border-top: 3px solid var(--tc, var(--purple));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--tc, var(--purple)) 13%, rgba(17,17,20,0.86)), rgba(17,17,20,0.74));
+  backdrop-filter: blur(12px);
+}
+.topo-node:not(:last-child)::after {
+  content: '›';
+  position: absolute;
+  top: 50%;
+  right: -9px;
+  z-index: 3;
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 28px;
+  transform: translate(50%, -50%);
+}
+.topo-k { color: var(--tc, var(--purple)); font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+.topo-name { margin-top: 12px; font-family: var(--font-display); font-size: clamp(22px, 2.4vw, 34px); line-height: 0.98; }
+.topo-copy { margin-top: 10px; color: #a4a5ad; font-family: var(--font-editorial); font-size: clamp(12px, 1.12vw, 15px); line-height: 1.42; }
+.risk-strip {
+  margin-top: clamp(14px, 2.2vh, 24px);
+  padding: clamp(14px, 2vh, 20px) clamp(16px, 1.7vw, 26px);
+  border: 1px solid rgba(239,98,93,0.42);
+  background: linear-gradient(90deg, rgba(239,98,93,0.12), rgba(17,17,20,0.68));
+  font-family: var(--font-editorial);
+  font-size: clamp(15px, 1.45vw, 20px);
+  line-height: 1.4;
+}
+.risk-strip b { color: var(--red); font-weight: 600; }
+
+/* Golden match */
+.match-layout {
+  display: grid;
+  grid-template-columns: 1fr 104px 1fr;
+  gap: clamp(18px, 2.4vw, 34px);
+  align-items: stretch;
+  margin-top: clamp(24px, 4vh, 44px);
+}
+.match-system {
+  min-height: 250px;
+  padding: clamp(20px, 3vh, 30px) clamp(18px, 2vw, 30px);
+  border: 1px solid var(--line-bright);
+  background: linear-gradient(180deg, rgba(157,139,255,0.08), rgba(17,17,20,0.86));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.match-system.legacy { border-color: rgba(223,189,85,0.35); background: linear-gradient(180deg, rgba(223,189,85,0.07), rgba(17,17,20,0.86)); }
+.match-k { color: var(--mc, var(--purple)); font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.match-name { margin-top: 12px; font-family: var(--font-display); font-size: clamp(30px, 3.6vw, 52px); line-height: 1; }
+.match-copy { margin-top: 12px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(13px, 1.2vw, 17px); line-height: 1.42; }
+.match-sample {
+  margin-top: 18px;
+  padding: 11px 13px;
+  border-left: 2px solid var(--mc, var(--purple));
+  background: rgba(8,8,10,0.55);
+  color: #c9cbd2;
+  font-family: var(--font-mono);
+  font-size: clamp(9px, 0.84vw, 11px);
+  line-height: 1.7;
+}
+.match-gate { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+.equal { color: var(--gold); font-family: var(--font-display); font-size: clamp(52px, 6vw, 88px); line-height: 0.8; }
+.gold-stamp {
+  display: inline-block;
+  padding: 6px 10px;
+  background: var(--gold);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+}
+.truth-note {
+  margin-top: clamp(16px, 2.4vh, 24px);
+  color: var(--dim);
+  font-family: var(--font-editorial);
+  font-size: clamp(13px, 1.22vw, 17px);
+  line-height: 1.42;
+  text-align: center;
+}
+.truth-note b { color: var(--text); font-weight: 600; }
+
+/* Factory */
+.factory {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: clamp(24px, 4vh, 42px);
+}
+.factory-node {
+  position: relative;
+  min-height: 175px;
+  padding: clamp(15px, 2.3vh, 22px) clamp(12px, 1.25vw, 18px);
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(157,139,255,0.075), rgba(17,17,20,0.82));
+  display: flex;
+  flex-direction: column;
+  transition: transform 400ms var(--spring), border-color 400ms ease;
+}
+.factory-node:hover { transform: translateY(-5px); border-color: rgba(157,139,255,0.48); }
+.factory-node:not(:last-child)::after {
+  content: '›';
+  position: absolute;
+  right: -7px;
+  top: 50%;
+  z-index: 2;
+  color: var(--purple);
+  font-family: var(--font-display);
+  font-size: 25px;
+  transform: translate(50%, -50%);
+}
+.factory-n { color: var(--purple); font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 0.14em; }
+.factory-name { margin-top: 11px; font-family: var(--font-display); font-size: clamp(21px, 2.25vw, 31px); line-height: 1; }
+.factory-copy { margin-top: 9px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(11px, 1vw, 13.5px); line-height: 1.38; }
+.factory-gate { margin-top: auto; padding-top: 12px; color: var(--purple-2); font-family: var(--font-mono); font-size: 8px; line-height: 1.35; letter-spacing: 0.06em; text-transform: uppercase; }
+.human-rail {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+}
+.human-cell {
+  padding: 10px 13px;
+  border: 1px solid rgba(223,189,85,0.24);
+  background: rgba(223,189,85,0.055);
+  color: #c7c1a8;
+  font-family: var(--font-mono);
+  font-size: clamp(8px, 0.75vw, 9.5px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Trust stack */
+.stack-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(360px, 0.88fr);
+  gap: clamp(38px, 5vw, 78px);
+  align-items: center;
+  margin-top: clamp(18px, 3vh, 34px);
+}
+.trust-stack { display: flex; flex-direction: column-reverse; gap: 7px; }
+.trust-layer {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  min-height: 70px;
+  padding: 12px 17px;
+  border: 1px solid color-mix(in srgb, var(--lc, var(--purple)) 34%, transparent);
+  border-left: 3px solid var(--lc, var(--purple));
+  background: linear-gradient(90deg, color-mix(in srgb, var(--lc, var(--purple)) 9%, transparent), rgba(17,17,20,0.7));
+}
+.layer-k { color: var(--lc, var(--purple)); font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
+.layer-name { font-family: var(--font-display); font-size: clamp(21px, 2.3vw, 32px); line-height: 1; }
+.layer-proof { color: var(--dim); font-family: var(--font-editorial); font-size: clamp(11px, 1vw, 13.5px); font-style: italic; text-align: right; }
+.boundary-panel {
+  padding: clamp(20px, 3vh, 30px);
+  border: 1px solid rgba(239,98,93,0.34);
+  background: linear-gradient(180deg, rgba(239,98,93,0.085), rgba(17,17,20,0.8));
+}
+.boundary-panel .big-x { color: var(--red); font-family: var(--font-display); font-size: clamp(68px, 8vw, 112px); line-height: 0.75; }
+.boundary-panel h3 { margin-top: 14px; font-family: var(--font-display); font-size: clamp(27px, 3vw, 42px); line-height: 1; }
+.boundary-panel p { margin-top: 12px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(13px, 1.2vw, 17px); line-height: 1.45; }
+.boundary-panel p b { color: var(--text); font-weight: 600; }
+.boundary-chip { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 7px; }
+
+/* Five nights */
+.night-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  align-items: stretch;
+  margin-top: clamp(22px, 3.7vh, 40px);
+}
+.night {
+  position: relative;
+  min-height: 310px;
+  padding: clamp(16px, 2.4vh, 23px) clamp(13px, 1.3vw, 19px);
+  border: 1px solid rgba(157,139,255,0.30);
+  border-top: 3px solid var(--purple);
+  background: linear-gradient(180deg, rgba(157,139,255,var(--alpha)), rgba(17,17,20,0.84) 64%);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.night::before {
+  content: attr(data-night);
+  position: absolute;
+  right: 6px;
+  top: -18px;
+  color: rgba(157,139,255,0.055);
+  font-family: var(--font-display);
+  font-size: 118px;
+  line-height: 1;
+}
+.night-label { position: relative; z-index: 1; color: var(--purple); font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.night-name { position: relative; z-index: 1; margin-top: 15px; font-family: var(--font-display); font-size: clamp(23px, 2.45vw, 35px); line-height: 0.98; }
+.night-ring { position: relative; z-index: 1; margin-top: 8px; color: var(--purple-2); font-family: var(--font-mono); font-size: clamp(8px, 0.75vw, 9.5px); letter-spacing: 0.08em; text-transform: uppercase; }
+.night-copy { position: relative; z-index: 1; margin-top: 13px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(11.5px, 1.05vw, 14px); line-height: 1.4; }
+.night-human { position: relative; z-index: 1; margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); }
+.night-human span { display: inline-block; width: 11px; height: 11px; margin-right: 3px; border: 1px solid var(--purple); border-radius: 3px; }
+.night-human span.off { border-color: rgba(157,139,255,0.26); background: transparent; }
+.night-human span.on { background: var(--purple); box-shadow: 0 0 9px rgba(157,139,255,0.45); }
+.night-human small { display: block; margin-bottom: 7px; color: var(--mute); font-family: var(--font-mono); font-size: 7.5px; letter-spacing: 0.12em; text-transform: uppercase; }
+.night-verdict { margin-top: clamp(15px, 2.4vh, 24px); text-align: center; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(14px, 1.35vw, 18px); font-style: italic; }
+.night-verdict b { color: var(--purple-2); font-style: normal; font-weight: 600; }
+
+/* Artifacts */
+.artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: clamp(22px, 3.6vh, 40px);
+}
+.artifact {
+  min-height: 132px;
+  padding: clamp(14px, 2vh, 20px) clamp(14px, 1.35vw, 20px);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--purple);
+  background: linear-gradient(90deg, var(--purple-dim), rgba(17,17,20,0.78));
+}
+.artifact.a1 { grid-column: span 5; }
+.artifact.a2 { grid-column: span 7; }
+.artifact.a3 { grid-column: span 4; }
+.artifact.a4 { grid-column: span 4; }
+.artifact.a5 { grid-column: span 4; }
+.artifact-k { color: var(--purple); font-family: var(--font-mono); font-size: 8.5px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+.artifact-name { margin-top: 9px; font-family: var(--font-display); font-size: clamp(22px, 2.35vw, 33px); line-height: 1; }
+.artifact-copy { margin-top: 8px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(11.5px, 1.05vw, 14px); line-height: 1.38; }
+.artifact code { color: var(--cyan); font-family: var(--font-mono); font-size: 0.82em; }
+
+/* Unknown input */
+.unknown-stage {
+  position: relative;
+  min-height: 430px;
+  margin-top: clamp(18px, 3vh, 32px);
+  display: grid;
+  grid-template-columns: 0.76fr 2fr;
+  gap: clamp(26px, 4vw, 70px);
+  align-items: center;
+}
+.unknown-file {
+  position: relative;
+  min-height: 290px;
+  padding: 28px 24px;
+  border: 1px solid rgba(223,189,85,0.46);
+  background:
+    repeating-linear-gradient(0deg, rgba(223,189,85,0.035) 0, rgba(223,189,85,0.035) 1px, transparent 1px, transparent 5px),
+    linear-gradient(180deg, rgba(223,189,85,0.09), rgba(17,17,20,0.82));
+  box-shadow: 0 0 44px -22px rgba(223,189,85,0.8);
+}
+.unknown-file::before {
+  content: '?';
+  position: absolute;
+  right: 20px;
+  bottom: -15px;
+  color: rgba(223,189,85,0.10);
+  font-family: var(--font-display);
+  font-size: 190px;
+  line-height: 1;
+}
+.unknown-k { position: relative; color: var(--gold); font-family: var(--font-mono); font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.unknown-name { position: relative; margin-top: 28px; font-family: var(--font-display); font-size: clamp(42px, 5vw, 70px); line-height: 0.9; }
+.unknown-copy { position: relative; margin-top: 16px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(13px, 1.25vw, 17px); line-height: 1.42; }
+.sequence {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 7px;
+  position: relative;
+}
+.sequence::before {
+  content: '';
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 31px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--purple), var(--green));
+  opacity: 0.65;
+}
+.seq {
+  position: relative;
+  z-index: 1;
+  padding-top: 67px;
+  text-align: center;
+}
+.seq::before {
+  content: '';
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border: 4px solid var(--bg);
+  border-radius: 50%;
+  background: var(--sc, var(--purple));
+  box-shadow: 0 0 16px color-mix(in srgb, var(--sc, var(--purple)) 55%, transparent);
+  transform: translateX(-50%);
+}
+.seq-name { font-family: var(--font-display); font-size: clamp(17px, 1.75vw, 25px); line-height: 1; }
+.seq-note { margin-top: 7px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(10.5px, 0.95vw, 12.5px); line-height: 1.32; }
+.unknown-verdict {
+  grid-column: 1 / -1;
+  margin-top: clamp(18px, 2.8vh, 28px);
+  padding-top: clamp(14px, 2vh, 20px);
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--dim);
+  font-family: var(--font-editorial);
+  font-size: clamp(15px, 1.45vw, 20px);
+  font-style: italic;
+}
+.unknown-verdict b { color: var(--text); font-style: normal; font-weight: 600; }
+
+/* Arsenal */
+.arsenal-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: clamp(22px, 3.7vh, 40px);
+}
+.tool {
+  position: relative;
+  min-height: 142px;
+  padding: clamp(15px, 2.3vh, 22px) clamp(14px, 1.5vw, 22px);
+  border: 1px solid rgba(157,139,255,0.32);
+  border-left: 3px solid var(--purple);
+  background: linear-gradient(90deg, rgba(157,139,255,0.09), rgba(17,17,20,0.8) 72%);
+  overflow: hidden;
+  transition: transform 400ms var(--spring), border-color 400ms ease;
+}
+.tool:hover { transform: translateY(-4px); border-color: rgba(157,139,255,0.60); }
+.tool:nth-child(1) { grid-column: span 5; }
+.tool:nth-child(2) { grid-column: span 3; }
+.tool:nth-child(3) { grid-column: span 4; }
+.tool:nth-child(4) { grid-column: span 3; }
+.tool:nth-child(5) { grid-column: span 4; }
+.tool:nth-child(6) { grid-column: span 5; }
+.tool::after {
+  content: '[ yours ]';
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  color: var(--purple);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.tool-name { max-width: 75%; font-family: var(--font-display); font-size: clamp(22px, 2.4vw, 34px); line-height: 1; }
+.tool-copy { max-width: 52ch; margin-top: 10px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(11.5px, 1.05vw, 14px); line-height: 1.4; }
+.engine-row { display: flex; gap: 9px; margin-top: 12px; }
+.engine-row img { width: 31px; height: 31px; object-fit: contain; border: 1px solid var(--line); background: rgba(8,8,10,0.54); padding: 4px; }
+.stack-note { margin-top: 15px; text-align: center; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(13px, 1.25vw, 17px); font-style: italic; }
+
+/* Fit */
+.fit-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(460px, 1.1fr);
+  gap: clamp(42px, 6vw, 92px);
+  align-items: center;
+  margin-top: clamp(20px, 3.3vh, 36px);
+}
+.roles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.role {
+  padding: 8px 12px;
+  border: 1px solid rgba(157,139,255,0.34);
+  background: rgba(157,139,255,0.06);
+  color: var(--purple-2);
+  font-family: var(--font-mono);
+  font-size: clamp(8.5px, 0.76vw, 10px);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.fit-gates { border-top: 1px solid var(--line); }
+.fit-gate {
+  display: grid;
+  grid-template-columns: 42px 1fr auto;
+  gap: 15px;
+  align-items: center;
+  padding: clamp(13px, 2vh, 19px) 0;
+  border-bottom: 1px solid var(--line);
+}
+.fit-n { color: var(--purple); font-family: var(--font-mono); font-size: 9px; font-weight: 700; }
+.fit-name { font-family: var(--font-display); font-size: clamp(20px, 2.1vw, 30px); line-height: 1; }
+.fit-proof { color: var(--dim); font-family: var(--font-editorial); font-size: clamp(11.5px, 1vw, 13.5px); text-align: right; }
+.fit-callout {
+  margin-top: 16px;
+  padding: 13px 16px;
+  border: 1px solid rgba(223,189,85,0.26);
+  background: var(--gold-dim);
+  color: #c5c0aa;
+  font-family: var(--font-editorial);
+  font-size: clamp(12.5px, 1.15vw, 16px);
+  line-height: 1.42;
+}
+
+/* Guide */
+.guide-photo {
+  position: absolute;
+  inset: 0 0 0 57%;
+  z-index: -2;
+  overflow: hidden;
+}
+.guide-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(90deg, var(--bg), rgba(8,8,10,0.46) 48%, rgba(8,8,10,0.15)), linear-gradient(180deg, rgba(8,8,10,0.18), rgba(8,8,10,0.7));
+}
+.guide-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 38%; filter: grayscale(1) contrast(1.04) brightness(0.78); transform: scale(1.04); }
+.guide-copy { max-width: 790px; }
+.guide-quote {
+  margin-top: clamp(24px, 4vh, 42px);
+  max-width: 28ch;
+  color: var(--text);
+  font-family: var(--font-editorial);
+  font-size: clamp(24px, 3vw, 42px);
+  font-style: italic;
+  line-height: 1.2;
+}
+.guide-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  max-width: 700px;
+  margin-top: clamp(24px, 4vh, 42px);
+}
+.guide-cell { padding: 14px 16px; border: 1px solid var(--line); background: rgba(17,17,20,0.68); }
+.guide-cell small { display: block; color: var(--purple); font-family: var(--font-mono); font-size: 8px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
+.guide-cell strong { display: block; margin-top: 8px; font-family: var(--font-display); font-size: clamp(18px, 1.8vw, 25px); font-weight: 400; line-height: 1.05; }
+
+/* Offer */
+.offer-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(500px, 1.18fr);
+  gap: clamp(42px, 6vw, 96px);
+  align-items: center;
+  margin-top: clamp(18px, 3vh, 34px);
+}
+.offer-price { font-family: var(--font-display); font-size: clamp(70px, 10vw, 142px); line-height: 0.8; letter-spacing: -0.045em; color: var(--purple-2); }
+.offer-was { margin-top: 18px; color: var(--dim); font-family: var(--font-mono); font-size: clamp(11px, 1vw, 13px); letter-spacing: 0.08em; text-transform: uppercase; }
+.offer-was s { text-decoration-color: var(--red); text-decoration-thickness: 2px; }
+.offer-coupon { margin-top: 12px; color: var(--gold); font-family: var(--font-mono); font-size: clamp(10px, 0.9vw, 12px); letter-spacing: 0.08em; }
+.offer-panel {
+  padding: clamp(22px, 3.4vh, 34px) clamp(20px, 2.3vw, 36px);
+  border: 1px solid rgba(157,139,255,0.48);
+  background: linear-gradient(180deg, rgba(157,139,255,0.12), rgba(17,17,20,0.86) 60%);
+  box-shadow: 0 0 56px -24px rgba(157,139,255,0.72), inset 0 1px 0 rgba(234,237,242,0.06);
+}
+.offer-line {
+  display: grid;
+  grid-template-columns: 108px 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+}
+.offer-line:first-child { border-top: 0; padding-top: 0; }
+.offer-k { color: var(--purple); font-family: var(--font-mono); font-size: 8.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
+.offer-v { font-family: var(--font-editorial); font-size: clamp(14px, 1.3vw, 18px); line-height: 1.35; }
+.offer-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px 18px;
+  border: 1px solid rgba(157,139,255,0.7);
+  border-radius: 4px;
+  background: var(--purple);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: clamp(10px, 0.95vw, 12px);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+  box-shadow: 0 0 30px rgba(157,139,255,0.26);
+  transition: transform 250ms var(--spring), box-shadow 250ms ease, background 250ms ease;
+}
+.offer-cta:hover { transform: translateY(-3px); background: #b2a5ff; box-shadow: 0 0 38px rgba(157,139,255,0.42); }
+.offer-cta:active { transform: translateY(-1px) scale(0.99); }
+.offer-fine { margin-top: 12px; color: var(--mute); font-family: var(--font-mono); font-size: 8.5px; line-height: 1.45; text-align: center; }
+
+/* Rings map */
+.rings-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.68fr) minmax(0, 1.32fr);
+  gap: clamp(18px, 2.4vw, 44px);
+  align-items: center;
+  margin-top: clamp(16px, 2.6vh, 30px);
+}
+.rings-viz { display: grid; place-items: center; min-width: 0; }
+.rings-viz svg { width: 100%; height: min(76vh, 820px); display: block; overflow: visible; }
+.ring-breathe { transform-box: fill-box; transform-origin: center; animation: ring-breathe 9s ease-in-out infinite; }
+.ring-breathe.r2 { animation-delay: 1.2s; }
+.ring-breathe.r3 { animation-delay: 2.4s; }
+.ring-breathe.r4 { animation-delay: 3.6s; }
+.ring-breathe.r5 { animation-delay: 4.8s; }
+.ring-breathe.r6 { animation-delay: 6s; }
+.core-pulse { transform-box: fill-box; transform-origin: center; animation: core-pulse 4s ease-in-out infinite; }
+@keyframes ring-breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.018); } }
+@keyframes core-pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.045); } }
+.ring-decision {
+  margin-top: clamp(18px, 2.6vh, 28px);
+  padding: clamp(12px, 1.8vh, 18px) clamp(14px, 1.5vw, 22px);
+  border-left: 3px solid var(--purple);
+  background: linear-gradient(90deg, var(--purple-dim), transparent 70%);
+}
+.ring-decision h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(22px, 2.4vw, 34px); line-height: 1; color: var(--purple-2); }
+.ring-decision p { margin-top: 9px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(13px, 1.2vw, 17px); line-height: 1.42; }
+.ring-decision p b { color: var(--text); font-weight: 600; }
+
+/* Eight-layer anatomy */
+.rmgrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; margin-top: clamp(16px, 2.6vh, 28px); }
+.rmcard {
+  --rmc: var(--purple);
+  position: relative; overflow: hidden; display: flex; flex-direction: column;
+  min-height: 128px;
+  padding: clamp(13px, 2vh, 19px) clamp(12px, 1.2vw, 18px) clamp(12px, 1.8vh, 17px);
+  border: 1px solid color-mix(in srgb, var(--rmc) 34%, transparent);
+  border-top: 3px solid var(--rmc);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--rmc) 9%, transparent), rgba(17,17,20,0.84) 62%);
+  transition: transform 400ms var(--spring), border-color 400ms ease;
+}
+.rmcard:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--rmc) 62%, transparent); }
+.rm-head { display: flex; align-items: center; gap: clamp(10px, 1vw, 16px); }
+.rm-num {
+  flex-shrink: 0; min-width: clamp(28px, 2.6vw, 42px); text-align: center;
+  font-family: var(--font-display); font-weight: 400;
+  font-size: clamp(28px, 3vw, 44px); line-height: 0.9;
+  background: linear-gradient(180deg, var(--rmc) 30%, color-mix(in srgb, var(--rmc) 58%, #fff) 90%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.rm-eyebrow { font-family: var(--font-mono); font-size: clamp(7.5px, 0.72vw, 9px); font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rmc); }
+.rm-name { font-family: var(--font-display); font-size: clamp(18px, 1.9vw, 27px); line-height: 1.02; margin-top: 3px; }
+.rm-when { margin-top: clamp(8px, 1.4vh, 12px); color: var(--dim); font-family: var(--font-editorial); font-size: clamp(11px, 1vw, 13.5px); line-height: 1.4; }
+.rm-foot { margin-top: auto; padding-top: clamp(8px, 1.3vh, 12px); border-top: 1px solid var(--line); }
+.rm-pill {
+  display: inline-block; font-family: var(--font-mono); font-size: clamp(7px, 0.68vw, 8.5px); font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap;
+  padding: 3px 9px; border-radius: 3px; color: var(--bg); background: var(--rmp, var(--rmc));
+}
+.callout {
+  margin-top: clamp(12px, 2vh, 20px);
+  padding: clamp(12px, 1.9vh, 18px) clamp(15px, 1.5vw, 24px);
+  border: 1px solid color-mix(in srgb, var(--co-c, var(--purple)) 42%, transparent);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--co-c, var(--purple)) 10%, transparent), rgba(17,17,20,0.78));
+  color: var(--dim);
+  font-family: var(--font-editorial);
+  font-size: clamp(13px, 1.25vw, 17px);
+  line-height: 1.42;
+}
+.callout b { color: var(--text); font-weight: 600; }
+
+/* Roles collapse */
+.collapse-fig { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; margin-top: clamp(20px, 3.2vh, 36px); }
+.role-src {
+  position: relative;
+  padding: clamp(14px, 2.1vh, 20px) clamp(13px, 1.3vw, 20px) clamp(18px, 2.6vh, 26px);
+  border: 1px solid color-mix(in srgb, var(--rc, var(--purple)) 38%, transparent);
+  border-top: 3px solid var(--rc, var(--purple));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--rc, var(--purple)) 10%, transparent), rgba(17,17,20,0.82));
+}
+.role-src::after {
+  content: '↓';
+  position: absolute; left: 50%; bottom: -15px;
+  transform: translateX(-50%);
+  color: var(--rc, var(--purple));
+  font-family: var(--font-mono); font-size: 13px;
+}
+.role-k { color: var(--rc, var(--purple)); font-family: var(--font-mono); font-size: 8.5px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+.role-name { margin-top: 9px; font-family: var(--font-display); font-size: clamp(20px, 2.1vw, 30px); line-height: 1; }
+.role-copy { margin-top: 7px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(11px, 1vw, 13.5px); line-height: 1.35; }
+.role-dst {
+  grid-column: 1 / -1;
+  margin-top: 26px;
+  padding: clamp(16px, 2.4vh, 24px) clamp(18px, 2vw, 32px);
+  border: 1px solid rgba(157,139,255,0.55);
+  background: linear-gradient(90deg, rgba(157,139,255,0.15), rgba(17,17,20,0.86));
+  box-shadow: 0 0 48px -20px rgba(157,139,255,0.85);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(14px, 2vw, 34px);
+  align-items: center;
+}
+.role-dst .role-name { font-size: clamp(26px, 3vw, 44px); }
+.role-dst .role-copy { margin-top: 6px; max-width: 62ch; }
+
+/* Cherny archetypes */
+.arch-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin-top: clamp(20px, 3.2vh, 36px); }
+.arch {
+  position: relative;
+  min-height: 215px;
+  padding: clamp(14px, 2.1vh, 20px) clamp(12px, 1.2vw, 18px) clamp(12px, 1.8vh, 16px);
+  border: 1px solid color-mix(in srgb, var(--ac, var(--purple)) 36%, transparent);
+  border-top: 3px solid var(--ac, var(--purple));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--ac, var(--purple)) 8%, transparent), rgba(17,17,20,0.84) 64%);
+  display: flex; flex-direction: column;
+  transition: transform 400ms var(--spring), border-color 400ms ease;
+}
+.arch:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--ac, var(--purple)) 62%, transparent); }
+.arch-n { color: var(--ac, var(--purple)); font-family: var(--font-mono); font-size: 8.5px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+.arch-name { margin-top: 11px; font-family: var(--font-display); font-size: clamp(21px, 2.2vw, 31px); line-height: 1; }
+.arch-copy { margin-top: 9px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(11px, 1vw, 13.5px); line-height: 1.38; }
+.arch-night { margin-top: auto; padding-top: 11px; color: var(--ac, var(--purple)); font-family: var(--font-mono); font-size: 8px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+
+/* Value stack */
+.value-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; margin-top: clamp(20px, 3.4vh, 38px); }
+.value-cell {
+  padding: clamp(16px, 2.4vh, 24px) clamp(14px, 1.4vw, 22px);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--vc, var(--purple));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--vc, var(--purple)) 8%, transparent), rgba(17,17,20,0.82));
+}
+.value-n {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.6vw, 54px);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--vc, var(--purple));
+}
+.value-l { margin-top: 11px; color: var(--dim); font-family: var(--font-editorial); font-size: clamp(11.5px, 1.08vw, 14.5px); line-height: 1.42; }
+.value-l b { color: var(--text); font-weight: 600; }
+
+/* Night archetype chip */
+.night-arch { position: relative; z-index: 1; margin-top: 7px; font-family: var(--font-mono); font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--na, var(--purple)); }
+
+/* Entrance motion */
+body.motion-ready .reveal > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 780ms var(--ease), transform 780ms var(--ease);
+}
+body.motion-ready .reveal.in > * { opacity: 1; transform: none; }
+body.motion-ready .reveal.in > *:nth-child(1) { transition-delay: 40ms; }
+body.motion-ready .reveal.in > *:nth-child(2) { transition-delay: 110ms; }
+body.motion-ready .reveal.in > *:nth-child(3) { transition-delay: 180ms; }
+body.motion-ready .reveal.in > *:nth-child(4) { transition-delay: 250ms; }
+body.motion-ready .reveal.in > *:nth-child(5) { transition-delay: 320ms; }
+body.motion-ready .reveal.in > *:nth-child(n+6) { transition-delay: 380ms; }
+body.motion-ready .reveal.reset > * { transition: none !important; }
+
+.slide.is-active .sequence .seq::before { animation: pulse-node 1.6s var(--ease) both; animation-delay: calc(var(--i) * 170ms + 500ms); }
+@keyframes pulse-node { 0% { transform: translateX(-50%) scale(0.45); opacity: 0; } 65% { transform: translateX(-50%) scale(1.22); } 100% { transform: translateX(-50%) scale(1); opacity: 1; } }
+.slide.is-active .night { animation: night-rise 650ms var(--ease) both; animation-delay: calc(var(--i) * 90ms + 260ms); }
+@keyframes night-rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .deck { scroll-behavior: auto; }
+  body.motion-ready .reveal > * { opacity: 1; transform: none; }
+  .hero-media img { transform: none; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .topo-node { backdrop-filter: none; background: var(--surface); }
+}
+
+@media (max-height: 800px) and (min-width: 901px) {
+  .slide { padding-top: 28px; padding-bottom: 28px; }
+  .headline { font-size: clamp(31px, 4.3vw, 58px); }
+  .source-line { margin-top: 9px; padding-top: 7px; }
+  .night { min-height: 270px; }
+  .night-grid { margin-top: 18px; }
+  .topo-node { min-height: 145px; }
+  .unknown-stage { min-height: 380px; }
+  .unknown-file { min-height: 260px; }
+  .tool { min-height: 120px; }
+  .artifact { min-height: 112px; }
+  .ladder { margin-top: 22px; }
+  .rings-viz svg { height: min(66vh, 680px); }
+  .rmcard { min-height: 106px; }
+  .arch { min-height: 178px; }
+  .collapse-fig, .value-grid { margin-top: 16px; }
+  .rung { min-height: max(165px, calc(var(--rh) - 40px)); }
+}
+
+@media (max-width: 900px) {
+  body { overflow: hidden; }
+  .slide {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+    justify-content: flex-start;
+    padding: 62px 20px 48px;
+  }
+  .tracker, .counter { display: none; }
+  .display { font-size: clamp(48px, 15vw, 76px); }
+  .headline { font-size: clamp(38px, 11vw, 58px); }
+  .hero-media { inset: 0; opacity: 0.38; }
+  .hero-media::before { background: linear-gradient(180deg, rgba(8,8,10,0.72), rgba(8,8,10,0.92)); }
+  .hero-grid { grid-template-columns: 1fr; min-height: calc(100dvh - 110px); }
+  .hero-copy { align-self: end; padding-bottom: 18px; }
+  .hero-copy .display { max-width: 9ch; }
+  .shift-grid, .crossing, .stack-layout, .fit-layout, .offer-layout { grid-template-columns: 1fr; gap: 28px; }
+  .failure-flow { grid-template-columns: 1fr; gap: 0; }
+  .failure-flow::before { left: 7px; right: auto; top: 10px; bottom: 10px; width: 1px; height: auto; }
+  .flow-node { display: grid; grid-template-columns: 28px 115px 1fr; gap: 10px; align-items: center; text-align: left; padding: 8px 0; }
+  .flow-dot { width: 14px; height: 14px; margin: 0; }
+  .flow-note { margin-top: 0; }
+  .ladder { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; }
+  .rung { min-height: 190px !important; }
+  .topology { grid-template-columns: 1fr 1fr; }
+  .topo-node:not(:last-child)::after { display: none; }
+  .match-layout { grid-template-columns: 1fr; }
+  .match-gate { flex-direction: row; }
+  .factory { grid-template-columns: 1fr 1fr; }
+  .factory-node:not(:last-child)::after { display: none; }
+  .human-rail { grid-template-columns: 1fr; }
+  .trust-layer { grid-template-columns: 90px 1fr; }
+  .layer-proof { grid-column: 2; text-align: left; }
+  .night-grid { grid-template-columns: 1fr; }
+  .night { min-height: 240px; }
+  .artifact-grid, .arsenal-grid { grid-template-columns: 1fr; }
+  .artifact, .artifact.a1, .artifact.a2, .artifact.a3, .artifact.a4, .artifact.a5,
+  .tool, .tool:nth-child(1), .tool:nth-child(2), .tool:nth-child(3), .tool:nth-child(4), .tool:nth-child(5), .tool:nth-child(6) { grid-column: 1; }
+  .unknown-stage { grid-template-columns: 1fr; min-height: 0; }
+  .sequence { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 24px; }
+  .sequence::before { display: none; }
+  .seq { padding-top: 48px; }
+  .seq::before { top: 11px; }
+  .guide-photo { inset: 0; opacity: 0.28; }
+  .guide-photo::before { background: linear-gradient(180deg, rgba(8,8,10,0.42), rgba(8,8,10,0.96) 70%); }
+  .guide-copy { padding-top: 36vh; }
+  .guide-meta { grid-template-columns: 1fr; }
+  .offer-price { font-size: clamp(74px, 24vw, 118px); }
+  .rings-layout { grid-template-columns: 1fr; gap: 22px; }
+  .rings-viz svg { height: auto; max-height: 54vh; }
+  .rmgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .collapse-fig { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .role-src::after { display: none; }
+  .role-dst { grid-template-columns: 1fr; margin-top: 10px; }
+  .arch-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .value-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .source-line { font-size: 7px; }
+}
+
+@media (max-width: 560px) {
+  .hero-meta { gap: 6px; }
+  .tag { white-space: normal; }
+  .ladder, .topology, .factory { grid-template-columns: 1fr; }
+  .rung { min-height: 165px !important; }
+  .cross-item { grid-template-columns: 38px 1fr; }
+  .sequence { grid-template-columns: 1fr 1fr; }
+  .fit-gate { grid-template-columns: 32px 1fr; }
+  .fit-proof { grid-column: 2; text-align: left; }
+  .rmgrid, .collapse-fig, .arch-grid, .value-grid { grid-template-columns: 1fr; }
+  .rings-viz svg { max-height: 46vh; }
+  .offer-line { grid-template-columns: 82px 1fr; }
+}
+
+@media print {
+  body { overflow: visible; }
+  .deck { height: auto; overflow: visible; }
+  .slide { min-height: 100vh; height: 100vh; break-after: page; }
+  .progress, .counter, .tracker { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="atmosphere" aria-hidden="true"><div class="grid-floor"></div></div>
+<div class="progress" aria-hidden="true"></div>
+<div class="counter" aria-hidden="true">
+  <span class="counter-act" id="counterAct">OPEN</span>
+  <span><strong id="counterNow">01</strong> / <span id="counterTotal">15</span></span>
+</div>
+<nav class="tracker" id="tracker" aria-label="Slide navigation"></nav>
+
+<main class="deck" id="deck">
+
+  <section class="slide" id="slide-01" data-act="OPEN" data-accent="purple" aria-labelledby="s1-title">
+    <div class="hero-media" aria-hidden="true">
+      <img src="https://www.engenhariadadosacademy.ai/images/bootcamp/hero-factory.webp" alt="" fetchpriority="high">
+    </div>
+    <div class="wrap hero-grid reveal">
+      <div class="hero-copy">
+        <div class="kicker">Bootcamp · Agentic Engineering in Practice</div>
+        <h1 class="display" id="s1-title">Five nights. One brownfield. <span class="gradient-purple">A factory that earns trust.</span></h1>
+        <p class="hero-sub">Five live nights. One brownfield migration. Intent enters. Evidence-gated software leaves.</p>
+        <div class="hero-meta">
+          <span class="tag">24-28/08</span>
+          <span class="tag">19:30-23:30</span>
+          <span class="tag">live</span>
+          <span class="tag">local-first build</span>
+        </div>
+      </div>
+      <div aria-hidden="true"></div>
+    </div>
+    <aside class="speaker-notes" hidden>Open with the outcome, not the tooling. This is a guided build of a governed system, not a tour of agent products. Source: current official Bootcamp page, accessed 2026-08-12.</aside>
+  </section>
+
+  <section class="slide" id="slide-02" data-act="WHY" data-accent="purple" aria-labelledby="s2-title">
+    <div class="wrap reveal">
+      <div class="kicker">The category shift</div>
+      <h2 class="headline" id="s2-title" style="margin-top:10px;">Code got cheap. <span class="gradient-purple">Trust did not.</span></h2>
+      <div class="shift-grid">
+        <div>
+          <div class="thesis-line">
+            <div class="thesis-key">Model</div>
+            <div class="thesis-copy">Generates plausible work at extraordinary speed.</div>
+          </div>
+          <div class="thesis-line">
+            <div class="thesis-key">Engineer</div>
+            <div class="thesis-copy">Defines <b>scope, authority, proof, and stop conditions.</b></div>
+          </div>
+          <div class="thesis-line">
+            <div class="thesis-key">System</div>
+            <div class="thesis-copy">Carries those decisions through every execution.</div>
+          </div>
+        </div>
+        <div>
+          <div class="failure-flow" aria-label="Failure cascade from a vague request to subjective completion">
+            <div class="flow-node" style="--nc:var(--purple);"><div class="flow-dot"></div><div class="flow-name">Request</div><div class="flow-note">sounds clear</div></div>
+            <div class="flow-node" style="--nc:#ae80e8;"><div class="flow-dot"></div><div class="flow-name">Assumptions</div><div class="flow-note">stay hidden</div></div>
+            <div class="flow-node" style="--nc:#bd70c7;"><div class="flow-dot"></div><div class="flow-name">Build</div><div class="flow-note">looks plausible</div></div>
+            <div class="flow-node" style="--nc:#d26891;"><div class="flow-dot"></div><div class="flow-name">Review</div><div class="flow-note">becomes endless</div></div>
+            <div class="flow-node" style="--nc:var(--red);"><div class="flow-dot"></div><div class="flow-name">Done?</div><div class="flow-note">still an opinion</div></div>
+          </div>
+        </div>
+      </div>
+      <p class="source-line">Derived from plan/semana.md: prompt contract, selected context, written authority, evidence, and human gates.</p>
+    </div>
+    <aside class="speaker-notes" hidden>The expensive bottleneck is no longer typing. It is deciding what deserves to pass and preserving that decision in the system.</aside>
+  </section>
+
+  <section class="slide" id="slide-03" data-act="WHY" data-accent="red" aria-labelledby="s3-title">
+    <div class="wrap reveal">
+      <div class="kicker">The operating ladder</div>
+      <h2 class="headline" id="s3-title" style="margin-top:10px;">The trap is not manual work. <span class="red">It is permanent review.</span></h2>
+      <div class="ladder" aria-label="Operational ladder from manual coding to managed by exception">
+        <div class="rung" style="--rh:175px;--rc:#777b86;"><span class="rung-n">0</span><div class="rung-name">You type</div><div class="rung-copy">Every change begins and ends at your keyboard.</div><div class="rung-foot">manual</div></div>
+        <div class="rung" style="--rh:200px;--rc:#7884a1;"><span class="rung-n">1</span><div class="rung-name">You delegate</div><div class="rung-copy">One isolated task at a time.</div><div class="rung-foot">task assist</div></div>
+        <div class="rung" style="--rh:225px;--rc:#857fbd;"><span class="rung-n">2</span><div class="rung-name">You pair</div><div class="rung-copy">The model stays inside your active flow.</div><div class="rung-foot">supervised</div></div>
+        <div class="rung trap" style="--rh:250px;--rc:var(--red);"><span class="rung-n">3</span><div class="rung-name">You review</div><div class="rung-copy">Your day becomes plans, diffs, corrections, and repeated explanations.</div><div class="rung-foot">the review trap</div></div>
+        <div class="rung target" style="--rh:275px;--rc:var(--purple);"><span class="rung-n">4</span><div class="rung-name">You specify</div><div class="rung-copy">Intent, authority, behavior, and proof travel together.</div><div class="rung-foot">goal-driven</div></div>
+        <div class="rung target" style="--rh:300px;--rc:var(--green);"><span class="rung-n">5</span><div class="rung-name">You operate</div><div class="rung-copy">The loop runs. You enter on exception, risk, and acceptance.</div><div class="rung-foot">managed by exception</div></div>
+      </div>
+      <p class="ladder-verdict">The Bootcamp does not promise maximum autonomy. It teaches <b>calibrated autonomy that earns its next level.</b></p>
+    </div>
+    <aside class="speaker-notes" hidden>This is a derived operating ladder, not a maturity certification. Emphasize the move from supervising output to engineering the conditions of safe execution.</aside>
+  </section>
+
+  <section class="slide" id="slide-04" data-act="WHY" data-accent="purple" aria-labelledby="s4-title">
+    <div class="wrap crossing reveal">
+      <div class="crossing-main">
+        <span class="italic">Why live, why guided</span>
+        <h2 class="display" id="s4-title">Content can be watched. <span class="gradient-purple">Judgment must be rehearsed.</span></h2>
+        <p class="subhead" style="margin-top:22px;">The scarce skill is not knowing the vocabulary. It is making the call when the evidence is incomplete and the system can act.</p>
+      </div>
+      <div class="cross-list">
+        <div class="cross-item"><div class="cross-n">01</div><div class="cross-copy"><b>A technical guide</b> <span>who challenges the eval, not your confidence.</span></div></div>
+        <div class="cross-item"><div class="cross-n">02</div><div class="cross-copy"><b>One cohort</b> <span>crossing the same brownfield case under the same gates.</span></div></div>
+        <div class="cross-item"><div class="cross-n">03</div><div class="cross-copy"><b>A real deadline</b> <span>so every night leaves working artifacts on your laptop.</span></div></div>
+      </div>
+    </div>
+    <aside class="speaker-notes" hidden>The offer is guided judgment under a cumulative build, not access to information. This mirrors the current presentation reference slides 36 and 38.</aside>
+  </section>
+
+  <section class="slide" id="slide-05" data-act="COLLAPSE" data-accent="purple" aria-labelledby="s5-title">
+    <div class="wrap reveal">
+      <div class="kicker">The collapse</div>
+      <h2 class="headline" id="s5-title" style="margin-top:10px;max-width:22ch;">Four roles are becoming one. <span class="gradient-purple">The harness is what's left to build.</span></h2>
+      <p class="subhead" style="margin-top:14px;">The market still writes four job posts. The work has already converged into a single loop — define, authorize, execute, prove.</p>
+      <div class="collapse-fig" aria-label="Four engineering roles converging into the Agentic Engineer">
+        <div class="role-src" style="--rc:var(--purple);"><div class="role-k">Engineering</div><div class="role-name">Software Engineer</div><div class="role-copy">types the product</div></div>
+        <div class="role-src" style="--rc:var(--cyan);"><div class="role-k">Data</div><div class="role-name">Data Engineer</div><div class="role-copy">moves the bytes</div></div>
+        <div class="role-src" style="--rc:var(--gold);"><div class="role-k">Analytics</div><div class="role-name">Analytics Engineer</div><div class="role-copy">shapes the truth</div></div>
+        <div class="role-src" style="--rc:var(--green);"><div class="role-k">Operations</div><div class="role-name">DevOps · MLOps</div><div class="role-copy">keeps it running</div></div>
+        <div class="role-dst"><div><div class="role-k">The convergence</div><div class="role-name">Agentic Engineer</div></div><div class="role-copy">One role: intent in, governed software out — with evidence at every gate and humans owning the decisions.</div></div>
+      </div>
+      <p class="ladder-verdict" style="margin-top:clamp(14px,2.2vh,24px);">You will not be promoted for out-typing the model. <b>You will be promoted for owning intent, authority, and proof.</b></p>
+      <p class="source-line">Convergence framing after Boris Cherny (Claude Code): engineering, product, design, and data science melt into one kind of role — via “The Archetype Under the Title,” paddo.dev, 29 Jun 2026.</p>
+    </div>
+    <aside class="speaker-notes" hidden>Land the four cards slowly, then the single card. The pitch is not that jobs disappear — it is that the differentiation moves to governing the agents. Do not claim all four roles vanish today; claim the governed loop is the durable skill.</aside>
+  </section>
+
+  <section class="slide" id="slide-06" data-act="COLLAPSE" data-accent="gold" aria-labelledby="s6-title">
+    <div class="wrap reveal">
+      <div class="kicker">Boris Cherny · the archetype, not the title</div>
+      <h2 class="headline" id="s6-title" style="margin-top:10px;">The title predicts nothing. <span class="gradient-gold">The archetype predicts everything.</span></h2>
+      <p class="subhead" style="margin-top:14px;">Cherny — who built Claude Code — watched the roles melt. What remains is not five job posts. It is five ways of working. You will live all five in one week.</p>
+      <div class="arch-grid" aria-label="Cherny's five archetypes mapped to the five bootcamp nights">
+        <div class="arch" style="--ac:var(--purple);"><div class="arch-n">A1 · explore</div><div class="arch-name">Prototyper</div><div class="arch-copy">Churns out brand-new ideas. Most don't ship.</div><div class="arch-night">night 1 · archaeologist</div></div>
+        <div class="arch" style="--ac:var(--cyan);"><div class="arch-n">A2 · build</div><div class="arch-name">Builder</div><div class="arch-copy">Turns a prototype into production-grade product and infrastructure.</div><div class="arch-night">nights 2-3 · translator + builder</div></div>
+        <div class="arch" style="--ac:var(--red);"><div class="arch-n">A3 · subtract</div><div class="arch-name">Sweeper</div><div class="arch-copy">Simplifies, unships, optimizes. The subtraction agents cannot do.</div><div class="arch-night">night 4 · orchestrator</div></div>
+        <div class="arch" style="--ac:var(--green);"><div class="arch-n">A4 · grow</div><div class="arch-name">Grower</div><div class="arch-copy">Iterates a built product toward fit — the factory meets the unknown file.</div><div class="arch-night">night 5 · factory</div></div>
+        <div class="arch" style="--ac:var(--gold);"><div class="arch-n">A5 · keep</div><div class="arch-name">Maintainer</div><div class="arch-copy">Keeps the mature system secure, reliable, fast. That is you, after Friday.</div><div class="arch-night">after the week</div></div>
+      </div>
+      <p class="night-verdict">“Agents add; they don't subtract. <b>The taste stays with you.</b>” — the bootcamp trains exactly that.</p>
+      <p class="source-line">Archetypes and one-liners after Boris Cherny, creator of Claude Code; summarized in “The Archetype Under the Title,” paddo.dev, 29 Jun 2026. Night mapping is editorial presentation copy.</p>
+    </div>
+    <aside class="speaker-notes" hidden>Cherny's point is that the archetype cuts across job function, not along it. The mapping to nights is our editorial device — say so out loud. The sales hook: the week compresses the whole lifecycle, so you leave able to run all five phases.</aside>
+  </section>
+
+  <section class="slide" id="slide-07" data-act="ARCH" data-accent="purple" aria-labelledby="s7-title">
+    <div class="wrap rings-layout">
+      <div class="reveal" style="align-self:center;">
+        <div class="kicker">The architecture · six rings</div>
+        <h2 class="headline" id="s7-title" style="margin-top:10px;">You rent the model. <span class="gradient-purple">You build everything around it.</span></h2>
+        <p class="subhead" style="margin-top:16px;">One figure carries the whole method: six rings of engineering around a capability core. Night by night, a ring lights up — until Friday, when the full system runs an input it has never seen.</p>
+        <div class="ring-decision">
+          <h3>The rings are files, not folklore.</h3>
+          <p>Prompt/spec, context, harness, loop, eval, graph — every ring is <b>inspectable text you write</b>, and every ring is a gate the work must pass.</p>
+        </div>
+        <p class="source-line">Ring model from the Day-1/Day-2 presentations (d1.html Act 0, d2.html Act 0), re-rendered in the Bootcamp palette.</p>
+      </div>
+      <div class="rings-viz reveal">
+        <svg viewBox="0 0 1000 900" role="img" aria-label="Six engineering rings around a model core: Prompt/Spec, Context, Harness, Loop, Eval, Graph">
+          <defs>
+            <radialGradient id="bc-coreG" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#9d8bff" stop-opacity=".56"/><stop offset="100%" stop-color="#9d8bff" stop-opacity=".12"/></radialGradient>
+            <radialGradient id="bc-g1" cx="50%" cy="50%" r="50%"><stop offset="55%" stop-color="#9d8bff" stop-opacity="0"/><stop offset="100%" stop-color="#9d8bff" stop-opacity=".12"/></radialGradient>
+            <radialGradient id="bc-g2" cx="50%" cy="50%" r="50%"><stop offset="62%" stop-color="#4ccfe0" stop-opacity="0"/><stop offset="100%" stop-color="#4ccfe0" stop-opacity=".10"/></radialGradient>
+            <radialGradient id="bc-g3" cx="50%" cy="50%" r="50%"><stop offset="68%" stop-color="#dfbd55" stop-opacity="0"/><stop offset="100%" stop-color="#dfbd55" stop-opacity=".24"/></radialGradient>
+            <radialGradient id="bc-g4" cx="50%" cy="50%" r="50%"><stop offset="73%" stop-color="#8a8f9c" stop-opacity="0"/><stop offset="100%" stop-color="#8a8f9c" stop-opacity=".05"/></radialGradient>
+            <radialGradient id="bc-g5" cx="50%" cy="50%" r="50%"><stop offset="78%" stop-color="#54c56a" stop-opacity="0"/><stop offset="100%" stop-color="#54c56a" stop-opacity=".06"/></radialGradient>
+            <radialGradient id="bc-g6" cx="50%" cy="50%" r="50%"><stop offset="83%" stop-color="#c0b6ff" stop-opacity="0"/><stop offset="100%" stop-color="#c0b6ff" stop-opacity=".10"/></radialGradient>
+            <filter id="bc-coreGlow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+
+          <circle class="ring-breathe r6" cx="500" cy="452" r="408" fill="url(#bc-g6)" stroke="#c0b6ff" stroke-width="1.8" stroke-opacity=".55"/>
+          <circle class="ring-breathe r5" cx="500" cy="452" r="351" fill="url(#bc-g5)" stroke="#54c56a" stroke-width="1.5" stroke-opacity=".5"/>
+          <circle class="ring-breathe r4" cx="500" cy="452" r="297" fill="url(#bc-g4)" stroke="#8a8f9c" stroke-width="1.4" stroke-opacity=".38"/>
+          <circle class="ring-breathe r3" cx="500" cy="452" r="244" fill="url(#bc-g3)" stroke="#dfbd55" stroke-width="3" stroke-opacity=".9"/>
+          <circle class="ring-breathe r2" cx="500" cy="452" r="191" fill="url(#bc-g2)" stroke="#4ccfe0" stroke-width="1.6" stroke-opacity=".6"/>
+          <circle class="ring-breathe" cx="500" cy="452" r="139" fill="url(#bc-g1)" stroke="#9d8bff" stroke-width="1.6" stroke-opacity=".65"/>
+          <circle class="core-pulse" cx="500" cy="452" r="86" fill="url(#bc-coreG)" stroke="#9d8bff" stroke-width="2" filter="url(#bc-coreGlow)"/>
+
+          <text x="500" y="66" fill="#cfc4ff" font-family="Instrument Serif" font-size="29" text-anchor="middle">Graph</text>
+          <text x="500" y="86" fill="#9d8bc8" font-family="Fira Code" font-size="11.5" text-anchor="middle">the shared language</text>
+
+          <text x="500" y="123" fill="#7ec98c" font-family="Instrument Serif" font-size="27" text-anchor="middle">Eval</text>
+          <text x="500" y="143" fill="#5f7566" font-family="Fira Code" font-size="11.5" text-anchor="middle">the proof + human gate</text>
+
+          <text x="500" y="179" fill="#9aa0ab" font-family="Instrument Serif" font-size="27" text-anchor="middle">Loop</text>
+          <text x="500" y="198" fill="#77848c" font-family="Fira Code" font-size="11.5" text-anchor="middle">the engine of persistence</text>
+
+          <text x="500" y="232" fill="#f4dd94" font-family="Instrument Serif" font-size="30" text-anchor="middle">Harness</text>
+          <text x="500" y="252" fill="#e6cf8a" font-family="Fira Code" font-size="12" font-weight="bold" text-anchor="middle">the hands and the brakes</text>
+
+          <text x="500" y="286" fill="#8ae4f2" font-family="Instrument Serif" font-size="27" text-anchor="middle">Context</text>
+          <text x="500" y="305" fill="#74c8d5" font-family="Fira Code" font-size="11.5" text-anchor="middle">the world it can see</text>
+
+          <text x="500" y="339" fill="#b6a9ff" font-family="Instrument Serif" font-size="27" text-anchor="middle">Prompt / Spec</text>
+          <text x="500" y="358" fill="#69a8dc" font-family="Fira Code" font-size="11.5" text-anchor="middle">the work, defined</text>
+
+          <text x="500" y="445" fill="#fff" font-family="Instrument Serif" font-size="47" text-anchor="middle">Model</text>
+          <text x="500" y="471" fill="#e6dcff" font-family="Fira Code" font-size="11.5" text-anchor="middle">capability engine · rented</text>
+
+          <text x="500" y="569" fill="#b6a9ff" font-family="Fira Code" font-size="11.5" font-style="italic" text-anchor="middle" opacity=".85">night 1 · prompt/spec — the work, defined</text>
+          <text x="500" y="621" fill="#8ae4f2" font-family="Fira Code" font-size="11.5" font-style="italic" text-anchor="middle" opacity=".85">night 1 · context — the world it can see</text>
+          <text x="500" y="674" fill="#f4dd94" font-family="Fira Code" font-size="12.5" font-weight="bold" text-anchor="middle">night 2 · harness — the hands and the brakes</text>
+          <text x="500" y="727" fill="#9aa0ab" font-family="Fira Code" font-size="11.5" font-style="italic" text-anchor="middle" opacity=".75">night 3-4 · loop — the engine of persistence</text>
+          <text x="500" y="780" fill="#7ec98c" font-family="Fira Code" font-size="11.5" font-style="italic" text-anchor="middle" opacity=".85">night 4 · eval — the proof and the gate</text>
+          <text x="500" y="836" fill="#cfc4ff" font-family="Fira Code" font-size="11.5" font-style="italic" text-anchor="middle" opacity=".85">night 1-5 · graph — the shared language</text>
+        </svg>
+      </div>
+    </div>
+    <aside class="speaker-notes" hidden>Reuse the exact figure the audience saw on Days 1 and 2 — recognition, not repetition. The legend maps each ring to the night that builds it; that is the arc of the whole offer.</aside>
+  </section>
+
+  <section class="slide" id="slide-08" data-act="ARCH" data-accent="purple" aria-labelledby="s8-title">
+    <div class="wrap reveal">
+      <div class="kicker">The anatomy · eight layers</div>
+      <h2 class="headline" id="s8-title" style="margin-top:10px;">Eight layers turn a model <span class="gradient-purple">into an agent.</span></h2>
+      <p class="subhead" style="margin-top:14px;">Every engine rents the same loop. What separates them is everything above it — and every layer is a file or a setting you can point at.</p>
+      <div class="rmgrid" aria-label="Eight harness layers: memory, procedures, delegation, policy, tools, invocation, distribution, observability">
+        <div class="rmcard" style="--rmc:var(--purple);">
+          <div class="rm-head"><span class="rm-num">1</span><div><div class="rm-eyebrow">the wake-up state</div><div class="rm-name">Memory</div></div></div>
+          <div class="rm-when">What the agent knows when it wakes up — reloaded into every session, whichever engine runs it.</div>
+          <div class="rm-foot"><span class="rm-pill">AGENTS.md · CLAUDE.md</span></div>
+        </div>
+        <div class="rmcard" style="--rmc:var(--gold);">
+          <div class="rm-head"><span class="rm-num">2</span><div><div class="rm-eyebrow">the method library</div><div class="rm-name">Procedures</div></div></div>
+          <div class="rm-when">A named method the harness reaches for when the task matches its description.</div>
+          <div class="rm-foot"><span class="rm-pill">skills/*/SKILL.md</span></div>
+        </div>
+        <div class="rmcard" style="--rmc:var(--cyan);">
+          <div class="rm-head"><span class="rm-num">3</span><div><div class="rm-eyebrow">fresh eyes on demand</div><div class="rm-name">Delegation</div></div></div>
+          <div class="rm-when">Bounded subtasks run in a fresh context and report back — the parent's window stays clean.</div>
+          <div class="rm-foot"><span class="rm-pill">subagents</span></div>
+        </div>
+        <div class="rmcard" style="--rmc:var(--red);">
+          <div class="rm-head"><span class="rm-num">4</span><div><div class="rm-eyebrow">the brake lines</div><div class="rm-name">Policy</div></div></div>
+          <div class="rm-when">What the agent may not do — enforced by the engine itself, not by the prompt's good manners.</div>
+          <div class="rm-foot"><span class="rm-pill">hooks + permissions</span></div>
+        </div>
+        <div class="rmcard" style="--rmc:var(--purple);">
+          <div class="rm-head"><span class="rm-num">5</span><div><div class="rm-eyebrow">the hands</div><div class="rm-name">Tools</div></div></div>
+          <div class="rm-when">Reach beyond the filesystem — external systems wired in as callable interfaces.</div>
+          <div class="rm-foot"><span class="rm-pill">MCP servers</span></div>
+        </div>
+        <div class="rmcard" style="--rmc:var(--green);">
+          <div class="rm-head"><span class="rm-num">6</span><div><div class="rm-eyebrow">the entry points</div><div class="rm-name">Invocation</div></div></div>
+          <div class="rm-when">How a human starts the work — named commands, typed on purpose.</div>
+          <div class="rm-foot"><span class="rm-pill">/slash-commands</span></div>
+        </div>
+        <div class="rmcard" style="--rmc:var(--dim);">
+          <div class="rm-head"><span class="rm-num">7</span><div><div class="rm-eyebrow">the supply chain</div><div class="rm-name">Distribution</div></div></div>
+          <div class="rm-when">How a harness travels — from one machine to an entire team, intact.</div>
+          <div class="rm-foot"><span class="rm-pill">plugins</span></div>
+        </div>
+        <div class="rmcard" style="--rmc:var(--green);">
+          <div class="rm-head"><span class="rm-num">8</span><div><div class="rm-eyebrow">the flight recorder</div><div class="rm-name">Observability</div></div></div>
+          <div class="rm-when">Every step leaves a trace — the record you tune the harness against, slip by slip.</div>
+          <div class="rm-foot"><span class="rm-pill">hooks → trace.jsonl</span></div>
+        </div>
+      </div>
+      <div class="callout" style="--co-c:var(--purple);">You will touch every one of these layers during the week — <b>and keep the result on your machine.</b></div>
+      <p class="source-line">Layer anatomy adapted from the harness-engineering deck used on Day 2 (presentation/d2.html, Act 3); artifacts cited exist in the teaching repos.</p>
+    </div>
+    <aside class="speaker-notes" hidden>Walk the grid layer by layer, naming a real artifact each time. The point is that a harness is inspectable text, not marketing — and that the bootcamp builds all eight, not a demo of two.</aside>
+  </section>
+
+  <section class="slide" id="slide-09" data-act="CASE" data-accent="red" aria-labelledby="s9-title">
+    <div class="case-bg" aria-hidden="true"></div>
+    <div class="wrap reveal" style="position:relative;z-index:2;">
+      <div class="kicker">The case · NorthWind Pay</div>
+      <h2 class="headline" id="s9-title" style="margin-top:10px;max-width:18ch;">A payment platform <span class="red">trapped inside its own past.</span></h2>
+      <p class="subhead" style="margin-top:14px;color:#a6a8b2;">A production-derived teaching case: raw positional files, legacy application logic, database rules, and a manual close.</p>
+      <div class="topology" aria-label="Legacy payment processing topology">
+        <div class="topo-node" style="--tc:var(--gold);"><div class="topo-k">SFTP</div><div class="topo-name">Raw files</div><div class="topo-copy">Positional layouts, overpunch, and personally identifiable information in the source feed.</div></div>
+        <div class="topo-node" style="--tc:var(--red);"><div class="topo-k">Application</div><div class="topo-name">Java core</div><div class="topo-copy">Business behavior accumulated across years of change.</div></div>
+        <div class="topo-node" style="--tc:var(--purple);"><div class="topo-k">Database</div><div class="topo-name">Stored rules</div><div class="topo-copy">Logic distributed through procedures and operational tables.</div></div>
+        <div class="topo-node" style="--tc:var(--cyan);"><div class="topo-k">Close</div><div class="topo-name">Manual proof</div><div class="topo-copy">People reconcile outputs because the system cannot explain itself.</div></div>
+      </div>
+      <div class="risk-strip"><b>The dangerous failure is not downtime.</b> It is a number that looks right until an audit proves it was not.</div>
+      <p class="source-line">Official Bootcamp page: NorthWind Pay is a didactic case grounded in an unnamed production migration.</p>
+    </div>
+    <aside class="speaker-notes" hidden>Do not present NorthWind Pay as a customer name. It is the public teaching-case name for a production-derived scenario.</aside>
+  </section>
+
+  <section class="slide" id="slide-10" data-act="CASE" data-accent="gold" aria-labelledby="s10-title">
+    <div class="wrap reveal">
+      <div class="kicker">The proof mechanism</div>
+      <h2 class="headline" id="s10-title" style="margin-top:10px;">Who proves the new close? <span class="gradient-gold">The legacy system.</span></h2>
+      <p class="subhead" style="margin-top:14px;">The old output becomes a test oracle. Every translated result must survive a cent-for-cent comparison.</p>
+      <div class="match-layout">
+        <div class="match-system legacy" style="--mc:var(--gold);">
+          <div class="match-k">Legacy · oracle</div>
+          <div class="match-name">The close today</div>
+          <div class="match-copy">What the existing operation currently produces for the tested inputs.</div>
+          <div class="match-sample">batch_2026_08_24<br>currency = BRL<br>expected_close = source_output</div>
+        </div>
+        <div class="match-gate" aria-label="Golden match gate"><div class="equal">=</div><span class="gold-stamp">golden-match</span></div>
+        <div class="match-system" style="--mc:var(--purple);">
+          <div class="match-k">Factory · candidate</div>
+          <div class="match-name">The same close</div>
+          <div class="match-copy">What the new pipeline produces for those same inputs and rules.</div>
+          <div class="match-sample">task-spec sealed<br>evals = passing<br>candidate_close = generated_output</div>
+        </div>
+      </div>
+      <p class="truth-note"><b>Truth boundary:</b> parity proves tested equivalence. It does not prove the legacy business rule is correct.</p>
+      <p class="source-line">Official Bootcamp page and plan/semana.md truth boundaries.</p>
+    </div>
+    <aside class="speaker-notes" hidden>Golden-match is powerful because it gives the migration an executable baseline. Keep the caveat visible: equivalence is not semantic approval.</aside>
+  </section>
+
+  <section class="slide" id="slide-11" data-act="SYSTEM" data-accent="purple" aria-labelledby="s11-title">
+    <div class="wrap reveal">
+      <div class="kicker">The system you build</div>
+      <h2 class="headline" id="s11-title" style="margin-top:10px;">The factory is not a model. <span class="gradient-purple">It is the contract around the model.</span></h2>
+      <div class="factory" aria-label="Evidence-gated agentic factory architecture">
+        <div class="factory-node"><div class="factory-n">01</div><div class="factory-name">Intent</div><div class="factory-copy">One bounded outcome, clear exclusions, named owners.</div><div class="factory-gate">human defines</div></div>
+        <div class="factory-node"><div class="factory-n">02</div><div class="factory-name">Task-Spec</div><div class="factory-copy">Behavior, writable paths, budgets, and executable proof.</div><div class="factory-gate">body sealed</div></div>
+        <div class="factory-node"><div class="factory-n">03</div><div class="factory-name">Harness</div><div class="factory-copy">Tools, roles, permissions, worktrees, and denials.</div><div class="factory-gate">authority enforced</div></div>
+        <div class="factory-node"><div class="factory-n">04</div><div class="factory-name">Agents</div><div class="factory-copy">Specialized executors perform bounded work.</div><div class="factory-gate">vendor portable</div></div>
+        <div class="factory-node"><div class="factory-n">05</div><div class="factory-name">Evals</div><div class="factory-copy">Tests, golden-match, and retry gates decide whether work survives.</div><div class="factory-gate">machine verifies</div></div>
+        <div class="factory-node"><div class="factory-n">06</div><div class="factory-name">Acceptance</div><div class="factory-copy">Evidence reaches the accountable owner with uncertainty intact.</div><div class="factory-gate">human accepts</div></div>
+      </div>
+      <div class="human-rail">
+        <div class="human-cell">Humans own intent and risk</div>
+        <div class="human-cell">The harness owns repeatable control</div>
+        <div class="human-cell">Evidence earns acceptance</div>
+      </div>
+      <p class="source-line">Architecture synthesized from plan/semana.md, Day 2 harness boundaries, and Day 3 Task-Spec mechanics.</p>
+    </div>
+    <aside class="speaker-notes" hidden>Walk left to right. The model is deliberately absent from the headline because capability without the surrounding contract is not the product.</aside>
+  </section>
+
+  <section class="slide" id="slide-12" data-act="SYSTEM" data-accent="red" aria-labelledby="s12-title">
+    <div class="wrap reveal">
+      <div class="kicker">Calibrated autonomy</div>
+      <h2 class="headline" id="s12-title" style="margin-top:10px;">Autonomy rises only after <span class="gradient-purple">proof exists.</span></h2>
+      <div class="stack-layout">
+        <div class="trust-stack" aria-label="Trust stack from evidence to accepted execution">
+          <div class="trust-layer" style="--lc:var(--cyan);"><div class="layer-k">Evidence</div><div class="layer-name">What is physically true</div><div class="layer-proof">selected context · reproducible facts</div></div>
+          <div class="trust-layer" style="--lc:var(--gold);"><div class="layer-k">Authority</div><div class="layer-name">What the agent may do</div><div class="layer-proof">roles · tools · paths · stop rules</div></div>
+          <div class="trust-layer" style="--lc:var(--purple);"><div class="layer-k">Atomic work</div><div class="layer-name">What done means</div><div class="layer-proof">behavior ↔ evals · exit check</div></div>
+          <div class="trust-layer" style="--lc:var(--green);"><div class="layer-k">Loop</div><div class="layer-name">What may repeat</div><div class="layer-proof">retry · observe · escalate · learn</div></div>
+        </div>
+        <div class="boundary-panel">
+          <div class="big-x">×</div>
+          <h3>Meaning cannot be automated into existence.</h3>
+          <p>In the TransactCo practice case, Postgres can prove amounts and statuses. It cannot decide what <b>Revenue</b> means. Finance owns that decision.</p>
+          <div class="boundary-chip">
+            <span class="tag" style="--tc:var(--red);">Revenue · unresolved</span>
+            <span class="tag" style="--tc:var(--gold);">owner · Finance</span>
+            <span class="tag" style="--tc:var(--green);">refusal · pass</span>
+          </div>
+        </div>
+      </div>
+      <p class="source-line">plan/semana.md and repository truth boundary: physical measurements are evidence; business meaning remains human-owned.</p>
+    </div>
+    <aside class="speaker-notes" hidden>This is why the Bootcamp is not selling zero responsibility. It removes humans from repetitive execution, not meaning, governance, or acceptance.</aside>
+  </section>
+
+  <section class="slide" id="slide-13" data-act="PROGRAM" data-accent="purple" aria-labelledby="s13-title">
+    <div class="wrap reveal">
+      <div class="kicker">Five nights · one cumulative system</div>
+      <h2 class="headline" id="s13-title" style="margin-top:10px;">Each night removes more repetitive work <span class="gradient-purple">from the human path.</span></h2>
+      <div class="night-grid" aria-label="Five night curriculum progression">
+        <div class="night" data-night="1" style="--alpha:0.05;--i:0;"><div class="night-label">Night 1</div><div class="night-name">The Archaeologist</div><div class="night-ring">Prompt + Context</div><div class="night-arch" style="--na:var(--purple);">archetype · Prototyper</div><div class="night-copy">Turn meetings, files, schemas, and legacy clues into navigable evidence.</div><div class="night-human"><small>human in execution</small><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div></div>
+        <div class="night" data-night="2" style="--alpha:0.07;--i:1;"><div class="night-label">Night 2</div><div class="night-name">The Translator</div><div class="night-ring">Harness</div><div class="night-arch" style="--na:var(--cyan);">archetype · Builder</div><div class="night-copy">Write the rails, translate the first raw layout, and constrain every tool.</div><div class="night-human"><small>human in execution</small><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="off"></span></div></div>
+        <div class="night" data-night="3" style="--alpha:0.09;--i:2;"><div class="night-label">Night 3</div><div class="night-name">The Builder</div><div class="night-ring">Harness + Loop seed</div><div class="night-arch" style="--na:var(--gold);">archetype · Builder</div><div class="night-copy">Build Bronze, Silver, Gold, FastAPI, and MCP through atomic work.</div><div class="night-human"><small>human in execution</small><span class="on"></span><span class="on"></span><span class="on"></span><span class="off"></span><span class="off"></span></div></div>
+        <div class="night" data-night="4" style="--alpha:0.11;--i:3;"><div class="night-label">Night 4</div><div class="night-name">The Orchestrator</div><div class="night-ring">Loop + Eval</div><div class="night-arch" style="--na:var(--red);">archetype · Sweeper</div><div class="night-copy">Close the issue-to-PR loop and let evidence decide what advances.</div><div class="night-human"><small>human in execution</small><span class="on"></span><span class="on"></span><span class="off"></span><span class="off"></span><span class="off"></span></div></div>
+        <div class="night" data-night="5" style="--alpha:0.14;--i:4;"><div class="night-label">Night 5</div><div class="night-name">The Factory</div><div class="night-ring">Orchestration</div><div class="night-arch" style="--na:var(--green);">archetype · Grower</div><div class="night-copy">A previously unseen input enters. The system discovers, builds, validates, and delivers.</div><div class="night-human"><small>human in execution</small><span class="on"></span><span class="off"></span><span class="off"></span><span class="off"></span><span class="off"></span></div></div>
+      </div>
+      <p class="night-verdict">Five nights. Five archetypes. After Friday, you are the <b>Maintainer of your own factory.</b></p>
+      <p class="source-line">Current official Bootcamp syllabus, translated to English and calibrated to preserve human ownership of scope and acceptance. Night-to-archetype mapping is editorial presentation copy, not a Cherny quote.</p>
+    </div>
+    <aside class="speaker-notes" hidden>The human indicators show repetitive execution, not responsibility. On Night 5 the human remains present for intent, risk, and acceptance. The archetype chips are our editorial mapping — say so; do not attribute them to Cherny.</aside>
+  </section>
+
+  <section class="slide" id="slide-14" data-act="PROGRAM" data-accent="purple" aria-labelledby="s14-title">
+    <div class="wrap reveal">
+      <div class="kicker">What survives each session</div>
+      <h2 class="headline" id="s14-title" style="margin-top:10px;">Every night leaves <span class="gradient-purple">machinery on disk.</span></h2>
+      <p class="subhead" style="margin-top:14px;">No disconnected exercises. One case accumulates context, control, proof, and operating memory.</p>
+      <div class="artifact-grid">
+        <article class="artifact a1"><div class="artifact-k">Night 1 · understand</div><div class="artifact-name">Second Brain + OntoLayer</div><div class="artifact-copy">A living project memory and a graph the agent can query instead of guessing.</div></article>
+        <article class="artifact a2"><div class="artifact-k">Night 2 · constrain</div><div class="artifact-name">Harness + Task-Spec + first Parquet</div><div class="artifact-copy">Roles, paths, permissions, denials, behavior, evals, and one translated source layout.</div></article>
+        <article class="artifact a3"><div class="artifact-k">Night 3 · build</div><div class="artifact-name">Data product</div><div class="artifact-copy">Bronze to Gold, exposed through <code>FastAPI</code> and <code>MCP</code>.</div></article>
+        <article class="artifact a4"><div class="artifact-k">Night 4 · verify</div><div class="artifact-name">Operating loop</div><div class="artifact-copy">Issue, implementation, eval, golden-match, pull request, and evidence trail.</div></article>
+        <article class="artifact a5"><div class="artifact-k">Night 5 · operate</div><div class="artifact-name">Unknown-work test</div><div class="artifact-copy">A new input enters the governed system and proves whether the factory generalizes.</div></article>
+      </div>
+      <p class="source-line">Current official Bootcamp curriculum and included-materials sections.</p>
+    </div>
+    <aside class="speaker-notes" hidden>The key sales point is cumulative artifacts. Participants keep the repositories, harness, task specifications, and project memory.</aside>
+  </section>
+
+  <section class="slide" id="slide-15" data-act="CLIMAX" data-accent="gold" aria-labelledby="s15-title">
+    <div class="wrap reveal">
+      <div class="kicker">The final test</div>
+      <h2 class="headline" id="s15-title" style="margin-top:10px;max-width:22ch;">Then we give the factory work <span class="gradient-gold">it has never seen.</span></h2>
+      <div class="unknown-stage">
+        <div class="unknown-file">
+          <div class="unknown-k">Incoming · unknown layout</div>
+          <div class="unknown-name">new_file.dat</div>
+          <div class="unknown-copy">No hand-written implementation. The system must recover the contract from evidence and earn delivery through the same gates.</div>
+        </div>
+        <div>
+          <div class="sequence" aria-label="Unknown input execution sequence">
+            <div class="seq" style="--sc:var(--gold);--i:0;"><div class="seq-name">Discover</div><div class="seq-note">inspect shape and context</div></div>
+            <div class="seq" style="--sc:#c4a36a;--i:1;"><div class="seq-name">Specify</div><div class="seq-note">bind behavior and proof</div></div>
+            <div class="seq" style="--sc:var(--purple);--i:2;"><div class="seq-name">Build</div><div class="seq-note">dispatch bounded work</div></div>
+            <div class="seq" style="--sc:#858edb;--i:3;"><div class="seq-name">Test</div><div class="seq-note">run executable evals</div></div>
+            <div class="seq" style="--sc:var(--cyan);--i:4;"><div class="seq-name">Match</div><div class="seq-note">compare to the oracle</div></div>
+            <div class="seq" style="--sc:var(--green);--i:5;"><div class="seq-name">Deliver</div><div class="seq-note">accept or escalate</div></div>
+          </div>
+          <div class="unknown-verdict">You leave repetitive execution. <b>You still own scope, risk, and acceptance.</b></div>
+        </div>
+      </div>
+      <p class="source-line">Official Bootcamp Night 5 outcome. “Unknown” refers to a new teaching-case input, not unrestricted production autonomy.</p>
+    </div>
+    <aside class="speaker-notes" hidden>This is the emotional climax. It demonstrates generalization under the same harness, not a claim of unconstrained autonomy.</aside>
+  </section>
+
+  <section class="slide" id="slide-16" data-act="VALUE" data-accent="green" aria-labelledby="s16-title">
+    <div class="wrap reveal">
+      <div class="kicker">The value stack</div>
+      <h2 class="headline" id="s16-title" style="margin-top:10px;max-width:24ch;">What the week is worth <span class="gradient-purple">is what you keep.</span></h2>
+      <div class="value-grid" aria-label="Value stack: 20 guided hours, the official four-year claim, kept artifacts, and the price">
+        <div class="value-cell" style="--vc:var(--purple);"><div class="value-n">20h</div><div class="value-l"><b>Guided live build</b> — five nights, 19:30–23:30, every hour on the same cumulative system.</div></div>
+        <div class="value-cell" style="--vc:var(--gold);"><div class="value-n">4 yrs</div><div class="value-l"><b>The official promise</b> — what a team took four years to build, you build in five nights.</div></div>
+        <div class="value-cell" style="--vc:var(--cyan);"><div class="value-n">5+</div><div class="value-l"><b>Artifacts you keep</b> — Second Brain, OntoLayer, AgentSpec, Task-Spec, and the multi-engine harness.</div></div>
+        <div class="value-cell" style="--vc:var(--green);"><div class="value-n">R$1,297</div><div class="value-l"><b>With coupon DESLIVE</b> — reference R$1,997. Seven days unconditional guarantee.</div></div>
+      </div>
+      <p class="ladder-verdict" style="margin-top:clamp(14px,2.2vh,24px);">The guarantee is not about the videos. <b>It is about whether the gates work on your machine.</b></p>
+      <p class="source-line">20h = 5 × 4h official schedule. “Four years” claim: official page og:description. Price, coupon, and guarantee: current landing page, captured 12 Aug 2026.</p>
+    </div>
+    <aside class="speaker-notes" hidden>Every number on this slide is either arithmetic from the official schedule or a verbatim official-page claim. Do not add urgency beyond the fixed dates.</aside>
+  </section>
+
+  <section class="slide" id="slide-17" data-act="TAKEAWAY" data-accent="purple" aria-labelledby="s17-title">
+    <div class="wrap reveal">
+      <div class="kicker">The arsenal</div>
+      <h2 class="headline" id="s17-title" style="margin-top:10px;">You do not leave with notes. <span class="gradient-purple">You leave with the machinery.</span></h2>
+      <div class="arsenal-grid">
+        <article class="tool"><div class="tool-name">Second Brain</div><div class="tool-copy">The project memory that survives the chat and prepares the next session.</div></article>
+        <article class="tool"><div class="tool-name">OntoLayer</div><div class="tool-copy">A queryable map of entities, rules, evidence, and ownership.</div></article>
+        <article class="tool"><div class="tool-name">AgentSpec</div><div class="tool-copy">Spec-driven data engineering roles and workflows.</div></article>
+        <article class="tool"><div class="tool-name">Task-Spec</div><div class="tool-copy">Atomic work where behavior and executable proof cannot dangle.</div></article>
+        <article class="tool"><div class="tool-name">Multi-Model Harness</div><div class="tool-copy">Different engines, fixed contracts, and one evidence boundary.</div><div class="engine-row" aria-label="Supported model engines"><img src="../assets/claude-code-icon.png" alt="Claude Code"><img src="../assets/codex.png" alt="Codex"><img src="../assets/kimi.png" alt="Kimi"></div></article>
+        <article class="tool"><div class="tool-name">Converge</div><div class="tool-copy">The operating method that carries intent through structure, decomposition, harness, execution, proof, and acceptance.</div></article>
+      </div>
+      <p class="stack-note">Open-source local data stack. Existing model subscriptions are separate.</p>
+      <p class="source-line">Current official Bootcamp arsenal and FAQ, with the open-source claim limited to the local data stack.</p>
+    </div>
+    <aside class="speaker-notes" hidden>Avoid calling every model runtime open source. The local stack and included authorial assets are the durable takeaway; model access comes from existing subscriptions.</aside>
+  </section>
+
+  <section class="slide" id="slide-18" data-act="FIT" data-accent="purple" aria-labelledby="s18-title">
+    <div class="wrap reveal">
+      <div class="kicker">The filter</div>
+      <h2 class="headline" id="s18-title" style="margin-top:10px;">Built for engineers who can <span class="gradient-purple">judge the work.</span></h2>
+      <div class="fit-layout">
+        <div>
+          <p class="subhead">You do not need agent expertise. You do need enough engineering foundation to read the evidence and challenge the result.</p>
+          <div class="roles">
+            <span class="role">Software Engineer</span>
+            <span class="role">Data Engineer</span>
+            <span class="role">Analytics Engineer</span>
+            <span class="role">AI Engineer</span>
+            <span class="role">DevOps</span>
+            <span class="role">Solutions Architect</span>
+          </div>
+          <div class="fit-callout">If you are completely new to SQL, Python, Git, and data pipelines, you may watch more than you build. That is an honest mismatch, not a hidden prerequisite.</div>
+        </div>
+        <div class="fit-gates">
+          <div class="fit-gate"><div class="fit-n">01</div><div class="fit-name">SQL</div><div class="fit-proof">basic queries</div></div>
+          <div class="fit-gate"><div class="fit-n">02</div><div class="fit-name">Python</div><div class="fit-proof">scripts or notebooks</div></div>
+          <div class="fit-gate"><div class="fit-n">03</div><div class="fit-name">Terminal + Git</div><div class="fit-proof">commit and push</div></div>
+          <div class="fit-gate"><div class="fit-n">04</div><div class="fit-name">Data pipelines</div><div class="fit-proof">conceptual or practical</div></div>
+        </div>
+      </div>
+      <p class="source-line">Current official Bootcamp diagnostic and audience sections.</p>
+    </div>
+    <aside class="speaker-notes" hidden>This slide should increase trust. The Bootcamp is not beginner-hostile, but it assumes a foundation strong enough to inspect technical work.</aside>
+  </section>
+
+  <section class="slide" id="slide-19" data-act="GUIDE" data-accent="purple" aria-labelledby="s19-title">
+    <div class="guide-photo" aria-hidden="true"><img src="../assets/luan-moreno-web.jpg" alt=""></div>
+    <div class="wrap guide-copy reveal">
+      <div class="kicker">Your guide</div>
+      <h2 class="headline" id="s19-title" style="margin-top:10px;">Built from operating scars. <span class="gradient-purple">Taught through working gates.</span></h2>
+      <blockquote class="guide-quote">“I will not ask you to trust the factory. We will build the criterion that lets it earn trust.”</blockquote>
+      <div class="guide-meta">
+        <div class="guide-cell"><small>Guide</small><strong>Luan Moreno</strong></div>
+        <div class="guide-cell"><small>Role</small><strong>Principal Forward-Deployed Engineer</strong></div>
+        <div class="guide-cell"><small>Practice</small><strong>Core Agentic Systems Architect</strong></div>
+        <div class="guide-cell"><small>Community</small><strong>Founder, Engenharia de Dados Academy</strong></div>
+      </div>
+      <p class="source-line">Titles and biography are the current official-page description. The quote is presentation copy, not a testimonial.</p>
+    </div>
+    <aside class="speaker-notes" hidden>Keep the facilitator story subordinate to the method. The credibility move is the willingness to let criteria, not charisma, decide what passes.</aside>
+  </section>
+
+  <section class="slide" id="slide-20" data-act="JOIN" data-accent="purple" aria-labelledby="s20-title">
+    <div class="wrap reveal">
+      <div class="kicker">Registration open</div>
+      <h2 class="headline" id="s20-title" style="margin-top:10px;max-width:20ch;">Five live nights to cross from AI-assisted work to <span class="gradient-purple">evidence-gated delivery.</span></h2>
+      <div class="offer-layout">
+        <div>
+          <div class="offer-price">R$1,297</div>
+          <div class="offer-was">Reference price <s>R$1,997</s></div>
+          <div class="offer-coupon">coupon DESLIVE applied at checkout</div>
+        </div>
+        <div class="offer-panel">
+          <div class="offer-line"><div class="offer-k">Dates</div><div class="offer-v">24-28/08, Monday to Friday</div></div>
+          <div class="offer-line"><div class="offer-k">Format</div><div class="offer-v">Five live nights, 19:30-23:30</div></div>
+          <div class="offer-line"><div class="offer-k">Build</div><div class="offer-v">One cumulative brownfield financial-system migration</div></div>
+          <div class="offer-line"><div class="offer-k">Guarantee</div><div class="offer-v">Seven days, unconditional</div></div>
+          <a class="offer-cta" href="https://sun.eduzz.com/7WXGBB2D0A?cupom=DESLIVE" target="_blank" rel="noopener noreferrer">
+            <span>Join the cohort</span><span aria-hidden="true">↗</span>
+          </a>
+          <div class="offer-fine">Current landing-page offer captured 12 Aug 2026. Checkout determines final terms.</div>
+        </div>
+      </div>
+      <p class="source-line">Official Bootcamp page and Eduzz checkout link. No seat count, countdown, or invented deadline.</p>
+    </div>
+    <aside class="speaker-notes" hidden>State the offer once. Dates, format, current landing-page price, coupon, and guarantee are the only urgency or risk-reversal claims.</aside>
+  </section>
+
+</main>
+
+<script>
+(function () {
+  const deck = document.getElementById('deck');
+  const slides = Array.from(deck.querySelectorAll('.slide'));
+  const progress = document.querySelector('.progress');
+  const tracker = document.getElementById('tracker');
+  const counterNow = document.getElementById('counterNow');
+  const counterTotal = document.getElementById('counterTotal');
+  const counterAct = document.getElementById('counterAct');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const pad = value => String(value).padStart(2, '0');
+  const accents = {
+    purple: 'var(--purple)',
+    red: 'var(--red)',
+    gold: 'var(--gold)',
+    green: 'var(--green)',
+    cyan: 'var(--cyan)'
+  };
+
+  counterTotal.textContent = pad(slides.length);
+
+  const dots = slides.map((slide, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+    dot.addEventListener('click', () => slide.scrollIntoView({ behavior: reduceMotion.matches ? 'auto' : 'smooth' }));
+    tracker.appendChild(dot);
+    return dot;
+  });
+
+  let currentIndex = -1;
+  function paint(index) {
+    if (index === currentIndex || !slides[index]) return;
+    currentIndex = index;
+    const slide = slides[index];
+    counterNow.textContent = pad(index + 1);
+    counterAct.textContent = slide.dataset.act || '';
+    counterAct.style.background = accents[slide.dataset.accent] || accents.purple;
+    dots.forEach((dot, dotIndex) => dot.classList.toggle('current', dotIndex === index));
+  }
+
+  deck.addEventListener('scroll', () => {
+    const available = deck.scrollHeight - deck.clientHeight;
+    progress.style.width = `${available > 0 ? (deck.scrollTop / available) * 100 : 0}%`;
+    paint(Math.min(slides.length - 1, Math.round(deck.scrollTop / deck.clientHeight)));
+  }, { passive: true });
+
+  document.addEventListener('keydown', event => {
+    if (event.metaKey || event.ctrlKey || event.altKey) return;
+    const behavior = reduceMotion.matches ? 'auto' : 'smooth';
+    const height = deck.clientHeight;
+    if (['ArrowDown', 'ArrowRight', ' ', 'PageDown'].includes(event.key)) {
+      event.preventDefault();
+      deck.scrollBy({ top: height, behavior });
+    } else if (['ArrowUp', 'ArrowLeft', 'PageUp'].includes(event.key)) {
+      event.preventDefault();
+      deck.scrollBy({ top: -height, behavior });
+    } else if (event.key === 'Home') {
+      event.preventDefault();
+      deck.scrollTo({ top: 0, behavior });
+    } else if (event.key === 'End') {
+      event.preventDefault();
+      deck.scrollTo({ top: deck.scrollHeight, behavior });
+    }
+  });
+
+  function activate(slide) {
+    slide.classList.add('is-active');
+    slide.querySelectorAll('.reveal').forEach(item => item.classList.add('in'));
+  }
+
+  if ('IntersectionObserver' in window) {
+    document.body.classList.add('motion-ready');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const slide = entry.target;
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.48) {
+          activate(slide);
+        } else if (!entry.isIntersecting) {
+          slide.classList.remove('is-active');
+          slide.querySelectorAll('.reveal.in').forEach(item => {
+            item.classList.add('reset');
+            item.classList.remove('in');
+            void item.offsetWidth;
+            item.classList.remove('reset');
+          });
+        }
+      });
+    }, { root: deck, threshold: [0, 0.48] });
+    slides.forEach(slide => observer.observe(slide));
+  } else {
+    slides.forEach(activate);
+  }
+
+  let frame = 0;
+  let pointerX = 0;
+  let pointerY = 0;
+  deck.addEventListener('pointermove', event => {
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+    if (frame) return;
+    frame = requestAnimationFrame(() => {
+      frame = 0;
+      deck.style.setProperty('--mx', `${(pointerX / window.innerWidth * 100).toFixed(1)}%`);
+      deck.style.setProperty('--my', `${(pointerY / window.innerHeight * 100).toFixed(1)}%`);
+    });
+  }, { passive: true });
+
+  paint(0);
+  if (slides[0]) activate(slides[0]);
+})();
+</script>
+
+</body>
+</html>

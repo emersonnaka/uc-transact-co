@@ -15,7 +15,7 @@ unit that makes autonomous work reviewable.
 ```mermaid
 flowchart LR
     S0[00 Inheritance] --> S1[01 Plausible plan]
-    S1 --> S2[02 Tasks Pack]
+    S1 --> S2[02 Task-Spec]
     S2 --> S3[03 BDD and evals]
     S3 --> S4[04 Decompose]
     S4 --> S5[05 Ready set]
@@ -40,10 +40,11 @@ flowchart LR
 | ---: | --- | --- | --- | --- |
 | [`00`](00-inheritance.md) | No agent | What survived the night | Five specs, rails intact, empty-shell parse | Baseline only |
 | [`01`](01-plausible-plan.md) | **NEW A** | The plan is not the work | Three divergent plans for item 7 | None — session discarded |
-| [`02`](02-tasks-pack.md) | **NEW B** | Anatomy of a Tasks Pack | `T-001.md`, seven fields, human-edited | `storage/tasks/T-001.md` |
-| [`03`](03-bdd-and-evals.md) | Continue B | Two halves of done | Scenario + eval returning 0 | Evals inside `T-001` |
-| [`04`](04-decompose.md) | Continue B as architect | Item 7 becomes a graph | Index + 4–6 packets | `storage/tasks/` graph |
-| [`05`](05-ready-set.md) | Continue B | The ready set | Dependency order justified | `tasks.md` ordering |
+| [`02`](02-tasks-pack.md) | **NEW B** | Anatomy of a Task-Spec | `T-20260812-daily-gross-ordered.md`, six zones, human-edited | `tasks/T-20260812-daily-gross-ordered.md` |
+| [`03`](03-bdd-and-evals.md) | Continue B | Two halves of done | Scenario + eval returning 0 | Evals inside `T-20260812-daily-gross-ordered` |
+| [`04`](04-decompose.md) | Continue B as architect | Item 7 becomes a graph | Index + 4–6 packets | `tasks/` graph |
+| ✦ | No agent | Giveaway → crank → offer | Deck only — 3 slides, ~21:50, 5 min | None — the crank clip is **pre-recorded** |
+| [`05`](05-ready-set.md) | Continue B | The ready set | Dependency order justified | `_state.yaml` ordering |
 | [`06`](06-execute-one.md) | **NEW C** — developer | One packet, one iteration | Exit check returns 0 + refusal holds | Second staging model |
 | [`07`](07-reflection.md) | No agent | Turn three closes | Participant commitments | Team learning |
 
@@ -63,10 +64,10 @@ DECK: explain why
 | ---: | --- | --- |
 | 00 | None — terminal only | None — read-only |
 | 01 | Three plans, 6 lines each | None — never executed |
-| 02 | None — the human types | One pack, seven fields |
-| 03 | One scenario + one eval | Two sections inside `T-001` |
+| 02 | None — the human types | One spec, six zones |
+| 03 | One scenario + one eval | Two sections inside `T-20260812-daily-gross-ordered` |
 | 04 | 120-word summary | Index + 4–6 packets, ≤200 words each |
-| 05 | One table, ≤8 rows | Ordering inside `tasks.md` |
+| 05 | One table, ≤8 rows | Ordering inside `tasks/_state.yaml` |
 | 06 | One sentence per action | One staging model + its test |
 
 ## Artifact workspace
@@ -79,28 +80,30 @@ storage/specs/
 ├── 4-plan-transform.md     # Day 2 — TONIGHT'S RAW MATERIAL, read-only
 └── 5-plan-serve.md         # Day 2 — read-only tonight
 
-storage/tasks/               # created at checkpoint 02 — must NOT exist before
-├── tasks.md                 # the lean index, written at checkpoint 04
-└── T-00N.md                 # one pack per packet
+tasks/
+├── _state.yaml              # derived index, rebuilt at checkpoint 04
+└── T-20260812-*.md          # one Task-Spec per atomic change
 
 dbt/models/staging/          # already holds stg_orders from Day 2
 ```
 
-`storage/tasks/` intentionally does not exist before the session; the architect
+`tasks/` intentionally does not exist before the session; the architect
 creates it live inside the contract's writable path.
 
 ## Shared boundaries
 
 - Postgres access stays read-only (`analytics_ro`); DuckDB `raw.*` is the mirror.
 - All five inherited specs are read-only tonight; no checkpoint may overwrite them.
-- Writable paths tonight: `storage/tasks/` and `dbt/models/staging/` only.
+- Writable paths tonight: `tasks/` and `dbt/models/staging/` only.
 - Item 10 of the transform plan cannot become a task while `Revenue` is
   `unresolved` — the refusal at checkpoint 06 is the success state.
 - Session A demonstrates the divergence and is discarded.
-- Session B carries pack → BDD → decomposition → ready set, then stops.
-- Session C is the developer: receives only `T-00N.md` and `AGENTS.md`.
+- Session B carries spec → BDD → decomposition → ready set, then stops.
+- Session C is the developer: receives only its Task-Spec and `AGENTS.md`.
 - Instructor `_control`, injection, scoring, and reveal surfaces remain closed.
 - Label any fallback artifact **prepared**.
+- The commercial peak is three deck slides between checkpoints 04 and 05, never
+  at the close. The crank clip is pre-recorded and must be announced as such.
 
 ## Language
 
@@ -113,7 +116,7 @@ spec line into the prompt or back.
 
 - [ ] The inheritance was verified live (five specs, rails, parse).
 - [ ] One plan item produced three divergent plans, and nothing executed.
-- [ ] A Tasks Pack was written by hand with all seven fields present.
+- [ ] A Task-Spec was written by hand with all six zones present.
 - [ ] A scenario and its derived eval were both shown running.
 - [ ] Item 7 decomposed into packets with an index and a dependency graph.
 - [ ] The ready set was named before any packet was worked.

@@ -12,7 +12,7 @@ Day 2's villain was loud: an agent claiming authority nobody gave it. Tonight's
 is quiet. Item 7 of the transform plan names its evidence, cites a measured
 number, and marks its blocked grain. Nobody in the room would reject it in
 review — and it still permits three different builds, each of which would claim
-done. The room must watch that happen before the pack has a reason to exist.
+done. The room must watch that happen before the spec has a reason to exist.
 
 ## Structure
 

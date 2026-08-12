@@ -31,7 +31,7 @@ flowchart LR
 
 Walk the night's ledger once:
 
-- **Built (4):** the Tasks Pack written by hand, a scenario and its evals, the
+- **Built (4):** the Task-Spec written by hand, a scenario and its evals, the
   task graph with its index, and one packet executed from files alone.
 - **Withheld (1):** Revenue — still `unresolved`, still owned by Finance. Item
   10 could not become a task, and the refusal at checkpoint 06 was a success.

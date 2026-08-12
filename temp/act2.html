@@ -1,0 +1,267 @@
+  <!-- ═══════════ ACT 2 DIVIDER · Anatomy of a Tasks Pack ═══════════ -->
+  <section class="slide" data-act="ACT 2" data-act-name="Anatomy of a Tasks Pack" data-accent="blue"
+           style="justify-content:center;align-items:flex-start;text-align:left;">
+    <div class="aurora aurora--blue" aria-hidden="true"><b></b></div>
+    <div class="reveal" style="position:relative;z-index:2;width:100%;max-width:1780px;margin:0 auto;">
+      <div class="cols" style="--cols:0.9fr 1.1fr;align-items:center;gap:clamp(24px,3vw,64px);">
+
+        <div>
+          <span class="tag" style="--tag-c:var(--blue);">Movement 02 · anatomy</span>
+          <div class="act-num" style="--an-c:var(--blue);margin-top:clamp(6px,1.2vh,14px);">02</div>
+          <h2 class="h2" style="font-size:clamp(36px,5.4vw,78px);margin-top:clamp(4px,0.8vh,10px);">
+            Anatomy of a <span style="color:var(--blue);">Tasks Pack</span>
+          </h2>
+          <p class="lede" style="max-width:52ch;margin-top:clamp(14px,2.4vh,24px);font-size:clamp(14px,1.45vw,20px);">
+            One plan item permits three builds; a pack closes that gap by naming, for exactly one objective, what a
+            human signs and what a machine runs.
+          </p>
+          <div style="display:flex;gap:clamp(9px,1vw,15px);flex-wrap:wrap;margin-top:clamp(16px,2.6vh,28px);">
+            <span class="tag" style="--tag-c:var(--purple);">1 objective</span>
+            <span class="tag" style="--tag-c:var(--blue);">7 fields</span>
+            <span class="tag" style="--tag-c:var(--green);">0 "ands"</span>
+          </div>
+        </div>
+
+        <div>
+          <span class="kick" style="--kc:var(--text-mute);">What "done" means, in a form a machine can answer</span>
+          <div class="flow">
+
+            <div class="fl-node" style="--fc:var(--purple);">
+              <div class="fl-k">storage/specs/4-plan-transform.md</div>
+              <div class="fl-name">Item 7 — the plausible plan item</div>
+              <div class="fl-note">names its evidence and marks its blocked grain · still permits three builds</div>
+            </div>
+            <div class="fl-arrow" style="--fa:var(--purple);--fb:var(--blue);" aria-hidden="true"></div>
+
+            <div class="fl-node" style="--fc:var(--blue);">
+              <div class="fl-k">The specification gap</div>
+              <div class="fl-name">What a human signs and a machine runs</div>
+              <div class="fl-note">the hard part is not typing, it is deciding what done means precisely enough to be checked</div>
+            </div>
+            <div class="fl-arrow" style="--fa:var(--blue);--fb:var(--green);" aria-hidden="true"></div>
+
+            <div class="fl-node is-end" style="--fc:var(--green);border-color:var(--green);box-shadow:inset 0 1px 0 rgba(255,255,255,0.07),0 0 44px -14px rgba(63,185,80,0.6);">
+              <div class="fl-k">storage/tasks/T-001.md</div>
+              <div class="fl-name">The atomic task spec</div>
+              <div class="fl-note">one packet, one iteration, one clean commit</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ THE SEVEN FIELDS ═══════════ -->
+  <section class="slide" data-act="ACT 2" data-act-name="The seven fields" data-accent="blue" style="padding-top:clamp(16px,2vh,24px);padding-bottom:clamp(16px,2vh,24px);">
+    <div class="aurora aurora--blue" aria-hidden="true"><b></b></div>
+    <div class="wrap reveal" style="max-width:1800px;display:flex;flex-direction:column;height:100%;justify-content:center;">
+      <div style="text-align:center;margin-bottom:clamp(12px,2vh,24px);">
+        <span class="tag" style="--tag-c:var(--blue);">Movement 02 · the anatomy</span>
+        <h2 class="h2" style="font-size:clamp(32px,4vw,56px);margin-top:clamp(6px,1vh,12px);">The seven fields</h2>
+        <p class="lede" style="max-width:60ch;margin:clamp(8px,1vh,16px) auto 0;font-size:clamp(13px,1.2vw,16px);">
+          A Tasks Pack specifies exactly one objective. Three fields for the human, three for the machine, and one for the graph.
+        </p>
+      </div>
+
+      <div class="a2-fields-grid">
+        <!-- HUMAN HALF -->
+        <div class="a2-half" style="--hf-c:var(--purple);--hf-glow:rgba(167,139,250,0.15);">
+          <div class="a2-half-head">
+            <h3 class="a2-hh">The Human Half</h3>
+            <span class="a2-ht">Written and signed by us</span>
+          </div>
+          
+          <div class="a2-field-row">
+            <div class="a2-f-num">1</div>
+            <div class="a2-f-body">
+              <div class="a2-f-title">Intent</div>
+              <div class="a2-f-desc">One sentence, no "and" — the single objective.</div>
+            </div>
+            <div class="a2-f-reader">human</div>
+          </div>
+
+          <div class="a2-field-row">
+            <div class="a2-f-num">2</div>
+            <div class="a2-f-body">
+              <div class="a2-f-title">PRD</div>
+              <div class="a2-f-desc">Goal, lean context, the files to inspect and change.</div>
+            </div>
+            <div class="a2-f-reader">human + agent</div>
+          </div>
+
+          <div class="a2-field-row">
+            <div class="a2-f-num">3</div>
+            <div class="a2-f-body">
+              <div class="a2-f-title">BDD</div>
+              <div class="a2-f-desc">Given / When / Then scenarios — behaviour in domain language.</div>
+            </div>
+            <div class="a2-f-reader">human signs</div>
+          </div>
+        </div>
+
+        <!-- MACHINE HALF -->
+        <div class="a2-half" style="--hf-c:var(--cyan);--hf-glow:rgba(34,211,238,0.15);">
+          <div class="a2-half-head">
+            <h3 class="a2-hh">The Machine Half</h3>
+            <span class="a2-ht">Runs without our opinion</span>
+          </div>
+          
+          <div class="a2-field-row">
+            <div class="a2-f-num">4</div>
+            <div class="a2-f-body">
+              <div class="a2-f-title">Evals</div>
+              <div class="a2-f-desc">3+ runnable bash functions, terminal and idempotent.</div>
+            </div>
+            <div class="a2-f-reader">machine</div>
+          </div>
+
+          <div class="a2-field-row">
+            <div class="a2-f-num">5</div>
+            <div class="a2-f-body">
+              <div class="a2-f-title">Exit criteria</div>
+              <div class="a2-f-desc">One command that returns 0 only when every eval passes.</div>
+            </div>
+            <div class="a2-f-reader">machine</div>
+          </div>
+
+          <div class="a2-field-row">
+            <div class="a2-f-num">6</div>
+            <div class="a2-f-body">
+              <div class="a2-f-title">Cards</div>
+              <div class="a2-f-desc">The validation card — retry policy, iteration budget, agent contract.</div>
+            </div>
+            <div class="a2-f-reader">loop</div>
+          </div>
+        </div>
+
+        <!-- THE GRAPH (Spans both) -->
+        <div class="a2-graph-row">
+          <div class="a2-half" style="--hf-c:var(--gold);--hf-glow:rgba(212,175,55,0.15);grid-column:1/-1;">
+            <div class="a2-field-row" style="border:none;background:transparent;padding:12px 16px;">
+              <div class="a2-f-num">7</div>
+              <div class="a2-f-body">
+                <div class="a2-f-title">Related items</div>
+                <div class="a2-f-desc">depends_on, touches_paths, do_not_touch, soft links.</div>
+              </div>
+              <div class="a2-f-reader">graph</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="src">The seven fields of a Tasks Pack. Fields 1, 2, 3 are written by a human or reviewed by one. Fields 4, 5, 6 let the agent answer "am I done?" without asking. Field 7 lets a hundred packets order themselves.</div>
+      <aside class="speaker-notes" hidden>[Sources]
+plan/d3-agenda.md — The Tasks Pack — the seven fields.
+[/Sources]
+Talk track: This is the anatomy of the night. Take a picture. Six of these are industry-convergent, one is an upgrade. The human writes or signs the left side. The machine runs the right side. The graph field at the bottom is how a hundred of these order themselves without a project manager. We will type this by hand in two minutes.</aside>
+    </div>
+  </section>
+
+  <!-- ═══════════ SIZING RULE ═══════════ -->
+  <section class="slide" data-act="ACT 2" data-act-name="One objective, no 'and'" data-accent="blue" style="justify-content:center;align-items:center;">
+    <div class="aurora aurora--blue" aria-hidden="true"><b></b></div>
+    <div class="wrap reveal" style="max-width:1400px;text-align:center;">
+      <span class="tag" style="--tag-c:var(--blue);">Movement 02 · sizing rule</span>
+      
+      <h2 class="display" style="font-size:clamp(40px,5.5vw,84px);margin-top:clamp(20px,3.5vh,40px);line-height:1.1;">
+        One objective.<br>
+        <span class="grad-blue">No "and".</span>
+      </h2>
+      
+      <p class="lede" style="max-width:48ch;margin:clamp(20px,3vh,36px) auto 0;font-size:clamp(16px,1.6vw,22px);">
+        One objective, one area of the codebase, verifiable by the steps it contains, ends in one clean commit.
+      </p>
+
+      <div class="callout" style="--co-c:var(--red);margin:clamp(30px,4.5vh,50px) auto 0;max-width:600px;text-align:left;">
+        <div class="co-k">the split rule</div>
+        <div class="co-b">If the title needs "and" to be honest, it is two packets.</div>
+      </div>
+      
+      <div class="src">The sizing rule: Ralph Loop's "one objective, split on the 'and'".</div>
+      <aside class="speaker-notes" hidden>[Sources]
+plan/d3-agenda.md — The rule that makes a packet atomic
+[/Sources]
+Talk track: A plan is how humans agree. A packet is how an agent finishes. The window is finite, so the unit has to be small enough to close inside it. If you need 'and' in the intent sentence, you have two objectives, which means two packets. Split it.</aside>
+    </div>
+  </section>
+
+  <!-- ═══════════ GO LIVE · Write T-001 by hand ═══════════ -->
+  <section class="slide" data-act="ACT 2" data-act-name="GO LIVE · Write T-001 by hand" data-accent="gold"
+           style="justify-content:center;align-items:center;">
+    <div class="aurora aurora--gold" aria-hidden="true"><b></b></div>
+    <div class="reveal" style="position:relative;z-index:2;width:100%;max-width:1500px;margin:0 auto;text-align:center;">
+      <span class="tag" style="--tag-c:var(--gold);">Movement 02 · live/d3/02-tasks-pack.md</span>
+      <h2 class="display" style="font-size:clamp(38px,5.2vw,78px);margin-top:clamp(24px,4vh,44px);">
+        Write T-001 by hand.<br>
+        <span class="grad-gold">The cost of precision.</span>
+      </h2>
+      <p class="note" style="font-size:clamp(14px,1.4vw,20px);margin-top:clamp(16px,3vh,30px);max-width:54ch;margin-left:auto;margin-right:auto;">
+        Item 7 named a mart, but the contract authorizes <code>staging/</code> only.
+        <b>The packet scopes down instead of widening the contract.</b> That is restraint.
+      </p>
+    </div>
+    
+    <div class="src">Live checkpoint 02 of 08 — file live/d3/02-tasks-pack.md. No generator, no paste. The human types.</div>
+    <aside class="speaker-notes" hidden>[Sources]
+live/d3/02-tasks-pack.md — Write the Tasks Pack by Hand
+[/Sources]
+Talk track: We are going to type all seven fields live. Terminal and editor. It will take 15 to 20 minutes, and we will not rush. Notice the PRD: item 7 wanted a mart, but our contract only allows staging. The packet explicitly scopes down rather than breaking the contract. That is the point of the human half. After we finish, ask yourself: the hard part wasn't the typing, was it? It was deciding what done meant.</aside>
+  </section>
+
+  <!-- ═══════════ SKILL CARD S1 ═══════════ -->
+  <section class="slide" data-act="ACT 2" data-act-name="Skill card S1" data-accent="blue" style="justify-content:center;align-items:center;">
+    <div class="aurora aurora--blue" aria-hidden="true"><b></b></div>
+    <div class="wrap reveal">
+      
+      <div class="skill-card" style="--sc-color:var(--blue);">
+        <div class="sc-head">
+          <div class="sc-id">S1</div>
+          <div class="sc-title">The Method Condensed</div>
+        </div>
+        <div class="sc-body">
+          <div class="cols" style="--cols:1fr 1fr 1fr;gap:clamp(16px,2vw,32px);">
+            
+            <!-- Intent -->
+            <div class="sc-col">
+              <h4 class="sc-h4">Intent</h4>
+              <p class="sc-p">One sentence, no "and". The single objective for this packet.</p>
+              <div class="sc-gate">
+                <span class="sc-g-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span>
+                <span class="sc-g-text">Is it atomic?</span>
+              </div>
+            </div>
+            
+            <!-- Behaviour -->
+            <div class="sc-col">
+              <h4 class="sc-h4">Behaviour</h4>
+              <p class="sc-p">Domain language BDD scenarios. What the human signs.</p>
+              <div class="sc-gate">
+                <span class="sc-g-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span>
+                <span class="sc-g-text">Does Finance agree?</span>
+              </div>
+            </div>
+            
+            <!-- Proof -->
+            <div class="sc-col">
+              <h4 class="sc-h4">Proof</h4>
+              <p class="sc-p">Runnable bash evals and exit criteria. What the machine runs.</p>
+              <div class="sc-gate">
+                <span class="sc-g-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></span>
+                <span class="sc-g-text">Is it terminal?</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="src">Skill card S1: Intent -> Behaviour -> Proof.</div>
+      <aside class="speaker-notes" hidden>[Sources]
+plan/d3-agenda.md
+[/Sources]
+Talk track: This is the method condensed. Intent, Behaviour, Proof. Under each is a gate you must pass before you continue. Is it atomic? Does the business owner agree? Can a machine run it without your opinion?</aside>
+    </div>
+  </section>
+

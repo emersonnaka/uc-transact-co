@@ -40,13 +40,13 @@ Explain briefly:
 
 ## Do live
 
-Fill the three deferred sections of `storage/tasks/T-001.md`. Type the scenario;
+Fill the three deferred sections of `tasks/T-20260812-daily-gross-ordered.md`. Type the scenario;
 it is the half a human signs:
 
 ```gherkin
 Scenario: gross ordered excludes cancelled orders
   Given raw orders carrying six distinct statuses
-  When mart_daily_gross_ordered aggregates total_amount by ordered_at
+  When stg_daily_gross_ordered aggregates total_amount by ordered_at
   Then orders with status 'cancelled' are excluded
   And the result is labeled a technical window, never "Revenue"
 ```
@@ -58,7 +58,7 @@ Then the evals it implies:
 eval_1() { make dbt-check >/dev/null 2>&1; }
 
 # eval-2: the scenario's exclusion is expressed in the model
-eval_2() { grep -q "cancelled" dbt/models/staging/mart_daily_gross_ordered.sql; }
+eval_2() { grep -q "cancelled" dbt/models/staging/stg_daily_gross_ordered.sql; }
 
 # eval-3: the boundary holds — nothing here is named revenue
 eval_3() { ! grep -ril "revenue" dbt/models/ | grep -q . ; }
@@ -73,7 +73,7 @@ eval_1 && eval_2 && eval_3
 Run it once, now, and let it fail:
 
 ```bash
-bash -c 'source /dev/stdin <<< "$(sed -n "/^eval_1()/,/^}/p;/^eval_2()/,/^}/p;/^eval_3()/,/^}/p" storage/tasks/T-001.md)"; eval_1 && eval_2 && eval_3'; echo "exit=$?"
+bash -c 'source /dev/stdin <<< "$(sed -n "/^eval_1()/,/^}/p;/^eval_2()/,/^}/p;/^eval_3()/,/^}/p" tasks/T-20260812-daily-gross-ordered.md)"; eval_1 && eval_2 && eval_3'; echo "exit=$?"
 ```
 
 ## Show the evidence
@@ -87,7 +87,7 @@ exit check returning non-zero, and say:
 
 ## Gate
 
-- A Gherkin scenario exists inside `T-001.md`, readable by a non-engineer.
+- A Gherkin scenario exists inside `T-20260812-daily-gross-ordered.md`, readable by a non-engineer.
 - Three bash evals exist, each terminal and each traceable to the scenario.
 - The exit check ran on screen and returned non-zero — a failing gate before
   the build is the proof that the gate is real.
@@ -100,6 +100,6 @@ three functions in a scratch file and source it directly — the teaching point
 is the returned number, not the shell plumbing. Announce the scratch file as
 **prepared** if you use it.
 
-**BREAK comes after 03** — leave the Tasks Pack on the projector.
+**BREAK comes after 03** — leave the Task-Spec on the projector.
 
 Next: [`04-decompose.md`](04-decompose.md).

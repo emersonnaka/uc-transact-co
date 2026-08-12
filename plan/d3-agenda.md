@@ -59,11 +59,12 @@ Break after movement 03, contract left on the projector.
 | ---: | --- | --- | --- | --- |
 | 00 | 20:00 | Turn three — the unit of work | deck only | plan → spec → executed packet |
 | 01 | 20:12 | The plan is not the work | `00` · `01` | one item, three builds |
-| 02 | 20:35 | Anatomy of a Tasks Pack | `02` | seven fields, one objective |
+| 02 | 20:35 | Anatomy of a Task-Spec | `02` | six zones, one objective |
 | 03 | 21:00 | Two halves of done — BDD and evals | `03` | humans read Gherkin, machines run bash |
-| — | 21:20 | **Break** | — | the Tasks Pack stays on screen |
+| — | 21:20 | **Break** | — | the Task-Spec stays on screen |
 | 04 | 21:30 | Decomposition — item 7 becomes a graph | `04` | lookup table plus per-task specs |
-| 05 | 21:55 | The ready set — dependencies and order | `05` | wide and shallow beats narrow and deep |
+| ✦ | 21:50 | **Giveaway → crank → Bootcamp** | — | the night's commercial peak, 5 min |
+| 05 | 22:00 | The ready set — dependencies and order | `05` | wide and shallow beats narrow and deep |
 | 06 | 22:20 | One packet, one iteration, one commit | `06` | fresh context, exit check, stop |
 | 07 | 22:50 | The boundary survives decomposition | `07` | Revenue cannot become a task |
 
@@ -74,39 +75,39 @@ same slide grammar. Day 3's signature accent is **purple** (Day 2 was gold).
 OPENING and ACT 0 are **built and render-verified** at 1600×900; the remaining
 acts are specified below so any engine can build them on top.
 
-### Slide inventory — built (9 slides)
+### As-built inventory — 49 slides, render-verified
 
-| # | Act | data-act-name | Accent | Content |
-| ---: | --- | --- | --- | --- |
-| 1 | OPENING | The Spec | purple | title, four rails (Intent · Behaviour · Evals · Graph), Engineering Lead pullquote, contract strip |
-| 2 | OPENING | What survived the night | green | two-col: copy + tag chips + callout left; `flow` manifest right (D1 specs → D2 rails → D2 plan → tonight, `is-end` glow) |
-| 3 | OPENING | The programme | purple | `prog-head` + `rail` weight bar + prow rows, Topic rows 02 · 03, `prog-foot` |
-| 4 | ACT 0 | Turn three | purple | divider, d2-S04 grammar: act-num + two-tone h2 + tag chips left; `flow` of four claims right (reality → name → economics → tonight) |
-| 5 | ACT 0 | The first ring, again | purple | `rings-layout` SVG progress map — six rings, Prompt/Spec hot, Harness earned solid, Loop/Eval dashed |
-| 6 | ACT 0 | Spec = Behaviour + Proof | purple | `rings-layout` SVG equation — Tasks Pack enclosure, four quadrant gates (INTENT · BEHAVIOUR · PROOF · GRAPH), spinning packet loop, Packet core |
-| 7 | ACT 0 | The spec, in code | purple | d2-S07 grammar: 1fr auto 1fr grid, red-bordered "mentioned" code vs green-bordered "specified" code, `kick` labels, centered callout |
-| 8 | ACT 0 | Last night's proof, tonight's gap | gold | d2-S08 grammar: pullquote ("Is this what you wanted?") left; four `fl-node` stack + gold callout right |
-| 9 | ACT 0 | The WHY, in numbers | purple | `proof-cell` ×3 with `--pc` borders + caveat lines (3:1 · 4 · 0), `market-meaning` closing line |
+`presentation/d3.html` is complete: 49 slides, measured at 1600×900 with **zero
+overflow**, no duplicate ids, every `<style data-act="N">` block brace-balanced.
+Acts 2–6 were built as separate files by separate engines and merged in; the act
+source files are retired.
 
-Note for engines: the "Three nights, three villains" rmgrid concept was replaced
-by the `flow`-based divider (slide 4) during the look-and-feel alignment pass —
-the villain escalation now lives in slide 4's left column and the divider flow.
+| Slides | Act | Accent | Content |
+| ---: | --- | --- | --- |
+| 1–3 | OPENING | purple · green | title + four rails; what survived the night; the programme (nine rows incl. the ✦ 21:50 giveaway beat) |
+| 4–9 | ACT 0 | purple · gold | Turn three divider; the first ring again; Spec = Behaviour + Proof; the spec in code; last night's proof / tonight's gap; the WHY in numbers |
+| 10–15 | ACT 1 | green · gold | divider; the inheritance verified; ten items three blocked; **GO LIVE** one item three builds; three defensible answers; mentioned not specified |
+| 16–27 | ACT 2 | accent | divider; the Atom; the bottleneck moved; where the field converged; nine models one question; a ticket vs an atom; six zones two are yours; the seal; the closed loop; four layers; **GO LIVE** write the Task-Spec by hand; skill card S1 |
+| 28–32 | ACT 3 | gold | divider; done has two readers; behavior and proof bound both ways; what makes an eval terminal; **GO LIVE** run the exit check before the build |
+| 33–39 | ACT 4 | purple · gold | divider; two layers one graph; **GO LIVE** decompose; **beat 1** Task-Spec given away; **beat 2** the crank (pre-recorded); **beat 3** level three feels like a downgrade — the ladder and the offer; enumeration ends here |
+| 40–43 | ACT 5 | cyan | divider; ready is not next; **GO LIVE** name the ready set; nobody decided that order |
+| 44–47 | ACT 6 | green | divider; fresh context files as memory; **GO LIVE** execute one packet; same spec any engine |
+| 48–49 | CLOSE | gold | Turn three closes (built / withheld / tomorrow, three commitment lines); the invariant (+ one neutral Bootcamp line) |
 
-### Acts to build (map to movements and checkpoints)
+Slides 37 and 38 are the two beats the first build pass missed — they carry the
+crank and the offer, so the commercial peak sits at 21:50 inside Act 4 and never
+at the close.
 
-Follow d2.html's per-act shape: divider with `act-num` → concept slide(s) →
-go-live slide naming its `live/d3/` file → act close. Every go-live slide
-carries `[Sources]` + talk track in a hidden `speaker-notes` aside.
+### Vocabulary the deck holds to
 
-| Act | Accent | Movement | Checkpoints | Slides (suggested) |
-| --- | --- | --- | --- | --- |
-| ACT 1 | green | 01 · The plan is not the work | `00` · `01` | divider 01 → "GO LIVE · The inheritance" (five specs, dbt-check, staging present from D2) → "Go live · three builds" (item 7 ×3 fresh sessions, divergence circled, nothing executes) → act close: "mentioned, not specified" |
-| ACT 2 | accent | 02 · Anatomy of a Tasks Pack | `02` | divider 02 → anatomy slide (the seven fields, one per row, reader column) → "Go live · write T-001 by hand" (the felt cost — 15–20 min, do not rush) → skill card S1 |
-| ACT 3 | gold | 03 · Two halves of done | `03` | divider 03 → "humans read Gherkin, machines run bash" (scenario above, derived eval below, same behaviour) → "Go live · run the eval" (bash returns 0 on screen) → **BREAK slide** — the Tasks Pack stays on the projector |
-| ACT 4 | purple | 04 · Item 7 becomes a graph | `04` | divider 04 → two-layer index concept (lean `tasks.md` + one spec per packet; wide and shallow beats narrow and deep) → "GO LIVE · Decompose" (architect cuts 4–6 packets, index shown) → **giveaway slide** — Tasks Pack template, MIT, same pattern as Day 2's BriefSpec slide |
-| ACT 5 | cyan | 05 · The ready set | `05` | divider 05 → dependency/order concept (ready set = unblocked ∩ highest priority) → "Go live · name the ready set" (graph on screen, order justified from `depends_on` alone) |
-| ACT 6 | green | 06 · One packet, one iteration | `06` | divider 06 → trajectory slide (fresh session, files only, exit check, stop) → "GO LIVE · Execute one packet" (exit check returns 0 + item-10 refusal still holds — both on one screen) → "same pack, any engine" |
-| CLOSE | gold | 07 · Turn three closes | `07` | "Turn three" ledger (built / withheld / tomorrow: Day 4 measures) → **Bootcamp slide** (one slide, after the gift, priced against the felt cost) → "The invariant" |
+- **Task-Spec** — the product and the file format (v3.7.0, MIT).
+- **spec** — one Task-Spec file, in flowing prose. Never "pack".
+- **packet** — one unit of work; a node in the graph.
+- **zone** — one of the six numbered sections. Never "field".
+- `mart_*` appears **only** in Acts 0–1, where the deck quotes
+  `storage/specs/4-plan-transform.md` verbatim. From Act 2 onward every model is
+  `stg_*`, because the Day 2 contract authorizes `dbt/models/staging/` only. That
+  rename is the architect's and is noted in Act 4's speaker notes.
 
 ### Rules for any engine building on top
 
@@ -141,7 +142,7 @@ step · Structure (mermaid) · Do live · Show the evidence · Gate · Recovery.
 | ---: | --- | --- | --- |
 | `00-inheritance.md` | no agent | five specs, rails intact, `dbt-check` PASS | baseline |
 | `01-plausible-plan.md` | **NEW A**, disposable | three divergent builds of item 7 | none — discarded |
-| `02-tasks-pack.md` | **NEW B** | one Tasks Pack, seven fields, human-edited | `storage/tasks/T-001.md` |
+| `02-tasks-pack.md` | **NEW B** | one Task-Spec, six zones, human-edited | `tasks/T-20260812-daily-gross-ordered.md` |
 | `03-bdd-and-evals.md` | continue B | Gherkin scenario + runnable bash eval | evals inside `T-001` |
 | `04-decompose.md` | continue B as architect | `tasks.md` index + 4–6 packets | `storage/tasks/` graph |
 | `05-ready-set.md` | continue B | dependency graph, ready packets named | `tasks.md` ordering |
@@ -187,23 +188,46 @@ transcript, no chat memory. It builds, runs the exit check, and stops. Then run
 the exit check yourself in the terminal so the room sees the same `0` the agent
 saw.
 
-## The Tasks Pack — the seven fields
+## Task-Spec — frontmatter and six zones
 
-This is the night's teaching artifact and the thing to put on one slide.
+This is the night's teaching artifact and the thing on slide 22. Source of truth:
+`~/GitHub/task-spec` `spec/task-spec-v3.md`. It is **six zones**, not seven
+fields — the earlier "seven fields" model in this document was mine, written
+before the shipped tool was read, and it is what caused Act 4's first build pass
+to contradict Act 2.
 
-| # | Field | What it holds | Who reads it |
+| | Section | What it holds | Who reads it |
 | ---: | --- | --- | --- |
-| 1 | **Intent** | one sentence, no "and" — the single objective | human |
-| 2 | **PRD** | goal, lean context, the files to inspect and change | human + agent |
-| 3 | **BDD** | Given / When / Then scenarios — behaviour in domain language | human first |
-| 4 | **Evals** | 3+ runnable bash functions, terminal and idempotent | machine |
-| 5 | **Exit criteria** | one command that returns 0 only when every eval passes | machine |
-| 6 | **Cards** | the validation card — retry policy, iteration budget, agent contract | loop |
-| 7 | **Related items** | `depends_on`, `touches_paths`, `do_not_touch`, soft links | graph |
+| — | **YAML frontmatter** | `id`, `status`, `effort`, `depends_on`, `touches_paths`, `creates_paths` | the index — dependency edges live here, **above** the zones, which is why an index can be derived without opening a spec |
+| 1 | **Intent** | Goal + Context — why this task exists, one objective, no "and" | human |
+| 2 | **Behavior** | `B-N` — GIVEN / WHEN / THEN, observable, build-independent | human signs |
+| 3 | **Contract** (The Moat) | success criteria, runnable bash evals each carrying `verifies: [B-N]`, validation card, one exit check | machine |
+| 4 | **Guardrails** | anti-patterns, do-not-touch — the blast radius | human |
+| 5 | **Operations** | open questions, surfaced never guessed | human |
+| 6 | **Reversal & Runtime** | rollback plan, observability hooks — `full` profile only | operator |
 
-Fields 1, 2, 3 are written by a human or reviewed by one. Fields 4, 5, 6 are
-what let the agent answer "am I done?" without asking. Field 7 is what lets a
-hundred packets be ordered without a project manager.
+Zones 1 and 2 are the two a human authors and signs. Zone 3 is the only
+executable zone, which is why a failed gate sends work back without asking a
+person. Zones 4–6 are structure the file carries.
+
+### The traceability rule — the thing to say slowly
+
+Behavior and verification are two halves of one contract and **neither may
+dangle**:
+
+1. Every `B-N` is verified by at least one eval whose validation-card entry
+   carries `verifies: [B-N]`. An unverified behavior is a hole.
+2. Every eval maps to at least one behavior. An eval with no `verifies:` is
+   testing something the spec never promised, and is rejected.
+
+`validate-task-spec.sh` walks the `B-N` ⇄ `verifies:` graph in both directions
+and hard-fails on any unmatched node. This is Act 3's whole subject.
+
+### The seal
+
+`signed_off*` is bound by `hmac-sha256-v2`. Only `gate --stamp` writes it; only
+`accept --stamp` writes `accepted*`. Change one character of the body after
+sign-off and the seal breaks. Act 2 slide 23 is this.
 
 ### The rule that makes a packet atomic
 
@@ -211,53 +235,59 @@ One objective with no "and". One area of the codebase. Verifiable by the steps
 it already contains. Ends in a single clean commit. If the title needs "and" to
 be honest, it is two packets.
 
-## Assessment — does the Tasks Pack match where atomic tasks are going?
+## Assessment — does Task-Spec match where atomic tasks are going?
 
-Researched 2026-08-12 with Tavily, Exa, and Firecrawl. Verdict: **six of the
-seven fields are industry-convergent, one is a genuine gap, and one needs an
-upgrade.** Evidence per field:
+Researched 2026-08-12 with Tavily, Exa and Firecrawl, then re-checked against the
+shipped tree at `~/GitHub/task-spec` (v3.7.0, commit `a943e55`).
 
-| Field | Status | External backing |
+**Corrected verdict: every convergent property the research found is already in
+v3.7.0.** The two negative findings in the first pass of this document were wrong
+— they were read off `~/.claude/skills/task-spec.v1.bak.*`, a stale v1 backup,
+not off the shipped spec. Both are struck below with what the shipped version
+actually does.
+
+| Property the field converged on | Task-Spec v3.7.0 | External backing |
 | --- | --- | --- |
-| Intent | aligned | Spec Kit's *specify* phase; Ralph Loop's "one objective, split on the *and*" |
-| PRD | aligned | Ralph Loop: "the PRD is the contract for the whole project, a task packet is the contract for one iteration" |
-| BDD | **gap in v1** | arXiv 2602.00180: a feature was "done" only when all Gherkin scenarios passed; Intent Integrity Kit generates `.feature` files from a spec's Given/When/Then; Safeword routes any 3+ file change to a BDD track with `test-definitions.md` |
-| Evals | aligned | Eval-driven development; Ralph Loop's test — "can a machine return yes or no without your opinion?" |
-| Exit criteria | aligned | Spec Kit checkpoints; Ralph's `passes` flag flipping only after verification |
-| Cards | aligned, ahead | Closest external analogue is Ralph's `passes` + iteration cap and TrueFoundry's `agent.eval_gate` / `agent.eval_result` telemetry fields. The validation card generalises both |
-| Related items | **upgrade needed** | Ralph splits a lean `tasks.json` lookup table from per-task specs, and advises "wide and shallow beats narrow and deep". Task-Spec v1 has `depends_on` but no index layer |
+| One objective, split on the "and" | Zone 1 Intent + the `effort` sizing rule: `XS/S/M/L` are runnable leaves, `XL/XXL` are non-runnable composition nodes that must declare `children` | Spec Kit's *specify* phase; Ralph Loop's "one objective, split on the *and*" |
+| Lean context, not a PRD dump | Zone 1 anti-pattern is explicit: if Zone 1 is longer than Behavior + Contract, you wrote a PRD — trim it | Ralph Loop: "the PRD is the contract for the project, a task packet is the contract for one iteration" |
+| ~~BDD is a gap~~ → **shipped** | **Zone 2 Behavior** is a first-class zone: `B-N` GIVEN / WHEN / THEN, observable and build-independent, and the bidirectional traceability rule is enforced by `validate-task-spec.sh` | arXiv 2602.00180 (a feature is "done" only when all Gherkin scenarios pass); Intent Integrity Kit; Safeword's BDD track |
+| Machine-decidable proof | Zone 3 Contract — runnable bash evals, each carrying `verifies: [B-N]`, plus one exit check | Eval-driven development; Ralph's test — "can a machine return yes or no without your opinion?" |
+| A gate, not a self-report | `dod` → `gate --stamp` → `accept --stamp`, tokens `DOD=COMPLETE`, `TIER=1`, `ACCEPTED=1`; the `signed_off*` seal is bound by `hmac-sha256-v2` | Spec Kit checkpoints; Ralph's `passes` flag flipping only after verification |
+| Retry and budget bounded | Validation card + `budget_iterations` (default 15, cap 30) | Ralph's iteration cap; TrueFoundry's `agent.eval_gate` / `agent.eval_result` telemetry |
+| ~~No index layer~~ → **shipped** | **`TaskPlan/v1`** — `taskspec plan --manifest tasks/.plans/*.yaml` then `taskspec batch --plan`; `depends_on` lives in frontmatter, and core exposes the ready frontier and reports concurrency without scheduling | Ralph splits a lean lookup table from per-task specs: "wide and shallow beats narrow and deep" |
+| Portable across engines | `handoff --backend`, cross-vendor agent contract, plain markdown, MIT | AGENTS.md / CLAUDE.md convergence — Day 2's argument, one layer down |
 
-### The one real gap: BDD
+### What this means for the night
 
-`~/.claude/skills/task-spec.v1.bak.*/templates/task-spec.md.tpl` has Why, Goal,
-Context, Success Criteria, Validation Card, Exit Check, Anti-Patterns,
-Do-Not-Touch, Open Questions. There is no Given/When/Then anywhere. Every eval
-is bash, which is correct for the machine and wrong for the room: a stakeholder
-cannot review `[[ $(dbt parse) ]]`, and Finance cannot confirm a behaviour they
-cannot read.
+The honest pitch is not "here is a format that fills a gap." It is: **the field
+converged on a shape, and this tool is that shape, complete, tonight, MIT.** The
+three things it still cannot do are judgment, and they are the Bootcamp:
 
-Adding BDD is not ceremony. It is the field that lets the human who owns the
-decision approve the behaviour before an agent encodes it. In TransactCo terms:
+- size a packet — the "and" rule is a human call; the tool can only ask
+- judge whether an eval is genuinely terminal, or merely green
+- write a behavior a stakeholder would actually sign
+
+### The gap that is real — and it is not in the tool
+
+`Revenue` is `unresolved`, owner Finance. No zone, no eval and no validator can
+close that. Item 10 cannot become a task tonight, and the refusal at movement 06
+is the success state.
+
+### TransactCo's own scenario, for the room
 
 ```gherkin
 Scenario: gross ordered excludes cancelled orders
   Given the raw orders table with six distinct statuses
-  When mart_daily_gross_ordered aggregates by ordered_at
+  When stg_daily_gross_ordered aggregates by ordered_at
   Then orders with status 'cancelled' are excluded
   And the result is labelled a technical window, never "Revenue"
 ```
 
-That scenario is readable by Finance and mechanically translatable into the
-bash eval underneath it. Write the BDD first, derive the eval, and the eval
-stops being an assertion someone invented.
-
-### The upgrade: a two-layer index
-
-Add `storage/tasks/tasks.md` as a lean index — id, title, status, spec path,
-`depends_on` — with the detail in one file per packet. Reason: an agent scanning
-a hundred full specs to choose its next unit burns the context it needs to do
-the work. The index is what makes the graph scale, and it is what movement 05
-demonstrates.
+Readable by Finance, and mechanically translatable into the bash eval beneath it.
+Write the behavior first, derive the eval, and the eval stops being an assertion
+someone invented. Note the model is `stg_`, not `mart_` — the plan wrote
+`mart_daily_gross_ordered`, but the contract authorizes `dbt/models/staging/`
+only.
 
 ## Why atomic tasks, for frontier-agent teams
 
@@ -283,44 +313,109 @@ Say it once, in the room, as the reason the night exists:
 > A plan is how humans agree. A packet is how an agent finishes. The window is
 > finite, so the unit has to be small enough to close inside it.
 
-## Bootcamp — designed as generosity, then judgment
+## Bootcamp — the peak sits in the middle, at 21:50
 
-Same discipline that worked on Day 2: make the room feel a cost, then price it
-in one line, never a pitch.
+**Bootcamp Engenharia Agêntica na Prática** · 24–28/08, seg–sex ·
+19h30–23h30 ao vivo · de R$1.997 por **R$1.297** com o cupom `DESLIVE` ·
+garantia de 7 dias incondicional · checkout Eduzz.
 
-**The felt cost (movement 02–03).** Write `T-001` by hand, on screen. All seven
-fields, including a Gherkin scenario and three bash evals that actually run.
-This takes fifteen to twenty minutes and it should feel long. Do not rush it.
-The room must experience that the hard part is not typing — it is deciding what
-"done" means precisely enough that a machine can check it.
+### Why it moves out of the close
 
-**The giveaway (movement 04).** Give the Tasks Pack template away, free and
-MIT, exactly as BriefSpec was given on Day 2. It generates the seven-field
-skeleton and the index. Say plainly what it does not do: it cannot size a
-packet, cannot tell you whether an eval is genuinely terminal, and cannot write
-a scenario Finance would sign.
+The old plan put it after movement 07, at ~22:50. That is the worst slot in the
+night: three hours in, after the reflection has already released the room's
+attention, and after anyone with an early morning has left. The offer would land
+on the smallest, most tired audience of the evening.
 
-**The offer (after movement 07, three minutes).** One slide. The structure is
-free; the judgment is the Bootcamp — a library of evals that hold under real
-data, decomposition review, and the loop that runs a hundred packets without a
-human in each one. Price it against the twenty minutes they just watched,
-multiplied by a real backlog. Then stop talking and take questions.
+It moves to **immediately after movement 04, at ~21:50**. Four reasons:
 
-Sequence matters: give before you ask. Day 2 proved the room accepts the hook
-when it arrives after a gift and lasts one sentence.
+1. **Energy.** It is twenty minutes past the break — the night's second peak.
+2. **Contrast is fresh.** The room spent movements 02–03 watching a human hand-
+   write one Task-Spec for fifteen to twenty deliberately slow minutes. Movement
+   04 then produces four to six specs in seconds. The gap between those two
+   experiences *is* the offer. It will never be more vivid than right there.
+3. **Nobody has left.** Half the night still remains.
+4. **The night continues afterwards.** Movements 05 and 06 follow, and the night
+   still ends on the invariant. The pitch becomes a beat inside the evening
+   rather than the destination of it — and the biggest intellectual payoff (exit
+   check returns 0, the refusal holds) lands *after* the offer, which is exactly
+   when the undecided decide.
+
+### The disclosure that makes this honest
+
+Task-Spec is **item 04 of the Bootcamp's own six-item arsenal** — alongside the
+Second Brain, the OntoLayer, AgentSpec, the Multi-Model Harness, and Converge.
+Tonight the room receives one of the six, free and MIT, and uses it for three
+hours against a real repository.
+
+That framing is the whole pitch and it needs no salesmanship: *you have been
+using one sixth of the arsenal all night. It is yours to keep. The Bootcamp is
+the other five, plus the case they were built on.*
+
+### The three-beat sequence (≈5 minutes total)
+
+**Beat 1 — the giveaway (60 s).** Task-Spec v3.7.0, MIT,
+`github.com/luanmorenommaciel/task-spec`. Real install line. Say plainly what it
+cannot do: it cannot size a task, cannot judge whether an eval is genuinely
+terminal, and cannot write a behavior a stakeholder would sign. Structure is
+free; judgment is not.
+
+**Beat 2 — the crank (90 s).** The desire beat. The room has watched one spec
+written by hand and four to six generated. Now show the loop *consuming* the
+graph — specs dispatched in dependency-respecting waves, evals deciding done, no
+human in the middle. One human wrote one spec in twenty minutes; the loop runs
+six without being asked.
+
+This is Day 4's subject arriving ninety seconds early, and it should be named as
+such — it is a legitimate preview, not a detour. **Pre-record it.** Nothing
+tonight is rehearsed, a live crank on a graph built minutes earlier is the
+single riskiest thing in the evening, and the beat only needs to be *seen*, not
+proven. Label it exactly as Day 2 labelled its illustrative output.
+
+**Beat 3 — the ladder, then the offer (3 min).** Use the Bootcamp's own framing,
+because it is the most honest mirror the room will get: Dan Shapiro's five levels
+of code automation, mapped to the NHTSA autonomous-driving levels.
+
+| | | |
+| ---: | --- | --- |
+| 0 | Manual | every character needs your approval |
+| 1 | Delegated tasks | "write a test for this" |
+| 2 | Pairing in flow | where 90% of "AI-native" devs live |
+| **3** | **You became a manager** | **← the room is here. Life becomes reviewing diffs.** |
+| 4 | You became a PM | you write the spec, review plans, come back 12 hours later |
+| 5 | The autonomous factory | specs in, validated software out |
+
+Say the line the page says, because it is true and the room feels it: *almost
+everyone parks at level 3, and it feels like a downgrade.* Then place tonight:
+writing a Task-Spec whose exit check answers for itself is the first move from 3
+to 4. The Bootcamp is 4 → 5, over five nights, against NorthWind Pay — a real
+payments migration where the legacy system is the oracle and every number is
+validated centavo por centavo.
+
+Then the offer, plainly and once: **24–28/08, 19h30–23h30, five live nights, de
+R$1.997 por R$1.297 com o cupom DESLIVE, garantia de 7 dias incondicional.**
+Stop. No benefit stacking, no urgency language, no second CTA. Return to movement
+05.
+
+### What must not happen
+
+- The Bootcamp must not be mentioned again after beat 3, except one neutral line
+  on the final slide. Two asks read as a funnel; one reads as an offer.
+- Do not oversell the crank. If the pre-recorded clip is described as live, the
+  night's entire credibility argument — evidence over claims — collapses.
+- Do not stack the arsenal. Naming Task-Spec as one of six is enough; listing all
+  six with benefits turns a disclosure into a sales page.
 
 ## Today's build order
 
 1. ~~`live/d3/README.md`~~ — **built**: sequence table, output budgets, gate.
 2. ~~`live/d3/00-inheritance.md` … `07-reflection.md`~~ — **built**, eight
    checkpoints, cross-references verified against the deck and the specs.
-3. `plan/` decision: add BDD to the Tasks Pack template and ship the index
-   layer. Checkpoints 02–04 already demonstrate both by hand; the template
-   itself is the checkpoint-04 giveaway and still needs packaging.
-4. `presentation/d3.html` — **OPENING + ACT 0 built and render-verified**
-   (9 slides, 1600×900, no invented classes). Remaining: ACT 1 → CLOSE per the
-   act map above — buildable act by act, by any engine, on top of the existing
-   file.
+3. ~~`plan/` decision: add BDD and an index layer~~ — **not needed**: v3.7.0
+   already ships Zone 2 Behavior and `TaskPlan/v1`. The checkpoint-04 giveaway is
+   the real tool, installed from source; see the Assessment above.
+4. ~~`presentation/d3.html`~~ — **built and render-verified**: 49 slides at
+   1600×900, zero overflow, acts 2–6 merged in and their source files retired.
+   See the as-built inventory above.
 5. Rehearse `06-execute-one.md` end to end, then reset the artifacts it creates.
 6. Commit `storage/specs/4-plan-transform.md` and `5-plan-serve.md` — see the
    blocker below.
@@ -341,7 +436,7 @@ copy is lost.
 
 - [ ] The inherited plan was shown intact, including its BLOCKED rows.
 - [ ] One plan item produced three divergent builds, and nothing executed.
-- [ ] A Tasks Pack was written by hand with all seven fields present.
+- [ ] A Task-Spec was written by hand with all six zones present.
 - [ ] A Gherkin scenario and its derived bash eval were both shown running.
 - [ ] Item 7 decomposed into packets with an index and a dependency graph.
 - [ ] The ready set was named before any packet was worked.

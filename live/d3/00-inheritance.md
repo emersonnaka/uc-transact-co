@@ -46,7 +46,7 @@ git rev-parse --short HEAD
 make status
 ls -la storage/specs/
 make dbt-check
-test ! -d storage/tasks && echo "tasks absent — correct"
+test ! -d tasks && echo "tasks absent — correct"
 ```
 
 Then open the raw material and scroll to its blocked rows:
@@ -72,7 +72,7 @@ Say:
 - Environment healthy; four entities visible.
 - Five specs present and readable, including both Day 2 plans.
 - `make dbt-check` passes with the Day 2 staging model.
-- `storage/tasks/` does not exist yet.
+- `tasks/` does not exist yet.
 - The plan's BLOCKED rows were read aloud.
 
 ## Recovery

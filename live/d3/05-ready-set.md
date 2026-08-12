@@ -41,7 +41,7 @@ Explain briefly:
 ## Do live
 
 ```text
-A partir de storage/tasks/tasks.md, produza uma tabela com no máximo 8 linhas:
+A partir de tasks/_state.yaml, produza uma tabela com no máximo 8 linhas:
 packet, depends_on, pronto agora (sim/não) e a justificativa em uma linha.
 
 Ordene apenas pelo grafo — não use intuição, prioridade de negócio ou ordem
@@ -52,7 +52,7 @@ nada.
 Then verify the claim against the file, in the terminal:
 
 ```bash
-grep -n 'depends_on' storage/tasks/tasks.md
+grep -n 'depends_on' tasks/_state.yaml
 ```
 
 ## Show the evidence

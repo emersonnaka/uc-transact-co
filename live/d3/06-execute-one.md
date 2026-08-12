@@ -2,9 +2,9 @@
 
 ## Session
 
-**NEW — Session C, the developer.** It receives only `storage/tasks/T-001.md`
+**NEW — Session C, the developer.** It receives only `tasks/T-20260812-daily-gross-ordered.md`
 and `AGENTS.md`. No plan, no transcript, no chat memory from Sessions A or B.
-That isolation is the proof: if the pack works, it works from files.
+That isolation is the proof: if the spec works, it works from files.
 
 ## Why this step
 
@@ -17,7 +17,7 @@ cannot be built, and the boundary holds after a full night of decomposition.
 
 ```mermaid
 flowchart LR
-    A[Fresh session] --> B[Reads T-001 only]
+    A[Fresh session] --> B[Reads T-20260812-daily-gross-ordered only]
     B --> C[Builds inside staging/]
     C --> D[Runs exit check]
     D --> E{Returns 0?}
@@ -47,7 +47,7 @@ Action A — build the packet:
 ```text
 Você é o developer definido em AGENTS.md.
 
-Leia storage/tasks/T-001.md e execute exatamente o que o packet enumera.
+Leia tasks/T-20260812-daily-gross-ordered.md e execute exatamente o que o packet enumera.
 Construa apenas dentro de dbt/models/staging/. Ao terminar, rode o exit check
 do próprio packet e me mostre o código de saída.
 
@@ -78,7 +78,7 @@ Three things, in this order:
 
 Say:
 
-> One green. One refusal. Zero questions asked. The pack did not make the agent
+> One green. One refusal. Zero questions asked. The spec did not make the agent
 > smarter — it made the agent's work checkable.
 
 ## Gate
@@ -92,7 +92,7 @@ Say:
 ## Recovery
 
 If the agent asks whether it is done instead of running the exit check, do not
-answer — point it back at the pack's exit-check section. That correction is the
+answer — point it back at the spec's exit-check section. That correction is the
 teaching beat of the night. If the build fails its own eval, leave the failure
 visible and read the eval out loud: a gate that catches a real miss is worth
 more than a rehearsed pass.

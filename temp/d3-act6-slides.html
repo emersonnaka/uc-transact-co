@@ -1,0 +1,520 @@
+<div class="deck">
+
+  <!-- ═══════════ A6-S01 · ACT 6 DIVIDER ═══════════ -->
+  <section class="slide" data-act="ACT 6" data-act-name="One packet, one iteration" data-accent="green"
+           style="justify-content:center;align-items:flex-start;text-align:left;">
+    <div class="aurora aurora--green" aria-hidden="true"><b></b></div>
+    <div class="reveal" style="position:relative;z-index:2;width:100%;max-width:1780px;margin:0 auto;">
+      <div class="cols" style="--cols:0.9fr 1.1fr;align-items:center;gap:clamp(24px,3vw,64px);">
+
+        <div>
+          <span class="tag" style="--tag-c:var(--green);">Movement 06 · ▶ live/d3/06-execute-one.md</span>
+          <div class="act-num" style="--an-c:var(--green);margin-top:clamp(6px,1.2vh,14px);">06</div>
+          <h2 class="h2" style="font-size:clamp(36px,5.4vw,78px);margin-top:clamp(4px,0.8vh,10px);">
+            One packet, <span style="color:var(--green);">one iteration</span>
+          </h2>
+          <p class="lede" style="max-width:52ch;margin-top:clamp(14px,2.4vh,24px);font-size:clamp(14px,1.45vw,20px);">
+            Everything so far was specification. This is the test. One packet, one fresh context,
+            one commit — and the agent decides it is finished by running <b>its own exit check, not by asking.</b>
+          </p>
+          <div style="display:flex;gap:clamp(9px,1vw,15px);flex-wrap:wrap;margin-top:clamp(16px,2.6vh,28px);">
+            <span class="tag" style="--tag-c:var(--silver);">1 fresh session</span>
+            <span class="tag" style="--tag-c:var(--green);">1 packet</span>
+            <span class="tag" style="--tag-c:var(--cyan);">1 commit</span>
+            <span class="tag" style="--tag-c:var(--gold);">0 questions asked</span>
+          </div>
+        </div>
+
+        <div>
+          <span class="kick" style="--kc:var(--text-mute);">Specification ends. The test begins.</span>
+          <div class="flow">
+            <div class="fl-node" style="--fc:var(--silver);">
+              <div class="fl-k">the setup</div>
+              <div class="fl-name">Session C — empty on purpose</div>
+              <div class="fl-note">no plan · no transcript · no chat memory from A or B</div>
+            </div>
+            <div class="fl-arrow" style="--fa:var(--silver);--fb:var(--green);" aria-hidden="true"></div>
+            <div class="fl-node" style="--fc:var(--green);">
+              <div class="fl-k">the two files</div>
+              <div class="fl-name">The pack, and AGENTS.md</div>
+              <div class="fl-note">if the pack works, it works from files — that isolation is the proof</div>
+            </div>
+            <div class="fl-arrow" style="--fa:var(--green);--fb:var(--cyan);" aria-hidden="true"></div>
+            <div class="fl-node" style="--fc:var(--cyan);">
+              <div class="fl-k">the gate</div>
+              <div class="fl-name">The exit check answers</div>
+              <div class="fl-note">the agent does not ask whether it is done — the packet already knows</div>
+            </div>
+            <div class="fl-arrow" style="--fa:var(--cyan);--fb:var(--red);" aria-hidden="true"></div>
+            <div class="fl-node is-end" style="--fc:var(--red);border-color:var(--red);box-shadow:inset 0 1px 0 rgba(255,255,255,0.07),0 0 44px -14px rgba(248,81,73,0.55);">
+              <div class="fl-k">the other outcome</div>
+              <div class="fl-name">Item 10 is still refused</div>
+              <div class="fl-note">Revenue <span class="st st-unr">unresolved</span> · owner: Finance · no file written</div>
+            </div>
+          </div>
+          <p class="lede" style="font-size:clamp(11px,1.02vw,13.5px);margin-top:clamp(11px,1.8vh,18px);">
+            Both outcomes are the system working. <b>The pass proves the pack carries a build; the refusal proves the boundary survived decomposition.</b>
+          </p>
+        </div>
+
+      </div>
+      <div class="src">Act map per plan/d3-agenda.md — movement 06: one packet, one iteration, one commit. Live checkpoint: live/d3/06-execute-one.md. Session C receives only the pack and AGENTS.md.</div>
+      <aside class="speaker-notes" hidden>[Sources]
+plan/d3-agenda.md — movement 06, “fresh context, exit check, stop”.
+live/d3/06-execute-one.md — Session C isolation; both outcomes are the system working.
+storage/specs/2-ontology.md — Revenue unresolved, owner Finance.
+[/Sources]
+Talk track: name the turn first — everything until now was specification; this is the test. Walk the four nodes: empty session, two files, the exit check that answers, the refusal that still holds. Do not run anything yet. The next slide is the figure — why the session has to be empty.</aside>
+    </div>
+  </section>
+
+  <!-- ═══════════ A6-S02 · FRESH CONTEXT · the isolation figure ═══════════ -->
+  <section class="slide" data-act="ACT 6" data-act-name="Fresh context, files as memory" data-accent="green" style="padding-top:clamp(20px,3vh,40px);padding-bottom:clamp(20px,3vh,40px);">
+    <div class="aurora aurora--green" aria-hidden="true"><b></b></div>
+    <div class="wrap rings-layout">
+      <div class="rings-copy reveal">
+        <span class="tag" style="--tag-c:var(--green);">Session C · the developer</span>
+        <h2 class="h2">Fresh context. <span class="grad-green">Files as memory.</span></h2>
+        <p class="lede">A plan is how humans agree. A packet is how an agent finishes.
+        <b>The window is finite, so the unit had to be small enough to close inside it.</b></p>
+
+        <div class="ring-decision" style="border-left-color:var(--green);">
+          <h3 style="color:var(--green);">The isolation is the proof.</h3>
+          <p>Session C receives two files. It never sees the plan, the earlier sessions, or tonight's chat.
+          <b>If the pack works, it works from disk.</b></p>
+          <p>The dashed orbit is the packet's own loop — read, build, verify, stop.
+          The agent does not ask whether it is done. The exit check answers.</p>
+        </div>
+        <div class="src">Isolation rule per live/d3/06-execute-one.md — Session C receives only tasks/T-20260812-daily-gross-ordered.md and AGENTS.md. The window argument: plan/d3-agenda.md.</div>
+        <aside class="speaker-notes" hidden>[Sources]
+live/d3/06-execute-one.md — Session C isolation; “the agent does not ask whether it is done”.
+live/d3/02-tasks-pack.md — pack id T-20260812-daily-gross-ordered.
+plan/d3-agenda.md — finite window, unit of work.
+AGENTS.md — developer role, writable path dbt/models/staging/.
+[/Sources]
+Talk track: this is the night's figure — same grammar as the rings. Core is empty on purpose. Green ring is what is on disk. Outer ghosts are what must not leak in. The dashed orbit is the packet answering “am I done?” Walk it once, then open a genuinely new session before you type.</aside>
+      </div>
+
+      <div class="rings-viz reveal">
+        <svg viewBox="0 0 1000 900" role="img" aria-label="An empty Session C at the core. A green ring holds the two files it may read — the pack and AGENTS.md. Outside, three ghost nodes it must never see: the transform plan, Sessions A and B, and tonight's chat. A dashed orbit around the core runs read, build, verify, stop.">
+          <defs>
+            <radialGradient id="a6-core" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#3fb950" stop-opacity=".50"/><stop offset="100%" stop-color="#3fb950" stop-opacity=".10"/></radialGradient>
+            <radialGradient id="a6-r1" cx="50%" cy="50%" r="50%"><stop offset="58%" stop-color="#3fb950" stop-opacity="0"/><stop offset="100%" stop-color="#3fb950" stop-opacity=".16"/></radialGradient>
+            <radialGradient id="a6-r2" cx="50%" cy="50%" r="50%"><stop offset="70%" stop-color="#8a969d" stop-opacity="0"/><stop offset="100%" stop-color="#8a969d" stop-opacity=".06"/></radialGradient>
+            <filter id="a6-glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="a6-coreGlow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+
+          <!-- never-sees · outer ghost ring -->
+          <circle cx="500" cy="452" r="372" fill="url(#a6-r2)" stroke="#8a969d" stroke-width="1.4" stroke-opacity=".28" stroke-dasharray="5 9"/>
+          <text x="500" y="92" fill="#8a969d" font-family="Instrument Serif" font-size="28" text-anchor="middle">Never sees</text>
+          <text x="500" y="114" fill="#6e7a8c" font-family="Fira Code" font-size="11.5" text-anchor="middle">plan · prior sessions · chat memory</text>
+
+          <g fill="none" stroke="#8a969d" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="4 6">
+            <circle cx="500" cy="168" r="28"/>
+            <circle cx="196" cy="620" r="28"/>
+            <circle cx="804" cy="620" r="28"/>
+          </g>
+          <text x="500" y="174" fill="#8a969d" font-family="Fira Code" font-size="13" font-weight="700" text-anchor="middle">✕</text>
+          <text x="196" y="626" fill="#8a969d" font-family="Fira Code" font-size="13" font-weight="700" text-anchor="middle">✕</text>
+          <text x="804" y="626" fill="#8a969d" font-family="Fira Code" font-size="13" font-weight="700" text-anchor="middle">✕</text>
+          <text x="500" y="214" fill="#9aa3ad" font-family="Fira Code" font-size="11" text-anchor="middle">4-plan-transform.md</text>
+          <text x="196" y="666" fill="#9aa3ad" font-family="Fira Code" font-size="11" text-anchor="middle">Sessions A · B</text>
+          <text x="804" y="666" fill="#9aa3ad" font-family="Fira Code" font-size="11" text-anchor="middle">tonight's chat</text>
+
+          <!-- on disk · the two files -->
+          <circle class="ring-breathe" cx="500" cy="452" r="236" fill="url(#a6-r1)" stroke="#3fb950" stroke-width="2.2" stroke-opacity=".9" filter="url(#a6-glow)"/>
+          <text x="500" y="228" fill="#9fe0aa" font-family="Instrument Serif" font-size="27" text-anchor="middle">On disk</text>
+          <text x="500" y="248" fill="#83c98f" font-family="Fira Code" font-size="11.5" text-anchor="middle">the only memory this session has</text>
+
+          <g>
+            <rect x="338" y="292" width="324" height="52" rx="12" fill="#111114" stroke="#3fb950" stroke-width="1.4" filter="url(#a6-glow)"/>
+            <text x="500" y="314" fill="#9fe0aa" font-family="Fira Code" font-size="10.5" font-weight="700" letter-spacing="1.4" text-anchor="middle">THE PACK</text>
+            <text x="500" y="332" fill="#c8d0dc" font-family="Fira Code" font-size="11" text-anchor="middle">T-20260812-daily-gross-ordered.md</text>
+          </g>
+          <g>
+            <rect x="392" y="560" width="216" height="44" rx="12" fill="#111114" stroke="#3fb950" stroke-width="1.4"/>
+            <text x="500" y="588" fill="#9fe0aa" font-family="Fira Code" font-size="13" font-weight="700" text-anchor="middle">AGENTS.md</text>
+          </g>
+
+          <!-- the packet's own loop -->
+          <g style="transform-box:fill-box;transform-origin:center;animation:ring-spin 40s linear infinite;">
+            <circle cx="500" cy="452" r="148" fill="none" stroke="#8ae4f2" stroke-opacity=".45" stroke-width="1.4" stroke-dasharray="5 9"/>
+            <polygon points="512,304 500,298 500,310" fill="#8ae4f2" opacity=".85"/>
+          </g>
+          <text x="500" y="286" fill="#8ae4f2" font-family="Fira Code" font-size="11" text-anchor="middle">read</text>
+          <text x="668" y="456" fill="#8ae4f2" font-family="Fira Code" font-size="11" text-anchor="start">build</text>
+          <text x="500" y="638" fill="#8ae4f2" font-family="Fira Code" font-size="11" text-anchor="middle">verify</text>
+          <text x="332" y="456" fill="#8ae4f2" font-family="Fira Code" font-size="11" text-anchor="end">stop</text>
+
+          <!-- empty core -->
+          <circle class="core-pulse" cx="500" cy="452" r="82" fill="url(#a6-core)" stroke="#3fb950" stroke-width="2" filter="url(#a6-coreGlow)"/>
+          <text x="500" y="444" fill="#fff" font-family="Instrument Serif" font-size="30" text-anchor="middle">Session C</text>
+          <text x="500" y="468" fill="#c6f0cc" font-family="Fira Code" font-size="11" text-anchor="middle">empty on purpose</text>
+
+          <text x="500" y="842" fill="#9fe0aa" font-family="Fira Code" font-size="12" font-style="italic" text-anchor="middle">nothing in this session is remembered — everything it needs is on disk</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ A6-S03 · GO LIVE · dual outcome figure ═══════════ -->
+  <section class="slide" data-act="ACT 6" data-act-name="GO LIVE · Execute one packet" data-accent="green" style="padding-top:clamp(16px,2.4vh,32px);padding-bottom:clamp(16px,2.4vh,32px);">
+    <div class="aurora aurora--green" aria-hidden="true"><b></b></div>
+    <div class="wrap rings-layout">
+      <div class="rings-copy reveal">
+        <span class="tag" style="--tag-c:var(--green);">▶ Checkpoint 06 · live/d3/06-execute-one.md</span>
+        <h2 class="h2" style="font-size:clamp(28px,3.6vw,50px);">
+          <span style="color:var(--green);">One green.</span><br>
+          <span style="color:var(--red);">One refusal.</span>
+        </h2>
+        <p class="lede">Same pack. Two actions. <b>Two different results — both correct.</b></p>
+
+        <div class="a6-proto">
+          <div class="a6-pr"><span class="a6-pk">Session</span><span class="a6-pv">developer · <b>NEW Session C</b> · pack + <code>AGENTS.md</code> only</span></div>
+          <div class="a6-pr"><span class="a6-pk">Action A</span><span class="a6-pv">execute the packet · write only inside <code>dbt/models/staging/</code> · run its exit check</span></div>
+          <div class="a6-pr"><span class="a6-pk">Action B</span><span class="a6-pv">then: build the revenue mart from item 10</span></div>
+          <div class="a6-pr"><span class="a6-pk">Gate</span><span class="a6-pv"><b>BOTH visible</b> — exit <b>0</b>, twice · Finance named · no file written</span></div>
+        </div>
+
+        <div class="ring-decision" style="border-left-color:var(--green);margin-top:clamp(14px,2.2vh,20px);">
+          <h3 style="color:var(--green);">The pack did not make the agent smarter.</h3>
+          <p>It made the agent's work <b>checkable</b>. Zero questions asked.</p>
+        </div>
+        <div class="src">Live checkpoint 06 of 08. Packet: tasks/T-20260812-daily-gross-ordered.md. Revenue: storage/specs/2-ontology.md — unresolved, owned by Finance. Figure plates are expected shape — not live output.</div>
+        <aside class="speaker-notes" hidden>[Sources]
+live/d3/06-execute-one.md — Action A, Action B, gate, recovery.
+Makefile — target: dbt-check.
+storage/specs/2-ontology.md — Revenue unresolved, owner Finance.
+AGENTS.md — developer writes only inside dbt/models/staging/.
+[/Sources]
+Talk track: open Session C empty. Paste Action A. Wait for the exit check, then run make dbt-check yourself so the room sees the same 0. Then Action B — ask for the revenue mart and read the refusal aloud. The two plates on the figure are the SHAPE of the outcomes, not a live transcript. If the agent asks whether it is done, do not answer — point it back at the pack.</aside>
+      </div>
+
+      <div class="rings-viz reveal">
+        <svg viewBox="0 0 1000 900" role="img" aria-label="A packet at the core. A green arc on the left ends in PASS, exit 0. A red arc on the right ends in REFUSED, item 10, no file. Both outcomes prove the same system.">
+          <defs>
+            <radialGradient id="a6-pkt" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#a78bfa" stop-opacity=".50"/><stop offset="100%" stop-color="#a78bfa" stop-opacity=".10"/></radialGradient>
+            <radialGradient id="a6-outR" cx="50%" cy="50%" r="50%"><stop offset="58%" stop-color="#22d3ee" stop-opacity="0"/><stop offset="100%" stop-color="#22d3ee" stop-opacity=".10"/></radialGradient>
+            <filter id="a6-og" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="a6-ng" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+
+          <circle cx="500" cy="440" r="338" fill="url(#a6-outR)" stroke="#22d3ee" stroke-width="1.6" stroke-opacity=".4"/>
+          <g fill="none" stroke-width="48" stroke-opacity=".07" stroke-linecap="round">
+            <path d="M 208 274 A 338 338 0 0 0 208 606" stroke="#3fb950"/>
+            <path d="M 792 606 A 338 338 0 0 0 792 274" stroke="#f85149"/>
+          </g>
+          <g fill="none" stroke-width="2.6" stroke-opacity=".95" filter="url(#a6-og)">
+            <path d="M 208 274 A 338 338 0 0 0 208 606" stroke="#3fb950"/>
+            <path d="M 792 606 A 338 338 0 0 0 792 274" stroke="#f85149"/>
+          </g>
+
+          <text x="500" y="128" fill="#8ae4f2" font-family="Instrument Serif" font-size="30" text-anchor="middle">One iteration</text>
+          <text x="500" y="150" fill="#74c8d5" font-family="Fira Code" font-size="11.5" text-anchor="middle">both outcomes are the system working</text>
+
+          <text x="500" y="248" fill="#cdc0ff" font-family="Instrument Serif" font-size="24" text-anchor="middle">The packet</text>
+          <text x="500" y="268" fill="#b7a8e6" font-family="Fira Code" font-size="11" text-anchor="middle">exit check answers · the agent does not ask</text>
+
+          <circle class="core-pulse" cx="500" cy="440" r="86" fill="url(#a6-pkt)" stroke="#a78bfa" stroke-width="2" filter="url(#a6-og)"/>
+          <text x="500" y="432" fill="#fff" font-family="Instrument Serif" font-size="34" text-anchor="middle">Packet</text>
+          <text x="500" y="458" fill="#e6dcff" font-family="Fira Code" font-size="11" text-anchor="middle">one objective · one commit</text>
+
+          <!-- pass spoke -->
+          <line x1="414" y1="440" x2="208" y2="440" stroke="#3fb950" stroke-opacity=".18" stroke-width="9"/>
+          <line x1="414" y1="440" x2="208" y2="440" stroke="#3fb950" stroke-opacity=".95" stroke-width="2.5" filter="url(#a6-og)"/>
+          <text x="312" y="422" text-anchor="middle" font-family="Fira Code" font-size="9.5" letter-spacing="2" fill="#9fe0aa">EXIT CHECK</text>
+          <g transform="translate(168, 440)">
+            <circle r="44" fill="#07080b"/>
+            <circle class="a6-pulse" r="42" fill="rgba(63,185,80,0.10)" stroke="#3fb950" stroke-width="2.4" filter="url(#a6-ng)"/>
+            <text y="12" text-anchor="middle" font-family="Instrument Serif" font-size="36" fill="#a8f0b4">0</text>
+          </g>
+          <text x="168" y="504" text-anchor="middle" font-family="Fira Code" font-size="12" font-weight="700" fill="#9fe0aa">PASS</text>
+
+          <!-- refuse spoke -->
+          <line x1="586" y1="440" x2="792" y2="440" stroke="#f85149" stroke-opacity=".18" stroke-width="9"/>
+          <line x1="586" y1="440" x2="792" y2="440" stroke="#f85149" stroke-opacity=".95" stroke-width="2.5" filter="url(#a6-og)"/>
+          <text x="688" y="422" text-anchor="middle" font-family="Fira Code" font-size="9.5" letter-spacing="2" fill="#ff9d96">ITEM 10</text>
+          <g transform="translate(832, 440)">
+            <circle r="44" fill="#07080b"/>
+            <circle class="a6-pulse" r="42" fill="rgba(248,81,73,0.10)" stroke="#f85149" stroke-width="2.4" filter="url(#a6-ng)"/>
+            <text y="12" text-anchor="middle" font-family="Instrument Serif" font-size="22" fill="#ffa8a1">STOP</text>
+          </g>
+          <text x="832" y="504" text-anchor="middle" font-family="Fira Code" font-size="12" font-weight="700" fill="#ff9d96">REFUSED</text>
+
+          <!-- expected-shape plates -->
+          <text x="500" y="598" text-anchor="middle" font-family="Fira Code" font-size="10" font-weight="700" letter-spacing="2.4" fill="#6e7a8c">EXPECTED SHAPE — NOT LIVE OUTPUT</text>
+
+          <rect x="70" y="622" width="250" height="118" rx="12" fill="#07080b" stroke="rgba(63,185,80,0.4)"/>
+          <text x="86" y="646" font-family="Fira Code" font-size="11" fill="#3fb950">PASS · packet exit check</text>
+          <text x="86" y="668" font-family="Fira Code" font-size="11" fill="#c8d0dc">exit       0</text>
+          <text x="86" y="688" font-family="Fira Code" font-size="11" fill="#c8d0dc">wrote      staging/ only</text>
+          <text x="86" y="708" font-family="Fira Code" font-size="11" fill="#3fb950">dbt-check  parse PASS</text>
+          <text x="86" y="728" font-family="Fira Code" font-size="10.5" fill="#6e7a8c">you run the same 0</text>
+
+          <rect x="680" y="622" width="250" height="118" rx="12" fill="#07080b" stroke="rgba(248,81,73,0.4)"/>
+          <text x="696" y="646" font-family="Fira Code" font-size="11" fill="#f85149">REFUSED · item 10</text>
+          <text x="696" y="668" font-family="Fira Code" font-size="11" fill="#c8d0dc">Revenue    unresolved</text>
+          <text x="696" y="688" font-family="Fira Code" font-size="11" fill="#c8d0dc">owner      Finance</text>
+          <text x="696" y="708" font-family="Fira Code" font-size="11" fill="#c8d0dc">cites      2-ontology.md</text>
+          <text x="696" y="728" font-family="Fira Code" font-size="10.5" fill="#3fb950">no file written</text>
+
+          <text x="500" y="790" fill="#cdc0ff" font-family="Fira Code" font-size="11.5" font-style="italic" text-anchor="middle">✓ the loop — the packet closed it</text>
+          <text x="500" y="818" fill="#9fe0aa" font-family="Fira Code" font-size="11.5" font-style="italic" text-anchor="middle">✓ the pass — a build landed inside staging/</text>
+          <text x="500" y="846" fill="#ff9d96" font-family="Fira Code" font-size="11.5" font-style="italic" text-anchor="middle">✓ the refusal — Revenue still belongs to Finance</text>
+          <text x="500" y="880" fill="#fff" font-family="Instrument Serif" font-size="20" text-anchor="middle">The pack made the work checkable.</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ A6-S04 · SAME PACK, ANY ENGINE ═══════════ -->
+  <section class="slide" data-act="ACT 6" data-act-name="Same pack, any engine" data-accent="green" style="padding-top:clamp(20px,3vh,40px);padding-bottom:clamp(20px,3vh,40px);">
+    <div class="aurora aurora--green" aria-hidden="true"><b></b></div>
+    <div class="wrap rings-layout">
+      <div class="rings-copy reveal">
+        <span class="tag" style="--tag-c:var(--green);">The pack is files</span>
+        <h2 class="h2">Same pack. <span class="grad-green">Any engine.</span></h2>
+        <p class="lede">The pack survives the engine swap exactly as <b>AGENTS.md</b> did on Day 2.
+        Three dialects. One packet. <b>None of them get to rewrite it.</b></p>
+
+        <div class="ring-decision" style="border-left-color:var(--green);">
+          <h3 style="color:var(--green);">The pack is the constant.</h3>
+          <p>Claude Code reads it through <b>CLAUDE.md</b>. Codex and Kimi read it through <b>AGENTS.md</b>.
+          Same two files, same writable path, same exit check.</p>
+          <p>Tonight they share the files. <b>Chaining them into one loop is Day 4.</b></p>
+        </div>
+        <div class="src">Engine roles as on Day 2. Portability claim is the same as AGENTS.md: files survive the swap. Packet: tasks/T-20260812-daily-gross-ordered.md.</div>
+        <aside class="speaker-notes" hidden>[Sources]
+presentation/d2.html — “Same rails, any engine”: the Day-2 precedent.
+AGENTS.md / CLAUDE.md — repo-root contract dialects.
+live/d3/06-execute-one.md — Session C isolation, files as memory.
+live/d3/02-tasks-pack.md — the spec is files, so it survives the engine swap.
+[/Sources]
+Talk track: last night the rails survived the swap. Tonight the pack does. Three engines, one file at the centre. Do not chain them — that is Day 4. Then turn the room toward the ledger.</aside>
+      </div>
+
+      <div class="rings-viz reveal">
+        <svg viewBox="0 0 1000 900" role="img" aria-label="One pack at the centre. Three engines sit on a shared ring — Claude Code, Codex, Kimi — each reading the same two files. The pack does not change because the engine does.">
+          <defs>
+            <radialGradient id="a6-eng" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#3fb950" stop-opacity=".42"/><stop offset="100%" stop-color="#3fb950" stop-opacity=".08"/></radialGradient>
+            <filter id="a6-eg" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+
+          <circle class="ring-breathe" cx="500" cy="452" r="318" fill="none" stroke="#3fb950" stroke-width="1.8" stroke-opacity=".55" filter="url(#a6-eg)"/>
+          <circle cx="500" cy="452" r="304" fill="none" stroke="#3fb950" stroke-width="1" stroke-opacity=".16"/>
+          <text x="500" y="118" fill="#9fe0aa" font-family="Instrument Serif" font-size="28" text-anchor="middle">Any engine</text>
+          <text x="500" y="140" fill="#83c98f" font-family="Fira Code" font-size="11.5" text-anchor="middle">swap the reader · keep the packet</text>
+
+          <!-- spokes -->
+          <line x1="500" y1="366" x2="500" y2="178" stroke="#4a9eff" stroke-opacity=".35" stroke-width="1.4"/>
+          <line x1="430" y1="500" x2="248" y2="612" stroke="#22d3ee" stroke-opacity=".35" stroke-width="1.4"/>
+          <line x1="570" y1="500" x2="752" y2="612" stroke="#3fb950" stroke-opacity=".45" stroke-width="1.4"/>
+
+          <!-- Claude Code · top -->
+          <g transform="translate(500, 168)">
+            <circle r="46" fill="#111114" stroke="#4a9eff" stroke-width="1.6" filter="url(#a6-eg)"/>
+            <image href="../assets/claude-code-icon.png" x="-22" y="-22" width="44" height="44"/>
+          </g>
+          <text x="500" y="230" fill="#7dc4ff" font-family="Fira Code" font-size="10" font-weight="700" letter-spacing="2" text-anchor="middle">ORCHESTRATOR</text>
+          <text x="500" y="250" fill="#eaedf2" font-family="Instrument Serif" font-size="22" text-anchor="middle">Claude Code</text>
+          <text x="500" y="270" fill="#69a8dc" font-family="Newsreader" font-style="italic" font-size="13" text-anchor="middle">CLAUDE.md · same pack</text>
+
+          <!-- Codex · lower left -->
+          <g transform="translate(230, 640)">
+            <circle r="46" fill="#111114" stroke="#22d3ee" stroke-width="1.6" filter="url(#a6-eg)"/>
+            <image href="../assets/codex.png" x="-22" y="-22" width="44" height="44"/>
+          </g>
+          <text x="230" y="706" fill="#8ae4f2" font-family="Fira Code" font-size="10" font-weight="700" letter-spacing="2" text-anchor="middle">REVIEWER</text>
+          <text x="230" y="726" fill="#eaedf2" font-family="Instrument Serif" font-size="22" text-anchor="middle">Codex</text>
+          <text x="230" y="746" fill="#74c8d5" font-family="Newsreader" font-style="italic" font-size="13" text-anchor="middle">AGENTS.md · same pack</text>
+
+          <!-- Kimi · lower right -->
+          <g transform="translate(770, 640)">
+            <circle r="46" fill="#111114" stroke="#3fb950" stroke-width="1.6" filter="url(#a6-eg)"/>
+            <image href="../assets/kimi.png" x="-22" y="-22" width="44" height="44"/>
+          </g>
+          <text x="770" y="706" fill="#9fe0aa" font-family="Fira Code" font-size="10" font-weight="700" letter-spacing="2" text-anchor="middle">EXECUTOR</text>
+          <text x="770" y="726" fill="#eaedf2" font-family="Instrument Serif" font-size="22" text-anchor="middle">Kimi</text>
+          <text x="770" y="746" fill="#83c98f" font-family="Newsreader" font-style="italic" font-size="13" text-anchor="middle">AGENTS.md · same pack</text>
+
+          <!-- the pack · centre -->
+          <circle class="core-pulse" cx="500" cy="452" r="92" fill="url(#a6-eng)" stroke="#3fb950" stroke-width="2.2" filter="url(#a6-eg)"/>
+          <text x="500" y="436" fill="#fff" font-family="Instrument Serif" font-size="34" text-anchor="middle">The pack</text>
+          <text x="500" y="460" fill="#c6f0cc" font-family="Fira Code" font-size="11" text-anchor="middle">two files · one exit check</text>
+          <text x="500" y="480" fill="#83c98f" font-family="Fira Code" font-size="10.5" text-anchor="middle">T-20260812-daily-gross-ordered</text>
+
+          <text x="500" y="860" fill="#9fe0aa" font-family="Fira Code" font-size="12" font-style="italic" text-anchor="middle">the engine is the variable — the packet does not change</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CLOSE · S05 · TURN THREE ═══════════ -->
+  <section class="slide" data-act="CLOSE" data-act-name="Turn three" data-accent="gold">
+    <div class="aurora aurora--gold" aria-hidden="true"><b></b></div>
+    <div class="wrap fly-layout reveal">
+      <div class="fly-copy">
+        <span class="tag" style="--tag-c:var(--gold);">Close · turn three of the flywheel</span>
+        <h2 class="h2" style="font-size:clamp(28px,3.6vw,50px);">
+          Tonight the wheel <span class="grad-gold">turned again.</span>
+        </h2>
+        <p class="lede">Yesterday's plan was tonight's input.
+        <b>Tonight's task graph is tomorrow's starting inventory.</b></p>
+
+        <div class="a6-led">
+          <div class="a6-lr">
+            <div class="a6-ln" style="--lc:var(--green);">4</div>
+            <div>
+              <div class="a6-lk" style="--lc:var(--green);">Built</div>
+              <div class="a6-lb">The Tasks Pack, written by hand. A scenario and its evals. The task graph with its index. <b>One packet executed from files alone.</b></div>
+            </div>
+          </div>
+          <div class="a6-lr">
+            <div class="a6-ln" style="--lc:var(--red);">1</div>
+            <div>
+              <div class="a6-lk" style="--lc:var(--red);">Withheld</div>
+              <div class="a6-lb">Revenue — still unresolved, still owned by Finance. Item 10 could not become a task. <b>The refusal was a success.</b></div>
+            </div>
+          </div>
+          <div class="a6-lr" style="border-bottom:0;">
+            <div class="a6-ln" style="--lc:var(--purple);">→</div>
+            <div>
+              <div class="a6-lk" style="--lc:var(--purple);">Tomorrow</div>
+              <div class="a6-lb">Packets run in a loop and are measured. Day 4 — <b>the unit of work becomes the unit of measurement.</b></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout" style="--co-c:var(--gold);margin-top:clamp(14px,2.2vh,22px);">
+          <div class="co-k">before you leave · live/d3/07-reflection.md</div>
+          <div class="co-b">Three lines, written not spoken: <b>the definition of “done” I will demand in writing;
+          the decision I will not let the agent take; the first backlog item that becomes a packet.</b></div>
+        </div>
+        <div class="src">Flywheel callback: Day 1 close, Day 2 “Turn two”. Ledger: live/d3/07-reflection.md. Revenue remains unresolved, owner Finance.</div>
+        <aside class="speaker-notes" hidden>[Sources]
+presentation/d2.html — CLOSE “Turn two”.
+live/d3/07-reflection.md — built / withheld / tomorrow; the three commitment lines.
+plan/d3-agenda.md — Day 4 as measured loop.
+storage/specs/2-ontology.md — Revenue unresolved, owner Finance.
+[/Sources]
+The three lines as written in the room:
+A definição de "pronto" que eu vou exigir por escrito é:
+A decisão que eu não vou deixar o agente tomar é:
+O primeiro item do meu backlog que vira packet é:
+Talk track: name turn three first. Walk built, withheld, tomorrow once. Point at the wheel — Day 3 is the gold station. Read the three lines in Portuguese, then stop talking long enough for people to write them.</aside>
+      </div>
+
+      <div class="orbit" aria-hidden="true">
+        <div class="orbit-ring"></div>
+        <div class="orbit-core">
+          <strong>Turn three</strong>
+          <span>the wheel turned. <b>Revenue still withheld.</b></span>
+        </div>
+        <div class="orbit-node on-1" style="--oc:var(--cyan);">
+          <div class="node-shell"><span class="node-n">01</span><span class="node-name">Day 1</span></div>
+          <div class="node-note">specs · ontology</div>
+        </div>
+        <div class="orbit-node on-2" style="--oc:var(--gold);">
+          <div class="node-shell"><span class="node-n">02</span><span class="node-name">Day 2</span></div>
+          <div class="node-note">rails · plans</div>
+        </div>
+        <div class="orbit-node on-3" style="--oc:var(--green);">
+          <div class="node-shell"><span class="node-n">03</span><span class="node-name">Day 3</span></div>
+          <div class="node-note">pack · one packet</div>
+        </div>
+        <div class="orbit-node on-4" style="--oc:var(--purple);">
+          <div class="node-shell"><span class="node-n">04</span><span class="node-name">Day 4</span></div>
+          <div class="node-note">the measured loop</div>
+        </div>
+        <div class="orbit-node on-5" style="--oc:var(--red);">
+          <div class="node-shell"><span class="node-n">✕</span><span class="node-name">Finance</span></div>
+          <div class="node-note">Revenue unresolved</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CLOSE · S06 · THE BOOTCAMP ═══════════ -->
+  <section class="slide" data-act="CLOSE" data-act-name="After the gift" data-accent="gold">
+    <div class="aurora aurora--gold" aria-hidden="true"><b></b></div>
+    <div class="wrap reveal" style="max-width:1580px;">
+
+      <span class="tag" style="--tag-c:var(--gold);">After the gift · three minutes</span>
+      <h2 class="h2" style="font-size:clamp(34px,4.8vw,68px);margin-top:clamp(10px,1.6vh,18px);">
+        The structure is <span class="grad-gold">free.</span>
+      </h2>
+
+      <div class="a6-boot">
+        <div>
+          <div class="a6-price-n">15–20</div>
+          <span class="a6-price-u">minutes to write one pack by hand</span>
+        </div>
+        <div class="a6-sents">
+          <div class="a6-sent">
+            <div class="a6-sent-k" style="--sk:var(--green);">what is free</div>
+            <div class="a6-sent-b">The Tasks Pack template is MIT. The structure is yours.</div>
+          </div>
+          <div class="a6-sent">
+            <div class="a6-sent-k" style="--sk:var(--gold);">what is not</div>
+            <div class="a6-sent-b">The judgment is the Bootcamp — evals that hold under real data, decomposition review, and the loop that runs a hundred packets without a human in each one.</div>
+          </div>
+          <div class="a6-sent">
+            <div class="a6-sent-k" style="--sk:var(--text-dim);">the price frame</div>
+            <div class="a6-sent-b">Fifteen to twenty minutes to write <b>one</b> pack, multiplied by a real backlog.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="src">Gift: Tasks Pack template, MIT, given in movement 04. Felt cost: movement 02–03, writing one pack by hand, 15–20 minutes (plan/d3-agenda.md, Bootcamp). Offer framed against that cost; then stop.</div>
+      <aside class="speaker-notes" hidden>[Sources]
+plan/d3-agenda.md — Bootcamp: generosity, then judgment.
+live/d3/02-tasks-pack.md — the hand-written pack.
+live/d3/04-decompose.md — “One pack took fifteen minutes by hand.”
+[/Sources]
+Talk track: this is not a pitch. One sentence on what is free, one on what is not, one price frame. Then stop and take questions. Do not stack benefits. Do not use urgency language.</aside>
+    </div>
+  </section>
+
+  <!-- ═══════════ CLOSE · S07 · THE INVARIANT ═══════════ -->
+  <section class="slide" data-act="CLOSE" data-act-name="The invariant" data-accent="gold"
+           style="justify-content:center;">
+    <div class="aurora aurora--gold" aria-hidden="true"><b></b></div>
+
+    <div class="ts-preview" aria-hidden="true">
+      <div class="ts-ring" style="width:380px;height:380px;"></div>
+      <div class="ts-orbit" style="--sd:22s;">
+        <div class="ts-dot" style="top:-190px;left:0;--dc:var(--cyan);"></div>
+        <div class="ts-dot" style="top:95px;left:-164px;--dc:var(--gold);"></div>
+        <div class="ts-dot" style="top:95px;left:164px;--dc:var(--purple);"></div>
+      </div>
+      <div class="ts-ring" style="width:540px;height:540px;"></div>
+      <div class="ts-orbit" style="--sd:34s;">
+        <div class="ts-dot" style="top:-270px;left:0;--dc:var(--gold);"></div>
+        <div class="ts-dot" style="top:0;left:270px;--dc:var(--cyan);"></div>
+        <div class="ts-dot" style="top:270px;left:0;--dc:var(--purple);"></div>
+        <div class="ts-dot" style="top:0;left:-270px;--dc:var(--accent);"></div>
+      </div>
+    </div>
+    <div class="reveal" style="position:relative;z-index:2;width:100%;max-width:1500px;margin:0 auto;text-align:center;">
+      <span class="tag" style="--tag-c:var(--gold);">The week's invariant</span>
+      <h2 class="display" style="font-size:clamp(34px,4.6vw,64px);margin-top:clamp(18px,3vh,34px);line-height:1.08;letter-spacing:-1px;">
+        The agent performs bounded work.<br>
+        Evidence supports claims.<br>
+        Humans keep the decisions<br>
+        <span class="grad-gold">the system cannot legitimately make.</span>
+      </h2>
+      <p class="note" style="margin-top:clamp(22px,3.6vh,40px);font-size:clamp(14px,1.35vw,19px);">
+        Day 4 · the unit of work becomes the unit of measurement — 20:00 BRT
+      </p>
+      <div class="src" style="max-width:64ch;margin:clamp(18px,2.8vh,28px) auto 0;text-align:center;border-top:0;padding-top:0;">Unchanged from Days 1 and 2. Revenue remains unresolved, owned by Finance.</div>
+      <aside class="speaker-notes" hidden>[Sources]
+presentation/d1.html · presentation/d2.html — the same closing line.
+live/d3/07-reflection.md — closing line and Day-4 handoff.
+storage/specs/2-ontology.md — Revenue unresolved, owner Finance.
+[/Sources]
+Talk track: read the three sentences slowly, then the Day-4 line, then stop. Do not resolve Revenue. Leave the invariant on screen while they pack up.</aside>
+    </div>
+  </section>
+
+</div>
