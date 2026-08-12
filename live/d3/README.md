@@ -1,7 +1,7 @@
 # Day 3 — The Spec: The Unit of Work
 
 > **Repository state:** Day 3 is built and execution has started locally. Its
-> first Task-Spec exists as untracked session evidence; the task graph and second
+> first Task-Spec is tracked session evidence; the task graph and second
 > staging model are not complete. The five inherited specs and Day 2 staging
 > model remain committed inputs.
 
@@ -50,7 +50,7 @@ flowchart LR
 | [`04`](04-decompose.md) | Continue B as architect | Item 7 becomes a graph | TaskPlan preview → approval → `batch`, then `dod` + `lint` | `tasks/` graph |
 | ✦ | No agent | Giveaway → crank | Deck only — 2 slides, ~21:50, 3 min | None — the crank clip is **pre-recorded** |
 | [`05`](05-ready-set.md) | Continue B | The ready set | Agent predicts, `taskspec ready` adjudicates | `_state.yaml` ordering |
-| [`06`](06-execute-one.md) | **NEW C** — developer | One packet, one iteration | Exit check returns 0 + refusal holds | Second staging model |
+| [`06`](06-execute-one.md) | **NEW C** — developer | One packet, one iteration | Exit check returns 0 + refusal holds + **the same spec through 2–3 engines** | Second staging model |
 | [`07`](07-reflection.md) | No agent | Turn three closes | Participant commitments | Team learning |
 
 Switch in the same rhythm every time:
@@ -71,7 +71,7 @@ DECK: explain why
 | 01 | Three plans, 6 lines each | None — never executed |
 | 02 | None — the human types | One spec, six zones |
 | 03 | One scenario + one eval | Two sections inside `T-20260812-daily-gross-ordered` |
-| 04 | 120-word summary | Index + 4–6 packets, ≤200 words each |
+| 04 | TaskPlan YAML + 120-word summary | Approved manifest, index, 4–6 packets, blocked hole |
 | 05 | One table, ≤8 rows | Ordering inside `tasks/_state.yaml` |
 | 06 | One sentence per action | One staging model + its test |
 
@@ -97,19 +97,28 @@ tasks/
 dbt/models/staging/          # already holds stg_orders from Day 2
 ```
 
-`tasks/` intentionally does not exist before the session; the architect
-creates it live inside the contract's writable path.
+`tasks/` did not exist before checkpoint 02. The current worktree contains the
+first hand-authored Task-Spec as tracked session evidence. At checkpoint 04,
+the architect proposes and reviews the manifest without writing files; a human
+approves it, and the facilitator uses `taskspec` to extend the graph.
 
 ## Shared boundaries
 
 - Postgres access stays read-only (`analytics_ro`); DuckDB `raw.*` is the mirror.
 - All five inherited specs are read-only tonight; no checkpoint may overwrite them.
-- Writable paths tonight: `tasks/` (including `tasks/.plans/`), `.taskspec/`, and
-  `dbt/models/staging/` only.
+- Facilitator-controlled authoring paths tonight are `tasks/` (including
+  `tasks/.plans/`) and `.taskspec/`. Agent writes remain governed by
+  `AGENTS.md`: the architect writes nothing, and the developer writes only in
+  `dbt/models/staging/`.
 - Checkpoints 04 and 05 use the real `taskspec` CLI (v3.7.0, MIT) — the same tool
   given away at 21:50. Checkpoint 00 gates on `taskspec version`.
-- Item 10 of the transform plan cannot become a task while `Revenue` is
-  `unresolved` — the refusal at checkpoint 06 is the success state.
+- Checkpoint 06 move C hands the identical spec to two or three engines and
+  compares only the exit code. An engine that cannot run is announced
+  `unavailable`, never a pass. The nine-family `taskspec evidence` matrix is
+  deliberately out of scope tonight — see the note in `06-execute-one.md`.
+- Item 10 of the transform plan cannot become a ready or executable task while
+  `Revenue` is unresolved. A definition-free blocked hole may record the owner;
+  the refusal at checkpoints 04 and 06 is the success state.
 - Session A demonstrates the divergence and is discarded.
 - Session B carries spec → BDD → decomposition → ready set, then stops.
 - Session C is the developer: receives only its Task-Spec and `AGENTS.md`.
@@ -136,7 +145,8 @@ spec line into the prompt or back.
 - [ ] The ready set was named before any packet was worked.
 - [ ] A fresh developer session executed one packet from files alone and its
       exit check returned 0.
-- [ ] Item 10 was requested and refused — Revenue still cannot become a task.
+- [ ] Item 10 was requested and refused — only a blocked hole exists; Revenue
+      still cannot become ready or executable.
 - [ ] The room filled the three commitment lines.
 
 The planning source is [`../../plan/semana.md`](../../plan/semana.md); the

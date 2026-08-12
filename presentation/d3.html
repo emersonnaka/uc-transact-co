@@ -3225,7 +3225,7 @@ Talk track: read the headline twice, because it is the whole night in eight word
 
       <div class="rings-viz reveal">
         <svg viewBox="0 0 1000 900" role="img"
-             aria-label="Inside the spec ring: a Task-Spec core runs its own loop — read, build, verify, commit — surrounded by its six zones grouped into four gates, all enclosed by the purple Task-Spec ring.">
+             aria-label="Inside the spec ring: a Task-Spec core runs its own loop — read, build, verify, stop — surrounded by its six zones grouped into four gates, all enclosed by the purple Task-Spec ring.">
           <defs>
             <radialGradient id="eqCore" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#a78bfa" stop-opacity=".56"/><stop offset="100%" stop-color="#a78bfa" stop-opacity=".12"/></radialGradient>
             <filter id="eqGlow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
@@ -3285,7 +3285,7 @@ Talk track: read the headline twice, because it is the whole night in eight word
           <text x="500" y="278" fill="#aebbc2" font-family="Fira Code" font-size="11.5" text-anchor="middle">read the spec</text>
           <text x="684" y="456" fill="#aebbc2" font-family="Fira Code" font-size="11.5" text-anchor="start">build</text>
           <text x="500" y="655" fill="#aebbc2" font-family="Fira Code" font-size="11.5" text-anchor="middle">verify</text>
-          <text x="316" y="456" fill="#aebbc2" font-family="Fira Code" font-size="11.5" text-anchor="end">commit · stop</text>
+          <text x="316" y="456" fill="#aebbc2" font-family="Fira Code" font-size="11.5" text-anchor="end">gate · stop</text>
 
           <!-- the packet core -->
           <circle class="core-pulse" cx="500" cy="452" r="86" fill="url(#eqCore)" stroke="#a78bfa" stroke-width="2" filter="url(#eqCoreGlow)"/>
@@ -5411,12 +5411,12 @@ Talk track: run it now — the scenario is typed, the evals derived. Do not buil
             <div class="fl-node" style="--fc:var(--red);">
               <div class="fl-k">The boundary</div>
               <div class="fl-name">Item 10, asked for on purpose</div>
-              <div class="fl-note">revenue cannot become a task — it lands in the index as BLOCKED, owner Finance</div>
+              <div class="fl-note">revenue cannot become ready — a definition-free BLOCKED hole names Finance</div>
             </div>
 
           </div>
           <p class="lede" style="font-size:clamp(11px,1.02vw,13.5px);margin-top:clamp(11px,1.8vh,18px);">
-            The graph is built live in this movement. <b>The refusal is part of the build.</b>
+            The graph is materialized live after human approval. <b>The refusal is part of the build.</b>
           </p>
         </div>
 
@@ -5560,16 +5560,16 @@ Talk track: draw the asymmetry before explaining it — left is almost nothing, 
         </div>
         <div class="gl-grid">
           <div class="gl-k">session</div>
-          <div class="gl-v"><b>Session B continues — as the architect</b>: judgment, no Bash.</div>
+          <div class="gl-v"><b>Session B — architect</b>: judgment, no Bash. The facilitator drives the CLI.</div>
           <div class="gl-k">the cut</div>
-          <div class="gl-v">Items <b>5–8</b> → <b>4–6 packets</b> plus the index. Split on “and”; <code>depends_on</code> explicit.</div>
+          <div class="gl-v">Items <b>5–8</b> → TaskPlan preview → human approval → <b>4–6 packets</b>.</div>
           <div class="gl-k">then</div>
-          <div class="gl-v">“Now create the packet for <b>item 10</b> — the revenue model.” It cannot. <b>BLOCKED — owner Finance.</b></div>
+          <div class="gl-v">Item <b>10</b> gets no definition: a <b>BLOCKED hole</b>, never ready, owner Finance.</div>
         </div>
       </div>
 
       <svg class="a4-graph" viewBox="0 0 1320 470" role="img"
-           aria-label="The decomposition graph: plan items 5 to 8 become five packets. Item 5 splits on and into the join and the coverage check. Gold depends_on from three packets returns to the join. Item 10 is refused — no packet — and lands in the index as BLOCKED, owner Finance.">
+           aria-label="The decomposition graph: plan items 5 to 8 become five packets after TaskPlan preview and human approval. Item 5 splits on and into the join and the coverage check. Gold depends_on from three packets returns to the join. Item 10 is refused as executable work and lands in the index as a definition-free BLOCKED hole owned by Finance.">
         <defs>
           <marker id="a4-mCut" viewBox="0 0 10 10" refX="9.2" refY="5" markerWidth="7.4" markerHeight="7.4" orient="auto"><path d="M0.4,1.1 L9.4,5 L0.4,8.9 Z" fill="#a78bfa"/></marker>
           <marker id="a4-mDep" viewBox="0 0 10 10" refX="9.2" refY="5" markerWidth="7.4" markerHeight="7.4" orient="auto"><path d="M0.4,1.1 L9.4,5 L0.4,8.9 Z" fill="#d4af37"/></marker>
@@ -5691,7 +5691,7 @@ Talk track: draw the asymmetry before explaining it — left is almost nothing, 
         <!-- item 10 skips the cut -->
         <path d="M304,416 H994" fill="none" stroke="#f85149" stroke-width="2" stroke-dasharray="8 6" stroke-linecap="round" marker-end="url(#a4-mRef)"/>
         <circle cx="304" cy="416" r="3.4" fill="#f85149"/>
-        <text x="652" y="404" fill="#f85149" font-family="Newsreader" font-style="italic" font-size="15" text-anchor="middle">asked — no packet — refused</text>
+        <text x="652" y="404" fill="#f85149" font-family="Newsreader" font-style="italic" font-size="15" text-anchor="middle">asked — blocked hole — withheld</text>
       </svg>
       <p class="a4-punch">Did decomposition dissolve the boundary? It did not. <b>The refusal survived becoming a graph.</b></p>
       <aside class="speaker-notes" hidden>[Sources]
@@ -5700,7 +5700,7 @@ storage/specs/4-plan-transform.md — items 5–8 verbatim on the left rail; ite
 Naming: the plan writes these models as mart_*, but the Day 2 contract only authorizes dbt/models/staging/ — so the packets name stg_*. That rename is the architect's, it is inside the contract, and live/d3/02-task-spec.md uses the same one. If the room asks, say exactly that.
 plan/semana.md §15.5 — the two-layer index; item 7's model spec written at checkpoint 02.
 [/Sources]
-Talk track: run the cut first, exactly as the checkpoint does — items 5 to 8 in, five packets out. Point at the fork on item 5: one "and" became two packets, that is the whole sizing rule. The gold bus matters more than the purple edges: whether the marts read the reconciled join was a three-way argument at checkpoint 01; here it is one explicit edge, decided by the architect, written down. Then the second ask, verbatim in Portuguese: "Agora crie o packet para o item 10 — o modelo revenue." Let the refusal land in silence: no packet, no eval — a red row in the index with an owner.</aside>
+Talk track: run the flow exactly as the checkpoint does — the architect proposes the TaskPlan, a human approves it, and the facilitator lets Task-Spec materialize the five packets. Point at the fork on item 5: one "and" became two packets, that is the whole sizing rule. The gold bus matters more than the purple edges: whether the marts read the reconciled join was a three-way argument at checkpoint 01; here it is one explicit edge, proposed by the architect and approved by a human. Then the second ask, verbatim in Portuguese: "Agora crie o packet para o item 10 — o modelo revenue." Let the refusal land in silence: no executable definition or eval — only a red, definition-free blocked hole with an owner.</aside>
     </div>
   </section>
 
@@ -6354,7 +6354,7 @@ Talk track: say the two sentences, then stop. The room should hear the comma aft
           <div style="display:flex;gap:clamp(9px,1vw,15px);flex-wrap:wrap;margin-top:clamp(16px,2.6vh,28px);">
             <span class="tag" style="--tag-c:var(--silver);">1 fresh session</span>
             <span class="tag" style="--tag-c:var(--green);">1 packet</span>
-            <span class="tag" style="--tag-c:var(--cyan);">1 commit</span>
+            <span class="tag" style="--tag-c:var(--cyan);">1 bounded change</span>
             <span class="tag" style="--tag-c:var(--gold);">0 questions asked</span>
           </div>
         </div>
@@ -6550,7 +6550,7 @@ Talk track: open Session C empty. Paste Action A. Wait for the exit check, then 
           <circle class="core-pulse" cx="500" cy="400" r="88" fill="url(#a6-pkt)" stroke="#a78bfa" stroke-width="2" filter="url(#a6-og)"/>
           <text x="500" y="386" fill="#fff" font-family="Instrument Serif" font-size="30" text-anchor="middle">Packet</text>
           <text x="500" y="408" fill="#e6dcff" font-family="Fira Code" font-size="10.5" text-anchor="middle">one objective</text>
-          <text x="500" y="424" fill="#e6dcff" font-family="Fira Code" font-size="10.5" text-anchor="middle">one commit</text>
+          <text x="500" y="424" fill="#e6dcff" font-family="Fira Code" font-size="10.5" text-anchor="middle">one bounded change</text>
 
           <!-- the packet's own loop · fills the empty orbit, diagonals miss the spokes -->
           <g style="transform-box:fill-box;transform-origin:center;animation:ring-spin 40s linear infinite;">
@@ -6606,19 +6606,20 @@ Talk track: open Session C empty. Paste Action A. Wait for the exit check, then 
   </section>
 
   <section class="slide" data-act="ACT 6" data-act-name="Same spec, any engine" data-accent="green"
-           style="padding-top:clamp(16px,2.4vh,32px);padding-bottom:clamp(16px,2.4vh,32px);">
+           style="padding-top:clamp(9px,1.5vh,20px);padding-bottom:clamp(9px,1.5vh,20px);">
     <div class="aurora aurora--green" aria-hidden="true"><b></b></div>
     <div class="wrap reveal" style="max-width:1780px;">
 
       <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:clamp(20px,2.4vw,48px);">
         <div>
-          <span class="tag" style="--tag-c:var(--green);">The spec is files</span>
+          <span class="tag" style="--tag-c:var(--green);">Live · three engines, one exit check</span>
           <h2 class="h2" style="font-size:clamp(28px,3.8vw,54px);margin-top:clamp(8px,1.3vh,14px);">
             Same spec. <span class="grad-green">Any engine.</span>
           </h2>
         </div>
         <p class="lede" style="max-width:38ch;text-align:right;font-size:clamp(13px,1.2vw,17px);">
-          Three dialects. One packet. <b>None of them get to rewrite it.</b>
+          Three dialects. One packet. <b>None of them get to rewrite it — and none of them
+          get to decide whether they are done.</b>
         </p>
       </div>
 
@@ -6696,14 +6697,39 @@ Talk track: open Session C empty. Paste Action A. Wait for the exit check, then 
 
       </div>
 
-      <div class="src">Spec quoted from live/d3/02-task-spec.md — the file Session C receives. Engine roles as on Day 2. The spec survives the swap the way AGENTS.md did.</div>
+      <div class="a4b-cmp" style="grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(12px,1.9vh,20px);">
+        <div class="a4b-cc" style="--cc:var(--accent);">
+          <div class="a4b-cc-k">engine A · claude code</div>
+          <div class="a4b-cc-n">exit 0</div>
+          <div class="a4b-cc-b">Its own SQL, its own formatting. <b>Same exit check.</b></div>
+        </div>
+        <div class="a4b-cc" style="--cc:var(--cyan);">
+          <div class="a4b-cc-k">engine B · codex</div>
+          <div class="a4b-cc-n">exit 0</div>
+          <div class="a4b-cc-b">Different SQL. <b>Same exit check.</b></div>
+        </div>
+        <div class="a4b-cc" style="--cc:var(--green);">
+          <div class="a4b-cc-k">engine C · kimi</div>
+          <div class="a4b-cc-n">exit 0</div>
+          <div class="a4b-cc-b">Different SQL again. <b>Same exit check.</b></div>
+        </div>
+      </div>
+
+      <p class="note" style="margin-top:clamp(5px,0.9vh,10px);font-size:clamp(12px,1.12vw,16px);line-height:1.38;">
+        Expected shape — live numbers replace these. Three different files,
+        <b style="color:var(--text);font-style:normal;">one exit code that answers for all three</b>.
+        Compare the outcome, never the writing style; an engine you could not run is
+        <b style="color:var(--silver);font-style:normal;">unavailable</b>, never a pass.
+      </p>
+
+      <div class="src">Spec quoted from live/d3/02-task-spec.md — the file Session C receives. Engine roles as on Day 2. The spec survives the swap the way AGENTS.md did. Cells are expected shape, replaced live at checkpoint 06 move C. Comparison rule and the unavailable-never-pass rule per ~/GitHub/task-spec docs/guides/multi-engine-evidence.md. The nine-family <code>taskspec evidence</code> matrix is deliberately NOT run tonight — evidence/3.7/engine-matrix.json has every family disabled with model_id TO_RECORD, so no upstream multi-engine result exists to cite.</div>
       <aside class="speaker-notes" hidden>[Sources]
 live/d3/02-task-spec.md — frontmatter, Goal, Context, Anti-Patterns of T-20260812-daily-gross-ordered.md.
 presentation/d2.html — “Same rails, any engine”.
 AGENTS.md / CLAUDE.md — contract dialects.
 live/d3/06-execute-one.md — Session C reads this file only.
 [/Sources]
-Talk track: point at the spec first — that is what every engine receives. Then the triad: Claude Code, Codex, Kimi, same three-line stack, labels outside the ring. The spec at the centre does not change. Do not chain them — that is Day 4.</aside>
+Talk track: point at the spec first — that is what every engine receives, byte for byte. Then the triad on the ring, then the three cells: this is the beat the room remembers. Open all three diffs side by side and let them look — the SQL is visibly different in all three, indentation, CTE names, column order, all of it. Then say the line: none of that matters, because none of them got to decide whether they were done. The exit check did, and it returned the same number three times. If an engine did not run, say UNAVAILABLE out loud and leave the cell grey — Task-Spec's own rule is that a missing runner is never a pass, and borrowing that rule in public costs nothing and buys everything. Do not chain the engines — that is Day 4.</aside>
     </div>
   </section>
 

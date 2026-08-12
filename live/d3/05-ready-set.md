@@ -2,7 +2,9 @@
 
 ## Session
 
-**Continue Session B.** Reading and ordering only — still no Bash.
+**Continue Session B.** Reading and ordering only — still no Bash. The
+facilitator runs the CLI checks below; the architect predicts from files and
+returns a verdict only.
 
 ## Why this step
 
@@ -18,7 +20,7 @@ flowchart LR
     B -->|No| C[Skip — not ready]
     B -->|Yes| D[Ready set]
     D --> E[Pick one]
-    E --> F[Work it · commit · stop]
+    E --> F[Work it · gate passes · stop]
 
     classDef spec fill:#DBEAFE,stroke:#2563EB,color:#172554
     classDef gate fill:#FEF3C7,stroke:#D97706,color:#78350F
@@ -56,15 +58,17 @@ nada.
 Then let the tool compute the same answer, and compare the two on screen:
 
 ```bash
-taskspec ready              # the frontier: dependencies satisfied, not blocked
-taskspec ready --all        # everything, including what ready just hid
-taskspec lint               # the DAG, plus write-disjoint groups
+taskspec ready                                  # executable frontier only
+taskspec lint                                   # DAG + write-disjoint groups
+rg -n -A 3 '^blocked:' tasks/_state.yaml        # blocked hole IDs
+tail -n 1 tasks/_metrics.jsonl                  # refusal reason and owner
 ```
 
-`taskspec ready` prints one line per unit it would hand to an executor, and a
-count of what it withheld — `(N ready spec(s) hidden — blocked by an unmet
-depends_on)`. `lint` adds the concurrency partition: the groups that write to
-disjoint paths and are therefore safe to dispatch together.
+`taskspec ready` prints one line per unit it would hand to an executor. `lint`
+adds the concurrency partition: the groups that write to disjoint paths and are
+therefore safe to dispatch together. Blocked holes are not emitted by either
+`ready` form, so the generated state index plus the status-change metric are the
+explicit proof that Revenue was recorded, withheld, and routed to Finance.
 
 The comparison is the beat. If the agent's table matches the tool, the graph
 decided and the agent merely read it. If it differs, the agent guessed — and the
@@ -74,8 +78,9 @@ tool is the arbiter, exactly as `dbt-check` was on Day 2.
 
 The agent's table beside `taskspec ready`, and then the one line that matters:
 which packet is first, justified only by `depends_on`. Point at a packet that is
-*not* ready and name what it is waiting for. Then point at what is missing from
-both lists — the revenue unit, still blocked, still owned by Finance.
+*not* ready and name what it is waiting for. Then contrast the ready frontier
+with the blocked index and final metric: the Revenue hole is withheld and still
+owned by Finance.
 
 Say:
 
@@ -89,8 +94,8 @@ Say:
 - Every "ready" verdict traces to `depends_on`, not to intuition.
 - The first packet was named, with its justification.
 - At least one not-ready packet was shown, with the dependency it waits on.
-- The blocked revenue unit appears in `taskspec ready --all` and **not** in
-  `taskspec ready`.
+- The blocked Revenue hole appears under `blocked:` in `tasks/_state.yaml` and
+  **not** in `taskspec ready`.
 - No dependency chain is deeper than two.
 
 ## Recovery
