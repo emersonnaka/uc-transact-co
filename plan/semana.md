@@ -1,9 +1,9 @@
 # Semana Engenharia Agêntica — Facilitation and Delivery Plan
 
-- **Status:** Nights 1 and 2 executed end to end; Night 3 built (49-slide deck render-verified, eight checkpoints) and awaiting execution
+- **Status:** Nights 1 and 2 executed end to end; Night 3 built (47 slides, eight checkpoints), execution started but not complete
 - **Case:** TransactCo — a brownfield commerce system whose numbers must earn trust
 - **Operational runbooks:** [`live/d1/`](../live/d1/) executed · [`live/d2/`](../live/d2/) executed · [`live/d3/`](../live/d3/) built
-- **Decks:** [`presentation/d1.html`](../presentation/d1.html) 49 slides · [`d2.html`](../presentation/d2.html) 41 · [`d3.html`](../presentation/d3.html) 49
+- **Decks:** [`presentation/d1.html`](../presentation/d1.html) 49 slides · [`d2.html`](../presentation/d2.html) 41 · [`d3.html`](../presentation/d3.html) 47
 - **Historical source:** [`docs/semana-agentic-uc-transact-co-v2.pdf`](../docs/semana-agentic-uc-transact-co-v2.pdf)
 
 The PDF preserves the original brief. This file records the current teaching
@@ -127,7 +127,7 @@ semantic boundary is a success state.
 | `06` | Practice becomes scaffold | Generated tree, empty stubs | Temporary scaffold |
 | `07` | Distill the learning | Three commitment lines | Team learning |
 
-### Night 3 — the spec (built, not yet executed)
+### Night 3 — the spec (built, execution started but not complete)
 
 The question carried through the session: the plan says ten items — which one
 can be handed to an agent tonight, and how will anyone know it is done without
@@ -140,7 +140,7 @@ asking? "Done" is two halves: behaviour a human signs and proof a machine runs.
 | `02` | Hand-write a Task-Spec | One spec, six zones, human-edited | `tasks/T-20260812-daily-gross-ordered.md` |
 | `03` | Split done in two | Gherkin scenario + runnable bash eval | Evals inside the spec |
 | `04` | Decompose item 7 | Index + 4–6 packets | `tasks/` graph |
-| ✦ | Giveaway → crank → offer | Three deck slides, ~21:50, 5 min | None — the crank clip is **pre-recorded** |
+| ✦ | Giveaway → crank | Two deck slides, ~21:50, 3 min | None — the crank clip is **pre-recorded** |
 | `05` | Name the ready set | Dependency order justified | `tasks/_state.yaml` ordering |
 | `06` | Execute one packet | Exit check returns 0 + refusal holds | Second staging model |
 | `07` | Distill the learning | Three commitment lines | Team learning |
@@ -279,7 +279,7 @@ changes one signature accent.
 | --- | ---: | --- | --- |
 | `d1.html` | 49 | 1 — the foundations | blue/cyan |
 | `d2.html` | 41 | 2 — the harness | gold |
-| `d3.html` | 49 | 3 — the spec | purple |
+| `d3.html` | 47 | 3 — the spec | purple |
 
 Rules any engine building on a deck must hold to:
 
@@ -404,7 +404,7 @@ rehearsal’s values as universal expectations.
 | Surface | Sign-off evidence | Boundary |
 | --- | --- | --- |
 | `live/` | All three runbooks have session boundaries, bounded prompts, evidence selections, gates, and recovery | A rehearsed prompt can still vary by model |
-| `presentation/` | d1/d2/d3 render at 1600×900 with zero overflow; slide quotes match `storage/specs/` verbatim | Deck truth is only as good as its quoted source |
+| `presentation/` | Current d3 opens with 47 slides, no duplicate ids, and no console errors; the earlier 49-slide baseline passed at 1600×900 | The fixed 1211×880 in-app viewport reports narrow-screen overflow on slides 12, 26, 32, 34, and 40; it cannot re-prove the 1600×900 target |
 | `skills/` | Skill metadata validates; unit fixtures cover success and failure; package validator returns `CHECK_INVESTIGATION=PASS` | Structural validity is not semantic approval |
 | `src/` | Bootstrap, unit contracts, delivery verification, ontology CLI, landing parity, and `dbt-check` pass | Participant dbt models, agents, and detector remain intentionally absent |
 | `storage/specs/` | Five artifacts meet their checkpoint budgets, preserve unresolved meaning, and are tracked since `b2e5108` | Hand-authored baseline-specific evidence, not versioned truth |
@@ -436,9 +436,9 @@ participant work before rebuilding.
 If an agent run fails, keep the failure visible, apply the checkpoint recovery,
 and label any fallback artifact **prepared**.
 
-Night 3 specifics: if a discarded villain session wrote files, delete them
-before checkpoint 02; if a rehearsal left a `tasks/` directory, archive it
-under `tmp/` and let the architect create the graph live; rehearse
+Night 3 specifics: if a discarded villain session wrote files, archive them
+under `tmp/` before checkpoint 02; if a rehearsal left a `tasks/` directory,
+archive it under `tmp/` and let the architect create the graph live; rehearse
 `06-execute-one.md` end to end and reset the artifacts it creates (the second
 staging model and its exit check) so the live run starts clean.
 
@@ -467,7 +467,7 @@ the evidence boundary established here; see the curriculum arc below.
 | --- | --- | --- | --- |
 | Foundation investigation | Prompt, context, evidence, ontology, telemetry truth | Context inventory, ontology note, technical brief, reusable investigation skill | 1 — executed |
 | Harness and authority | Roles, tools, permissions, execution boundaries | `AGENTS.md` agent pair, harness contract, two plans, first staging model | 2 — executed |
-| Specification and decomposition | Intent, acceptance evidence, atomic work | Task graph and one executed packet | 3 — built, awaiting execution |
+| Specification and decomposition | Intent, acceptance evidence, atomic work | Task graph and one executed packet | 3 — built, execution started but not complete |
 | Evaluation and execution loops | Independent verification, telemetry, scoring, learning | Measured result and durable evidence trail | 4 — not yet planned |
 
 The storytelling continuity across the nights:
@@ -490,11 +490,12 @@ system cannot legitimately make.
 
 ## 15. Night 3 build — specification and decomposition
 
-This section consolidates [`d3-agenda.md`](d3-agenda.md), the build document
-for night 3, written 2026-08-12 after Day 2 executed end to end. It is module
-three of the arc: *specification and decomposition — intent, acceptance
-evidence, atomic work → reviewable specification and task graph.* The planning
-source for the runbook remains `live/d3/`.
+This section is the consolidated build document for Night 3, incorporated on
+2026-08-12 after Day 2 executed end to end. The former standalone agenda was
+retired after its content moved here. It is module three of the arc:
+*specification and decomposition — intent, acceptance evidence, atomic work →
+reviewable specification and task graph.* The operational source remains
+`live/d3/`.
 
 ### 15.1 The question and the villain
 
@@ -558,17 +559,22 @@ decides. Break after movement 03, contract left on the projector.
 | 03 | 21:00 | Two halves of done — BDD and evals | `03` | humans read Gherkin, machines run bash |
 | — | 21:20 | **Break** | — | the Task-Spec stays on screen |
 | 04 | 21:30 | Decomposition — item 7 becomes a graph | `04` | lookup table plus per-task specs |
-| ✦ | 21:50 | **Giveaway → crank → Bootcamp** | — | the night's commercial peak, 5 min |
+| ✦ | 21:50 | **Giveaway → crank** | — | free tool, then a 90-second pre-recorded preview |
 | 05 | 22:00 | The ready set — dependencies and order | `05` | wide and shallow beats narrow and deep |
-| 06 | 22:20 | One packet, one iteration, one commit | `06` | fresh context, exit check, stop |
+| 06 | 22:20 | One packet, one iteration, one bounded change | `06` | fresh context, exit check, stop |
 | 07 | 22:50 | The boundary survives decomposition | `07` | Revenue cannot become a task |
 
 ### 15.4 Deck acts — as-built inventory
 
-`presentation/d3.html` is complete: 49 slides, measured at 1600×900 with zero
-overflow, no duplicate ids, every `<style data-act="N">` block brace-balanced.
-Acts 2–6 were built as separate files by separate engines and merged in; the
-act source files are retired.
+`presentation/d3.html` is complete at 47 slides after the ladder/offer and
+enumeration-close slides were removed. The earlier 49-slide baseline was
+measured at 1600×900 with zero overflow, no duplicate ids, and balanced
+`<style data-act="N">` blocks; that result is historical, not proof for the
+current 47-slide file. A fresh in-app check found 47 slides, no duplicate ids,
+and no console errors. Its fixed 1211×880 viewport reports overflow on slides
+12, 26, 32, 34, and 40; because it cannot resize, this is narrow-screen
+evidence rather than a fresh 1600×900 verdict. Retired act sources remain
+available through Git history.
 
 | Slides | Act | Accent | Content |
 | ---: | --- | --- | --- |
@@ -577,14 +583,13 @@ act source files are retired.
 | 10–15 | ACT 1 | green · gold | divider; the inheritance verified; ten items three blocked; **GO LIVE** one item three builds; three defensible answers; mentioned not specified |
 | 16–27 | ACT 2 | accent | divider; the Atom; the bottleneck moved; where the field converged; nine models one question; a ticket vs an atom; six zones two are yours; the seal; the closed loop; four layers; **GO LIVE** write the Task-Spec by hand; skill card S1 |
 | 28–32 | ACT 3 | gold | divider; done has two readers; behavior and proof bound both ways; what makes an eval terminal; **GO LIVE** run the exit check before the build |
-| 33–39 | ACT 4 | purple · gold | divider; two layers one graph; **GO LIVE** decompose; **beat 1** Task-Spec given away; **beat 2** the crank (pre-recorded); **beat 3** level three feels like a downgrade — the ladder and the offer; enumeration ends here |
-| 40–43 | ACT 5 | cyan | divider; ready is not next; **GO LIVE** name the ready set; nobody decided that order |
-| 44–47 | ACT 6 | green | divider; fresh context files as memory; **GO LIVE** execute one packet; same spec any engine |
-| 48–49 | CLOSE | gold | Turn three closes (built / withheld / tomorrow, three commitment lines); the invariant (+ one neutral Bootcamp line) |
+| 33–37 | ACT 4 | purple · gold | divider; two layers one graph; **GO LIVE** decompose; Task-Spec giveaway; pre-recorded crank |
+| 38–41 | ACT 5 | cyan | divider; ready is not next; **GO LIVE** name the ready set; nobody decided that order |
+| 42–45 | ACT 6 | green | divider; fresh context files as memory; **GO LIVE** execute one packet; same spec any engine |
+| 46–47 | CLOSE | gold | Turn three closes (built / withheld / tomorrow, three commitment lines); the invariant (+ one neutral Bootcamp line) |
 
-Slides 37 and 38 are the two beats the first build pass missed — they carry the
-crank and the offer, so the commercial peak sits at 21:50 inside Act 4 and
-never at the close.
+Slides 36 and 37 carry the giveaway and pre-recorded crank. The current deck
+returns directly to the ready set; it has no ladder, pricing, or offer slide.
 
 ### 15.5 Task-Spec — frontmatter and six zones
 
@@ -644,7 +649,9 @@ index alone.
 ### 15.6 Assessment — does Task-Spec match where atomic tasks are going?
 
 Researched 2026-08-12 with Tavily, Exa and Firecrawl, then re-checked against
-the shipped tree at `~/GitHub/task-spec` (v3.7.0, commit `a943e55`).
+the current source tree at `~/GitHub/task-spec` (engine v3.7.0, commit
+`f027899`). The sibling README still labels the tag-dependent release doors as
+unpublished; the live giveaway therefore installs from source.
 
 **Corrected verdict: every convergent property the research found is already in
 v3.7.0.** Two negative findings from a first pass were wrong — they were read
@@ -714,89 +721,25 @@ Say it once, in the room, as the reason the night exists:
 > A plan is how humans agree. A packet is how an agent finishes. The window is
 > finite, so the unit has to be small enough to close inside it.
 
-### 15.8 Bootcamp — the peak sits in the middle, at 21:50
+### 15.8 Giveaway and preview — 21:50
 
-**Bootcamp Engenharia Agêntica na Prática** · 24–28/08, seg–sex ·
-19h30–23h30 ao vivo · de R$1.997 por **R$1.297** com o cupom `DESLIVE` ·
-garantia de 7 dias incondicional · checkout Eduzz.
-
-**Why it moves out of the close.** The old plan put it after movement 07, at
-~22:50 — the worst slot in the night: three hours in, after the reflection has
-already released the room's attention, and after anyone with an early morning
-has left. It moves to immediately after movement 04, at ~21:50:
-
-1. **Energy.** Twenty minutes past the break — the night's second peak.
-2. **Contrast is fresh.** The room watched a human hand-write one Task-Spec
-   for fifteen to twenty deliberately slow minutes; movement 04 then produces
-   four to six specs in seconds. The gap between those two experiences *is*
-   the offer.
-3. **Nobody has left.** Half the night still remains.
-4. **The night continues afterwards.** Movements 05 and 06 follow, and the
-   night still ends on the invariant. The pitch becomes a beat inside the
-   evening rather than the destination — and the biggest intellectual payoff
-   (exit check returns 0, the refusal holds) lands *after* the offer, which is
-   exactly when the undecided decide.
-
-**The disclosure that makes this honest.** Task-Spec is item 04 of the
-Bootcamp's own six-item arsenal — alongside the Second Brain, the OntoLayer,
-AgentSpec, the Multi-Model Harness, and Converge. Tonight the room receives one
-of the six, free and MIT, and uses it for three hours against a real
-repository. That framing is the whole pitch and it needs no salesmanship: *you
-have been using one sixth of the arsenal all night. It is yours to keep. The
-Bootcamp is the other five, plus the case they were built on.*
-
-**The three-beat sequence (≈5 minutes total).**
+The current deck uses two beats, about three minutes total, then returns
+directly to the ready set. The former ladder, pricing, and offer slide has been
+removed; no live checkpoint depends on it.
 
 **Beat 1 — the giveaway (60 s).** Task-Spec v3.7.0, MIT,
-`github.com/luanmorenommaciel/task-spec`. Real install line. Say plainly what
-it cannot do: it cannot size a task, cannot judge whether an eval is genuinely
-terminal, and cannot write a behavior a stakeholder would sign. Structure is
-free; judgment is not.
+`github.com/luanmorenommaciel/task-spec`. Use the source-checkout install line
+because the v3.7.0 release tag is not yet published. State the three judgment
+limits plainly: the tool cannot size a task, decide whether an eval is truly
+terminal, or write behavior a stakeholder would sign.
 
-**Beat 2 — the crank (90 s).** The desire beat. The room has watched one spec
-written by hand and four to six generated. Now show the loop *consuming* the
-graph — specs dispatched in dependency-respecting waves, evals deciding done,
-no human in the middle. One human wrote one spec in twenty minutes; the loop
-runs six without being asked. This is Day 4's subject arriving ninety seconds
-early, and it should be named as such — a legitimate preview, not a detour.
-**Pre-record it.** Nothing tonight is rehearsed, a live crank on a graph built
-minutes earlier is the single riskiest thing in the evening, and the beat only
-needs to be *seen*, not proven. Label it exactly as Day 2 labelled its
-illustrative output.
+**Beat 2 — the crank (90 s).** Show the loop consuming the graph in
+dependency-respecting waves. The clip is **pre-recorded** and must be announced
+as such before it plays. It previews Day 4; it is not evidence that the graph
+built live has already run.
 
-**Beat 3 — the ladder, then the offer (3 min).** Use the Bootcamp's own
-framing, because it is the most honest mirror the room will get: Dan Shapiro's
-five levels of code automation, mapped to the NHTSA autonomous-driving levels.
-
-| | | |
-| ---: | --- | --- |
-| 0 | Manual | every character needs your approval |
-| 1 | Delegated tasks | "write a test for this" |
-| 2 | Pairing in flow | where 90% of "AI-native" devs live |
-| **3** | **You became a manager** | **← the room is here. Life becomes reviewing diffs.** |
-| 4 | You became a PM | you write the spec, review plans, come back 12 hours later |
-| 5 | The autonomous factory | specs in, validated software out |
-
-Say the line the page says, because it is true and the room feels it: *almost
-everyone parks at level 3, and it feels like a downgrade.* Then place tonight:
-writing a Task-Spec whose exit check answers for itself is the first move from
-3 to 4. The Bootcamp is 4 → 5, over five nights, against NorthWind Pay — a real
-payments migration where the legacy system is the oracle and every number is
-validated centavo por centavo.
-
-Then the offer, plainly and once: **24–28/08, 19h30–23h30, five live nights, de
-R$1.997 por R$1.297 com o cupom DESLIVE, garantia de 7 dias incondicional.**
-Stop. No benefit stacking, no urgency language, no second CTA. Return to
-movement 05.
-
-**What must not happen:**
-
-- The Bootcamp must not be mentioned again after beat 3, except one neutral
-  line on the final slide. Two asks read as a funnel; one reads as an offer.
-- Do not oversell the crank. If the pre-recorded clip is described as live, the
-  night's entire credibility argument — evidence over claims — collapses.
-- Do not stack the arsenal. Naming Task-Spec as one of six is enough; listing
-  all six with benefits turns a disclosure into a sales page.
+After the clip, go straight to movement 05. Do not add pricing, an offer, or a
+second call to action to the current deck.
 
 ### 15.9 Build order status
 
@@ -806,8 +749,9 @@ movement 05.
 3. `plan/` decision: add BDD and an index layer — **not needed**: v3.7.0
    already ships Zone 2 Behavior and `TaskPlan/v1`. The checkpoint-04 giveaway
    is the real tool, installed from source; see §15.6.
-4. `presentation/d3.html` — **built and render-verified**: 49 slides at
-   1600×900, zero overflow, acts 2–6 merged in and their source files retired.
+4. `presentation/d3.html` — **built**: 47 slides after the ladder/offer and
+   enumeration-close slides were removed. Current slide-count, duplicate-id,
+   and console checks pass; the viewport evidence boundary is in §15.4.
 5. Rehearse `06-execute-one.md` end to end, then reset the artifacts it
    creates — **outstanding** before the live session.
 6. Commit `storage/specs/4-plan-transform.md` and `5-plan-serve.md` —
@@ -815,7 +759,7 @@ movement 05.
 
 ### 15.10 Blocker cleared
 
-`.gitignore:17` used to ignore `storage/specs/*.md`; Day 2's two plans existed
+The `.gitignore` session-output rule used to ignore `storage/specs/*.md`; Day 2's two plans existed
 on disk and were not in git. They are the only input to tonight's
 decomposition, and they were one `make bootstrap` away from being gone.
 Decision taken: carve an exception for the five specs rather than copy them to

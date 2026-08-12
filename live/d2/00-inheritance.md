@@ -34,9 +34,11 @@ Explain briefly:
 
 ## Backstage preflight
 
-Run before the audience joins. The specs are per-baseline generated evidence;
-if `make bootstrap` was re-run since they were captured, recapture them first
-(Day 1 checkpoints 03–06) — numbers from an older baseline must not be shown.
+This is the original Day 2 preflight and belongs in a separately authorized
+rehearsal copy. The specs are baseline-specific evidence; if `make bootstrap`
+was re-run since capture, restart from Day 1 checkpoints 03–06 in that rehearsal
+copy. Numbers from an older baseline must not be shown, and the tracked specs in
+the current checkout must not be overwritten.
 
 ```bash
 git status --short
@@ -145,8 +147,8 @@ make up
 make land
 ```
 
-If the specs are missing or stale, stop and recapture them via Day 1's
-checkpoints — do not substitute prepared copies without labeling them
-**prepared**.
+If the specs are missing or stale, stop. Restart from Day 1 in the separately
+authorized rehearsal copy; do not overwrite the tracked current artifacts or
+substitute prepared copies without labeling them **prepared**.
 
 Next: [`01-unbounded.md`](01-unbounded.md).

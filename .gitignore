@@ -16,8 +16,8 @@ tmp/
 # session output — anything a run writes here must never be mixed with live evidence
 storage/specs/*.md
 # ...except the five inherited specs. Nothing in the Makefile or src/ regenerates
-# these; they are hand-authored on Days 1 and 2 and are Day 3's only read-only
-# input. Untracked, one lost working copy loses them for good.
+# these; they are hand-authored on Days 1 and 2, tracked explicitly, and are Day
+# 3's read-only input.
 !storage/specs/1-context.md
 !storage/specs/2-ontology.md
 !storage/specs/3-technical-brief.md

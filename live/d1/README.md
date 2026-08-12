@@ -1,5 +1,10 @@
 # Day 1 — Interview the System Before You Build
 
+> **Repository state:** Day 1 has been executed. This runbook preserves the
+> original sequence; its three numbered outputs are now tracked, frozen evidence
+> and must not be overwritten in the current checkout. Replay only in a
+> separately authorized rehearsal copy.
+
 The question carried through the session is:
 
 > How much Revenue did TransactCo make yesterday, and why should the CFO trust
@@ -100,8 +105,9 @@ mkdir -p tmp/foundation-investigation/skill
 
 Move previous rehearsal artifacts to a uniquely named directory before a clean
 run. Prepared and live evidence must never be mixed. `make bootstrap` rebuilds
-the time-relative fixture, so any numbered specs produced against an earlier
-baseline become historical and must be recaptured before use.
+the time-relative fixture, so numbered specs produced against an earlier
+baseline become historical. Recapture only inside the separately authorized
+rehearsal copy; the tracked specs in the current checkout stay read-only.
 
 ## Shared boundaries
 

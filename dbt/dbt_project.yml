@@ -1,5 +1,5 @@
-# Plumbing only. No models ship with this repo -- staging, intermediate and
-# marts are built live during the week.
+# Plumbing plus the Day 2 staging example. Additional staging, intermediate,
+# and marts models are built live during the week.
 name: transactco
 version: 0.1.0
 config-version: 2

@@ -4,7 +4,18 @@ This folder is the executable teaching surface for Semana. The deck introduces
 one idea; the repository tests it; the evidence decides whether the sequence
 can continue.
 
-Start with [`d1/README.md`](d1/README.md).
+## Current module state
+
+| Module | Runbook | Deck | State in this checkout |
+| --- | --- | --- | --- |
+| Day 1 · Foundation | [`d1/README.md`](d1/README.md) | [`../presentation/d1.html`](../presentation/d1.html) | Executed; specs 1–3 are tracked evidence |
+| Day 2 · Harness | [`d2/README.md`](d2/README.md) | [`../presentation/d2.html`](../presentation/d2.html) | Executed; specs 4–5 and `stg_orders` are committed |
+| Day 3 · Specification | [`d3/README.md`](d3/README.md) | [`../presentation/d3.html`](../presentation/d3.html) | Execution started locally; first Task-Spec exists, graph and second model are incomplete |
+
+Days 1 and 2 preserve the exact sequence that produced the inherited artifacts;
+their preflight states are historical, not the current `main` preflight. Start
+with Day 3 as the current live module. Use an isolated rehearsal copy, not this
+checkout, to replay an executed night from its original starting state.
 
 ## Teaching loop
 
@@ -39,15 +50,17 @@ flowchart LR
 ## Safety boundary
 
 - Operational investigation is read-only.
-- Durable documents go only to the explicitly authorized file under
-  `storage/specs/`.
-- Temporary telemetry and skill packages stay under
-  `tmp/foundation-investigation/`.
+- Durable writes go only to the path explicitly authorized by the active
+  checkpoint.
+- The five tracked files under `storage/specs/` are inherited evidence and are
+  read-only in the current checkout.
+- Temporary telemetry, scaffolds, and rehearsal artifacts stay under `tmp/`.
 - Do not inspect instructor-control surfaces or run injection, reveal, scoring,
   reset, or source mutations during the live sequence.
 - Never put secrets, connection strings, personal data, or complete rows in
   prompts or artifacts.
 - Label fallbacks **prepared**.
 
-The planning source is [`../plan/semana.md`](../plan/semana.md); the Day 1
-runbook is the operational source for what happens on screen.
+The planning source is [`../plan/semana.md`](../plan/semana.md); each day's
+README and numbered checkpoints are the operational source for what happens on
+screen.

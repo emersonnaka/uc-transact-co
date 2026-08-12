@@ -1,5 +1,10 @@
 # Day 2 — The Harness: Authority Before Construction
 
+> **Repository state:** Day 2 has been executed. This runbook preserves the
+> original pre-staging sequence; the two plans, agent pair, and `stg_orders`
+> model it produced are now committed. Replay only in a separately authorized
+> rehearsal copy.
+
 The question carried through the session is:
 
 > The number waits for Finance. Meanwhile, build the pipeline — and tell me

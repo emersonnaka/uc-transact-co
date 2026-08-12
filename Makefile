@@ -48,7 +48,7 @@ skill-check: ## Validate the reusable investigation skill and package contract
 verify: ## Verify the clean baseline, landing parity and oracle isolation
 	@$(UV) transactco verify
 
-dbt-check: ## Validate the empty dbt shell without building student models
+dbt-check: ## Validate the current dbt profile and project without building models
 	@cd dbt && $(UV) dbt debug --profiles-dir .
 	@cd dbt && $(UV) dbt parse --profiles-dir .
 

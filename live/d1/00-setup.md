@@ -34,8 +34,9 @@ Explain briefly:
 
 ## Backstage preflight
 
-Run once before the audience joins. `make bootstrap` rebuilds generated data,
-so use it only with a disposable teaching environment.
+This is the original Day 1 preflight. Run it only in a separately authorized,
+disposable rehearsal copy: `make bootstrap` rebuilds generated data, while the
+tracked specs in the current checkout are frozen inputs.
 
 ```bash
 git status --short

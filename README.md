@@ -42,18 +42,20 @@ The first half asks for SQL. The second asks for semantics, evidence, system
 boundaries, and operational safety.
 
 This repository supplies the runnable source system, the controlled failure
-environment, and the first two guided modules of Semana Engenharia Agêntica.
-It is a teaching foundation, not a finished analytical product.
+environment, and three guided modules of Semana Engenharia Agêntica. Nights 1
+and 2 have been executed; the complete Night 3 module is built and its live
+execution has started, but is not complete. It is a teaching foundation, not a
+finished analytical product.
 
 | Ships ready | You construct |
 | --- | --- |
 | Postgres with the source schema applied at boot | Baseline-specific context, evidence, and technical brief |
-| Correlated, time-aware business data | dbt `staging` → `intermediate` → `marts` |
+| Correlated, time-aware business data | The remaining dbt `staging` → `intermediate` → `marts` work |
 | Postgres → DuckDB read-only landing | Agents that inspect, move, and transform |
 | Fourteen injectable failure modes | The incident detector |
 | Instructor truth isolated in `_control` | The controlled execution and verification loop |
 | A versioned ontology with `Revenue` explicitly unresolved | The Finance decisions that make Revenue meaningful |
-| Foundation and harness live runbooks | Baseline-specific evidence, plans, models, and learning artifacts |
+| Foundation, harness, and specification runbooks | Baseline-specific evidence, task packets, models, and learning artifacts |
 | Reusable investigation and harness-scaffold skills | The project-specific content and authority inside those structures |
 
 ## ⚡ Quickstart
@@ -73,8 +75,11 @@ parity, and validates the current dbt project and DuckDB profile.
 
 > **Reset boundary:** bootstrap replaces `warehouse.duckdb`. Preserve that file
 > before rerunning bootstrap if it contains detector or transformation work you
-> care about. It also invalidates generated evidence under `storage/specs/`;
-> recapture those artifacts against the new baseline before reusing them.
+> care about. It also makes the baseline-specific evidence under
+> `storage/specs/` stale. Those five files are now tracked, frozen inputs and
+> read-only under `AGENTS.md`; do not overwrite them in this checkout. A full
+> replay needs a deliberately prepared rehearsal copy and explicit authority to
+> recapture the evidence.
 
 Run `make setup` while network access is reliable. DuckDB downloads its Postgres
 extension during setup.
@@ -88,16 +93,18 @@ receives authority that was not written down.
 The modules form one cumulative artifact chain. The harness module inherits the
 foundation evidence; it is not a second, independent quickstart.
 
-| Module | Canonical question | Runbook | Deck | Session result |
-| --- | --- | --- | --- | --- |
-| Foundation investigation | What is true, what is inferred, and what remains a human decision? | [`live/d1/`](live/d1/) | [`presentation/d1.html`](presentation/d1.html) | Context inventory, ontology note, technical brief, investigation skill |
-| Harness and authority | What may the agent do, through which tools, paths, and gates? | [`live/d2/`](live/d2/) | [`presentation/d2.html`](presentation/d2.html) | Harness contract, bounded roles, sketch plans, one controlled dbt build, scaffold skill |
+| Module | Canonical question | Runbook | Deck | Session result | Repository state |
+| --- | --- | --- | --- | --- | --- |
+| Foundation investigation | What is true, what is inferred, and what remains a human decision? | [`live/d1/`](live/d1/) | [`presentation/d1.html`](presentation/d1.html) | Context inventory, ontology note, technical brief, investigation skill | Executed |
+| Harness and authority | What may the agent do, through which tools, paths, and gates? | [`live/d2/`](live/d2/) | [`presentation/d2.html`](presentation/d2.html) | Harness contract, bounded roles, sketch plans, one controlled dbt build, scaffold skill | Executed |
+| Specification and decomposition | What does done mean in a form a machine can answer? | [`live/d3/`](live/d3/) | [`presentation/d3.html`](presentation/d3.html) | Task-Spec, runnable evals, task graph, one bounded packet execution | Built; execution started, not complete |
 
-The foundation module writes baseline-specific evidence to `storage/specs/`.
-The harness module reads those artifacts, keeps `Revenue` blocked, and permits
-only the construction named by its confirmed contract. Each numbered checkpoint
-states whether to continue the current agent session, open a new one, or use no
-agent at all.
+The first two modules produced five baseline-specific artifacts under
+`storage/specs/` and the Day 2 `stg_orders` model. Those artifacts are now
+tracked, frozen inputs. The specification module reads them, keeps `Revenue`
+blocked, and permits only the construction named by its confirmed packet. Each
+numbered checkpoint states whether to continue the current agent session, open
+a new one, or use no agent at all.
 
 The semantic boundary is executable:
 
@@ -355,18 +362,19 @@ at a non-disposable database.
 | [`src/transactco/control/`](src/transactco/control/) | Builders | Verification, controlled evaluation, and scoring |
 | [`AGENTS.md`](AGENTS.md) · [`CLAUDE.md`](CLAUDE.md) | Agents | Cross-engine ground rules and the Day 2 role-definition surface |
 | [`plan/semana.md`](plan/semana.md) | Facilitators | Storytelling, session design, delivery gates, context pack, and runbook |
-| [`presentation/d1.html`](presentation/d1.html) · [`presentation/d2.html`](presentation/d2.html) | Facilitators | Foundation and harness decks — open in a browser, navigate with arrow keys or space |
+| [`presentation/d1.html`](presentation/d1.html) · [`presentation/d2.html`](presentation/d2.html) · [`presentation/d3.html`](presentation/d3.html) | Facilitators | Foundation, harness, and specification decks — open in a browser, navigate with arrow keys or space |
 | [`presentation/about-me.html`](presentation/about-me.html) | Facilitators | Optional presenter introduction deck |
 | [`live/`](live/) | Facilitators | Executable teaching surface — one numbered file per demo checkpoint |
 | [`skills/interview-the-system/`](skills/interview-the-system/) | Participants | Reusable skill, references, validator, and agent metadata |
 | [`skills/harness-scaffold/`](skills/harness-scaffold/) | Participants | Regenerable harness structure; scaffolding only, never authority or completed content |
-| [`storage/specs/`](storage/specs/) | Session workspace | Generated context, ontology, technical brief, and per-run plans; ignored and recaptured per baseline |
+| [`storage/specs/`](storage/specs/) | Session evidence | Five tracked, baseline-specific artifacts from Nights 1–2; frozen and read-only for Night 3 |
 | [`docs/semana-agentic-uc-transact-co-v2.pdf`](docs/semana-agentic-uc-transact-co-v2.pdf) | Maintainers | Historical source brief; preserved, not the operational runbook |
 
 The guided experience runs from the decks, numbered live checkpoints, approved
-artifacts, and reusable skills. The checkpoints generate review artifacts under
-`storage/specs/` and temporary traces/scaffolds under `tmp/`; both are local
-session evidence, not canonical repository truth.
+artifacts, and reusable skills. Nights 1–2 produced the five tracked review
+artifacts under `storage/specs/`; temporary traces and scaffolds remain under
+ignored `tmp/`. The specs are preserved session evidence, not universal or
+Finance-approved truth.
 
 The root README spans the complete project and names the failure/scoring
 surfaces. For a spoiler-safe foundation investigation, give the agent only the
@@ -381,12 +389,13 @@ allowlisted context described in `plan/semana.md`.
   for production.
 - Structural checks prove the encoded fixture contracts. They do not decide the
   business meaning of revenue, refunds, timezone, or late-arrival treatment.
-- Generated specs and traces are valid only for the baseline they inspected.
-  Rebuild the fixture, then recapture them instead of carrying old numbers
-  forward.
-- The dbt directories ship empty intentionally. The harness module adds one
-  bounded staging model live; production transformations, marts, completed role
-  content, and the detector remain participant work—not missing implementation.
+- Baseline-specific specs and traces are valid only for the fixture they
+  inspected. Rebuilding the fixture makes the tracked specs historical; do not
+  overwrite them in this checkout.
+- The Day 2 `stg_orders` model and its raw source declaration are committed.
+  Additional staging models, intermediate models, marts, completed role
+  content, the Day 3 `tasks/` graph, and the detector remain participant work—
+  not missing implementation.
 - A scaffold proves that required files and directories exist. It does not grant
   tool authority, fill the knowledge base, verify behavior, or approve a
   semantic decision.
@@ -416,6 +425,7 @@ run `make land && make verify`. Ordinary re-landing preserves
 
 `make verify` rejects a clean fixture when no order or payment has arrived in
 the last six hours. For a fresh start, run `make bootstrap`. If a later guided
-module already depends on `storage/specs/`, treat this as a controlled reset:
-rebuild the baseline, then recapture the foundation artifacts before continuing.
-Re-landing alone cannot make an aged source current.
+module already depends on `storage/specs/`, stop: bootstrap makes those frozen
+artifacts stale, and current agent instructions prohibit overwriting them. Use
+a separately authorized rehearsal copy for a full recapture. Re-landing alone
+cannot make an aged source current.
