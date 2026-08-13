@@ -1,0 +1,208 @@
+api_version: taskspec.dev/v1
+kind: TaskPlan
+approved: true
+metadata:
+  name: transform-5-8
+  source: storage/specs/4-plan-transform.md
+units:
+  - id: T-20260812-raw-payments-source
+    title: Declare the raw payments source
+    effort: S
+    profile: standard
+    agent: developer
+    execution_backend: claude
+    priority: P1
+    tags: [transform, staging, sources]
+    depends_on: []
+    touches_paths:
+      - dbt/models/staging/_raw_sources.yml
+    creates_paths: []
+    source_note: storage/specs/4-plan-transform.md#items-5-8
+    why: _raw_sources.yml declares only raw.orders today, so every unit for items 5, 6, plus 8 fails to parse until raw.payments exists as a declared source.
+    goal: Declare the raw.payments source table that items 5 to 8 read.
+    context: Scope reduction recorded for this manifest. Items 5 to 8 name int_ plus mart_ models, but the Day 2 contract authorizes writes only under dbt/models/staging/, so every model below carries an stg_ name inside the staging layer. The intermediate layer plus the marts layer need their own checkpoint. This unit is the shared prerequisite, plus the only unit that writes _raw_sources.yml, which keeps that file free of concurrent writers. Column list from infra/postgres/init/01_schema.sql — payment_id, order_id, amount, method, status, paid_at, ingested_at.
+    behaviors:
+      - id: B-1
+        given: a DuckDB raw mirror carrying public.payments with seven columns
+        when: dbt parses the staging directory
+        then: source('raw', 'payments') resolves with its seven columns declared
+    evals:
+      - id: eval_1
+        description: dbt parses the project with the payments source declared
+        command: make dbt-check && grep -q "name: payments" dbt/models/staging/_raw_sources.yml && grep -q "name: paid_at" dbt/models/staging/_raw_sources.yml
+        verifies: [B-1]
+        terminal: true
+        expected_duration_sec: 120
+    anti_patterns:
+      - Do not add a source for a table absent from infra/postgres/init/01_schema.sql.
+      - Do not create a model file in this unit.
+    do_not_touch:
+      - src/transactco/control
+      - storage/specs
+    open_questions: (none — the physical payments schema is evidenced in infra/postgres/init/01_schema.sql)
+
+  - id: T-20260812-stg-orders-payments-join
+    title: Join orders to payments keeping every order
+    effort: M
+    profile: standard
+    agent: developer
+    execution_backend: claude
+    priority: P2
+    tags: [transform, staging, item-5]
+    depends_on:
+      - T-20260812-raw-payments-source
+    touches_paths: []
+    creates_paths:
+      - dbt/models/staging/stg_orders_payments_reconciled.sql
+      - dbt/models/staging/_stg_reconciled.yml
+    source_note: storage/specs/4-plan-transform.md#item-5
+    why: E7 reports 0 amount mismatches where a payment exists, plus E8 counts 2,204 orders with no payment row. Both facts survive only under a left join that leaves the missing side null.
+    goal: Build the order to payment left join at one row per order.
+    context: Scope reduction. Item 5 names int_orders_payments_reconciled; under the Day 2 staging-only contract this model becomes stg_orders_payments_reconciled inside dbt/models/staging/. Prerequisite recorded, not assumed — item 4 (stg_payments) does not exist, since dbt/models/staging/ currently holds only stg_orders.sql plus _raw_sources.yml. This unit therefore reads source('raw', 'payments') directly, the same way stg_orders reads source('raw', 'orders'). Repointing to ref('stg_payments') once item 4 lands is a separate unit. No aggregation here.
+    behaviors:
+      - id: B-1
+        given: 8,000 order rows facing the raw payments table
+        when: the reconciled model is parsed
+        then: the SQL is a left join anchored on orders, carrying no filter on payment status
+      - id: B-2
+        given: the 2,204 orders that E8 shows carry no payment row
+        when: the reconciled model is read
+        then: those rows expose a null payment amount beside an explicit has_payment flag, never 0.00
+    evals:
+      - id: eval_1
+        description: the model parses as a left join anchored on orders
+        command: make dbt-check && grep -qi "left join" dbt/models/staging/stg_orders_payments_reconciled.sql && ! grep -qi "inner join" dbt/models/staging/stg_orders_payments_reconciled.sql && ! grep -qi "group by" dbt/models/staging/stg_orders_payments_reconciled.sql
+        verifies: [B-1]
+        terminal: false
+        expected_duration_sec: 120
+      - id: eval_2
+        description: missing payments stay null behind an explicit has_payment flag, with coalesce forbidden outright in this model
+        command: '! grep -qi "coalesce" dbt/models/staging/stg_orders_payments_reconciled.sql && grep -q "has_payment" dbt/models/staging/stg_orders_payments_reconciled.sql && grep -q "has_payment" dbt/models/staging/_stg_reconciled.yml'
+        verifies: [B-2]
+        terminal: true
+        expected_duration_sec: 30
+    anti_patterns:
+      - Do not use an inner join, which silently drops the 2,204 unpaid orders.
+      - Do not coalesce a missing payment amount to 0.00.
+      - Do not aggregate in this unit.
+    do_not_touch:
+      - src/transactco/control
+      - storage/specs
+      - dbt/models/staging/_raw_sources.yml
+    open_questions: (none — the join is a physical reconciliation, carrying no business rule)
+
+  - id: T-20260812-stg-returns-refunds-mirror
+    title: Mirror returned orders against refunded payments
+    effort: M
+    profile: standard
+    agent: developer
+    execution_backend: claude
+    priority: P2
+    tags: [transform, staging, item-6]
+    depends_on:
+      - T-20260812-raw-payments-source
+    touches_paths: []
+    creates_paths:
+      - dbt/models/staging/stg_returns_refunds.sql
+    source_note: storage/specs/4-plan-transform.md#item-6
+    why: E9 reports 3,049 refunded payments equal to 3,049 returned orders. That equality is a measurement to publish, never an adjustment to apply.
+    goal: Build the refunded to returned mirror as two counted sides.
+    context: Scope reduction. Item 6 names int_returns_refunds; under the staging-only contract this model becomes stg_returns_refunds. Observed in infra/postgres/init/01_schema.sql — the database carries four tables, customers, products, orders, payments. There is no returns table plus no refunds table, so the mirror compares orders.status = 'returned' from the E5 vocabulary against payments.status = 'refunded' from the E6 vocabulary. D3, which decides whether refunds subtract plus in which period, is unresolved under Finance, so this unit only counts both sides side by side.
+    behaviors:
+      - id: B-1
+        given: 3,049 refunded payments facing 3,049 returned orders
+        when: the mirror model is parsed
+        then: both sides appear as counted columns, with no subtraction applied to any amount
+    evals:
+      - id: eval_1
+        description: the mirror parses, counts both sides, subtracts nothing
+        command: make dbt-check && grep -qi "returned" dbt/models/staging/stg_returns_refunds.sql && grep -qi "refunded" dbt/models/staging/stg_returns_refunds.sql && ! grep -qiE "amount[[:space:]]*-|-[[:space:]]*sum" dbt/models/staging/stg_returns_refunds.sql
+        verifies: [B-1]
+        terminal: true
+        expected_duration_sec: 120
+    anti_patterns:
+      - Do not net refunds against order or payment amounts, since D3 is unresolved.
+      - Do not present the mirror as a correction to any daily total.
+    do_not_touch:
+      - src/transactco/control
+      - storage/specs
+      - dbt/models/staging/_raw_sources.yml
+    open_questions: D3 — do refunds subtract in-period, subtract at-origin, or report separately? Owner is Finance, per storage/specs/2-ontology.md. This unit does not need D3 answered, since it only counts. Any model that subtracts does.
+
+  - id: T-20260812-stg-daily-captured-payments
+    title: Sum captured payments per UTC calendar day
+    effort: M
+    profile: standard
+    agent: developer
+    execution_backend: claude
+    priority: P2
+    tags: [transform, staging, item-8]
+    depends_on:
+      - T-20260812-raw-payments-source
+    touches_paths: []
+    creates_paths:
+      - dbt/models/staging/stg_daily_captured_payments.sql
+    source_note: storage/specs/4-plan-transform.md#item-8
+    why: Candidate 2 in the technical brief, R$ 980,870.44 over 632 payments, has to stay reproducible beside candidate 1, which is what makes the two numbers comparable instead of contradictory.
+    goal: Aggregate captured payment amounts by paid_at in UTC.
+    context: Scope reduction. Item 8 names mart_daily_captured_payments; under the staging-only contract this model becomes stg_daily_captured_payments. Item 4 (stg_payments) does not exist, so this model reads source('raw', 'payments') directly. Same UTC calendar-day technical window as item 7. This unit does not claim capture is the recognition event, since D2 is unresolved under Finance.
+    behaviors:
+      - id: B-1
+        given: payments carrying the two-value status vocabulary captured plus refunded
+        when: the daily model is parsed
+        then: it groups on paid_at cast to a UTC date, filters status to captured, exposes no column named revenue
+    evals:
+      - id: eval_1
+        description: the model parses on the paid_at grain filtered to captured
+        command: make dbt-check && grep -q "paid_at" dbt/models/staging/stg_daily_captured_payments.sql && grep -q "captured" dbt/models/staging/stg_daily_captured_payments.sql && ! grep -qi "revenue" dbt/models/staging/stg_daily_captured_payments.sql
+        verifies: [B-1]
+        terminal: true
+        expected_duration_sec: 120
+    anti_patterns:
+      - Do not label this aggregate as recognized revenue, since D2 is unresolved.
+      - Do not subtract refunded payments, since D3 is unresolved.
+    do_not_touch:
+      - src/transactco/control
+      - storage/specs
+      - dbt/models/staging/_raw_sources.yml
+    open_questions: D2 — is the recognition event order placed, payment captured, or delivery? Owner is Finance, per storage/specs/2-ontology.md. This unit publishes a capture-clock measurement without asserting it is the recognition event.
+
+  - id: T-20260812-daily-grain-decision
+    title: Halt on the business day grain decision
+    effort: S
+    profile: standard
+    agent: architect
+    execution_backend: claude
+    priority: P1
+    tags: [escalation, semantics, d4]
+    produces: [escalation]
+    depends_on:
+      - T-20260812-stg-daily-captured-payments
+    touches_paths: []
+    creates_paths: []
+    source_note: storage/specs/4-plan-transform.md#items-7-8-d4-block
+    why: D4 is unresolved, so choosing a business-day grain here would be an agent deciding business meaning that storage/specs/2-ontology.md assigns to Finance.
+    goal: Escalate the business day grain question to its named owner.
+    context: Scope reduction applies to the two models under review. They live in dbt/models/staging/ as stg_ models rather than mart_ models, per the Day 2 contract. Item 7 is not a unit of this manifest, since the backlog already carries T-20260812-daily-gross-ordered, which creates dbt/models/staging/stg_daily_gross_ordered.sql under the same rules; only item 8 is authored here, so depends_on names only the captured-payments unit while this review still inspects both daily models. This unit writes no model, which is why its write surface is empty. It confirms both daily models still declare a UTC calendar-day technical window, confirms no aggregate has been renamed Revenue, then stops at the D4 block. The verdict belongs to Finance; the architect role writes nothing.
+    behaviors:
+      - id: B-1
+        given: D1 to D4 recorded unresolved in storage/specs/2-ontology.md
+        when: the staging tree is inspected after items 7 plus 8 land
+        then: no business-day grain exists anywhere in staging, no model or column is named revenue, both daily models still parse
+    evals:
+      - id: eval_1
+        description: staging carries no business-day grain plus no revenue naming
+        command: '! grep -riE "business_day|business day|revenue" dbt/models/staging/ && make dbt-check && make test'
+        verifies: [B-1]
+        terminal: true
+        expected_duration_sec: 240
+    anti_patterns:
+      - Do not implement a business-day calendar before Finance resolves D4.
+      - Do not present candidate 1 or candidate 2 as the revenue number.
+      - Do not close this unit by choosing a grain; close it by recording the owner's answer.
+    do_not_touch:
+      - src/transactco/control
+      - storage/specs
+      - dbt/models/staging/_raw_sources.yml
+    open_questions: D4 — is the daily grain a store-timezone business day or a UTC calendar day? Owner is Finance. D4 — which currency handling applies to a multi-currency day? Owner is Finance. D1, D2, plus D3 also stay unresolved, so no aggregate from items 7 to 8 may be renamed Revenue. Owner is Finance, per storage/specs/2-ontology.md.
+    rollback: Nothing to revert, since this unit writes no files. Park it with the owner name if D4 stays open.
