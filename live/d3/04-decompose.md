@@ -82,7 +82,7 @@ contrato confirmado.
 NÃO escreva arquivos. Proponha no chat um único manifesto TaskPlan/v1 com
 approved: false, seguindo o schema de
 ~/GitHub/task-spec/docs/examples/task-plan.yaml. O facilitador salvará a versão
-aprovada em tasks/.plans/transform-5-8.yaml.
+aprovada em tasks/.plans/transform.yaml.
 
 Cada unidade: id T-20260812-<slug>, um único objetivo sem "e", effort,
 depends_on explícito, touches_paths e creates_paths dentro de
@@ -100,14 +100,14 @@ escolhida por você. Resuma em no máximo 120 palavras e pare.
 
 The architect reviews the response against the contract and returns a verdict.
 After a human accepts that verdict, the facilitator saves the exact accepted
-YAML as `tasks/.plans/transform-5-8.yaml`. Session B still writes nothing.
+YAML as `tasks/.plans/transform.yaml`. Session B still writes nothing.
 
 ### Move 2 — preview the graph, changing nothing
 
 The facilitator runs:
 
 ```bash
-taskspec plan --manifest tasks/.plans/transform-5-8.yaml
+taskspec plan --manifest tasks/.plans/transform.yaml
 ```
 
 This prints one row per unit with its kind, size and backend, plus a digest — and
@@ -127,7 +127,7 @@ Then the facilitator generates. Try it once *before* flipping if you want the be
 refuses with `TaskPlan must set approved: true before generation`.
 
 ```bash
-taskspec batch --plan tasks/.plans/transform-5-8.yaml
+taskspec batch --plan tasks/.plans/transform.yaml
 ```
 
 ### Move 4 — let the tool prove its own output
@@ -187,7 +187,7 @@ Ask the room:
 
 ## Gate
 
-- `tasks/.plans/transform-5-8.yaml` exists and was previewed before approval.
+- `tasks/.plans/transform.yaml` exists and was previewed before approval.
 - `taskspec plan` was shown writing nothing.
 - 4–6 units exist, each with one objective and no "and" in its title.
 - Every unit names `depends_on` explicitly; `taskspec lint` reports the DAG.

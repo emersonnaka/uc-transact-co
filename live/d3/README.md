@@ -89,7 +89,7 @@ storage/specs/
 
 tasks/
 ├── .plans/
-│   └── transform-5-8.yaml   # the TaskPlan/v1 manifest — reviewed, then approved
+│   └── transform.yaml   # the TaskPlan/v1 manifest — reviewed, then approved
 ├── _state.yaml              # derived index, rebuilt by taskspec rebuild-state
 ├── _metrics.jsonl           # append-only status log — carries the item-10 refusal
 └── T-20260812-*.md          # one Task-Spec per atomic change
