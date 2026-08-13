@@ -1,0 +1,148 @@
+- generic [ref=e2]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - generic [ref=e7]: Movement 01 · ▶ 01
+        - generic [ref=e8]: "01"
+        - heading "Green that proves nothing" [level=2] [ref=e9]
+        - paragraph [ref=e10]: Six specs are ready. The first thing we run is an eval that cannot fail. The green is real. The proof is not. Then the session is discarded.
+        - generic [ref=e11]:
+          - generic [ref=e12]: 3 ways to lie
+          - generic [ref=e13]: exit 0
+          - generic [ref=e14]: 0 files written
+          - generic [ref=e15]: session discarded
+      - generic [ref=e16]:
+        - generic [ref=e17]: Four claims, then we throw it away
+        - generic [ref=e18]:
+          - generic [ref=e19]:
+            - generic [ref=e20]: the smell
+            - generic [ref=e21]: An eval can be green and empty
+            - generic [ref=e22]: assertion-free tests have a name — they pass because they assert nothing
+          - generic [ref=e24]:
+            - generic [ref=e25]: three ways
+            - generic [ref=e26]: true · the wrong artifact · a file that exists
+            - generic [ref=e27]: each one returns 0 · none of them built tonight's model
+          - generic [ref=e29]:
+            - generic [ref=e30]: checkpoint 01 · live
+            - generic [ref=e31]: Run the eval that cannot fail
+            - generic [ref=e32]: eval_1 is make dbt-check — the project already parses · the new model is not on disk
+          - generic [ref=e34]:
+            - generic [ref=e35]: the line that lands
+            - generic [ref=e36]: A passing test is a claim
+            - generic [ref=e37]: tonight we make it evidence — this session does not survive the act
+        - paragraph [ref=e38]: No model is built in this act. The villain is proven, then discarded with its session.
+    - generic [ref=e39]: "Act map per plan/d4-act-prompts.md ACT 1. eval_1 is the verbatim function in tasks/T-20260812-daily-gross-ordered.md. make dbt-check → \"All checks passed!\" · eval_1 exit=0 · ls dbt/models/staging/stg_daily_gross_ordered.sql → No such file or directory. Run 2026-08-13. External: Martin Fowler, \"Assertion Free Testing\", 2004-08 — names the assertion-free smell."
+  - generic [ref=e41]:
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - generic [ref=e44]: The villain · three greens
+        - heading "Three ways an eval lies." [level=2] [ref=e45]
+      - paragraph [ref=e46]: Each of these returns 0. None of them built the model.
+    - generic [ref=e47]:
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - generic [ref=e50]: "01"
+          - generic [ref=e51]: assertion-free
+        - generic [ref=e52]: Tests nothing
+        - generic [ref=e53]: "# tautology · no assertion true"
+        - generic [ref=e54]:
+          - generic [ref=e55]: exit=0
+          - generic [ref=e56]: looks green
+        - paragraph [ref=e57]: "Fowler's name for this, August 2004: assertion-free testing — a green bar with no assertion in it."
+      - generic [ref=e58]:
+        - generic [ref=e59]:
+          - generic [ref=e60]: "02"
+          - generic [ref=e61]: wrong artifact
+        - generic [ref=e62]: Tests the project
+        - generic [ref=e63]: "# eval_1 · verifies B-1, on disk eval_1() { make dbt-check >/dev/null 2>&1; }"
+        - generic [ref=e64]:
+          - generic [ref=e65]: exit=0
+          - generic [ref=e66]: looks green
+        - paragraph [ref=e67]: dbt already says All checks passed! The check is the Day 2 project, not tonight's model.
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - generic [ref=e70]: "03"
+          - generic [ref=e71]: existence-only
+        - generic [ref=e72]: Tests a file exists
+        - generic [ref=e73]: "# yesterday's file, not tonight's test -f dbt/models/staging/ stg_orders.sql"
+        - generic [ref=e74]:
+          - generic [ref=e75]: exit=0
+          - generic [ref=e76]: looks green
+        - paragraph [ref=e77]: stg_orders.sql is on disk from Day 2. stg_daily_gross_ordered.sql is not — that test exits 1.
+    - generic [ref=e78]:
+      - generic [ref=e79]: all three look green
+      - generic [ref=e80]: A test that stays green when the work is missing is not a gate. It is a decoration.
+    - generic [ref=e81]: "true; echo \"true exit=$?\" → true exit=0. eval_1 from tasks/T-20260812-daily-gross-ordered.md → eval_1 exit=0. make dbt-check → \"All checks passed!\". test -f dbt/models/staging/stg_orders.sql → exit=0. test -f dbt/models/staging/stg_daily_gross_ordered.sql → exit=1 · ls: No such file or directory. Run 2026-08-13. External: Martin Fowler, \"Assertion Free Testing\", 2004-08 — names assertion-free testing. External: Vladyslav Dmitriiev, \"Your green tests are lying\", 2026-07 — they pass because they cannot fail."
+  - generic [ref=e83]:
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - generic [ref=e86]: ▶ Go live · checkpoint 01
+        - heading "Run the eval that cannot fail" [level=2] [ref=e87]
+      - paragraph [ref=e88]: One function. One exit code. Nothing is written, and the session does not survive.
+    - generic [ref=e89]:
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - generic [ref=e93]:
+            - generic [ref=e94]: Checkpoint 01
+            - generic [ref=e95]: The eval that cannot fail
+          - generic [ref=e96]: live/d4/01-*.md
+        - generic [ref=e97]:
+          - generic [ref=e98]: The question
+          - generic [ref=e99]: If we run only eval_1, does the spec look done — and did anything get built?
+          - generic [ref=e100]: Session
+          - generic [ref=e101]: NEW — Session A, disposable. Discard it the moment this checkpoint ends.
+          - generic [ref=e102]: Action
+          - generic [ref=e103]:
+            - text: Extract and run
+            - code [ref=e104]: eval_1
+            - text: only. Do not run eval_2. Write no file.
+          - generic [ref=e105]: Evidence
+          - generic [ref=e106]:
+            - code [ref=e107]: eval_1 exit=0
+            - text: ·
+            - code [ref=e108]: "ls: stg_daily_gross_ordered.sql: No such file or directory"
+          - generic [ref=e109]: Gate
+          - generic [ref=e110]: the room can say the green proved nothing · zero files written
+          - generic [ref=e111]: Come back when
+          - generic [ref=e112]: Session A is discarded. Nothing it produced enters tonight's work.
+      - generic [ref=e113]:
+        - generic [ref=e114]: The prompt · pasted live, once
+        - generic [ref=e115]: "prompt · pt-br # uma sessão, descartada ao terminar Rode somente o eval_1 de tasks/T-20260812-daily-gross-ordered.md. eval_1() { make dbt-check >/dev/null 2>&1; } Não escreva nenhum arquivo. Mostre o código de saída e se stg_daily_gross_ordered.sql existe."
+        - generic [ref=e116]:
+          - generic [ref=e117]:
+            - generic [ref=e118]: the number that comes back
+            - generic [ref=e119]: eval_1 exit=0
+            - generic [ref=e120]: make dbt-check already reports All checks passed!
+          - generic [ref=e122]:
+            - generic [ref=e123]: the file that does not
+            - generic [ref=e124]: No such file or directory
+            - generic [ref=e125]: stg_daily_gross_ordered.sql is still absent · staging holds two files
+    - generic [ref=e126]: "Live checkpoint path per plan/d4-act-prompts.md: live/d4/01-*.md (file not on disk as of 2026-08-13). Evidence from this session: eval_1 exit=0 · make dbt-check → \"All checks passed!\" · ls dbt/models/staging/stg_daily_gross_ordered.sql → No such file or directory · ls -la dbt/models/staging/ → _raw_sources.yml + stg_orders.sql. eval_1 verbatim from tasks/T-20260812-daily-gross-ordered.md."
+  - generic [ref=e128]:
+    - generic [ref=e129]:
+      - generic [ref=e130]: The verdict · session discarded
+      - generic [ref=e131]: session A · discarded
+    - generic [ref=e132]:
+      - paragraph [ref=e133]: The loop did exactly what it was told, and what it was told proved nothing.
+      - generic [ref=e134]: Invisible false confidence — a green check with no work behind it
+      - paragraph [ref=e137]: eval_1 returned 0. The model file is still absent. Session A is discarded. Nothing it produced enters tonight's work.
+    - generic [ref=e138]:
+      - generic [ref=e139]: eval_1 exit=0
+      - generic [ref=e140]: file absent
+      - generic [ref=e141]: 0 files written
+      - generic [ref=e142]: discarded
+    - generic [ref=e143]: "Verdict line per plan/d4-act-prompts.md ACT 1 slide 4. Numbers from this session, 2026-08-13: eval_1 exit=0 · ls: dbt/models/staging/stg_daily_gross_ordered.sql: No such file or directory. Session disposal follows the Day 3 Session A rule (live/d3/01-plausible-plan.md): discard the moment the checkpoint ends."
+  - generic [ref=e145]:
+    - generic [ref=e146]: Movement 01 · act close
+    - heading "A passing test is a claim. Tonight we make it evidence." [level=2] [ref=e147]: A passing test is a claim.Tonight we make it evidence.
+    - generic [ref=e148]:
+      - generic [ref=e149]: the line that lands
+      - paragraph [ref=e150]: Green is not the proof. Green is the thing we still have to prove. An eval earns trust only when it can fail.
+    - generic [ref=e151]:
+      - generic [ref=e152]: assertion-free · named 2004-08
+      - generic [ref=e153]: wrong artifact · eval_1
+      - generic [ref=e154]: existence-only · yesterday's file
+    - generic [ref=e155]:
+      - generic [ref=e156]: Next · Act 2
+      - paragraph [ref=e157]: An eval that can fail — mutation discrimination. Break the model on purpose and watch the eval notice. live/d4/02-*.md.
+    - generic [ref=e158]: "Closing line per plan/d4-act-prompts.md ACT 1 slide 5, verbatim: \"A passing test is a claim. Tonight we make it evidence.\" Next movement per the locked agenda — ACT 2 at 20:35, live/d4/02-*.md. External: Martin Fowler, \"Assertion Free Testing\", 2004-08. External: Vladyslav Dmitriiev, \"Your green tests are lying\", 2026-07."

@@ -1,0 +1,193 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - generic [ref=f3e3]: OPENING
+    - generic [ref=f3e4]: 01 / 03
+  - navigation "Slide navigation" [ref=f3e9]:
+    - button "Go to slide 1" [ref=f3e10] [cursor=pointer]
+    - button "Go to slide 2" [ref=f3e11] [cursor=pointer]
+    - button "Go to slide 3" [ref=f3e12] [cursor=pointer]
+  - generic [ref=f3e13]:
+    - generic [ref=f3e15]:
+      - generic [ref=f3e16]: Semana Engenharia Agêntica · Day 4 of 5 · 20:00–23:00 BRT
+      - generic [ref=f3e17]:
+        - generic [ref=f3e18]:
+          - heading "The Loop" [level=1] [ref=f3e20]
+          - paragraph [ref=f3e21]: Last night produced a graph of six provable units and ran none of them. Tonight it runs — and every run leaves a receipt you can read after the room goes home.
+        - generic [ref=f3e22]:
+          - generic [ref=f3e23]: The night's four rails
+          - list [ref=f3e24]:
+            - listitem [ref=f3e25]:
+              - generic [ref=f3e27]:
+                - generic [ref=f3e28]:
+                  - generic [ref=f3e29]: "01"
+                  - generic [ref=f3e30]: Dispatch
+                - generic [ref=f3e31]: the graph decides what runs next — nobody schedules it
+            - listitem [ref=f3e32]:
+              - generic [ref=f3e34]:
+                - generic [ref=f3e35]:
+                  - generic [ref=f3e36]: "02"
+                  - generic [ref=f3e37]: Proof
+                - generic [ref=f3e38]: an eval earns trust by failing when the thing it guards breaks
+            - listitem [ref=f3e39]:
+              - generic [ref=f3e41]:
+                - generic [ref=f3e42]:
+                  - generic [ref=f3e43]: "03"
+                  - generic [ref=f3e44]: Receipt
+                - generic [ref=f3e45]: a sealed sign-off, and a record of who ran what, when
+            - listitem [ref=f3e46]:
+              - generic [ref=f3e48]:
+                - generic [ref=f3e49]:
+                  - generic [ref=f3e50]: "04"
+                  - generic [ref=f3e51]: Measurement
+                - generic [ref=f3e52]: the unit of work becomes the unit of measurement
+          - paragraph [ref=f3e53]: "Same shape as the last three nights: why, contract, evidence, gate. Tonight the gate is the part that has to be able to fail."
+      - generic [ref=f3e54]:
+        - paragraph [ref=f3e55]: Six specs are ready and nobody has run one. What happens when no one is watching — and how do I know the green means anything?
+        - paragraph [ref=f3e56]: Engineering Lead, TransactCo ◆ the question Day 3 handed to Day 4
+      - generic [ref=f3e57]:
+        - generic [ref=f3e58]:
+          - img "Luan Moreno" [ref=f3e59]
+          - generic [ref=f3e60]:
+            - generic [ref=f3e61]: Luan Moreno
+            - generic [ref=f3e62]: Principal Forward-Deployed Engineer · Agentic Engineering · Data & AI
+        - generic [ref=f3e63]:
+          - generic [ref=f3e64]:
+            - generic [ref=f3e65]: Access
+            - generic [ref=f3e66]: Writes stay inside dbt/models/staging/ and tasks/ — the Day 2 contract still governs every run.
+          - generic [ref=f3e67]:
+            - generic [ref=f3e68]: Evidence
+            - generic [ref=f3e69]: A check that cannot return non-zero is not evidence. Tonight every eval must be able to fail.
+          - generic [ref=f3e70]:
+            - generic [ref=f3e71]: Output
+            - generic [ref=f3e72]: Signed specs, executed packets, and a metrics log where right now there is no file at all.
+      - generic [ref=f3e73]: "Repository, verified 2026-08-13 · taskspec version → 3.7.0 · cat tasks/_state.yaml → total 6 · ready 6 · in_progress 0 · blocked 0 · done 0 · parked 0 · taskspec metrics → “No metrics file found at tasks/_metrics.jsonl” (exit 1). Four rails and the carried question: plan/d4-act-prompts.md §The locked agenda. Contract line: AGENTS.md — developer writes dbt/models/staging/ only."
+    - generic [ref=f3e75]:
+      - generic [ref=f3e76]: What Day 3 left us
+      - heading "What survived the night" [level=2] [ref=f3e77]
+      - paragraph [ref=f3e78]:
+        - text: Day 3 ended with a graph, not a build.
+        - generic [ref=f3e79]: Six Task-Specs under tasks/, every one valid, every one reporting DOD=COMPLETE.
+        - text: Not one has been executed. Not one has been signed.
+      - generic [ref=f3e80]:
+        - generic [ref=f3e81]: 6 specs · DOD=COMPLETE
+        - generic [ref=f3e82]: LINT=OK
+        - generic [ref=f3e83]: 0 executed
+        - generic [ref=f3e84]: 0 signed
+        - generic [ref=f3e85]: 0 metrics records
+      - generic [ref=f3e86]: What remains after three nights
+      - img "Four state facts, each sourced. Six specs DOD=COMPLETE. done 0. signed_off false. No metrics file found." [ref=f3e87]:
+        - generic [ref=f3e88]:
+          - generic [ref=f3e89]: "6"
+          - generic [ref=f3e90]: specs, every one DOD=COMPLETE
+          - generic [ref=f3e91]:
+            - text: taskspec validate · taskspec dod
+            - generic [ref=f3e92]: valid · DOD=COMPLETE · once per file
+        - generic [ref=f3e93]:
+          - generic [ref=f3e94]: "0"
+          - generic [ref=f3e95]: "executed · done: 0"
+          - generic [ref=f3e96]:
+            - text: cat tasks/_state.yaml
+            - generic [ref=f3e97]: "done: 0"
+        - generic [ref=f3e98]:
+          - generic [ref=f3e99]: "false"
+          - generic [ref=f3e100]: signed_off · nothing gated
+          - generic [ref=f3e101]:
+            - text: grep '^signed_off:' tasks/T-*.md
+            - generic [ref=f3e102]: false on five · one field absent
+        - generic [ref=f3e103]:
+          - generic [ref=f3e104]: "0"
+          - generic [ref=f3e105]: metrics records
+          - generic [ref=f3e106]:
+            - text: taskspec metrics
+            - generic [ref=f3e107]: No metrics file found at tasks/_metrics.jsonl
+      - generic [ref=f3e108]:
+        - generic [ref=f3e109]: the inheritance, named
+        - generic [ref=f3e110]: The graph is complete and has never moved. Every unit is described, ordered and provable. Nothing has been dispatched, nothing signed, nothing measured.
+      - paragraph [ref=f3e111]: We verify all of it live in Movement 00. The unit of work exists. The unit of measurement does not.
+      - generic [ref=f3e112]: "All verified 2026-08-13 · taskspec validate and taskspec dod, run once per file over the six tasks/T-*.md → valid, DOD=COMPLETE · taskspec ready → 2 rows (daily-gross-ordered, raw-payments-source) + “(4 ready spec(s) hidden — blocked by an unmet depends_on; --all shows them)” · taskspec lint → LINT=OK, one write-disjoint group “dbt/models (5 task(s))” — daily-grain-decision writes nothing and is not in it · cat tasks/_state.yaml → done: 0 · ls dbt/models/staging/ → _raw_sources.yml, stg_orders.sql only · make dbt-check → “All checks passed!”, exit 0 · taskspec metrics → the line shown, exit 1. Sign-off: grep of tasks/T-*.md shows signed_off: false on five specs; the hand-written T-20260812-daily-gross-ordered carries no sign-off field at all. Nothing has been gated either way."
+    - generic [ref=f3e114]:
+      - generic [ref=f3e115]:
+        - generic [ref=f3e116]:
+          - generic [ref=f3e117]:
+            - generic [ref=f3e118]: Day 4
+            - generic [ref=f3e119]: eight movements · one giveaway · two rings light
+          - heading "The programme" [level=2] [ref=f3e120]
+        - paragraph [ref=f3e121]: Eight movements and eight visits to the repository. In the middle, we build an eval that is allowed to fail.
+      - generic [ref=f3e122]:
+        - img "Night timeline, 20:00 to 23:00. Each band is proportional to its minutes. Break is a gap. The 21:50 beat is gold. Movements 02, 03 and 04 sit in the middle of the night." [ref=f3e123]:
+          - generic [ref=f3e124]:
+            - generic [ref=f3e125]: 20:00
+            - generic [ref=f3e126]: 21:00
+            - generic [ref=f3e127]: 22:00
+            - generic [ref=f3e128]: 23:00
+          - generic [ref=f3e140]: ✦
+          - generic [ref=f3e144]:
+            - generic [ref=f3e145]: "00"
+            - generic [ref=f3e146]: "01"
+            - generic [ref=f3e147]: "02"
+            - generic [ref=f3e148]: "03"
+            - generic [ref=f3e149]: —
+            - generic [ref=f3e150]: "04"
+            - generic [ref=f3e151]: "05"
+            - generic [ref=f3e152]: "06"
+            - generic [ref=f3e153]: "07"
+          - generic [ref=f3e154]: 02–04 · THE MIDDLE OF THE NIGHT
+        - generic [ref=f3e155]:
+          - generic [ref=f3e156]:
+            - generic [ref=f3e157]: "00"
+            - generic [ref=f3e158]: Turn four — the graph that has never moved
+            - generic [ref=f3e159]: two rings left dim all week · the map completes tonight
+            - generic [ref=f3e160]: 20:00 · 12 min · ▶ 00
+          - generic [ref=f3e161]:
+            - generic [ref=f3e162]: "01"
+            - generic [ref=f3e163]: Green that proves nothing
+            - generic [ref=f3e164]: an eval that cannot fail · exit 0, and nothing built
+            - generic [ref=f3e165]: 20:12 · 23 min · ▶ 01
+          - generic [ref=f3e166]:
+            - generic [ref=f3e167]: "02"
+            - generic [ref=f3e168]:
+              - text: An eval that can fail
+              - generic [ref=f3e169]: Topic
+            - generic [ref=f3e170]: mutation discrimination — break it on purpose, watch the gate catch it
+            - generic [ref=f3e171]: 20:35 · 25 min · ▶ 02
+          - generic [ref=f3e172]:
+            - generic [ref=f3e173]: "03"
+            - generic [ref=f3e174]:
+              - text: The holdout
+              - generic [ref=f3e175]: Topic
+            - generic [ref=f3e176]: the evaluator the executor is not allowed to read
+            - generic [ref=f3e177]: 21:00 · 20 min · ▶ 03
+          - generic [ref=f3e178]:
+            - generic [ref=f3e179]: —
+            - generic [ref=f3e180]: Break
+            - generic [ref=f3e181]: the sealed holdout stays on screen
+            - generic [ref=f3e182]: 21:20 · 10 min
+          - generic [ref=f3e183]:
+            - generic [ref=f3e184]: "04"
+            - generic [ref=f3e185]: The authorization chain
+            - generic [ref=f3e186]: gate → handoff → run → accept · which step a human owns
+            - generic [ref=f3e187]: 21:30 · 20 min · ▶ 04
+          - generic [ref=f3e188]:
+            - generic [ref=f3e189]: ✦
+            - generic [ref=f3e190]: Giveaway → crank → Bootcamp
+            - generic [ref=f3e191]: tonight's skill, free · the loop, not pre-recorded · one door
+            - generic [ref=f3e192]: 21:50 · 5 min
+          - generic [ref=f3e193]:
+            - generic [ref=f3e194]: "05"
+            - generic [ref=f3e195]: Waves
+            - generic [ref=f3e196]: a write-disjoint frontier — the graph chose it, not a scheduler
+            - generic [ref=f3e197]: 22:00 · 20 min · ▶ 05
+          - generic [ref=f3e198]:
+            - generic [ref=f3e199]: "06"
+            - generic [ref=f3e200]: The unit of measurement
+            - generic [ref=f3e201]: Act 0 found no metrics file · read the one tonight wrote
+            - generic [ref=f3e202]: 22:20 · 30 min · ▶ 06
+          - generic [ref=f3e203]:
+            - generic [ref=f3e204]: "07"
+            - generic [ref=f3e205]: Turn four closes
+            - generic [ref=f3e206]: six rings lit · what ran, what stayed human, what tomorrow builds
+            - generic [ref=f3e207]: 22:50 · 10 min · ▶ 07
+      - generic [ref=f3e208]:
+        - paragraph [ref=f3e209]: "Every ▶ is a numbered file in live/d4/ — same rule as the last three nights: one bounded action, one named proof, one visible gate."
+        - generic [ref=f3e210]: 20:00–23:00 · 8 checkpoints · 1 giveaway · 45 slides
+      - generic [ref=f3e211]: "Rows, times and movement names: plan/d4-act-prompts.md §The locked agenda and §OPENING (2026-08-13) — 43 slides across nine acts. Repository check: ls live/d4 → “No such file or directory” on 2026-08-13; the seven checkpoint runbooks are authored before the session, so this row set is the programme as locked, not a directory listing. Precedent for the format: presentation/d3.html slide 3 and live/d3/README.md."

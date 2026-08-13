@@ -1,0 +1,1720 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - generic [ref=f1e3]: OPENING
+    - generic [ref=f1e4]: 01 / 46
+  - navigation "Slide navigation" [ref=f1e6]:
+    - button "Go to slide 1" [ref=f1e7] [cursor=pointer]
+    - button "Go to slide 2" [ref=f1e8] [cursor=pointer]
+    - button "Go to slide 3" [ref=f1e9] [cursor=pointer]
+    - button "Go to slide 4" [ref=f1e10] [cursor=pointer]
+    - button "Go to slide 5" [ref=f1e11] [cursor=pointer]
+    - button "Go to slide 6" [ref=f1e12] [cursor=pointer]
+    - button "Go to slide 7" [ref=f1e13] [cursor=pointer]
+    - button "Go to slide 8" [ref=f1e14] [cursor=pointer]
+    - button "Go to slide 9" [ref=f1e15] [cursor=pointer]
+    - button "Go to slide 10" [ref=f1e16] [cursor=pointer]
+    - button "Go to slide 11" [ref=f1e17] [cursor=pointer]
+    - button "Go to slide 12" [ref=f1e18] [cursor=pointer]
+    - button "Go to slide 13" [ref=f1e19] [cursor=pointer]
+    - button "Go to slide 14" [ref=f1e20] [cursor=pointer]
+    - button "Go to slide 15" [ref=f1e21] [cursor=pointer]
+    - button "Go to slide 16" [ref=f1e22] [cursor=pointer]
+    - button "Go to slide 17" [ref=f1e23] [cursor=pointer]
+    - button "Go to slide 18" [ref=f1e24] [cursor=pointer]
+    - button "Go to slide 19" [ref=f1e25] [cursor=pointer]
+    - button "Go to slide 20" [ref=f1e26] [cursor=pointer]
+    - button "Go to slide 21" [ref=f1e27] [cursor=pointer]
+    - button "Go to slide 22" [ref=f1e28] [cursor=pointer]
+    - button "Go to slide 23" [ref=f1e29] [cursor=pointer]
+    - button "Go to slide 24" [ref=f1e30] [cursor=pointer]
+    - button "Go to slide 25" [ref=f1e31] [cursor=pointer]
+    - button "Go to slide 26" [ref=f1e32] [cursor=pointer]
+    - button "Go to slide 27" [ref=f1e33] [cursor=pointer]
+    - button "Go to slide 28" [ref=f1e34] [cursor=pointer]
+    - button "Go to slide 29" [ref=f1e35] [cursor=pointer]
+    - button "Go to slide 30" [ref=f1e36] [cursor=pointer]
+    - button "Go to slide 31" [ref=f1e37] [cursor=pointer]
+    - button "Go to slide 32" [ref=f1e38] [cursor=pointer]
+    - button "Go to slide 33" [ref=f1e39] [cursor=pointer]
+    - button "Go to slide 34" [ref=f1e40] [cursor=pointer]
+    - button "Go to slide 35" [ref=f1e41] [cursor=pointer]
+    - button "Go to slide 36" [ref=f1e42] [cursor=pointer]
+    - button "Go to slide 37" [ref=f1e43] [cursor=pointer]
+    - button "Go to slide 38" [ref=f1e44] [cursor=pointer]
+    - button "Go to slide 39" [ref=f1e45] [cursor=pointer]
+    - button "Go to slide 40" [ref=f1e46] [cursor=pointer]
+    - button "Go to slide 41" [ref=f1e47] [cursor=pointer]
+    - button "Go to slide 42" [ref=f1e48] [cursor=pointer]
+    - button "Go to slide 43" [ref=f1e49] [cursor=pointer]
+    - button "Go to slide 44" [ref=f1e50] [cursor=pointer]
+    - button "Go to slide 45" [ref=f1e51] [cursor=pointer]
+    - button "Go to slide 46" [ref=f1e52] [cursor=pointer]
+  - generic [ref=f1e53]:
+    - generic [ref=f1e55]:
+      - generic [ref=f1e56]: Semana Engenharia Agêntica · Day 4 of 5 · 20:00–23:00 BRT
+      - generic [ref=f1e57]:
+        - generic [ref=f1e58]:
+          - heading "The Loop" [level=1] [ref=f1e60]
+          - paragraph [ref=f1e61]: Last night produced a graph of six provable units and ran none of them. Tonight it runs — and every run leaves a receipt you can read after the room goes home.
+        - generic [ref=f1e62]:
+          - generic [ref=f1e63]: The night's four rails
+          - list [ref=f1e64]:
+            - listitem [ref=f1e65]:
+              - generic [ref=f1e67]:
+                - generic [ref=f1e68]:
+                  - generic [ref=f1e69]: "01"
+                  - generic [ref=f1e70]: Dispatch
+                - generic [ref=f1e71]: the graph decides what runs next — nobody schedules it
+            - listitem [ref=f1e72]:
+              - generic [ref=f1e74]:
+                - generic [ref=f1e75]:
+                  - generic [ref=f1e76]: "02"
+                  - generic [ref=f1e77]: Proof
+                - generic [ref=f1e78]: an eval earns trust by failing when the thing it guards breaks
+            - listitem [ref=f1e79]:
+              - generic [ref=f1e81]:
+                - generic [ref=f1e82]:
+                  - generic [ref=f1e83]: "03"
+                  - generic [ref=f1e84]: Receipt
+                - generic [ref=f1e85]: a sealed sign-off, and a record of who ran what, when
+            - listitem [ref=f1e86]:
+              - generic [ref=f1e88]:
+                - generic [ref=f1e89]:
+                  - generic [ref=f1e90]: "04"
+                  - generic [ref=f1e91]: Measurement
+                - generic [ref=f1e92]: the unit of work becomes the unit of measurement
+          - paragraph [ref=f1e93]: "Same shape as the last three nights: why, contract, evidence, gate. Tonight the gate is the part that has to be able to fail."
+      - generic [ref=f1e94]:
+        - paragraph [ref=f1e95]: Six specs are ready and nobody has run one. What happens when no one is watching — and how do I know the green means anything?
+        - paragraph [ref=f1e96]: Engineering Lead, TransactCo ◆ the question Day 3 handed to Day 4
+      - generic [ref=f1e97]:
+        - generic [ref=f1e98]:
+          - img "Luan Moreno" [ref=f1e99]
+          - generic [ref=f1e100]:
+            - generic [ref=f1e101]: Luan Moreno
+            - generic [ref=f1e102]: Principal Forward-Deployed Engineer · Agentic Engineering · Data & AI
+        - generic [ref=f1e103]:
+          - generic [ref=f1e104]:
+            - generic [ref=f1e105]: Access
+            - generic [ref=f1e106]: Writes stay inside dbt/models/staging/ and tasks/ — the Day 2 contract still governs every run.
+          - generic [ref=f1e107]:
+            - generic [ref=f1e108]: Evidence
+            - generic [ref=f1e109]: A check that cannot return non-zero is not evidence. Tonight every eval must be able to fail.
+          - generic [ref=f1e110]:
+            - generic [ref=f1e111]: Output
+            - generic [ref=f1e112]: Signed specs, executed packets, and a metrics log where right now there is no file at all.
+      - generic [ref=f1e113]: "Repository, verified 2026-08-13 · taskspec version → 3.7.0 · cat tasks/_state.yaml → total 6 · ready 6 · in_progress 0 · blocked 0 · done 0 · parked 0 · taskspec metrics → “No metrics file found at tasks/_metrics.jsonl” (exit 1). Four rails and the carried question: plan/d4-act-prompts.md §The locked agenda. Contract line: AGENTS.md — developer writes dbt/models/staging/ only."
+    - generic [ref=f1e115]:
+      - generic [ref=f1e116]:
+        - generic [ref=f1e117]:
+          - generic [ref=f1e118]: What Day 3 left us
+          - heading "What survived the night" [level=2] [ref=f1e119]
+          - paragraph [ref=f1e120]:
+            - text: Day 3 ended with a graph, not a build.
+            - generic [ref=f1e121]: Six Task-Specs under tasks/, every one valid, every one reporting DOD=COMPLETE.
+            - text: Not one has been executed. Not one has been signed.
+          - generic [ref=f1e122]:
+            - generic [ref=f1e123]: 6 specs · DOD=COMPLETE
+            - generic [ref=f1e124]: LINT=OK
+            - generic [ref=f1e125]: 0 executed
+            - generic [ref=f1e126]: 0 signed
+            - generic [ref=f1e127]: 0 metrics records
+          - generic [ref=f1e128]:
+            - generic [ref=f1e129]: the inheritance, named
+            - generic [ref=f1e130]: The graph is complete and has never moved. Every unit is described, ordered and provable. Nothing has been dispatched, nothing signed, nothing measured.
+        - generic [ref=f1e131]:
+          - generic [ref=f1e132]: What remains after three nights
+          - generic [ref=f1e133]:
+            - generic [ref=f1e134]:
+              - generic [ref=f1e135]: storage/specs/1..5 · Days 1–2
+              - generic [ref=f1e136]: Context · ontology · plans
+              - generic [ref=f1e137]:
+                - text: what is true, what is a decision, who owns it · Revenue
+                - generic [ref=f1e138]: unresolved
+                - text: · owner Finance
+            - generic [ref=f1e140]:
+              - generic [ref=f1e141]: AGENTS.md + dbt/models/staging/ · Day 2
+              - generic [ref=f1e142]: The rails still hold
+              - generic [ref=f1e143]:
+                - text: architect + developer ·
+                - code [ref=f1e144]: make dbt-check
+                - text: passes · one model,
+                - code [ref=f1e145]: stg_orders.sql
+                - text: ·
+                - generic [ref=f1e146]: committed
+            - generic [ref=f1e148]:
+              - generic [ref=f1e149]: tasks/ · Day 3
+              - generic [ref=f1e150]: Six specs, one graph
+              - generic [ref=f1e151]:
+                - text: each
+                - code [ref=f1e152]: validate
+                - text: OK and
+                - code [ref=f1e153]: DOD=COMPLETE
+                - text: ·
+                - code [ref=f1e154]: ready
+                - text: shows a 2-wide frontier, 4 hidden ·
+                - code [ref=f1e155]: lint
+                - text: finds one write-disjoint group of 5 under
+                - code [ref=f1e156]: dbt/models
+            - generic [ref=f1e158]:
+              - generic [ref=f1e159]: tonight
+              - generic [ref=f1e160]: The graph runs
+              - generic [ref=f1e161]: dispatch it, prove the eval can fail, sign the result, and leave a record behind
+          - 'img "taskspec metrics prints: No metrics file found at tasks/_metrics.jsonl" [ref=f1e162]':
+            - generic [ref=f1e163]: $ taskspec metrics
+            - generic [ref=f1e164]: No metrics file found at tasks/_metrics.jsonl
+          - paragraph [ref=f1e165]: We verify all of it live in Movement 00. The unit of work exists. The unit of measurement does not.
+      - generic [ref=f1e166]: "All verified 2026-08-13 · taskspec validate and taskspec dod, run once per file over the six tasks/T-*.md → valid, DOD=COMPLETE · taskspec ready → 2 rows (daily-gross-ordered, raw-payments-source) + “(4 ready spec(s) hidden — blocked by an unmet depends_on; --all shows them)” · taskspec lint → LINT=OK, one write-disjoint group “dbt/models (5 task(s))” — daily-grain-decision writes nothing and is not in it · cat tasks/_state.yaml → done: 0 · ls dbt/models/staging/ → _raw_sources.yml, stg_orders.sql only · make dbt-check → “All checks passed!”, exit 0 · taskspec metrics → the line shown, exit 1. Sign-off: grep of tasks/T-*.md shows signed_off: false on five specs; the hand-written T-20260812-daily-gross-ordered carries no sign-off field at all. Nothing has been gated either way."
+    - generic [ref=f1e168]:
+      - generic [ref=f1e169]:
+        - generic [ref=f1e170]:
+          - generic [ref=f1e171]:
+            - generic [ref=f1e172]: Day 4
+            - generic [ref=f1e173]: eight movements · one guest · one giveaway · two rings light
+          - heading "The programme" [level=2] [ref=f1e174]
+        - paragraph [ref=f1e175]: Eight movements, eight visits to the repository, and one guest on what an eval actually is. In the middle, we build an eval that is allowed to fail.
+      - img "Relative weight of the eight movements and the guest segment; the mutation-discrimination eval and the authorization chain are the two largest." [ref=f1e177]
+      - generic [ref=f1e190]:
+        - generic [ref=f1e191]:
+          - generic [ref=f1e192]: "00"
+          - generic [ref=f1e193]: 20:00
+          - generic [ref=f1e194]:
+            - text: Turn four — the graph that has never moved
+            - generic [ref=f1e195]: two rings left dim all week · the map completes tonight
+          - generic [ref=f1e196]: ▶ 00
+        - generic [ref=f1e197]:
+          - generic [ref=f1e198]: ✦
+          - generic [ref=f1e199]: 20:12
+          - generic [ref=f1e200]:
+            - text: Guest — Rafael Rodrigues on evals
+            - generic [ref=f1e201]: what an eval is · what it can prove · how it is used in practice
+          - generic [ref=f1e202]: 10 min
+        - generic [ref=f1e203]:
+          - generic [ref=f1e204]: "01"
+          - generic [ref=f1e205]: 20:22
+          - generic [ref=f1e206]:
+            - text: Green that proves nothing
+            - generic [ref=f1e207]: an eval that cannot fail · exit 0, and nothing built
+          - generic [ref=f1e208]: ▶ 01
+        - generic [ref=f1e209]:
+          - generic [ref=f1e210]: "02"
+          - generic [ref=f1e211]: 20:35
+          - generic [ref=f1e212]:
+            - text: An eval that can fail
+            - generic [ref=f1e213]: Topic
+            - generic [ref=f1e214]: mutation discrimination — break it on purpose, watch the gate catch it
+          - generic [ref=f1e215]: ▶ 02
+        - generic [ref=f1e216]:
+          - generic [ref=f1e217]: "03"
+          - generic [ref=f1e218]: 21:00
+          - generic [ref=f1e219]:
+            - text: An eval the agent cannot read
+            - generic [ref=f1e220]: Topic
+            - generic [ref=f1e221]: a holdout — sealed before the agent ever runs
+          - generic [ref=f1e222]: ▶ 03
+        - generic [ref=f1e223]:
+          - generic [ref=f1e224]: —
+          - generic [ref=f1e225]: 21:20
+          - generic [ref=f1e226]:
+            - text: Break
+            - generic [ref=f1e227]: the holdout stays sealed — digest visible, tests not
+          - generic [ref=f1e228]: —
+        - generic [ref=f1e229]:
+          - generic [ref=f1e230]: "04"
+          - generic [ref=f1e231]: 21:30
+          - generic [ref=f1e232]:
+            - text: The authorization chain
+            - generic [ref=f1e233]: gate → handoff → run → accept · which step a human owns
+          - generic [ref=f1e234]: ▶ 04
+        - generic [ref=f1e235]:
+          - generic [ref=f1e236]: ✦
+          - generic [ref=f1e237]: 21:50
+          - generic [ref=f1e238]:
+            - text: Giveaway → crank → Bootcamp
+            - generic [ref=f1e239]: tonight's skill, free · the loop, not pre-recorded · one door
+          - generic [ref=f1e240]: 5 min
+        - generic [ref=f1e241]:
+          - generic [ref=f1e242]: "05"
+          - generic [ref=f1e243]: 22:00
+          - generic [ref=f1e244]:
+            - text: Waves
+            - generic [ref=f1e245]: a write-disjoint frontier — the graph chose it, not a scheduler
+          - generic [ref=f1e246]: ▶ 05
+        - generic [ref=f1e247]:
+          - generic [ref=f1e248]: "06"
+          - generic [ref=f1e249]: 22:20
+          - generic [ref=f1e250]:
+            - text: The unit of measurement
+            - generic [ref=f1e251]: Act 0 found no metrics file · read the one tonight wrote
+          - generic [ref=f1e252]: ▶ 06
+        - generic [ref=f1e253]:
+          - generic [ref=f1e254]: "07"
+          - generic [ref=f1e255]: 22:50
+          - generic [ref=f1e256]:
+            - text: Turn four closes
+            - generic [ref=f1e257]: six rings lit · what ran, what stayed human, what tomorrow builds
+          - generic [ref=f1e258]: ▶ 07
+      - generic [ref=f1e259]:
+        - paragraph [ref=f1e260]: "Every ▶ is a numbered file in live/d4/ — same rule as the last three nights: one bounded action, one named proof, one visible gate."
+        - generic [ref=f1e261]: 20:00–23:00 · 8 checkpoints · 1 guest · 1 giveaway · 46 slides
+      - generic [ref=f1e262]: "Rows, times and movement names: plan/d4-act-prompts.md §The locked agenda and §OPENING (2026-08-13). Deck as built: 46 slides across nine acts plus a guest segment — the 20:12 row is a ten-minute handover taken out of movement 01, so no later time moved. Repository check: ls live/d4 → “No such file or directory” on 2026-08-13; the seven checkpoint runbooks are authored before the session, so this row set is the programme as locked, not a directory listing. Precedent for the format: presentation/d3.html slide 3 and live/d3/README.md."
+    - generic [ref=f1e264]:
+      - generic [ref=f1e265]:
+        - generic [ref=f1e266]:
+          - generic [ref=f1e267]: Movement 00 · ▶ 00
+          - generic [ref=f1e268]: "00"
+          - heading "The graph exists. Nothing has moved." [level=2] [ref=f1e269]
+          - paragraph [ref=f1e270]: Day 3 ended with six Task-Specs on disk — all valid, all reporting done. None has run. None is signed. Tonight that graph turns for the first time.
+          - generic [ref=f1e271]:
+            - generic [ref=f1e272]: 6 specs
+            - generic [ref=f1e273]: 0 executed
+            - generic [ref=f1e274]: 0 signed
+            - generic [ref=f1e275]: 0 receipts
+        - generic [ref=f1e276]:
+          - generic [ref=f1e277]: Four claims, all on disk
+          - generic [ref=f1e278]:
+            - generic [ref=f1e279]:
+              - generic [ref=f1e280]: The graph exists
+              - generic [ref=f1e281]: Six Task-Specs, all valid, all ready
+              - generic [ref=f1e282]: taskspec ready --all lists six · taskspec dod returns DOD=COMPLETE
+            - generic [ref=f1e284]:
+              - generic [ref=f1e285]: Nothing has run
+              - generic [ref=f1e286]: "done: 0"
+              - generic [ref=f1e287]: the state file counts six ready, zero done — not one spec executed
+            - generic [ref=f1e289]:
+              - generic [ref=f1e290]: Nothing is signed
+              - generic [ref=f1e291]: "signed_off: false"
+              - generic [ref=f1e292]: no spec carries a seal — nothing was gated, nothing was accepted
+            - generic [ref=f1e294]:
+              - generic [ref=f1e295]: Green is not yet evidence
+              - generic [ref=f1e296]: taskspec metrics finds no file
+              - generic [ref=f1e297]: the unit of work exists; the unit of measurement does not yet
+          - paragraph [ref=f1e298]: No terminal in this act. We open the inheritance, then hand to Act 1.
+      - generic [ref=f1e299]: "taskspec ready --all (six ready specs) · taskspec dod tasks/T-*.md → DOD=COMPLETE ×6 (script is single-file; run per spec) · cat tasks/_state.yaml → stats: total 6, ready 6, done 0 · grep signed_off tasks/T-*.md → false / absent · taskspec metrics → \"No metrics file found at tasks/_metrics.jsonl\". All run 2026-08-13."
+    - generic [ref=f1e301]:
+      - generic [ref=f1e302]:
+        - generic [ref=f1e303]: The map · night four · the last two rings
+        - heading "Two rings light. The map completes." [level=2] [ref=f1e304]
+        - paragraph [ref=f1e305]: Every previous night left these two dim and said "waits for Day 4." Tonight both light — Loop and Eval + human gate — and the six-ring map is finished for the first time.
+        - generic [ref=f1e306]:
+          - heading "The first night two rings light at once." [level=3] [ref=f1e307]
+          - paragraph [ref=f1e308]: Graph, Harness, Context and Prompt/Spec are earned — solid, practiced against TransactCo. Loop and Eval stay hot until the night proves them. Completing the map is the spine of the night, not the end of it.
+          - paragraph [ref=f1e309]: What turns tonight is the loop. Nothing on this figure has moved yet.
+        - generic [ref=f1e310]: Ring model as presented on Days 1–3 (presentation/d1.html, d2.html, d3.html). Earned = practiced against TransactCo with artifacts on disk. Loop + Eval light tonight (Day 4) per plan/d4-act-prompts.md — the six-ring map completes. The figure is a status map, not a metric.
+      - 'img "The six engineering rings as a Day 4 progress map: Graph, Harness, Context and Prompt/Spec earned on prior nights; Loop and Eval + human gate light tonight in green, completing the map." [ref=f1e312]':
+        - generic [ref=f1e320]: Graph
+        - generic [ref=f1e321]: earned day 1 · Revenue still unresolved
+        - generic [ref=f1e322]: Eval + human gate
+        - generic [ref=f1e323]: tonight · the gate that can fail
+        - generic [ref=f1e324]: Loop
+        - generic [ref=f1e325]: tonight · dispatch → proof → receipt
+        - generic [ref=f1e326]: Harness
+        - generic [ref=f1e327]: earned day 2 · the rails still govern
+        - generic [ref=f1e328]: Context
+        - generic [ref=f1e329]: earned day 1
+        - generic [ref=f1e330]: Prompt / Spec
+        - generic [ref=f1e331]: earned day 3 · six specs, ready
+        - generic [ref=f1e332]: Model
+        - generic [ref=f1e333]: capability engine
+        - generic [ref=f1e334]: ✓ the unit of work — earned day 3
+        - generic [ref=f1e335]: ✓ the world it can see — selected
+        - generic [ref=f1e336]: ✓ the hands and the brakes — earned day 2
+        - generic [ref=f1e337]: ● the engine of persistence — tonight
+        - generic [ref=f1e338]: ● the proof and the accountable decision — tonight
+        - generic [ref=f1e339]: ✓ the common language — one concept still owned by Finance
+    - generic [ref=f1e341]:
+      - generic [ref=f1e342]:
+        - generic [ref=f1e343]:
+          - generic [ref=f1e344]: The inheritance · in numbers
+          - heading "Complete. Valid. Never run." [level=2] [ref=f1e345]
+        - paragraph [ref=f1e346]: Day 3 built the graph and did not move it. Three numbers say everything the night inherits.
+      - img "Status matrix for six Task-Specs. Every spec is validated and DOD complete. None is executed or signed." [ref=f1e347]:
+        - generic [ref=f1e348]:
+          - generic [ref=f1e349]: spec id
+          - generic [ref=f1e350]: validated
+          - generic [ref=f1e351]: DOD=COMPLETE
+          - generic [ref=f1e352]: executed
+          - generic [ref=f1e353]: signed
+        - generic [ref=f1e354]:
+          - generic [ref=f1e355]: T-20260812-daily-grain-decision
+          - generic [ref=f1e356]: ✓
+          - generic [ref=f1e358]: ✓
+          - generic [ref=f1e360]: —
+          - generic [ref=f1e362]: —
+        - generic [ref=f1e364]:
+          - generic [ref=f1e365]: T-20260812-daily-gross-ordered
+          - generic [ref=f1e366]: ✓
+          - generic [ref=f1e368]: ✓
+          - generic [ref=f1e370]: —
+          - generic [ref=f1e372]: —
+        - generic [ref=f1e374]:
+          - generic [ref=f1e375]: T-20260812-raw-payments-source
+          - generic [ref=f1e376]: ✓
+          - generic [ref=f1e378]: ✓
+          - generic [ref=f1e380]: —
+          - generic [ref=f1e382]: —
+        - generic [ref=f1e384]:
+          - generic [ref=f1e385]: T-20260812-stg-daily-captured-payments
+          - generic [ref=f1e386]: ✓
+          - generic [ref=f1e388]: ✓
+          - generic [ref=f1e390]: —
+          - generic [ref=f1e392]: —
+        - generic [ref=f1e394]:
+          - generic [ref=f1e395]: T-20260812-stg-orders-payments-join
+          - generic [ref=f1e396]: ✓
+          - generic [ref=f1e398]: ✓
+          - generic [ref=f1e400]: —
+          - generic [ref=f1e402]: —
+        - generic [ref=f1e404]:
+          - generic [ref=f1e405]: T-20260812-stg-returns-refunds-mirror
+          - generic [ref=f1e406]: ✓
+          - generic [ref=f1e408]: ✓
+          - generic [ref=f1e410]: —
+          - generic [ref=f1e412]: —
+      - generic [ref=f1e414]:
+        - generic [ref=f1e415]:
+          - generic [ref=f1e416]:
+            - generic [ref=f1e417]: "6"
+            - generic [ref=f1e418]: Task-Specs on disk, every one valid, every one reporting DOD=COMPLETE
+          - generic [ref=f1e419]: taskspec dod · run per file · all six return DOD=COMPLETE
+        - generic [ref=f1e420]:
+          - generic [ref=f1e421]:
+            - generic [ref=f1e422]: "0"
+            - generic [ref=f1e423]: "executed — the state file counts done: 0; no second staging model exists"
+          - generic [ref=f1e424]: tasks/_state.yaml · stats.done = 0 · staging holds two inherited files
+        - generic [ref=f1e425]:
+          - generic [ref=f1e426]:
+            - generic [ref=f1e427]: "0"
+            - generic [ref=f1e428]: "signed — signed_off: false on five; the hand-written spec has no seal field at all"
+          - generic [ref=f1e429]: grep signed_off · nothing was ever gated or accepted
+      - generic [ref=f1e430]:
+        - generic [ref=f1e431]: the graph has not moved · where the six sit
+        - generic [ref=f1e432]: ready → in_progress → done
+        - generic [ref=f1e433]:
+          - generic [ref=f1e434]: ready 6
+          - text: · in_progress 0 · done 0
+      - paragraph [ref=f1e435]: "\"Complete\" is a claim the machine makes. \"Done\" is a receipt the loop has never written."
+      - generic [ref=f1e436]: "taskspec dod tasks/T-*.md → DOD=COMPLETE ×6 (single-file script; run per spec). cat tasks/_state.yaml → stats: total 6 · ready 6 · in_progress 0 · done 0. grep signed_off tasks/T-*.md → false on five, absent on T-20260812-daily-gross-ordered (v0 frontmatter). ls -la dbt/models/staging/ → _raw_sources.yml + stg_orders.sql only. \"Complete\" is not \"done\": transcripts/d3-12-08-26-record.cc.vtt ≈00:14:34 — «A definição de completo tem que ser dada por um Eval… validado por um humano». Run 2026-08-13."
+    - generic [ref=f1e438]:
+      - generic [ref=f1e439]:
+        - generic [ref=f1e440]:
+          - generic [ref=f1e441]: The gap · work vs measurement
+          - heading "A spec is a promise. A run is a receipt." [level=2] [ref=f1e442]
+        - paragraph [ref=f1e443]: Six specs are complete — and none of that means a single one ran. Here is why the two are different.
+      - generic [ref=f1e444]:
+        - generic [ref=f1e445]:
+          - generic [ref=f1e446]: the work · what Day 3 left
+          - generic [ref=f1e447]: Six specs. All valid. All DOD=COMPLETE.
+          - paragraph [ref=f1e448]: A Task-Spec is a promise of work — intention, behaviour, contract, guardrails. It is text.
+          - generic [ref=f1e449]:
+            - paragraph [ref=f1e450]: "\"Texts that imply a need — with no physical or quantitative guarantee.\""
+            - generic [ref=f1e451]: Day 3 · on the record
+            - paragraph [ref=f1e454]: «Eles são textos que implicam uma necessidade — sem nenhum tipo de garantia física ou quantitativa.» · ≈00:24:22
+        - generic [ref=f1e455]:
+          - generic [ref=f1e456]: the receipt · what tonight produces
+          - generic [ref=f1e457]: A run leaves a receipt.
+          - paragraph [ref=f1e458]: A spec becomes evidence only when it runs — and only when a human signs the result.
+          - generic [ref=f1e459]:
+            - paragraph [ref=f1e460]: "\"Done has to be given by an eval — and validated by a human.\""
+            - generic [ref=f1e461]: Day 3 · on the record
+            - paragraph [ref=f1e464]: «A definição de completo tem que ser dada por um Eval — validado por um humano.» · ≈00:14:34
+      - generic [ref=f1e465]: The graph is complete on paper. The measurement — the receipt that says a run happened — does not exist yet. That is the gap tonight closes.
+      - generic [ref=f1e467]: "Transcript quotes: transcripts/d3-12-08-26-record.cc.vtt — «Eles são textos que implicam uma necessidade, sem nenhum tipo de garantia física ou quantitativa» ≈00:24:22; «A definição de completo tem que ser dada por um Eval… validado de alguma forma por um humano» ≈00:14:34. Repo state: taskspec dod (DOD=COMPLETE ×6), tasks/_state.yaml (done 0), taskspec metrics (no file). Run 2026-08-13."
+    - generic [ref=f1e469]:
+      - generic [ref=f1e470]:
+        - generic [ref=f1e471]: The unit of measurement · absent
+        - heading "The work exists. The measurement does not." [level=2] [ref=f1e472]
+        - paragraph [ref=f1e473]: One command. One line. The whole inheritance in a sentence — the loop has never produced a receipt.
+      - generic [ref=f1e474]:
+        - generic [ref=f1e475]:
+          - generic [ref=f1e480]: zsh — taskspec
+          - generic [ref=f1e481]: tasks/_metrics.jsonl
+        - generic [ref=f1e482]:
+          - generic [ref=f1e483]: $ taskspec metrics
+          - generic [ref=f1e485]: No metrics file found at tasks/_metrics.jsonl
+          - generic [ref=f1e486]: ∅
+      - paragraph [ref=f1e488]: "Exit code 1. The tool is honest: there is nothing to measure yet. Tonight every run leaves a receipt here."
+      - generic [ref=f1e489]: "taskspec metrics — verbatim stdout: \"No metrics file found at tasks/_metrics.jsonl\" (exit 1). The file tasks/_metrics.jsonl does not exist on disk. Run 2026-08-13."
+    - generic [ref=f1e491]:
+      - generic [ref=f1e492]:
+        - generic [ref=f1e493]: The night's equation · as a wheel
+        - heading "Loop = dispatch + proof + receipt" [level=2] [ref=f1e494]
+        - paragraph [ref=f1e495]: Three terms, three owners. If any term is missing, the loop is decoration.
+        - generic [ref=f1e496]:
+          - generic [ref=f1e497]:
+            - generic [ref=f1e498]: "01"
+            - generic [ref=f1e499]: "dispatch — the graph names who runs next · owner: taskspec ready"
+          - generic [ref=f1e500]:
+            - generic [ref=f1e501]: "02"
+            - generic [ref=f1e502]: "proof — a machine-run check that can fail · owner: the eval / exit check"
+          - generic [ref=f1e503]:
+            - generic [ref=f1e504]: "03"
+            - generic [ref=f1e505]: "receipt — a signed record the run happened · owner: the human gate / signed_off"
+        - generic [ref=f1e506]:
+          - heading "The wheel turns only when all three move together." [level=3] [ref=f1e507]
+          - paragraph [ref=f1e508]: Dispatch without proof is delegation. Proof without a receipt is a claim. The receipt is what makes the green mean something.
+        - generic [ref=f1e509]: "Equation framing per plan/d4-act-prompts.md ACT 0 slide 5 (Loop = dispatch + proof + receipt). Term owners map to tonight's machinery: dispatch → taskspec ready (the frontier); proof → eval / exit check; receipt → signed_off + taskspec metrics. No metric numbers on this slide."
+      - 'img "The loop as a flywheel: a gold Loop core; a spinning orbit; three stations — dispatch, proof, receipt — at equal spacing, with the flow returning to dispatch." [ref=f1e511]':
+        - generic [ref=f1e515]: Loop
+        - generic [ref=f1e516]: the unit that turns
+        - generic [ref=f1e517]:
+          - generic [ref=f1e519]: dispatch
+          - generic [ref=f1e520]: owner · graph
+        - generic [ref=f1e521]:
+          - generic [ref=f1e523]: proof
+          - generic [ref=f1e524]: owner · eval
+        - generic [ref=f1e525]:
+          - generic [ref=f1e527]: receipt
+          - generic [ref=f1e528]: owner · human gate
+    - generic [ref=f1e530]:
+      - generic [ref=f1e531]: The villain · named, with a face
+      - generic [ref=f1e532]:
+        - paragraph [ref=f1e533]: An eval that cannot fail is not a gate — it is a decoration.
+        - generic [ref=f1e534]: The villain of the night — invisible false confidence
+      - generic [ref=f1e537]:
+        - generic [ref=f1e538]:
+          - generic [ref=f1e539]:
+            - generic [ref=f1e540]: the eval that always passes
+            - generic [ref=f1e541]: exit 0
+          - generic [ref=f1e542]: "# a gate that cannot fail eval_1() { test -f dbt/models/staging/stg_orders.sql; } # file exists → green. file is empty → also green."
+          - generic [ref=f1e543]: never touched → the content inside
+        - generic [ref=f1e544]:
+          - generic [ref=f1e545]: last night's record · ≈00:26:12
+          - paragraph [ref=f1e546]: "\"The model can say I did it — and create the file, and call it complete. And the content inside? That is real. It happens.\""
+          - paragraph [ref=f1e547]: "«E a LLM pode falar: \"Eu fiz.\" … Ela pode criar o arquivo e falar que foi completada. E o conteúdo lá dentro? Isso acontece, tá? Isso é real.» · ≈00:26:12"
+      - generic [ref=f1e548]:
+        - generic [ref=f1e549]: Next · Act 1
+        - paragraph [ref=f1e550]: Green that proves nothing — the villain, performed live and discarded. Three ways an eval lies, then the room watches one pass for nothing.
+      - generic [ref=f1e551]: "Villain line per plan/d4-act-prompts.md (ACT 0 slide 6, verbatim). Example + transcript quote: transcripts/d3-12-08-26-record.cc.vtt — «E a LLM pode falar: \"Eu fiz.\"… Ela pode criar o arquivo e falar que foi completada. E o conteúdo lá dentro? Isso é real» ≈00:26:12. The always-green eval is the file-exists check the quote describes."
+    - generic [ref=f1e553]:
+      - generic [ref=f1e554]:
+        - generic [ref=f1e555]: handover · the eval, properly
+        - heading "You have just seen one lie. Now meet the real thing." [level=2] [ref=f1e557]
+      - generic [ref=f1e558]:
+        - img "Rafael Rodrigues" [ref=f1e559]
+        - generic [ref=f1e560]:
+          - generic [ref=f1e561]: Rafael Rodrigues
+          - generic [ref=f1e562]: Senior AI Data Architect · Databricks & Microsoft Fabric · governance, observability, telemetry
+          - paragraph [ref=f1e563]: Twenty-six years making data trustworthy in production — lakehouse governance, metadata, OpenTelemetry. The person in the room who has spent a career on the difference between a number that is reported and a number that is verified.
+          - generic [ref=f1e564]:
+            - generic [ref=f1e565]: what an eval actually is
+            - generic [ref=f1e566]: what it can and cannot prove
+            - generic [ref=f1e567]: how it is used in practice
+      - generic [ref=f1e568]:
+        - generic [ref=f1e569]: Next → Rafael takes the deck
+        - paragraph [ref=f1e570]: Then straight back to movement 01 — three evals that pass, and prove nothing.
+      - generic [ref=f1e571]: "Guest segment. Name, role and background per Rafael Rodrigues' public profile — External: LinkedIn, \"Rafael Rodrigues — Senior AI Data Architect\", 2026-08 — supports the credential line and the twenty-six-year figure. Photo supplied by the presenter. The segment's own content is Rafael's; this deck does not describe it."
+    - generic [ref=f1e573]:
+      - generic [ref=f1e574]:
+        - generic [ref=f1e575]:
+          - generic [ref=f1e576]: Movement 01 · ▶ 01
+          - generic [ref=f1e577]: "01"
+          - heading "Green that proves nothing" [level=2] [ref=f1e578]
+          - paragraph [ref=f1e579]: Six specs are ready. The first thing we run is an eval that cannot fail. The green is real. The proof is not. Then the session is discarded.
+          - generic [ref=f1e580]:
+            - generic [ref=f1e581]: 3 ways to lie
+            - generic [ref=f1e582]: exit 0
+            - generic [ref=f1e583]: 0 files written
+            - generic [ref=f1e584]: session discarded
+        - generic [ref=f1e585]:
+          - generic [ref=f1e586]: Four claims, then we throw it away
+          - generic [ref=f1e587]:
+            - generic [ref=f1e588]:
+              - generic [ref=f1e589]: the smell
+              - generic [ref=f1e590]: An eval can be green and empty
+              - generic [ref=f1e591]: assertion-free tests have a name — they pass because they assert nothing
+            - generic [ref=f1e593]:
+              - generic [ref=f1e594]: three ways
+              - generic [ref=f1e595]: true · the wrong artifact · a file that exists
+              - generic [ref=f1e596]: each one returns 0 · none of them built tonight's model
+            - generic [ref=f1e598]:
+              - generic [ref=f1e599]: checkpoint 01 · live
+              - generic [ref=f1e600]: Run the eval that cannot fail
+              - generic [ref=f1e601]: eval_1 is make dbt-check — the project already parses · the new model is not on disk
+            - generic [ref=f1e603]:
+              - generic [ref=f1e604]: the line that lands
+              - generic [ref=f1e605]: A passing test is a claim
+              - generic [ref=f1e606]: tonight we make it evidence — this session does not survive the act
+          - paragraph [ref=f1e607]: No model is built in this act. The villain is proven, then discarded with its session.
+      - generic [ref=f1e608]: "Act map per plan/d4-act-prompts.md ACT 1. eval_1 is the verbatim function in tasks/T-20260812-daily-gross-ordered.md. make dbt-check → \"All checks passed!\" · eval_1 exit=0 · ls dbt/models/staging/stg_daily_gross_ordered.sql → No such file or directory. Run 2026-08-13. External: Martin Fowler, \"Assertion Free Testing\", 2004-08 — names the assertion-free smell."
+    - generic [ref=f1e610]:
+      - generic [ref=f1e611]:
+        - generic [ref=f1e612]:
+          - generic [ref=f1e613]: The villain · three greens
+          - heading "Three ways an eval lies." [level=2] [ref=f1e614]
+        - paragraph [ref=f1e615]: Each of these returns 0. None of them built the model.
+      - generic [ref=f1e616]:
+        - generic [ref=f1e617]:
+          - generic [ref=f1e618]:
+            - generic [ref=f1e619]: "01"
+            - generic [ref=f1e620]: assertion-free
+          - generic [ref=f1e621]: Tests nothing
+          - generic [ref=f1e622]: "# tautology · no assertion true"
+          - generic [ref=f1e623]:
+            - generic [ref=f1e624]: exit=0
+            - generic [ref=f1e625]: looks green
+          - paragraph [ref=f1e626]: "Fowler's name for this, August 2004: assertion-free testing — a green bar with no assertion in it."
+        - generic [ref=f1e627]:
+          - generic [ref=f1e628]:
+            - generic [ref=f1e629]: "02"
+            - generic [ref=f1e630]: wrong artifact
+          - generic [ref=f1e631]: Tests the project
+          - generic [ref=f1e632]: "# eval_1 · verifies B-1, on disk eval_1() { make dbt-check >/dev/null 2>&1; }"
+          - generic [ref=f1e633]:
+            - generic [ref=f1e634]: exit=0
+            - generic [ref=f1e635]: looks green
+          - paragraph [ref=f1e636]: dbt already says All checks passed! The check is the Day 2 project, not tonight's model.
+        - generic [ref=f1e637]:
+          - generic [ref=f1e638]:
+            - generic [ref=f1e639]: "03"
+            - generic [ref=f1e640]: existence-only
+          - generic [ref=f1e641]: Tests a file exists
+          - generic [ref=f1e642]: "# yesterday's file, not tonight's test -f dbt/models/staging/ stg_orders.sql"
+          - generic [ref=f1e643]:
+            - generic [ref=f1e644]: exit=0
+            - generic [ref=f1e645]: looks green
+          - paragraph [ref=f1e646]: stg_orders.sql is on disk from Day 2. stg_daily_gross_ordered.sql is not — that test exits 1.
+      - generic [ref=f1e647]:
+        - generic [ref=f1e648]: all three look green
+        - generic [ref=f1e649]: A test that stays green when the work is missing is not a gate. It is a decoration.
+      - generic [ref=f1e650]: "true; echo \"true exit=$?\" → true exit=0. eval_1 from tasks/T-20260812-daily-gross-ordered.md → eval_1 exit=0. make dbt-check → \"All checks passed!\". test -f dbt/models/staging/stg_orders.sql → exit=0. test -f dbt/models/staging/stg_daily_gross_ordered.sql → exit=1 · ls: No such file or directory. Run 2026-08-13. External: Martin Fowler, \"Assertion Free Testing\", 2004-08 — names assertion-free testing. External: Vladyslav Dmitriiev, \"Your green tests are lying\", 2026-07 — they pass because they cannot fail."
+    - generic [ref=f1e652]:
+      - generic [ref=f1e653]:
+        - generic [ref=f1e654]:
+          - generic [ref=f1e655]: ▶ Go live · checkpoint 01
+          - heading "Run the eval that cannot fail" [level=2] [ref=f1e656]
+        - paragraph [ref=f1e657]: One function. One exit code. Nothing is written, and the session does not survive.
+      - generic [ref=f1e658]:
+        - generic [ref=f1e660]:
+          - generic [ref=f1e661]:
+            - generic [ref=f1e662]:
+              - generic [ref=f1e663]: Checkpoint 01
+              - generic [ref=f1e664]: The eval that cannot fail
+            - generic [ref=f1e665]: live/d4/01-*.md
+          - generic [ref=f1e666]:
+            - generic [ref=f1e667]: The question
+            - generic [ref=f1e668]: If we run only eval_1, does the spec look done — and did anything get built?
+            - generic [ref=f1e669]: Session
+            - generic [ref=f1e670]: NEW — Session A, disposable. Discard it the moment this checkpoint ends.
+            - generic [ref=f1e671]: Action
+            - generic [ref=f1e672]:
+              - text: Extract and run
+              - code [ref=f1e673]: eval_1
+              - text: only. Do not run eval_2. Write no file.
+            - generic [ref=f1e674]: Evidence
+            - generic [ref=f1e675]:
+              - code [ref=f1e676]: eval_1 exit=0
+              - text: ·
+              - code [ref=f1e677]: "ls: stg_daily_gross_ordered.sql: No such file or directory"
+            - generic [ref=f1e678]: Gate
+            - generic [ref=f1e679]: the room can say the green proved nothing · zero files written
+            - generic [ref=f1e680]: Come back when
+            - generic [ref=f1e681]: Session A is discarded. Nothing it produced enters tonight's work.
+        - generic [ref=f1e682]:
+          - generic [ref=f1e683]: The prompt · pasted live, once
+          - generic [ref=f1e684]: "prompt · pasted live # one session, discarded when it finishes Run only eval_1 from tasks/T-20260812-daily-gross-ordered.md. eval_1() { make dbt-check >/dev/null 2>&1; } Write no files. Show the exit code and whether stg_daily_gross_ordered.sql exists."
+          - generic [ref=f1e685]:
+            - generic [ref=f1e686]:
+              - generic [ref=f1e687]: exit=0
+              - generic [ref=f1e688]: in the same run
+              - generic [ref=f1e689]: zero files written
+            - generic [ref=f1e690]:
+              - generic [ref=f1e691]:
+                - text: the number that comes back
+                - generic [ref=f1e692]: eval_1 exit=0
+                - paragraph [ref=f1e693]: make dbt-check already reports All checks passed!
+              - generic [ref=f1e695]:
+                - text: the file that does not
+                - generic [ref=f1e696]: No such file or directory
+                - paragraph [ref=f1e697]: stg_daily_gross_ordered.sql is still absent · staging holds two files
+      - generic [ref=f1e698]: "Live checkpoint path per plan/d4-act-prompts.md: live/d4/01-*.md (file not on disk as of 2026-08-13). Evidence from this session: eval_1 exit=0 · make dbt-check → \"All checks passed!\" · ls dbt/models/staging/stg_daily_gross_ordered.sql → No such file or directory · ls -la dbt/models/staging/ → _raw_sources.yml + stg_orders.sql. eval_1 verbatim from tasks/T-20260812-daily-gross-ordered.md."
+    - generic [ref=f1e700]:
+      - generic [ref=f1e701]:
+        - generic [ref=f1e702]: The verdict · session discarded
+        - generic [ref=f1e703]: session A · discarded
+      - generic [ref=f1e704]:
+        - paragraph [ref=f1e705]: The loop did exactly what it was told, and what it was told proved nothing.
+        - generic [ref=f1e706]: Invisible false confidence — a green check with no work behind it
+        - paragraph [ref=f1e709]: eval_1 returned 0. The model file is still absent. Session A is discarded. Nothing it produced enters tonight's work.
+      - generic [ref=f1e710]:
+        - generic [ref=f1e711]: eval_1 exit=0
+        - generic [ref=f1e712]: file absent
+        - generic [ref=f1e713]: 0 files written
+        - generic [ref=f1e714]: discarded
+      - generic [ref=f1e715]: "Verdict line per plan/d4-act-prompts.md ACT 1 slide 4. Numbers from this session, 2026-08-13: eval_1 exit=0 · ls: dbt/models/staging/stg_daily_gross_ordered.sql: No such file or directory. Session disposal follows the Day 3 Session A rule (live/d3/01-plausible-plan.md): discard the moment the checkpoint ends."
+    - generic [ref=f1e717]:
+      - generic [ref=f1e718]: Movement 01 · act close
+      - heading "A passing test is a claim. Tonight we make it evidence." [level=2] [ref=f1e719]: A passing test is a claim.Tonight we make it evidence.
+      - generic [ref=f1e720]:
+        - generic [ref=f1e721]: the line that lands
+        - paragraph [ref=f1e722]: Green is not the proof. Green is the thing we still have to prove. An eval earns trust only when it can fail.
+      - img "Three names — assertion-free, wrong artifact, existence-only — all converge on one single point on a line, marked exit 0. Far to the right, across a long dashed gap, sits an open second point marked exit not equal to 0." [ref=f1e724]:
+        - generic [ref=f1e725]:
+          - generic [ref=f1e726]: assertion-free · named 2004-08
+          - generic [ref=f1e727]: wrong artifact · eval_1
+          - generic [ref=f1e728]: existence-only · yesterday's file
+        - generic [ref=f1e734]: exit 0
+        - generic [ref=f1e736]: exit ≠ 0
+      - generic [ref=f1e737]:
+        - generic [ref=f1e738]: Next · Act 2
+        - paragraph [ref=f1e739]: An eval that can fail — mutation discrimination. Break the model on purpose and watch the eval notice. live/d4/02-*.md.
+      - generic [ref=f1e740]: "Closing line per plan/d4-act-prompts.md ACT 1 slide 5, verbatim: \"A passing test is a claim. Tonight we make it evidence.\" Next movement per the locked agenda — ACT 2 at 20:35, live/d4/02-*.md. External: Martin Fowler, \"Assertion Free Testing\", 2004-08. External: Vladyslav Dmitriiev, \"Your green tests are lying\", 2026-07."
+    - generic [ref=f1e742]:
+      - generic [ref=f1e743]:
+        - generic [ref=f1e744]:
+          - generic [ref=f1e745]: Movement 02 · ▶ 02 · Topic
+          - generic [ref=f1e746]: "02"
+          - heading "An eval that can fail." [level=2] [ref=f1e747]
+          - paragraph [ref=f1e748]: Act 1 showed three greens that proved nothing. The fix is not a better eval — it is a procedure that proves an eval can go red, and the procedure is forty years older than agents.
+        - generic [ref=f1e749]:
+          - generic [ref=f1e750]: What this act installs
+          - generic [ref=f1e751]:
+            - generic [ref=f1e752]:
+              - generic [ref=f1e753]: the rule
+              - generic [ref=f1e754]: Falsifiable, or decorative
+              - generic [ref=f1e755]: an eval earns trust by failing when the thing it guards breaks — nothing else counts
+            - generic [ref=f1e757]:
+              - generic [ref=f1e758]: the procedure
+              - generic [ref=f1e759]: Mutation discrimination
+              - generic [ref=f1e760]: break the work on purpose · a mutant is killed or it survives · a survivor is a hole
+            - generic [ref=f1e762]:
+              - generic [ref=f1e763]: the command
+              - generic [ref=f1e764]: taskspec eval-audit
+              - generic [ref=f1e765]: baselines and mutations in ephemeral worktrees, and a verdict per mutation
+      - generic [ref=f1e766]: "Movement 02 · live/d4/02-an-eval-that-can-fail.md. Verified usage: taskspec eval-audit <spec> --baseline <ref> [--mutations N] [--report PATH], v3.7.0 — token on malformed input EVAL_AUDIT=INVALID. External: Y. Jia and M. Harman, \"An Analysis and Survey of the Development of Mutation Testing\", IEEE TSE, 2011 — defines mutation testing as a fault-based technique yielding a mutation adequacy score, and the killed/survived vocabulary."
+    - generic [ref=f1e768]:
+      - generic [ref=f1e769]:
+        - generic [ref=f1e770]:
+          - generic [ref=f1e771]: Five rules · one is load-bearing
+          - heading "Four get written. One gets assumed." [level=2] [ref=f1e772]
+          - paragraph [ref=f1e773]: Rules one to four you can check by reading the eval. Rule five you can only check by running it against broken code — which is exactly why it is the one that gets skipped.
+          - generic [ref=f1e774]:
+            - generic [ref=f1e775]: the contract of a test
+            - generic [ref=f1e776]: The entire job of a check is to fail when the thing it guards breaks. A passing check only tells you something if it was capable of failing for the reason you care about.
+        - generic [ref=f1e777]:
+          - generic [ref=f1e778]: An eval worth trusting is…
+          - generic [ref=f1e779]:
+            - generic [ref=f1e780]:
+              - generic [ref=f1e781]: "01"
+              - generic [ref=f1e782]:
+                - generic [ref=f1e783]: Deterministic
+                - generic [ref=f1e784]: same input, same verdict — twice
+            - generic [ref=f1e785]:
+              - generic [ref=f1e786]: "02"
+              - generic [ref=f1e787]:
+                - generic [ref=f1e788]: Idempotent
+                - generic [ref=f1e789]: running it changes nothing it then measures
+            - generic [ref=f1e790]:
+              - generic [ref=f1e791]: "03"
+              - generic [ref=f1e792]:
+                - generic [ref=f1e793]: Cheap before expensive
+                - generic [ref=f1e794]: the fast check gates the slow one
+            - generic [ref=f1e795]:
+              - generic [ref=f1e796]: "04"
+              - generic [ref=f1e797]:
+                - generic [ref=f1e798]: Explainable
+                - generic [ref=f1e799]: its failure message names what broke
+            - generic [ref=f1e800]:
+              - generic [ref=f1e801]: "05"
+              - generic [ref=f1e802]:
+                - generic [ref=f1e803]: Falsifiable
+                - generic [ref=f1e804]: it goes red when the thing it guards is broken — and someone has watched it do that
+      - generic [ref=f1e805]: "Rules 1–4 are standard test-quality properties. Rule 5 as the one that turns green into a verdict: External: workman.tech, \"ai is backfilling your tests, and it's a regression\", 2026-06-24 — \"a passing test only tells you something if it was capable of failing for the reason you care about\" and \"the only thing that turns green into a verdict is watching the test fail on the broken code\". Deterministic graders for coding agents: External: Anthropic, \"Demystifying evals for AI agents\", 2026."
+    - generic [ref=f1e807]:
+      - generic [ref=f1e808]:
+        - generic [ref=f1e809]:
+          - generic [ref=f1e810]:
+            - generic [ref=f1e811]: The procedure
+            - generic [ref=f1e812]: baseline → mutate → verdict
+          - heading "Break it on purpose" [level=2] [ref=f1e813]
+        - paragraph [ref=f1e814]: A mutant is killed when at least one eval fails. It survives when they all stay green.
+      - img "Four mutations applied to a baseline; three are killed by the eval set and one survives, which is a hole in the gate." [ref=f1e815]:
+        - generic [ref=f1e817]: BASELINE
+        - generic [ref=f1e818]: the work as built
+        - generic [ref=f1e819]:
+          - generic [ref=f1e821]: M1
+          - generic [ref=f1e822]: drop the GROUP BY
+          - generic [ref=f1e823]: the model no longer builds
+          - generic [ref=f1e828]: KILLED
+          - generic [ref=f1e830]: M2
+          - generic [ref=f1e831]: rename the date column
+          - generic [ref=f1e832]: a downstream ref breaks
+          - generic [ref=f1e837]: KILLED
+          - generic [ref=f1e839]: M3
+          - generic [ref=f1e840]: swap sum() for count()
+          - generic [ref=f1e841]: the type still checks
+          - generic [ref=f1e846]: KILLED
+          - generic [ref=f1e848]: M4
+          - generic [ref=f1e849]: delete the cancelled filter
+          - generic [ref=f1e850]: valid SQL · builds fine · numbers now wrong
+          - generic [ref=f1e855]: SURVIVED
+        - generic [ref=f1e865]: THE SURVIVOR
+        - generic [ref=f1e866]: A survivor is not
+        - generic [ref=f1e867]: a passing grade.
+        - generic [ref=f1e868]: It is a real bug that ships, in a place
+        - generic [ref=f1e869]: you can point at — and it is the
+        - generic [ref=f1e870]: check's fault, not the model's.
+        - generic [ref=f1e871]: "fix: strengthen the eval"
+        - generic [ref=f1e872]: "never: weaken the mutation"
+      - generic [ref=f1e873]: "Figure is the shape of a four-mutation audit — EXPECTED SHAPE, NOT LIVE OUTPUT; the real verdicts are produced at movement 02 by taskspec eval-audit --mutations 4 and read from its --report JSON. Mutation M4 (deleting where status != 'cancelled') is the survivor the runbook demonstrates by hand. External: Jia and Harman, IEEE TSE 2011 — killed/survived and the mutation adequacy score; P. Zhang et al., ACM TOSEM 2022 — a high mutation score indicates real fault-detection ability, and mutant-reduction trade-offs."
+    - generic [ref=f1e875]:
+      - generic [ref=f1e876]:
+        - generic [ref=f1e877]:
+          - generic [ref=f1e878]: The command
+          - heading "One command, two colours." [level=2] [ref=f1e879]
+          - generic [ref=f1e880]: "bash # prove the eval set discriminates the work from its baseline taskspec eval-audit tasks/T-20260812-daily-gross-ordered.md \\ --baseline HEAD \\ --mutations 4 \\ --report tmp/d4/audit/gross-ordered.json # then the pair that is the actual deliverable # mutated model → exit 1 RED # restored model → exit 0 GREEN"
+          - generic [ref=f1e881]:
+            - generic [ref=f1e882]: what you are allowed to change
+            - generic [ref=f1e883]: Close a survivor by strengthening the eval. If the model changes to suit the check, the check never became evidence — it just moved.
+        - generic [ref=f1e884]:
+          - generic [ref=f1e885]: What each flag buys
+          - generic [ref=f1e886]:
+            - generic [ref=f1e887]:
+              - generic [ref=f1e888]: flag
+              - generic [ref=f1e889]: what it does
+            - generic [ref=f1e890]:
+              - generic [ref=f1e891]: "--baseline"
+              - generic [ref=f1e892]: The git ref the work is measured against. The audit rebuilds it in an ephemeral worktree; nothing in your tree moves.
+            - generic [ref=f1e893]:
+              - generic [ref=f1e894]: "--mutations"
+              - generic [ref=f1e895]: How many deliberate breakages to apply. Each one gets its own verdict — killed or survived.
+            - generic [ref=f1e896]:
+              - generic [ref=f1e897]: "--report"
+              - generic [ref=f1e898]: Where the machine-readable verdicts land, so the audit is reviewable tomorrow rather than remembered.
+            - generic [ref=f1e899]:
+              - generic [ref=f1e900]: EVAL_AUDIT=INVALID
+              - generic [ref=f1e901]: The token when the spec cannot be audited at all. An audit that cannot run is not an audit that passed.
+          - generic [ref=f1e902]:
+            - generic [ref=f1e903]: the same idea, one command later
+            - paragraph [ref=f1e904]: "taskspec accept --gold-sanity runs this as Gate E: it rebuilds the baseline, holds the eval bodies constant, and refuses the work unless the evals fail there. Act 4 shows it firing."
+      - generic [ref=f1e905]: "Verified usage and flags: taskspec eval-audit --help, v3.7.0 — eval-audit <spec> --baseline <ref> [--mutations N] [--report PATH]; mutation \"uses temporary git worktrees; optional report path\" and token EVAL_AUDIT=INVALID from taskspec agent-context (format version 4). Gate E wording from taskspec accept --help, v3.7.0. Commands run at movement 02: live/d4/02-an-eval-that-can-fail.md."
+    - generic [ref=f1e907]:
+      - generic [ref=f1e908]:
+        - generic [ref=f1e909]:
+          - generic [ref=f1e910]:
+            - generic [ref=f1e911]: GO LIVE
+            - generic [ref=f1e912]: movement 02 · ▶ live/d4/02-an-eval-that-can-fail.md
+          - heading "Watch it go red" [level=2] [ref=f1e913]
+        - paragraph [ref=f1e914]: Session B is the architect — judgment, no hands. The mutation is typed by a human so nobody can suspect the agent of arranging its own grade.
+      - generic [ref=f1e915]:
+        - generic [ref=f1e916]:
+          - generic [ref=f1e917]: B
+          - generic [ref=f1e918]: Build the smallest honest model for the hand-written spec, then make dbt-check
+          - generic [ref=f1e919]: All checks passed!
+        - generic [ref=f1e920]:
+          - generic [ref=f1e921]: C
+          - generic [ref=f1e922]: Ask the architect for an Exit Check for B-1 — it proposes dbt build succeeds
+          - generic [ref=f1e923]: deterministic, not falsifiable
+        - generic [ref=f1e924]:
+          - generic [ref=f1e925]: D
+          - generic [ref=f1e926]: taskspec eval-audit … --mutations 4 --report tmp/d4/audit/gross-ordered.json
+          - generic [ref=f1e927]: 3 KILLED · 1 SURVIVED
+        - generic [ref=f1e928]: the turn · a real bug the eval is green for
+        - generic [ref=f1e932]:
+          - generic [ref=f1e933]: D′
+          - generic [ref=f1e934]: "By hand: sed out where status != 'cancelled', then run the proposed eval"
+          - generic [ref=f1e935]: exit 0 — GREEN, and wrong
+        - generic [ref=f1e936]:
+          - generic [ref=f1e937]: E
+          - generic [ref=f1e938]: Rewrite the Exit Check to compare the model total against the filtered source total
+          - generic [ref=f1e939]: the eval got stronger
+        - generic [ref=f1e940]:
+          - generic [ref=f1e941]: E′
+          - generic [ref=f1e942]: Same mutation, new eval → exit 1. Restore the model → exit 0
+          - generic [ref=f1e943]: RED then GREEN
+        - generic [ref=f1e944]:
+          - generic [ref=f1e945]: F
+          - generic [ref=f1e946]: Re-audit at four mutations, and name the limits out loud
+          - generic [ref=f1e947]: every mutation killed
+      - generic [ref=f1e948]:
+        - generic [ref=f1e949]:
+          - generic [ref=f1e950]: the prompt · typed live
+          - generic [ref=f1e951]:
+            - text: "prompt # one session — architect, no hands You are the architect. Write no files. Propose an Exit Check for B-1 of the spec tasks/T-20260812-daily-gross-ordered.md. In one line, say what it would prove —"
+            - generic [ref=f1e952]: and what it would not catch.
+          - generic [ref=f1e953]:
+            - generic [ref=f1e954]:
+              - generic [ref=f1e955]: the audit table
+              - generic [ref=f1e956]: 3 KILLED · 1 SURVIVED
+            - generic [ref=f1e957]:
+              - generic [ref=f1e958]: the model
+              - generic [ref=f1e959]:
+                - code [ref=f1e960]: git diff
+                - text: — byte-identical to move B
+        - generic [ref=f1e961]:
+          - generic [ref=f1e962]: the pairing · never one without the other
+          - generic [ref=f1e963]:
+            - generic [ref=f1e964]:
+              - generic [ref=f1e965]: exit 0
+              - generic [ref=f1e966]: same mutation
+              - generic [ref=f1e967]: exit 1
+            - generic [ref=f1e968]:
+              - generic [ref=f1e969]:
+                - text: the eval as proposed
+                - generic [ref=f1e970]: GREEN, and wrong
+                - paragraph [ref=f1e971]: dbt build still succeeds — cancelled rows enter the total
+              - generic [ref=f1e973]:
+                - text: the eval, rewritten
+                - generic [ref=f1e974]: RED — the mutation is caught
+                - paragraph [ref=f1e975]: model total vs the filtered source total
+          - paragraph [ref=f1e976]: Never show the eval passing without also showing it failing. That pairing is the checkpoint.
+      - generic [ref=f1e977]: "Move order, prompts and gates: live/d4/02-an-eval-that-can-fail.md (moves A–F). Commands are real taskspec v3.7.0. The 3 KILLED · 1 SURVIVED split is the EXPECTED SHAPE of the demonstration the runbook scripts — the live verdicts come from the --report JSON on the night and are read from screen, never from this slide. Gate: the survivor must be closed by rewriting the eval, with git diff proving the model did not move."
+    - generic [ref=f1e979]:
+      - generic [ref=f1e980]:
+        - generic [ref=f1e981]: Skill · night 4
+        - generic [ref=f1e982]: prove-the-oracle
+      - generic [ref=f1e983]:
+        - generic [ref=f1e984]:
+          - heading "Prove the eval before you trust it." [level=2] [ref=f1e985]
+          - paragraph [ref=f1e986]: Turns a green check into evidence by making it go red on purpose, once, in a place you choose.
+          - generic [ref=f1e987]:
+            - generic [ref=f1e988]:
+              - generic [ref=f1e989]: when
+              - generic [ref=f1e990]: Before delegating any task whose "done" is an exit code — especially when the executor is unattended and reads the eval.
+            - generic [ref=f1e991]:
+              - generic [ref=f1e992]: inputs
+              - generic [ref=f1e993]: One spec with an Exit Check, a baseline git ref, and mutations a competent reviewer would call plausible bugs.
+            - generic [ref=f1e994]:
+              - generic [ref=f1e995]: method
+              - generic [ref=f1e996]: Audit at N mutations. For every survivor, strengthen the eval — never the model, never the mutation. Re-audit until nothing survives.
+            - generic [ref=f1e997]:
+              - generic [ref=f1e998]: output
+              - generic [ref=f1e999]: A discriminating Exit Check, plus a report you can hand to a reviewer who was not in the room when it was written.
+        - generic [ref=f1e1000]:
+          - generic [ref=f1e1001]: two gates
+          - generic [ref=f1e1002]:
+            - generic [ref=f1e1003]:
+              - generic [ref=f1e1004]: G1
+              - generic [ref=f1e1005]: Every mutation killed on re-audit
+              - generic [ref=f1e1006]: CHECK_ORACLE=PASS
+            - generic [ref=f1e1007]:
+              - generic [ref=f1e1008]: G2
+              - generic [ref=f1e1009]: The model is byte-identical before and after
+              - generic [ref=f1e1010]: git diff empty
+          - generic [ref=f1e1011]:
+            - generic [ref=f1e1012]: what it cannot do
+            - generic [ref=f1e1013]: It does not tell you what to mutate. Mutation choice is judgment, equivalent mutants exist, and each mutation costs real time. Four mutations is a discipline, not a certificate.
+          - generic [ref=f1e1014]:
+            - generic [ref=f1e1015]: and the older rule still holds
+            - generic [ref=f1e1016]: Structural validity was never proof. A named human still signs the meaning.
+      - generic [ref=f1e1017]: "Skill packaging follows the three shipped nights — skills/interview-the-system (gate CHECK_INVESTIGATION), harness-scaffold (CHECK_SCAFFOLD), spec-before-build (CHECK_TASK_SPEC); the shared bar is in skills/README.md: a machine-checkable gate, read-only by default, facts looked up and decisions asked for, unresolved stays unresolved. skills/prove-the-oracle/ IS NOT YET ON DISK — build and publish it, with an install line that resolves, before this slide is shown. Named in live/d4/README.md. Limits: taskspec eval-audit v3.7.0; Jia and Harman, IEEE TSE 2011; Zhang et al., ACM TOSEM 2022 (equivalent mutants, cost)."
+    - generic [ref=f1e1019]:
+      - generic [ref=f1e1020]:
+        - generic [ref=f1e1021]:
+          - generic [ref=f1e1022]: Movement 03 · ▶ 03 · Topic
+          - generic [ref=f1e1023]: "03"
+          - heading "An eval the agent cannot read." [level=2] [ref=f1e1024]
+          - paragraph [ref=f1e1025]: Act 2 made one eval falsifiable. That eval still lives inside the spec — so the agent can study it. A holdout is a second evaluator, sealed before dispatch, that the agent is never allowed to see.
+        - generic [ref=f1e1026]:
+          - generic [ref=f1e1027]: What this act adds
+          - generic [ref=f1e1028]:
+            - generic [ref=f1e1029]:
+              - generic [ref=f1e1030]: what Act 2 left open
+              - generic [ref=f1e1031]: The eval is still visible
+              - generic [ref=f1e1032]: it can fail now · the agent can still read every check in the spec
+            - generic [ref=f1e1034]:
+              - generic [ref=f1e1035]: what that costs
+              - generic [ref=f1e1036]: The check becomes the target
+              - generic [ref=f1e1037]: no bad intent required · the cheapest green is the one that satisfies the grader, not the goal
+            - generic [ref=f1e1039]:
+              - generic [ref=f1e1040]: the name for the answer
+              - generic [ref=f1e1041]: A holdout
+              - generic [ref=f1e1042]: taskspec holdout seal → verify → run · public digest, private tests
+      - generic [ref=f1e1043]: "Movement 03 · live/d4/03-the-holdout.md. Verified usage: taskspec holdout {seal,verify,run}, v3.7.0 — tokens HOLDOUT=SEALED / HOLDOUT=VERIFIED / HOLDOUT=INVALID; verify is read-only. External: C. Goodhart, 1975, restated by M. Strathern, \"Improving Ratings\", 1997. External: V. Krakovna et al., DeepMind, 2020 — specification gaming as satisfying the literal specification without achieving the intended outcome."
+    - generic [ref=f1e1045]:
+      - generic [ref=f1e1046]:
+        - generic [ref=f1e1047]:
+          - generic [ref=f1e1048]:
+            - generic [ref=f1e1049]: The two suites
+            - generic [ref=f1e1050]: one the agent studies · one it never sees
+          - heading "A visible eval is a target" [level=2] [ref=f1e1051]
+        - paragraph [ref=f1e1052]: The visible suite tells the agent what to aim at — which is what makes it useful and what makes it gameable.
+      - generic [ref=f1e1053]:
+        - generic [ref=f1e1054]:
+          - generic [ref=f1e1055]: inside the spec · the agent reads these
+          - generic [ref=f1e1056]: Visible evals
+          - generic [ref=f1e1057]:
+            - generic [ref=f1e1058]: B-1 → eval_1 cancelled orders are excluded
+            - generic [ref=f1e1059]: B-2 → eval_2 one row per ordered date
+            - generic [ref=f1e1060]: B-3 → eval_3 the model builds
+          - generic [ref=f1e1061]: visible · iterable · each feature tested in isolation
+        - generic [ref=f1e1062]:
+          - generic [ref=f1e1063]: outside the spec · sealed before dispatch
+          - generic [ref=f1e1064]: The holdout
+          - generic [ref=f1e1065]:
+            - generic [ref=f1e1066]: H-1 totals compose across all the staging models
+            - generic [ref=f1e1067]: H-2 no column in staging is named revenue
+            - generic [ref=f1e1068]: H-3 no row count regresses against the source
+          - generic [ref=f1e1069]: hidden · not iterable · tests the composition, not the pieces
+      - generic [ref=f1e1070]:
+        - generic [ref=f1e1071]:
+          - generic [ref=f1e1072]: the field already measures this gap
+          - generic [ref=f1e1073]: "SpecBench grades 30 coding tasks with two suites: one the agent can iterate against, one it never sees. The gap between those two pass rates is their measure of reward hacking. High visible scores can overestimate the real work — and the gap widens as the task gets longer."
+        - generic [ref=f1e1074]:
+          - generic [ref=f1e1075]: why H-2 is sealed and not visible
+          - paragraph [ref=f1e1076]: H-2 is a boundary, not a correctness check. Sealed, nobody can satisfy the letter of it by renaming a column to revenue_amount_do_not_use. Revenue stays unresolved and Finance's — tonight only enforces that nobody quietly takes the word.
+      - generic [ref=f1e1077]: "Eval ids and the H-1/H-2 bodies are authored at movement 03: live/d4/03-the-holdout.md. External: B. Zhao, D. Srikanth, Y. Wu, Z. Jiang, \"SpecBench: Measuring Reward Hacking in Long-Horizon Coding Agents\", Weco AI / arXiv 2605.21384, 2026-05 — two-suite design, the validation-versus-held-out gap as the measure, and the recommendation to maintain a held-out set agents never see. Their worked example is a SQL task: validation covers SELECT, JOIN and GROUP BY individually while the held-out tests combine all three. No pass-rate number is claimed for TransactCo — none has been measured."
+    - generic [ref=f1e1079]:
+      - generic [ref=f1e1080]:
+        - generic [ref=f1e1081]:
+          - generic [ref=f1e1082]: How a holdout stays a holdout
+          - heading "seal → verify → run" [level=2] [ref=f1e1083]
+          - paragraph [ref=f1e1084]: "A holdout is not a folder. It is three commands that keep a folder closed — and prove nobody opened it. The middle step is the one people leave out: is this still the same evaluator I sealed?"
+          - generic [ref=f1e1085]: bash taskspec holdout seal tmp/d4/holdout/bundle \ --out tmp/d4/holdout/descriptor.json taskspec holdout verify tmp/d4/holdout/descriptor.json \ tmp/d4/holdout/bundle taskspec holdout run tmp/d4/holdout/descriptor.json \ tmp/d4/holdout/bundle \ --workspace . \ --receipt-out tmp/d4/receipts/holdout-01.json
+          - paragraph [ref=f1e1086]: seal and run may write a descriptor or a receipt. verify is read-only — that is what makes it safe to run in front of anyone.
+        - generic [ref=f1e1087]:
+          - generic [ref=f1e1088]: What each step emits
+          - generic [ref=f1e1089]:
+            - generic [ref=f1e1090]:
+              - generic [ref=f1e1091]: SEALED
+              - generic [ref=f1e1092]: "seal — a descriptor carrying the digest, not the bodies. From this moment the bundle leaves the projector. Answers: what am I committing to?"
+            - generic [ref=f1e1093]:
+              - generic [ref=f1e1094]: VERIFIED
+              - generic [ref=f1e1095]: "verify — the bundle still matches the descriptor. Answers: is this the same evaluator, or has someone helped?"
+            - generic [ref=f1e1096]:
+              - generic [ref=f1e1097]: INVALID
+              - generic [ref=f1e1098]: One added comment breaks it. A seal nobody has watched break is a decoration too — so we break it on purpose. exit 1
+            - generic [ref=f1e1099]:
+              - generic [ref=f1e1100]: RECEIPT
+              - generic [ref=f1e1101]: "run — an outcome per held-out eval, written to --receipt-out. Answers: what did the hidden evaluator find?"
+      - generic [ref=f1e1102]: "Verified usage, v3.7.0: holdout seal <bundle> --out OUT [--key-file] · holdout verify <descriptor> <bundle> [--key-file] · holdout run <descriptor> <bundle> --workspace W [--receipt-out PATH] — from taskspec holdout --help. Tokens HOLDOUT=SEALED / HOLDOUT=VERIFIED / HOLDOUT=INVALID and the note \"seal/run may write descriptor or receipt; verify is read-only\" from taskspec agent-context (format version 4). Demonstrated at movement 03: live/d4/03-the-holdout.md moves C–E."
+    - generic [ref=f1e1104]:
+      - generic [ref=f1e1105]:
+        - generic [ref=f1e1106]:
+          - generic [ref=f1e1107]:
+            - generic [ref=f1e1108]: GO LIVE
+            - generic [ref=f1e1109]: movement 03 · ▶ live/d4/03-the-holdout.md
+          - heading "Hide it. Then prove it still works." [level=2] [ref=f1e1110]
+        - paragraph [ref=f1e1111]: A human seals it, in a terminal the agent cannot see. That separation is the human in the loop — before the loop runs.
+      - generic [ref=f1e1112]:
+        - generic [ref=f1e1113]:
+          - generic [ref=f1e1114]: B
+          - generic [ref=f1e1115]: "Author two hidden evals: h1_composition.sh (totals compose) and h2_label.sh (no column named revenue)"
+          - generic [ref=f1e1116]: bundle authored
+        - generic [ref=f1e1117]:
+          - generic [ref=f1e1118]: C
+          - generic [ref=f1e1119]: taskspec holdout seal tmp/d4/holdout/bundle --out …/descriptor.json
+          - generic [ref=f1e1120]: HOLDOUT=SEALED
+        - generic [ref=f1e1121]:
+          - generic [ref=f1e1122]: D
+          - generic [ref=f1e1123]: taskspec holdout verify descriptor bundle
+          - generic [ref=f1e1124]: HOLDOUT=VERIFIED
+        - generic [ref=f1e1125]:
+          - generic [ref=f1e1126]: D′
+          - generic [ref=f1e1127]: "Append one harmless # comment to a bundle file, verify again"
+          - generic [ref=f1e1128]: HOLDOUT=INVALID · exit 1
+        - generic [ref=f1e1129]:
+          - generic [ref=f1e1130]: D″
+          - generic [ref=f1e1131]: Undo the comment, verify once more
+          - generic [ref=f1e1132]: HOLDOUT=VERIFIED
+        - generic [ref=f1e1133]:
+          - generic [ref=f1e1134]: E
+          - generic [ref=f1e1135]: taskspec holdout run … --workspace . --receipt-out …/holdout-01.json
+          - generic [ref=f1e1136]: H-1 pass · H-2 pass
+        - generic [ref=f1e1137]:
+          - generic [ref=f1e1138]: E′
+          - generic [ref=f1e1139]: Rename gross_ordered_amount → revenue_amount, re-run every visible eval, then the holdout
+          - generic [ref=f1e1140]: visible green · H-2 FAILS
+      - generic [ref=f1e1141]:
+        - generic [ref=f1e1142]:
+          - generic [ref=f1e1143]: the one sentence that governs the rest of the night
+          - generic [ref=f1e1144]: "From the seal onward: the descriptor is public, the digest is public, the tests are not. If someone asks to see the bundle during the break — and someone will — that request is the lesson. Decline warmly."
+        - generic [ref=f1e1145]:
+          - generic [ref=f1e1146]:
+            - generic [ref=f1e1147]: the evidence, and only this
+            - generic [ref=f1e1148]: SEALED, then the descriptor's digest; VERIFIED → INVALID → VERIFIED; the run receipt's two outcomes; and H-2 failing on the rename while every visible eval stays green.
+          - paragraph [ref=f1e1149]: No agent session reads the bundle at any point. If a fallback forces it on screen, announce that the demonstration is now prepared and no longer a real holdout.
+      - generic [ref=f1e1150]: "Move order, bundle bodies, gates and recovery: live/d4/03-the-holdout.md (moves A–F). Commands are real taskspec holdout v3.7.0; tokens as printed. The H-1 pass · H-2 pass and H-2 FAILS outcomes are the EXPECTED SHAPE of the scripted demonstration — the live verdicts are read from the run receipt on the night. Boundary: Revenue remains unresolved and owned by Finance; H-2 enforces that nobody takes the word, and defines nothing."
+    - generic [ref=f1e1152]:
+      - text: Semana Engenharia Agêntica · Day 4 · The Loop
+      - heading "Break" [level=2] [ref=f1e1153]
+      - paragraph [ref=f1e1154]: Ten minutes. The holdout stays sealed on this screen. We come back at 21:30 and stamp a seal for the first time this week.
+      - generic [ref=f1e1156]:
+        - generic [ref=f1e1157]: ON SCREEN
+        - generic [ref=f1e1158]: The sealed descriptor stays up — the digest, visible; the tests, not. If you ask to see the bundle, that question is the lesson.
+      - generic [ref=f1e1159]: "Break placement and duration: plan/d4-act-prompts.md §The locked agenda — 21:20, return 21:30. What stays on the projector during the break: live/d4/03-the-holdout.md move F."
+    - generic [ref=f1e1161]:
+      - generic [ref=f1e1162]:
+        - generic [ref=f1e1163]:
+          - generic [ref=f1e1164]: Movement 04 · ▶ 04 · the peak
+          - generic [ref=f1e1165]: "04"
+          - heading "Who is allowed to say done?" [level=2] [ref=f1e1166]
+          - paragraph [ref=f1e1167]: This act is where human in the loop stops being a slogan. Saying done is not one decision — it is four, held by different parties, in a fixed order.
+          - generic [ref=f1e1168]:
+            - generic [ref=f1e1169]: human in the loop, defined
+            - generic [ref=f1e1170]: Not a human watching every step. The human owns two decisions — entry (may this work be delegated at all?) and exit (is the result real?). The machine owns everything between, and nothing it reports can open or close the chain.
+        - generic [ref=f1e1171]:
+          - generic [ref=f1e1172]: Four commands, four different authorities
+          - generic [ref=f1e1173]:
+            - generic [ref=f1e1174]:
+              - generic [ref=f1e1175]: command
+              - generic [ref=f1e1176]: the question it answers
+              - generic [ref=f1e1177]: owner
+            - generic [ref=f1e1178]:
+              - generic [ref=f1e1179]: gate --stamp
+              - generic [ref=f1e1180]: May this be delegated at all?
+              - generic [ref=f1e1181]: HUMAN
+            - generic [ref=f1e1182]:
+              - generic [ref=f1e1183]: handoff --backend
+              - generic [ref=f1e1184]: What exactly does the executor receive?
+              - generic [ref=f1e1185]: FORMAT
+            - generic [ref=f1e1186]:
+              - generic [ref=f1e1187]: run --ci
+              - generic [ref=f1e1188]: Did the declared evals pass in the workspace?
+              - generic [ref=f1e1189]: MACHINE
+            - generic [ref=f1e1190]:
+              - generic [ref=f1e1191]: accept --stamp
+              - generic [ref=f1e1192]: Is the work real, independent of what the executor claims?
+              - generic [ref=f1e1193]: HUMAN
+          - generic [ref=f1e1194]:
+            - generic [ref=f1e1195]: the precondition, from the tool's own help text
+            - generic [ref=f1e1196]: Acceptance presupposes the gate. You cannot accept work that was never delegate-safe.
+      - generic [ref=f1e1197]: "Chain, ownership and the precondition: taskspec gate/handoff/run/accept --help, v3.7.0. The precondition is quoted verbatim from taskspec accept --help. Verified usage: gate [--stamp] [--require-tier1] <spec> · handoff <spec> --backend <token> · run [--ci] <spec> · accept [--stamp] [--gold-sanity] <spec>. Movement 04 · live/d4/04-the-authorization-chain.md."
+    - generic [ref=f1e1199]:
+      - generic [ref=f1e1200]:
+        - generic [ref=f1e1201]:
+          - generic [ref=f1e1202]:
+            - generic [ref=f1e1203]: The pre-gate
+            - generic [ref=f1e1204]: a verdict, then a signature
+          - heading "The seal, finally stamped" [level=2] [ref=f1e1205]
+        - paragraph [ref=f1e1206]: A seal is a human decision made tamper-evident — the stamp binds a person's yes to the exact text they approved. Day 3 taught hmac-sha256-v2 and never stamped one; this is the first signature of the week — and the first time the room sees it break.
+      - generic [ref=f1e1207]:
+        - generic [ref=f1e1208]:
+          - generic [ref=f1e1209]: One line a dispatcher actually parses
+          - generic [ref=f1e1210]:
+            - generic [ref=f1e1211]:
+              - generic [ref=f1e1212]: TIER=1
+              - generic [ref=f1e1213]: HMAC verified — unsupervised dispatch is OK. Requires a repository signing key.
+            - generic [ref=f1e1214]:
+              - generic [ref=f1e1215]: TIER=2
+              - generic [ref=f1e1216]: Structurally valid, no key or no signature — supervised dispatch only. A human reads every diff.
+            - generic [ref=f1e1217]:
+              - generic [ref=f1e1218]: TIER=3
+              - generic [ref=f1e1219]: HMAC mismatch. Never reached here — a hard FAIL happens first.
+            - generic [ref=f1e1220]:
+              - generic [ref=f1e1221]: no line
+              - generic [ref=f1e1222]: An unsigned spec emits no TIER line at all. Silence is not a pass.
+          - generic [ref=f1e1223]:
+            - generic [ref=f1e1224]: what checkpoint 00 bought, in one line
+            - generic [ref=f1e1225]: This repository had no signing key until tonight — taskspec setup reported MISS signing. Without it every stamp tonight would read TIER=2. Movement 00 provisions the key so this act can honestly show TIER=1.
+        - generic [ref=f1e1226]:
+          - generic [ref=f1e1227]: Before and after, in the frontmatter
+          - generic [ref=f1e1228]: "diff $ taskspec gate --stamp --require-tier1 \\ tasks/T-20260812-raw-payments-source.md $ git diff tasks/T-20260812-raw-payments-source.md - signed_off: false + signed_off: true + signed_off_by: luan.moreno + signed_off_at: 2026-08-13T21:34:0…Z # then change ONE character of the body $ sed -i '' 's/^title: /title: x/' … $ taskspec gate … seal broken — the body no longer matches # undo it TIER=1"
+          - paragraph [ref=f1e1229]: The stamp binds the signature to the exact body. Weakening an eval after sign-off does not produce a weaker gate — it produces no gate.
+      - generic [ref=f1e1230]: "Tier semantics and the machine-readable TIER=N line quoted from taskspec gate --help, v3.7.0: TIER=1 crypto trust → unsupervised dispatch OK · TIER=2 structural-only → supervised dispatch ONLY · TIER=3 HMAC mismatch → never reached · an unsigned spec emits no TIER line. Tokens TIER=1 / TIER=2 from taskspec agent-context. Repository state verified 2026-08-13: taskspec setup → MISS signing — no repository key, remedied at movement 00 (live/d4/00-preflight.md move E). Frontmatter field names from taskspec accept/gate stamping behaviour; the timestamp shown is EXPECTED SHAPE, read live on the night."
+    - generic [ref=f1e1232]:
+      - generic [ref=f1e1233]:
+        - generic [ref=f1e1234]:
+          - generic [ref=f1e1235]:
+            - generic [ref=f1e1236]: The post-gate
+            - generic [ref=f1e1237]: taskspec accept
+          - heading "Six gates, not one" [level=2] [ref=f1e1238]
+        - paragraph [ref=f1e1239]: "accept is the exit half of human in the loop — the human's own question, answered without trusting the executor: now that it claims done, is the work real? Six checks earn that answer before the stamp does."
+      - generic [ref=f1e1240]:
+        - generic [ref=f1e1241]:
+          - generic [ref=f1e1242]: "#"
+          - generic [ref=f1e1243]: what it checks
+          - generic [ref=f1e1244]: what it defends against
+          - generic [ref=f1e1245]: on fail
+        - generic [ref=f1e1246]:
+          - generic [ref=f1e1247]: A
+          - generic [ref=f1e1248]: The evals pass, re-run by us — not taken from the executor's report
+          - generic [ref=f1e1249]: Trusting a claim. Here a pass is the whole point; at the pre-gate it was a smell
+          - generic [ref=f1e1250]: REJECT
+        - generic [ref=f1e1251]:
+          - generic [ref=f1e1252]: B
+          - generic [ref=f1e1253]: Changed files ⊆ touches/creates, and ∩ do-not-touch = ∅
+          - generic [ref=f1e1254]: Satisfying the eval by editing something else. The Goodhart guard
+          - generic [ref=f1e1255]: REJECT
+        - generic [ref=f1e1256]:
+          - generic [ref=f1e1257]: C
+          - generic [ref=f1e1258]: The sign-off HMAC still verifies
+          - generic [ref=f1e1259]: Making the evals pass by weakening them after the stamp
+          - generic [ref=f1e1260]: REJECT
+        - generic [ref=f1e1261]:
+          - generic [ref=f1e1262]: D
+          - generic [ref=f1e1263]: "Isolation report from requires: — documents the sandbox the run needed"
+          - generic [ref=f1e1264]: An unattended task with undeclared network egress
+          - generic [ref=f1e1265]: WARN ONLY
+        - generic [ref=f1e1266]:
+          - generic [ref=f1e1267]: E
+          - generic [ref=f1e1268]: "gold-sanity: rebuild the baseline in an ephemeral worktree, hold the eval bodies constant, and require the evals to FAIL there"
+          - generic [ref=f1e1269]: An eval that is green even on unbuilt work — Act 2's discipline, as a flag
+          - generic [ref=f1e1270]: OPT-IN
+        - generic [ref=f1e1271]:
+          - generic [ref=f1e1272]: F
+          - generic [ref=f1e1273]: format-v4 receipt policy
+          - generic [ref=f1e1274]: A claim with no receipt behind it
+          - generic [ref=f1e1275]: REJECT
+      - generic [ref=f1e1276]:
+        - generic [ref=f1e1277]:
+          - generic [ref=f1e1278]: gate E, said slowly — it is the whole night compiled
+          - generic [ref=f1e1279]: The tool reconstructs last week's code, drops tonight's evals into it so the eval bodies are held constant, and refuses to accept the work unless those evals go red there. That is movement 02's sed one-liner, enforced by a command instead of by a facilitator.
+        - generic [ref=f1e1280]:
+          - generic [ref=f1e1281]:
+            - generic [ref=f1e1282]:
+              - generic [ref=f1e1283]: ✓
+              - generic [ref=f1e1284]: all six hold
+              - generic [ref=f1e1285]: ACCEPTED=1 · exit 0
+            - generic [ref=f1e1286]:
+              - generic [ref=f1e1287]: ✗
+              - generic [ref=f1e1288]: any blocking gate fails
+              - generic [ref=f1e1289]: ACCEPTED=0 · exit 1
+          - paragraph [ref=f1e1290]: On ACCEPT it stamps accepted, accepted_by and accepted_at. A spec is done — provably, not by assertion — only then.
+      - generic [ref=f1e1291]: "All six gates, their defences and their blocking behaviour are quoted from taskspec accept --help, v3.7.0: Gate A evals re-run by us · Gate B blast-radius, described there as \"the Goodhart guard\" · Gate C contract integrity · Gate D isolation report, \"document-and-warn, never a blocker\" · Gate E gold-sanity with the ephemeral-worktree baseline and the FAIL requirement · Gate F format-v4 receipt policy. Tokens ACCEPTED=1 / ACCEPTED=0 and exit codes 0/1/2 from the same help text and taskspec agent-context (format version 4). Gate D's rationale, verbatim: \"an unattended full task with undeclared egress is exactly the surface 2026 reward-hacking exploits.\""
+    - generic [ref=f1e1293]:
+      - generic [ref=f1e1294]:
+        - generic [ref=f1e1295]:
+          - generic [ref=f1e1296]:
+            - generic [ref=f1e1297]: GO LIVE
+            - generic [ref=f1e1298]: movement 04 · ▶ live/d4/04-the-authorization-chain.md
+          - heading "One spec, the whole chain" [level=2] [ref=f1e1299]
+        - paragraph [ref=f1e1300]: Session C is a fresh developer. It gets its spec and AGENTS.md — no transcript, no summary, no holdout. That isolation is what makes the exit code mean anything.
+      - generic [ref=f1e1301]:
+        - generic [ref=f1e1302]:
+          - generic [ref=f1e1303]: A
+          - generic [ref=f1e1304]: taskspec gate tasks/T-20260812-raw-payments-source.md — a verdict, before any signature
+          - generic [ref=f1e1305]: TIER=1
+        - generic [ref=f1e1306]:
+          - generic [ref=f1e1307]: A′
+          - generic [ref=f1e1308]: gate --stamp --require-tier1 · git diff the frontmatter · then change one character of title:, gate again, and undo
+          - generic [ref=f1e1309]: "signed_off: true → seal breaks → TIER=1"
+        - generic [ref=f1e1310]:
+          - generic [ref=f1e1311]: B
+          - generic [ref=f1e1312]: taskspec handoff … --backend claude-code --json — read out what is absent
+          - generic [ref=f1e1313]: TaskHandoff v1
+        - generic [ref=f1e1314]:
+          - generic [ref=f1e1315]: C
+          - generic [ref=f1e1316]: Dispatch the PT-BR prompt to Session C · one sentence per action on screen
+          - generic [ref=f1e1317]: isolated run
+        - generic [ref=f1e1318]:
+          - generic [ref=f1e1319]: D
+          - generic [ref=f1e1320]: taskspec run --ci — the machine's half of done, and only that half
+          - generic [ref=f1e1321]: exit 0
+        - generic [ref=f1e1322]:
+          - generic [ref=f1e1323]: E
+          - generic [ref=f1e1324]: taskspec accept --stamp --gold-sanity — narrate gates A→F as they print
+          - generic [ref=f1e1325]: ACCEPTED=1
+        - generic [ref=f1e1326]:
+          - generic [ref=f1e1327]: F
+          - generic [ref=f1e1328]: Append a line to stg_orders.sql — a file this spec never owned — and accept again
+          - generic [ref=f1e1329]: ACCEPTED=0 · Gate B
+        - generic [ref=f1e1330]:
+          - generic [ref=f1e1331]: G
+          - generic [ref=f1e1332]: Revert, re-accept, then transition … done and rebuild-state
+          - generic [ref=f1e1333]: "done: 1"
+      - generic [ref=f1e1334]:
+        - generic [ref=f1e1335]:
+          - generic [ref=f1e1336]: on screen · PT-BR
+          - generic [ref=f1e1337]: "Você é o developer. Sua única fonte é AGENTS.md e este Task-Spec: tasks/T-20260812-raw-payments-source.md Faça exatamente o que o spec autoriza — nada além de creates_paths. Ao terminar, rode o Exit Check e me diga apenas o código de saída. Não resuma o que você fez."
+        - generic [ref=f1e1338]:
+          - generic [ref=f1e1339]: move F is not optional
+          - generic [ref=f1e1340]: "A chain nobody has watched refuse is a decoration too. At move F the evals still pass and the work is still real — it is rejected anyway, because it touched a file it was not authorized to touch. Say which gate caught it, out loud: Gate B."
+      - generic [ref=f1e1341]: "Move order, the PT-BR prompt, gates and recovery: live/d4/04-the-authorization-chain.md (moves A–G). All commands are real taskspec v3.7.0 with verified flags; tokens TIER=1, ACCEPTED=1, ACCEPTED=0 as printed. Tonight's spec is T-20260812-raw-payments-source, which carries the full signed_off / accepted field block — chosen over the hand-written daily-gross-ordered, which has no sign-off fields at all and so has no \"before\" state to show. done: 1 is the first movement of the graph since Day 3 created it."
+    - generic [ref=f1e1343]:
+      - generic [ref=f1e1344]:
+        - generic [ref=f1e1345]:
+          - generic [ref=f1e1346]: 21:50 · beat 1 of 3
+          - heading "Tonight's method, yours." [level=2] [ref=f1e1347]
+          - paragraph [ref=f1e1348]: The fourth skill in the set. Free, MIT, and it works from files in a fresh session — no chat memory, nothing carried in someone's head.
+          - generic [ref=f1e1349]:
+            - generic [ref=f1e1350]:
+              - generic [ref=f1e1351]: "1"
+              - generic [ref=f1e1352]: Night 1 interview-the-system
+              - generic [ref=f1e1353]: CHECK_INVESTIGATION
+            - generic [ref=f1e1354]:
+              - generic [ref=f1e1355]: "2"
+              - generic [ref=f1e1356]: Night 2 harness-scaffold
+              - generic [ref=f1e1357]: CHECK_SCAFFOLD
+            - generic [ref=f1e1358]:
+              - generic [ref=f1e1359]: "3"
+              - generic [ref=f1e1360]: Night 3 spec-before-build
+              - generic [ref=f1e1361]: CHECK_TASK_SPEC
+            - generic [ref=f1e1362]:
+              - generic [ref=f1e1363]: "4"
+              - generic [ref=f1e1364]: Night 4 prove-the-oracle
+              - generic [ref=f1e1365]: CHECK_ORACLE
+        - generic [ref=f1e1366]:
+          - generic [ref=f1e1367]:
+            - generic [ref=f1e1368]: what it is
+            - paragraph [ref=f1e1369]: The mutation-discrimination drill, the holdout lifecycle, and a standalone validator — so the method runs on a machine that has never heard of this repository.
+          - generic [ref=f1e1370]:
+            - generic [ref=f1e1371]: the gate it must pass
+            - generic [ref=f1e1372]: uv run python \ skills/prove-the-oracle/scripts/validate_oracle.py \ tasks/T-*.md CHECK_ORACLE=PASS
+          - generic [ref=f1e1373]:
+            - generic [ref=f1e1374]: say this part out loud
+            - generic [ref=f1e1375]: It does not tell you what to mutate. Mutation choice is judgment, equivalent mutants exist, and each mutation costs time. Four mutations is a discipline, not a certificate. And structural validity was never proof — a named human still signs the meaning.
+      - generic [ref=f1e1376]: "The four-skill set and the shared bar (a machine-checkable gate, read-only by default, facts looked up and decisions asked for, unresolved stays unresolved): skills/README.md. Nights 1–3 gate names are verified from that file. skills/prove-the-oracle/ IS NOT YET ON DISK — build and publish it, with a resolving install line, before this slide is shown. Named in live/d4/README.md §The skill this night delivers. No pricing on this slide; terms live in presentation/bootcamp.html."
+    - generic [ref=f1e1378]:
+      - generic [ref=f1e1379]:
+        - generic [ref=f1e1380]:
+          - generic [ref=f1e1381]:
+            - generic [ref=f1e1382]: 21:50 · beat 2 of 3
+            - generic [ref=f1e1383]: the crank
+          - heading "Not pre-recorded" [level=2] [ref=f1e1384]
+        - paragraph [ref=f1e1385]: Last night's crank clip was pre-recorded and announced as such. This one ran twenty minutes ago, in this repository, in front of you.
+      - generic [ref=f1e1386]:
+        - generic [ref=f1e1387]:
+          - generic [ref=f1e1388]: Day 3 · 21:50
+          - generic [ref=f1e1389]: the loop, previewed a clip, recorded earlier announced as pre-recorded
+          - generic [ref=f1e1390]: honest, and second-hand
+        - generic [ref=f1e1391]: →
+        - generic [ref=f1e1392]:
+          - generic [ref=f1e1393]: Day 4 · 21:50
+          - generic [ref=f1e1394]: "the loop, executed movement 04, minutes ago signed → run → accepted → done: 1"
+          - generic [ref=f1e1395]: first-hand, and on disk
+      - generic [ref=f1e1396]:
+        - generic [ref=f1e1397]: what the crank actually is
+        - generic [ref=f1e1398]: Not a scheduler and not a queue. The graph names the frontier, the gate decides what may be delegated, the loop dispatches it, and acceptance decides what counts. Movement 05 runs the next turn of it in ten minutes — this beat is just the moment to notice that it already happened.
+      - generic [ref=f1e1399]: "Day 3's crank was pre-recorded by design — live/d3/README.md: \"the crank clip is pre-recorded and must be announced as such\". Tonight's ran at movement 04 (live/d4/04-the-authorization-chain.md), and the done: 1 transition is read from tasks/_state.yaml on screen. No new artifact is created by this slide. No pricing."
+    - generic [ref=f1e1401]:
+      - generic [ref=f1e1402]: 21:50 · beat 3 of 3
+      - heading "Engenharia Agêntica" [level=2] [ref=f1e1403]
+      - paragraph [ref=f1e1404]: Four nights is the shape of the method. The Bootcamp is where you run it on your system, with your unresolved words and your own Finance.
+      - generic [ref=f1e1406]:
+        - generic [ref=f1e1407]: NEXT
+        - generic [ref=f1e1408]: Five minutes on the next deck — then straight back to the graph at movement 05.
+      - paragraph [ref=f1e1409]: presentation/bootcamp.html
+      - generic [ref=f1e1410]: "Deck switch target: presentation/bootcamp.html. Placement and duration: plan/d4-act-prompts.md §The locked agenda — the commercial beat sits inside the night at 21:50, never at the close. No pricing, no dates and no second call to action on this slide; terms live in the Bootcamp deck. Day 3's precedent: live/d3/README.md — \"the handoff slide carries no pricing\"."
+    - generic [ref=f1e1412]:
+      - generic [ref=f1e1413]:
+        - generic [ref=f1e1414]:
+          - generic [ref=f1e1415]: Movement 05 · ▶ 05
+          - generic [ref=f1e1416]: "05"
+          - heading "Waves." [level=2] [ref=f1e1417]
+          - paragraph [ref=f1e1418]: "Movement 04 was one turn of the loop — the wheel Act 0 drew. This movement runs the same loop at width: several packets per turn, and still no scheduler, because the graph already contains the schedule."
+          - generic [ref=f1e1419]:
+            - generic [ref=f1e1420]: the loop, defined
+            - generic [ref=f1e1421]: ready → gate → handoff → run → accept → done → rebuild-state → ready again. The graph names the work, a human opens the turn, an engine runs it, a human closes it, and the graph recomputes. A wave is one turn applied to every spec the graph proves cannot collide.
+        - generic [ref=f1e1422]:
+          - generic [ref=f1e1423]: Concurrency here is a safety property, not a speed trick
+          - generic [ref=f1e1424]:
+            - generic [ref=f1e1425]:
+              - generic [ref=f1e1426]: what is computed
+              - generic [ref=f1e1427]: A write-disjoint partition
+              - generic [ref=f1e1428]: groups whose write surfaces do not overlap · from touches_paths and creates_paths, not from time estimates
+            - generic [ref=f1e1430]:
+              - generic [ref=f1e1431]: why it is safe
+              - generic [ref=f1e1432]: Independent evidence
+              - generic [ref=f1e1433]: two specs that cannot touch the same file cannot corrupt each other's proof — so both exit codes stay meaningful
+            - generic [ref=f1e1435]:
+              - generic [ref=f1e1436]: who decided
+              - generic [ref=f1e1437]: Nobody. The graph did.
+              - generic [ref=f1e1438]: nobody ordered the work · taskspec lint computed the set and ready named the frontier
+      - generic [ref=f1e1439]: "Movement 05 · live/d4/05-waves.md. The partition and the LINT=OK token come from taskspec lint, v3.7.0, run against Day 3's graph on 2026-08-13. Blast-radius enforcement at acceptance time (Gate B) is what makes a disjoint partition safe rather than merely tidy: taskspec accept --help, v3.7.0."
+    - generic [ref=f1e1441]:
+      - generic [ref=f1e1442]:
+        - generic [ref=f1e1443]:
+          - generic [ref=f1e1444]: Ask the graph, not a person
+          - heading "Five tasks. Not six." [level=2] [ref=f1e1445]
+          - generic [ref=f1e1446]: "bash $ taskspec lint concurrency partition (write-disjoint groups — safe to dispatch together): dbt/models (5 task(s)): T-20260812-daily-gross-ordered T-20260812-raw-payments-source T-20260812-stg-daily-captured-payments T-20260812-stg-orders-payments-join T-20260812-stg-returns-refunds-mirror LINT=OK"
+          - generic [ref=f1e1447]:
+            - generic [ref=f1e1448]: the sixth spec, and why it is missing
+            - generic [ref=f1e1449]: T-20260812-daily-grain-decision has no write surface at all. It is the Revenue hole, and a decision is not a file. It cannot be in a wave, cannot be dispatched, and no amount of concurrency will make it ready.
+        - generic [ref=f1e1450]:
+          - generic [ref=f1e1451]: What the partition is computed from
+          - generic [ref=f1e1452]:
+            - generic [ref=f1e1453]:
+              - generic [ref=f1e1454]: declared field
+              - generic [ref=f1e1455]: what it contributes
+            - generic [ref=f1e1456]:
+              - generic [ref=f1e1457]: creates_paths
+              - generic [ref=f1e1458]: Files this spec will bring into existence. Two specs sharing one entry can never be in the same wave.
+            - generic [ref=f1e1459]:
+              - generic [ref=f1e1460]: touches_paths
+              - generic [ref=f1e1461]: Files it will modify. The overlap test runs across both fields together.
+            - generic [ref=f1e1462]:
+              - generic [ref=f1e1463]: depends_on
+              - generic [ref=f1e1464]: Ordering, separately from safety. ready uses it; the partition does not.
+            - generic [ref=f1e1465]:
+              - generic [ref=f1e1466]: do-not-touch
+              - generic [ref=f1e1467]: The negative surface. Gate B rejects at acceptance time if a run crossed it.
+          - generic [ref=f1e1468]:
+            - generic [ref=f1e1469]: the honest limit
+            - paragraph [ref=f1e1470]: The partition is only as honest as the declarations feeding it. A spec that understates its write surface will collide — and the fix is the spec, not the scheduler. If that happens live, we show it.
+      - generic [ref=f1e1471]: "Output quoted from taskspec lint, v3.7.0, run 2026-08-13 against Day 3's six-spec graph — five tasks in the dbt/models group and LINT=OK. T-20260812-daily-grain-decision is absent from the partition because it declares no write paths; verified by reading its frontmatter. Field semantics and the negative surface: taskspec accept --help Gate B (changed files ⊆ touches/creates, ∩ do-not-touch = ∅), v3.7.0. Revenue remains unresolved, owner Finance."
+    - generic [ref=f1e1473]:
+      - generic [ref=f1e1474]:
+        - generic [ref=f1e1475]:
+          - generic [ref=f1e1476]:
+            - generic [ref=f1e1477]: The real shape of Day 3's graph
+            - generic [ref=f1e1478]: verified, not illustrative
+          - heading "Two waves" [level=2] [ref=f1e1479]
+        - paragraph [ref=f1e1480]: A 2-wide frontier, a gate returning 0, then 3 in parallel. Nobody chose that split — depends_on did.
+      - generic [ref=f1e1481]:
+        - generic [ref=f1e1482]:
+          - generic [ref=f1e1483]: Wave 1frontier
+          - generic [ref=f1e1484]:
+            - generic [ref=f1e1485]: daily-gross-ordered
+            - generic [ref=f1e1486]: raw-payments-source
+            - generic [ref=f1e1487]: 4 hidden — unmet depends_on
+          - generic [ref=f1e1488]: "2"
+        - generic [ref=f1e1489]: ▼ accept · transition done · rebuild-state ▼
+        - generic [ref=f1e1490]:
+          - generic [ref=f1e1491]: Wave 2unblocked
+          - generic [ref=f1e1492]:
+            - generic [ref=f1e1493]: stg-orders-payments-join
+            - generic [ref=f1e1494]: stg-returns-refunds-mirror
+            - generic [ref=f1e1495]: stg-daily-captured-payments
+          - generic [ref=f1e1496]: "3"
+        - generic [ref=f1e1497]: ▼ and one spec never joins a wave ▼
+        - generic [ref=f1e1498]:
+          - generic [ref=f1e1499]: Never
+          - generic [ref=f1e1500]:
+            - generic [ref=f1e1501]: daily-grain-decision
+            - generic [ref=f1e1502]: no write surface
+            - generic [ref=f1e1503]: Revenue unresolved · owner Finance
+          - generic [ref=f1e1504]: "0"
+      - generic [ref=f1e1505]:
+        - generic [ref=f1e1506]:
+          - generic [ref=f1e1507]: how the second wave opened
+          - generic [ref=f1e1508]: Not by a timer and not by a person. Wave 1's specs were accepted, then transitioned to done, then rebuild-state recomputed the frontier — and three specs that were hidden at 20:00 became eligible. The same command, a different answer.
+        - generic [ref=f1e1509]:
+          - generic [ref=f1e1510]: the check that makes the claim real
+          - generic [ref=f1e1511]: "After the wave, compare every handoff's creates_paths and require the intersection to be empty: jq … | sort | uniq -d must print nothing. Disjointness verified after the fact, not assumed before it."
+      - generic [ref=f1e1512]: "Wave 1 membership and the hidden count are quoted from taskspec ready, v3.7.0, run 2026-08-13: two rows (daily-gross-ordered, raw-payments-source) plus \"(4 ready spec(s) hidden — blocked by an unmet depends_on; --all shows them)\". Wave 2 membership is the remaining write-surface specs from the taskspec lint partition. The uniq -d collision check is movement 05 move D: live/d4/05-waves.md. daily-grain-decision declares no write paths and stays unready by design."
+    - generic [ref=f1e1514]:
+      - generic [ref=f1e1515]:
+        - generic [ref=f1e1516]:
+          - generic [ref=f1e1517]:
+            - generic [ref=f1e1518]: GO LIVE
+            - generic [ref=f1e1519]: movement 05 · ▶ live/d4/05-waves.md
+          - heading "Three sessions, no scheduler" [level=2] [ref=f1e1520]
+        - paragraph [ref=f1e1521]: Three developer sessions at once. None was told about the others, and none was given an order. Protect that.
+      - generic [ref=f1e1522]:
+        - generic [ref=f1e1523]:
+          - generic [ref=f1e1524]: A
+          - generic [ref=f1e1525]: taskspec lint — read the partition verbatim, then explain five, not six
+          - generic [ref=f1e1526]: LINT=OK
+        - generic [ref=f1e1527]:
+          - generic [ref=f1e1528]: B
+          - generic [ref=f1e1529]: taskspec ready · ready --all — have the room predict the next wave before you print it
+          - generic [ref=f1e1530]: frontier named
+        - generic [ref=f1e1531]:
+          - generic [ref=f1e1532]: C
+          - generic [ref=f1e1533]: "Two terminals: gate --stamp --require-tier1 and handoff, one spec each"
+          - generic [ref=f1e1534]: TIER=1 ×2
+        - generic [ref=f1e1535]:
+          - generic [ref=f1e1536]: D
+          - generic [ref=f1e1537]: Dispatch both PT-BR prompts · then accept --stamp --gold-sanity for both
+          - generic [ref=f1e1538]: ACCEPTED=1 ×2
+        - generic [ref=f1e1539]:
+          - generic [ref=f1e1540]: D′
+          - generic [ref=f1e1541]: jq the handoffs' creates_paths · sort | uniq -d
+          - generic [ref=f1e1542]: empty — no shared path
+        - generic [ref=f1e1543]:
+          - generic [ref=f1e1544]: E
+          - generic [ref=f1e1545]: transition both to done · rebuild-state · ready again
+          - generic [ref=f1e1546]: "done: 3 · frontier grew"
+        - generic [ref=f1e1547]:
+          - generic [ref=f1e1548]: F
+          - generic [ref=f1e1549]: Run wave 2 — three specs together — then make dbt-check
+          - generic [ref=f1e1550]: All checks passed!
+        - generic [ref=f1e1551]:
+          - generic [ref=f1e1552]: F′
+          - generic [ref=f1e1553]: taskspec ready --all | grep -i grain
+          - generic [ref=f1e1554]: still not ready
+      - generic [ref=f1e1555]:
+        - generic [ref=f1e1556]:
+          - generic [ref=f1e1557]: the evidence, and only this
+          - generic [ref=f1e1558]: The lint partition read verbatim; ready before and after the transitions — the same command, a different frontier; git status gaining one file per spec; the uniq -d check printing nothing; and daily-grain-decision refusing.
+        - generic [ref=f1e1559]:
+          - generic [ref=f1e1560]: if a collision happens anyway
+          - generic [ref=f1e1561]: "Stop and show it. A real collision is a better checkpoint than a clean one, and the diagnosis is always the same: a spec declared a write surface it did not own. Fix the spec, re-lint, and say that the partition is only as honest as its declarations."
+      - generic [ref=f1e1562]: "Move order, prompts, the collision check and recovery: live/d4/05-waves.md (moves A–F). Commands are real taskspec v3.7.0. Counts (done: 3 after wave 1) follow from movement 04's single acceptance plus wave 1's two — read live from tasks/_state.yaml, never from this slide. Show three exit codes, not three agent transcripts. If sessions cannot genuinely run in parallel, run them sequentially and say so: the claim is that the graph chose the set, not that the wall clock got shorter."
+    - generic [ref=f1e1564]:
+      - generic [ref=f1e1565]:
+        - paragraph [ref=f1e1566]: Nobody scheduled that.The graph did.
+        - generic [ref=f1e1567]:
+          - generic [ref=f1e1569]: movement 05, after wave 2
+          - generic [ref=f1e1570]: ◆
+          - generic [ref=f1e1571]: the frontier is computed, not maintained
+      - generic [ref=f1e1572]:
+        - generic [ref=f1e1573]: the pieces, assembled — this is how they work together
+        - generic [ref=f1e1574]: The spec bounds the work · the eval proves it can fail · the holdout keeps the proof honest when the executor can read the grader · the human owns entry and exit · and the loop repeats all of it, one gated turn at a time. Remove any one piece and the others stop meaning anything.
+      - generic [ref=f1e1575]:
+        - generic [ref=f1e1576]:
+          - generic [ref=f1e1577]: what changed tonight
+          - generic [ref=f1e1578]: Concurrency changed the throughput of the work. It changed nothing about who is allowed to define a word — and one spec proved that by refusing to appear in any wave.
+        - generic [ref=f1e1579]:
+          - generic [ref=f1e1580]: next · movement 06
+          - paragraph [ref=f1e1581]: Four models exist that did not exist at 20:00. So run the command that found nothing in Act 0, and read what it says now.
+      - generic [ref=f1e1582]: "The line lands after wave 2 completes: live/d4/05-waves.md move F. Boundary restated from the same movement: daily-grain-decision remains unready and Revenue remains unresolved, owner Finance. Model count is read from git status --short dbt/models/staging/ on the night, not asserted here."
+    - generic [ref=f1e1584]:
+      - generic [ref=f1e1585]:
+        - generic [ref=f1e1586]:
+          - generic [ref=f1e1587]: Movement 06 · ▶ 06
+          - generic [ref=f1e1588]: "06"
+          - heading "The unit of work becomes the unit of measurement." [level=2] [ref=f1e1589]: The unit of work becomesthe unit of measurement.
+          - paragraph [ref=f1e1590]: Day 3 promised this sentence. Tonight it is not a sentence, it is a file — and the file exists because every acceptance wrote a line into it.
+        - generic [ref=f1e1591]:
+          - generic [ref=f1e1592]: Why a log and not an impression
+          - generic [ref=f1e1593]:
+            - generic [ref=f1e1594]:
+              - generic [ref=f1e1595]: −19%
+              - generic [ref=f1e1596]: In METR's randomised trial with experienced open-source developers, AI made them 19% slower. Measured.
+            - generic [ref=f1e1597]:
+              - generic [ref=f1e1598]: +20%
+              - generic [ref=f1e1599]: The same developers believed afterwards they had been about 20% faster. Believed.
+            - generic [ref=f1e1600]:
+              - generic [ref=f1e1601]: +24%
+              - generic [ref=f1e1602]: And beforehand they predicted a 24% speed-up. Predicted.
+            - generic [ref=f1e1603]:
+              - generic [ref=f1e1604]: SO
+              - generic [ref=f1e1605]: Three numbers, two of them from feeling and one from a clock — pointing in opposite directions. That is the whole argument for keeping receipts.
+      - generic [ref=f1e1606]: "External: METR, \"Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity\", 2025-07-10 — developers predicted +24%, believed −20% faster afterwards, and were measured 19% slower. External: METR, \"Measuring the Self-Reported Impact of Early-2026 AI on Technical Worker Productivity\", 2026 — a survey of 349 technical workers reports a median 1.4–2× self-reported change in the value of work, with METR itself noting reasons to be sceptical of the magnitude. None of these numbers is about TransactCo; no baseline was measured here and none is claimed."
+    - generic [ref=f1e1608]:
+      - generic [ref=f1e1609]:
+        - generic [ref=f1e1610]:
+          - generic [ref=f1e1611]:
+            - generic [ref=f1e1612]: GO LIVE
+            - generic [ref=f1e1613]: movement 06 · ▶ live/d4/06-the-unit-of-measurement.md
+          - heading "The same command, twice in one night" [level=2] [ref=f1e1614]
+        - paragraph [ref=f1e1615]: No agent in this movement. Nothing on screen was generated — it was all written by work the room already watched.
+      - generic [ref=f1e1616]:
+        - generic [ref=f1e1617]:
+          - generic [ref=f1e1618]: 20:00 · movement 00
+          - generic [ref=f1e1619]: $ taskspec metrics No metrics file found at tasks/_metrics.jsonl
+          - generic [ref=f1e1620]: exit=1 · the unit of measurement did not exist
+        - generic [ref=f1e1621]: →
+        - generic [ref=f1e1622]:
+          - generic [ref=f1e1623]: 22:20 · movement 06
+          - generic [ref=f1e1624]: $ taskspec metrics …one line per transition, per spec, written by accept and transition
+          - generic [ref=f1e1625]: exit=0 · EXPECTED SHAPE — read live from the file
+      - generic [ref=f1e1626]:
+        - generic [ref=f1e1627]:
+          - generic [ref=f1e1628]: A
+          - generic [ref=f1e1629]: taskspec metrics — beside Act 0's screenshot. Say nothing clever; let the pair work
+          - generic [ref=f1e1630]: exit 1 → exit 0
+        - generic [ref=f1e1631]:
+          - generic [ref=f1e1632]: B
+          - generic [ref=f1e1633]: jq the log to a table · then walk one row, not eight
+          - generic [ref=f1e1634]: measured vs declared
+        - generic [ref=f1e1635]:
+          - generic [ref=f1e1636]: C
+          - generic [ref=f1e1637]: taskspec metrics --since 2026-08-13 · --status done
+          - generic [ref=f1e1638]: queryable at 2am
+        - generic [ref=f1e1639]:
+          - generic [ref=f1e1640]: D
+          - generic [ref=f1e1641]: taskspec receipt validate tmp/d4/receipts/*.json
+          - generic [ref=f1e1642]: exit 0
+        - generic [ref=f1e1643]:
+          - generic [ref=f1e1644]: E
+          - generic [ref=f1e1645]: ready --all | grep grain · then dod on the decision spec
+          - generic [ref=f1e1646]: still not ready
+      - generic [ref=f1e1647]:
+        - generic [ref=f1e1648]: the refusal that belongs on screen
+        - generic [ref=f1e1649]: No productivity number for TransactCo. Nobody measured a baseline tonight, so any speed-up claim would be exactly the unmeasured confidence this act argues against. If someone asks, that refusal is the answer.
+      - generic [ref=f1e1650]: "Move order and gates: live/d4/06-the-unit-of-measurement.md (moves A–E). The 20:00 pane is the verified output of taskspec metrics in this repository on 2026-08-13: \"No metrics file found at tasks/_metrics.jsonl\", exit 1. The 22:20 pane is EXPECTED SHAPE — NOT LIVE OUTPUT; the real log is read from tasks/_metrics.jsonl on the night. Filters --since / --status and the jq-optional fallback: taskspec metrics --help, v3.7.0."
+    - generic [ref=f1e1652]:
+      - generic [ref=f1e1653]:
+        - generic [ref=f1e1654]:
+          - generic [ref=f1e1655]: One row, read honestly
+          - heading "Measured, or declared?" [level=2] [ref=f1e1656]
+          - generic [ref=f1e1657]:
+            - generic [ref=f1e1658]:
+              - generic [ref=f1e1659]: field
+              - generic [ref=f1e1660]: kind
+              - generic [ref=f1e1661]: who set it
+            - generic [ref=f1e1662]:
+              - generic [ref=f1e1663]: ts · status
+              - generic [ref=f1e1664]: MEASURED
+              - generic [ref=f1e1665]: the tool, as it happened
+            - generic [ref=f1e1666]:
+              - generic [ref=f1e1667]: attempts · duration
+              - generic [ref=f1e1668]: MEASURED
+              - generic [ref=f1e1669]: the runner
+            - generic [ref=f1e1670]:
+              - generic [ref=f1e1671]: acceptance verdict
+              - generic [ref=f1e1672]: MEASURED
+              - generic [ref=f1e1673]: accept, from six gates
+            - generic [ref=f1e1674]:
+              - generic [ref=f1e1675]: effort · S/M/L
+              - generic [ref=f1e1676]: DECLARED
+              - generic [ref=f1e1677]: a human, at authoring time
+            - generic [ref=f1e1678]:
+              - generic [ref=f1e1679]: budget_iterations
+              - generic [ref=f1e1680]: DECLARED
+              - generic [ref=f1e1681]: a human, as a stopping rule
+            - generic [ref=f1e1682]:
+              - generic [ref=f1e1683]: reason on a park
+              - generic [ref=f1e1684]: DECLARED
+              - generic [ref=f1e1685]: whoever stopped the work
+          - generic [ref=f1e1686]:
+            - generic [ref=f1e1687]: the honest limit of the whole night
+            - generic [ref=f1e1688]: "The log tells you what happened, not whether it was worth doing. effort: S is an estimate nobody checked against the clock. Comparing the two is tomorrow's work — and you now have the data to do it, which you did not have at 20:00."
+        - generic [ref=f1e1689]:
+          - generic [ref=f1e1690]: Four receipts, four different claims
+          - generic [ref=f1e1691]:
+            - generic [ref=f1e1692]:
+              - generic [ref=f1e1693]: receipt
+              - generic [ref=f1e1694]: records · and the field that keeps it honest
+            - generic [ref=f1e1695]:
+              - generic [ref=f1e1696]: engine
+              - generic [ref=f1e1697]:
+                - text: Which provider, model and adapter ran a spec.
+                - generic [ref=f1e1698]: "--outcome accepts unavailable"
+                - text: — an engine that could not run is never a pass.
+            - generic [ref=f1e1699]:
+              - generic [ref=f1e1700]: environment
+              - generic [ref=f1e1701]: The environment a run happened in. --environment-digest, so "it worked on my machine" becomes a value.
+            - generic [ref=f1e1702]:
+              - generic [ref=f1e1703]: graded
+              - generic [ref=f1e1704]: A rubric score against a threshold. --rubric-digest, so the rubric cannot change after the score.
+            - generic [ref=f1e1705]:
+              - generic [ref=f1e1706]: human
+              - generic [ref=f1e1707]: "A named person's decision. --accepted-by and --decision {accept,reject} — the judgment stays attributable."
+          - generic [ref=f1e1708]:
+            - generic [ref=f1e1709]: the small enum carrying a large discipline
+            - generic [ref=f1e1710]: "unavailable is a first-class outcome. The format refuses to let a missing engine be scored as a success — and the checked-in matrix evidence/3.7/engine-matrix.json ships with every family disabled and model_id: TO_RECORD. There is no real cross-engine result upstream, and tonight does not manufacture one."
+      - generic [ref=f1e1711]: "Receipt creators, their required flags and the outcome enum {pass,fail,parked,blocked,unavailable,error} from taskspec receipt {engine,environment,graded,human} --help, v3.7.0; tokens RECEIPT=WRITTEN / RECEIPT=INVALID from taskspec agent-context (format version 4). Measured-versus-declared split derived from tasks/_metrics.jsonl field provenance and Task-Spec frontmatter authored by humans on Day 3. Multi-engine matrix state verified in evidence/3.7/engine-matrix.json: every family disabled, model_id: TO_RECORD."
+    - generic [ref=f1e1713]:
+      - generic [ref=f1e1714]:
+        - generic [ref=f1e1715]:
+          - generic [ref=f1e1716]: The boundary, stated last
+          - heading "We measured the work. We did not earn the word." [level=2] [ref=f1e1717]: We measured the work.We did not earn the word.
+          - paragraph [ref=f1e1718]: Four models exist that did not exist at 20:00. Every one of them was signed, run, accepted and logged. And Revenue is exactly as unresolved as it was when the room arrived.
+          - generic [ref=f1e1719]:
+            - generic [ref=f1e1720]: the decision spec, one last time
+            - generic [ref=f1e1721]: "T-20260812-daily-grain-decision is a valid document. It reports DOD=COMPLETE. It has no write surface, it never entered a wave, and it still cannot become ready. Owner: Finance."
+        - generic [ref=f1e1722]:
+          - generic [ref=f1e1723]:
+            - generic [ref=f1e1724]:
+              - generic [ref=f1e1725]: CAN
+              - generic [ref=f1e1726]: Measure attempts, durations, retries and acceptance verdicts. Facts about the work.
+            - generic [ref=f1e1727]:
+              - generic [ref=f1e1728]: CAN
+              - generic [ref=f1e1729]: Prove an eval discriminates, and seal an evaluator the executor cannot read. Facts about the proof.
+            - generic [ref=f1e1730]:
+              - generic [ref=f1e1731]: CANNOT
+              - generic [ref=f1e1732]: Decide what Revenue means. Not with more mutations, not with a sealed holdout, not with a complete log.
+            - generic [ref=f1e1733]:
+              - generic [ref=f1e1734]: CANNOT
+              - generic [ref=f1e1735]: Tell you the work was worth doing. That is a judgment, and it stays attributable to a person. See the human receipt.
+          - generic [ref=f1e1736]:
+            - generic [ref=f1e1737]: next · the close
+            - paragraph [ref=f1e1738]: Measuring work never earns the right to define it. Six rings are lit. One word is still open, and it is open on purpose.
+      - generic [ref=f1e1739]: "Boundary verified live at movement 06 move E: taskspec ready --all does not list T-20260812-daily-grain-decision, and taskspec dod on it reports DOD=COMPLETE as a document while the spec declares no write paths. Revenue is formally unresolved with owner Finance per AGENTS.md and storage/specs/2-ontology.md — unchanged across Days 1 to 4. Attributable human judgment: taskspec receipt human --accepted-by --decision, v3.7.0. Model count read from git status --short dbt/models/staging/ on the night."
+    - generic [ref=f1e1741]:
+      - generic [ref=f1e1742]:
+        - generic [ref=f1e1743]:
+          - generic [ref=f1e1744]:
+            - generic [ref=f1e1745]: Movement 07 · ▶ 07
+            - generic [ref=f1e1746]: 22:50 · every number read from a command
+          - heading "Turn four closes" [level=2] [ref=f1e1747]
+        - paragraph [ref=f1e1748]: The ledger is read live, not recalled. If a movement fell over, the honest version of this slide is the one we show.
+      - generic [ref=f1e1749]:
+        - generic [ref=f1e1750]:
+          - text: built tonight
+          - generic [ref=f1e1751]:
+            - generic [ref=f1e1752]: A falsifiable Exit Check — one mutation killed, one survived, the survivor closed by strengthening the eval
+            - generic [ref=f1e1753]: A holdout the agent never read — a sealed second eval that caught a rename every visible eval missed
+            - generic [ref=f1e1754]:
+              - text: "One spec through the chain:"
+              - code [ref=f1e1755]: TIER=1
+              - text: → handoff → exit 0 →
+              - code [ref=f1e1756]: ACCEPTED=1
+            - generic [ref=f1e1757]:
+              - text: A write-disjoint wave the graph chose, with no shared
+              - code [ref=f1e1758]: creates_paths
+            - generic [ref=f1e1759]:
+              - code [ref=f1e1760]: tasks/_metrics.jsonl
+              - text: ", which did not exist at 20:00"
+        - generic [ref=f1e1761]:
+          - text: withheld on purpose
+          - generic [ref=f1e1762]:
+            - generic [ref=f1e1763]: Revenue. Still unresolved, still Finance's, after a whole night of measuring work
+            - generic [ref=f1e1764]:
+              - code [ref=f1e1765]: daily-grain-decision
+              - text: — still not ready, and correctly so
+            - generic [ref=f1e1766]:
+              - text: "Any cross-engine claim: the shipped matrix has every family disabled with"
+              - code [ref=f1e1767]: "model_id: TO_RECORD"
+            - generic [ref=f1e1768]: Any productivity number for TransactCo — no baseline was measured, so none is claimed
+            - generic [ref=f1e1769]: The holdout bundle itself. The digest was public all night; the tests were not
+        - generic [ref=f1e1770]:
+          - text: measured, not asserted
+          - generic [ref=f1e1771]:
+            - generic [ref=f1e1772]:
+              - code [ref=f1e1773]: tasks/_state.yaml
+              - text: — tonight's
+              - code [ref=f1e1774]: done
+              - text: count, up from 0
+            - generic [ref=f1e1775]:
+              - code [ref=f1e1776]: git status --short dbt/models/staging/
+              - text: — the models that exist now and did not at 20:00
+            - generic [ref=f1e1777]:
+              - code [ref=f1e1778]: taskspec metrics --since
+              - text: — one line per transition
+            - generic [ref=f1e1779]:
+              - code [ref=f1e1780]: make dbt-check
+              - text: — All checks passed!
+            - generic [ref=f1e1781]:
+              - text: And
+              - code [ref=f1e1782]: ready --all | grep grain
+              - text: — still nothing
+      - generic [ref=f1e1783]:
+        - generic [ref=f1e1784]:
+          - generic [ref=f1e1785]: The room writes these. Not the facilitator.
+          - generic [ref=f1e1786]:
+            - generic [ref=f1e1787]:
+              - generic [ref=f1e1788]: "01"
+              - generic [ref=f1e1789]: One eval in my codebase that has never been seen to fail is
+            - generic [ref=f1e1791]:
+              - generic [ref=f1e1792]: "02"
+              - generic [ref=f1e1793]: The evaluator I will seal so an agent cannot read it is
+            - generic [ref=f1e1795]:
+              - generic [ref=f1e1796]: "03"
+              - generic [ref=f1e1797]: The one word in my domain an agent may not define is and its owner is
+        - generic [ref=f1e1800]:
+          - generic [ref=f1e1801]: tomorrow · day 5 · The Factory
+          - paragraph [ref=f1e1802]: If one packet can be proved and measured — what does it take to run a hundred of them and still answer for any single one?
+      - generic [ref=f1e1803]: "Every figure in the ledger is read live at movement 07 move A: tasks/_state.yaml, git status --short dbt/models/staging/, taskspec metrics --since 2026-08-13, make dbt-check, taskspec ready --all. Commitment lines are movement 07 move B — the room fills them; the facilitator waits. Withheld column: evidence/3.7/engine-matrix.json (every family disabled, model_id: TO_RECORD) and AGENTS.md (Revenue unresolved, owner Finance). Day 5's name is a planning decision recorded in plan/d4-act-prompts.md §Open decisions."
+    - generic [ref=f1e1805]:
+      - generic [ref=f1e1806]:
+        - generic [ref=f1e1807]:
+          - generic [ref=f1e1808]: Complete, for the first time all week
+          - heading "Six rings, lit." [level=2] [ref=f1e1809]
+          - generic [ref=f1e1810]:
+            - generic [ref=f1e1811]:
+              - generic [ref=f1e1812]: D1
+              - generic [ref=f1e1813]: Context · Graph what is true, and who owns what is not
+              - generic [ref=f1e1814]: earned
+            - generic [ref=f1e1815]:
+              - generic [ref=f1e1816]: D2
+              - generic [ref=f1e1817]: Harness what the agent may do, in files
+              - generic [ref=f1e1818]: earned
+            - generic [ref=f1e1819]:
+              - generic [ref=f1e1820]: D3
+              - generic [ref=f1e1821]: Prompt / Spec a unit small enough to finish and prove
+              - generic [ref=f1e1822]: earned
+            - generic [ref=f1e1823]:
+              - generic [ref=f1e1824]: D4
+              - generic [ref=f1e1825]: Loop · Eval + human gate the signal that closes it, and the receipt it leaves
+              - generic [ref=f1e1826]: tonight ×2
+          - paragraph [ref=f1e1827]: Every previous night left two rings dim with the same note — waits for Day 4. Tonight is the first night two rings light, and the map is finished.
+        - 'img "The six-ring map, complete: Graph, Eval and human gate, Loop, Harness, Context and Prompt/Spec, all solid, around the Model at the core." [ref=f1e1829]':
+          - generic [ref=f1e1837]: Model
+          - generic [ref=f1e1838]:
+            - generic [ref=f1e1839]: GRAPH
+            - generic [ref=f1e1840]: EVAL + HUMAN GATE
+            - generic [ref=f1e1841]: LOOP
+            - generic [ref=f1e1842]: HARNESS
+            - generic [ref=f1e1843]: CONTEXT
+            - generic [ref=f1e1844]: PROMPT / SPEC
+          - generic [ref=f1e1845]: nothing dashed
+      - generic [ref=f1e1847]: "The six-ring map as presented on Days 1 to 3: presentation/d1.html, d2.html, d3.html — outermost to innermost Graph · Eval + human gate · Loop · Harness · Context · Prompt/Spec, with Model at the core. Ring attribution per plan/d4-act-prompts.md §Canonical facts: Graph and Context earned Day 1, Harness Day 2, Prompt/Spec Day 3, and Loop and Eval + human gate tonight — the first night two rings light. The figure is a status map, not a metric."
+    - generic [ref=f1e1849]:
+      - text: Unchanged from Days 1 to 3 · word for word
+      - paragraph [ref=f1e1850]: The agent performs bounded work; evidence supports claims; humans keep the decisions the system cannot legitimately make.
+      - generic [ref=f1e1851]:
+        - generic [ref=f1e1852]: what tonight added, and no more
+        - generic [ref=f1e1853]: "The middle clause got its teeth: evidence you have watched fail."
+      - generic [ref=f1e1854]:
+        - generic [ref=f1e1855]:
+          - generic [ref=f1e1856]: tomorrow · day 5
+          - paragraph [ref=f1e1857]: The Factory — 20:00–23:00 BRT. One packet is proved and measured. A hundred is a different problem.
+        - generic [ref=f1e1858]:
+          - generic [ref=f1e1859]: the bootcamp
+          - paragraph [ref=f1e1860]: The method, run against your own system. Details in the deck we opened at 21:50 — not here, and not again tonight.
+      - generic [ref=f1e1861]: The invariant is quoted verbatim from live/d1/, live/d2/ and live/d3/ — unchanged by design; do not rewrite it. Day 5's name (The Factory) is a planning decision recorded in plan/d4-act-prompts.md §Open decisions. Bootcamp terms live in presentation/bootcamp.html and are deliberately absent here; Day 3's precedent was one neutral line on the closing slide (live/d3/README.md).
