@@ -7,6 +7,14 @@ description: Turn an ambiguous question about an unfamiliar or brownfield system
 
 Treat an existing system as a witness: ask a precise question, inspect admissible evidence, and preserve what the evidence cannot decide.
 
+Day 1 of Semana Engenharia Agêntica delivers this skill. It runs before any
+harness exists and before anything is specified, and it hands downstream work
+three things: evidence with provenance, an ontology that separates physical data
+from business meaning, and open questions with named owners. Day 2's
+[`harness-scaffold`](../harness-scaffold/SKILL.md) gives that work a place to
+live; Day 3's [`spec-before-build`](../spec-before-build/SKILL.md) turns it into
+units an agent can finish.
+
 ## Non-negotiable boundaries
 
 - Default to read-only investigation. Never infer permission to mutate data, infrastructure, source code, or external systems.

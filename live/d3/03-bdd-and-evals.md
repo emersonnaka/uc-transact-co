@@ -52,16 +52,16 @@ one above it:
 
 | # | Section | Zone | Who writes it | What it holds |
 | ---: | --- | --- | --- | --- |
-| 1 | `## Behaviors` | 2 | **the human types** | `B-1`, `B-2` — Given / When / Then, in language Finance can approve |
+| 1 | `## Behavior` | 2 | **the human types** | `B-1`, `B-2` — Given / When / Then, in language Finance can approve |
 | 2 | `## Success Criteria` | 3 | agent drafts, human checks | one bash function per eval, each naming the `B-N` it proves |
 | 3 | `## Validation Card` | 3 | agent drafts, human checks | the `verifies: [B-N]` mapping, retry policy, agent contract |
 | 4 | `## Exit Check` | 3 | **the human types** | one command that returns 0 only when every eval passes |
 
-**Section 1 of 4 — `## Behaviors`.** The half a human signs. Two behaviors, not
+**Section 1 of 4 — `## Behavior`.** The half a human signs. Two behaviors, not
 one, because the plan item made two separate promises:
 
 ```markdown
-## Behaviors
+## Behavior
 
 - **B-1** — GIVEN raw orders carrying six distinct statuses
   WHEN `stg_daily_gross_ordered` aggregates `total_amount` by `ordered_at`
@@ -73,6 +73,12 @@ one, because the plan item made two separate promises:
 
 Stop here and ask the room who signs this. The answer is Finance, and the point
 is that they *can* — there is no bash in it.
+
+Use the singular `## Behavior`, which is exactly what `taskspec batch` emits at
+checkpoint 04. Both spellings validate, but matching the tool means the
+hand-written spec and the generated ones look identical side by side — which is the
+claim checkpoint 02 made when it said the room would know what the generator would
+be generating.
 
 **Section 2 of 4 — `## Success Criteria`.** Now derive the evals. Each comment
 names the behavior that eval exists to prove:

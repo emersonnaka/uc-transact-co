@@ -1,19 +1,20 @@
 ---
 name: harness-scaffold
-description: >
-  Regenerate the structural skeleton of a harness — agent role stubs, KB
-  layout, and per-stack rule files — for this repository's stack, in seconds.
-  Use when a harness structure must be (re)created from artifacts on disk:
-  after the roles and contract are already understood, never before. The
-  scaffold produces structure only; every stub is intentionally empty.
+description: Regenerate the structural skeleton of a harness — agent role stubs, KB layout, and per-stack rule files — for a repository's stack, in seconds. Use when a harness structure must be (re)created from artifacts on disk, after the roles and contract are already understood and never before. Produces structure only: every stub is intentionally empty, and the scaffold grants no authority.
 ---
 
-# harness-scaffold
+# Harness Scaffold
 
 One run regenerates the harness structure the team already understands:
 `agents/` role stubs, `kb/<stack>/` knowledge-base placeholders, and
 `rules/<stack>.md` rule stubs, plus a manifest. It is the automation of the
 hand-written work from `live/d2/03-agent-pair.md` — faster, never smarter.
+
+Day 2 of Semana Engenharia Agêntica delivers this skill. It follows Day 1's
+[`interview-the-system`](../interview-the-system/SKILL.md), which supplies the
+evidence and the owned questions the harness is built around, and it precedes
+Day 3's [`spec-before-build`](../spec-before-build/SKILL.md), which writes the
+units that execute inside the authority this structure holds.
 
 ## Boundaries
 

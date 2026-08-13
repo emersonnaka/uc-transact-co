@@ -135,6 +135,23 @@ time; the archived copy is the **prepared** fallback if checkpoint 02 goes wrong
   `presentation/bootcamp.html`, and the night resumes at Act 5 afterwards. The
   only pricing in `d3.html` is one neutral line on the closing slide.
 
+## The skill this night delivers
+
+`skills/spec-before-build/` — the packaged method: turn one ambiguous plan item
+into an atomic Task-Spec whose exit check answers for itself. It ships two
+references (sizing, two-halves-of-done) and a standalone validator that checks the
+sizing rule, the "and" rule, the bidirectional `B-N ⇄ verifies:` binding, exit-check
+completeness, and the forbidden-term boundary:
+
+```bash
+uv run python skills/spec-before-build/scripts/validate_task_spec.py tasks/T-*.md
+```
+
+It must finish `CHECK_TASK_SPEC=PASS`. The validator deliberately mirrors a subset
+of the `taskspec` CLI so the skill works on a machine without it. See
+[`../../skills/README.md`](../../skills/README.md) for how the three nights'
+skills compose.
+
 ## Language
 
 Deck copy and these runbooks are English. Prompts pasted on screen are PT-BR —
