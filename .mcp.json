@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "transactco-cfo": {
+      "command": "uv",
+      "args": ["run", "python", "scripts/cfo_mcp.py"]
+    }
+  }
+}

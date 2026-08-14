@@ -51,7 +51,7 @@ while :; do
 
     if [[ -z "$(declares_paths "$spec")" ]]; then
       echo "CRANK=SKIP id=$id reason=NO_WRITE_SURFACE"
-      skipped+=("$id")
+      [[ " ${skipped[*]:-} " == *" $id "* ]] || skipped+=("$id")
       continue
     fi
 
