@@ -6020,15 +6020,25 @@ Talk track: this is the last night — the week in one look, not a recap of nigh
 <text x="199" y="446" font-family="Fira Code" font-size="11.0" fill="#8b93a1" fill-opacity="0.28">valid</text>
 <text x="725" y="324" font-family="Fira Code" font-size="15.3" fill="#8b93a1" fill-opacity="0.13">closed</text>
 <text x="720" y="322" font-family="Fira Code" font-size="15.3" fill="#8b93a1" fill-opacity="0.31">closed</text>
-          <g fill="none" stroke="#f85149" stroke-width="1.1" stroke-dasharray="3 6">
-            <path d="M272 196 L408 282" stroke-opacity=".4"/>
-            <path d="M704 128 L492 282" stroke-opacity=".4"/>
-            <path d="M450 512 L450 348" stroke-opacity=".5"/>
-          </g>
-          <g fill="#f85149">
-            <path d="M414 286 l-12 -2 6 10 z" opacity=".6"/>
-            <path d="M486 286 l12 -2 -6 10 z" opacity=".6"/>
-            <path d="M450 344 l-5 12 10 0 z" opacity=".7"/>
+          <defs>
+            <linearGradient id="poG1" gradientUnits="userSpaceOnUse" x1="272" y1="196" x2="408" y2="282">
+              <stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#f85149"/>
+            </linearGradient>
+            <linearGradient id="poG2" gradientUnits="userSpaceOnUse" x1="704" y1="128" x2="492" y2="282">
+              <stop offset="0%" stop-color="#d4af37"/><stop offset="100%" stop-color="#f85149"/>
+            </linearGradient>
+            <linearGradient id="poG3" gradientUnits="userSpaceOnUse" x1="450" y1="512" x2="450" y2="348">
+              <stop offset="0%" stop-color="#f85149" stop-opacity=".9"/><stop offset="100%" stop-color="#ff8b86"/>
+            </linearGradient>
+            <filter id="poBlur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.4"/></filter>
+          </defs>
+          <g fill="none" stroke-linecap="round">
+            <path d="M272 196 C 330 236, 358 258, 408 282" stroke="url(#poG1)" stroke-width="3.4" stroke-opacity=".3" filter="url(#poBlur)"/>
+            <path d="M704 128 C 622 192, 558 242, 492 282" stroke="url(#poG2)" stroke-width="3.4" stroke-opacity=".3" filter="url(#poBlur)"/>
+            <path d="M450 512 C 450 458, 450 402, 450 348" stroke="url(#poG3)" stroke-width="3.4" stroke-opacity=".3" filter="url(#poBlur)"/>
+            <path d="M272 196 C 330 236, 358 258, 408 282" stroke="url(#poG1)" stroke-width="1.7" stroke-opacity=".85" stroke-dasharray="0.5 7.5"/>
+            <path d="M704 128 C 622 192, 558 242, 492 282" stroke="url(#poG2)" stroke-width="1.7" stroke-opacity=".85" stroke-dasharray="0.5 7.5"/>
+            <path d="M450 512 C 450 458, 450 402, 450 348" stroke="url(#poG3)" stroke-width="1.7" stroke-opacity=".85" stroke-dasharray="0.5 7.5"/>
           </g>
           <g text-anchor="middle" font-family="Instrument Serif" font-style="italic">
             <text x="443" y="303" font-size="46" fill="#f85149" fill-opacity=".32">revenue</text>
@@ -6283,15 +6293,15 @@ Talk track: this is the last night — the week in one look, not a recap of nigh
 <path d="M225 454 C 386.5 454, 386.5 358, 480 358" fill="none" stroke="#9aa3b2" stroke-opacity="0.15" stroke-width="0.8"/>
 <path d="M666 166 C 629.0 166, 629.0 262, 660 262" fill="none" stroke="#9aa3b2" stroke-opacity="0.15" stroke-width="0.8"/>
 <path d="M385 166 C 594.0 166, 594.0 454, 735 454" fill="none" stroke="#9aa3b2" stroke-opacity="0.15" stroke-width="0.8"/>
-<path d="M455 262 C 281.5 262, 281.5 166, 176 166" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
-<path d="M455 262 C 594.5 262, 594.5 166, 666 166" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
-<path d="M455 262 C 293.5 262, 293.5 262, 200 262" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
-<path d="M455 262 C 501.5 262, 501.5 358, 480 358" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
-<path d="M455 262 C 631.5 262, 631.5 358, 740 358" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
-<path d="M455 262 C 306.0 262, 306.0 454, 225 454" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
-<path d="M455 262 C 504.0 262, 504.0 454, 485 454" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
-<path d="M455 262 C 298.5 262, 298.5 550, 210 550" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
-<path d="M455 262 C 609.0 262, 609.0 550, 695 550" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
+<path d="M455 248 C 281.5 262, 281.5 166, 176 166" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
+<path d="M455 248 C 594.5 262, 594.5 166, 666 166" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
+<path d="M455 248 C 293.5 262, 293.5 262, 200 262" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
+<path d="M455 248 C 501.5 262, 501.5 358, 480 358" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
+<path d="M455 248 C 631.5 262, 631.5 358, 740 358" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
+<path d="M455 248 C 306.0 262, 306.0 454, 225 454" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
+<path d="M455 248 C 504.0 262, 504.0 454, 485 454" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
+<path d="M455 248 C 298.5 262, 298.5 550, 210 550" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
+<path d="M455 248 C 609.0 262, 609.0 550, 695 550" fill="none" stroke="#f85149" stroke-opacity="0.4" stroke-width="1.1"/>
 <rect x="110.0" y="149" width="132" height="34" rx="10" fill="#101014" stroke="#f85149" stroke-opacity=".5" stroke-width="1.1"/>
 <text x="176" y="171.5" font-family="Instrument Serif" font-size="16" fill="#dbe0e8" text-anchor="middle">checkout ui</text>
 <rect x="330.0" y="149" width="110" height="34" rx="10" fill="#101014" stroke="#22d3ee" stroke-opacity=".4" stroke-width="1.1"/>
@@ -6300,8 +6310,8 @@ Talk track: this is the last night — the week in one look, not a recap of nigh
 <text x="666" y="171.5" font-family="Instrument Serif" font-size="16" fill="#dbe0e8" text-anchor="middle">admin panel</text>
 <rect x="140.0" y="245" width="120" height="34" rx="10" fill="#101014" stroke="#f85149" stroke-opacity=".5" stroke-width="1.1"/>
 <text x="200" y="267.5" font-family="Instrument Serif" font-size="16" fill="#dbe0e8" text-anchor="middle">orders api</text>
-<rect x="390.0" y="244" width="130" height="36" rx="10" fill="#15120a" stroke="#d4af37" stroke-width="1.7" style="filter:drop-shadow(0 0 14px rgba(212,175,55,.5));"/>
-<text x="455" y="268" font-family="Instrument Serif" font-size="17.5" fill="#f0d68a" text-anchor="middle">pricing svc</text>
+<rect x="390.0" y="230" width="130" height="36" rx="10" fill="#15120a" stroke="#d4af37" stroke-width="1.7" style="filter:drop-shadow(0 0 14px rgba(212,175,55,.5));"/>
+<text x="455" y="254" font-family="Instrument Serif" font-size="17.5" fill="#f0d68a" text-anchor="middle">pricing svc</text>
 <rect x="618.0" y="245" width="84" height="34" rx="10" fill="#101014" stroke="#d4af37" stroke-opacity=".4" stroke-width="1.1"/>
 <text x="660" y="267.5" font-family="Instrument Serif" font-size="16" fill="#dbe0e8" text-anchor="middle">auth</text>
 <rect x="730.0" y="245" width="112" height="34" rx="10" fill="#101014" stroke="#d4af37" stroke-opacity=".4" stroke-width="1.1"/>
@@ -6324,7 +6334,7 @@ Talk track: this is the last night — the week in one look, not a recap of nigh
 <text x="445" y="555.5" font-family="Instrument Serif" font-size="16" fill="#dbe0e8" text-anchor="middle">queue</text>
 <rect x="639.0" y="533" width="112" height="34" rx="10" fill="#101014" stroke="#f85149" stroke-opacity=".5" stroke-width="1.1"/>
 <text x="695" y="555.5" font-family="Instrument Serif" font-size="16" fill="#dbe0e8" text-anchor="middle">cron jobs</text>
-<text x="455" y="296" font-family="Fira Code" font-size="8.5" font-weight="700" letter-spacing="1.8" fill="#e6cf8a" text-anchor="middle">one change</text>
+<text x="455" y="277" font-family="Fira Code" font-size="8.5" font-weight="700" letter-spacing="1.8" fill="#e6cf8a" text-anchor="middle">one change</text>
 <rect x="395" y="131" width="70" height="16" rx="8" fill="rgba(248,81,73,0.14)"/>
 <text x="430" y="142.5" font-family="Fira Code" font-size="8" letter-spacing="1" fill="#ff9d97" text-anchor="middle">stale copy</text>
 <rect x="693" y="131" width="59" height="16" rx="8" fill="rgba(248,81,73,0.14)"/>
@@ -6742,6 +6752,57 @@ Talk track: this is the last night — the week in one look, not a recap of nigh
     </div>
     <div class="src">Converge: converge/README.md — compile intent into shipped software. Referee holds no credentials.</div>
     <aside class="speaker-notes" hidden>Talk track: intent in, line, shipped out. Then the gold referee under the line — scoring, not building.</aside>
+  </section>
+
+
+<section class="slide" data-act="RAILS" data-act-name="The CFO question" data-accent="green">
+    <div class="aurora aurora--green" aria-hidden="true"><b></b></div>
+    <div class="d5r-split reveal" style="--rk:var(--green);">
+      <div class="d5r-copy">
+        <span class="tag" style="--tag-c:var(--green);">TransactCo</span>
+        <div class="d5r-kick" style="margin-top:clamp(10px,1.5vh,16px);">the use case · closing the loop</div>
+        <h2 class="display">Now we answer the CFO.</h2>
+        <p class="lede">Monday opened with one question and no honest way to answer it. Five specs were authored, gated, executed and accepted since then. <b>The system now answers with what it measured — and refuses the word it was never given.</b></p>
+        <div class="d5r-beats">
+          <div class="d5r-beat" style="--rk:var(--green);"><b>Two measurements it can defend</b><span>Each one carries its basis, its clock, and the accepted spec that built it.</span></div>
+          <div class="d5r-beat" style="--rk:var(--red);"><b>One word it will not say</b><span>Ask it for Revenue and it returns the owner, not a number.</span></div>
+        </div>
+        <div class="callout" style="--co-c:var(--green);margin-top:clamp(14px,2.2vh,22px);max-width:44ch;">
+          <div class="co-k">what the CFO receives</div>
+          <div class="co-b">Two provenanced numbers. <b>One decision, still theirs.</b></div>
+        </div>
+      </div>
+      <div class="d5r-stage" style="--rk:var(--green);">
+        <svg class="d5r-fig" viewBox="0 0 640 520" role="img" aria-label="Two measured daily aggregates, gross ordered and captured payments, both accepted at Tier 1; Revenue remains a dashed unresolved node owned by Finance.">
+          <g text-anchor="middle">
+            <rect x="40" y="40" width="250" height="112" rx="12" fill="#111114" stroke="#3fb950"/>
+            <text x="165" y="68" fill="#3fb950" font-family="Fira Code" font-size="10">GROSS ORDERED</text>
+            <text x="165" y="98" fill="#eaedf2" font-family="Instrument Serif" font-size="21">R$ 92,409,231.57</text>
+            <text x="165" y="120" fill="#8ef5a6" font-family="Fira Code" font-size="10">61,262 orders · cancelled excluded</text>
+            <text x="165" y="138" fill="#6e7a8c" font-family="Fira Code" font-size="10">clock: ordered_at · UTC</text>
+            <rect x="350" y="40" width="250" height="112" rx="12" fill="#111114" stroke="#22d3ee"/>
+            <text x="475" y="68" fill="#22d3ee" font-family="Fira Code" font-size="10">CAPTURED PAYMENTS</text>
+            <text x="475" y="98" fill="#eaedf2" font-family="Instrument Serif" font-size="21">R$ 86,933,043.44</text>
+            <text x="475" y="120" fill="#74c8d5" font-family="Fira Code" font-size="10">57,916 payments · not net of refunds</text>
+            <text x="475" y="138" fill="#6e7a8c" font-family="Fira Code" font-size="10">clock: paid_at · UTC</text>
+            <text x="320" y="188" fill="#6e7a8c" font-family="Fira Code" font-size="11">difference R$ 5,476,188.13 — two clocks, not an error</text>
+            <line x1="165" y1="206" x2="320" y2="248" stroke="#6e7a8c" stroke-width="1.2"/>
+            <line x1="475" y1="206" x2="320" y2="248" stroke="#6e7a8c" stroke-width="1.2"/>
+            <rect x="160" y="248" width="320" height="104" rx="12" fill="#15080a" stroke="#f85149" stroke-width="1.6" stroke-dasharray="7 6"/>
+            <text x="320" y="278" fill="#f85149" font-family="Fira Code" font-size="11">REVENUE</text>
+            <text x="320" y="308" fill="#eaedf2" font-family="Instrument Serif" font-size="20">unavailable</text>
+            <text x="320" y="330" fill="#ff8b82" font-family="Fira Code" font-size="10">owner: Finance · decision D2 open</text>
+            <rect x="120" y="396" width="400" height="80" rx="12" fill="#111114" stroke="#d4af37"/>
+            <text x="320" y="424" fill="#d4af37" font-family="Fira Code" font-size="10">EVIDENCE BEHIND BOTH NUMBERS</text>
+            <text x="320" y="448" fill="#eaedf2" font-family="Instrument Serif" font-size="16">5 specs accepted · Tier 1 · five gates each</text>
+            <text x="320" y="466" fill="#6e7a8c" font-family="Fira Code" font-size="10">sealed holdout green · make dbt-check 0</text>
+          </g>
+        </svg>
+        <div class="d5r-cap">two measured · one owned · nothing invented</div>
+      </div>
+    </div>
+    <div class="src">Figures read live from the transactco-cfo MCP server over warehouse.duckdb; both aggregates built by specs accepted at Tier 1 through taskspec accept (gates A–E). Revenue refusal is the server's own answer, not a slide. Runbook: live/d5/01-close-the-cfo-question.md.</div>
+    <aside class="speaker-notes" hidden>Talk track: this is the only TransactCo slide left. Say the question came from Monday, and that nothing on this slide was typed by hand — the numbers come from the MCP server in the next two minutes. Then switch to the terminal and run the runbook. Do not read the numbers aloud here; let the server say them.</aside>
   </section>
 
 
