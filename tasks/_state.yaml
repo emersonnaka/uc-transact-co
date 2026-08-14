@@ -2,6 +2,7 @@
 # Source of truth: frontmatter in each tasks/T-*.md
 schema_version: 1
 last_rebuilt: 1970-01-01T00:00:00Z
+graph_revision_digest: sha256:2851899b5e03b2595406f515d805426a74491b6ec43e306ca8879056aa4186bd
 
 tasks:
 - id: T-20260812-daily-grain-decision
