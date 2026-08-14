@@ -2,3 +2,5 @@
 {"schema_version":1,"ts":"2026-08-14T01:29:47Z","task":"T-20260812-raw-payments-source","event":"status_change","from":"ready","to":"done","reason":"accepted at checkpoint 04"}
 {"acceptance_record_digest":"sha256:9516382870b2c2470acbd247bc33095fbf8c98ac1c6295d651d2887906560ea2","acceptance_tier":1,"attempt_id":"02a276bd-e977-402c-b210-bd8a82557eed","author":"luanmorenomaciel","event":"accepted","schema_version":1,"task":"T-20260812-daily-gross-ordered","ts":"2026-08-14T17:48:15Z"}
 {"schema_version":1,"ts":"2026-08-14T17:48:16Z","task":"T-20260812-daily-gross-ordered","event":"status_change","from":"ready","to":"done","reason":"cranked"}
+{"acceptance_record_digest":"sha256:7ec33fecd7ba8eaa16476c64c6fbc9fdf8e3a5380c3f2da2500fc6f4e874c4ba","acceptance_tier":1,"attempt_id":"45413da1-a7c9-41d1-9fbb-609df10b2faa","author":"luanmorenomaciel","event":"accepted","schema_version":1,"task":"T-20260812-stg-daily-captured-payments","ts":"2026-08-14T17:49:10Z"}
+{"schema_version":1,"ts":"2026-08-14T17:49:10Z","task":"T-20260812-stg-daily-captured-payments","event":"status_change","from":"ready","to":"done","reason":"cranked"}

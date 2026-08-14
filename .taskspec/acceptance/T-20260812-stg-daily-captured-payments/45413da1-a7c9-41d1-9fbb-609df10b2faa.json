@@ -1,0 +1,40 @@
+{
+  "acceptance_tier": 1,
+  "accepted_at": "2026-08-14T17:49:10Z",
+  "accepted_by": "luanmorenomaciel",
+  "contract": "AcceptanceRecord/v1",
+  "gate_outcomes": {
+    "authorization": {
+      "code": "AUTHORIZATION_VALID",
+      "status": "pass"
+    },
+    "evaluation": {
+      "code": "EVAL_PASSED",
+      "status": "pass"
+    },
+    "evidence": {
+      "code": "EVIDENCE_SATISFIED",
+      "proof": [
+        "format v3 or earlier: v4 policy receipts are not required"
+      ],
+      "status": "pass"
+    },
+    "preflight": {
+      "code": "PREFLIGHT_PASSED",
+      "status": "pass",
+      "warnings": []
+    }
+  },
+  "outcome": {
+    "code": "ACCEPTED_TIER_1",
+    "status": "accepted"
+  },
+  "receipts": [],
+  "subject": {
+    "attempt_id": "45413da1-a7c9-41d1-9fbb-609df10b2faa",
+    "authorization_ref": "hmac-sha256-v3:ed0abaaf:d98f381f41c7cff4d225a0f1e431b50a6389c51e54029895c23492183bbd31c2",
+    "base_commit": "677bc871efb1a7347af49c6df282f1f1fd1da79c",
+    "task_id": "T-20260812-stg-daily-captured-payments",
+    "task_revision_digest": "sha256:3b3f8f66f972b394bc5343f6718123e3f96961918fb0107fcdff0328a83f72c9"
+  }
+}

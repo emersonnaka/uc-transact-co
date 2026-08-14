@@ -1,7 +1,7 @@
 ---
 id: T-20260812-stg-daily-captured-payments
 title: "Sum captured payments per UTC calendar day"
-status: ready
+status: done
 format_version: 3
 profile: standard
 effort: M
@@ -27,10 +27,14 @@ execution_backend: claude
 signed_off: true
 signed_off_by: luanmorenomaciel
 signed_off_at: 2026-08-14T01:41:51Z
-accepted: false
-accepted_by: (none)
-accepted_at: (none)
+accepted: true
+accepted_by: luanmorenomaciel
+accepted_at: 2026-08-14T17:49:10Z
 signed_off_sig: hmac-sha256-v3:ed0abaaf:d98f381f41c7cff4d225a0f1e431b50a6389c51e54029895c23492183bbd31c2
+accepted_tier: 1
+accepted_attempt_id: 45413da1-a7c9-41d1-9fbb-609df10b2faa
+accepted_authorization_ref: hmac-sha256-v3:ed0abaaf:d98f381f41c7cff4d225a0f1e431b50a6389c51e54029895c23492183bbd31c2
+acceptance_record_digest: sha256:7ec33fecd7ba8eaa16476c64c6fbc9fdf8e3a5380c3f2da2500fc6f4e874c4ba
 ---
 
 # Sum captured payments per UTC calendar day
