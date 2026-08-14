@@ -1,7 +1,7 @@
 ---
 id: T-20260812-daily-gross-ordered
 title: Aggregate non-cancelled order totals by ordered_at
-status: ready
+status: done
 effort: S
 budget_iterations: 15
 agent: any
@@ -15,6 +15,14 @@ signed_off: true
 signed_off_by: luanmorenomaciel
 signed_off_at: 2026-08-14T01:41:33Z
 signed_off_sig: hmac-sha256-v3:ed0abaaf:6259fbdf3f477754efadb67d6592520e73bfa076a66f136e227caa24a5a2ffb7
+accepted: true
+accepted_by: luanmorenomaciel
+accepted_at: 2026-08-14T17:48:15Z
+accepted_tier: 1
+accepted_attempt_id: 02a276bd-e977-402c-b210-bd8a82557eed
+accepted_authorization_ref: hmac-sha256-v3:ed0abaaf:6259fbdf3f477754efadb67d6592520e73bfa076a66f136e227caa24a5a2ffb7
+acceptance_record_digest: sha256:9516382870b2c2470acbd247bc33095fbf8c98ac1c6295d651d2887906560ea2
+blocked_reason: (none)
 ---
 
 ## Goal
