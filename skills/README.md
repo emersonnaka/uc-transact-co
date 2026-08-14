@@ -46,7 +46,7 @@ uv run python skills/harness-scaffold/scripts/scaffold_harness.py \
 uv run python skills/spec-before-build/scripts/validate_task_spec.py tasks/T-*.md
 ```
 
-Night 3's validator deliberately mirrors a subset of the `taskspec` CLI (v3.7.0,
+Night 3's validator deliberately mirrors a subset of the `taskspec` CLI (v3.8.0,
 MIT) so the skill stands alone on a machine without it. Where the CLI is present,
 prefer `taskspec validate`, `taskspec dod` and `taskspec lint` — that is the
 reference implementation.

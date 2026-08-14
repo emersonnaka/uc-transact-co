@@ -362,12 +362,14 @@ at a non-disposable database.
 | [`src/transactco/control/`](src/transactco/control/) | Builders | Verification, controlled evaluation, and scoring |
 | [`AGENTS.md`](AGENTS.md) · [`CLAUDE.md`](CLAUDE.md) | Agents | Cross-engine ground rules and the Day 2 role-definition surface |
 | [`plan/semana.md`](plan/semana.md) | Facilitators | Storytelling, session design, delivery gates, context pack, and runbook |
-| [`presentation/d1.html`](presentation/d1.html) · [`presentation/d2.html`](presentation/d2.html) · [`presentation/d3.html`](presentation/d3.html) | Facilitators | Foundation, harness, and specification decks — open in a browser, navigate with arrow keys or space |
+| [`presentation/d1.html`](presentation/d1.html) · [`presentation/d2.html`](presentation/d2.html) · [`presentation/d3.html`](presentation/d3.html) · [`presentation/d4.html`](presentation/d4.html) | Facilitators | Foundation, harness, specification, and loop decks — open in a browser, navigate with arrow keys or space |
 | [`presentation/about-me.html`](presentation/about-me.html) | Facilitators | Optional presenter introduction deck |
 | [`live/`](live/) | Facilitators | Executable teaching surface — one numbered file per demo checkpoint |
 | [`skills/interview-the-system/`](skills/interview-the-system/) | Participants | Reusable skill, references, validator, and agent metadata |
 | [`skills/harness-scaffold/`](skills/harness-scaffold/) | Participants | Regenerable harness structure; scaffolding only, never authority or completed content |
-| [`storage/specs/`](storage/specs/) | Session evidence | Five tracked, baseline-specific artifacts from Nights 1–2; frozen and read-only for Night 3 |
+| [`skills/spec-before-build/`](skills/spec-before-build/) | Participants | Turn one ambiguous plan item into an atomic Task-Spec whose exit check answers for itself |
+| [`storage/specs/`](storage/specs/) | Session evidence | Five tracked, baseline-specific artifacts from Nights 1–2; frozen and read-only for Nights 3–4 |
+| [`tasks/`](tasks/) | Session evidence | Night 3's Task-Spec graph — six specs, all `DOD=COMPLETE`, none yet run |
 | [`docs/semana-agentic-uc-transact-co-v2.pdf`](docs/semana-agentic-uc-transact-co-v2.pdf) | Maintainers | Historical source brief; preserved, not the operational runbook |
 
 The guided experience runs from the decks, numbered live checkpoints, approved

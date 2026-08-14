@@ -296,7 +296,8 @@ Rules any engine building on a deck must hold to:
 
 ### Vocabulary the decks hold to
 
-- **Task-Spec** — the product and the file format (v3.7.0, MIT).
+- **Task-Spec** — the product and the file format (v3.8.0, MIT; the Day 4
+  research below was carried out against v3.7.0 and is preserved as dated).
 - **spec** — one Task-Spec file, in flowing prose. Never "pack".
 - **packet** — one unit of work; a node in the graph.
 - **zone** — one of the six numbered sections. Never "field".
@@ -660,6 +661,14 @@ hole; `tasks/_state.yaml` and `_metrics.jsonl` prove it was withheld and routed
 to Finance.
 
 ### 15.6 Assessment — does Task-Spec match where atomic tasks are going?
+
+> **Superseded in part, 2026-08-13.** The installed engine is now **v3.8.0**.
+> Three command surfaces moved and the Day 4 runbooks were resynced against the
+> new binary: `eval-audit --mutations` takes a MutationMatrix/v1 file rather than
+> a count and applies patches in a git worktree; the audit report is
+> `EvalAuditReceipt/v1` with a `cases[]` array; and `lint` prints
+> `CONCURRENCY_GROUPS` instead of a prose write-disjoint partition. The research
+> below is preserved as written on 2026-08-12.
 
 Researched 2026-08-12 with Tavily, Exa and Firecrawl, then re-checked against
 the current source tree at `~/GitHub/task-spec` (engine v3.7.0, commit

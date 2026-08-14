@@ -101,7 +101,7 @@ of both halves, the bidirectional `B-N ⇄ verifies:` binding, exit-check
 completeness, and a forbidden-term boundary (`--forbid revenue` by default). It
 must finish with `CHECK_TASK_SPEC=PASS`.
 
-Where the `taskspec` CLI (v3.7.0+, MIT) is installed, prefer its own gates —
+Where the `taskspec` CLI (v3.8.0+, MIT) is installed, prefer its own gates —
 they are the reference implementation and this validator deliberately mirrors a
 subset:
 
