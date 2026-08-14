@@ -82,20 +82,20 @@ cat > tmp/d4/holdout/bundle/h1_composition.sh <<'SH'
 #!/usr/bin/env bash
 # H-1 — the daily aggregate must compose with its source, not merely build.
 set -euo pipefail
-duckdb warehouse.duckdb -noheader -list -c "
-  select case
-    when (select count(*) from main.stg_daily_gross_ordered)
-       = (select count(distinct cast(ordered_at as date))
-            from main.stg_orders where status != 'cancelled')
-    then 'PASS' else 'FAIL' end
-" | grep -qx PASS
+uv run python -c "
+import duckdb, sys
+c = duckdb.connect('warehouse.duckdb', read_only=True)
+rows = c.execute('select count(*) from main.stg_daily_gross_ordered').fetchone()[0]
+days = c.execute(\"select count(distinct cast(ordered_at as date)) from main.stg_orders where order_status != 'cancelled'\").fetchone()[0]
+sys.exit(0 if rows == days else 1)
+"
 SH
 
 cat > tmp/d4/holdout/bundle/h2_label.sh <<'SH'
 #!/usr/bin/env bash
 # H-2 — no column in the staging layer may be named revenue. Finance owns that word.
 set -euo pipefail
-! grep -rniE '\brevenue\b' dbt/models/staging/ --include='*.sql'
+! grep -rniE '\brevenue' dbt/models/staging/ --include='*.sql'
 SH
 
 chmod +x tmp/d4/holdout/bundle/*.sh

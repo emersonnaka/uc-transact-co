@@ -83,12 +83,20 @@ select
     count(*)                  as order_count,
     sum(total_amount)         as gross_ordered_amount
 from {{ ref('stg_orders') }}
-where status != 'cancelled'
+where order_status != 'cancelled'
 group by 1
 SQL
 
 make dbt-check
+cd dbt && uv run dbt build --profiles-dir . --select +stg_daily_gross_ordered; cd ..
+cp dbt/models/staging/stg_daily_gross_ordered.sql tmp/d4/audit/original.sql
 ```
+
+**Two details that will bite if you retype them from memory.** The upstream column is
+`order_status`, not `status` — `stg_orders` renames it, so `where status != …` fails to
+bind. And `dbt` is not on `PATH`: every build in this runbook goes through
+`uv run dbt … --profiles-dir .`, and the first one needs `+` to materialise
+`stg_orders` too. Verified 2026-08-13.
 
 Name the label discipline once, then move on: the column is
 `gross_ordered_amount`, not `revenue`. Tonight does not earn the right to rename it.
@@ -101,175 +109,77 @@ like this, and it is worth keeping deliberately:
 
 ```bash
 # B-1 — the model builds
-cd dbt && dbt build --select stg_daily_gross_ordered >/dev/null 2>&1
+weak() { (cd dbt && uv run dbt build --profiles-dir . --select stg_daily_gross_ordered >/dev/null 2>&1); }
+weak; echo "exit=$?"
 ```
 
 It is deterministic, idempotent, cheap and explainable. It is also not falsifiable
 against the behaviour it claims: it fails if the SQL is *invalid*, not if the SQL is
 *wrong*. That distinction is what the audit is about to prove.
 
-### Move D — the audit
+### Move D — break it on purpose
 
-**Prerequisite — 3.8 changed this command.** `eval-audit` reconstructs refs in git
-worktrees and applies each mutation as a patch, so the model from Move B **must be
-committed** before this runs, and `--mutations` now takes a *matrix file*, never a
-count. Build the matrix from the model you just wrote:
+Delete the filter. Nothing else. The SQL stays valid, the build stays green, and the
+numbers are now wrong:
 
 ```bash
-git add dbt/models/staging/stg_daily_gross_ordered.sql
-git commit -qm "movement 02: the smallest honest model"
-
-mkdir -p tmp/d4/audit
-M=dbt/models/staging/stg_daily_gross_ordered.sql
-mut() { sed -E "$2" "$M" > /tmp/m.sql; diff -u --label a/"$M" --label b/"$M" "$M" /tmp/m.sql > tmp/d4/audit/"$1".patch || true; }
-mut m1-drop-group-by  '/^group by 1$/d'
-mut m2-rename-date    's/ordered_date/ordered_day/'
-mut m3-sum-to-count   's/sum\(total_amount\)/count(total_amount)/'
-mut m4-drop-cancelled "/^where status != 'cancelled'\$/d"
-
-# every patch must be non-empty — an empty patch is a no-op that git apply accepts,
-# and a no-op mutation reports as a survivor while having changed nothing
-wc -c tmp/d4/audit/*.patch
-
-cat > tmp/d4/audit/mutations.json <<'JSON'
-{ "contract": "MutationMatrix/v1", "stack": "generic", "experimental": true,
-  "mutations": [
-    { "id": "m1-drop-group-by",  "patch": "m1-drop-group-by.patch" },
-    { "id": "m2-rename-date",    "patch": "m2-rename-date.patch" },
-    { "id": "m3-sum-to-count",   "patch": "m3-sum-to-count.patch" },
-    { "id": "m4-drop-cancelled", "patch": "m4-drop-cancelled.patch" }
-  ] }
-JSON
+sed -i '' "/where order_status != 'cancelled'/d" dbt/models/staging/stg_daily_gross_ordered.sql
+weak; echo "exit=$?"
 ```
 
-Then audit. `--baseline` is the commit **before** the model existed, so the evals are
-expected to fail there — that is the gold-sanity half of the check:
+`exit=0`. **Green, with a real bug shipped.** Say the sentence and stop talking:
 
-```bash
-taskspec eval-audit tasks/T-20260812-daily-gross-ordered.md \
-  --baseline HEAD~1 \
-  --mutations tmp/d4/audit/mutations.json \
-  --report tmp/d4/audit/gross-ordered.json
-echo "exit=$?"
-```
+> This mutation is a real bug that ships. The eval was green for it. That is the hole,
+> and it is not the model's fault — it is the check's.
 
-`eval-audit` reconstructs the baseline in temporary git worktrees, applies mutations,
-and records which evals notice. Read the report as a table, at most eight rows:
-
-```bash
-jq -r '.cases[] | [.id, (if .passed then "SURVIVED" else "KILLED" end)] | @tsv' \
-  tmp/d4/audit/gross-ordered.json | column -t
-```
-
-**Read this before you rehearse — the spec as written kills all four.** Verified on
-2026-08-13 against taskspec 3.8.0: auditing `T-20260812-daily-gross-ordered` in its
-current form returns `current` PASS, `baseline` FAIL, and **every mutation FAIL**,
-including `m4-drop-cancelled`. There is no survivor. The reason is `eval_2`:
-
-```bash
-eval_2() { grep -q "cancelled" dbt/models/staging/stg_daily_gross_ordered.sql; }
-```
-
-That is a **text** check, not a behaviour check. Deleting the `where` line also deletes
-the word `cancelled` from the file, so the grep notices — for the wrong reason. The
-mutation is caught by spelling, not by meaning.
-
-You have two honest ways to run this checkpoint, and you must pick one before the
-night:
-
-1. **Audit the weak eval you just wrote at Move C.** Put the build-only Exit Check
-   into a scratch copy of the spec, audit *that*, and get the survivor the lesson
-   needs. The spec in `tasks/` is never weakened; the scratch copy is thrown away.
-2. **Keep the spec as-is and change the story.** Show the all-killed table and say
-   the sharper thing: *this eval catches the mutation by grepping for a word, so it
-   would also pass if I renamed the column and kept the bug.* Then demonstrate that
-   by hand and strengthen the eval anyway.
-
-Do not narrate a survivor that the report does not show.
-
-The two rows to stop on:
-
-- One mutation **KILLED** — e.g. breaking the `group by`, which makes the build fail.
-  Point at it: here the gate works.
-- One mutation **SURVIVED** — e.g. removing `where status != 'cancelled'`. The SQL is
-  still valid, the build still succeeds, the eval still returns 0, and the numbers are
-  now wrong. Say the sentence:
-
-> This mutation is a real bug that ships. The eval was green for it. That is the
-> hole, and it is not the model's fault — it is the check's.
-
-Do the surviving mutation by hand too, so the room watches it rather than trusting
-JSON:
-
-```bash
-cp dbt/models/staging/stg_daily_gross_ordered.sql tmp/d4/audit/original.sql
-sed -i '' "/where status != 'cancelled'/d" dbt/models/staging/stg_daily_gross_ordered.sql
-cd dbt && dbt build --select stg_daily_gross_ordered >/dev/null 2>&1; echo "eval exit=$?"; cd ..
-```
-
-`eval exit=0`. Green, with the filter deleted.
+Verified 2026-08-13: the build succeeds with the filter removed, so the Move C check
+returns 0 on work that is wrong.
 
 ### Move E — close the hole by strengthening the eval
 
-The only legitimate fix is to make the eval able to notice. Restore the model, then
-rewrite the Exit Check so it asserts the *behaviour* rather than the *build*:
+The only legitimate fix is to make the eval able to notice. A behaviour check compares
+what the model produced against what the source says it should have produced — so
+deleting a filter changes the number, and the number is what gets asserted:
 
 ```bash
+strong() {
+  (cd dbt && uv run dbt build --profiles-dir . --select stg_daily_gross_ordered >/dev/null 2>&1) || return 1
+  uv run python -c "
+import duckdb, sys
+c = duckdb.connect('warehouse.duckdb', read_only=True)
+model  = c.execute('select round(sum(gross_ordered_amount),2) from main.stg_daily_gross_ordered').fetchone()[0]
+source = c.execute(\"select round(sum(total_amount),2) from main.stg_orders where order_status != 'cancelled'\").fetchone()[0]
+sys.exit(0 if model == source else 1)
+"
+}
+```
+
+Now run it twice — still mutated, then restored. **This pair is the deliverable of the
+checkpoint, not the green:**
+
+```bash
+strong; echo "mutated  exit=$?"      # 1  RED — the same bug, now caught
+
 cp tmp/d4/audit/original.sql dbt/models/staging/stg_daily_gross_ordered.sql
+strong; echo "restored exit=$?"      # 0  GREEN on correct work
 ```
 
-New Exit Check for `B-1`:
+Verified 2026-08-13: `weak` returns 0 in both states; `strong` returns 1 mutated and 0
+restored. Two runs, two different colours, one command.
+
+### Move F — optional · the same idea, automated
+
+Everything above was done by hand because a room believes what it watches. If you want
+to show that the tool does it too, `taskspec eval-audit` applies a matrix of mutations
+in throwaway git worktrees and reports which evals noticed:
 
 ```bash
-# B-1 — cancelled orders are excluded: the model total must be strictly less
-#        than the unfiltered total, and must match the filtered total exactly.
-cd dbt
-dbt build --select stg_daily_gross_ordered >/dev/null 2>&1 || exit 1
-duckdb ../warehouse.duckdb -noheader -list -c "
-  select case
-    when (select round(sum(gross_ordered_amount),2) from main.stg_daily_gross_ordered)
-       = (select round(sum(total_amount),2) from main.stg_orders where status != 'cancelled')
-    then 'PASS' else 'FAIL' end
-" | grep -qx PASS
+taskspec eval-audit --help
 ```
 
-Now repeat the mutation with the new check:
-
-```bash
-sed -i '' "/where status != 'cancelled'/d" dbt/models/staging/stg_daily_gross_ordered.sql
-# …run the new Exit Check…            -> exit 1   RED. The mutation is now killed.
-cp tmp/d4/audit/original.sql dbt/models/staging/stg_daily_gross_ordered.sql
-# …run the new Exit Check…            -> exit 0   GREEN on correct work.
-```
-
-Two runs, two different colours, one command. **That pair is the deliverable of this
-checkpoint** — not the green.
-
-### Move F — re-audit
-
-```bash
-git add dbt/models/staging/stg_daily_gross_ordered.sql
-git commit -qm "movement 02: the eval, strengthened"
-
-taskspec eval-audit tasks/T-20260812-daily-gross-ordered.md \
-  --baseline HEAD~2 --mutations tmp/d4/audit/mutations.json \
-  --report tmp/d4/audit/gross-ordered-v2.json
-```
-
-**The strengthened eval cannot be audited.** `eval-audit` runs each case in a fresh
-`git worktree`, and a worktree contains **tracked files only**. `warehouse.duckdb` is
-untracked (verified: `git ls-files warehouse.duckdb` is empty), so Move E's
-`duckdb ../warehouse.duckdb` check has no database inside the worktree and fails
-everywhere — `current` included, which makes the audit exit 1 for an environmental
-reason rather than a real one. Two options: re-audit with the *grep-and-parse* evals
-only, or run the strengthened check by hand as Move E already does and say plainly
-that the audit tool cannot reach it. The rest of the night is unaffected — all six
-specs in `tasks/` use `make dbt-check` plus greps, none of which need the warehouse,
-so `accept --gold-sanity` works for every one of them.
-
-Every mutation killed. Say the honest caveat: mutation testing has known limits —
-equivalent mutants that no test can distinguish, and real cost per mutation. Four
-mutations is a discipline, not a certificate.
+It needs the model committed and a `MutationMatrix/v1` file with one `.patch` per
+mutation — worth naming on a slide, not worth building live. **Skip it if the room is
+tired; the by-hand pair already proved the point.**
 
 ## Show the evidence
 
