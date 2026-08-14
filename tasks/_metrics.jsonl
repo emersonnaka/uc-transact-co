@@ -4,3 +4,5 @@
 {"schema_version":1,"ts":"2026-08-14T17:48:16Z","task":"T-20260812-daily-gross-ordered","event":"status_change","from":"ready","to":"done","reason":"cranked"}
 {"acceptance_record_digest":"sha256:7ec33fecd7ba8eaa16476c64c6fbc9fdf8e3a5380c3f2da2500fc6f4e874c4ba","acceptance_tier":1,"attempt_id":"45413da1-a7c9-41d1-9fbb-609df10b2faa","author":"luanmorenomaciel","event":"accepted","schema_version":1,"task":"T-20260812-stg-daily-captured-payments","ts":"2026-08-14T17:49:10Z"}
 {"schema_version":1,"ts":"2026-08-14T17:49:10Z","task":"T-20260812-stg-daily-captured-payments","event":"status_change","from":"ready","to":"done","reason":"cranked"}
+{"acceptance_record_digest":"sha256:6678d57aee78b648b7e65d90726426612ddfa1e3f688d3e505936246f68fc958","acceptance_tier":1,"attempt_id":"2574a9ff-9436-4736-9995-0aeaf28d7f58","author":"luanmorenomaciel","event":"accepted","schema_version":1,"task":"T-20260812-stg-orders-payments-join","ts":"2026-08-14T17:50:05Z"}
+{"schema_version":1,"ts":"2026-08-14T17:50:06Z","task":"T-20260812-stg-orders-payments-join","event":"status_change","from":"ready","to":"done","reason":"cranked"}

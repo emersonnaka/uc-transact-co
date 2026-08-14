@@ -1,7 +1,7 @@
 ---
 id: T-20260812-stg-orders-payments-join
 title: "Join orders to payments keeping every order"
-status: ready
+status: done
 format_version: 3
 profile: standard
 effort: M
@@ -27,10 +27,14 @@ execution_backend: claude
 signed_off: true
 signed_off_by: luanmorenomaciel
 signed_off_at: 2026-08-14T01:25:39Z
-accepted: false
-accepted_by: (none)
-accepted_at: (none)
+accepted: true
+accepted_by: luanmorenomaciel
+accepted_at: 2026-08-14T17:50:05Z
 signed_off_sig: hmac-sha256-v3:ed0abaaf:3c8232395e64132ccddd5a260cc2eec21f5e6fd8ab3cf5b08c3a92b6e98ba7d6
+accepted_tier: 1
+accepted_attempt_id: 2574a9ff-9436-4736-9995-0aeaf28d7f58
+accepted_authorization_ref: hmac-sha256-v3:ed0abaaf:3c8232395e64132ccddd5a260cc2eec21f5e6fd8ab3cf5b08c3a92b6e98ba7d6
+acceptance_record_digest: sha256:6678d57aee78b648b7e65d90726426612ddfa1e3f688d3e505936246f68fc958
 ---
 
 # Join orders to payments keeping every order

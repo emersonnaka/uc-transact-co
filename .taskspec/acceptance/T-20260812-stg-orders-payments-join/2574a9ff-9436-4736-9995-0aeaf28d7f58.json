@@ -1,0 +1,40 @@
+{
+  "acceptance_tier": 1,
+  "accepted_at": "2026-08-14T17:50:05Z",
+  "accepted_by": "luanmorenomaciel",
+  "contract": "AcceptanceRecord/v1",
+  "gate_outcomes": {
+    "authorization": {
+      "code": "AUTHORIZATION_VALID",
+      "status": "pass"
+    },
+    "evaluation": {
+      "code": "EVAL_PASSED",
+      "status": "pass"
+    },
+    "evidence": {
+      "code": "EVIDENCE_SATISFIED",
+      "proof": [
+        "format v3 or earlier: v4 policy receipts are not required"
+      ],
+      "status": "pass"
+    },
+    "preflight": {
+      "code": "PREFLIGHT_PASSED",
+      "status": "pass",
+      "warnings": []
+    }
+  },
+  "outcome": {
+    "code": "ACCEPTED_TIER_1",
+    "status": "accepted"
+  },
+  "receipts": [],
+  "subject": {
+    "attempt_id": "2574a9ff-9436-4736-9995-0aeaf28d7f58",
+    "authorization_ref": "hmac-sha256-v3:ed0abaaf:3c8232395e64132ccddd5a260cc2eec21f5e6fd8ab3cf5b08c3a92b6e98ba7d6",
+    "base_commit": "45ef9d37a3d4f1129a330f6c408ecaf33ef6dc84",
+    "task_id": "T-20260812-stg-orders-payments-join",
+    "task_revision_digest": "sha256:13ac410ecac7ca6945e25733d738f3e9b0486c198528923c6600645d23d0f029"
+  }
+}
