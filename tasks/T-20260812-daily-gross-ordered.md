@@ -36,6 +36,8 @@ Evidence: `4-plan-transform.md` item 7 · brief candidate 1
   THEN it is described by its physical basis and never as "Revenue".
 
 ## Success Criteria
+
+```bash
 # eval-1 (verifies B-1): the model exists and the project parses
 eval_1() { make dbt-check >/dev/null 2>&1; }
 
@@ -44,8 +46,11 @@ eval_2() { grep -q "cancelled" dbt/models/staging/stg_daily_gross_ordered.sql; }
 
 # eval-3 (verifies B-2): the boundary holds — nothing here is named revenue
 eval_3() { ! grep -ril "revenue" dbt/models/ | grep -q . ; }
+```
 
 ## Validation Card
+
+```yaml
 success_criteria:
   - id: eval_1
     description: The model exists and the dbt project parses
@@ -80,9 +85,14 @@ agent_contract:
   sandbox_type: host
   emit: [pass, fail, retry_with_reason, parked_with_context]
   backend_metadata: {}
+```
+
 
 ## Exit Check
-eval_1 && eval_2 && eval_3)
+
+```bash
+eval_1 && eval_2 && eval_3
+```
 
 ## Anti-Patterns
 - **Don't name it revenue** — Revenue is unresolved and owned by Finance.
