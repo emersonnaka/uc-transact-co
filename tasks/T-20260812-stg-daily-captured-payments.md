@@ -24,12 +24,13 @@ security_class: (none)
 source_action_item: (none)
 tracker_ref: (none)
 execution_backend: claude
-signed_off: false
-signed_off_by: (none)
-signed_off_at: (none)
+signed_off: true
+signed_off_by: luanmorenomaciel
+signed_off_at: 2026-08-14T01:41:51Z
 accepted: false
 accepted_by: (none)
 accepted_at: (none)
+signed_off_sig: hmac-sha256-v3:ed0abaaf:d98f381f41c7cff4d225a0f1e431b50a6389c51e54029895c23492183bbd31c2
 ---
 
 # Sum captured payments per UTC calendar day

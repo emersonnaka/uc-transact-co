@@ -1,7 +1,7 @@
 ---
 id: T-20260812-raw-payments-source
 title: "Declare the raw payments source"
-status: ready
+status: done
 format_version: 3
 profile: standard
 effort: S
@@ -24,12 +24,17 @@ security_class: (none)
 source_action_item: (none)
 tracker_ref: (none)
 execution_backend: claude
-signed_off: false
-signed_off_by: (none)
-signed_off_at: (none)
-accepted: false
-accepted_by: (none)
-accepted_at: (none)
+signed_off: true
+signed_off_by: luanmorenomaciel
+signed_off_at: 2026-08-14T01:24:42Z
+accepted: true
+accepted_by: luanmorenomaciel
+accepted_at: 2026-08-14T01:28:43Z
+signed_off_sig: hmac-sha256-v3:ed0abaaf:b444ac12f818c70469d402cebb7af6f181989fc764ad74d48b9cb7c2bad2fdb2
+accepted_tier: 1
+accepted_attempt_id: 57a6c143-9238-4e9b-aff1-8092d55fddac
+accepted_authorization_ref: hmac-sha256-v3:ed0abaaf:b444ac12f818c70469d402cebb7af6f181989fc764ad74d48b9cb7c2bad2fdb2
+acceptance_record_digest: sha256:e743345610d7efc9bc1aae20a3f42d77e42cf8df2d2366dc0e84567a700dab18
 ---
 
 # Declare the raw payments source

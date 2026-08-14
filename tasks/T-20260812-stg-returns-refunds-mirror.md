@@ -24,12 +24,13 @@ security_class: (none)
 source_action_item: (none)
 tracker_ref: (none)
 execution_backend: claude
-signed_off: false
-signed_off_by: (none)
-signed_off_at: (none)
+signed_off: true
+signed_off_by: luanmorenomaciel
+signed_off_at: 2026-08-14T01:25:50Z
 accepted: false
 accepted_by: (none)
 accepted_at: (none)
+signed_off_sig: hmac-sha256-v3:ed0abaaf:3850002e4dbe52c062f0077201e44b36cff90d2ae1abeff24f126da9c07cd18d
 ---
 
 # Mirror returned orders against refunded payments

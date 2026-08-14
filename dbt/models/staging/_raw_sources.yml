@@ -22,3 +22,13 @@ sources:
           - name: ordered_at
           - name: updated_at
           - name: ingested_at
+      - name: payments
+        description: One row per payment attempt against an order.
+        columns:
+          - name: payment_id
+          - name: order_id
+          - name: amount
+          - name: method
+          - name: status
+          - name: paid_at
+          - name: ingested_at

@@ -1,0 +1,2 @@
+{"acceptance_record_digest":"sha256:e743345610d7efc9bc1aae20a3f42d77e42cf8df2d2366dc0e84567a700dab18","acceptance_tier":1,"attempt_id":"57a6c143-9238-4e9b-aff1-8092d55fddac","author":"luanmorenomaciel","event":"accepted","schema_version":1,"task":"T-20260812-raw-payments-source","ts":"2026-08-14T01:28:43Z"}
+{"schema_version":1,"ts":"2026-08-14T01:29:47Z","task":"T-20260812-raw-payments-source","event":"status_change","from":"ready","to":"done","reason":"accepted at checkpoint 04"}

@@ -24,12 +24,13 @@ security_class: (none)
 source_action_item: (none)
 tracker_ref: (none)
 execution_backend: claude
-signed_off: false
-signed_off_by: (none)
-signed_off_at: (none)
+signed_off: true
+signed_off_by: luanmorenomaciel
+signed_off_at: 2026-08-14T01:25:39Z
 accepted: false
 accepted_by: (none)
 accepted_at: (none)
+signed_off_sig: hmac-sha256-v3:ed0abaaf:3c8232395e64132ccddd5a260cc2eec21f5e6fd8ab3cf5b08c3a92b6e98ba7d6
 ---
 
 # Join orders to payments keeping every order

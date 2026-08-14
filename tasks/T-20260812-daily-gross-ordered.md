@@ -11,6 +11,10 @@ creates_paths: [dbt/models/staging/stg_daily_gross_ordered.sql]
 source_note: storage/specs/4-plan-transform.md
 created: 2026-08-12
 tags: [dbt, staging, transactco]
+signed_off: true
+signed_off_by: luanmorenomaciel
+signed_off_at: 2026-08-14T01:41:33Z
+signed_off_sig: hmac-sha256-v3:ed0abaaf:6259fbdf3f477754efadb67d6592520e73bfa076a66f136e227caa24a5a2ffb7
 ---
 
 ## Goal
