@@ -70,7 +70,7 @@ taskspec setup
 Expected, verified 2026-08-13:
 
 ```text
-3.7.0
+3.8.0
 
 Task-Spec readiness
 PASS  workspace  /…/uc-transact-co/tasks
@@ -176,7 +176,7 @@ these files on Day 3; tonight they are a starting line, not a subject.
 
 ## Gate
 
-- `taskspec version` prints `3.7.0`.
+- `taskspec version` prints `3.8.0`.
 - `taskspec setup` ends `SETUP=READY` and `signing` reads `PASS`.
 - `tasks/_state.yaml` shows `ready: 6` and `done: 0`.
 - `taskspec metrics` printed the not-found line and exited 1.

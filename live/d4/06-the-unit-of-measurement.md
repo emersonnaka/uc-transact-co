@@ -83,7 +83,7 @@ which are **declared**:
 | --- | --- | --- |
 | `ts`, `status` transitions | measured | the tool, at the moment it happened |
 | `attempts`, durations | measured | the runner |
-| acceptance verdict | measured | `accept`, from six gates |
+| acceptance verdict | measured | `accept`, from five gates |
 | `effort` (`S`/`M`) | **declared** | a human, at authoring time |
 | `budget_iterations` | **declared** | a human, as a stopping rule |
 | `reason` on a park | **declared** | whoever stopped the work |
@@ -187,8 +187,8 @@ An empty log after a failed night is still a truthful measurement.
   The Acceleration Whiplash"*, 2026.
 - Receipt creators, the `unavailable` outcome, and the tokens `RECEIPT=WRITTEN` /
   `RECEIPT=INVALID`: `taskspec receipt {validate,engine,environment,graded,human}
-  --help` and `taskspec agent-context`, v3.7.0.
+  --help` and `taskspec agent-context`, v3.8.0.
 - Metrics filters `--since` / `--author` / `--status`, and the `jq`-optional fallback:
-  `taskspec metrics --help`, v3.7.0.
+  `taskspec metrics --help`, v3.8.0.
 
 Next: [`07-reflection.md`](07-reflection.md).

@@ -67,11 +67,17 @@ verify by reading the eval. You have to run it against broken code.
 We need real work before we can break it. Have the room watch you build the smallest
 honest model for the hand-written spec:
 
+The comment must not contain the word "revenue" in any case. The spec's `eval_3` is
+`! grep -ril "revenue" dbt/models/`, which scans **file contents**, not just names —
+a comment saying "NOT Revenue" fails the spec it is trying to honour. Verified: with
+that comment the Exit Check returns 1; with the wording below it returns 0.
+
 ```bash
 cat > dbt/models/staging/stg_daily_gross_ordered.sql <<'SQL'
 {{ config(materialized='view') }}
 
--- Daily gross ordered amount. NOT Revenue: Revenue is unresolved, owner Finance.
+-- Daily gross ordered amount, named by its physical basis.
+-- Business meaning for this number is owned by Finance, not by this model.
 select
     cast(ordered_at as date)  as ordered_date,
     count(*)                  as order_count,
@@ -104,10 +110,45 @@ against the behaviour it claims: it fails if the SQL is *invalid*, not if the SQ
 
 ### Move D — the audit
 
+**Prerequisite — 3.8 changed this command.** `eval-audit` reconstructs refs in git
+worktrees and applies each mutation as a patch, so the model from Move B **must be
+committed** before this runs, and `--mutations` now takes a *matrix file*, never a
+count. Build the matrix from the model you just wrote:
+
+```bash
+git add dbt/models/staging/stg_daily_gross_ordered.sql
+git commit -qm "movement 02: the smallest honest model"
+
+mkdir -p tmp/d4/audit
+M=dbt/models/staging/stg_daily_gross_ordered.sql
+mut() { sed -E "$2" "$M" > /tmp/m.sql; diff -u --label a/"$M" --label b/"$M" "$M" /tmp/m.sql > tmp/d4/audit/"$1".patch || true; }
+mut m1-drop-group-by  '/^group by 1$/d'
+mut m2-rename-date    's/ordered_date/ordered_day/'
+mut m3-sum-to-count   's/sum\(total_amount\)/count(total_amount)/'
+mut m4-drop-cancelled "/^where status != 'cancelled'\$/d"
+
+# every patch must be non-empty — an empty patch is a no-op that git apply accepts,
+# and a no-op mutation reports as a survivor while having changed nothing
+wc -c tmp/d4/audit/*.patch
+
+cat > tmp/d4/audit/mutations.json <<'JSON'
+{ "contract": "MutationMatrix/v1", "stack": "generic", "experimental": true,
+  "mutations": [
+    { "id": "m1-drop-group-by",  "patch": "m1-drop-group-by.patch" },
+    { "id": "m2-rename-date",    "patch": "m2-rename-date.patch" },
+    { "id": "m3-sum-to-count",   "patch": "m3-sum-to-count.patch" },
+    { "id": "m4-drop-cancelled", "patch": "m4-drop-cancelled.patch" }
+  ] }
+JSON
+```
+
+Then audit. `--baseline` is the commit **before** the model existed, so the evals are
+expected to fail there — that is the gold-sanity half of the check:
+
 ```bash
 taskspec eval-audit tasks/T-20260812-daily-gross-ordered.md \
-  --baseline HEAD \
-  --mutations 4 \
+  --baseline HEAD~1 \
+  --mutations tmp/d4/audit/mutations.json \
   --report tmp/d4/audit/gross-ordered.json
 echo "exit=$?"
 ```
@@ -116,9 +157,35 @@ echo "exit=$?"
 and records which evals notice. Read the report as a table, at most eight rows:
 
 ```bash
-jq -r '.mutations[] | [.id, .description, .verdict] | @tsv' \
+jq -r '.cases[] | [.id, (if .passed then "SURVIVED" else "KILLED" end)] | @tsv' \
   tmp/d4/audit/gross-ordered.json | column -t
 ```
+
+**Read this before you rehearse — the spec as written kills all four.** Verified on
+2026-08-13 against taskspec 3.8.0: auditing `T-20260812-daily-gross-ordered` in its
+current form returns `current` PASS, `baseline` FAIL, and **every mutation FAIL**,
+including `m4-drop-cancelled`. There is no survivor. The reason is `eval_2`:
+
+```bash
+eval_2() { grep -q "cancelled" dbt/models/staging/stg_daily_gross_ordered.sql; }
+```
+
+That is a **text** check, not a behaviour check. Deleting the `where` line also deletes
+the word `cancelled` from the file, so the grep notices — for the wrong reason. The
+mutation is caught by spelling, not by meaning.
+
+You have two honest ways to run this checkpoint, and you must pick one before the
+night:
+
+1. **Audit the weak eval you just wrote at Move C.** Put the build-only Exit Check
+   into a scratch copy of the spec, audit *that*, and get the survivor the lesson
+   needs. The spec in `tasks/` is never weakened; the scratch copy is thrown away.
+2. **Keep the spec as-is and change the story.** Show the all-killed table and say
+   the sharper thing: *this eval catches the mutation by grepping for a word, so it
+   would also pass if I renamed the column and kept the bug.* Then demonstrate that
+   by hand and strengthen the eval anyway.
+
+Do not narrate a survivor that the report does not show.
 
 The two rows to stop on:
 
@@ -181,9 +248,24 @@ checkpoint** — not the green.
 ### Move F — re-audit
 
 ```bash
+git add dbt/models/staging/stg_daily_gross_ordered.sql
+git commit -qm "movement 02: the eval, strengthened"
+
 taskspec eval-audit tasks/T-20260812-daily-gross-ordered.md \
-  --baseline HEAD --mutations 4 --report tmp/d4/audit/gross-ordered-v2.json
+  --baseline HEAD~2 --mutations tmp/d4/audit/mutations.json \
+  --report tmp/d4/audit/gross-ordered-v2.json
 ```
+
+**The strengthened eval cannot be audited.** `eval-audit` runs each case in a fresh
+`git worktree`, and a worktree contains **tracked files only**. `warehouse.duckdb` is
+untracked (verified: `git ls-files warehouse.duckdb` is empty), so Move E's
+`duckdb ../warehouse.duckdb` check has no database inside the worktree and fails
+everywhere — `current` included, which makes the audit exit 1 for an environmental
+reason rather than a real one. Two options: re-audit with the *grep-and-parse* evals
+only, or run the strengthened check by hand as Move E already does and say plainly
+that the audit tool cannot reach it. The rest of the night is unaffected — all six
+specs in `tasks/` use `make dbt-check` plus greps, none of which need the warehouse,
+so `accept --gold-sanity` works for every one of them.
 
 Every mutation killed. Say the honest caveat: mutation testing has known limits —
 equivalent mutants that no test can distinguish, and real cost per mutation. Four
@@ -230,7 +312,9 @@ pre-generated report **prepared**.
   broken code": workman.tech, 2026-06-24.
 - Deterministic graders for coding agents, and capability evals graduating into
   regression suites: Anthropic, *"Demystifying evals for AI agents"*, 2026.
-- Verified usage: `taskspec eval-audit <spec> --baseline <ref> [--mutations N]
-  [--report PATH]`, v3.7.0. Token on malformed input: `EVAL_AUDIT=INVALID`.
+- Verified usage: `taskspec eval-audit <spec> --baseline <git-ref>
+  [--mutations <matrix>] [--report PATH] [--repeat N]`, v3.8.0 — `--mutations` takes a
+  MutationMatrix/v1 file, not a count, and the report is `EvalAuditReceipt/v1` with a
+  `cases[]` array. Token on malformed input: `EVAL_AUDIT=INVALID`.
 
 Next: [`03-the-holdout.md`](03-the-holdout.md).

@@ -224,6 +224,6 @@ teaches nothing.
   OpenAI's audit of SWE-Bench Pro flagged roughly 30% of public tasks as broken and
   retracted its recommendation, 2026-07-08.
 - Verified usage: `taskspec holdout {seal,verify,run}`; tokens `HOLDOUT=SEALED`,
-  `HOLDOUT=VERIFIED`, `HOLDOUT=INVALID`. `verify` is read-only, v3.7.0.
+  `HOLDOUT=VERIFIED`, `HOLDOUT=INVALID`. `verify` is read-only, v3.8.0.
 
 Next: [`04-the-authorization-chain.md`](04-the-authorization-chain.md).

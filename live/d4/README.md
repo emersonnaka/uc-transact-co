@@ -127,7 +127,7 @@ archives it into `tmp/prepared/` rather than deleting it.
 - Agent writes remain governed by `AGENTS.md`: the architect writes nothing; the
   developer writes only in `dbt/models/staging/`. Facilitator-controlled paths
   tonight are `tasks/`, `.taskspec/` and `tmp/d4/`.
-- Every command is real `taskspec` v3.7.0. Checkpoint 00 gates on
+- Every command is real `taskspec` v3.8.0. Checkpoint 00 gates on
   `taskspec version` and `taskspec setup`.
 - **The holdout bundle is never displayed while Session C is alive.** Seal it at
   `03`, show the descriptor and the receipt, never the bundle body. If the room
@@ -153,12 +153,18 @@ Two things in this runbook exist because a command contradicted the plan:
    Without it `gate --stamp` degrades to **`TIER=2` — supervised dispatch only**.
    Checkpoint 00 provisions the key so checkpoint 04 can honestly show `TIER=1`.
    If you skip it, do not claim Tier 1 on screen; show `TIER=2` and say why.
-2. **`taskspec accept` runs six gates, not one.** A–F: evals re-run by us,
-   blast-radius, envelope integrity, isolation report, opt-in gold-sanity, and
-   receipt policy. Gate E is tonight's thesis compiled into the tool: it
-   reconstructs the baseline in an ephemeral worktree, holds the eval bodies
-   constant, and **requires the evals to fail there**. Do not describe `accept`
-   as "re-runs the tests".
+2. **`taskspec accept` runs five gates, not one.** A–E under 3.8: evals re-run by
+   us; handoff, dependency closure, base commit and blast radius; authorization
+   integrity; opt-in gold-sanity; and sealed receipt policy. Gate D is tonight's
+   thesis compiled into the tool: it reconstructs the baseline in an ephemeral
+   worktree, holds the eval bodies constant, and **requires the evals to fail
+   there**. Do not describe `accept` as "re-runs the tests", and do not use the
+   3.7 A–F table — 3.8 removed the warn-only isolation gate and renumbered the
+   two after it.
+3. **`accept` needs the handoff file.** Write it with `handoff --out` and pass it
+   back with `accept --handoff`. Without it the acceptance drops to Tier 2 and
+   refuses to stamp unless a human adds
+   `--allow-tier2 --supervised-by <id> --reason <text>`.
 
 ## The skill this night delivers
 

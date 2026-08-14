@@ -18,25 +18,33 @@ rather than in memory. Tonight the seal actually gets stamped, and the room sees
 | Command | Question it answers | Who owns the answer |
 | --- | --- | --- |
 | `gate --stamp` | *May this be delegated at all?* | a human, before any work |
-| `handoff --backend` | *What exactly does the executor receive?* | the format |
+| `handoff --backend --out` | *What exactly does the executor receive?* | the format |
 | `run --ci` | *Did the declared evals pass in the workspace?* | the machine |
-| `accept --stamp` | *Is the work real, independent of the executor's claim?* | a human, after |
+| `accept --handoff --stamp` | *Is the work real, independent of the executor's claim?* | a human, after |
 
-`accept` is the one people mis-describe. It does not re-run the tests. It runs **six
-gates**, and only stamps `accepted` when they hold.
+`accept` is the one people mis-describe. It re-runs the evals itself rather than
+trusting the report, and wraps that in **five gates**, only stamping `accepted` when
+they all hold.
+
+**3.8 changed two things in this chain.** `handoff` now emits `TaskHandoff/v3` with a
+UUID attempt ID and an immutable base commit, and `accept` binds to that file. Run
+`accept` without `--handoff` and preflight records `HANDOFF_MISSING_OR_LEGACY`, drops
+the acceptance to Tier 2, and refuses to stamp unless a human also passes
+`--allow-tier2 --supervised-by <id> --reason <text>`. So the handoff must be written
+to disk at Move B and passed back in at Move E.
 
 ## Structure
 
 ```mermaid
 flowchart LR
     A[gate --stamp] --> B[TIER=1 · signed_off written]
-    B --> C[handoff --backend]
-    C --> D[TaskHandoff v1 · read-only]
+    B --> C[handoff --backend --out]
+    C --> D[TaskHandoff/v3 · attempt-bound]
     D --> E[Session C executes]
     E --> F[run --ci]
     F --> G[exit 0]
-    G --> H[accept --stamp]
-    H --> I{Gates A-F}
+    G --> H[accept --handoff --stamp]
+    H --> I{Gates A-E}
     I -->|all hold| J[ACCEPTED=1]
     I -->|one fails| K[ACCEPTED=0 · exit 1]
 
@@ -96,13 +104,21 @@ first time the room has seen it.
 ### Move B — the handoff is what the executor gets, and nothing more
 
 ```bash
+mkdir -p tmp/d4/receipts
 taskspec handoff tasks/T-20260812-raw-payments-source.md \
-  --backend claude-code --json | tee tmp/d4/receipts/handoff-01.json | jq '.'
+  --backend claude --out tmp/d4/receipts/handoff-01.json
+jq '.' tmp/d4/receipts/handoff-01.json
 ```
 
+Use `--out`, not `--json` into a pipe: Move E needs this exact file on disk. The
+command prints `HANDOFF=WRITTEN contract=TaskHandoff/v3 path=… attempt_id=…`, and
+`--out` refuses to clobber an existing file, so a re-run needs a fresh name.
+
 Read out what is **in** it — id, behaviours, evals, `touches_paths`,
-`creates_paths`, the do-not-touch list, the authorization reference — and then what
-is **not**: no repository history, no other spec, no holdout, no chat. Say it:
+`creates_paths`, the do-not-touch list, the authorization reference, and the two
+fields 3.8 added: a UUID `attempt.id` and the `source.base_commit` this attempt is
+pinned to — and then what is **not**: no repository history, no other spec, no
+holdout, no chat. Say it:
 
 > This is a read-only packet. If the executor needs something that is not in here,
 > the spec is wrong, and that is a bug in *our* authoring, not in the agent.
@@ -134,28 +150,32 @@ Exit 0. Then say the sentence that keeps the night honest:
 > That zero is the machine's half. It is not the answer. Checkpoint 01 produced a
 > zero too.
 
-### Move E — the post-gate, all six gates named
+### Move E — the post-gate, all five gates named
 
 ```bash
-taskspec accept --stamp --gold-sanity tasks/T-20260812-raw-payments-source.md
+taskspec accept --handoff tmp/d4/receipts/handoff-01.json \
+  --stamp --gold-sanity tasks/T-20260812-raw-payments-source.md
 echo "exit=$?"
 ```
 
-Walk the gates as they print. Do not skip Gate E; it is the whole night compiled:
+Walk the gates as they print. Do not skip Gate D; it is the whole night compiled:
 
 | Gate | What it checks | What it defends against |
 | --- | --- | --- |
 | **A** | evals pass, **re-run by us** | trusting the executor's claim |
-| **B** | changed files ⊆ `touches_paths`/`creates_paths`, ∩ do-not-touch = ∅ | satisfying the eval by editing something else |
-| **C** | the sign-off HMAC still verifies | making evals pass by weakening them |
-| **D** | isolation report from `requires:` — **warns, never blocks** | undeclared network egress on an unattended task |
-| **E** | **gold-sanity**: rebuild the baseline in an ephemeral worktree, hold the eval bodies constant, and require the evals to **FAIL** there | an eval that is green even on unbuilt work |
-| **F** | format-v4 receipt policy | a claim with no receipt behind it |
+| **B** | the handoff still matches the spec, the dependency closure holds, the base commit is the one dispatched, and changed files ⊆ `touches_paths`/`creates_paths`, ∩ do-not-touch = ∅ | satisfying the eval by editing something else |
+| **C** | the sign-off HMAC still verifies — `TaskAuthorization/v3` | making evals pass by weakening them |
+| **D** | **gold-sanity**: rebuild the baseline in an ephemeral worktree, hold the eval bodies constant, and require the evals to **FAIL** there | an eval that is green even on unbuilt work |
+| **E** | sealed evidence policy — format-v4 receipts bound to **this** attempt | a claim with no receipt, or one borrowed from another run |
+
+If someone has the 3.7 table in their notes, say it plainly: **3.8 removed the old
+warn-only Gate D** (the isolation report), and the two gates after it moved up. Nothing
+in `accept` warns any more — it passes, drops you to Tier 2, or rejects.
 
 Expect **`ACCEPTED=1`** and the frontmatter gaining `accepted: true`, `accepted_by`,
 `accepted_at`. Show the diff.
 
-Gate E deserves one sentence spoken slowly: *the tool reconstructs last week's code,
+Gate D deserves one sentence spoken slowly: *the tool reconstructs last week's code,
 drops tonight's evals into it, and refuses to accept the work unless those evals go
 red there.* That is checkpoint 02's discipline, enforced by a command instead of by a
 facilitator with a `sed` one-liner.
@@ -166,16 +186,19 @@ A chain nobody has watched refuse is a decoration. Break blast radius, deliberat
 
 ```bash
 echo "-- touched by nobody's authority" >> dbt/models/staging/stg_orders.sql
-taskspec accept --gold-sanity tasks/T-20260812-raw-payments-source.md; echo "exit=$?"
+taskspec accept --handoff tmp/d4/receipts/handoff-01.json \
+  --gold-sanity tasks/T-20260812-raw-payments-source.md; echo "exit=$?"
 ```
 
-Expect **`ACCEPTED=0`**, exit 1, with **Gate B** naming `stg_orders.sql` as outside
-the spec's write surface. Point at it: the evals still pass. The work is still real.
-It is rejected anyway, because it touched something it was not authorized to touch.
+Expect **`ACCEPTED=0`**, exit 1, an `ACCEPTANCE_FAILURE=<code>` line naming the reason,
+and **Gate B** naming `stg_orders.sql` as outside the spec's write surface. Point at
+it: the evals still pass. The work is still real. It is rejected anyway, because it
+touched something it was not authorized to touch.
 
 ```bash
 git checkout dbt/models/staging/stg_orders.sql
-taskspec accept --stamp --gold-sanity tasks/T-20260812-raw-payments-source.md
+taskspec accept --handoff tmp/d4/receipts/handoff-01.json \
+  --stamp --gold-sanity tasks/T-20260812-raw-payments-source.md
 ```
 
 Back to `ACCEPTED=1`.
@@ -210,18 +233,21 @@ Deck only, no terminal.
 ## Show the evidence
 
 - `TIER=1`, then the seal breaking on a one-character edit, then `TIER=1` again.
-- The `TaskHandoff` JSON, with what is absent named out loud.
+- The `TaskHandoff/v3` JSON, with what is absent named out loud.
 - `run --ci` → exit 0.
-- `accept --stamp --gold-sanity` → gates A–F → `ACCEPTED=1` and the frontmatter diff.
-- One `ACCEPTED=0` with Gate B naming the unauthorized file.
+- `accept --handoff … --stamp --gold-sanity` → gates A–E → `ACCEPTED=1` and the
+  frontmatter diff.
+- One `ACCEPTED=0` with `ACCEPTANCE_FAILURE=<code>` and Gate B naming the
+  unauthorized file.
 - `stats:` showing `done: 1` and a recomputed `ready`.
 
 ## Gate
 
 - `signed_off: true` was written by `gate --stamp`, and the seal broke on an edit.
-- The executor received a handoff packet and nothing else.
+- The executor received a handoff packet and nothing else, written with `--out` so
+  Move E could bind to it.
 - `run --ci` returned 0 in an isolated session.
-- `accept` returned `ACCEPTED=1` with gold-sanity on, and the room heard what Gate E
+- `accept` returned `ACCEPTED=1` with gold-sanity on, and the room heard what Gate D
   does.
 - One acceptance was **rejected** and the failing gate was named on screen.
 - `tasks/_state.yaml` shows `done: 1`.
@@ -231,26 +257,42 @@ Deck only, no terminal.
 ## Recovery
 
 If `--require-tier1` fails because checkpoint 00's key did not take, drop the flag,
-show `TIER=2`, and say the supervised-dispatch sentence — do not fake a tier. If
-`--gold-sanity` cannot build a worktree it degrades to a warning by design; announce
-that Gate E is a warning tonight and that you are therefore keeping the manual
-mutation from checkpoint 02 on screen as the substitute proof. If Session C stalls,
-the facilitator finishes the file by hand and says so; the chain is the subject, not
-the SQL.
+show `TIER=2`, and say the supervised-dispatch sentence — do not fake a tier. Note
+that in 3.8 a Tier-2 run **cannot be accepted silently**: `accept` fails with
+`ACCEPTANCE_FAILURE=TIER_TOO_LOW` until a human adds
+`--allow-tier2 --supervised-by <id> --reason <text>`. Type those flags on screen if
+you need them; that is the supervised path working, not a workaround.
+
+**`--gold-sanity` no longer degrades to a warning.** In 3.8 it is Gate D and it
+blocks: if the evals do not fail on the baseline, acceptance is rejected with
+`ACCEPTANCE_FAILURE=EVAL_NONDISCRIMINATING`. If the worktree cannot be built at all,
+drop `--gold-sanity` for the live run, say out loud that you are accepting on gates
+A, B, C and E only, and keep checkpoint 02's manual mutation on screen as the
+substitute proof. Do not describe a missing Gate D as a pass.
+
+If Session C stalls, the facilitator finishes the file by hand and says so; the chain
+is the subject, not the SQL.
 
 ## Sources
 
-- The lifecycle and its precondition — *acceptance presupposes the gate; you cannot
-  accept work that was never delegate-safe*: `taskspec accept --help`, v3.7.0.
-- Gate B as the Goodhart guard, Gate C against post-gate eval weakening, Gate D as
-  document-and-warn, Gate E's ephemeral-worktree baseline requirement:
-  `taskspec accept --help`, v3.7.0.
-- Tier semantics and the machine-readable `TIER=N` line: `taskspec gate --help`,
-  v3.7.0.
-- Tokens: `TIER=1|2`, `HANDOFF=INVALID|REFUSED`, `ACCEPTED=1|0` —
-  `taskspec agent-context`, format version 4.
+- The lifecycle precondition — *acceptance presupposes the gate; you cannot accept
+  work that was never delegate-safe*. 3.8 shortened every per-command help to one
+  usage line, so this is no longer a quote: it is enforced in
+  `src/accept/accept-task.sh`, which fails a spec that is not `signed_off: true` with
+  `POLICY_TAMPER` before Gate A runs.
+- The five gates in printed order — A. Independent evaluation · B. Handoff, graph,
+  base commit, and blast radius · C. Authorization integrity · D. Gold-sanity ·
+  E. Sealed evidence policy: `src/accept/accept-task.sh`, v3.8.0. 3.7's warn-only
+  Gate D (isolation report) was removed and old E/F became D/E.
+- A missing or legacy handoff yields `HANDOFF_MISSING_OR_LEGACY` and forces Tier 2;
+  Tier-2 acceptance requires `--allow-tier2 --supervised-by <id> --reason <text>`:
+  `src/accept/preflight.py` and `src/accept/accept-task.sh`, v3.8.0.
+- Tier semantics and the machine-readable `TIER=N` line, plus the `hmac-sha256-v3`
+  seal that `gate --stamp` now writes: `src/gate/safe-to-delegate.sh`, v3.8.0.
+- Tokens: `TIER=1|2`, `HANDOFF=WRITTEN|INVALID|REFUSED`, `ACCEPTED=1|0`,
+  `ACCEPTANCE_FAILURE=<code>` — `taskspec agent-context`, format version 4.
 - Exit codes 0 success · 1 contract/gate/eval failure · 2 usage · 3 runtime floor —
-  `taskspec --help`, v3.7.0.
+  `taskspec --help`, v3.8.0.
 - Why an unattended task with undeclared egress is the exposed surface: RHB reports
   RL post-training raising exploit rates from 0.6% to 13.9% (Thaman, 2026); quoted
   only if the room asks, and always with the date.

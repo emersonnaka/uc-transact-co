@@ -193,6 +193,6 @@ demonstrate the point without an agent at all.
   Abhishek Shankar, *"The Loop Was Never the Hard Part"*, 2026-06-16.
 - Assertion-free testing as a named smell: Martin Fowler, *"Assertion Free
   Testing"*, 2004-08.
-- Existence-only evals blocking blind delegation: `taskspec gate --help`, v3.7.0.
+- Existence-only evals blocking blind delegation: `taskspec gate --help`, v3.8.0.
 
 Next: [`02-an-eval-that-can-fail.md`](02-an-eval-that-can-fail.md).

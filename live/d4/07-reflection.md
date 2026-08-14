@@ -114,8 +114,25 @@ Name Day 5 — **The Factory** — and the one question it opens: *if one packet
 proved and measured, what does it take to run a hundred of them and still be able to
 answer for any single one?* One neutral Bootcamp line, the Day 5 time, and end.
 
-No new material after the invariant. Do not add a pitch here; the commercial beat
-already happened at 21:50 and repeating it undoes it.
+Do not add a pitch here; the commercial beat already happened at 21:50 and repeating
+it undoes it.
+
+### Move F — optional coda · a glimpse of the near future
+
+Six deck slides after the invariant, tagged **GLIMPSE**. Run them only if the room
+still has about eight minutes. They are not a fifth night and they do not reopen
+the Bootcamp. They ground Day 5 in what the field published in the last 30 days.
+
+| Slide | One idea |
+| --- | --- |
+| A glimpse of the future | The door. Sit on it. No new claim. |
+| The near future | July–August named what this week practiced |
+| The bottleneck moved | Code got cheap; absorbing it did not |
+| Harness, then loop, then factory | LoopsBench wrote the week down; the factory is many loops, one accountable person |
+| The next engineer | Forward-deployed / AI-native — ontology, harness, oracle, transfer |
+| Monday | Three actions already rehearsed; the invariant is not improved |
+
+If time is short, skip this move. Never skip Move D.
 
 ## Show the evidence
 
@@ -135,15 +152,19 @@ already happened at 21:50 and repeating it undoes it.
 - The invariant was read verbatim.
 - `Revenue` ends the night exactly as unresolved as it began.
 - Day 5's name and time were stated.
+- If Move F ran, every number on those five slides was labelled as paper,
+  practitioner report, or market claim — and no TransactCo productivity figure
+  was added.
 
 ## Recovery
 
-If time is short, cut Move C and keep Move B — the commitments matter more than the
-figure, because they are the only part of the night the room takes with them. Never
-cut Move D. If the night's chain failed and `done` is still 0, the ledger is still
-runnable: read the real numbers, say which checkpoint fell over, and let the withheld
-column carry the session. An honest ledger of a failed night is on-message for this
-week; a padded one is not.
+If time is short, cut Move F first, then Move C, and keep Move B — the commitments
+matter more than the figure, because they are the only part of the night the room
+takes with them. Never cut Move D. If the night's chain failed and `done` is still 0,
+the ledger is still runnable: read the real numbers, say which checkpoint fell over,
+and let the withheld column carry the session. An honest ledger of a failed night is
+on-message for this week; a padded one is not. The glimpse coda is never a recovery
+for a failed chain.
 
 ## Sources
 
@@ -155,8 +176,17 @@ week; a padded one is not.
   condition that ran unattended; and *"a loop is only as honest as its oracle"*:
   A. Shankar, *"The Loop Was Never the Hard Part"*, 2026-06-16.
 - Multi-engine matrix state (every family disabled, `model_id: TO_RECORD`):
-  `evidence/3.7/engine-matrix.json`, Task-Spec v3.7.0.
+  `evidence/3.7/engine-matrix.json`, Task-Spec v3.8.0.
 - Tonight's counts: `tasks/_state.yaml`, `tasks/_metrics.jsonl` and
   `git status`, read live.
+- Optional coda (Move F), last 30 days unless noted. Practitioner: Edith
+  Harbaugh, LaunchDarkly, *"Entering the AI software factory era"*, 2026-07-27.
+  Market: Rebecca Bellan, TechCrunch, *"Forward-deployed engineers are the AI
+  industry's latest talent obsession"*, 2026-07-30. Papers: Ben Sghaier et al.,
+  arXiv 2607.03691, 2026-07-04 (six days before the 30-day window); Li et al.,
+  *LoopsBench*, arXiv 2608.00267, 2026-08-01. Practitioner: Aliseda-Canton,
+  Duolingo, 2026-08-04; Vishal Anand, IBM Think, last 30 days; Anthropic
+  Engineering, *"Harness design for long-running application development"*.
+  None of those numbers is about TransactCo.
 
 Sequence complete. The night's runbook index is [`README.md`](README.md).

@@ -50,18 +50,23 @@ taskspec lint
 Read the partition verbatim. The line that matters:
 
 ```text
-concurrency partition (write-disjoint groups — safe to dispatch together):
-  dbt/models  (5 task(s)): T-20260812-daily-gross-ordered T-20260812-raw-payments-source
-                           T-20260812-stg-daily-captured-payments
-                           T-20260812-stg-orders-payments-join
-                           T-20260812-stg-returns-refunds-mirror
+GRAPH=sha256:6417f9e2… tasks=6 ready=2 issues=0
+CONCURRENCY_GROUPS=[["T-20260812-daily-gross-ordered","T-20260812-raw-payments-source"]]
 LINT=OK
 ```
 
-Five tasks, not six. Say why: `T-20260812-daily-grain-decision` has **no write
-surface at all**, because it is the `Revenue` hole. A decision is not a file. It
-cannot be in a wave, it cannot be dispatched, and no amount of concurrency will make
-it ready. Point at it now, because Act 6 comes back to it.
+**3.8 prints the group, not a prose partition.** `CONCURRENCY_GROUPS` lists the specs
+that are *ready now and safe to dispatch together* — two, this turn. The remaining
+write-surface specs are not absent because they collide; they are **blocked by an
+unmet `depends_on`**, which `ready --all` shows. After wave 1 is accepted and
+transitioned, the same command returns a larger group. Six tasks, two in this wave.
+
+Two ready, four blocked — and say why one of those four is different.
+`T-20260812-daily-grain-decision` has **no write surface at all**, because it is the
+`Revenue` hole. A decision is not a file. The other three become eligible once wave 1
+transitions; this one **never does**. It cannot be in a wave, it cannot be dispatched,
+and no amount of concurrency will make it ready. Point at it now, because Act 6 comes
+back to it.
 
 ### Move B — the frontier, before anyone works
 
@@ -85,14 +90,18 @@ from checkpoint 04, and you narrate only the tokens:
 ```bash
 # terminal 1
 taskspec gate --stamp --require-tier1 tasks/T-20260812-stg-orders-payments-join.md
-taskspec handoff tasks/T-20260812-stg-orders-payments-join.md --backend claude-code --json \
-  > tmp/d4/receipts/handoff-join.json
+taskspec handoff tasks/T-20260812-stg-orders-payments-join.md --backend claude \
+  --out tmp/d4/receipts/handoff-join.json
 
 # terminal 2
 taskspec gate --stamp --require-tier1 tasks/T-20260812-stg-returns-refunds-mirror.md
-taskspec handoff tasks/T-20260812-stg-returns-refunds-mirror.md --backend claude-code --json \
-  > tmp/d4/receipts/handoff-mirror.json
+taskspec handoff tasks/T-20260812-stg-returns-refunds-mirror.md --backend claude \
+  --out tmp/d4/receipts/handoff-mirror.json
 ```
+
+Use `--out`, not `--json` into a redirect. `--json` wraps the payload in the global
+envelope (`command`, `success`, `exit_code`, `stdout`, `stderr`), and Move D's
+`accept --handoff` would reject that file for not being a `TaskHandoff/v3`.
 
 Dispatch both PT-BR prompts, same shape as checkpoint 04 Move C, one per session.
 While they work, put the wave table on the deck and leave it there.
@@ -100,8 +109,10 @@ While they work, put the wave table on the deck and leave it there.
 ### Move D — accept concurrently, then prove no collision
 
 ```bash
-for id in stg-orders-payments-join stg-returns-refunds-mirror; do
-  taskspec accept --stamp --gold-sanity tasks/T-20260812-$id.md
+for pair in "stg-orders-payments-join:join" "stg-returns-refunds-mirror:mirror"; do
+  id="${pair%%:*}"; ref="${pair##*:}"
+  taskspec accept --handoff tmp/d4/receipts/handoff-$ref.json \
+    --stamp --gold-sanity tasks/T-20260812-$id.md
 done
 
 git status --short dbt/models/staging/
@@ -111,12 +122,19 @@ Two new files, each named by exactly one spec's `creates_paths`. Then the check 
 makes the safety claim real rather than rhetorical:
 
 ```bash
-jq -r '.creates_paths[]?' tmp/d4/receipts/handoff-join.json tmp/d4/receipts/handoff-mirror.json \
+jq -r '.write_scope | (.touches_paths // []) + (.creates_paths // []) | .[]' \
+  tmp/d4/receipts/handoff-join.json tmp/d4/receipts/handoff-mirror.json \
   | sort | uniq -d
 ```
 
 Empty output. **No path appears in two handoffs.** That is the write-disjointness the
 partition promised, verified after the fact rather than assumed.
+
+The `.write_scope` prefix matters. In `TaskHandoff/v3` the write surface lives under
+`write_scope`, so the older `jq -r '.creates_paths[]?'` form reads `null` on every
+file and prints nothing **no matter what** — it would look like a pass while checking
+nothing. If you want to see the check work before you trust it, run it once against
+two handoffs you know overlap and watch it print the shared path.
 
 ### Move E — transition, and watch the frontier recompute itself
 
@@ -180,11 +198,17 @@ wall clock got shorter.
 ## Sources
 
 - The concurrency partition and the `LINT=OK` token, computed from declared write
-  surfaces: `taskspec lint`, v3.7.0, run 2026-08-13 against Day 3's graph.
+  surfaces: `taskspec lint`, v3.8.0, run 2026-08-13 against Day 3's graph.
 - The 2-wide frontier and the hidden-count line: `taskspec ready`, verified
   2026-08-13.
 - Blast-radius enforcement at acceptance time, which is what makes a disjoint
-  partition safe rather than merely tidy: `taskspec accept --help`, Gate B, v3.7.0.
+  partition safe rather than merely tidy: Gate B in `src/accept/accept-task.sh`,
+  v3.8.0. Verified live 2026-08-13 — an out-of-scope edit produces
+  `BLOCK [BLAST_RADIUS] — changed path is outside declared scope`, then
+  `ACCEPTANCE_FAILURE=BLAST_RADIUS` and `ACCEPTED=0`.
+- `TaskHandoff/v3` carries the write surface under `write_scope`, not at the top
+  level, which is why Move D's collision check needs the `.write_scope` prefix:
+  verified against a generated handoff, 2026-08-13.
 - The unit of work moving up a level — *specify a goal, a feedback signal and a
   stopping rule, and let the harness send the messages*: A. Shankar, *"The Loop Was
   Never the Hard Part"*, 2026-06-16. Cite only if the room asks why this is not just
