@@ -1,7 +1,7 @@
 ---
 id: T-20260812-stg-returns-refunds-mirror
 title: "Mirror returned orders against refunded payments"
-status: ready
+status: done
 format_version: 3
 profile: standard
 effort: M
@@ -27,10 +27,14 @@ execution_backend: claude
 signed_off: true
 signed_off_by: luanmorenomaciel
 signed_off_at: 2026-08-14T01:25:50Z
-accepted: false
-accepted_by: (none)
-accepted_at: (none)
+accepted: true
+accepted_by: luanmorenomaciel
+accepted_at: 2026-08-14T17:50:58Z
 signed_off_sig: hmac-sha256-v3:ed0abaaf:3850002e4dbe52c062f0077201e44b36cff90d2ae1abeff24f126da9c07cd18d
+accepted_tier: 1
+accepted_attempt_id: 0fb3d77f-9c10-45e9-bfca-2bb387ee98ef
+accepted_authorization_ref: hmac-sha256-v3:ed0abaaf:3850002e4dbe52c062f0077201e44b36cff90d2ae1abeff24f126da9c07cd18d
+acceptance_record_digest: sha256:aca414099da0f9e2638fab6936d60f7ce02461c65c7e290a3d48550e32e4b72a
 ---
 
 # Mirror returned orders against refunded payments

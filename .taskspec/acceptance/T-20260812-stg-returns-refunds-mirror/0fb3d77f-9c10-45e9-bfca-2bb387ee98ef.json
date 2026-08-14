@@ -1,0 +1,40 @@
+{
+  "acceptance_tier": 1,
+  "accepted_at": "2026-08-14T17:50:58Z",
+  "accepted_by": "luanmorenomaciel",
+  "contract": "AcceptanceRecord/v1",
+  "gate_outcomes": {
+    "authorization": {
+      "code": "AUTHORIZATION_VALID",
+      "status": "pass"
+    },
+    "evaluation": {
+      "code": "EVAL_PASSED",
+      "status": "pass"
+    },
+    "evidence": {
+      "code": "EVIDENCE_SATISFIED",
+      "proof": [
+        "format v3 or earlier: v4 policy receipts are not required"
+      ],
+      "status": "pass"
+    },
+    "preflight": {
+      "code": "PREFLIGHT_PASSED",
+      "status": "pass",
+      "warnings": []
+    }
+  },
+  "outcome": {
+    "code": "ACCEPTED_TIER_1",
+    "status": "accepted"
+  },
+  "receipts": [],
+  "subject": {
+    "attempt_id": "0fb3d77f-9c10-45e9-bfca-2bb387ee98ef",
+    "authorization_ref": "hmac-sha256-v3:ed0abaaf:3850002e4dbe52c062f0077201e44b36cff90d2ae1abeff24f126da9c07cd18d",
+    "base_commit": "2fd0a184cec4ea3a4e431a4b40ec6fda2ce75e89",
+    "task_id": "T-20260812-stg-returns-refunds-mirror",
+    "task_revision_digest": "sha256:02827009fc9475c54d5cf667e37abdf4a55b77f2a56460c60101c61a1debd2fe"
+  }
+}
