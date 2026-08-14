@@ -63,10 +63,9 @@ flowchart LR
 | [`00`](00-preflight.md) | No agent | The graph that has never moved | `done: 0`, no metrics file, `MISS signing` → key provisioned | `.taskspec/` signing key |
 | [`01`](01-green-that-proves-nothing.md) | **NEW A** | Green that proves nothing | An eval returns 0 with nothing built; `gate` refuses to call it delegate-safe | None — session discarded |
 | [`02`](02-an-eval-that-can-fail.md) | Continue A → then **NEW B** | An eval that can fail | `eval-audit`: a mutation killed, a mutation **survived** | A discriminating Exit Check |
-| [`03`](03-the-holdout.md) | Continue B | The holdout | `HOLDOUT=SEALED` → `HOLDOUT=VERIFIED` → a run receipt the executor never read | A sealed bundle + receipt |
+| [`03`](03-the-holdout.md) | Continue B | An eval the agent cannot read | `HOLDOUT=SEALED` → `HOLDOUT=VERIFIED` → a run receipt the executor never read | A sealed bundle + receipt |
 | ✦ | No agent | Break | Deck only — the sealed descriptor stays on screen | None |
 | [`04`](04-the-authorization-chain.md) | **NEW C** — developer | The authorization chain | `TIER=1` → `HANDOFF` → exit 0 → `ACCEPTED=1`, plus one honest **REJECT** | A signed, accepted spec + a real staging model |
-| ✦ | No agent | Giveaway → crank → Bootcamp | Deck only — 3 slides, ~21:50, 5 min. **The crank clip is live, not pre-recorded** | Skill #4 published |
 | [`05`](05-waves.md) | Continue C | Waves | `lint` names the partition; three specs run together; no write collision | Three more staging models |
 | [`06`](06-the-unit-of-measurement.md) | No agent | The unit of measurement | `taskspec metrics` — the same command that found nothing at `00` | `tasks/_metrics.jsonl` |
 | [`07`](07-reflection.md) | No agent | Turn four closes | Participant commitments | Team learning |
@@ -140,9 +139,11 @@ archives it into `tmp/prepared/` rather than deleting it.
   `AGENTS.md`.
 - Instructor `_control`, injection, scoring and reveal surfaces stay closed.
 - Label any fallback artifact **prepared**.
-- Three deck slides sit between `04` and `05`: giveaway, crank, Bootcamp handoff.
-  **Unlike Day 3 the crank is not pre-recorded** — the loop genuinely ran during
-  checkpoint 04, so say that difference out loud. The handoff carries no pricing.
+- **There is no commercial beat between `04` and `05`.** The giveaway, crank and
+  Bootcamp handoff slides were removed from the deck; the skill card now sits
+  inside Act 2, next to the audit that earns it. The five minutes are slack.
+- A guest segment runs at ~20:12: **Rafael Rodrigues on evals**, ten minutes,
+  taken out of movement `01` so no later checkpoint moves.
 
 ## What is new tonight, and what is only now honest
 
@@ -204,6 +205,6 @@ into the prompt or back.
 - [ ] `Revenue` is still unresolved and `daily-grain-decision` still refuses.
 - [ ] The room filled the three commitment lines.
 
-The planning source is [`../../plan/d4-act-prompts.md`](../../plan/d4-act-prompts.md);
+The planning source is [`../../plan/semana.md`](../../plan/semana.md);
 the deck is [`../../presentation/d4.html`](../../presentation/d4.html). Day 3's
 runbook ([`../d3/`](../d3/)) remains the format precedent.
