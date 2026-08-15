@@ -168,7 +168,7 @@ for a failed chain.
 
 ## Sources
 
-- The invariant: quoted verbatim from `live/d1/`, `live/d2/` and `live/d3/`. Unchanged
+- The invariant: quoted verbatim from `sessions/d1/`, `sessions/d2/` and `sessions/d3/`. Unchanged
   by design.
 - Six-ring model as presented on Days 1 to 3: `presentation/d1.html`, `d2.html`,
   `d3.html`.

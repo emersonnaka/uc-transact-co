@@ -10,18 +10,20 @@ can continue.
 | --- | --- | --- | --- |
 | Day 1 · Foundation | [`d1/README.md`](d1/README.md) | [`../presentation/d1.html`](../presentation/d1.html) | Executed; specs 1–3 are tracked evidence |
 | Day 2 · Harness | [`d2/README.md`](d2/README.md) | [`../presentation/d2.html`](../presentation/d2.html) | Executed; specs 4–5 and `stg_orders` are committed |
-| Day 3 · The Task | [`d3/README.md`](d3/README.md) | [`../presentation/d3.html`](../presentation/d3.html) | Executed; six Task-Specs are on disk, all `DOD=COMPLETE` |
-| Day 4 · The Loop | [`d4/README.md`](d4/README.md) | [`../presentation/d4.html`](../presentation/d4.html) | Not yet executed; the graph is complete and has never moved (`done: 0`, no metrics file, no signing key) |
+| Day 3 · The Task | [`d3/README.md`](d3/README.md) | [`../presentation/d3.html`](../presentation/d3.html) | Executed; six Task-Specs authored, all `DOD=COMPLETE` |
+| Day 4 · The Loop | [`d4/README.md`](d4/README.md) | [`../presentation/d4.html`](../presentation/d4.html) | Executed; five specs crank-accepted at Tier 1 (`done: 5`), signing key and metrics on disk |
+| Day 5 · The Factory | [`d5/README.md`](d5/README.md) | [`../presentation/d5.html`](../presentation/d5.html) | Built; one read-only checkpoint, scheduled 17 Aug 2026 |
 
-Days 1 to 3 preserve the exact sequence that produced the inherited artifacts;
+Days 1 to 4 preserve the exact sequence that produced the inherited artifacts;
 their preflight states are historical, not the current `main` preflight. Start
-with Day 4 as the current live module. Use an isolated rehearsal copy, not this
+with Day 5 as the current live module. Use an isolated rehearsal copy, not this
 checkout, to replay an executed night from its original starting state.
 
-Day 4 is the first night that changes the repository because a **loop** ran rather
-than because a human typed, so its checkpoint `00` is a real preflight with a
-mutation of its own: it provisions the repository signing key that Days 1 to 3
-never needed.
+Day 4 was the first night that changed the repository because a **loop** ran
+rather than because a human typed: its checkpoint `00` provisioned the
+repository signing key that Days 1 to 3 never needed. Day 5 builds nothing
+live — everything its checkpoint shows was finished and committed in advance,
+and the only thing that happens on stage is the CFO question.
 
 ## Teaching loop
 

@@ -34,5 +34,5 @@ choose a definition for it.
 - writes: dbt/models/staging/ and nothing else
 - done: make dbt-check passes, then claim it — never before
 
-<!-- Entries below are written live at checkpoint live/d2/03-agent-pair.md,
+<!-- Entries below are written live at checkpoint sessions/d2/03-agent-pair.md,
      against the harness contract confirmed at checkpoint 02. -->

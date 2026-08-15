@@ -1,14 +1,15 @@
 # Semana Engenharia Agêntica — Facilitation and Delivery Plan
 
-- **Status:** Nights 1 and 2 executed end to end; Night 3 built (47 slides, eight checkpoints), execution started but not complete
+- **Status:** Nights 1–4 executed end to end; Night 5 built, scheduled 17 Aug 2026
 - **Case:** TransactCo — a brownfield commerce system whose numbers must earn trust
-- **Operational runbooks:** [`live/d1/`](../live/d1/) executed · [`live/d2/`](../live/d2/) executed · [`live/d3/`](../live/d3/) built
-- **Decks:** [`presentation/d1.html`](../presentation/d1.html) 49 slides · [`d2.html`](../presentation/d2.html) 41 · [`d3.html`](../presentation/d3.html) 47
+- **Operational runbooks:** [`sessions/d1/`](../sessions/d1/) · [`sessions/d2/`](../sessions/d2/) · [`sessions/d3/`](../sessions/d3/) · [`sessions/d4/`](../sessions/d4/) executed · [`sessions/d5/`](../sessions/d5/) built
+- **Decks:** [`presentation/d1.html`](../presentation/d1.html) · [`d2.html`](../presentation/d2.html) · [`d3.html`](../presentation/d3.html) · [`d4.html`](../presentation/d4.html) · [`d5.html`](../presentation/d5.html)
 - **Historical source:** [`docs/semana-agentic-uc-transact-co-v2.pdf`](../docs/semana-agentic-uc-transact-co-v2.pdf)
 
-The PDF preserves the original brief. This file records the current teaching
-design across three nights. When sources disagree, the executable repository
-and the numbered live checkpoints win.
+The PDF preserves the original brief. This file records the teaching design
+through Night 3; Nights 4 and 5 are designed in their runbooks
+([`sessions/d4/`](../sessions/d4/), [`sessions/d5/`](../sessions/d5/)). When sources disagree,
+the executable repository and the numbered live checkpoints win.
 
 ## 1. Purpose
 
@@ -80,9 +81,9 @@ By the end of the foundation investigation, participants should be able to:
 ## 5. Complete story — night by night
 
 Operational details, paste-ready prompts, evidence selections, and recovery
-paths live in each night's runbook: [`live/d1/README.md`](../live/d1/README.md),
-[`live/d2/README.md`](../live/d2/README.md), and
-[`live/d3/README.md`](../live/d3/README.md).
+paths live in each night's runbook: [`sessions/d1/README.md`](../sessions/d1/README.md),
+[`sessions/d2/README.md`](../sessions/d2/README.md), and
+[`sessions/d3/README.md`](../sessions/d3/README.md).
 
 ### Night 1 — the foundations (executed)
 
@@ -289,7 +290,7 @@ Rules any engine building on a deck must hold to:
   ids, every `<style data-act="N">` block brace-balanced;
 - numbers on slides must be real: quoted spec text comes verbatim from
   `storage/specs/`; R$ figures come from the specs — never invented;
-- every act's go-live slide names its `live/dN/` checkpoint file explicitly;
+- every act's go-live slide names its `sessions/dN/` checkpoint file explicitly;
 - known engine mistakes from earlier build rounds: invented metrics, wrong CSS
   var (`--pc` vs `--pk` — panels use `--pk`, programme rows use `--pc`), long
   text inside nowrap `.seam-t`, deleted `-->` comment closers.
@@ -313,7 +314,7 @@ All deck copy visible on a slide is English, including quotes translated from
 the session recordings — d2 set this convention (the Portuguese original stays
 in the hidden `speaker-notes`). `storage/specs/` is English, so spec text
 quoted on a slide is already verbatim. Only the prompt wrappers pasted live in
-`live/d3/` are PT-BR, because the room speaks Portuguese.
+`sessions/d3/` are PT-BR, because the room speaks Portuguese.
 
 ## 8. Artifact lifecycle
 
@@ -404,7 +405,7 @@ rehearsal’s values as universal expectations.
 
 | Surface | Sign-off evidence | Boundary |
 | --- | --- | --- |
-| `live/` | All three runbooks have session boundaries, bounded prompts, evidence selections, gates, and recovery | A rehearsed prompt can still vary by model |
+| `sessions/` | All three runbooks have session boundaries, bounded prompts, evidence selections, gates, and recovery | A rehearsed prompt can still vary by model |
 | `presentation/` | Current d3 opens with 47 slides, no duplicate ids, and no console errors; the earlier 49-slide baseline passed at 1600×900 | A fresh content-bounds check at the fixed 1211×880 in-app viewport reports horizontal overflow on slide 23 and vertical overflow on slides 26 and 40; it cannot re-prove the 1600×900 target |
 | `skills/` | Skill metadata validates; unit fixtures cover success and failure; package validator returns `CHECK_INVESTIGATION=PASS` | Structural validity is not semantic approval |
 | `src/` | Bootstrap, unit contracts, delivery verification, ontology CLI, landing parity, and `dbt-check` pass | Participant dbt models, agents, and detector remain intentionally absent |
@@ -498,7 +499,7 @@ This section is the consolidated build document for Night 3, incorporated on
 retired after its content moved here. It is module three of the arc:
 *specification and decomposition — intent, acceptance evidence, atomic work →
 reviewable specification and task graph.* The operational source remains
-`live/d3/`.
+`sessions/d3/`.
 
 ### 15.1 The question and the villain
 
@@ -513,7 +514,7 @@ times, into three fresh contexts (or the same context reset). Say nothing else.
 The prompt wrapper stays in Portuguese — the room's language, same as Days 1
 and 2. The quoted item stays in English, because `4-plan-transform.md` is
 English and the quote must be verbatim. Canonical version lives in
-[`live/d3/01-plausible-plan.md`](../live/d3/01-plausible-plan.md); keep the two
+[`sessions/d3/01-plausible-plan.md`](../sessions/d3/01-plausible-plan.md); keep the two
 in sync.
 
 ```text
@@ -766,8 +767,8 @@ second call to action to the current deck.
 
 ### 15.9 Build order status
 
-1. `live/d3/README.md` — **built**: sequence table, output budgets, gate.
-2. `live/d3/00-inheritance.md` … `07-reflection.md` — **built**, eight
+1. `sessions/d3/README.md` — **built**: sequence table, output budgets, gate.
+2. `sessions/d3/00-inheritance.md` … `07-reflection.md` — **built**, eight
    checkpoints, cross-references verified against the deck and the specs.
 3. `plan/` decision: add BDD and an index layer — **not needed**: v3.7.0
    already ships Zone 2 Behavior and `TaskPlan/v1`. The checkpoint-04 giveaway

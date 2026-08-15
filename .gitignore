@@ -12,6 +12,8 @@ dbt/logs/
 dbt/dbt_packages/
 dbt/.user.yml
 tmp/
+dist/
+.playwright-mcp/
 
 # session output — anything a run writes here must never be mixed with live evidence
 storage/specs/*.md

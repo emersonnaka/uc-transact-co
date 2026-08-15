@@ -42,10 +42,9 @@ The first half asks for SQL. The second asks for semantics, evidence, system
 boundaries, and operational safety.
 
 This repository supplies the runnable source system, the controlled failure
-environment, and three guided modules of Semana Engenharia Agêntica. Nights 1
-and 2 have been executed; the complete Night 3 module is built and its live
-execution has started, but is not complete. It is a teaching foundation, not a
-finished analytical product.
+environment, and five guided modules of Semana Engenharia Agêntica. Nights 1
+through 4 have been executed; the Night 5 module is built and scheduled for
+17 Aug 2026. It is a teaching foundation, not a finished analytical product.
 
 | Ships ready | You construct |
 | --- | --- |
@@ -84,7 +83,7 @@ parity, and validates the current dbt project and DuckDB profile.
 Run `make setup` while network access is reliable. DuckDB downloads its Postgres
 extension during setup.
 
-For the guided experience, start at [`live/README.md`](live/README.md). The
+For the guided experience, start at [`sessions/README.md`](sessions/README.md). The
 prompts deliberately stop before Finance-owned meaning is invented or an agent
 receives authority that was not written down.
 
@@ -95,14 +94,21 @@ foundation evidence; it is not a second, independent quickstart.
 
 | Module | Canonical question | Runbook | Deck | Session result | Repository state |
 | --- | --- | --- | --- | --- | --- |
-| Foundation investigation | What is true, what is inferred, and what remains a human decision? | [`live/d1/`](live/d1/) | [`presentation/d1.html`](presentation/d1.html) | Context inventory, ontology note, technical brief, investigation skill | Executed |
-| Harness and authority | What may the agent do, through which tools, paths, and gates? | [`live/d2/`](live/d2/) | [`presentation/d2.html`](presentation/d2.html) | Harness contract, bounded roles, sketch plans, one controlled dbt build, scaffold skill | Executed |
-| The Task — specification and decomposition | What does done mean in a form a machine can answer? | [`live/d3/`](live/d3/) | [`presentation/d3.html`](presentation/d3.html) | Task-Spec, runnable evals, task graph, one bounded packet compared across 2–3 available engines | Built; execution started, not complete |
+| Foundation investigation | What is true, what is inferred, and what remains a human decision? | [`sessions/d1/`](sessions/d1/) | [`presentation/d1.html`](presentation/d1.html) | Context inventory, ontology note, technical brief, investigation skill | Executed |
+| Harness and authority | What may the agent do, through which tools, paths, and gates? | [`sessions/d2/`](sessions/d2/) | [`presentation/d2.html`](presentation/d2.html) | Harness contract, bounded roles, sketch plans, one controlled dbt build, scaffold skill | Executed |
+| The Task — specification and decomposition | What does done mean in a form a machine can answer? | [`sessions/d3/`](sessions/d3/) | [`presentation/d3.html`](presentation/d3.html) | Task-Spec, runnable evals, task graph, one bounded packet compared across 2–3 available engines | Executed |
+| The Loop — dispatch, proof, receipt, measurement | What happens when no one is watching — and how do I know the green means anything? | [`sessions/d4/`](sessions/d4/) | [`presentation/d4.html`](presentation/d4.html) | Signing key, sealed holdout, authorization chain, the crank driving every ready spec through five acceptance gates | Executed; five specs accepted at Tier 1 |
+| The Factory — close, rails, table | Can the CFO question finally be answered, and what stays a human decision? | [`sessions/d5/`](sessions/d5/) | [`presentation/d5.html`](presentation/d5.html) | Read-only CFO MCP surface over the accepted measurements; the grain decision deliberately left open | Built; scheduled 17 Aug 2026 |
 
 The first two modules produced five baseline-specific artifacts under
-`storage/specs/` and the Day 2 `stg_orders` model. Those artifacts are now
-tracked, frozen inputs. The specification module reads them, keeps `Revenue`
-blocked, and permits only the construction named by its confirmed packet. Each
+`storage/specs/` and the Day 2 `stg_orders` model. Those artifacts are
+tracked, frozen inputs. The specification module read them, kept `Revenue`
+blocked, and authored the six-spec task graph under `tasks/`. The loop module
+then drove every ready spec through the authorization chain: five specs are
+accepted at Tier 1 and moved to `tasks/done/`, and five staging models now
+live under `dbt/models/staging/`. The one remaining spec,
+`T-20260812-daily-grain-decision`, declares no write surface — it is a
+Finance-owned decision, so the crank cannot execute it, by design. Each
 numbered checkpoint states whether to continue the current agent session, open
 a new one, or use no agent at all.
 
@@ -340,12 +346,14 @@ flowchart LR
 | `make verify` | Prove clean baseline, read-only source access, parity, manifest, and oracle isolation |
 | `make dbt-check` | Validate the DuckDB profile and parse the current dbt project |
 | `make defects` | List the fourteen registered failure modes and their scenarios |
+| `make up` / `make down` | Start Postgres and apply the schema / stop it, keeping data |
 | `make seed` | Regenerate the clean operational dataset |
 | `make land` | Carry `public.*` into `raw.*` through read-only ATTACH |
-| `make psql-ro` | Open Postgres with the analytical read-only role |
-| `make query-ro Q="select 1"` | Query DuckDB in read-only mode |
+| `make psql` / `make psql-ro` | Open Postgres as root / with the analytical read-only role |
+| `make query Q="..."` / `make query-ro Q="..."` | Query DuckDB read-write / read-only |
 | `make inject` / `make inject-quiet` | Introduce controlled conditions |
 | `make score` / `make reveal` | Evaluate findings / open instructor truth |
+| `make clean` | Remove the local DuckDB warehouse file |
 | `make reset` | Destroy and rebuild the disposable Postgres fixture |
 
 `make reset` destroys the local Docker volume. Never point this teaching fixture
@@ -362,15 +370,18 @@ at a non-disposable database.
 | [`src/transactco/control/`](src/transactco/control/) | Builders | Verification, controlled evaluation, and scoring |
 | [`AGENTS.md`](AGENTS.md) · [`CLAUDE.md`](CLAUDE.md) | Agents | Cross-engine ground rules and the Day 2 role-definition surface |
 | [`plan/semana.md`](plan/semana.md) | Facilitators | Storytelling, session design, delivery gates, context pack, and runbook |
-| [`presentation/d1.html`](presentation/d1.html) · [`presentation/d2.html`](presentation/d2.html) · [`presentation/d3.html`](presentation/d3.html) · [`presentation/d4.html`](presentation/d4.html) | Facilitators | Foundation, harness, specification, and loop decks — open in a browser, navigate with arrow keys or space |
+| [`presentation/d1.html`](presentation/d1.html) · [`presentation/d2.html`](presentation/d2.html) · [`presentation/d3.html`](presentation/d3.html) · [`presentation/d4.html`](presentation/d4.html) · [`presentation/d5.html`](presentation/d5.html) | Facilitators | Foundation, harness, specification, loop, and factory decks — open in a browser, navigate with arrow keys or space |
 | [`presentation/about-me.html`](presentation/about-me.html) | Facilitators | Optional presenter introduction deck |
-| [`live/`](live/) | Facilitators | Executable teaching surface — one numbered file per demo checkpoint |
+| [`scripts/cfo_mcp.py`](scripts/cfo_mcp.py) · [`.mcp.json`](.mcp.json) | Facilitators | Read-only `transactco-cfo` MCP server over the Tier-1-accepted measurements; refuses to define `Revenue` |
+| [`scripts/crank.sh`](scripts/crank.sh) | Facilitators | The Day 4 loop driver — handoff, gated acceptance, transition, commit for every ready spec |
+| [`sessions/`](sessions/) | Facilitators | Executable teaching surface — one numbered file per demo checkpoint |
 | [`skills/interview-the-system/`](skills/interview-the-system/) | Participants | Reusable skill, references, validator, and agent metadata |
 | [`skills/harness-scaffold/`](skills/harness-scaffold/) | Participants | Regenerable harness structure; scaffolding only, never authority or completed content |
 | [`skills/spec-before-build/`](skills/spec-before-build/) | Participants | Turn one ambiguous plan item into an atomic Task-Spec whose exit check answers for itself |
 | [`storage/specs/`](storage/specs/) | Session evidence | Five tracked, baseline-specific artifacts from Nights 1–2; frozen and read-only for Nights 3–4 |
-| [`tasks/`](tasks/) | Session evidence | Night 3's Task-Spec graph — six specs, all `DOD=COMPLETE`, none yet run |
+| [`tasks/`](tasks/) | Session evidence | The Task-Spec graph — five specs accepted at Tier 1 in `tasks/done/`, one open Finance decision |
 | [`docs/semana-agentic-uc-transact-co-v2.pdf`](docs/semana-agentic-uc-transact-co-v2.pdf) | Maintainers | Historical source brief; preserved, not the operational runbook |
+| [`docs/codebase-review-2026-08-14.md`](docs/codebase-review-2026-08-14.md) | Maintainers | Per-folder review and sign-off after the Day 4 execution and Day 5 build |
 
 The guided experience runs from the decks, numbered live checkpoints, approved
 artifacts, and reusable skills. Nights 1–2 produced the five tracked review
@@ -394,10 +405,11 @@ allowlisted context described in `plan/semana.md`.
 - Baseline-specific specs and traces are valid only for the fixture they
   inspected. Rebuilding the fixture makes the tracked specs historical; do not
   overwrite them in this checkout.
-- The Day 2 `stg_orders` model and its raw source declaration are committed.
-  Additional staging models, intermediate models, marts, completed role
-  content, the Day 3 `tasks/` graph, and the detector remain participant work—
-  not missing implementation.
+- Five staging models and their source declarations are committed: the Day 2
+  `stg_orders` and the four Day 4 crank-accepted models. Intermediate models,
+  marts, completed role content, and the detector remain participant work —
+  not missing implementation. The open `daily-grain-decision` spec is a
+  Finance-owned semantic decision, not an unfinished task.
 - A scaffold proves that required files and directories exist. It does not grant
   tool authority, fill the knowledge base, verify behavior, or approve a
   semantic decision.

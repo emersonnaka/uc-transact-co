@@ -10,7 +10,7 @@ ANALYTICS_RO_USER ?= analytics_ro
 ANALYTICS_RO_PASSWORD ?= analytics_ro
 
 .DEFAULT_GOAL := help
-.PHONY: help setup bootstrap doctor test skill-check verify dbt-check up down seed land inject inject-quiet reveal score status reset psql psql-ro query query-ro clean
+.PHONY: help setup bootstrap doctor test skill-check verify dbt-check up down seed land inject inject-quiet reveal score status defects reset psql psql-ro query query-ro clean
 
 help: ## Show this help
 	@echo ""

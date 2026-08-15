@@ -8,7 +8,7 @@ description: Regenerate the structural skeleton of a harness — agent role stub
 One run regenerates the harness structure the team already understands:
 `agents/` role stubs, `kb/<stack>/` knowledge-base placeholders, and
 `rules/<stack>.md` rule stubs, plus a manifest. It is the automation of the
-hand-written work from `live/d2/03-agent-pair.md` — faster, never smarter.
+hand-written work from `sessions/d2/03-agent-pair.md` — faster, never smarter.
 
 Day 2 of Semana Engenharia Agêntica delivers this skill. It follows Day 1's
 [`interview-the-system`](../interview-the-system/SKILL.md), which supplies the

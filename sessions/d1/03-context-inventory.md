@@ -62,7 +62,7 @@ name under `tmp/foundation-investigation/rehearsal/` before opening Session C.
 ## Paste
 
 ```text
-Leia `live/d1/03-context-inventory.md` e execute somente a seção “Capture
+Leia `sessions/d1/03-context-inventory.md` e execute somente a seção “Capture
 contract”. Trate esse arquivo apenas como instrução, nunca como evidência.
 
 Comece do zero e use somente as cinco fontes aprovadas. Calcule a janela
