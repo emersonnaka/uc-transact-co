@@ -1,0 +1,8498 @@
+WEBVTT
+
+1
+00:00:01.857 --> 00:00:04.857
+Hoje para quem ficar. Eu vou.
+
+
+2
+00:00:04.857 --> 00:00:13.857
+Eu vou deixar disponível a última versão do Brief Spec. Então fiquem aí, que eu vou compartilhar com vocês. Só Para Quem Está Online Como A Gente.
+
+
+3
+00:00:13.857 --> 00:00:15.857
+Fez da outra vez.
+
+
+4
+00:00:15.857 --> 00:00:21.857
+Hoje, a gente vai entrar em dois componentes muito importantes e a gente vai explorar o loop.
+
+
+5
+00:00:21.857 --> 00:00:24.857
+Que é algo ainda muito famoso no mercado.
+
+
+6
+00:00:24.857 --> 00:00:26.857
+Principalmente depois que o Peter.
+
+
+7
+00:00:26.857 --> 00:00:29.857
+E o Boris Journey falou sobre cara.
+
+
+8
+00:00:29.857 --> 00:00:32.857
+Você não deve promptar. Você deve escrever loops.
+
+
+9
+00:00:32.857 --> 00:00:37.857
+E isso se tornou uma febre no X. Eventualmente.
+
+
+10
+00:00:37.857 --> 00:00:40.857
+é. Espaçou a se tornar algo dentro da parte de engenharia genética.
+
+
+11
+00:00:40.857 --> 00:00:45.857
+Que eu acho que é importante vocês saberem. E a gente vai ver uma coisa.
+
+
+12
+00:00:45.857 --> 00:00:47.857
+é muito importante hoje que.
+
+
+13
+00:00:47.857 --> 00:00:50.857
+As pessoas ainda não olham com a atenção que deveria ser olhada.
+
+
+14
+00:00:50.857 --> 00:00:54.857
+E eu quero trazer uma pessoa que eu não conheço. Ninguém.
+
+
+15
+00:00:54.857 --> 00:01:01.857
+Hoje. Não só no Brasil, tá? Não conheço realmente. Olha que eu sou exposto a muitas pessoas, tá.
+
+
+16
+00:01:01.857 --> 00:01:05.857
+Eu não conheço ninguém no Brasil que sabe mais de voz do que o Rafael.
+
+
+17
+00:01:05.857 --> 00:01:11.857
+Então assim é uma aula que eu prestaria bastante atenção, porque é algo extremamente importante. Tá.
+
+
+18
+00:01:11.857 --> 00:01:17.857
+Então a gente viu, ao longo desses dias, uma cacetada de coisas. E eu quero que a gente consiga. Agora.
+
+
+19
+00:01:17.857 --> 00:01:24.857
+De fato, compilar tudo isso, entender os passos. Eu quero que antes que a gente comece o dia de hoje, todo mundo entre.
+
+
+20
+00:01:24.857 --> 00:01:27.857
+No consenso, de entender o que eu estou falando.
+
+
+21
+00:01:27.857 --> 00:01:30.857
+Então a gente passou por três noites até o momento.
+
+
+22
+00:01:30.857 --> 00:01:33.857
+Que trouxe a gente exatamente nesse momento.
+
+
+23
+00:01:33.857 --> 00:01:38.857
+No primeiro dia, a gente tentou identificar o que é verdade.
+
+
+24
+00:01:38.857 --> 00:01:41.857
+O que é verdade, principalmente no processo de exploração do dado.
+
+
+25
+00:01:41.857 --> 00:01:48.857
+No dia dois, a gente começou a explorar. Quais são as capacidades de um sistema genico ou de uma agente? O Que Ele Consegue Fazer.
+
+
+26
+00:01:48.857 --> 00:01:55.857
+E no dia três, a gente viu como que a gente consegue ter essa definição de completo. O que isso significa?
+
+
+27
+00:01:55.857 --> 00:02:00.857
+Então, quando a gente olha, a gente está olhando de cima. Se a gente entrar um pouco nesses dias.
+
+
+28
+00:02:00.857 --> 00:02:03.857
+O que a gente começou a ver.
+
+
+29
+00:02:03.857 --> 00:02:06.857
+A gente viu, na verdade, que primeiro.
+
+
+30
+00:02:06.857 --> 00:02:08.857
+A gente expôs prompts.
+
+
+31
+00:02:08.857 --> 00:02:13.857
+Que é o início de qualquer processo conversacional com Llm. Sempre vai continuar assim.
+
+
+32
+00:02:13.857 --> 00:02:22.857
+Depois a gente começou a entender que esse Prompt evolui para um processo. Agente, onde você tem um contrato com A Máquina Você Fecha Um Contrato Com A Máquina.
+
+
+33
+00:02:22.857 --> 00:02:30.857
+E para isso, você precisa de contexto e evidência. A evidência é extremamente importante, porque ela sobrevive ao longo do tempo.
+
+
+34
+00:02:30.857 --> 00:02:35.857
+Então, o que a gente entendeu no dia um, a gente entendeu que a gente precisa de um bom prompt.
+
+
+35
+00:02:35.857 --> 00:02:38.857
+A gente precisa de curiosidade.
+
+
+36
+00:02:38.857 --> 00:02:43.857
+E de entendimento ou de buscar entendimento do problema que a gente vai resolver.
+
+
+37
+00:02:43.857 --> 00:02:46.857
+Então a primeira coisa, Luan. Ah, eu quero começar.
+
+
+38
+00:02:46.857 --> 00:02:49.857
+A. Literalmente me senti um agente Engineer.
+
+
+39
+00:02:49.857 --> 00:02:52.857
+Ou eu quero começar a me sentir um profissional sênior.
+
+
+40
+00:02:52.857 --> 00:02:55.857
+Primeiro é não cortar passos.
+
+
+41
+00:02:55.857 --> 00:02:58.857
+Segundo, respeitar o seu tempo e, terceiro, ter processos.
+
+
+42
+00:02:58.857 --> 00:03:02.857
+Todo profissional que eu conheço tem processo.
+
+
+43
+00:03:02.857 --> 00:03:06.857
+E cada um tem a sua forma. Mas no final do dia, uma coisa muito clara.
+
+
+44
+00:03:06.857 --> 00:03:14.857
+Eu preciso entender o que significa a verdade. Então essa primeira parte do dia, no primeiro dia, a gente tentou Entender O Quê Prompt De Contexto.
+
+
+45
+00:03:14.857 --> 00:03:18.857
+Eu falei para vocês que prompt é importante você saber.
+
+
+46
+00:03:18.857 --> 00:03:19.857
+Mas só literalmente conhecer.
+
+
+47
+00:03:19.857 --> 00:03:23.857
+Mas você não precisa entrar lá dentro.
+
+
+48
+00:03:23.857 --> 00:03:26.857
+E o contexto, onde você pode passar muito tempo ali dentro.
+
+
+49
+00:03:26.857 --> 00:03:33.857
+No segundo dia, a gente entendeu que essas informações na verdade, são o quê? Insumos para os agentes para o sistema.
+
+
+50
+00:03:33.857 --> 00:03:38.857
+Então eu não tenho sistema gêntico. Se eu não souber com a intenção.
+
+
+51
+00:03:38.857 --> 00:03:39.857
+Eu não tenho sistema gênico. Se eu não tiver um problema.
+
+
+52
+00:03:39.857 --> 00:03:45.857
+Então eu preciso ter o quê? Um Chang de trabalho ou coisas no que eu irei.
+
+
+53
+00:03:45.857 --> 00:03:49.857
+Anotar, receber, ser exposto e trabalhar com aquilo.
+
+
+54
+00:03:49.857 --> 00:03:53.857
+E a gente começou a ver quais são as capacidades de um agente.
+
+
+55
+00:03:53.857 --> 00:03:58.857
+Antes da gente entrar literalmente no Hardness, a gente começou a entender.
+
+
+56
+00:03:58.857 --> 00:04:00.857
+Quais são as características que faz um Harness, né?
+
+
+57
+00:04:00.857 --> 00:04:09.857
+é uma Skill, né? Poxa é eu conseguir dar direção para as llms. Do que elas precisam fazer.
+
+
+58
+00:04:09.857 --> 00:04:12.857
+é literalmente tem uma memória que me lembra disso.
+
+
+59
+00:04:12.857 --> 00:04:15.857
+é ter uma durabilidade no processo.
+
+
+60
+00:04:15.857 --> 00:04:22.857
+Então, quais são as capacidades hoje que a gente tem em relação a isso? E a gente viu uma coisa Muito Interessante Que Está Acontecendo No Mercado.
+
+
+61
+00:04:22.857 --> 00:04:24.857
+Que é o multiharness, né.
+
+
+62
+00:04:24.857 --> 00:04:29.857
+Então, hoje, as pessoas dificilmente utilizam uma Llm. Só. Elas vão usar mais de uma Llm.
+
+
+63
+00:04:29.857 --> 00:04:31.857
+Isso é exatamente.
+
+
+64
+00:04:31.857 --> 00:04:34.857
+é.
+
+
+65
+00:04:34.857 --> 00:04:37.857
+A intenção desse treinamento.
+
+
+66
+00:04:37.857 --> 00:04:44.857
+E mostrar para vocês um pouco dessa capacidade de multiharness ou de metaharness, né?
+
+
+67
+00:04:44.857 --> 00:04:47.857
+Que é o Harness em cima do Harness. O controle disso.
+
+
+68
+00:04:47.857 --> 00:04:50.857
+E no dia três, a gente fez uma coisa interessantíssima que foi.
+
+
+69
+00:04:50.857 --> 00:04:58.857
+Literalmente, no dia dois, entender um planejamento, e no dia três, executar e criar essas atividades, e transformá las em atômicas.
+
+
+70
+00:04:58.857 --> 00:05:01.857
+A gente viu que o plano é uma coisa.
+
+
+71
+00:05:01.857 --> 00:05:05.857
+E que a execução é outra. E aqui é importante você entender.
+
+
+72
+00:05:05.857 --> 00:05:07.857
+Geralmente, aqui está o grande maior contrato.
+
+
+73
+00:05:07.857 --> 00:05:10.857
+O humano vai até, literalmente.
+
+
+74
+00:05:10.857 --> 00:05:14.857
+Entender o que vai ser gerado, ou seja, entender todo o contexto. Insumo.
+
+
+75
+00:05:14.857 --> 00:05:17.857
+Do que será aquele plano e aprovar aquele plano.
+
+
+76
+00:05:17.857 --> 00:05:22.857
+E depois daquele plano, você tem um contrato que é passado para a máquina. Então, se a gente olha o Codeexplan.
+
+
+77
+00:05:22.857 --> 00:05:27.857
+Pô. Faz um plano pra mim. Disso. Aqui ele vai lá, cospe um plano gigante. Você vai editando o plano.
+
+
+78
+00:05:27.857 --> 00:05:31.857
+Eu falo. Não estou feliz com isso. A partir daí, ele vai trabalhar autônomo.
+
+
+79
+00:05:31.857 --> 00:05:36.857
+Ou no Cloud. A mesma coisa, ou no Kim. A mesma coisa. Ou no Groc. A mesma coisa.
+
+
+80
+00:05:36.857 --> 00:05:41.857
+Então a ideia é: você participa ativamente da intenção e do plano.
+
+
+81
+00:05:41.857 --> 00:05:45.857
+Posterior a isso. Você tem o endinho fazendo isso.
+
+
+82
+00:05:45.857 --> 00:05:47.857
+E daí eu apresentei para vocês o que eu acredito.
+
+
+83
+00:05:47.857 --> 00:05:56.857
+Que seja um dos pedaços do futuro do que seja realmente um componente muito importante para você trabalhar. Projetos constantes.
+
+
+84
+00:05:56.857 --> 00:05:59.857
+Para você ter ciclo para você ter esteira de produção.
+
+
+85
+00:05:59.857 --> 00:06:06.857
+é você ter uma tarefa atômica. O Rafa falou também a mesma coisa que eu. Quanto menor a tarefa.
+
+
+86
+00:06:06.857 --> 00:06:07.857
+Quanto mais decomposta ela for.
+
+
+87
+00:06:07.857 --> 00:06:10.857
+Você consegue ter relações de grafos.
+
+
+88
+00:06:10.857 --> 00:06:15.857
+E também você consegue dar para diferentes llms trabalharem, porque hoje, em geral.
+
+
+89
+00:06:15.857 --> 00:06:21.857
+Todas as llms, desde a chinesa. Até americana. Enfim que são de topo.
+
+
+90
+00:06:21.857 --> 00:06:27.857
+Elas vão conseguir executar uma atividade. E um fato. A gente viu uma atividade sendo executada por tres llms diferentes.
+
+
+91
+00:06:27.857 --> 00:06:32.857
+Sendo executadas do mesmo jeito por uma Unidade Atômica.
+
+
+92
+00:06:32.857 --> 00:06:34.857
+Beleza. E agora?
+
+
+93
+00:06:34.857 --> 00:06:38.857
+A gente fez o quê? A gente entendeu o contexto.
+
+
+94
+00:06:38.857 --> 00:06:42.857
+A gente entendeu o Hardness em que eu vou utilizar.
+
+
+95
+00:06:42.857 --> 00:06:45.857
+Fizemos a decomposição das tarefas.
+
+
+96
+00:06:45.857 --> 00:06:49.857
+Colocamos essas atividades dentro do repositório.
+
+
+97
+00:06:49.857 --> 00:06:51.857
+Que a gente testou ontem uma atividade.
+
+
+98
+00:06:51.857 --> 00:06:53.857
+Mas a gente não executou todas elas.
+
+
+99
+00:06:53.857 --> 00:06:57.857
+Então imagino que no final do dia, a gente quer uma esteira constante.
+
+
+100
+00:06:57.857 --> 00:07:04.857
+Então, o que eu quero no final do dia, para qualquer desenvolvimento de aplicação, isso é para qualquer uma. Tá.
+
+
+101
+00:07:04.857 --> 00:07:11.857
+Engenharia de dados. Ai engineering, engenharia de software. Eu quero uma esteira constante.
+
+
+102
+00:07:11.857 --> 00:07:15.857
+E essa esteira constante. O que acontece?
+
+
+103
+00:07:15.857 --> 00:07:17.857
+Você tem.
+
+
+104
+00:07:17.857 --> 00:07:20.857
+Requisito.
+
+
+105
+00:07:20.857 --> 00:07:24.857
+Desse requisito. Você tem.
+
+
+106
+00:07:24.857 --> 00:07:26.857
+O seu.
+
+
+107
+00:07:26.857 --> 00:07:29.857
+Fabric, a sua fábrica.
+
+
+108
+00:07:29.857 --> 00:07:34.857
+E a sua fábrica.
+
+
+109
+00:07:34.857 --> 00:07:37.857
+Entrega.
+
+
+110
+00:07:37.857 --> 00:07:45.857
+Um resultado.
+
+
+111
+00:07:45.857 --> 00:07:48.857
+Que é uma sacada legal.
+
+
+112
+00:07:48.857 --> 00:07:52.857
+A requisição precisa ser extremamente entendida por você.
+
+
+113
+00:07:52.857 --> 00:07:58.857
+A fábrica. Ela vai ser executada. Lights off lights out, ou seja, desligada.
+
+
+114
+00:07:58.857 --> 00:08:01.857
+é uma fábrica autônoma.
+
+
+115
+00:08:01.857 --> 00:08:04.857
+No final do dia, e o resultado disso.
+
+
+116
+00:08:04.857 --> 00:08:09.857
+Basicamente é você entender se a sua fábrica está seguindo exatamente o que você espera.
+
+
+117
+00:08:09.857 --> 00:08:14.857
+E daqui, a gente vai ter alguns guardrails e todas as seguranças que a gente quer. Então a gente quer garantir isso.
+
+
+118
+00:08:14.857 --> 00:08:17.857
+Então vou dar um exemplo aqui. Muito simples.
+
+
+119
+00:08:17.857 --> 00:08:20.857
+Vou trazer aqui para vocês a ideia do Task Spec.
+
+
+120
+00:08:20.857 --> 00:08:23.857
+Pô beleza.
+
+
+121
+00:08:23.857 --> 00:08:26.857
+Eu tenho um Task Spec. Eu quero adicionar um novo feature.
+
+
+122
+00:08:26.857 --> 00:08:32.857
+Para ele. Beleza, como que vai ser? Chega a requisição. Pô, eu tenho essa ideia aqui. Esse é o projeto. Eu quero adicionar.
+
+
+123
+00:08:32.857 --> 00:08:37.857
+Uma novo requisito em cima dele. Esse requisito chega. A gente entende a intenção.
+
+
+124
+00:08:37.857 --> 00:08:41.857
+Compilam um plano. Manda para a fábrica. A fábrica executa.
+
+
+125
+00:08:41.857 --> 00:08:46.857
+Quebra isso. Lembre, quebra isso em mini atividades.
+
+
+126
+00:08:46.857 --> 00:08:49.857
+Transforma essa atividade numa unidade atômica de trabalho.
+
+
+127
+00:08:49.857 --> 00:08:53.857
+Faz o looping. De todas as atividades que estão em Queue.
+
+
+128
+00:08:53.857 --> 00:08:56.857
+E depois o que acontece?
+
+
+129
+00:08:56.857 --> 00:08:58.857
+Ela vai literalmente para dentro.
+
+
+130
+00:08:58.857 --> 00:09:02.857
+Do final da entrega do usuário.
+
+
+131
+00:09:02.857 --> 00:09:06.857
+Essa entrega vai ser realizada por você, dono da fábrica ou dono do processo.
+
+
+132
+00:09:06.857 --> 00:09:09.857
+E posteriormente, isso vai ter uma Flywhew.
+
+
+133
+00:09:09.857 --> 00:09:16.857
+Ela vai rodar e vai continuar se atualizando. Então é basicamente isso serve para qualquer coisa.
+
+
+134
+00:09:16.857 --> 00:09:18.857
+Então a gente vai despachar.
+
+
+135
+00:09:18.857 --> 00:09:27.857
+Provar a falha, porque um igual nada mais é do que não somente o verde, mas também, literalmente, o vermelho. é Para Isso Que O Ió Funciona.
+
+
+136
+00:09:27.857 --> 00:09:31.857
+Para literalmente provar o que não está certo. Principalmente.
+
+
+137
+00:09:31.857 --> 00:09:36.857
+Caso contrário, seria somente happy path seria isso tá.
+
+
+138
+00:09:36.857 --> 00:09:39.857
+E aí a gente tem o Signing.
+
+
+139
+00:09:39.857 --> 00:09:46.857
+A receita, o recip, a confirmação e, na verdade, a mensuração desse cara.
+
+
+140
+00:09:46.857 --> 00:09:52.857
+Então, quando a gente olha os quatro dias e tudo que a gente fez, o que a gente tem certeza hoje, né?
+
+
+141
+00:09:52.857 --> 00:09:54.857
+Bem, a gente tem certeza primeiro.
+
+
+142
+00:09:54.857 --> 00:09:59.857
+Que a gente tem um Spec ou vários Specs dentro do repositório.
+
+
+143
+00:09:59.857 --> 00:10:02.857
+A gente tem toda a parte de Hardness e conteúdo.
+
+
+144
+00:10:02.857 --> 00:10:08.857
+A gente tem agora, a divisão das lenes serve e transforme.
+
+
+145
+00:10:08.857 --> 00:10:12.857
+E a gente tem as atividades estabelecidas dentro das tasks dentro do Folder Tasks.
+
+
+146
+00:10:12.857 --> 00:10:15.857
+Mas a gente não tem nenhum tipo de.
+
+
+147
+00:10:15.857 --> 00:10:18.857
+Métrica em cima desses arquivos.
+
+
+148
+00:10:18.857 --> 00:10:21.857
+Então, o que é importante eu entender?
+
+
+149
+00:10:21.857 --> 00:10:25.857
+Não só importante eu concluir essa atividade, mas eu preciso ter rastreabilidade dessa informação.
+
+
+150
+00:10:25.857 --> 00:10:28.857
+Então, hoje a gente vai começar a explorar exatamente isso.
+
+
+151
+00:10:28.857 --> 00:10:34.857
+Explorar toda a parte de métrica, explorar como que eu executo uma atividade ou mais de uma atividade.
+
+
+152
+00:10:34.857 --> 00:10:37.857
+Como que eu entendo que essa atividade está certa ou está errada.
+
+
+153
+00:10:37.857 --> 00:10:41.857
+Como que eu construo. E voz.
+
+
+154
+00:10:41.857 --> 00:10:45.857
+Que possam literalmente provar que essa atividade foi construída.
+
+
+155
+00:10:45.857 --> 00:10:48.857
+Como que o trabalho, essa paridade de informação.
+
+
+156
+00:10:48.857 --> 00:10:51.857
+E como que eu valido todo esse processo.
+
+
+157
+00:10:51.857 --> 00:10:54.857
+Então a gente acabou.
+
+
+158
+00:10:54.857 --> 00:11:01.857
+Com seis tarefas no repositório. Então nós temos seis tarefas. Se vocês forem lá, existem seis tarefas lá.
+
+
+159
+00:11:01.857 --> 00:11:06.857
+Tá? Nós temos nenhuma concluída ontem. Nós testamos basicamente, né?
+
+
+160
+00:11:06.857 --> 00:11:13.857
+Pedir para cada uma delas abrir e executar. Então nós testamos, mas a gente não literalmente. Fez. O sign off Dela Falou Pô Beleza Tá Tudo Certo.
+
+
+161
+00:11:13.857 --> 00:11:18.857
+A gente teve nenhum Sign off. E aí a gente vai começar a trabalhar. Isso agora.
+
+
+162
+00:11:18.857 --> 00:11:24.857
+Para a gente conseguir fechar os anéis de loop e vol.
+
+
+163
+00:11:24.857 --> 00:11:29.857
+Então é exatamente esses loops que a gente vai trabalhar hoje. O loop de t.
+
+
+164
+00:11:29.857 --> 00:11:32.857
+O processo rodando e ter o loop.
+
+
+165
+00:11:32.857 --> 00:11:36.857
+Da validação dessa informação, juntamente com o humano.
+
+
+166
+00:11:36.857 --> 00:11:38.857
+No Gate.
+
+
+167
+00:11:38.857 --> 00:11:41.857
+Então essas são as seis tarefas que a gente tem dentro do repositório.
+
+
+168
+00:11:41.857 --> 00:11:43.857
+Elas foram validadas pelo Test Spec.
+
+
+169
+00:11:43.857 --> 00:11:53.857
+Elas foram dadas literalmente como validadas de. De complaintude. Elas estão no dia. Escolas foram validadas, o front meta foi Alinhado O Linking Foi Feito.
+
+
+170
+00:11:53.857 --> 00:11:56.857
+Só que elas não foram executadas e elas não foram confirmadas.
+
+
+171
+00:11:56.857 --> 00:12:03.857
+Então, o que a gente vai fazer hoje? A gente vai ter essa ideia de definição de completa, o que é Definição De Completa.
+
+
+172
+00:12:03.857 --> 00:12:06.857
+A gente vai começar a entender o que é essa definição.
+
+
+173
+00:12:06.857 --> 00:12:10.857
+Então, no final do dia.
+
+
+174
+00:12:10.857 --> 00:12:11.857
+O que um loop vai fazer.
+
+
+175
+00:12:11.857 --> 00:12:15.857
+Nesse caso, um loop vai pegar essas atividades.
+
+
+176
+00:12:15.857 --> 00:12:20.857
+E ele vai ciclar em cima disso. Ele vai receber atividade. Ele vai pensar o que ele vai fazer.
+
+
+177
+00:12:20.857 --> 00:12:26.857
+Ele vai agir e refletir nas informações que ele tem do repositório do Hardness que ele tem, assim por diante.
+
+
+178
+00:12:26.857 --> 00:12:29.857
+Ele vai observar os resultados.
+
+
+179
+00:12:29.857 --> 00:12:34.857
+E ele vai verificar se aquele objetivo que foi dado para ele.
+
+
+180
+00:12:34.857 --> 00:12:37.857
+Literalmente foi atendido ou não.
+
+
+181
+00:12:37.857 --> 00:12:43.857
+E a parte legal disso tudo no final do dia, é que você pode ter diferentes llns trabalhando com isso.
+
+
+182
+00:12:43.857 --> 00:12:47.857
+Antes de eu mover isso aqui. Esse Flywheel, né? Essa roda.
+
+
+183
+00:12:47.857 --> 00:12:58.857
+Ela faz sentido. Tem alguma dúvida?
+
+
+184
+00:12:58.857 --> 00:13:05.857
+Faz sentido.
+
+
+185
+00:13:05.857 --> 00:13:08.857
+Faz, né.
+
+
+186
+00:13:08.857 --> 00:13:11.857
+Beleza. E aí, o que é um loop, né?
+
+
+187
+00:13:11.857 --> 00:13:17.857
+Bem, lembra que a gente falou que isso aqui é importante vocês entenderem. Existem dois loops, né?
+
+
+188
+00:13:17.857 --> 00:13:22.857
+Lembra disso? Tem um loop do próprio sistema agêntico.
+
+
+189
+00:13:22.857 --> 00:13:24.857
+Então isso é muito importante, lembra?
+
+
+190
+00:13:24.857 --> 00:13:31.857
+Cloud Codecs. Todos eles têm o próprio loop dentro dele, que é o que a gente chama de React.
+
+
+191
+00:13:31.857 --> 00:13:33.857
+Ele.
+
+
+192
+00:13:33.857 --> 00:13:36.857
+Reason. Ele Act.
+
+
+193
+00:13:36.857 --> 00:13:38.857
+Então ele faz todo esse sistema já.
+
+
+194
+00:13:38.857 --> 00:13:43.857
+Ele pega uma atividade ou pega uma requisição, quebre várias tarefas. Bota no To do dele.
+
+
+195
+00:13:43.857 --> 00:13:49.857
+E começa a trabalhar. E ele tem a própria definição do que é completado para ele.
+
+
+196
+00:13:49.857 --> 00:13:52.857
+Pelo processo como um todo, pelas ferramentas, pelo Hardness.
+
+
+197
+00:13:52.857 --> 00:13:57.857
+Quando você coloca um loop, você está encapsulando ele basicamente num outro to do.
+
+
+198
+00:13:57.857 --> 00:14:01.857
+Você está dando um outro while para ele.
+
+
+199
+00:14:01.857 --> 00:14:05.857
+But ele ficar dentro dele até um certo critério ser atendido.
+
+
+200
+00:14:05.857 --> 00:14:08.857
+E o que a gente começou a ver sobre isso?
+
+
+201
+00:14:08.857 --> 00:14:11.857
+é que, em Fevereiro de dois mil vinte cinco, o Cloud Code.
+
+
+202
+00:14:11.857 --> 00:14:15.857
+Entregam. Coisa chamada Designing. Agenteq Loops.
+
+
+203
+00:14:15.857 --> 00:14:19.857
+Que se torna uma Skill. ó isso! Em fevereiro de dois mil e vinte e cinco. Tá.
+
+
+204
+00:14:19.857 --> 00:14:22.857
+Em julho de dois mil e vinte e cinco. A gente tem um Ralf.
+
+
+205
+00:14:22.857 --> 00:14:26.857
+Luke. é o Ralf Luke que eu usei bastante. Na verdade.
+
+
+206
+00:14:26.857 --> 00:14:38.857
+Então ele era uma técnica basicamente de como você fazer o bubble Wrapping do Cloud Code. Então ele é literalmente Um Looping Engineering Que A Gente Ainda Não Conhecia Como Looping Engineering.
+
+
+207
+00:14:38.857 --> 00:14:44.857
+E aí, lá, em meados do final de dois mil e vinte e cinco, o Antropic lança.
+
+
+208
+00:14:44.857 --> 00:14:51.857
+Esse plugin oficial? Porque o Ralf e o Ingonloop foi extremamente famoso. Ele conseguia fazer com que o cloud ficasse lutando.
+
+
+209
+00:14:51.857 --> 00:14:55.857
+Desde o processo, inclusive o Agent Spec. Se você.
+
+
+210
+00:14:55.857 --> 00:14:57.857
+Já entrou lá nas entranhas dele.
+
+
+211
+00:14:57.857 --> 00:15:00.857
+Ele tem Halph Winonluope implementado.
+
+
+212
+00:15:00.857 --> 00:15:05.857
+Então eu pego os critérios do que eu acredito que são importantes dentro do Spec Driven Development.
+
+
+213
+00:15:05.857 --> 00:15:08.857
+E eu coloco. E eu embrulho o cloud.
+
+
+214
+00:15:08.857 --> 00:15:15.857
+Nas nessas características de conclusão dele. Ele vai ficar lupando até ter o resultado satisfatório.
+
+
+215
+00:15:15.857 --> 00:15:25.857
+Yeah, e obviamente que a gente teve aí. Depois o Peter Tembiger, na verdade, qual o nome dele? Eu gosto De Falar O Nome Certo Peter.
+
+
+216
+00:15:25.857 --> 00:15:27.857
+Opencore.
+
+
+217
+00:15:27.857 --> 00:15:29.857
+Que agora não é mais da open clone, né?
+
+
+218
+00:15:29.857 --> 00:15:32.857
+é o Peter Steiner, né?
+
+
+219
+00:15:32.857 --> 00:15:38.857
+Ele agora está na Anthropic, na Antropic, não na Openai, né?
+
+
+220
+00:15:38.857 --> 00:15:43.857
+E basicamente ele falou: cara, já podemos falar de loop.
+
+
+221
+00:15:43.857 --> 00:15:47.857
+Vamos falar de loop, assim também. Como.
+
+
+222
+00:15:47.857 --> 00:15:55.857
+O Boris Turning falou sobre isso. Então, são coisas extremamente importantes e válidas da gente falar.
+
+
+223
+00:15:55.857 --> 00:16:02.857
+Porque o loop. E aí que vai aqui o loop. Ele abstrai a parte mais complexa para o ser humano, Que é Para Optar.
+
+
+224
+00:16:02.857 --> 00:16:08.857
+Por exemplo, quer ver uma coisa engraçada? Vocês já fizeram isso? Quero ver aqui no chat ou nas mãozinhas. Aqui.
+
+
+225
+00:16:08.857 --> 00:16:11.857
+Vocês já fizeram o seguinte. Teste.
+
+
+226
+00:16:11.857 --> 00:16:14.857
+Se esforça, acorda bem.
+
+
+227
+00:16:14.857 --> 00:16:17.857
+Escreve você um prompt.
+
+
+228
+00:16:17.857 --> 00:16:23.857
+Escreve você um prompt. Dada todas as ideias, pode ser chain of thoughts. Pode ser.
+
+
+229
+00:16:23.857 --> 00:16:27.857
+A parte de persona contexto especifica. Bem bonitinho. Escreve esse Prompt. Beleza.
+
+
+230
+00:16:27.857 --> 00:16:35.857
+E aí você abre um outro chat. E aí você fala para o chat o seguinte: eu gostaria que vocês testassem isso.
+
+
+231
+00:16:35.857 --> 00:16:40.857
+A minha intenção é desenvolver tal tal assim? Assim você pode falar com linguagem usando whisper flow.
+
+
+232
+00:16:40.857 --> 00:16:46.857
+Assim, assim, tal tal tal tal tal tal tal tal tal tal tal.
+
+
+233
+00:16:46.857 --> 00:16:53.857
+Un promptce pra queu posa ating de e satamente todes espons falados comeda.
+
+
+234
+00:16:53.857 --> 00:16:57.857
+The evil symbol veil so prompt?
+
+
+235
+00:16:57.857 --> 00:17:01.857
+Mi.
+
+
+236
+00:17:01.857 --> 00:17:06.857
+Que vase infinite damage.
+
+
+237
+00:17:06.857 --> 00:17:08.857
+Si voce solar um mercado.
+
+
+238
+00:17:08.857 --> 00:17:24.857
+a prompt.
+
+
+239
+00:17:24.857 --> 00:17:33.857
+a todas as injaines.
+
+
+240
+00:17:33.857 --> 00:17:38.857
+Ta.
+
+
+241
+00:17:38.857 --> 00:17:45.857
+voce.
+
+
+242
+00:17:45.857 --> 00:17:49.857
+Que tem no Whisper Flow.
+
+
+243
+00:17:49.857 --> 00:17:53.857
+Eu não sei se você. Eu consigo mostrar aqui.
+
+
+244
+00:17:53.857 --> 00:17:57.857
+Vê se aparece para vocês aí.
+
+
+245
+00:17:57.857 --> 00:18:00.857
+Whisperflow.
+
+
+246
+00:18:00.857 --> 00:18:04.857
+Parece.
+
+
+247
+00:18:04.857 --> 00:18:06.857
+Ou não parece. Então, aqui, ó no Speflow.
+
+
+248
+00:18:06.857 --> 00:18:10.857
+Você tem uma coisa muito legal chamada Transforms.
+
+
+249
+00:18:10.857 --> 00:18:14.857
+Então, o que o Transformers faz.
+
+
+250
+00:18:14.857 --> 00:18:18.857
+Na verdade, você fala alguma coisa.
+
+
+251
+00:18:18.857 --> 00:18:21.857
+E daí você aperta Opt um ou qualquer coisa.
+
+
+252
+00:18:21.857 --> 00:18:25.857
+E ele faz um polimento daquela informação que você fez.
+
+
+253
+00:18:25.857 --> 00:18:28.857
+Ou o mais legal de tudo.
+
+
+254
+00:18:28.857 --> 00:18:34.857
+Você escreve e você dá um opt dois e ele vai transformar isso numa entrada de prompt para você. Olha que loucura.
+
+
+255
+00:18:34.857 --> 00:18:36.857
+Que é exatamente o que eu estou falando para vocês.
+
+
+256
+00:18:36.857 --> 00:18:45.857
+Então você fala, fala, fala, fala, fala. Depois, dá literalmente o opt dois e ele transforma tudo aquilo no prompt Que Vai Ser Injetado.
+
+
+257
+00:18:45.857 --> 00:18:50.857
+Para o que você quer falar? Não somente isso. Você pode criar os seus próprios estilos.
+
+
+258
+00:18:50.857 --> 00:18:55.857
+Do que você quer. E ter uma keyword para isso.
+
+
+259
+00:18:55.857 --> 00:18:59.857
+Isso é muito foda. Eu vou falar um pouquinho sobre isso amanhã. Sobre velocidade, sobre como que você ganha.
+
+
+260
+00:18:59.857 --> 00:19:08.857
+Em relação a isso. E, cara, eu sou muito ativo hoje no Whisper Flow. Basicamente, eu passo o dia inteiro.
+
+
+261
+00:19:08.857 --> 00:19:12.857
+Falando com ele. Dificilmente eu não falo. Tá.
+
+
+262
+00:19:12.857 --> 00:19:15.857
+Quando eu não falo alguma coisa.
+
+
+263
+00:19:15.857 --> 00:19:17.857
+Alguma coisa está errada.
+
+
+264
+00:19:17.857 --> 00:19:23.857
+Então eu realmente recomendo que vocês utilizem o máximo possível. Comecem a se acostumar.
+
+
+265
+00:19:23.857 --> 00:19:26.857
+Half. Você conseguiu se acostumar.
+
+
+266
+00:19:26.857 --> 00:19:28.857
+Com falar.
+
+
+267
+00:19:28.857 --> 00:19:29.857
+Ou ainda não.
+
+
+268
+00:19:29.857 --> 00:19:30.857
+Eu só faço isso agora dá pra jogar o teclado fora.
+
+
+269
+00:19:30.857 --> 00:19:36.857
+Como que foi o processo? Lembra que a gente conversou sobre isso? Como foi o processo.
+
+
+270
+00:19:36.857 --> 00:19:44.857
+Cara. No começo foi difícil, porque tem pouco tempo, na verdade, que eu descobri a maldição da minha vida, que é O Work Tree Né.
+
+
+271
+00:19:44.857 --> 00:19:45.857
+Então.
+
+
+272
+00:19:45.857 --> 00:19:49.857
+Depois que eu descobri esse negócio, minha vida acabou.
+
+
+273
+00:19:49.857 --> 00:19:58.857
+E agora com o Whisperflow, tudo que eu quero vem uma ideia na minha cabeça. Tô trabalhando aqui. De repente Eu Pensei Alguma Coisa Eu, Falo Cara Abrir Uma Orquetrit E Implementa Isso Para Mim.
+
+
+274
+00:19:58.857 --> 00:20:07.857
+Jogo dentro do Dge, e ele sai fazendo. Então eu tenho projeto meu aqui com cinquenta e três work tres Que Eu Tenho Que Sair Perguntando O Que Tem Dentro Depois.
+
+
+275
+00:20:07.857 --> 00:20:11.857
+Então são duas coisas que viraram. Maldição na minha vida. Aqui.
+
+
+276
+00:20:11.857 --> 00:20:21.857
+Muito bom, mas ajuda muito, né? Te dá muito mais clareza. Te traz muito mais paralelismo, né?
+
+
+277
+00:20:21.857 --> 00:20:22.857
+Muito.
+
+
+278
+00:20:22.857 --> 00:20:23.857
+Então realmente é muito legal.
+
+
+279
+00:20:23.857 --> 00:20:27.857
+Beleza. Então, acredito nisso. E acho que é muito importante vocês utilizarem.
+
+
+280
+00:20:27.857 --> 00:20:35.857
+Outro ponto legal é começar a entender o quão autônomo o seu sistema é. E aí, quando eu falo sistema, Eu Estou Falando Em Geral Tá.
+
+
+281
+00:20:35.857 --> 00:20:38.857
+Então hoje, quando eu vou conversar com clientes fora do país.
+
+
+282
+00:20:38.857 --> 00:20:41.857
+Maioria deles estão no Nível dois para o Nível três.
+
+
+283
+00:20:41.857 --> 00:20:44.857
+Então o primeiro é.
+
+
+284
+00:20:44.857 --> 00:20:48.857
+E aí eu quero que vocês falem para mim no final, aqui. Quando eu explicar.
+
+
+285
+00:20:48.857 --> 00:20:52.857
+Qual o nível que vocês estão hoje? Tá o L.
+
+
+286
+00:20:52.857 --> 00:20:56.857
+O humano escreve código e a Ia faz o auto complete.
+
+
+287
+00:20:56.857 --> 00:21:02.857
+Se vocês tiverem aí me dá a passagem que eu vou viajar. E vou matar vocês pessoalmente. L dois, né?
+
+
+288
+00:21:02.857 --> 00:21:07.857
+Ela. Ela vai fazer o drafting, mas você ainda edita e aprova linha a linha, né?
+
+
+289
+00:21:07.857 --> 00:21:10.857
+Também vou matar. Você fala. Onde é que eu vou?
+
+
+290
+00:21:10.857 --> 00:21:20.857
+Aqui na tres ai. Executa vários pedaços já. E você meio que trabalha junto com ela para revisar os outputs. Tá, então.
+
+
+291
+00:21:20.857 --> 00:21:22.857
+Eu diria que a maioria das pessoas estão aqui.
+
+
+292
+00:21:22.857 --> 00:21:27.857
+No L quatro. A ai roda. Fim a fim.
+
+
+293
+00:21:27.857 --> 00:21:33.857
+E aí a gente tem alguns spot, checks e Gates. Então o mano entra ali, verifica alguns pedaços e tem algun.
+
+
+294
+00:21:33.857 --> 00:21:41.857
+Tipos. Por exemplo, um cicd. O código está batendo. Esses critérios está alinhado com a arquitetura padrão.
+
+
+295
+00:21:41.857 --> 00:21:45.857
+Está fazendo isso. Enfim, e você tem um L cinco, que é o unattended, né?
+
+
+296
+00:21:45.857 --> 00:21:52.857
+Basicamente, você está aqui, e a sua fábrica está sendo executada. E você não tem nenhum tipo de intervenção.
+
+
+297
+00:21:52.857 --> 00:21:55.857
+Você coleta lição, você aprende.
+
+
+298
+00:21:55.857 --> 00:22:00.857
+E constantemente você está ali recebendo algumas informações do que está acontecendo. E você vai.
+
+
+299
+00:22:00.857 --> 00:22:10.857
+Dando, né? Ali, em casos muito específicos, ela vai parar e vai te colocar no loop. Mas a ideia é Que Ela Vai Rodar Basicamente Cem Dela Unattended.
+
+
+300
+00:22:10.857 --> 00:22:12.857
+Que é exatamente o que vocês vão aprender no booticamp.
+
+
+301
+00:22:12.857 --> 00:22:15.857
+Então no boot camp, você vai aprender L cinco.
+
+
+302
+00:22:15.857 --> 00:22:18.857
+é por isso que a gente vai vender esse workshop.
+
+
+303
+00:22:18.857 --> 00:22:21.857
+Para fora do país. Porque.
+
+
+304
+00:22:21.857 --> 00:22:26.857
+Existe muito pouco conteúdo ou nenhum sobre como, de fato, criar um sistema para fazer isso acontecer. Tá.
+
+
+305
+00:22:26.857 --> 00:22:32.857
+Dito isso. Qual é que vocês estão? Eu quero ver aqui. Agora tem cento e noventa pessoas. Então.
+
+
+306
+00:22:32.857 --> 00:22:34.857
+Me entretenham.
+
+
+307
+00:22:34.857 --> 00:22:36.857
+L, tres.
+
+
+308
+00:22:36.857 --> 00:22:49.857
+L. Iii é o bonzão. A L. Tres já está muito bom.
+
+
+309
+00:22:49.857 --> 00:22:55.857
+And all those things…
+
+
+310
+00:22:55.857 --> 00:22:57.857
+Mont ponte import importante.
+
+
+311
+00:22:57.857 --> 00:22:59.857
+A key…
+
+
+312
+00:22:59.857 --> 00:23:10.857
+um processo.
+
+
+313
+00:23:10.857 --> 00:23:15.857
+Em um outro processo no seu repositório, que é L tres. Então a questão é, o que eu sempre falo.
+
+
+314
+00:23:15.857 --> 00:23:21.857
+Chegar ao processo autônomo. Não é um switch.
+
+
+315
+00:23:21.857 --> 00:23:27.857
+é um dial. Você vai aumentando ele. Você vai aumentando a frequência. E daí você vai aprendendo sobre isso.
+
+
+316
+00:23:27.857 --> 00:23:32.857
+Então, cara, quem tiver entre o L Ii e o L quatro está muito bem.
+
+
+317
+00:23:32.857 --> 00:23:34.857
+Tá muito bem. Mesmo.
+
+
+318
+00:23:34.857 --> 00:23:39.857
+Se tiver alguém aqui no L cinco, eu quero conversar. Então, se alguém tiver alguém.
+
+
+319
+00:23:39.857 --> 00:23:42.857
+Fazendo? L cinco, realmente.
+
+
+320
+00:23:42.857 --> 00:23:44.857
+Quero começar com você.
+
+
+321
+00:23:44.857 --> 00:23:47.857
+Aí. Eu quero realmente conversar com você.
+
+
+322
+00:23:47.857 --> 00:23:49.857
+Para fazer algumas perguntinhas.
+
+
+323
+00:23:49.857 --> 00:23:58.857
+Sobre algumas dores de cabeça que eu tenho aqui no meu dia a dia. Então, se alguém tiver ali cinco, Depois Me Chama Aqui Pra Gente Conversar Um Pouco.
+
+
+324
+00:23:58.857 --> 00:24:04.857
+Outro ponto muito importante, que ainda bate muito na cabeça dos americanos ou das grandes empresas.
+
+
+325
+00:24:04.857 --> 00:24:09.857
+E quando eu pergunto isso para eles, eles meio que poxa.
+
+
+326
+00:24:09.857 --> 00:24:11.857
+Deixa eu pensar sobre isso, né?
+
+
+327
+00:24:11.857 --> 00:24:15.857
+A gente fala sobre isso aqui é muito importante vocês entenderem.
+
+
+328
+00:24:15.857 --> 00:24:19.857
+A gente fala sobre.
+
+
+329
+00:24:19.857 --> 00:24:23.857
+Até onde? A linha do humano. E até onde é a linha da máquina.
+
+
+330
+00:24:23.857 --> 00:24:27.857
+E a minha pergunta para vocês é: e eu quero que vocês coloquem no chat aqui.
+
+
+331
+00:24:27.857 --> 00:24:30.857
+Qual a diferença de uma máquina para um ser humano?
+
+
+332
+00:24:30.857 --> 00:24:33.857
+Então eu vou pegar aqui para você na sua visão.
+
+
+333
+00:24:33.857 --> 00:24:41.857
+Você tem hoje. Você é um líder. Você se tornou um líder no seu time, você tem. Vamos colocar ele dois engenheiros.
+
+
+334
+00:24:41.857 --> 00:24:47.857
+Que entraram no seu projeto, e vão começar a escrever. E vão começar a adicionar e trabalhar juntamente com você.
+
+
+335
+00:24:47.857 --> 00:24:53.857
+E daí? Você tem esses dois caras agora fazendo por requests para dentro do seu repositório.
+
+
+336
+00:24:53.857 --> 00:24:57.857
+O quão isso é diferente de uma máquina.
+
+
+337
+00:24:57.857 --> 00:24:59.857
+Como que os humanos.
+
+
+338
+00:24:59.857 --> 00:25:02.857
+Ganham confiança. Na opinião. Na sua opinião.
+
+
+339
+00:25:02.857 --> 00:25:05.857
+é pelo que, né.
+
+
+340
+00:25:05.857 --> 00:25:10.857
+Pela quantidade de tentativas. é por feeling de você falar. Pô.
+
+
+341
+00:25:10.857 --> 00:25:12.857
+Fiz o primeiro. Review.
+
+
+342
+00:25:12.857 --> 00:25:16.857
+Foi ruim. Fiz o segundo Review. Foi médio.
+
+
+343
+00:25:16.857 --> 00:25:17.857
+Fiz. O terceiro Review. Foi bom.
+
+
+344
+00:25:17.857 --> 00:25:20.857
+Então agora eu começo a ter um pouquinho mais.
+
+
+345
+00:25:20.857 --> 00:25:23.857
+De Confiança.
+
+
+346
+00:25:23.857 --> 00:25:26.857
+Sobre essa pessoa.
+
+
+347
+00:25:26.857 --> 00:25:30.857
+E daí? Eu tenho esse feeling.
+
+
+348
+00:25:30.857 --> 00:25:33.857
+Certo.
+
+
+349
+00:25:33.857 --> 00:25:37.857
+Só que existe um sério problema com isso.
+
+
+350
+00:25:37.857 --> 00:25:38.857
+Isso é um sentimento.
+
+
+351
+00:25:38.857 --> 00:25:40.857
+é uma percepção.
+
+
+352
+00:25:40.857 --> 00:25:44.857
+Ela não pode ser inicialmente quantificada.
+
+
+353
+00:25:44.857 --> 00:25:48.857
+Então, qual a diferença disso?
+
+
+354
+00:25:48.857 --> 00:25:50.857
+Para que, ao invés de você ter.
+
+
+355
+00:25:50.857 --> 00:25:56.857
+Um tipo de sentimento que é ganhado ao longo do tempo e que, muitas das vezes, não é generalizado.
+
+
+356
+00:25:56.857 --> 00:25:59.857
+E o que significa não hoje. Ser generalizado.
+
+
+357
+00:25:59.857 --> 00:26:06.857
+Pô beleza para esse repositório. Para esse problema. Eu confio nele. Mas para esse outro tipo de coisa, ele não Tem Entendimento Absolutamente Nenhum.
+
+
+358
+00:26:06.857 --> 00:26:15.857
+Então os humanos, eles falham literalmente gritando, as máquinas falham de forma silenciosa. Essa é a grande diferença.
+
+
+359
+00:26:15.857 --> 00:26:18.857
+Como que você fecha esse gap entre eles?
+
+
+360
+00:26:18.857 --> 00:26:23.857
+Então a confiança é um vetor. é ganhado por ação.
+
+
+361
+00:26:23.857 --> 00:26:27.857
+E uma palavra que eu adoro, chamada blast radius.
+
+
+362
+00:26:27.857 --> 00:26:29.857
+Então.
+
+
+363
+00:26:29.857 --> 00:26:32.857
+Basicamente, quando você fala de humanos.
+
+
+364
+00:26:32.857 --> 00:26:36.857
+Ele vai ganhar confiança ao longo do tempo. Quando você fala de máquina.
+
+
+365
+00:26:36.857 --> 00:26:40.857
+Você tem a primeira coisa que se chama trust but verify.
+
+
+366
+00:26:40.857 --> 00:26:44.857
+Você confia verificando, isso é um termo muito famoso.
+
+
+367
+00:26:44.857 --> 00:26:46.857
+Trust but verify.
+
+
+368
+00:26:46.857 --> 00:26:48.857
+E além disso, você tem que ter.
+
+
+369
+00:26:48.857 --> 00:26:52.857
+Consciência do blast radius. Qual é o alcance.
+
+
+370
+00:26:52.857 --> 00:26:57.857
+E quem vai te dar isso? O Harness? Qual o alcance que aquele.
+
+
+371
+00:26:57.857 --> 00:27:00.857
+Que aquela atividade tem para isso.
+
+
+372
+00:27:00.857 --> 00:27:02.857
+E a partir disso, você começa a desenhar. O quê?
+
+
+373
+00:27:02.857 --> 00:27:06.857
+Gates. Portões.
+
+
+374
+00:27:06.857 --> 00:27:15.857
+Para que você comece a falar para a sua Engines. O que ela pode até onde e por que e o quê?
+
+
+375
+00:27:15.857 --> 00:27:21.857
+E aí você começa a entender que qualquer tipo de processo que a gente já fazia vinte anos atrás.
+
+
+376
+00:27:21.857 --> 00:27:25.857
+Ele pode ser aplicado para passos na máquina.
+
+
+377
+00:27:25.857 --> 00:27:33.857
+Isso traz a gente para um slide que eu gosto muito, que eu mostro isso muito lá para os clientes lá fora.
+
+
+378
+00:27:33.857 --> 00:27:37.857
+Que é literalmente o loop.
+
+
+379
+00:27:37.857 --> 00:27:38.857
+O que o loop é no final do dia, né?
+
+
+380
+00:27:38.857 --> 00:27:42.857
+Então o loop. Você tem um objetivo.
+
+
+381
+00:27:42.857 --> 00:27:45.857
+Desse objetivo. Você tem um estado de máquina.
+
+
+382
+00:27:45.857 --> 00:27:51.857
+Para você saber o que está Pending, o que está em Progress? O que está, Don? O que que não foi feito.
+
+
+383
+00:27:51.857 --> 00:27:56.857
+Você tem alguém ou alguma coisa que vai iniciar esse processo?
+
+
+384
+00:27:56.857 --> 00:27:58.857
+Então você tem uma cabeça que vai iniciar.
+
+
+385
+00:27:58.857 --> 00:28:04.857
+Você obviamente tem memória do que aconteceu. E você vai recuperar. Vai fazer um recall.
+
+
+386
+00:28:04.857 --> 00:28:06.857
+Da informação, para colocar em memória.
+
+
+387
+00:28:06.857 --> 00:28:10.857
+Você vai entender qual é o momento de parar.
+
+
+388
+00:28:10.857 --> 00:28:13.857
+E obviamente, a parte que eu mais gosto.
+
+
+389
+00:28:13.857 --> 00:28:18.857
+Essa aqui que foi para mim. O grande breakthrough que eu tive.
+
+
+390
+00:28:18.857 --> 00:28:26.857
+Isso aqui foi um grande breakthrough que eu tive. Que foi assim. Eu lembro. O dia era mais ou menos Duas Horas Da Manhã.
+
+
+391
+00:28:26.857 --> 00:28:29.857
+E eu estava batendo a cabeça com um problema.
+
+
+392
+00:28:29.857 --> 00:28:33.857
+He: basicamente, o que estava acontecendo. Eu fazia todo o processo.
+
+
+393
+00:28:33.857 --> 00:28:35.857
+Basicamente, são oito passos.
+
+
+394
+00:28:35.857 --> 00:28:45.857
+Recebeu documento entendeu o significado: criar o sub agente, criar base de conhecimento, traduzir localmente, botar dentro da arquitetura, de modo parceiro.
+
+
+395
+00:28:45.857 --> 00:28:47.857
+Fazer Deployment para Ws.
+
+
+396
+00:28:47.857 --> 00:28:54.857
+é transformar esse código local num código de lâmbida colonizado com permissões específicas. Fazer o Deployment.
+
+
+397
+00:28:54.857 --> 00:28:58.857
+Do Deployment. Mandar para o Databrics via Dabs.
+
+
+398
+00:28:58.857 --> 00:29:05.857
+E via Lake Flow via Cloud Code, fazer o Deployment varificar o dado.
+
+
+399
+00:29:05.857 --> 00:29:08.857
+E verificar se está batendo. Fim a fim.
+
+
+400
+00:29:08.857 --> 00:29:14.857
+Quando eu fazia isso para alguns arquivos, eu tinha um problema do seguinte.
+
+
+401
+00:29:14.857 --> 00:29:16.857
+Eu pegava um grupo de agentes.
+
+
+402
+00:29:16.857 --> 00:29:22.857
+Ele pegava um arquivo e ele encontrava um problema. E aí, o que acontecia com isso, né?
+
+
+403
+00:29:22.857 --> 00:29:28.857
+Depois eu pegava um outro flash Context, e eu começava de novo e batia no mesmo problema.
+
+
+404
+00:29:28.857 --> 00:29:32.857
+E daí eu tava tendo problemas repetidos um pouco diferentes.
+
+
+405
+00:29:32.857 --> 00:29:35.857
+Mas eram problemas de casas decimais, de validações decimais.
+
+
+406
+00:29:35.857 --> 00:29:38.857
+E daí eu tava quebrando a minha cabeça.
+
+
+407
+00:29:38.857 --> 00:29:40.857
+O que está faltando no meu loop.
+
+
+408
+00:29:40.857 --> 00:29:43.857
+Ele está quebrando. Ele está me colocando no humanope.
+
+
+409
+00:29:43.857 --> 00:29:48.857
+Para eu entender. E eu tinha que fazer essa última checagem de ir lá no documento fonte.
+
+
+410
+00:29:48.857 --> 00:29:51.857
+Pedir para ele abrir, comparar com o valor.
+
+
+411
+00:29:51.857 --> 00:29:53.857
+E aí corrigi e botando Gates.
+
+
+412
+00:29:53.857 --> 00:29:59.857
+E daí eu tava lendo. Eu tava pesquisando na Llm. Parece que eu tava lendo alguma coisa no X na hora.
+
+
+413
+00:29:59.857 --> 00:30:05.857
+E aí o cara falou de Flywheel. E de como você resolve o looping.
+
+
+414
+00:30:05.857 --> 00:30:07.857
+Adicionando uma Skill.
+
+
+415
+00:30:07.857 --> 00:30:12.857
+Quando ele falha. E aí, cara? Parece que literalmente tinha aquela luz. Acendeu.
+
+
+416
+00:30:12.857 --> 00:30:14.857
+Então, quando eu venho para o nível de falha.
+
+
+417
+00:30:14.857 --> 00:30:17.857
+Eu lanço, né?
+
+
+418
+00:30:17.857 --> 00:30:19.857
+Um processo de investigação.
+
+
+419
+00:30:19.857 --> 00:30:22.857
+Eu aprendo. Qual é o problema? Crio essa Kill.
+
+
+420
+00:30:22.857 --> 00:30:25.857
+Né? Coloco esse contexto.
+
+
+421
+00:30:25.857 --> 00:30:27.857
+The próxima vez que a fábrica Roda.
+
+
+422
+00:30:27.857 --> 00:30:31.857
+Ela tem literalmente. O quê? A resolução daquele contexto.
+
+
+423
+00:30:31.857 --> 00:30:34.857
+Então, basicamente, no final do dia, você tem alguém que inicia.
+
+
+424
+00:30:34.857 --> 00:30:38.857
+Ele lê a filha de estado. Tá vendo? Ele lê o estado.
+
+
+425
+00:30:38.857 --> 00:30:41.857
+Do Estado. Ele inicia o trabalho.
+
+
+426
+00:30:41.857 --> 00:30:46.857
+Do trabalho. Ele começa a escrever, despachar e escrever essas informações.
+
+
+427
+00:30:46.857 --> 00:30:51.857
+E caso ele caia num problema, ele cria um novo Skill. Olha que foda.
+
+
+428
+00:30:51.857 --> 00:30:56.857
+Sacou isso aqui. Se você botar dentro do seu Llm dentro do projeto que você tem falar, cara.
+
+
+429
+00:30:56.857 --> 00:30:58.857
+Cria uma estrutura parecida dessa comigo.
+
+
+430
+00:30:58.857 --> 00:31:03.857
+Ele vai desenhar uma estrutura para você, que é o Flywheel.
+
+
+431
+00:31:03.857 --> 00:31:11.857
+Faz sentido. Coque no chat.
+
+
+432
+00:31:11.857 --> 00:31:15.857
+E aí, quais são os três componentes principais de um loop.
+
+
+433
+00:31:15.857 --> 00:31:19.857
+Você ter capacidade de despachar, de iniciar esse processo.
+
+
+434
+00:31:19.857 --> 00:31:21.857
+Você tem que ter a prova.
+
+
+435
+00:31:21.857 --> 00:31:26.857
+E você tem que ter o quê? Receipt? Você tem que cara pagar e receber ali.
+
+
+436
+00:31:26.857 --> 00:31:28.857
+A confirmação daquilo.
+
+
+437
+00:31:28.857 --> 00:31:34.857
+Então aqui a gente vai enviar literalmente o que vai ser trabalhado. Daí a gente começa a falar de gráfico.
+
+
+438
+00:31:34.857 --> 00:31:37.857
+Porque tem as relações. Depois a gente fala da prova.
+
+
+439
+00:31:37.857 --> 00:31:42.857
+Qual é a prova. E é exatamente isso que o Rafa vai trazer para a gente.
+
+
+440
+00:31:42.857 --> 00:31:43.857
+Como é a prova irrefutável.
+
+
+441
+00:31:43.857 --> 00:31:47.857
+De que o trabalho que foi pedido para ser feito de fato, foi feito.
+
+
+442
+00:31:47.857 --> 00:31:51.857
+E, literalmente, a assinatura do que realmente foi feito.
+
+
+443
+00:31:51.857 --> 00:31:53.857
+E se funcionou ou não.
+
+
+444
+00:31:53.857 --> 00:31:56.857
+Então, até o momento, o que a gente tem no repositório.
+
+
+445
+00:31:56.857 --> 00:31:58.857
+Nós temos seis Specs.
+
+
+446
+00:31:58.857 --> 00:32:00.857
+Que estão validadas.
+
+
+447
+00:32:00.857 --> 00:32:04.857
+Mas a gente ainda não executou todas elas.
+
+
+448
+00:32:04.857 --> 00:32:08.857
+Então a gente precisa entender como que no final.
+
+
+449
+00:32:08.857 --> 00:32:15.857
+Dessa execução. Nós temos certeza que o que foi completo foi completo. A gente tem a definição.
+
+
+450
+00:32:15.857 --> 00:32:18.857
+Porque até o momento, se a gente olhar o repositório.
+
+
+451
+00:32:18.857 --> 00:32:22.857
+A gente não tem nenhum tipo de métrica ou estado das atividades.
+
+
+452
+00:32:22.857 --> 00:32:27.857
+E é isso que o looping vai ajudar a gente. Ele vai criar um estado para falar cara.
+
+
+453
+00:32:27.857 --> 00:32:29.857
+A atividade vai ser executada.
+
+
+454
+00:32:29.857 --> 00:32:31.857
+Em primeira. Vai ser essa.
+
+
+455
+00:32:31.857 --> 00:32:43.857
+Depois vão ser essas outras duas que podem ser feitas paralelas. Ela vai iniciar a outra vai acabar. Então você Tem Uma Sequência Do Que Vai Ser Executado Fim A Fim.
+
+
+456
+00:32:43.857 --> 00:32:50.857
+E obviamente, nem tudo você vai lupar. Mas geralmente a gente lupa quando a gente tem. O quê?
+
+
+457
+00:32:50.857 --> 00:32:52.857
+Um critério muito claro.
+
+
+458
+00:32:52.857 --> 00:32:57.857
+Ou processos completamente repetitivos. Então, por exemplo, cara.
+
+
+459
+00:32:57.857 --> 00:33:04.857
+Olha, toda vez que caiu uma nova piar. Olha essa pier. Faz isso. Isso. Baseado nisso. Nisso, nisso.
+
+
+460
+00:33:04.857 --> 00:33:11.857
+Por toda vez que eu tiver uma nova feature que chega. Vamos fazer assim. Assim que vai passar. Assim. Assim assim.
+
+
+461
+00:33:11.857 --> 00:33:17.857
+Pô quando chegar um novo. Eh? Quando chegar uma nova requisição dentro do meu Main que for aprovada.
+
+
+462
+00:33:17.857 --> 00:33:20.857
+Pô. Eu tenho um loop de documentação. Vai lá e atualiza.
+
+
+463
+00:33:20.857 --> 00:33:22.857
+O meu repositório.
+
+
+464
+00:33:22.857 --> 00:33:25.857
+Ah, e esse é o loop que eu tenho. Eu uso muito overnight Agent.
+
+
+465
+00:33:25.857 --> 00:33:30.857
+O Overnight Backlog. Os dados caem dentro da tasks folder.
+
+
+466
+00:33:30.857 --> 00:33:35.857
+E daí, automaticamente, inicia se um luto para poder trabalhar nessa atividade.
+
+
+467
+00:33:35.857 --> 00:33:38.857
+Tá.
+
+
+468
+00:33:38.857 --> 00:33:42.857
+Então uma Evol que ela não pode, né?
+
+
+469
+00:33:42.857 --> 00:33:46.857
+Falhar. Ela literalmente não está certa.
+
+
+470
+00:33:46.857 --> 00:33:53.857
+Então a gente precisa saber se aquela validação que foi escrita pela máquina ou por você.
+
+
+471
+00:33:53.857 --> 00:33:55.857
+Ela pode ser literalmente.
+
+
+472
+00:33:55.857 --> 00:33:57.857
+Transformada de texto.
+
+
+473
+00:33:57.857 --> 00:34:06.857
+Para algo executável. Então essa é a grande questão: como você transforma o texto em algo que é literalmente uma Prova E Que é Executado.
+
+
+474
+00:34:06.857 --> 00:34:11.857
+E aí uma coisa interessante sobre isso. Durante doze anos de mercado.
+
+
+475
+00:34:11.857 --> 00:34:13.857
+Nunca se ouve. Nunca.
+
+
+476
+00:34:13.857 --> 00:34:15.857
+Houve em nenhum tempo.
+
+
+477
+00:34:15.857 --> 00:34:18.857
+Se falar de algo chamado.
+
+
+478
+00:34:18.857 --> 00:34:24.857
+E voz. E aí, nos últimos dezoito meses. Olha o que aconteceu.
+
+
+479
+00:34:24.857 --> 00:34:26.857
+Olha aqui. As Open Rolls.
+
+
+480
+00:34:26.857 --> 00:34:28.857
+Que dizem, né.
+
+
+481
+00:34:28.857 --> 00:34:35.857
+A palavra e voz. Vamos ver aqui. Software Engineer Applied. Voz: duzentos e trinta mil por ano.
+
+
+482
+00:34:35.857 --> 00:34:42.857
+Magic Member of Technical Staff Evol duzentos mil quinhentos e cinquenta mil por ano.
+
+
+483
+00:34:42.857 --> 00:34:46.857
+Centre tenta transce encodores, XAI.
+
+
+484
+00:34:46.857 --> 00:34:50.857
+Software engineer evolves sensitive syncles and secondary sync.
+
+
+485
+00:34:50.857 --> 00:34:56.857
+Microsoft JI evaluations engineering sent quantitative reasons.
+
+
+486
+00:34:56.857 --> 00:35:05.857
+A engineer evaluation. 17cuenta.
+
+
+487
+00:35:05.857 --> 00:35:11.857
+referenza evolves.
+
+
+488
+00:35:11.857 --> 00:35:13.857
+Osage, evoce.
+
+
+489
+00:35:13.857 --> 00:35:15.857
+is a thing.
+
+
+490
+00:35:15.857 --> 00:35:21.857
+Ah, e agente precisa literamente.
+
+
+491
+00:35:21.857 --> 00:35:24.857
+A fundo e os detalhes disso.
+
+
+492
+00:35:24.857 --> 00:35:30.857
+Por isso que eu vou trazer aqui. Quem realmente sabe disso? Muito mais do que eu para falar.
+
+
+493
+00:35:30.857 --> 00:35:35.857
+Então eu quero que vocês recebam com muito carinho o Rafa que vai falar.
+
+
+494
+00:35:35.857 --> 00:35:40.857
+Um pouquinho de voz. E vai dar uma aula gratuita para vocês aí, sobre Deep dive de voz. E como funciona.
+
+
+495
+00:35:40.857 --> 00:35:43.857
+Rafa, deixa eu colocar você como dono do.
+
+
+496
+00:35:43.857 --> 00:35:47.857
+Do galinheiro. Aí.
+
+
+497
+00:35:47.857 --> 00:35:50.857
+Obrigado, Luan. Tomara que eu consiga.
+
+
+498
+00:35:50.857 --> 00:35:55.857
+Atender a contento aí.
+
+
+499
+00:35:55.857 --> 00:35:56.857
+Deixa eu compar.
+
+
+500
+00:35:56.857 --> 00:36:02.857
+Consegue sim. Vê se você consegue compartilhar.
+
+
+501
+00:36:02.857 --> 00:36:04.857
+Vê se aparece para você. Capacidade.
+
+
+502
+00:36:04.857 --> 00:36:05.857
+Consigo. Deixou a sua chapa da tela aqui consigo.
+
+
+503
+00:36:05.857 --> 00:36:07.857
+Então. Pronto. Então. Pronto.
+
+
+504
+00:36:07.857 --> 00:36:09.857
+Então eu desliguei a minha.
+
+
+505
+00:36:09.857 --> 00:36:12.857
+Você compartilha a sua.
+
+
+506
+00:36:12.857 --> 00:36:15.857
+Estou vendo.
+
+
+507
+00:36:15.857 --> 00:36:16.857
+Sobre a tela.
+
+
+508
+00:36:16.857 --> 00:36:17.857
+Tá ótimo.
+
+
+509
+00:36:17.857 --> 00:36:20.857
+Total evento.
+
+
+510
+00:36:20.857 --> 00:36:26.857
+João acabou falando um pouquinho do que eu ia começar falando, né? Que dentro de todo o ciclo que ele mostrou.
+
+
+511
+00:36:26.857 --> 00:36:31.857
+Aquele ciclo representa toda a parte de engenharia genética.
+
+
+512
+00:36:31.857 --> 00:36:43.857
+Só que de dentro de cada stage, de cada etapa daquele ciclo. O que. Que. Qual é o único que Está Se Sobressaindo Do Mercado Como Um Papel Que é Separado.
+
+
+513
+00:36:43.857 --> 00:36:55.857
+E voos, tá? Então, na verdade, tudo aquilo funciona dentro de um ciclo. E a gente tem que tirar o I Voz Ali De Dentro Porque Ele Tem Um Papel Separado Dentro Desse Processo.
+
+
+514
+00:36:55.857 --> 00:37:11.857
+Então, na verdade, o Lawyer acabou mostrando para vocês aqui a mágica. Tudo que o Luan mostrou é extremamente lindo Dentro Da Engenharia De Ar Que é Onde Você Faz Um Processo Autônomo Você Pede Alguma Coisa E Ele Cria Para Você.
+
+
+515
+00:37:11.857 --> 00:37:24.857
+Mais. E eu vou trazer para vocês aqui um pouco da verdade nua e crua de como isso funciona. Quando a gente sai de uma demo. Quando você sai de um produto que você está imaginando, e tem que produtizar esse produto.
+
+
+516
+00:37:24.857 --> 00:37:34.857
+Você literalmente tem que botar ele profissionais. é por isso que essas vagas de engenheiros de volta são tão valorizadas. Porque é Aqui Realmente Onde Você Vai Ver Os Guardiões O.
+
+
+517
+00:37:34.857 --> 00:37:42.857
+Realmente sabe como botar os sistemas em produção e fazer o sistema rodar sem problemas.
+
+
+518
+00:37:42.857 --> 00:37:47.857
+A ideia é que a gente fazer um sistema funcionar numa demo, ela é relativamente fácil.
+
+
+519
+00:37:47.857 --> 00:37:59.857
+A gente no sistema de produção e pergunta: Tá legal. Mas como é que você sabe que seu sistema está funcionando?
+
+
+520
+00:37:59.857 --> 00:38:04.857
+E o pior. Como é que você sabe que uma mudança que você fez no seu sistema depende.
+
+
+521
+00:38:04.857 --> 00:38:07.857
+O sistema melhor e não apenas diferente.
+
+
+522
+00:38:07.857 --> 00:38:17.857
+Por exemplo, quando eu comecei a. Na verdade, a primeira vez que eu vi ia. Eu lembro muito bem. Foi O Luan Falando De Um Projeto Que Ele Trabalhou Isso Ano Passado.
+
+
+523
+00:38:17.857 --> 00:38:31.857
+Lembro muito bem dele. Dando um exemplo Que Eles Fizeram Um Prompt De Acho Que Era Cinco Mil Linhas Era uma coisa bem absurda. E tinha. Eu não sei se era o Warner que era o especialista, e eles colocaram uma vírgula dentro.
+
+
+524
+00:38:31.857 --> 00:38:35.857
+Pronto. E isso mudou completamente como o sistema funcionava.
+
+
+525
+00:38:35.857 --> 00:38:47.857
+Você vê o tanto que às vezes, uma alteração muito simples muda completamente o mecanismo de atenção e o contexto Que Você Usa Dentro De Um Prompt Como Isso Pode Fazer Uma Derivação Do Seu Sistema.
+
+
+526
+00:38:47.857 --> 00:38:52.857
+Então eu queria perguntar para vocês aqui. Antes de mais nada, quem é que acha.
+
+
+527
+00:38:52.857 --> 00:38:58.857
+Que são testes. Quem tem essa concepção? Que Ival é teste.
+
+
+528
+00:38:58.857 --> 00:39:02.857
+Só para eu entender aqui como é que a gente vai colocar.
+
+
+529
+00:39:02.857 --> 00:39:10.857
+Bota para mim no chat. Aí.
+
+
+530
+00:39:10.857 --> 00:39:11.857
+Boa.
+
+
+531
+00:39:11.857 --> 00:39:19.857
+O que acontece? Quem vem da engenharia de software quando a gente fala em Evaluation, é muito natural a gente Pensar Em Unit Tests.
+
+
+532
+00:39:19.857 --> 00:39:38.857
+O Evol Na Verdade Ele Vem Do Conceito De Datasize Que Na Verdade é Onde A Ia Surgiu Então Todo esse processo de Ia é um processo evolutivo que ele nasceu dentro da ciência de dados transformou se no Machine Learning. A gente teve Muito Tempo Nos últimos Anos Onde A Gente Teve Um.
+
+
+533
+00:39:38.857 --> 00:39:48.857
+Uma guinada muito grande do Machine Learning. E agora? E a generativa. Então o Evol foi trazido para dentro da eagerativa.
+
+
+534
+00:39:48.857 --> 00:39:51.857
+Através de um Machine Learning.
+
+
+535
+00:39:51.857 --> 00:40:02.857
+Então ele é algo parecido com o texto humanitários pra Ya. Então a gente tem uma entrada, uma saída esperada. A Gente Executa E Verifica Se Ele Passou Ou Falhou Então Essa é A Ideia Do Unit Test.
+
+
+536
+00:40:02.857 --> 00:40:09.857
+A gente fizer essa analogia. E o longe mostrou isso várias vezes, principalmente dentro dos processos agênticos que ele criou. Ela.
+
+
+537
+00:40:09.857 --> 00:40:13.857
+Não está errada. Mas ela está incompleta.
+
+
+538
+00:40:13.857 --> 00:40:24.857
+Por quê? Porque voce não são apenas um Qa. Ele não é só um teste para um sistema de ar E Vol Faz Parte Do Próprio Ciclo De Engenharia De Qualquer Sistema Agêntico.
+
+
+539
+00:40:24.857 --> 00:40:31.857
+Então, se você pensar que a gente está trabalhando com um sistema probabilístico, quando você trabalha com Ia generativa, ele é Um Sistema Estocástico.
+
+
+540
+00:40:31.857 --> 00:40:37.857
+Muitas vezes, a gente nem sabe antecipadamente quais são todas as madeiras que o sistema pode falhar.
+
+
+541
+00:40:37.857 --> 00:40:47.857
+Processo que a gente usa. Quando você vai fazer implementação, não é você construir. Então você pega ali o Task Spec, constrói, testa.
+
+
+542
+00:40:47.857 --> 00:41:05.857
+Se a resposta está legal, entrega o mais próximo que a gente tem do processo real de produção de sistemas agênticos é Você Construir. Então Você Observa, Você Avalia Você Descobre Então Você Melhora E Depois Você Avalia Novamente.
+
+
+543
+00:41:05.857 --> 00:41:12.857
+E isso leva a gente para uma pergunta que é bastante simples, e ela é feita recorrentemente, pelo menos no Meu Dia A Dia Isso Acontece Muito.
+
+
+544
+00:41:12.857 --> 00:41:19.857
+Que é? Como é que você sabe se a sua Ia ficou melhor? Ou ela não está só diferente do Que Ela Estava Antes.
+
+
+545
+00:41:19.857 --> 00:41:33.857
+Mudar o Prompt para gente é muito fácil. Então trocar o modelo hoje é muito fácil. Então, se você trabalha Com Frameworks, Por Exemplo Foundry Ou Alguma Coisa Do Tipo Você Quer Trocar Do Gpts Cinco Dois Cinco Seis Sol.
+
+
+546
+00:41:33.857 --> 00:41:42.857
+And Sol. é um clique. E muitas vezes isso acontece. Até o meu gerente. Hoje ele faz isso. Ele chega. Olha Teve Aqui Um Saiu O Gpt Seis.
+
+
+547
+00:41:42.857 --> 00:41:54.857
+Cinco, seis. Vamos trocar o modelo. E você troca ele de um modelo de uma família. Quatro um da família, Quatro Para A Família Cinco E Você Tem Uma Regressão Muito Grande.
+
+
+548
+00:41:54.857 --> 00:42:06.857
+Ninguém sabe explicar porque isso acontece, porque os sistemas, a gente não sabe. Não nascida com esse. Com essa característica Do Dia Zero Né Como.
+
+
+549
+00:42:06.857 --> 00:42:11.857
+Assim? Não, a gente não. Já desenvolve os sistemas dessa forma. Ainda mais porque quando você começa a trabalhar com Iá e.
+
+
+550
+00:42:11.857 --> 00:42:25.857
+Cloud Code e Codecs. E qualquer um desses. A ideia é que você não faça validação, mas você faça entrega Rápida Então Todo Po Todo Pm Eles Querem Entregas Rápidas.
+
+
+551
+00:42:25.857 --> 00:42:32.857
+Tá? Então, quando vocês dizem que uma resposta ficou melhor, quando você tem um sistema agêntico, o que exatamente a Gente Está Querendo Dizer Com Isso.
+
+
+552
+00:42:32.857 --> 00:42:40.857
+Então a gente aceita. Ali a gente roda um chatbot, roda o sistema, vê duas ou três respostas. Aparentemente, elas estão ok.
+
+
+553
+00:42:40.857 --> 00:42:50.857
+E a gente fala. Não beleza. A gente testou. Eu acabei avaliando. Vou mandar para a produção.
+
+
+554
+00:42:50.857 --> 00:42:54.857
+Então agora vamos fazer um exercício aqui. Pensa.
+
+
+555
+00:42:54.857 --> 00:42:58.857
+Comigo exatamente nessa pergunta.
+
+
+556
+00:42:58.857 --> 00:43:01.857
+Eu quero saber se vocês publicariam essa mudança.
+
+
+557
+00:43:01.857 --> 00:43:09.857
+A pergunta foi a gente? O aluno chegou aqui no Whatsapp e perguntou: Olha, perdi a aula de sábado. Eu Posso Repor Em Outra Turma.
+
+
+558
+00:43:09.857 --> 00:43:14.857
+O agente. Ele respondeu: Sim, eu posso transferir você para qualquer uma das próximas turmas.
+
+
+559
+00:43:14.857 --> 00:43:24.857
+Ou a reposição depende da política da turma. Eu posso consultar as opções ou chamar o suporte, ou a gente Não Consegue Responder Porque Tem Contexto Insuficiente Qual.
+
+
+560
+00:43:24.857 --> 00:43:29.857
+Vocês acham que a resposta correta.
+
+
+561
+00:43:29.857 --> 00:43:42.857
+Bota no chat. Aí pra mim, a, B ou C.
+
+
+562
+00:43:42.857 --> 00:43:47.857
+Boa maioria do pessoal achou que é B, né?
+
+
+563
+00:43:47.857 --> 00:44:05.857
+B Ela Parece Segura Porque Ela Evita A Promessa Mas O Que Acontece é Que Talvez A Política Permita A reposição automática nesse caso. Mas o assistente tem a ferramenta e talvez mandar com suporte seja a diretiva que não mandar suporte seja a Diretiva Que Esteja No Prompt.
+
+
+564
+00:44:05.857 --> 00:44:08.857
+Então a fórmula que a gente usa na verdade, é a.
+
+
+565
+00:44:08.857 --> 00:44:19.857
+Resposta, mas o contexto, mais a intenção e mais o risco. Então, o que? Que a pessoa parece mais segura, Porque A Política Real De Reposição Ela Existe.
+
+
+566
+00:44:19.857 --> 00:44:23.857
+O assistente pôde executar a transferência. Ele pode fazer isso. Qual é.
+
+
+567
+00:44:23.857 --> 00:44:26.857
+Erro que seria mais caro para ele e.
+
+
+568
+00:44:26.857 --> 00:44:41.857
+Precisava resolver Para Ter para sanar a necessidade dele. Então tudo isso a gente pensa Quando a Gente Vai Fazer um prompt de sistema. E vai colocar. E essas características do Prompt, elas geram os drift.
+
+
+569
+00:44:41.857 --> 00:44:46.857
+Geram direcionamentos diferentes. Porque às vezes, do jeito que você promptoupou você.
+
+
+570
+00:44:46.857 --> 00:45:03.857
+Colocou para ele falando, por exemplo, olha sempre evita mandar para um usuário para a resposta. Sempre tenta resolver autonomamente, Porque O Usuário. Ele é Caro E às Vezes Ele Não Sabe Exatamente O Que Fazer E Mesmo Assim Ele Não Manda E Tenta Gerar Uma Resposta.
+
+
+571
+00:45:03.857 --> 00:45:27.857
+Porque a ideia do Lliene é exatamente tentar produzir, tentar gerar conteúdo. Essa é a função. Essa é a característica Dele Então Na Verdade Como A Gente Não Tem Contexto Para Aquela Situação Específica Não Era Nem A Nem B Porque Na Verdade O Melhor é Só A Opinião Que Cada Um Que Deu Ninguém Estava Certo Ninguém Estava Errado A Gente, Não Tem Como Validar Isso.
+
+
+572
+00:45:27.857 --> 00:45:40.857
+Então o processo, na verdade, que a gente faz muitas vezes. Na verdade, eu já vi isso aqui. Em vários Sistemas e várias equipes. é quando a gente entra no ciclo que é o problema, Não Está Na Ia Variar.
+
+
+573
+00:45:40.857 --> 00:45:51.857
+Que a gente muda o Prompt. A gente testa a resposta. Em alguns exemplos, a resposta, aparentemente parece melhor. Nós Publicamos E A Gente Torce Que Deu Certo.
+
+
+574
+00:45:51.857 --> 00:45:56.857
+Só que o que acontece normalmente um prompt não é focado em somente em um problema.
+
+
+575
+00:45:56.857 --> 00:46:12.857
+Você não tem somente uma especificação para onde fazer. Ele não chama somente uma ferramenta. Então, normalmente, um agente é Especializado Em Várias Funções E Quando Você Tenta Resolver Um Problema Específico Pode Ser Que Você Esteja Quebrando O Outro.
+
+
+576
+00:46:12.857 --> 00:46:26.857
+Então a ideia é que a gente não faça variação ao longo da resposta, mas que a gente tenha um Sinal Confiável Para A Gente Poder Orientar Que A Mudança Foi Efetivamente Feita Ou Não.
+
+
+577
+00:46:26.857 --> 00:46:32.857
+Então esse é o sinal que a gente precisa.
+
+
+578
+00:46:32.857 --> 00:46:35.857
+Então, o que são? Evaus?
+
+
+579
+00:46:35.857 --> 00:46:52.857
+Os irmãos. Na verdade, não são testes. Ele é um sinal sistemático de qualidade. Ele é um processo sistemático que A Gente Usa Para Descobrir Para A Gente Medir E Reduzir Falhas Ao Longo Do Fluxo De Vida Do Processo.
+
+
+580
+00:46:52.857 --> 00:47:10.857
+Então A Ideia Que A Gente Passa O Processo De Descoberta A Gente Faça A Medição Com Essa Medição A gente melhore. E depois a gente volta para o processo de descoberta, para que esse processo seja cíclico, e você esteja sempre melhorando. Então A Palavra Mais Importante Que A Gente Tem Nesse Fluxo Aqui.
+
+
+581
+00:47:10.857 --> 00:47:21.857
+é descobrir ou descoberta. Então o Eval vai ser uma revisão humana. Ele pode ser uma regra de código. Ele Pode Ser Uma Llm Como Judge Ou Ele Pode Ser Uma América De Produto Ele Pode Ser N Coisas.
+
+
+582
+00:47:21.857 --> 00:47:38.857
+São n funções dentro de um fluxo dentro de um processo. E a forma que a gente vai adequar, cada Um Deles Ela Depende De Como A Pergunta é Feita E De Como A Resposta é Gerada Pelo Llm.
+
+
+583
+00:47:38.857 --> 00:47:45.857
+Então, qual é a tendência comum que a gente tem nos processos e nos sistemas que não utilizam o evol.
+
+
+584
+00:47:45.857 --> 00:47:50.857
+A gente faz testes automatizados como se fossem unit testes. Mas.
+
+
+585
+00:47:50.857 --> 00:47:56.857
+Avaliação começa antes. Então a gente pensa: quais são os problemas que podem acontecer no nosso sistema.
+
+
+586
+00:47:56.857 --> 00:47:59.857
+Se a gente olhar, como é que isso funciona?
+
+
+587
+00:47:59.857 --> 00:48:07.857
+No processo de evol a gente olha primeiro os traces. Então a gente vai ver execuções reais do que o agente gerou.
+
+
+588
+00:48:07.857 --> 00:48:11.857
+Então a gente aprende o que ele está querendo fazer.
+
+
+589
+00:48:11.857 --> 00:48:14.857
+A gente passa isso por uma avaliação humana.
+
+
+590
+00:48:14.857 --> 00:48:21.857
+é feita uma rotulação de dessas respostas. A gente anota falhas e cria referências em cima disso.
+
+
+591
+00:48:21.857 --> 00:48:34.857
+A gente passa isso para verificações e para juízes. Então, existem regras em códigos ou regras onde Llms específicos vão Sanar Ou Verificar Determinadas Problemas Específicos Que A Gente Identificou.
+
+
+592
+00:48:34.857 --> 00:48:43.857
+E as médicas do produto onde a gente faz a retenção. A resolução verifica custo e a satisfação do usuário Em Relação à Resposta.
+
+
+593
+00:48:43.857 --> 00:48:55.857
+Então, quanto mais à direita, maior a escala. Mas ela não necessariamente dá a verdade. Então, se você faz todas Essas Validações Não Necessariamente Você Está Dentro Da.
+
+
+594
+00:48:55.857 --> 00:49:12.857
+Dentro da escala de verdade, da resposta dos Llms. Então a ideia aqui é que você passe sempre para um Processo De Identificação Classificação E Consiga Fazer A Identificação Desses Problemas Para Que Você Jogue Isso No Seu Sistema No Seu Agente.
+
+
+595
+00:49:12.857 --> 00:49:21.857
+E ele continue evoluindo sistematicamente.
+
+
+596
+00:49:21.857 --> 00:49:30.857
+Então, como é que funciona um sistema completo de um sistema agêntico completo? O usuário faz um pedido real. Então Essa Pergunta Cai Em Um Sistema De A.
+
+
+597
+00:49:30.857 --> 00:49:43.857
+Esse sistema de ar vai ter contexto. Ele vai tomar as decisões. Ele tem as ferramentas que ele pode chamar. E Ele Tem A Resposta Então A Entrega Para O Usuário O Usuário Vê.
+
+
+598
+00:49:43.857 --> 00:49:48.857
+Atrás dos panos. O que que isso gera para nós? Engenheiros de dados.
+
+
+599
+00:49:48.857 --> 00:49:51.857
+Engenhya. Na verdade.
+
+
+600
+00:49:51.857 --> 00:50:02.857
+Cada chamada, cada resposta, tudo que é feito no sistema. Ele é gerado um log. Ele gerado, um Trace, onde A Gente Recebe A Entrada O Contexto E As Ações Que Foram Feitas.
+
+
+601
+00:50:02.857 --> 00:50:10.857
+Então a gente pega isso como amostra e passa por um processo que vem como eu falei do Machine Learning, Que Chama Error Analysis.
+
+
+602
+00:50:10.857 --> 00:50:25.857
+Fazemos uma análise de dados com codes em cima desses dados. Então nós fazemos anotações livres em cima dos traces Que Nós Identificamos Como Problema E Depois Nós Fazemos Uma Categorização Dessa Informação.
+
+
+603
+00:50:25.857 --> 00:50:41.857
+Depois disso, a gente passa essas categorizações e essas notas para um conjunto de critérios e avaliadores. Então esses avaliadores São Os Testes Que Nós Vamos Gerar Dentro Do Processo Então Se Nós Prosseguimos Resolver Um Problema.
+
+
+604
+00:50:41.857 --> 00:50:46.857
+Por exemplo, eu não posso receber um e mail.
+
+
+605
+00:50:46.857 --> 00:50:56.857
+Eu vou gerar um código para essa situação.
+
+
+606
+00:50:56.857 --> 00:51:10.857
+Agora. Eu não consigo resolver isso de forma alguma. Então eu vou jogar um humano dentro da minha fila de Processamento Ou Se For Uma Situação específica Como Eu Tenho Que Fazer Um Reembolso Mas O Valor é Baixo.
+
+
+607
+00:51:10.857 --> 00:51:25.857
+Criar um Llllen, que é um segundo agente especializado nesse tipo de situação, que ele vai receber aquela situação e Vai Fazer A Resposta Baseada No Tratamento Que Esse Agente Tem Então.
+
+
+608
+00:51:25.857 --> 00:51:40.857
+Baseado nisso tudo, nós temos uma melhoria que ela é priorizada por impacto dentro do Axial code das categorizações que Nós Fizemos E Essa Melhoria é Reinjetada Dentro Do Sistema De A Então Esse Fluxo Acontece Continuamente.
+
+
+609
+00:51:40.857 --> 00:51:54.857
+Dentro do que nós temos den dentro do que nós temos do sistema evolutivo e de melhorias do processo de Desenvolvimento De Sistemas Exagênicos.
+
+
+610
+00:51:54.857 --> 00:52:00.857
+Uma coisa que acontece com muita assim. Eu já vi muitos.
+
+
+611
+00:52:00.857 --> 00:52:20.857
+Fazendo Isso Inclusive O Meu Time Faz Isso Até Hoje Apesar Do Projeto Ser Bastante Grande é Que Eles Tentam escrever rubicas ou validações de testes antes de conhecer a parte do produto específica. Então, à medida que eles vão criando, eles ainda pensam Como Engenheiros De Software E Eles Tentam Fazer Validações Do Tipo Unitário.
+
+
+612
+00:52:20.857 --> 00:52:25.857
+Para fazer regras, para que dizer que o Llm está respondendo de forma correta?
+
+
+613
+00:52:25.857 --> 00:52:32.857
+E isso ele dá um certo nível de organização do projeto, mas ele cria uma falsa sensação de cobertura.
+
+
+614
+00:52:32.857 --> 00:52:53.857
+Eh, Nós medimos os problemas que a gente Imagina e A Gente Acaba Deixando Invisível Aqueles Que O Usuário Acaba encontrando, porque normalmente vamos colocar assim de cem traces de cem chamadas. Normalmente os problemas acontecem na minoria. Então a gente está falando do P Noventa E Cinco A Gente Está Pensando No P Noventa.
+
+
+615
+00:52:53.857 --> 00:53:07.857
+Então O Que Acontece é Que A Cada Cem Traces Você Tem Dez Com Problemas São Esses Dez Que Nós queremos atacar. Então a ideia é que quando nós precisamos fazer processo de e Vols, quando nós precisamos fazer esse processo de melhoria, a gente não olha.
+
+
+616
+00:53:07.857 --> 00:53:23.857
+O Sistema A Gente Vai Direto Nos Dados Então O Dado é Quem Vai Responder Isso Então é O Seu conhecimento de negócio. é o seu conhecimento do domínio que você está trabalhando. E é por isso que os engenheiros de Evol estão sendo Tão Valiosos Hoje Em Dia.
+
+
+617
+00:53:23.857 --> 00:53:36.857
+Verdade, eles são analistas de dados com conhecimentos específicos do domínio de negócio que eles estão trabalhando. Então são pessoas Que Conhecem Realmente A Informação E Conseguem Fazer Que Os Sistemas Respondam De Forma.
+
+
+618
+00:53:36.857 --> 00:53:37.857
+Acurada.
+
+
+619
+00:53:37.857 --> 00:53:46.857
+Do domínio e do negócio e não em cima do dado. Não é uma resposta. Ok, o Llm respondeu, e A Resposta Parece Ser Ok, Para Mim.
+
+
+620
+00:53:46.857 --> 00:53:59.857
+às vezes parece ser o que ele tem. Nuances muito pequenas. E uma coisa que é importante pontuar aqui é Que Nem Todo Critério Ele Precisa Ser Descoberto Nos Traces Então Por Exemplo Um.
+
+
+621
+00:53:59.857 --> 00:54:01.857
+Requisito de negócio que o.
+
+
+622
+00:54:01.857 --> 00:54:16.857
+Pm lançou. Ele pode ser um evol segurança pode ser um Evol compliance produto. Tudo isso pode ser um tipo De Evol Diretamente Dentro Do Sistema Então São Regras Que Nós Vamos Criar Em Cima Desse Fluxo.
+
+
+623
+00:54:16.857 --> 00:54:28.857
+Que nós vamos fechando o sistema e fazendo que o o a gente responda de forma correta e segura para o usuário.
+
+
+624
+00:54:28.857 --> 00:54:34.857
+O que é o erro? Análises e o opencode.
+
+
+625
+00:54:34.857 --> 00:54:41.857
+A ideia aqui é que a gente entenda como um Trace funciona.
+
+
+626
+00:54:41.857 --> 00:54:46.857
+E o que? Que o esse processo do Machine Learning trouxe para cá?
+
+
+627
+00:54:46.857 --> 00:54:53.857
+A gente entenda onde esse problema acontece e a gente saia do achismo e realmente consiga entender.
+
+
+628
+00:54:53.857 --> 00:54:59.857
+Quando a resposta era incorreta ou não. Então a ideia aqui é o seguinte: o usuário.
+
+
+629
+00:54:59.857 --> 00:55:05.857
+Mensagem dizendo que ele perdeu aula de sábado e ele precisa. Ele está querendo repor isso. Outra turma.
+
+
+630
+00:55:05.857 --> 00:55:13.857
+O agente fez a recuperação da política. A política disse: Olha, a reposição depende de aprovação da coordenação.
+
+
+631
+00:55:13.857 --> 00:55:19.857
+O assistente responder. Ok, tudo bem. A sua reposição já está confirmada. Para a próxima turma.
+
+
+632
+00:55:19.857 --> 00:55:23.857
+Vocês acham que essa resposta está correta ou está errada?
+
+
+633
+00:55:23.857 --> 00:55:32.857
+Bota para mim. Quem está? Quem acha que a resposta está correta?
+
+
+634
+00:55:32.857 --> 00:55:48.857
+Exatamente. Ele contradiz o escopo e o contexto que ele tem, porque, na verdade, ele precisava de uma aprovação de política para que ele pudesse fazer isso para o Usuário. Então a ideia é exatamente que Você Entenda Essas Nuances.
+
+
+635
+00:55:48.857 --> 00:56:03.857
+Porque às vezes Somente A Palavra Aprovação No Meio Da Resposta é Onde O Assistente Variar E Dar Uma Resposta errada. Então são exatamente essas nuances que a gente tem que entender dentro do processo de Evaut, quando a gente está montando.
+
+
+636
+00:56:03.857 --> 00:56:07.857
+O erro, análises e o opencode.
+
+
+637
+00:56:07.857 --> 00:56:23.857
+Então A Como Eu Falei A Ideia Aqui Não é Que A Gente Ache A Resposta Incorreta Então Não é o olhar aqui? Não, a resposta parece estar ok. Ou parece que não está. A resposta é: onde foi o primeiro erro. O comportamento Que Ele Saiu Do Caminho Então Aqui O Primeiro Erro Para Ele Foi Que.
+
+
+638
+00:56:23.857 --> 00:56:28.857
+Ele entendeu que ele poderia confirmar o.
+
+
+639
+00:56:28.857 --> 00:56:37.857
+Confirmar a reposição do aluno sem a aprovação da coordenação.
+
+
+640
+00:56:37.857 --> 00:56:46.857
+Então, o que é o Opencode e o Axial Code o Opencode é quando você pega a resposta que o usuário deu.
+
+
+641
+00:56:46.857 --> 00:57:00.857
+Ou Que O Agente Deu Para O Usuário E Faça Notas Livres Dentro Do Processo Então Nós Vamos Abrir Ali o legfuse. Nós vamos abrir o Arise Phoenix, por exemplo. E vamos ver todos os logs. Então você vai chegar e vai decidir. E Esse Aqui Já é O Processo Real.
+
+
+642
+00:57:00.857 --> 00:57:03.857
+Criação de revolves.
+
+
+643
+00:57:03.857 --> 00:57:15.857
+Você Vai Decidir Qual Ferramenta Que Você Vai Usar Você Vai Abrir A Ferramenta E Vai Escolher Traces Para Você ler. Então você vai começar ali com cem traces. E esse é o processo manual. E é por isso que o engenheiro de voz Acaba Sendo Muito Caro.
+
+
+644
+00:57:15.857 --> 00:57:20.857
+Ele é onde a gente sai da autonomia de agentes e traz o.
+
+
+645
+00:57:20.857 --> 00:57:35.857
+Vai fazer a anotação daquele problema. Então olha para o primeiro Trace. Ele respondeu antes do usuário terminar.
+
+
+646
+00:57:35.857 --> 00:57:41.857
+Segundo. Ele ignorou a segunda pergunta no terceiro, ele confirmou algo que a ferramenta negou.
+
+
+647
+00:57:41.857 --> 00:57:56.857
+Depois que você está com todos esses traces, você vai pegar esse conjunto de informações e vai fazer uma categorização desse processo. Então essa categorização, a gente chama de ace code. Então, o que esses traces viram para a gente? Olha.
+
+
+648
+00:57:56.857 --> 00:58:02.857
+Então nós temos um conjunto de três que tiveram problema de fluxo conversacional.
+
+
+649
+00:58:02.857 --> 00:58:08.857
+Conjunto de traces que tiveram omissão de intenção, um conjunto que teve contradição de evidência.
+
+
+650
+00:58:08.857 --> 00:58:33.857
+Handle. E o Oxy Code vai fazer a organização da descoberta de padrões que podem ser contados e priorizados. E Esse Contato E Priorizados é Muito Importante Nesse Processo.
+
+
+651
+00:58:33.857 --> 00:58:49.857
+Então Se A Gente Colocar Isso Nesse Mesmo Processo Então O Que A Gente Tem Que Fazer O Três Ele passou ou falhou. Então a primeira etapa é que a resposta é sempre binária. A primeira identificação é sempre binária. Então a gente não Coloca Uma Nota De Um A Um Zero.
+
+
+652
+00:58:49.857 --> 00:59:08.857
+Para Fazer Essa Validação Caso Ele Tenha Falhado A Gente Descreve Qual Foi O Primeiro Erro Observado Dentro Do Trace podem ter vários, mas a gente identifica o primeiro erro e coloca ele concreto próximo da evidência. Então a gente fala que naquela chamada, Porque Podem Ter Múltiplas Conversações Dentro Do Agente.
+
+
+653
+00:59:08.857 --> 00:59:12.857
+Naquela chamada. A gente identificou e observou aquele erro. E a gente faz a anotação.
+
+
+654
+00:59:12.857 --> 00:59:18.857
+Então a gente explica essa anotação como se alguém fosse ver essa nota para participar.
+
+
+655
+00:59:18.857 --> 00:59:34.857
+Participar Da Análise Então A Gente Tem Que Fazer Uma Explicação Que Ela Seja Simples Para Ser Entendida Então O processo de Open podem. Ele é feito dessa forma. O processo é exatamente literalmente manual. Algumas ferramentas e alguns framework, inclusive eles já vêm até com esse.
+
+
+656
+00:59:34.857 --> 00:59:46.857
+Campo para você fazer esse processo. Então você clica no três e ali você consegue pegar e editar, fazer a Edição Da Nota Do Open Polling.
+
+
+657
+00:59:46.857 --> 00:59:50.857
+E agora, se a gente fosse fazer o mesmo trabalho.
+
+
+658
+00:59:50.857 --> 00:59:55.857
+Vocês vão trabalhar como os avaliadores humanos nesse processo. Então.
+
+
+659
+00:59:55.857 --> 01:00:00.857
+Nutricia. A gente tem a seguinte pergunta: eu quero trocar de turma, porque eu trabalho à noite.
+
+
+660
+01:00:00.857 --> 01:00:06.857
+Assistente. Ele responde para o usuário como o que eu entendi. Qual turma?
+
+
+661
+01:00:06.857 --> 01:00:09.857
+Eu entendi. Mas seu trabalho não afeta o curso.
+
+
+662
+01:00:09.857 --> 01:00:12.857
+A gente tem uma mensagem fragmentada.
+
+
+663
+01:00:12.857 --> 01:00:19.857
+Se o usuário perguntar: Ok, qual é o prazo de reembolso? E quando começa a próxima turma?
+
+
+664
+01:00:19.857 --> 01:00:37.857
+O Assistente Responde Para Ele Próxima Turma Começa Dezessete De Setembro Então Ele Respondeu Quando Começa A Próxima Turma Mas ele ignorou a segunda intenção do usuário, que era perguntar sobre o reembolso e o Tracy C é quando ele pergunta se o certificado já está disponível.
+
+
+665
+01:00:37.857 --> 01:00:51.857
+A ferramenta. Ela é chamada pelo Agente e fala que ainda está em revisão. Mas o Agente Alucina, e fala. Olha, beleza, ele já está liberado. Então a ferramenta informou que estava em revisão certinho, mas o agente afirmou que estava liberado, então ele Teve Uma Contradição De Evidência.
+
+
+666
+01:00:51.857 --> 01:01:04.857
+Então é dessa forma que você monta o opencode com essas respostas. Ou seja, olha, a ferramenta informou que estava Em Revisão Mas O Agente Informou Que Estava Liberado.
+
+
+667
+01:01:04.857 --> 01:01:14.857
+E quando faz o Axel code, a gente tem contradição de evidência e monta isso em uma matriz.
+
+
+668
+01:01:14.857 --> 01:01:17.857
+Quando é que a gente para de fazer o processo de evol.
+
+
+669
+01:01:17.857 --> 01:01:33.857
+Não existe um número certo de saturação. Gente não tem um número mágico. Então eu particularmente começo dependendo do sistema em cinquenta ou em cem traces. Então eu pego e leio realmente cinquenta ou cem traces, um a um para tentar fazer essa identificação.
+
+
+670
+01:01:33.857 --> 01:01:50.857
+Tá E Existe O Ponto Em Que A Próxima Análise Ela Não Muda A Sua Decisão Mas Tem Um Ponto em que você tem que reiniciar o processo. Tá, então chega um ponto que você analisa, joga todo mundo dentro, e eu vou mostrar Isso Para Vocês Como é Que Isso Funciona Essa Organização.
+
+
+671
+01:01:50.857 --> 01:01:59.857
+Faz a validação e a melhoria do sistema até aquele ponto. E naquela versão que você está do sistema, naquela Versão Do Agente Que Você Está.
+
+
+672
+01:01:59.857 --> 01:02:14.857
+Você não precisa mais ficar fazendo esse processo evolutivo. Mudou a versão. Você tem o mesmo processo e é o mesmo Baseline para Que você Use isso Como Próximas Evoluções E Validações De Regressão Para Dentro Do Agente.
+
+
+673
+01:02:14.857 --> 01:02:18.857
+O que é o axial code nesse processo?
+
+
+674
+01:02:18.857 --> 01:02:32.857
+Ele vai tirar pra gente um mapa de prioridades. Então a gente vai contar cada uma das categorias. Quantas vezes Essa Categoria Aconteceu Então Se Eu Tive Dezessete Fluxos Convencionais Quebrados.
+
+
+675
+01:02:32.857 --> 01:02:45.857
+Onze promessas não suportáveis, sete, omissão de intenção por onde a gente começa a atacar o problema. A gente vai Começar Pelo Fluxo Conversacional Porque Ele Vai Resolver A Maior Parte Dos Problemas Que Os Usuários Estão Tendo.
+
+
+676
+01:02:45.857 --> 01:02:56.857
+Então a gente usa essa informação de frequência para a gente saber qual é o impacto que isso está tendo No Sistema E Como A Gente Vai Fazer O Ataque Dessa Resposta.
+
+
+677
+01:02:56.857 --> 01:03:12.857
+Então Uma Falha Rara Pode Ser Prioritária Se O Caso Do Dano For Alto Mas A Ideia é Que A gente sempre vá no volume mais alto ou no que tenha prioridade mais alta. Por exemplo, um custo financeiro. A gente tem uma falha, Mas Essa Falha Pode Causar Um Problema Financeiro No Seu Sistema.
+
+
+678
+01:03:12.857 --> 01:03:23.857
+Você ataca esse cara primeiro. Então você sempre vai por frequência ou prioridade.
+
+
+679
+01:03:23.857 --> 01:03:37.857
+O que merece a automação desse dentro desse processo, porque nem todo o processo tem que ser manual. Você consegue usar Ia E Llms Para te Ajudar Nesse Processo Te Ajudar No Processo De Categorização Então Partes Dele Você Consegue Fazer Automação.
+
+
+680
+01:03:37.857 --> 01:03:50.857
+Então a ideia é que nem toda descoberta vai virar um Evol. Então, se ela tem uma correção direta e Não Volta. Você Só faz A Correção às vezes é Um Ajuste Simples De Prompt Que Ele Serve Para Você.
+
+
+681
+01:03:50.857 --> 01:03:58.857
+Mas você vai auto automatizar sempre o que for frequente, o que for caro ou que for persistente. Então, se Tiver Risco De Regressão.
+
+
+682
+01:03:58.857 --> 01:04:19.857
+é aquele cara. é aquela situação que você tem que automatizar, que você tem que resolver assim que você puder. Então se Você Decidiu Automatizar Qual é o Avaliador Que Você Vai Usar Para Fazer Esse Tipo De Automatização.
+
+
+683
+01:04:19.857 --> 01:04:29.857
+O avaliador. é o que a gente estava chamando de testes unitários. Estou chamando de voz, tá? Ele não tem Uma Regra Específica Ele Não é Um Tipo Específico.
+
+
+684
+01:04:29.857 --> 01:04:45.857
+Como eu falei. O Ival não é um asset. Ele não é um Unitste. Ele é um conjunto de técnicas E Ferramentas Que Entram Dentro De Um Processo Sistêmico De Melhoria Rotina Do Sistema Então Ele Pode Ser Feito Através De Um Código.
+
+
+685
+01:04:45.857 --> 01:05:00.857
+Então a gente tem um reggax, uma regra objetiva, uma regra por latência, um formato que a gente valida. Isso. Então Esse Formato é Barato E Previsível E Ele é Muito Fácil De Ser Implementado Dentro De Um Loop Agêntico.
+
+
+686
+01:05:00.857 --> 01:05:14.857
+Ele pode ser humano onde o humano faz descoberta. Ele trata ambiguidades, verifica risco e trata casos sensíveis. Normalmente, aqui Ele Está Com Uma Fonte Da Verdade Mas Ele Normalmente Ele Funciona Como.
+
+
+687
+01:05:14.857 --> 01:05:23.857
+De referência e não como fonte da verdade. Então ele é referência mais alta dentro de todo esse fluxo, só Que Ele Normalmente é O Ativo Mais Caro.
+
+
+688
+01:05:23.857 --> 01:05:26.857
+Desse quadrante.
+
+
+689
+01:05:26.857 --> 01:05:36.857
+Juiz. Então a gente definiu um tom, uma completude e critérios semânticos bem estreitos, para que ele consiga fazer validações.
+
+
+690
+01:05:36.857 --> 01:05:47.857
+Então ele vai gerar uma validação. Vai ter um troco de validação para um problema específico. E você vai ter Agentes Com Llm Tratando Chamadas Específicas Para Resoluções De Problema.
+
+
+691
+01:05:47.857 --> 01:06:03.857
+As Médicas Do Produto Que é Onde Você Valida O Impacto Real Qual Foi A Retenção A Resolução E O custo que você teve. Então as métricas só confirmam que você está dando uma melhoria. Mas elas não explicam esse caso especificamente. é quando A Gente Faz E Vols Online.
+
+
+692
+01:06:03.857 --> 01:06:10.857
+Existem duas situações. Você tem Oival Offline, que normalmente são datasets que você valida a regressão de agentes que você.
+
+
+693
+01:06:10.857 --> 01:06:24.857
+Faz isso antes do processo, ou os online que você consegue botar ele para eletrices em tempo real. E essas Validações Elas Validam Se Algum Problema Está Acontecendo Em Tempo Real No Seu Sistema Ou Não.
+
+
+694
+01:06:24.857 --> 01:06:32.857
+Então via de regra, tá? Não somente para isso, como eu falo para tudo em relação a sistemas agênticos.
+
+
+695
+01:06:32.857 --> 01:06:51.857
+Mais Simples Ele é Sempre O Melhor Então Sempre Começa O Processo Mais Simples Ele Costuma Ser Melhor Para Aquele determinado tipo de problema. Aqui, a regra é a mesma. O avaliador mais simples para a situação. Ele é o que costuma ser melhor e mais barato.
+
+
+696
+01:06:51.857 --> 01:07:01.857
+O que faz um Llm ser um bom juiz? A ideia é que o Llm mais adiante não seja um Modelo Mais Caro Ou Mais Inteligente.
+
+
+697
+01:07:01.857 --> 01:07:11.857
+E o que o agente principal. A ideia é que ele tenha uma tarefa simples. Então ele tem que ter Um Bom Critério Para Ele Conseguir Reduzir A Responsabilidade Que Ele Tem.
+
+
+698
+01:07:11.857 --> 01:07:20.857
+Então ele vai passar um modo de falha. Um. Peço ou feio. Uma evidência citada são coisas bem específicas. Bem.
+
+
+699
+01:07:20.857 --> 01:07:37.857
+Point Blank Em Cima Da Resposta Ele Tem Que dar para Que Ele Consiga fazer essa validação Então O Juiz ele não precisa entender o produto inteiro como a gente faz. Ele precisa tomar uma decisão estreita e explicar ela para que o agente Consiga Trabalhar E Isso Responde.
+
+
+700
+01:07:37.857 --> 01:07:50.857
+Exatamente quando você coloca um Ll: mesmo adiante no processo, ele tem que ser bem específico para resolver um problema muito específico.
+
+
+701
+01:07:50.857 --> 01:08:05.857
+Como eu falei, muita gente acha que normalmente o juiz, como Llm tem que ser um modelo mais inteligente, um Modelo Mais Complexo Do Que O Agente Convencional Isso Não é Verdade.
+
+
+702
+01:08:05.857 --> 01:08:19.857
+Ele. Normalmente ele é um modelo mais caro, um modelo mais Frontier. Porque ele entende o que o usuário quer. Ele Que Faz A Chamada De Ferramentas E Busca De Dados Ele Que Executa Ações E Ele Que Produz Uma Resposta.
+
+
+703
+01:08:19.857 --> 01:08:33.857
+Então Ele Tem Um Problema Mais Amplo E O Juiz Vai Ter Uma Decisão Mais Estreita Dentro Desse Processo Então ele tem que detectar uma promessa que não foi suportada dentro do fluxo ou do Prompt, que foi gerado para aquele agente.
+
+
+704
+01:08:33.857 --> 01:08:42.857
+Então o que importa é se o juiz foi validado para aquele critério específico. Ou seja, você pode ter vários Llles Adiantes Para Vários Problemas Separados.
+
+
+705
+01:08:42.857 --> 01:08:54.857
+Do Axel Code, que você tem várias categorias. Você pode criar llns da Judge, um para cada uma daquelas categorias, Então Eles Vão Ter Problemas Muito Escopados Ali Dentro Tá.
+
+
+706
+01:08:54.857 --> 01:09:02.857
+Então essa é a ideia do analisar Judge.
+
+
+707
+01:09:02.857 --> 01:09:18.857
+E Aqui A Gente Vê Uma Situação Que Acaba Sendo Uma Armadilha E Ela é Muito Comum De Se Ver o pessoal. Eu já vi isso em alguns sistemas, o pessoal. Ele pega e faz um certo tipo de avaliação, principalmente quando eles fazem Anotações Antes De Fazer Esse Processo De Vol.
+
+
+708
+01:09:18.857 --> 01:09:26.857
+E fala. Olha, eu tenho aqui noventa de acorácia e zero falhas. Então, o que isso quer dizer?
+
+
+709
+01:09:26.857 --> 01:09:41.857
+Incentreces, noventa passaram e dez falharam. Só que o juiz, mesmo no processo de avaliação do juiz, ele deixou passar Todo Mundo Então Ele Falou Olha, Eu Deveria Ter Achado O Problema Mas Cem Passou Então Ele Entende.
+
+
+710
+01:09:41.857 --> 01:09:43.857
+Distribuição de ego está certa.
+
+
+711
+01:09:43.857 --> 01:09:55.857
+Na verdade, por trás do problema, a gente tem um P dezanove, literalmente dez falhas passarem, e essas falhas podem Ser Muito Caras Para O Sistema.
+
+
+712
+01:09:55.857 --> 01:10:07.857
+Então a ideia é que a curácia mede concordância com a maioria. Só que o valor do juiz vem quando Ele Acha A Minoria Então A Ideia Do Juiz é Ele Trabalhar à Exceção.
+
+
+713
+01:10:07.857 --> 01:10:16.857
+E não a regra.
+
+
+714
+01:10:16.857 --> 01:10:20.857
+Então, quais são os dois jeitos que o juiz pode errar?
+
+
+715
+01:10:20.857 --> 01:10:24.857
+Exatamente, João. Preciso de um recall. Exatamente esse o caso.
+
+
+716
+01:10:24.857 --> 01:10:38.857
+Então, quais são os dois jeitos de errar que a gente tem? Então a gente pode ter uma situação onde o humano validou e ele aceitou. E o juiz validou. E ele também aceitou. Então, os dois estão de acordo.
+
+
+717
+01:10:38.857 --> 01:10:48.857
+Nós temos a situação onde o humano e o juiz falharam. Então eles também estão de Apo. Quando a gente Falha Falhou é Que Eles Deram Negativa Então Eles Também Estão De Acordo.
+
+
+718
+01:10:48.857 --> 01:10:55.857
+Nós temos um falso negativo, que é quando o juiz passa. Mas o humano não consegue perceber a falha.
+
+
+719
+01:10:55.857 --> 01:11:12.857
+Contrário Quando O Juiz Falha Mas O Mano Diz Que Ele Tem Realmente Um Está Com Algum Problema Alguma Coisa do tipo. Então a gente tem um falso positivo e alguma coisa boa ali. Ela foi bloqueada. Então o custo de cada erro. Ela Não Tem Uma Regra Fechada Ela Depende Muito.
+
+
+720
+01:11:12.857 --> 01:11:29.857
+Muito Mesmo Na Verdade para ser bem sincero para vocês. Tudo Que eu estou falando aqui Depende não existe Regra específica para sistema. Isso aqui, cada sistema, ele vai ter seus próprios valores e seus próprios balanços. Então, se ele for um tutor educacional.
+
+
+721
+01:11:29.857 --> 01:11:53.857
+A Resposta E A Acurácia Que A Gente Tem Que Dar Ele Vai Ser Totalmente Diferente De Um Agente Que movimenta dinheiro, por exemplo. Então as regras são específicas. As falhas que podem acontecer, elas são específicas. Então ela sai mais caro ou mais Barato Dependendo Do Tipo De Serviço Que Você Está Prestando Com O Seu Agente.
+
+
+722
+01:11:53.857 --> 01:11:57.857
+Então, quem é que avalia o avaliador.
+
+
+723
+01:11:57.857 --> 01:12:02.857
+A ideia é que a gente passe pelo processo de rotulação. Então a gente faz uma amostra com humanos. Nós.
+
+
+724
+01:12:02.857 --> 01:12:04.857
+Comparar.
+
+
+725
+01:12:04.857 --> 01:12:10.857
+Como que o juiz respondeu e fazer a validação da referência.
+
+
+726
+01:12:10.857 --> 01:12:28.857
+Nós Vamos Inspecionar Quais São Os Desacordos E Por Que Eles Estão Acontecendo Então Nós Fazemos Um Processo De Ajuste que são critérios e exemplos dentro do juiz. E a gente vai repetir. Então, se vocês repararem, existe o processo de Evol, que acontece Dentro Do Fluxo Do Sistema Todo.
+
+
+727
+01:12:28.857 --> 01:12:48.857
+E Quando Você Cria Um Judge Você Faz Um Mini Processo De Evol Que Faz Basicamente A Mesma Coisa Que é quando o agente falha, a gente faz avaliação do porquê que ele está falhando e faz o ajuste dele para que ele consiga Responder De Forma Clara E Correta.
+
+
+728
+01:12:48.857 --> 01:12:58.857
+Então, como é que o Evol funciona? Como um processo de produto? Então ele é uma especificação que vai rodar Em Todo O Ciclo Do Sistema Então A Gente Tem Um Tagd Que é Lido Uma Vez.
+
+
+729
+01:12:58.857 --> 01:13:03.857
+G que o assistente não deve prometer ações não confirmadas.
+
+
+730
+01:13:03.857 --> 01:13:12.857
+E o erro vai rodar para cada uma dessas mudanças. Então ele vai ver critérios observáveis, exemplos. Qual é o Avaliador E Resultado Contínuo.
+
+
+731
+01:13:12.857 --> 01:13:23.857
+No evol offline. A gente verifica dentro do processo de desenvolvimento a comparação de prompts, modelos e estratégias. Então isso A Gente Roda Antes De Colocar Em Produção.
+
+
+732
+01:13:23.857 --> 01:13:32.857
+E dentro antes do processo de Deploy, a gente verifica regressões críticas que aconteceram dentro daquelas regras específicas.
+
+
+733
+01:13:32.857 --> 01:13:34.857
+Uma vez colocado em produção.
+
+
+734
+01:13:34.857 --> 01:13:50.857
+Evol o Evol online. Ele vai fazer avaliações de amostra, riscos e cortes que podem acontecer dentro de chamadas que O Agente Está Fazendo Ali, Em Tempo Real Então A Ideia é Que Esse Voo Online Ele Conecte Qualidade.
+
+
+735
+01:13:50.857 --> 01:13:56.857
+Resultados já dentro do processo do processo vivo do sistema.
+
+
+736
+01:13:56.857 --> 01:14:06.857
+Então o offline vai explicar para a gente e vai bloquear pioras que a gente teve piora sistêmicas. A gente Teve No Sistema E O Online Ele Vai Confirmar Que Aquilo Que A Gente Validou.
+
+
+737
+01:14:06.857 --> 01:14:16.857
+Modelo offline. Ele realmente está em prática em produção.
+
+
+738
+01:14:16.857 --> 01:14:28.857
+Então o Ivo, que produz uma nota para a gente, mas não muda uma decisão. Ele tem muito pouco valor, Então O Resultado Precisa Voltar Ele Precisa Ser Reigerido Dentro Do Ciclo Agêntico.
+
+
+739
+01:14:28.857 --> 01:14:44.857
+Então A Ideia é Que A Gente Veja Que Aquele Problema Ele Existe Nós Façamos A Classificação Daquele Problema Façamos o ajuste dele e reinjetamos esse ajuste dentro do sistema. Vamos fazer a observação, a revalidação e esse problema tem que acabar sumindo.
+
+
+740
+01:14:44.857 --> 01:15:01.857
+A ideia é que o valor, toda essa ideia aqui é que o processo seja sistêmico e contínuo, para que Esses Erros Não Aconteçam Nunca E Quando Acontecer Eles Tenham Rápida.
+
+
+741
+01:15:01.857 --> 01:15:12.857
+Absorção e solução para que isso não cause nenhum prejuízo para a empresa nem para o usuário.
+
+
+742
+01:15:12.857 --> 01:15:27.857
+Então, para quem já estiver trabalhando com agentes hoje, a ideia é que você comece pequeno. Então faça um teste Aqui Na Próxima Semana E Colete De Vinte A Cinquenta Traces Reais Ou Caso Vocês Tenham Algum Sistema De Teste.
+
+
+743
+01:15:27.857 --> 01:15:35.857
+Passa? Anotação e anote se. Ele passou, falhou binário e faça anotação descritiva do primeiro erro.
+
+
+744
+01:15:35.857 --> 01:15:48.857
+Em nada mais. Já faça o ajuste.
+
+
+745
+01:15:48.857 --> 01:15:52.857
+Valide, o avaliador contra uma percepção humana.
+
+
+746
+01:15:52.857 --> 01:16:00.857
+Escolha uma pessoa com contexto do domínio para te ajudar nesse processo. Então a ideia é que a pessoa conheça O Domínio De Negócio.
+
+
+747
+01:16:00.857 --> 01:16:12.857
+Grupo. Os padrões que são repetidos. Isso. Vocês viram no Axel Code automatize quando uma falha for importante, nem que Seja Para Mandar Um Alerta Para Vocês Para Vocês Conseguirem Fazer Algum Tipo De Correção E.
+
+
+748
+01:16:12.857 --> 01:16:29.857
+Sempre esse processo após as mudanças. Então o resultado final pode ser uma planilha. Alguns traces e uma pessoa de Domínio Isso Você Já Tem Boa Parte Desse Sistema Todo Montado.
+
+
+749
+01:16:29.857 --> 01:16:35.857
+E a ideia aqui é a gente saber o que acontece quando você não está olhando o seu sistema. Então.
+
+
+750
+01:16:35.857 --> 01:16:42.857
+Seu sistema agênico está rodando. às vezes ele está fazendo reembolso de uma compra. às vezes ele está fazendo transações financeiras.
+
+
+751
+01:16:42.857 --> 01:16:52.857
+E alguns problemas estão acontecendo, e você não está avaliando. Então a ideia é que você não comece com evolves Perfeitos Mas Você Comece Com O Evolves.
+
+
+752
+01:16:52.857 --> 01:17:07.857
+Você já veja qual é o comportamento real dele. Você observe o comportamento. Defina o que é importante dentro dos Guardrails Dentro Das Restrições.
+
+
+753
+01:17:07.857 --> 01:17:30.857
+Seu Domínio De Negócio E Transforme Isso Em Um Ciclo Então Você Vai Fazer Isso Toda Semana Todo Dia Dependendo da regra que você precisa aplicar no seu sistema. Então a ideia é: comece simples, mas verifique e sempre verifique isso para que você Tenha Evidência De Melhoria Dentro Do Processo.
+
+
+754
+01:17:30.857 --> 01:17:37.857
+E a ideia é essa. Então a ideia é a gente perguntar dentro do processo, quem é o especialista de Domínio Do Seu Produto.
+
+
+755
+01:17:37.857 --> 01:17:41.857
+Qual falha você vai fazer a primeira automatização que pode.
+
+
+756
+01:17:41.857 --> 01:17:51.857
+Parte do Trace. Ela está invisível hoje. é importante que você consiga fazer a identificação dela. E qual seria o Custo De Um Falso Negativo Dentro Do Seu Processo De Negócio.
+
+
+757
+01:17:51.857 --> 01:17:53.857
+Então.
+
+
+758
+01:17:53.857 --> 01:18:14.857
+Basicamente isso, gente. E vou. Então é todo esse processo sistêmico onde você vai entrar como engenheiro para validar que O Seu Sistema Ele Realmente Está Rodando De Forma Adequada.
+
+
+759
+01:18:14.857 --> 01:18:17.857
+Tiao, hein?
+
+
+760
+01:18:17.857 --> 01:18:22.857
+De aula. Bem, vou ver se eu consigo.
+
+
+761
+01:18:22.857 --> 01:18:26.857
+Pegar essa teoria e tentar.
+
+
+762
+01:18:26.857 --> 01:18:33.857
+Trazer um pouquinho como que a gente. Uma das formas que a gente pode trazer Evals de forma mais inteligente.
+
+
+763
+01:18:33.857 --> 01:18:35.857
+Para dentro.
+
+
+764
+01:18:35.857 --> 01:18:38.857
+Do Task Spec ou da tarefa como um todo.
+
+
+765
+01:18:38.857 --> 01:18:41.857
+Muito bom, Rafa. Obrigado. Viu?
+
+
+766
+01:18:41.857 --> 01:18:42.857
+De nada.
+
+
+767
+01:18:42.857 --> 01:18:44.857
+Foi foda como sempre.
+
+
+768
+01:18:44.857 --> 01:18:49.857
+E o Rafa tem uma sessão muito maior sobre isso. Em detalhes na formação, tá?
+
+
+769
+01:18:49.857 --> 01:18:53.857
+Então.
+
+
+770
+01:18:53.857 --> 01:18:54.857
+Exatamente.
+
+
+771
+01:18:54.857 --> 01:18:55.857
+é realmente.
+
+
+772
+01:18:55.857 --> 01:18:59.857
+Gosto muito como o Rafa explica coisas complexas de forma fácil.
+
+
+773
+01:18:59.857 --> 01:19:02.857
+Valeu, Rafa. Ficou muito bom.
+
+
+774
+01:19:02.857 --> 01:19:03.857
+Valeu, gente.
+
+
+775
+01:19:03.857 --> 01:19:06.857
+Muito, mesmo.
+
+
+776
+01:19:06.857 --> 01:19:10.857
+Deixa eu voltar aqui.
+
+
+777
+01:19:10.857 --> 01:19:14.857
+Vocês estão vendo minha tela?
+
+
+778
+01:19:14.857 --> 01:19:15.857
+Ainda não.
+
+
+779
+01:19:15.857 --> 01:19:16.857
+Saber como é que eu cancelo a minha. Aqui.
+
+
+780
+01:19:16.857 --> 01:19:25.857
+Não é a grande ideia ele fazer parecer fácil, né? Essa tem que ser assim.
+
+
+781
+01:19:25.857 --> 01:19:28.857
+Na verdade, se a gente for falar de voz aqui, a gente fica uma semana inteira, né?
+
+
+782
+01:19:28.857 --> 01:19:29.857
+é sim.
+
+
+783
+01:19:29.857 --> 01:19:30.857
+Aqui. é só para a gente dar uma ideia do.
+
+
+784
+01:19:30.857 --> 01:19:34.857
+é? E assim é aquela coisa, né? A gente plantou a ideia.
+
+
+785
+01:19:34.857 --> 01:19:39.857
+E aí que vem a parte legal, né? Você vai sentar. Vai pesquisar. Vai fazer seu.
+
+
+786
+01:19:39.857 --> 01:19:41.857
+Seu próprio Research, né.
+
+
+787
+01:19:41.857 --> 01:19:45.857
+Acho que essa. Essa é a grande parte legal do rolê, né?
+
+
+788
+01:19:45.857 --> 01:19:50.857
+Beleza. Então, o que o Rafa falou? Basicamente.
+
+
+789
+01:19:50.857 --> 01:19:56.857
+São literalmente os building blocks, como a gente faz essa análise. Como que ele faz isso também no dia a Dia E Por Que.
+
+
+790
+01:19:56.857 --> 01:20:00.857
+Que o Evol e a parte de volta é importante para.
+
+
+791
+01:20:00.857 --> 01:20:04.857
+Para nós, humanos, porque literalmente, a gente precisa estar no loop aqui.
+
+
+792
+01:20:04.857 --> 01:20:07.857
+Não tem como a gente sair do loop.
+
+
+793
+01:20:07.857 --> 01:20:10.857
+E é por isso que a gente viu esse crescimento.
+
+
+794
+01:20:10.857 --> 01:20:12.857
+No mercado. Sobre isso.
+
+
+795
+01:20:12.857 --> 01:20:14.857
+E aí a gente começa a pensar o seguinte.
+
+
+796
+01:20:14.857 --> 01:20:16.857
+Verde.
+
+
+797
+01:20:16.857 --> 01:20:19.857
+Provar nada.
+
+
+798
+01:20:19.857 --> 01:20:25.857
+Então, olhar um pouco de voz também é pensar.
+
+
+799
+01:20:25.857 --> 01:20:29.857
+No cheiro, né? Pensar como aquilo se comporta.
+
+
+800
+01:20:29.857 --> 01:20:33.857
+E como que aquilo pode ser validado ou não, o que significa verdade, né?
+
+
+801
+01:20:33.857 --> 01:20:36.857
+O que significa prova irrefutável de algo.
+
+
+802
+01:20:36.857 --> 01:20:39.857
+Então, trazendo não só na análise. Imagino que pô beleza.
+
+
+803
+01:20:39.857 --> 01:20:47.857
+Você passou pelo ciclo do Rafa de escolher os três, entender, escolher quem vai julgar passar por todo esse processo.
+
+
+804
+01:20:47.857 --> 01:20:50.857
+E agora você vai executar literalmente uma atividade.
+
+
+805
+01:20:50.857 --> 01:20:54.857
+Eh? Então a gente vai descer lá no nível granular para entender um pouquinho sobre isso.
+
+
+806
+01:20:54.857 --> 01:20:57.857
+Então a gente pode ver aqui, por exemplo.
+
+
+807
+01:20:57.857 --> 01:21:00.857
+Três formas que o Evol pode mentir na nossa cara.
+
+
+808
+01:21:00.857 --> 01:21:02.857
+Então, por exemplo, na primeira.
+
+
+809
+01:21:02.857 --> 01:21:07.857
+Na segunda e na terceira. Todas essas três formas aqui.
+
+
+810
+01:21:07.857 --> 01:21:10.857
+Ela vai dar um Exit zero.
+
+
+811
+01:21:10.857 --> 01:21:14.857
+Que foi o que sucesso. Só que se a gente olhar o que cada um dela está fazendo.
+
+
+812
+01:21:14.857 --> 01:21:17.857
+Aqui. A gente tem uma session free.
+
+
+813
+01:21:17.857 --> 01:21:19.857
+é basicamente falar True é igual a True.
+
+
+814
+01:21:19.857 --> 01:21:23.857
+Beleza. E aí vocês vão entender por que eu estou falando isso depois.
+
+
+815
+01:21:23.857 --> 01:21:26.857
+Você está olhando? Talvez um artefato diferente que.
+
+
+816
+01:21:26.857 --> 01:21:29.857
+Está no disco, mas não tem absolutamente nada.
+
+
+817
+01:21:29.857 --> 01:21:32.857
+E o terceiro? O arquivo existe.
+
+
+818
+01:21:32.857 --> 01:21:35.857
+Ou seja, o Evol vai ser validado.
+
+
+819
+01:21:35.857 --> 01:21:36.857
+Mas não tem nada dentro desse.
+
+
+820
+01:21:36.857 --> 01:21:39.857
+Desse arquivo, então.
+
+
+821
+01:21:39.857 --> 01:21:43.857
+O que a gente tira de experiência, que é muito interessante entender.
+
+
+822
+01:21:43.857 --> 01:21:45.857
+E aí é o que eu quero que vocês entendam.
+
+
+823
+01:21:45.857 --> 01:21:50.857
+Que eu acho que o que o Rafa quer trazer também. Rafa, aí você me corrija se não estiver errado.
+
+
+824
+01:21:50.857 --> 01:21:52.857
+No final do dia.
+
+
+825
+01:21:52.857 --> 01:21:59.857
+Pode escrever o teste e falar pra você que ela testou.
+
+
+826
+01:21:59.857 --> 01:22:03.857
+E ela fez isso aqui, por exemplo. Ah, pô. Eu preciso de um arquivo.
+
+
+827
+01:22:03.857 --> 01:22:06.857
+Que tem Stage Tgos, Sql.
+
+
+828
+01:22:06.857 --> 01:22:09.857
+E aí, basicamente, ela não fez o trabalho.
+
+
+829
+01:22:09.857 --> 01:22:13.857
+Ela não escreveu a lógica, mas ela escreveu o arquivo.
+
+
+830
+01:22:13.857 --> 01:22:15.857
+E ela fez um Exitcheck falando que ela checou o Ival lá.
+
+
+831
+01:22:15.857 --> 01:22:22.857
+Mas beleza Ival só está falando que o conteúdo existe. Que na verdade, que eu arquivo existe. Como que você Prova Que Aquilo é Verdade Ou Não.
+
+
+832
+01:22:22.857 --> 01:22:24.857
+Então é diferente.
+
+
+833
+01:22:24.857 --> 01:22:28.857
+E é isso que o Evol tenta trazer a prova irrefutável disso.
+
+
+834
+01:22:28.857 --> 01:22:34.857
+E é interessante, porque a gente já vê isso aqui agora. Então, vamos lá.
+
+
+835
+01:22:34.857 --> 01:22:36.857
+Vamos vir aqui.
+
+
+836
+01:22:36.857 --> 01:22:39.857
+Nosso repositório.
+
+
+837
+01:22:39.857 --> 01:22:43.857
+Vê que em D quatro.
+
+
+838
+01:22:43.857 --> 01:22:48.857
+E a gente vai pegar o Pre flight para fazer validação de tudo que a gente, né?
+
+
+839
+01:22:48.857 --> 01:22:50.857
+Vem vendo aí.
+
+
+840
+01:22:50.857 --> 01:22:55.857
+Desde o do início. Então vou pegar aqui o repositório.
+
+
+841
+01:22:55.857 --> 01:22:57.857
+Eu vou vir aqui. ó.
+
+
+842
+01:22:57.857 --> 01:23:01.857
+E aí vou mostrar para vocês, beleza, a primeira coisa que a gente vai fazer.
+
+
+843
+01:23:01.857 --> 01:23:04.857
+Literalmente rodar.
+
+
+844
+01:23:04.857 --> 01:23:10.857
+Para ver se os arquivos estão ausentes ou não. No repositório que a gente vai usar. Eles.
+
+
+845
+01:23:10.857 --> 01:23:13.857
+A gente vai testar agora. Então vou abrir o terminal aqui.
+
+
+846
+01:23:13.857 --> 01:23:16.857
+Vou verificar aqui.
+
+
+847
+01:23:16.857 --> 01:23:19.857
+Executivos não estão? Enfim, está tudo certo.
+
+
+848
+01:23:19.857 --> 01:23:23.857
+Aqui a gente vai chamar o Task Spec.
+
+
+849
+01:23:23.857 --> 01:23:26.857
+A última versão dele. Três oito.
+
+
+850
+01:23:26.857 --> 01:23:28.857
+Workspace que ele está.
+
+
+851
+01:23:28.857 --> 01:23:30.857
+Qual é a versão? Shell.
+
+
+852
+01:23:30.857 --> 01:23:35.857
+Se ele está assinalado, a gente vai entender. O que significa isso?
+
+
+853
+01:23:35.857 --> 01:23:38.857
+E se, de fato.
+
+
+854
+01:23:38.857 --> 01:23:44.857
+O próximo passo é validar as atividades realmente que a gente tem. Lembrando que as atividades estão aqui dentro de tasks.
+
+
+855
+01:23:44.857 --> 01:23:48.857
+Nós temos seis atividades dentro de cada atividade.
+
+
+856
+01:23:48.857 --> 01:23:50.857
+Você tem um Evol.
+
+
+857
+01:23:50.857 --> 01:23:53.857
+Que é exatamente isso que a gente quer entender.
+
+
+858
+01:23:53.857 --> 01:23:58.857
+Então esse Vol foi criado pela máquina. Não foi criado por nós.
+
+
+859
+01:23:58.857 --> 01:24:01.857
+Beleza. Rafa, deixa eu só perguntar uma coisa. Nesse caso, aqui.
+
+
+860
+01:24:01.857 --> 01:24:08.857
+E é curiosidade estar lá no sistema, lá no projeto de vocês.
+
+
+861
+01:24:08.857 --> 01:24:17.857
+Como que você pede. Uma vez que você tem a definição narizo três. Enfim, faz toda a parte de Judg. Mas Você Tem Que Ir Lá Literalmente Naquele Processo Engavetar O Envolve.
+
+
+862
+01:24:17.857 --> 01:24:24.857
+Você pede para ele me escrever aquele voo específico para você, para aquela atividade.
+
+
+863
+01:24:24.857 --> 01:24:25.857
+Não.
+
+
+864
+01:24:25.857 --> 01:24:27.857
+Tipo, Ah, eu quero executar. Como que você faz.
+
+
+865
+01:24:27.857 --> 01:24:33.857
+Depende. Porque o que acontece? Lembra que eu falei que a gente tem o Domain expert.
+
+
+866
+01:24:33.857 --> 01:24:39.857
+Quando você trabalha no igual. Você está trabalhando aí? Por que funciona você pedir para o seu sistema construir um evol.
+
+
+867
+01:24:39.857 --> 01:24:44.857
+Porque o Doming Spec é o agente.
+
+
+868
+01:24:44.857 --> 01:24:54.857
+Entendeu. Então ele sabe o que ele está fazendo. E ele sabe o que ele precisa validar. E normalmente, esses Processos Hoje Eles Nem Usam O Mesmo Modelo Para Fazer Isso.
+
+
+869
+01:24:54.857 --> 01:24:55.857
+Entendeu. Então, por exemplo.
+
+
+870
+01:24:55.857 --> 01:24:57.857
+Mas ele pode meio que.
+
+
+871
+01:24:57.857 --> 01:25:03.857
+Fazer, tipo, escrever um evol completamente bosta, né?
+
+
+872
+01:25:03.857 --> 01:25:04.857
+Pode. Ele pode alucinar ele pôr.
+
+
+873
+01:25:04.857 --> 01:25:06.857
+Tipo isso aqui.
+
+
+874
+01:25:06.857 --> 01:25:12.857
+E são igual bosta. Você está fazendo um make no Dbt para verificar.
+
+
+875
+01:25:12.857 --> 01:25:15.857
+Se o conteúdo não é nulo, tá? Mas isso prova o que no final do dia.
+
+
+876
+01:25:15.857 --> 01:25:16.857
+Ou seja.
+
+
+877
+01:25:16.857 --> 01:25:33.857
+é Exatamente é Só Para Ver Se O Arquivo Existe Ou Tem Alguma Coisa Dentro Não Serve Para Nada Mas assim, a diferença do processo agêntico que você está mostrando. Para o que um processo de voo produtivo que eu mostrei é exatamente isso. é O Domain Expert é O Especialista De Domínio.
+
+
+878
+01:25:33.857 --> 01:25:53.857
+Quando Você Trabalha Em Sistema De Produção Quem Conhece Essa Avaliação Lembra Que A Gente Teve Uma Situação Ali Nos meus slides que falava assim. Olha, o ator retornou que precisava de aprovação, mas o agente falou que ele podia já fazer a alteração do aluno.
+
+
+879
+01:25:53.857 --> 01:25:55.857
+Agora.
+
+
+880
+01:25:55.857 --> 01:25:56.857
+Tá. Mas aí, beleza.
+
+
+881
+01:25:56.857 --> 01:25:57.857
+Quem conhece essa regra é humano muito difícil mente. Você vai conseguir pedir para um agente fazer esse processo, e Ele Vai Acertar Normalmente Ele Vai Cair No Mesmo Erro.
+
+
+882
+01:25:57.857 --> 01:26:02.857
+Mas deixa eu te perguntar, gente, isso aqui é coisa dúvida minha. Tá.
+
+
+883
+01:26:02.857 --> 01:26:13.857
+Mas aí vamos supor beleza. Mas aí vamos supor que você pegou aqueles três. Vocês analisou? Você tem aquelas perguntas e Aí Você Tem por exemplo, Um Led ou Você Tem Uma Base De Conhecimento Em Que Você Faz Essa Pergunta E Ele Te Fala Sim Ou Não.
+
+
+884
+01:26:13.857 --> 01:26:15.857
+E a partir disso, você cria o Ival.
+
+
+885
+01:26:15.857 --> 01:26:23.857
+A gente pode substituir em algum momento, esse cara do domínio por uma ontologia ou por alguma coisa. Dá pra fazer isso.
+
+
+886
+01:26:23.857 --> 01:26:29.857
+Muito difícil. é muito difícil. Isso não é recomendado por nenhum dos.
+
+
+887
+01:26:29.857 --> 01:26:30.857
+Dos gurus, dos gurus.
+
+
+888
+01:26:30.857 --> 01:26:41.857
+Dos Godfathers do jeito dos gorosos. Então, se você vê o Hamil Hussein severa, você vê o pessoal do machine Learning Que Já Utiliza Isso Dificilmente Você Vai Usar Llm Para Fazer O Opencode.
+
+
+889
+01:26:41.857 --> 01:26:53.857
+Você consegue trabalhar com o Llm para fazer o Axil conte e não se consegue fazer a categorização através do De Ln Mas O Open Code Ele é Um Processo Que O Pessoal Bem Restritivo Entre Você.
+
+
+890
+01:26:53.857 --> 01:27:00.857
+Você conhecedor do negócio. Nem o desenvolvedor conhecedor do negócio. Sentar, pegar um e fazer anotações mesmo manuais no processo.
+
+
+891
+01:27:00.857 --> 01:27:11.857
+Cara. Então vamos na prática, imagina quantas pessoas estão agora trabalhando na Openai, fazendo isso no post training do modelo.
+
+
+892
+01:27:11.857 --> 01:27:14.857
+Cara deve ser muito fodido. Isso.
+
+
+893
+01:27:14.857 --> 01:27:16.857
+Porque eles vão ter que analisar.
+
+
+894
+01:27:16.857 --> 01:27:24.857
+Beleza. Eles vão fazer triagem. Enfim, mas no final, eles têm que ir lá. Cara, essa pergunta foi assim: gerou Tal Output Dessa Forma.
+
+
+895
+01:27:24.857 --> 01:27:30.857
+Isso bate literalmente com o que o modelo está fazendo na curácia. Tal, enfim, na prática.
+
+
+896
+01:27:30.857 --> 01:27:48.857
+Exatamente Na Verdade Se Você Olhar Por Exemplo No Ex Ou Se Você For Para A Comunidade De Uma Forma geral invosa. é um assunto muito controverso, porque muita gente já foi queimada por evoluz antes e evol assim. Eu tentei simplificar bastante para Vocês Aqui Mas Ele é Um Processo Muito Mais Denso Do Que Isso Que Eu Mostrei.
+
+
+897
+01:27:48.857 --> 01:27:57.857
+E é um processo muito mais caro. Então você senta. Você tem que ler o três, pegar nuances de negócio Dentro De Um Tres Ser Bem Complicado.
+
+
+898
+01:27:57.857 --> 01:28:04.857
+Achar esse tipo de coisa. é uma coisa que tem que fazer com certo carinho. Não, você vai bater o Olho E Vai Vai Conseguir Identificar.
+
+
+899
+01:28:04.857 --> 01:28:10.857
+é um processo que é difícil de ser automatizado. Então ele acaba sendo um pouco caro, entendeu?
+
+
+900
+01:28:10.857 --> 01:28:25.857
+Dentro Da Perspectiva Então Se Você Olhar Por Exemplo O Pessoal Da Openheim Agora Eles Estão Vindo Muito Forte Com o Evol. O pessoal da Antrop já falava que eles não precisavam tanto. Mas se você olhar agora, eles já entenderam que pós trailing Precisa De Um Revól Muito Forte.
+
+
+901
+01:28:25.857 --> 01:28:34.857
+Então ele está surgindo muito forte esse assunto, porque ele realmente tem uma carga muito, muito pesada dentro de processos de produção.
+
+
+902
+01:28:34.857 --> 01:28:35.857
+Está entrando agora que o pessoal está entregando produção, a gente não está entregando mais demo, né?
+
+
+903
+01:28:35.857 --> 01:28:38.857
+Muito. Sim.
+
+
+904
+01:28:38.857 --> 01:28:49.857
+Então essa validação é muito tênue. E você pega ali. Você trabalha no P noventa e cinco, assim, na ponta fina do pareto.
+
+
+905
+01:28:49.857 --> 01:28:52.857
+Onde o problema não aparece. é onde você entra para fazer análise.
+
+
+906
+01:28:52.857 --> 01:28:55.857
+E isso é muito difícil, porque isso é.
+
+
+907
+01:28:55.857 --> 01:29:01.857
+O complexo do complexo que já foi feito, a triagem e assim por diante. Tá interessante.
+
+
+908
+01:29:01.857 --> 01:29:02.857
+Exatamente.
+
+
+909
+01:29:02.857 --> 01:29:12.857
+Pô beleza no nosso caso. Aqui a gente está verificando, né? Se basicamente as atividades estão prontas para serem trabalhadas. O Linking Está Funcionando.
+
+
+910
+01:29:12.857 --> 01:29:17.857
+Quais são as status das atividades. Então, aqui a gente tem um total de seis atividades aqui.
+
+
+911
+01:29:17.857 --> 01:29:21.857
+Seis estão prontas porque elas já foram criadas.
+
+
+912
+01:29:21.857 --> 01:29:27.857
+Não tem nenhuma em progresso. Nenhuma bloqueada, nenhuma feita, nenhuma colocada em parking. Beleza.
+
+
+913
+01:29:27.857 --> 01:29:28.857
+Então está tudo certo até aí.
+
+
+914
+01:29:28.857 --> 01:29:31.857
+Então, a gente tem essas informações?
+
+
+915
+01:29:31.857 --> 01:29:38.857
+A gente não tem as métricas dessas informações. Então a gente não tem um arquivo, né?
+
+
+916
+01:29:38.857 --> 01:29:42.857
+Task Metrics, Jason, que é um arquivo de métrica. A gente tem o de estado.
+
+
+917
+01:29:42.857 --> 01:29:53.857
+Que aí, literalmente, esse ditado é justamente para a gente poder ter o status de cada um onde ela está, E Assim Por Diante Lá E Consome Essa Informação.
+
+
+918
+01:29:53.857 --> 01:30:03.857
+E aqui o que a gente vai fazer, né? Uma das primeiras. Isso aqui eu estou mostrando para vocês assim. Mas No Final Do Dia Você Só Vai Chegar Para A Lm E Falar Cara Cria E Tal.
+
+
+919
+01:30:03.857 --> 01:30:07.857
+Isso aqui é o que vai acontecer por debaixo dos panos. Basicamente, só para vocês entenderem.
+
+
+920
+01:30:07.857 --> 01:30:11.857
+Então aqui o que ele vai fazer? Ele vai criar uma chave.
+
+
+921
+01:30:11.857 --> 01:30:16.857
+De validação. Então ele botou aqui dentro de Git e Infotesk. Spec Signing Key.
+
+
+922
+01:30:16.857 --> 01:30:24.857
+Então ele vai criar uma chave para poder fazer o Hmec que eu vou mostrar para vocês exatamente o que é Daqui A Pouco Tem Uma Signing Key.
+
+
+923
+01:30:24.857 --> 01:30:30.857
+E aí vamos verificar se o passe ainda funciona. O make Dbt check para verificar se o projeto como um todo está.
+
+
+924
+01:30:30.857 --> 01:30:36.857
+Ok, a gente tem o esqueleto do projeto do Dbt aqui com o Dbt Profiles.
+
+
+925
+01:30:36.857 --> 01:30:38.857
+So far so good. Tudo bem.
+
+
+926
+01:30:38.857 --> 01:30:40.857
+Então, beleza. ótimos.
+
+
+927
+01:30:40.857 --> 01:30:43.857
+Agora a gente vai literalmente para o primeiro script, que é sobre.
+
+
+928
+01:30:43.857 --> 01:30:45.857
+O verde que aprova tudo.
+
+
+929
+01:30:45.857 --> 01:30:52.857
+Então, quando a gente executa esses testes de forma determinística, ou, na verdade, essas execuções.
+
+
+930
+01:30:52.857 --> 01:30:55.857
+O que a gente vai ter aqui. Opa.
+
+
+931
+01:30:55.857 --> 01:30:57.857
+Fiz caquinha. Calma aí.
+
+
+932
+01:30:57.857 --> 01:31:02.857
+Primeiro. Eu vou executar um Exit tal para dar zero.
+
+
+933
+01:31:02.857 --> 01:31:04.857
+Então eu fiz um eco aqui. Beleza.
+
+
+934
+01:31:04.857 --> 01:31:09.857
+Depois eu estou na verdade olhando um artefato.
+
+
+935
+01:31:09.857 --> 01:31:15.857
+Que vai dar verde, mas na verdade, não me diz absolutamente nada. é um Dbt check.
+
+
+936
+01:31:15.857 --> 01:31:19.857
+Que também não me prova nada. Só me prova que a máquina.
+
+
+937
+01:31:19.857 --> 01:31:21.857
+Consegue, de fato executar.
+
+
+938
+01:31:21.857 --> 01:31:23.857
+E no final, a gente tem um teste aqui.
+
+
+939
+01:31:23.857 --> 01:31:33.857
+Que vai fazer o quê? Que vai verificar se esse arquivo existe. Basicamente, né? Todos saíram com Exec. Tudo certo. Até aí.
+
+
+940
+01:31:33.857 --> 01:31:36.857
+Agora vamos rodar esse carinha aqui.
+
+
+941
+01:31:36.857 --> 01:31:43.857
+Então esse cara aqui é um teste Dbt models, Staging Std Grashmordsql.
+
+
+942
+01:31:43.857 --> 01:31:48.857
+Então, quando eu fizer esse cara aqui, ele dê um Exit. Um.
+
+
+943
+01:31:48.857 --> 01:31:54.857
+Por que ele deu um Exit um? Ou se a gente vier aqui dentro da pasta? Dbt.
+
+
+944
+01:31:54.857 --> 01:31:56.857
+Modelos.
+
+
+945
+01:31:56.857 --> 01:31:58.857
+E vier em Staging.
+
+
+946
+01:31:58.857 --> 01:32:03.857
+Esse arquivo não está aqui. Então, literalmente, ele deu um exit.
+
+
+947
+01:32:03.857 --> 01:32:06.857
+Ele não existe.
+
+
+948
+01:32:06.857 --> 01:32:10.857
+Agora a gente vai fazer uma coisa legal. Olha só. Que interessante.
+
+
+949
+01:32:10.857 --> 01:32:13.857
+A gente vai simular.
+
+
+950
+01:32:13.857 --> 01:32:18.857
+Um processo para validar.
+
+
+951
+01:32:18.857 --> 01:32:22.857
+Essa tarefa de alguma forma. Então eu vou criar aqui.
+
+
+952
+01:32:22.857 --> 01:32:24.857
+Uma pasta.
+
+
+953
+01:32:24.857 --> 01:32:28.857
+E daí? A gente vai basicamente vincular.
+
+
+954
+01:32:28.857 --> 01:32:30.857
+Vamos mostrar aqui o que tem nessa. Tem.
+
+
+955
+01:32:30.857 --> 01:32:39.857
+Deixa eu abrir aqui.
+
+
+956
+01:32:39.857 --> 01:32:43.857
+Então, olha só. é uma tarefa vilã, na verdade, né?
+
+
+957
+01:32:43.857 --> 01:32:48.857
+Então você tem uma tarefa com as informações. Teoricamente, que a gente copiou beleza.
+
+
+958
+01:32:48.857 --> 01:32:51.857
+Essa atividade foi criada aqui.
+
+
+959
+01:32:51.857 --> 01:32:53.857
+E o que a gente vai fazer? Na verdade.
+
+
+960
+01:32:53.857 --> 01:32:56.857
+Verificar.
+
+
+961
+01:32:56.857 --> 01:33:00.857
+Essa atividade aqui.
+
+
+962
+01:33:00.857 --> 01:33:04.857
+Deu se. O modelo está presente.
+
+
+963
+01:33:04.857 --> 01:33:06.857
+Quando a gente executar esse teste.
+
+
+964
+01:33:06.857 --> 01:33:10.857
+Eu tenho aqui o modelo Stage in Orders.
+
+
+965
+01:33:10.857 --> 01:33:12.857
+Então, se eu desligar aqui.
+
+
+966
+01:33:12.857 --> 01:33:16.857
+Dbt models, staging.
+
+
+967
+01:33:16.857 --> 01:33:20.857
+Others.
+
+
+968
+01:33:20.857 --> 01:33:21.857
+It is.
+
+
+969
+01:33:21.857 --> 01:33:24.857
+Então não tem basicamente nada errado.
+
+
+970
+01:33:24.857 --> 01:33:29.857
+Agora. Olha só. Que interessante. Se eu perguntar para a Lime.
+
+
+971
+01:33:29.857 --> 01:33:34.857
+Você é o Developer. Leia Agents Amd e o Spec em Vlan.
+
+
+972
+01:33:34.857 --> 01:33:40.857
+Existent. Execute a pena, executa apenas o exit check.
+
+
+973
+01:33:40.857 --> 01:33:45.857
+Exige. Não amplie o escopo. Quando o Exitcheck retornar a zero para e me diga o que terminou.
+
+
+974
+01:33:45.857 --> 01:33:50.857
+Então, o que ele vai fazer? Ele vai chamar. Ele vai ler Agents.
+
+
+975
+01:33:50.857 --> 01:33:53.857
+Vai ler o cara.
+
+
+976
+01:33:53.857 --> 01:33:57.857
+Ele vai tentar literalmente executar o Exit. Ele vai tentar executar.
+
+
+977
+01:33:57.857 --> 01:34:02.857
+O que está lá dentro. E aí, o que ele vai executar? Na verdade.
+
+
+978
+01:34:02.857 --> 01:34:10.857
+Está aqui. ó os exits. Então deixa eu mostrar para vocês.
+
+
+979
+01:34:10.857 --> 01:34:15.857
+Mt D quatro. Filão.
+
+
+980
+01:34:15.857 --> 01:34:18.857
+Exit checks.
+
+
+981
+01:34:18.857 --> 01:34:20.857
+Ele vai executar esses três Ivals aqui.
+
+
+982
+01:34:20.857 --> 01:34:24.857
+O primeiro Val, para verificar se esse cara existe. O segundo.
+
+
+983
+01:34:24.857 --> 01:34:27.857
+Para verificar se existe.
+
+
+984
+01:34:27.857 --> 01:34:31.857
+Cancel. A exclusão. Estão dentro desse arquivo. A gente tem.
+
+
+985
+01:34:31.857 --> 01:34:36.857
+Alguma coisa cancelled. E se dentro desse modelo, sendo dentro dessa pasta, existe alguma coisa como.
+
+
+986
+01:34:36.857 --> 01:34:40.857
+Revenue. Então, o que ele fez.
+
+
+987
+01:34:40.857 --> 01:34:44.857
+Objetivo. Terminei. O Exit retornou e olha o que ele falou.
+
+
+988
+01:34:44.857 --> 01:34:47.857
+Objetivo: criar o Stgd. Growth, ordered.
+
+
+989
+01:34:47.857 --> 01:34:53.857
+Um agregado diário porque ele olhou o check e viu o que ele precisa construir.
+
+
+990
+01:34:53.857 --> 01:34:57.857
+Então, teoricamente, o que você tem é a parte inversa.
+
+
+991
+01:34:57.857 --> 01:34:59.857
+Você está olhando? Qual é o Evol.
+
+
+992
+01:34:59.857 --> 01:35:04.857
+O que ele precisa. E falando com o objetivo de criar a decisão que foi tomada.
+
+
+993
+01:35:04.857 --> 01:35:07.857
+E como que ele vai fazer isso?
+
+
+994
+01:35:07.857 --> 01:35:09.857
+Beleza. Então ele rodou aqui.
+
+
+995
+01:35:09.857 --> 01:35:13.857
+Teve o Exit e tudo funcionou. Então, na perspectiva do agente, está tudo certo.
+
+
+996
+01:35:13.857 --> 01:35:18.857
+Se eu vier aqui e fizer um git status.
+
+
+997
+01:35:18.857 --> 01:35:20.857
+Esse arquivo foi criado.
+
+
+998
+01:35:20.857 --> 01:35:23.857
+Só que ele não foi checado ainda.
+
+
+999
+01:35:23.857 --> 01:35:25.857
+Beleza.
+
+
+1000
+01:35:25.857 --> 01:35:27.857
+E aí, o que a gente vai fazer? Tá.
+
+
+1001
+01:35:27.857 --> 01:35:30.857
+A gente vai pegar o Task Spec.
+
+
+1002
+01:35:30.857 --> 01:35:32.857
+Ele tem um cara chamado Gait.
+
+
+1003
+01:35:32.857 --> 01:35:37.857
+Para verificar a estrutura e validação desse cara.
+
+
+1004
+01:35:37.857 --> 01:35:40.857
+Olha só. Que interessante.
+
+
+1005
+01:35:40.857 --> 01:35:43.857
+Ele validou que isso não é uma tarefa real.
+
+
+1006
+01:35:43.857 --> 01:35:47.857
+Porque o Gate faz exatamente esse tipo de validação.
+
+
+1007
+01:35:47.857 --> 01:35:53.857
+E ele também olha se a lógica.
+
+
+1008
+01:35:53.857 --> 01:35:55.857
+Do Evol. Faz sentido ou não?
+
+
+1009
+01:35:55.857 --> 01:35:58.857
+Tá vendo um Ps. Three Fails.
+
+
+1010
+01:35:58.857 --> 01:36:04.857
+Então ele dá um veredito aqui de não delegar essa tarefa. Porque não faz sentido. Olha só. Que legal.
+
+
+1011
+01:36:04.857 --> 01:36:06.857
+Então ele já. Ele já.
+
+
+1012
+01:36:06.857 --> 01:36:08.857
+Ele já faz isso para a gente.
+
+
+1013
+01:36:08.857 --> 01:36:11.857
+Se a gente quiser.
+
+
+1014
+01:36:11.857 --> 01:36:16.857
+Descer ainda mais em detalhe. A gente pode dar um Task Spec Validate.
+
+
+1015
+01:36:16.857 --> 01:36:18.857
+E um test spect Todd.
+
+
+1016
+01:36:18.857 --> 01:36:22.857
+Para verificar o conteúdo e aonde é o possível problema.
+
+
+1017
+01:36:22.857 --> 01:36:24.857
+Daquela atividade.
+
+
+1018
+01:36:24.857 --> 01:36:27.857
+Você consegue também verificar isso aqui.
+
+
+1019
+01:36:27.857 --> 01:36:32.857
+Obviamente que a gente vai descartar. Então, o que que a gente queria provar aqui, exatamente?
+
+
+1020
+01:36:32.857 --> 01:36:35.857
+é que nós temos primeiro, uma atividade que não é uma atividade que não foi validada.
+
+
+1021
+01:36:35.857 --> 01:36:40.857
+E segundo Evalski, literalmente não tem o que a gente espera.
+
+
+1022
+01:36:40.857 --> 01:36:44.857
+Beleza.
+
+
+1023
+01:36:44.857 --> 01:36:48.857
+Então, olha só. Que interessante. O loop funcionou.
+
+
+1024
+01:36:48.857 --> 01:36:54.857
+Mas no final das contas, não provou nada. Beleza. A gente checou o arquivo existente.
+
+
+1025
+01:36:54.857 --> 01:36:56.857
+A gente verificou se existe o cancelled.
+
+
+1026
+01:36:56.857 --> 01:37:03.857
+E a gente verificou se existe alguma coisa relacionada a revenue, mas no final do dia, não diz absolutamente nada para a gente.
+
+
+1027
+01:37:03.857 --> 01:37:10.857
+Então, passar num teste é diferente de ter um significado, literalmente. Eu acho que é isso que a gente está tentando entender aqui.
+
+
+1028
+01:37:10.857 --> 01:37:15.857
+Uma coisa é você executar um teste. Outra coisa é existir significado.
+
+
+1029
+01:37:15.857 --> 01:37:17.857
+Nesse teste.
+
+
+1030
+01:37:17.857 --> 01:37:19.857
+Então, no final do dia.
+
+
+1031
+01:37:19.857 --> 01:37:24.857
+Um Evol para ele ser literalmente um evol. Ele tem que ser. O quê?
+
+
+1032
+01:37:24.857 --> 01:37:27.857
+Falsifiable.
+
+
+1033
+01:37:27.857 --> 01:37:32.857
+é isso? No final do dia, é isso que a gente quer entender.
+
+
+1034
+01:37:32.857 --> 01:37:43.857
+Eu posso escrever vários testes, mas no final do dia, eu literalmente preciso. Eu tenho que ir para que um Vol Seja Um Ivol.
+
+
+1035
+01:37:43.857 --> 01:37:46.857
+Um load bearing, algo extremamente importante.
+
+
+1036
+01:37:46.857 --> 01:37:48.857
+Ele tem que ser falsifiable.
+
+
+1037
+01:37:48.857 --> 01:37:50.857
+Então ele vai vermelho.
+
+
+1038
+01:37:50.857 --> 01:37:54.857
+Quando o negócio realmente não funciona.
+
+
+1039
+01:37:54.857 --> 01:37:58.857
+Não simplesmente True ou não. Então ele tem que ter literalmente um significado em cima dele.
+
+
+1040
+01:37:58.857 --> 01:38:04.857
+Então, por exemplo, se a gente quiser quebrar uma lógica de propósito. Olha só. Que interessante.
+
+
+1041
+01:38:04.857 --> 01:38:08.857
+O que seria um bom evol, o que seria literalmente um processo.
+
+
+1042
+01:38:08.857 --> 01:38:14.857
+Olha só. Que interessante, Rafa. A gente tem aqui o processo de mutação. Então, o que é isso? Eu vou injetar.
+
+
+1043
+01:38:14.857 --> 01:38:16.857
+Um problema.
+
+
+1044
+01:38:16.857 --> 01:38:23.857
+Para que eu literalmente possa ter um igual forte, um igual fraco. Então aqui a gente vai tentar não só Entender O Que é O Evival.
+
+
+1045
+01:38:23.857 --> 01:38:29.857
+Mas a gente vai tentar fazer com que o Evol seja forte. Ele seja um ótimo evol como que a gente faz isso.
+
+
+1046
+01:38:29.857 --> 01:38:32.857
+Adicionando mutação, o que é uma mutação.
+
+
+1047
+01:38:32.857 --> 01:38:35.857
+é uma mudança extremamente simplória. Ali.
+
+
+1048
+01:38:35.857 --> 01:38:40.857
+Que vai ter um efeito controverso do que você espera. Mas isso é intencional.
+
+
+1049
+01:38:40.857 --> 01:38:43.857
+Para ver quem sobrevive e quem não. Por exemplo.
+
+
+1050
+01:38:43.857 --> 01:38:47.857
+Você tem o seu Baseline. Seu projeto, seu processo o dia todo.
+
+
+1051
+01:38:47.857 --> 01:38:50.857
+E aí eu vou trazer a primeira mutação.
+
+
+1052
+01:38:50.857 --> 01:38:54.857
+Dropar a coluna Drop by.
+
+
+1053
+01:38:54.857 --> 01:38:56.857
+O que vai acontecer.
+
+
+1054
+01:38:56.857 --> 01:38:58.857
+Olha só. Que legal. Isso.
+
+
+1055
+01:38:58.857 --> 01:39:02.857
+Vai, Builder! Não, não vai buildar, né? O Dbt.
+
+
+1056
+01:39:02.857 --> 01:39:06.857
+Ele vai dar erro, beleza, isso é um evol.
+
+
+1057
+01:39:06.857 --> 01:39:09.857
+é, mas ele é muito fraco, porque ele é muito óbvio.
+
+
+1058
+01:39:09.857 --> 01:39:11.857
+Depois se renomear.
+
+
+1059
+01:39:11.857 --> 01:39:16.857
+A coluna de Date Column. Ele vai quebrar várias referências. Beleza quebrou.
+
+
+1060
+01:39:16.857 --> 01:39:19.857
+Se eu mudar Sam por Count.
+
+
+1061
+01:39:19.857 --> 01:39:24.857
+Eu ainda consigo verificar que aquele número não vai bater.
+
+
+1062
+01:39:24.857 --> 01:39:29.857
+Agora. E se eu deletar o filtro de cancelado?
+
+
+1063
+01:39:29.857 --> 01:39:32.857
+Half. Olha que massa isso aqui. O que o Task Spec faz.
+
+
+1064
+01:39:32.857 --> 01:39:39.857
+E se eu deletar o filtro de cancelado que era uma das regras da especificação.
+
+
+1065
+01:39:39.857 --> 01:39:42.857
+Esse cara aqui.
+
+
+1066
+01:39:42.857 --> 01:39:44.857
+Ele vai, Builder ou não? Vai, Builder.
+
+
+1067
+01:39:44.857 --> 01:39:50.857
+Se ou não.
+
+
+1068
+01:39:50.857 --> 01:39:52.857
+Ele vai funcionar ou não?
+
+
+1069
+01:39:52.857 --> 01:39:56.857
+Não, ele vai funcionar. U.
+
+
+1070
+01:39:56.857 --> 01:40:04.857
+Eu só estou literalmente tirando na cláusulaware. Falando cara, em vez de ser cancelado, eu tô considerando tudo.
+
+
+1071
+01:40:04.857 --> 01:40:07.857
+Então esse cara.
+
+
+1072
+01:40:07.857 --> 01:40:09.857
+Ele sofreu uma mutação.
+
+
+1073
+01:40:09.857 --> 01:40:11.857
+Ele sobreviveu.
+
+
+1074
+01:40:11.857 --> 01:40:14.857
+Então isso aqui é o quê?
+
+
+1075
+01:40:14.857 --> 01:40:17.857
+Ele é literalmente um buggy.
+
+
+1076
+01:40:17.857 --> 01:40:21.857
+Em que literalmente vale. O quê?
+
+
+1077
+01:40:21.857 --> 01:40:25.857
+Um ótimo e volta.
+
+
+1078
+01:40:25.857 --> 01:40:31.857
+Faz sentido. Rafa.
+
+
+1079
+01:40:31.857 --> 01:40:32.857
+Então aí Sim.
+
+
+1080
+01:40:32.857 --> 01:40:34.857
+Então, o que o Task Spec faz? Ele faz esse tipo de coisa.
+
+
+1081
+01:40:34.857 --> 01:40:45.857
+Ele entra e tenta entender o que seriam possíveis mutações que você vai introduzir para gerar um Ival mais forte.
+
+
+1082
+01:40:45.857 --> 01:40:51.857
+Que ainda não vai garantir muita coisa, mas ajuda bastante para não ter uma coisa extremamente idiota, né?
+
+
+1083
+01:40:51.857 --> 01:40:58.857
+Então ele vai injetar literalmente um problema. E aí a gente tem algumas coisas na Clay que te dão acesso a fazer isso.
+
+
+1084
+01:40:58.857 --> 01:41:06.857
+Lembra que quando você tem acesso ao Task Spec, ele vai fazer isso automaticamente no chat para você? Ah, eu Quero Criar Uma Atividade Executa Enfim.
+
+
+1085
+01:41:06.857 --> 01:41:13.857
+Eu estou mostrando um mecanismo interno de como ele faz. E por que ele faz para vocês entenderem a realidade dele?
+
+
+1086
+01:41:13.857 --> 01:41:16.857
+Então você pode dar um igual ao Dit aqui. Tá vendo?
+
+
+1087
+01:41:16.857 --> 01:41:26.857
+Você fala, quais foram as mutações que foram introduzidas? E ele vai te gerar um relatório do que ele acredita Que Seja Uma Boa Mutação Ou Não O Que Vai Sobreviver Durante O Processo.
+
+
+1088
+01:41:26.857 --> 01:41:28.857
+Isso aqui é bem legal.
+
+
+1089
+01:41:28.857 --> 01:41:31.857
+Então vamos dar uma olhadinha nisso. Aqui.
+
+
+1090
+01:41:31.857 --> 01:41:34.857
+Então eu vou aqui no dois.
+
+
+1091
+01:41:34.857 --> 01:41:38.857
+Então a ideia aqui a gente vai mostrar o que um Ivol.
+
+
+1092
+01:41:38.857 --> 01:41:41.857
+Que vai sobreviver ao processo como um todo.
+
+
+1093
+01:41:41.857 --> 01:41:45.857
+Então a primeira coisa é, a gente tem cinco regras, né?
+
+
+1094
+01:41:45.857 --> 01:41:53.857
+Então, se a gente fala do que é literalmente determinístico, você tem a mesma entrada, você tem o mesmo veredito.
+
+
+1095
+01:41:53.857 --> 01:41:56.857
+Você tem o Q depotente. Roda duas vezes e não muda absolutamente nada.
+
+
+1096
+01:41:56.857 --> 01:42:00.857
+Você tem o terceiro, que é barato antes de ser caro.
+
+
+1097
+01:42:00.857 --> 01:42:05.857
+Então você tem um cheque que é extremamente simples. Mas no final, você vai pagar porque você não teve um bom inval.
+
+
+1098
+01:42:05.857 --> 01:42:09.857
+Você tem algo que é extremamente bem explicado.
+
+
+1099
+01:42:09.857 --> 01:42:12.857
+Uma falha no sistema do que quebrou.
+
+
+1100
+01:42:12.857 --> 01:42:15.857
+E você tem a ideia do Falsifiable.
+
+
+1101
+01:42:15.857 --> 01:42:23.857
+Que falha quando o negócio literalmente precisava falhar. E ele realmente mostra esse problema.
+
+
+1102
+01:42:23.857 --> 01:42:28.857
+A gente precisa trabalhar. A gente precisa de um trabalho real antes de quebrar.
+
+
+1103
+01:42:28.857 --> 01:42:33.857
+Então, o que a gente vai fazer aqui? A gente vai tentar literalmente produzir esse tipo de coisa.
+
+
+1104
+01:42:33.857 --> 01:42:38.857
+A gente vai ler esse cara aqui.
+
+
+1105
+01:42:38.857 --> 01:42:40.857
+Né.
+
+
+1106
+01:42:40.857 --> 01:42:43.857
+E a gente vai tentar fazer um Dbt check.
+
+
+1107
+01:42:43.857 --> 01:42:45.857
+Para verificar esse arquivo.
+
+
+1108
+01:42:45.857 --> 01:42:47.857
+Então, vamos lá. Vamos.
+
+
+1109
+01:42:47.857 --> 01:42:51.857
+Vim aqui.
+
+
+1110
+01:42:51.857 --> 01:42:54.857
+Leia esse cara. Dá um Dbt check.
+
+
+1111
+01:42:54.857 --> 01:42:58.857
+E verificar se eu consigo literalmente buildar esse Sql.
+
+
+1112
+01:42:58.857 --> 01:43:02.857
+Então eu estou tentando literalmente Builder, esse Sql.
+
+
+1113
+01:43:02.857 --> 01:43:05.857
+Olá. O Beauty foi feito com sucesso da Skn.
+
+
+1114
+01:43:05.857 --> 01:43:09.857
+Então, literalmente, consegui criar uma tabela.
+
+
+1115
+01:43:09.857 --> 01:43:12.857
+Uma view daquela.
+
+
+1116
+01:43:12.857 --> 01:43:14.857
+Daquele script.
+
+
+1117
+01:43:14.857 --> 01:43:16.857
+Agora.
+
+
+1118
+01:43:16.857 --> 01:43:19.857
+Vamos tentar entender o seguinte.
+
+
+1119
+01:43:19.857 --> 01:43:21.857
+Esse cara funcionou.
+
+
+1120
+01:43:21.857 --> 01:43:23.857
+Agora vamos descer aqui.
+
+
+1121
+01:43:23.857 --> 01:43:28.857
+E vamos escrever um exit cheque.
+
+
+1122
+01:43:28.857 --> 01:43:33.857
+Então aqui a gente vai executar um comando.
+
+
+1123
+01:43:33.857 --> 01:43:35.857
+Vai validar o Build.
+
+
+1124
+01:43:35.857 --> 01:43:37.857
+Desse cara.
+
+
+1125
+01:43:37.857 --> 01:43:41.857
+Funcionou. A gente já tinha visto. Ele ia funcionar.
+
+
+1126
+01:43:41.857 --> 01:43:45.857
+Agora, se eu quiser introduzir. Olha lá, eu vou deletar o filtro.
+
+
+1127
+01:43:45.857 --> 01:43:49.857
+Mais nada. West ainda é válido.
+
+
+1128
+01:43:49.857 --> 01:43:51.857
+O Build continua verde.
+
+
+1129
+01:43:51.857 --> 01:43:53.857
+Mas o número é errado.
+
+
+1130
+01:43:53.857 --> 01:43:56.857
+Você está entendendo? Troquei de afazer.
+
+
+1131
+01:43:56.857 --> 01:43:58.857
+A gente vai chegar. Vocês estão pegando, né.
+
+
+1132
+01:43:58.857 --> 01:44:02.857
+A gente vai tirar o Order. Status igual. Cancel.
+
+
+1133
+01:44:02.857 --> 01:44:08.857
+E a gente vai pedir para ele compilar o Sql de novo. Vai funcionar. O Sql.
+
+
+1134
+01:44:08.857 --> 01:44:12.857
+Vai.
+
+
+1135
+01:44:12.857 --> 01:44:13.857
+Tá certo. Mas Kelly.
+
+
+1136
+01:44:13.857 --> 01:44:16.857
+Não, não está certo.
+
+
+1137
+01:44:16.857 --> 01:44:18.857
+Então ele vai dar verde.
+
+
+1138
+01:44:18.857 --> 01:44:23.857
+Então a mutação é um bug que foi realmente entregue.
+
+
+1139
+01:44:23.857 --> 01:44:25.857
+Como que a gente fecha esse bug.
+
+
+1140
+01:44:25.857 --> 01:44:30.857
+Então, o que, teoricamente, a gente tem que fazer é legitimar.
+
+
+1141
+01:44:30.857 --> 01:44:34.857
+Aquela informação como que a gente legitima aquela informação.
+
+
+1142
+01:44:34.857 --> 01:44:43.857
+A gente tem que literalmente fazer o quê? Um Behavioral check para comparar o modelo produzido contra a fonte.
+
+
+1143
+01:44:43.857 --> 01:44:48.857
+E aí sim, falasse. Aquilo é certo ou não?
+
+
+1144
+01:44:48.857 --> 01:44:52.857
+Então, o que eu estou fazendo? Estou indo lá no Ductb.
+
+
+1145
+01:44:52.857 --> 01:44:57.857
+Verificando se essa informação, esse select bate com o Select.
+
+
+1146
+01:44:57.857 --> 01:45:00.857
+Do é.
+
+
+1147
+01:45:00.857 --> 01:45:02.857
+Do Post, Criscon.
+
+
+1148
+01:45:02.857 --> 01:45:07.857
+O analítico. Então aqui eu estou literalmente fazendo o quê? A comparação.
+
+
+1149
+01:45:07.857 --> 01:45:10.857
+Desses caras. Isso é o que a gente chama do Ground Truth da verdade como um todo.
+
+
+1150
+01:45:10.857 --> 01:45:15.857
+E aí a gente tem. O quê, né.
+
+
+1151
+01:45:15.857 --> 01:45:21.857
+Se a gente vier aqui, a gente teve uma mutação que é muito forte.
+
+
+1152
+01:45:21.857 --> 01:45:29.857
+Então isso aqui mostra pra gente que quando a gente cria voz, ou quando a gente está criando uma atividade, Alguma Coisa O Que A Gente Quer Garantir.
+
+
+1153
+01:45:29.857 --> 01:45:32.857
+A gente quer pensar exatamente.
+
+
+1154
+01:45:32.857 --> 01:45:39.857
+O que você quer considerar para aquilo. Por isso que o rapa fala da importância de realmente entender.
+
+
+1155
+01:45:39.857 --> 01:45:42.857
+Mesmo aqui que a gente está gerando tarefas literalmente atômicas.
+
+
+1156
+01:45:42.857 --> 01:45:47.857
+Você quer entender? Pô, beleza. Eu gerei esse e Val. Ele sobrevive.
+
+
+1157
+01:45:47.857 --> 01:45:52.857
+Há uma mutação. é exatamente esse tipo de vol que eu quero ter no meu sistema.
+
+
+1158
+01:45:52.857 --> 01:46:06.857
+Tá? Eu quero validar e garantir que esse cara vai funcionar.
+
+
+1159
+01:46:06.857 --> 01:46:08.857
+Aí. Aqui a gente tem um.
+
+
+1160
+01:46:08.857 --> 01:46:12.857
+Uma feature dentro do Task Spec, que é o Evaldit.
+
+
+1161
+01:46:12.857 --> 01:46:21.857
+E tem algumas informações que você pode adicionar à mutação para verificar o que você vai fazer ou não. Eventualmente. Obviamente Que Você Vai Trabalhar Junto Com A Llm Para Poder Te Ajudar A Fazer Isso.
+
+
+1162
+01:46:21.857 --> 01:46:25.857
+é só para vocês terem ideia do quão isso é importante.
+
+
+1163
+01:46:25.857 --> 01:46:29.857
+Então a gente consegue provar que a gente sobreviveu. Mas aquilo ou não.
+
+
+1164
+01:46:29.857 --> 01:46:33.857
+Funcionou. O que eu quero provar para vocês no final do dia, mostrando isso só uma coisa.
+
+
+1165
+01:46:33.857 --> 01:46:36.857
+Não acredite em tudo que é Iá.
+
+
+1166
+01:46:36.857 --> 01:46:43.857
+Falha para você. Se você está num sistema de produção que exige complexidade.
+
+
+1167
+01:46:43.857 --> 01:46:47.857
+Que exige seriedade, que exige, de fato.
+
+
+1168
+01:46:47.857 --> 01:46:51.857
+Você focar aonde você vai focar.
+
+
+1169
+01:46:51.857 --> 01:46:54.857
+No código. Não se eu focar no igual.
+
+
+1170
+01:46:54.857 --> 01:46:57.857
+Você vai focar numa intenção. Você vai focar no evol.
+
+
+1171
+01:46:57.857 --> 01:46:59.857
+Você vai literalmente entender isso.
+
+
+1172
+01:46:59.857 --> 01:47:03.857
+E aí uma das coisas que são legais para você lascar llm.
+
+
+1173
+01:47:03.857 --> 01:47:06.857
+Você dá uma prova para ela.
+
+
+1174
+01:47:06.857 --> 01:47:12.857
+Então, por exemplo, inclusive isso. Existe um specbench para poder fazer isso.
+
+
+1175
+01:47:12.857 --> 01:47:14.857
+Que valida literalmente.
+
+
+1176
+01:47:14.857 --> 01:47:19.857
+é um invóqueio. A gente não pode ler. Então, se você parar para pensar, rapidão.
+
+
+1177
+01:47:19.857 --> 01:47:25.857
+O que acontece aqui na vida real, né? Quando ele entra dentro dessa tabela aqui.
+
+
+1178
+01:47:25.857 --> 01:47:27.857
+Quando ele entra dentro da Task.
+
+
+1179
+01:47:27.857 --> 01:47:30.857
+Ele está lendo o Evol, né?
+
+
+1180
+01:47:30.857 --> 01:47:33.857
+Ou Llm tem acesso à leitura do Ivol. Aqui.
+
+
+1181
+01:47:33.857 --> 01:47:36.857
+E veja que existem voos muito bem feitos aqui. Tá por padrão.
+
+
+1182
+01:47:36.857 --> 01:47:39.857
+Ele sabe. L.
+
+
+1183
+01:47:39.857 --> 01:47:48.857
+Ou evol em advance. Só que aí o que a gente faz, né? A gente tem dois tipos de forma. A Gente Tem O Visible Evolse Que é O Eval Que Vai Estar Disponível Para Ele Tá Lendo Ali.
+
+
+1184
+01:47:48.857 --> 01:47:51.857
+E a gente tem. O Holdout.
+
+
+1185
+01:47:51.857 --> 01:47:56.857
+Que é selado. Então, o que a gente faz? A gente sela.
+
+
+1186
+01:47:56.857 --> 01:47:58.857
+O pedaço da equação.
+
+
+1187
+01:47:58.857 --> 01:48:00.857
+Então ele vê.
+
+
+1188
+01:48:00.857 --> 01:48:03.857
+Mas ele não vê tudo.
+
+
+1189
+01:48:03.857 --> 01:48:05.857
+Ele não consegue ver tudo.
+
+
+1190
+01:48:05.857 --> 01:48:10.857
+E a razão disso é justamente para que ele não saiba colar na prova como um todo.
+
+
+1191
+01:48:10.857 --> 01:48:16.857
+E aí o Task Spec tem uma série de features que faz isso. Então, ele tem o Ceo.
+
+
+1192
+01:48:16.857 --> 01:48:20.857
+Will Verify It. Na verdade, ele tem um Ceo.
+
+
+1193
+01:48:20.857 --> 01:48:24.857
+Ele tem um roadout Seal Verify run.
+
+
+1194
+01:48:24.857 --> 01:48:28.857
+Então o que ele basicamente faz, né? Ele sela aquele envelope.
+
+
+1195
+01:48:28.857 --> 01:48:29.857
+E ele fala, olha.
+
+
+1196
+01:48:29.857 --> 01:48:37.857
+Você pode ver isso. Isso aqui está selado. Você não pode ver. Então ele literalmente bota as informações dentro de Uma Carta Sela Essa Informação.
+
+
+1197
+01:48:37.857 --> 01:48:39.857
+E aí o Verify.
+
+
+1198
+01:48:39.857 --> 01:48:46.857
+Verifica se aquilo foi feito um Tempering. Se alguém já tentou ler se alguém tentou fazer alguma coisa.
+
+
+1199
+01:48:46.857 --> 01:48:48.857
+Senão ele não funciona, obviamente. Tá.
+
+
+1200
+01:48:48.857 --> 01:48:51.857
+E aí você tem um holdout run.
+
+
+1201
+01:48:51.857 --> 01:48:54.857
+Que vai literalmente executar esse cara para poder garantir.
+
+
+1202
+01:48:54.857 --> 01:48:57.857
+Que essa e volta.
+
+
+1203
+01:48:57.857 --> 01:48:59.857
+Ele literalmente.
+
+
+1204
+01:48:59.857 --> 01:49:01.857
+Está válido ou não?
+
+
+1205
+01:49:01.857 --> 01:49:07.857
+That. Então vamos dar uma olhadinha aqui, rapidinho.
+
+
+1206
+01:49:07.857 --> 01:49:14.857
+A gente está no tres. Isso tá certo. Tá.
+
+
+1207
+01:49:14.857 --> 01:49:16.857
+Que eu deixei a explicação como um todo. Tá.
+
+
+1208
+01:49:16.857 --> 01:49:19.857
+Então aqui você tem as partes em que são vistas.
+
+
+1209
+01:49:19.857 --> 01:49:25.857
+E aqui a gente tem a parte que não está vista. Tá vendo.
+
+
+1210
+01:49:25.857 --> 01:49:29.857
+Não existe uma parte que foi escrita, e ela vai fazer isso.
+
+
+1211
+01:49:29.857 --> 01:49:33.857
+Que está aqui e ainda não foi vista. Então a Llm não tem acesso.
+
+
+1212
+01:49:33.857 --> 01:49:36.857
+A esse tipo de informação.
+
+
+1213
+01:49:36.857 --> 01:49:39.857
+Então, só para vocês verem aqui. Se eu vier no Tmp.
+
+
+1214
+01:49:39.857 --> 01:49:47.857
+Estou mostrando rápido, tá gente? A gente vai ter treinamento só sobre Test Spec. Treinamento só sobre Dge do Rafa.
+
+
+1215
+01:49:47.857 --> 01:49:54.857
+Treinamento só sobre Deep Dive. Disso tudo porque é muita coisa. Só quero que vocês comecem a ter uma ideia.
+
+
+1216
+01:49:54.857 --> 01:50:01.857
+Da quantidade de coisas que a gente pode criar para poder trabalhar o processo como um todo. é isso.
+
+
+1217
+01:50:01.857 --> 01:50:05.857
+Então a gente vai vir aqui em.
+
+
+1218
+01:50:05.857 --> 01:50:08.857
+D quatro. Rod.
+
+
+1219
+01:50:08.857 --> 01:50:11.857
+Bundle. E aí, ó.
+
+
+1220
+01:50:11.857 --> 01:50:13.857
+Você tem aqui, né?
+
+
+1221
+01:50:13.857 --> 01:50:15.857
+O que seria.
+
+
+1222
+01:50:15.857 --> 01:50:17.857
+Uma validação de Ground Truth.
+
+
+1223
+01:50:17.857 --> 01:50:22.857
+O que seria um label para verificar isso aqui. Llm não vê.
+
+
+1224
+01:50:22.857 --> 01:50:25.857
+Tá? Ela não tem acesso.
+
+
+1225
+01:50:25.857 --> 01:50:28.857
+E aí, o que a gente vai fazer? A gente vai selar.
+
+
+1226
+01:50:28.857 --> 01:50:30.857
+Isso com test spec.
+
+
+1227
+01:50:30.857 --> 01:50:33.857
+Eu vou chegar aqui.
+
+
+1228
+01:50:33.857 --> 01:50:36.857
+Eu vou selar esse cara.
+
+
+1229
+01:50:36.857 --> 01:50:39.857
+Aí. O que ele vai fazer?
+
+
+1230
+01:50:39.857 --> 01:50:44.857
+Ele falou para mim que o descriptor Jason não! Certify You exist.
+
+
+1231
+01:50:44.857 --> 01:50:46.857
+Deixa eu ver se é isso.
+
+
+1232
+01:50:46.857 --> 01:50:50.857
+Não. Por que que deu.
+
+
+1233
+01:50:50.857 --> 01:50:52.857
+Deixa eu testado. Agora.
+
+
+1234
+01:50:52.857 --> 01:50:54.857
+Por que ele não conseguiu selar.
+
+
+1235
+01:50:54.857 --> 01:50:58.857
+Temp D quatro Rodibi, Bundle.
+
+
+1236
+01:50:58.857 --> 01:51:00.857
+Bundle.
+
+
+1237
+01:51:00.857 --> 01:51:03.857
+Será que eu tenho que adicionar? Tem que adicional.
+
+
+1238
+01:51:03.857 --> 01:51:07.857
+Não está certo. Descriptor Jason.
+
+
+1239
+01:51:07.857 --> 01:51:11.857
+Catchy Holdout, Skipto.
+
+
+1240
+01:51:11.857 --> 01:51:19.857
+Cannot Read Bundle Android Party. Deixa eu ver se eu consigo.
+
+
+1241
+01:51:19.857 --> 01:51:21.857
+Consertar ele aqui.
+
+
+1242
+01:51:21.857 --> 01:51:28.857
+Vamos ver se eu tenho que especificar obrigatoriamente.
+
+
+1243
+01:51:28.857 --> 01:51:33.857
+Composition dele. Barra.
+
+
+1244
+01:51:33.857 --> 01:51:36.857
+Com.
+
+
+1245
+01:51:36.857 --> 01:51:38.857
+Position.
+
+
+1246
+01:51:38.857 --> 01:51:47.857
+Ponto aceite.
+
+
+1247
+01:51:47.857 --> 01:52:10.857
+Bundle. Etienne Composition Sh. Tá, deixa eu ver aqui. Então.
+
+
+1248
+01:52:10.857 --> 01:52:15.857
+Vai se ele resolve aqui. Tá? Mas é só mostrar na prática. Ele vai selar essa informação.
+
+
+1249
+01:52:15.857 --> 01:52:22.857
+E daí? Basicamente, quando o Llm tentar acessar essa informação aqui, ele não vai conseguir fazer.
+
+
+1250
+01:52:22.857 --> 01:52:28.857
+A ideia é justamente com que ele não precise. Ele não saiba de toda a informação.
+
+
+1251
+01:52:28.857 --> 01:52:33.857
+Para que ele possa criar bons e vals, invalidar esses e vals.
+
+
+1252
+01:52:33.857 --> 01:52:37.857
+E aí, quem vai falar? O que está certo, o que não está certo, né?
+
+
+1253
+01:52:37.857 --> 01:52:41.857
+Então, exatamente a gente tem o humano no loop. Para isso.
+
+
+1254
+01:52:41.857 --> 01:52:44.857
+Então, o Task Spec também faz isso.
+
+
+1255
+01:52:44.857 --> 01:52:48.857
+Ele entende na hora que você faz um stamping nessa atividade.
+
+
+1256
+01:52:48.857 --> 01:52:51.857
+O que vai ser aceito ou o que não vai ser. Aceito.
+
+
+1257
+01:52:51.857 --> 01:52:56.857
+E obviamente que o que ele vai fazer, ele vai colocar o humano no loop quando ele acha que é necessário fazer.
+
+
+1258
+01:52:56.857 --> 01:52:58.857
+Tá.
+
+
+1259
+01:52:58.857 --> 01:53:01.857
+Verificar aqui se a gente consegue fazer. O Holdout.
+
+
+1260
+01:53:01.857 --> 01:53:05.857
+Outra coisa também que ele faz é, ele tem.
+
+
+1261
+01:53:05.857 --> 01:53:08.857
+Diferentes tipos de selo de selagem. Então ele pode fazer uma selagem em nível um.
+
+
+1262
+01:53:08.857 --> 01:53:13.857
+Que é mais simples nível dois, que é mais estrutural e complexo.
+
+
+1263
+01:53:13.857 --> 01:53:16.857
+E Tier Iii. Então ele tem vários tipos de selagem que ele faz. Então aqui.
+
+
+1264
+01:53:16.857 --> 01:53:21.857
+Quando ele sela aquela atividade. Basicamente você tem aqui sign off true.
+
+
+1265
+01:53:21.857 --> 01:53:25.857
+Então, beleza. Ele selou. Quem foi que selou.
+
+
+1266
+01:53:25.857 --> 01:53:28.857
+Quando foi selado. E ele tem essa identidade aqui da chave gerada.
+
+
+1267
+01:53:28.857 --> 01:53:35.857
+Essa chave gerada foi gerada lá no seu repositório. Lembro quando a gente deu um Task spec Signing.
+
+
+1268
+01:53:35.857 --> 01:53:42.857
+O que ele fez. Ele criou essa chave. E aí ele verifica essa chave com isso, para verificar se está Tudo Certo Ou Não.
+
+
+1269
+01:53:42.857 --> 01:53:46.857
+Se tiver algum tipo de problema Tempering, alguém tentou acessar. Fez qualquer tipo de coisa.
+
+
+1270
+01:53:46.857 --> 01:53:52.857
+Ele fala que o selo foi quebrado. E aí ele literalmente falha.
+
+
+1271
+01:53:52.857 --> 01:53:55.857
+E ele não vai proceder.
+
+
+1272
+01:53:55.857 --> 01:53:59.857
+Basicamente isso que eu estou explicando.
+
+
+1273
+01:53:59.857 --> 01:54:15.857
+Então deixa eu ver se a gente conseguiu.
+
+
+1274
+01:54:15.857 --> 01:54:19.857
+Tá? Ele fez o celag.
+
+
+1275
+01:54:19.857 --> 01:54:28.857
+Ah, não. Acho que eu sei o que é que aconteceu. Caminho, vamos ver se vamos ver se agora vai.
+
+
+1276
+01:54:28.857 --> 01:54:31.857
+Ele quebrou na hora da esquerda.
+
+
+1277
+01:54:31.857 --> 01:54:36.857
+é? Ele quebrou na hora da escrita.
+
+
+1278
+01:54:36.857 --> 01:54:39.857
+Olá, então aqui, ó eu celei.
+
+
+1279
+01:54:39.857 --> 01:54:43.857
+Eu falei: qual é o contrato? Qual é a tarefa, né?
+
+
+1280
+01:54:43.857 --> 01:54:45.857
+Qual é a chave?
+
+
+1281
+01:54:45.857 --> 01:54:48.857
+Quais são os comportamentos.
+
+
+1282
+01:54:48.857 --> 01:54:51.857
+Quantos aí? Ela não foi selada aqui.
+
+
+1283
+01:54:51.857 --> 01:54:56.857
+Mas eu consegui fazer, tá justamente por causa disso.
+
+
+1284
+01:54:56.857 --> 01:55:02.857
+Beleza.
+
+
+1285
+01:55:02.857 --> 01:55:08.857
+E aí, o que eu quero mostrar para vocês com isso, né? Uma vez que a atividade sai.
+
+
+1286
+01:55:08.857 --> 01:55:12.857
+Da criação atômica. Você tem checks.
+
+
+1287
+01:55:12.857 --> 01:55:14.857
+Nela. Você.
+
+
+1288
+01:55:14.857 --> 01:55:19.857
+Habilita ela para estar pronta para ser executada. O que vai acontecer.
+
+
+1289
+01:55:19.857 --> 01:55:24.857
+Ela vai passar por todo esse processo de looping. Qual é a parte legal do Task Spec?
+
+
+1290
+01:55:24.857 --> 01:55:26.857
+Ele já tem um loop dentro dele.
+
+
+1291
+01:55:26.857 --> 01:55:29.857
+Então as atividades são o próprio looping.
+
+
+1292
+01:55:29.857 --> 01:55:31.857
+O que no final, acontece.
+
+
+1293
+01:55:31.857 --> 01:55:34.857
+Essa atividade está pronta.
+
+
+1294
+01:55:34.857 --> 01:55:38.857
+Elas já tem os Gates estabelecidos pela gente. Ela vai ser executada.
+
+
+1295
+01:55:38.857 --> 01:55:40.857
+Ela vai ser aceita.
+
+
+1296
+01:55:40.857 --> 01:55:42.857
+Que é exatamente a última parte.
+
+
+1297
+01:55:42.857 --> 01:55:45.857
+E ela vai dar como Donny. E ela vai mover esse estado.
+
+
+1298
+01:55:45.857 --> 01:55:48.857
+Então, basicamente, o que a gente vai ver acontecer.
+
+
+1299
+01:55:48.857 --> 01:55:53.857
+é literalmente pô. Ela está pronta. Passou pelo Gate. Foi aprovada. Executou.
+
+
+1300
+01:55:53.857 --> 01:56:02.857
+Coletei o resultado. Marquei como Donny. Aprendi sobre isso e fiquei literalmente lupando sobre isso. é o que você vai começar a ver.
+
+
+1301
+01:56:02.857 --> 01:56:06.857
+Aqui na hora que a gente começar a executar.
+
+
+1302
+01:56:06.857 --> 01:56:15.857
+Dessas atividades, elas vão ter aqui uma moção entre elas. Ela vai começar a passar de um lado para o outro.
+
+
+1303
+01:56:15.857 --> 01:56:18.857
+Nós vamos começar a ser executadas, tá?
+
+
+1304
+01:56:18.857 --> 01:56:25.857
+Vamos executar o quatro para executar o cinco. A gente consegue fazer.
+
+
+1305
+01:56:25.857 --> 01:56:28.857
+Alguma aqui no quatro.
+
+
+1306
+01:56:28.857 --> 01:56:33.857
+Que a autorização.
+
+
+1307
+01:56:33.857 --> 01:56:38.857
+E aí, o que eu vou fazer aqui para a gente adiantar.
+
+
+1308
+01:56:38.857 --> 01:56:41.857
+Eu vou simplesmente pedir para ele executar o quatro e o cinco.
+
+
+1309
+01:56:41.857 --> 01:56:49.857
+Para a gente deixar as tarefas prontas.
+
+
+1310
+01:56:49.857 --> 01:56:53.857
+Para vocês verem exatamente o processo.
+
+
+1311
+01:56:53.857 --> 01:57:17.857
+Pela Lime. Então a gente quer executar o três.
+
+
+1312
+01:57:17.857 --> 01:57:19.857
+E aí, tudo isso que eu mostrei para vocês.
+
+
+1313
+01:57:19.857 --> 01:57:24.857
+é a Clay. Por que eu mostrei para vocês? A Clay foi para causar mais confusão.
+
+
+1314
+01:57:24.857 --> 01:57:29.857
+Não só para vocês verem que a Engenharia não morreu.
+
+
+1315
+01:57:29.857 --> 01:57:31.857
+é isso que eu quero mostrar para vocês. Eu espero que vocês tenham entendido a mensagem.
+
+
+1316
+01:57:31.857 --> 01:57:37.857
+Porque no final das contas, vai ser tudo abstraído. A gente vai ter um fluxo, cara. Primeiro estágio.
+
+
+1317
+01:57:37.857 --> 01:57:49.857
+Install Task Spec. Segundo ver quais as atividades decompõe. Depois cria as atividades. Então, por debaixo dos panos, ele está Fazendo O Quê Ele Está Chamando A Celi Fazendo Verificações Aplicando Técnicas Enfim.
+
+
+1318
+01:57:49.857 --> 01:57:55.857
+Para vocês entenderem que existe um processo de engenharia que não é só, Ah, beleza. Mandei no chat. Ele simplesmente vai fazer.
+
+
+1319
+01:57:55.857 --> 01:58:02.857
+Não. E aí, o que o chat substitui, né? Substitui exatamente o processo humano do rolê.
+
+
+1320
+01:58:02.857 --> 01:58:07.857
+Que é exatamente isso? A gente está delegando para uma inteligência fazer exatamente isso.
+
+
+1321
+01:58:07.857 --> 01:58:09.857
+Então aqui. ó, ele está lendo.
+
+
+1322
+01:58:09.857 --> 01:58:13.857
+O que que é de fato, checando as atividades.
+
+
+1323
+01:58:13.857 --> 01:58:16.857
+E validando elas aqui. Enquanto a gente conversa.
+
+
+1324
+01:58:16.857 --> 01:58:19.857
+Já. Já! Deixa colocá las para rodarem, tá?
+
+
+1325
+01:58:19.857 --> 01:58:23.857
+Que a gente vai para o cinco de Waves. Que é.
+
+
+1326
+01:58:23.857 --> 01:58:25.857
+Começar a executar essas atividades.
+
+
+1327
+01:58:25.857 --> 01:58:29.857
+E aí, o que? Que é legal, né? Aqui nessa parte.
+
+
+1328
+01:58:29.857 --> 01:58:35.857
+A gente vai ver que quando elas estão prontas para serem feitas, é gerado um grafo.
+
+
+1329
+01:58:35.857 --> 01:58:40.857
+E aí, o que acontece desse grafo? Ele te mostra exatamente o que vai ser executado.
+
+
+1330
+01:58:40.857 --> 01:58:43.857
+Qual a sequência que vai ser executada. E daí ele começa.
+
+
+1331
+01:58:43.857 --> 01:58:53.857
+A literalmente desaparece as atividades. Então aqui. ó, deixa eu abrir o D cinco.
+
+
+1332
+01:58:53.857 --> 01:58:56.857
+Ziva. Deixei o Workflow aqui.
+
+
+1333
+01:58:56.857 --> 01:58:59.857
+Então a gente começa o processo. Aceita.
+
+
+1334
+01:58:59.857 --> 01:59:02.857
+Transiciona, volta.
+
+
+1335
+01:59:02.857 --> 01:59:06.857
+Trabalho em paralelo. Aceita, escreve. Então ele vai ficar rodando.
+
+
+1336
+01:59:06.857 --> 01:59:08.857
+Então eu vou fazer um task link.
+
+
+1337
+01:59:08.857 --> 01:59:13.857
+Para verificar se todas as atividades estão corretas.
+
+
+1338
+01:59:13.857 --> 01:59:25.857
+Aí. Olha só aqui, ó, vamos ver se ele já terminou. Lá porque essa parte é bem legal.
+
+
+1339
+01:59:25.857 --> 01:59:28.857
+Beleza. Task spec lynching.
+
+
+1340
+01:59:28.857 --> 01:59:31.857
+Tudo ok, nenhum problema.
+
+
+1341
+01:59:31.857 --> 01:59:33.857
+Aí. A gente teve isso aqui.
+
+
+1342
+01:59:33.857 --> 01:59:36.857
+Ai. Olha só.
+
+
+1343
+01:59:36.857 --> 01:59:39.857
+Desk Spec Ready.
+
+
+1344
+01:59:39.857 --> 01:59:42.857
+Quais são as atividades que estão.
+
+
+1345
+01:59:42.857 --> 01:59:47.857
+Disponíveis para serem executadas agora.
+
+
+1346
+01:59:47.857 --> 01:59:50.857
+E o Task Spec Ready. All.
+
+
+1347
+01:59:50.857 --> 01:59:53.857
+Todas as seis que estão.
+
+
+1348
+01:59:53.857 --> 01:59:57.857
+E olha só. Que parada, foda. Ninguém vai falar, foda. Não.
+
+
+1349
+01:59:57.857 --> 02:00:01.857
+A atividade está vinculada para o agente que a gente falou. Está vendo.
+
+
+1350
+02:00:01.857 --> 02:00:04.857
+Que louco!
+
+
+1351
+02:00:04.857 --> 02:00:06.857
+Entenderam.
+
+
+1352
+02:00:06.857 --> 02:00:08.857
+Lembra que a gente colocou isso.
+
+
+1353
+02:00:08.857 --> 02:00:13.857
+Então, na hora do Task Spec, ele vinculou qual agente vai fazer o quê?
+
+
+1354
+02:00:13.857 --> 02:00:21.857
+Então a gente pode trabalhar com dessa atividade.
+
+
+1355
+02:00:21.857 --> 02:00:25.857
+Beleza. E aqui. Olha que coisa feia.
+
+
+1356
+02:00:25.857 --> 02:00:26.857
+Dois Specs.
+
+
+1357
+02:00:26.857 --> 02:00:29.857
+Duas sessões ao mesmo tempo.
+
+
+1358
+02:00:29.857 --> 02:00:31.857
+Vamos fazer isso.
+
+
+1359
+02:00:31.857 --> 02:00:34.857
+Olha só. Que legal!
+
+
+1360
+02:00:34.857 --> 02:00:39.857
+Quem quer ver um Deep Dive de Task Spec.
+
+
+1361
+02:00:39.857 --> 02:00:41.857
+Para aprender. De fato, vocês têm interesse.
+
+
+1362
+02:00:41.857 --> 02:00:53.857
+Para aprender como funciona.
+
+
+1363
+02:00:53.857 --> 02:00:58.857
+Vocês têm vontade. Beleza.
+
+
+1364
+02:00:58.857 --> 02:01:02.857
+Então aqui test spec gate.
+
+
+1365
+02:01:02.857 --> 02:01:05.857
+Required Tier. Tarefa.
+
+
+1366
+02:01:05.857 --> 02:01:09.857
+Hand off back end cloud.
+
+
+1367
+02:01:09.857 --> 02:01:11.857
+Yacht hand off Jason.
+
+
+1368
+02:01:11.857 --> 02:01:16.857
+Vamos executar aqui.
+
+
+1369
+02:01:16.857 --> 02:01:24.857
+Essas duas atividades. Vê se consigo começar a executar essa aqui.
+
+
+1370
+02:01:24.857 --> 02:01:28.857
+E essa outra aqui.
+
+
+1371
+02:01:28.857 --> 02:01:33.857
+E aí, backend Cloud? é porque eu mandei para o cloud, né? Poderia mandar para outro.
+
+
+1372
+02:01:33.857 --> 02:01:36.857
+Vamos ver se ele vai construir.
+
+
+1373
+02:01:36.857 --> 02:01:39.857
+Olha que lindo. Uma Cielike. Simplesmente só.
+
+
+1374
+02:01:39.857 --> 02:01:42.857
+Esse cara faz, né.
+
+
+1375
+02:01:42.857 --> 02:01:44.857
+Então aqui está. Safe to handle.
+
+
+1376
+02:01:44.857 --> 02:01:48.857
+Sai off por mim. O Hitmec funcionou. Tia.
+
+
+1377
+02:01:48.857 --> 02:01:52.857
+Randolph foi feito. Foi escrito lá em Tmp D. Quatro recipes.
+
+
+1378
+02:01:52.857 --> 02:01:56.857
+Jason. E aí, só para vocês verem o que acontece aqui no hand off.
+
+
+1379
+02:01:56.857 --> 02:02:03.857
+D quatro Municípes e aí você tem o Hand Off Holdout, o Handoff Join.
+
+
+1380
+02:02:03.857 --> 02:02:07.857
+Olha o que você tem aqui.
+
+
+1381
+02:02:07.857 --> 02:02:09.857
+Você tem especificação da atividade.
+
+
+1382
+02:02:09.857 --> 02:02:13.857
+Quem é o back end? Qual é o Workspace? Qual autorização.
+
+
+1383
+02:02:13.857 --> 02:02:19.857
+Qual a temptico. Qual contrato? O que ele vai escrever? Onde ele vai escrever aquilo? Doutor Budget dele.
+
+
+1384
+02:02:19.857 --> 02:02:24.857
+Qual a gente vai produzir. O quê? Quais são os contratos que ele tem.
+
+
+1385
+02:02:24.857 --> 02:02:27.857
+Quais são os involves que ele vai executar?
+
+
+1386
+02:02:27.857 --> 02:02:32.857
+Está tudo aqui.
+
+
+1387
+02:02:32.857 --> 02:02:39.857
+Beleza, Top. Então eu tenho aqui essas duas atividades.
+
+
+1388
+02:02:39.857 --> 02:02:48.857
+E aí a gente vai basicamente pedir para a Lime, já já executar todas elas para a gente.
+
+
+1389
+02:02:48.857 --> 02:02:51.857
+Então ele gera um grafo. Ele sabe quais são as atividades.
+
+
+1390
+02:02:51.857 --> 02:02:58.857
+You fazer isso lá na formação, a gente vai ter isso lá no Boot Camp. A gente vai ter tudo isso automatizado.
+
+
+1391
+02:02:58.857 --> 02:03:03.857
+Então, basicamente, como que vai ser já pegar a atividade? Vai entender o problema. Vai compilar a intenção.
+
+
+1392
+02:03:03.857 --> 02:03:08.857
+Vai quebrar a intenção lá no Swimwise, que é literalmente.
+
+
+1393
+02:03:08.857 --> 02:03:12.857
+Scene Swing Laying His Legs. Tarefa.
+
+
+1394
+02:03:12.857 --> 02:03:15.857
+E aí? Depois você vai ter a fábrica pegando.
+
+
+1395
+02:03:15.857 --> 02:03:22.857
+Pegando o Task Spec, fazendo todo o processo. é que vocês estão entendendo um pouquinho dentro do Task Spec.
+
+
+1396
+02:03:22.857 --> 02:03:28.857
+Antes de literalmente tiver isso funcionando e acontecendo a mágica, eu pensava: Caraca, o que aconteceu aqui, né?
+
+
+1397
+02:03:28.857 --> 02:03:32.857
+Na verdade, não. Você simplesmente executou todas as atividades.
+
+
+1398
+02:03:32.857 --> 02:03:38.857
+Então é só uma parte legal de você entender os fundamentos. Porque isso vai te fazer literalmente um bom.
+
+
+1399
+02:03:38.857 --> 02:03:42.857
+Engenheiro. No final.
+
+
+1400
+02:03:42.857 --> 02:03:47.857
+E aí, no final, a gente tem que medir essas informações, né? E a gente vai medir essas informações.
+
+
+1401
+02:03:47.857 --> 02:03:52.857
+Em várias formas, né? A gente vai emitir Gates de validação.
+
+
+1402
+02:03:52.857 --> 02:03:54.857
+Que é o recibo? Como a gente viu ali.
+
+
+1403
+02:03:54.857 --> 02:04:02.857
+A gente vai medir sucesso. Quantidade de Attempts. Quanto que ele gastou Budget assim por diante.
+
+
+1404
+02:04:02.857 --> 02:04:04.857
+E a gente vai ter também.
+
+
+1405
+02:04:04.857 --> 02:04:13.857
+Essa parte interessante que é essa escrita, do que está sendo executado literalmente parte por parte.
+
+
+1406
+02:04:13.857 --> 02:04:16.857
+Então, olha só. Que interessante. Isso aqui.
+
+
+1407
+02:04:16.857 --> 02:04:21.857
+Vou chegar para a Llm só para vocês entenderem, em vez da gente executar isso aqui.
+
+
+1408
+02:04:21.857 --> 02:04:24.857
+Eu simplesmente tá. Ele está fazendo aqui? O Temperings Post Gates.
+
+
+1409
+02:04:24.857 --> 02:04:31.857
+E aqui. ó.
+
+
+1410
+02:04:31.857 --> 02:04:33.857
+Ainda tem um total. Seis.
+
+
+1411
+02:04:33.857 --> 02:04:36.857
+Ready seis.
+
+
+1412
+02:04:36.857 --> 02:04:39.857
+Vou botar aqui. End Change.
+
+
+1413
+02:04:39.857 --> 02:04:50.857
+Vou esperar ele terminar as validações. E eu vou falar para eles o seguinte.
+
+
+1414
+02:04:50.857 --> 02:04:52.857
+Na fábrica. A gente não vai precisar falar isso, tá?
+
+
+1415
+02:04:52.857 --> 02:04:55.857
+Mas aí use The Task Spec. Engine.
+
+
+1416
+02:04:55.857 --> 02:04:58.857
+To work.
+
+
+1417
+02:04:58.857 --> 02:05:02.857
+On the Desks.
+
+
+1418
+02:05:02.857 --> 02:05:05.857
+Under.
+
+
+1419
+02:05:05.857 --> 02:05:14.857
+é só isso que eu preciso fazer.
+
+
+1420
+02:05:14.857 --> 02:05:18.857
+Já explico.
+
+
+1421
+02:05:18.857 --> 02:05:21.857
+Então eu quero que.
+
+
+1422
+02:05:21.857 --> 02:05:24.857
+Todas essas atividades. Então, o que é legal? A gente vai sair aqui.
+
+
+1423
+02:05:24.857 --> 02:05:27.857
+Eu vou deixar esse cara rodando.
+
+
+1424
+02:05:27.857 --> 02:05:31.857
+E aí, amanhã a gente vai literalmente ver que todas essas atividades. Olha aqui.
+
+
+1425
+02:05:31.857 --> 02:05:36.857
+O que ele fez? Você viu que ele criou aqui uma Work Tree.
+
+
+1426
+02:05:36.857 --> 02:05:44.857
+Então, quando ele começar a trabalhar aqui, ele vai criar um amor que tri por cada tarefa isolada. Cara, tem Muita Coisa Para Mostrar Pra Vocês Assim Tipo.
+
+
+1427
+02:05:44.857 --> 02:05:51.857
+Obviamente, quem estiver no Boot Camp que eu estou mostrando um pedaço. Vocês vão navegar nisso aqui. Vai entender. E Vai Sair Como Testspect Para Vocês Utilizarem.
+
+
+1428
+02:05:51.857 --> 02:05:55.857
+Porque é canônico como eu já falei, vocês vão poder usar para qualquer projeto.
+
+
+1429
+02:05:55.857 --> 02:06:04.857
+Tanto. é para vocês terem ideia que tudo que eu faço nos meus outros repositórios, como eu já tenho agents Md Que Fala Cara Quando é Uma Tarefa Cria O Task Spec.
+
+
+1430
+02:06:04.857 --> 02:06:08.857
+Ele já vai lá na memória de Aquiles Test Spec e já mostra tudo. Olha aqui.
+
+
+1431
+02:06:08.857 --> 02:06:11.857
+Projeto em produção.
+
+
+1432
+02:06:11.857 --> 02:06:13.857
+Aqui. Olha que foda.
+
+
+1433
+02:06:13.857 --> 02:06:16.857
+Ele queria ter as atividades todinhas. Já.
+
+
+1434
+02:06:16.857 --> 02:06:25.857
+Então eu estou trabalhando aqui em alguma coisa. Enfim, e aí ele quer trabalhar no negócio. Ele já tem isso na Memória que ele Vai Acionar Toda Vez Que Ele For Ter Que Criar Olha Só Que Loucura.
+
+
+1435
+02:06:25.857 --> 02:06:28.857
+Toda vez que você tiver que criar uma atividade.
+
+
+1436
+02:06:28.857 --> 02:06:32.857
+Crie utilizando Task spec.
+
+
+1437
+02:06:32.857 --> 02:06:35.857
+E aí vai o miserável.
+
+
+1438
+02:06:35.857 --> 02:06:39.857
+E começa a criar as atividades para serem executadas.
+
+
+1439
+02:06:39.857 --> 02:06:41.857
+Para você.
+
+
+1440
+02:06:41.857 --> 02:06:43.857
+E depois só tem um loop de automação.
+
+
+1441
+02:06:43.857 --> 02:06:51.857
+Então tudo isso, no final, vai virar você pela Cieli chamando. Mas você vai entender literalmente o que acontece por Debaixo Dos Panos Essa é A Grande Loucura.
+
+
+1442
+02:06:51.857 --> 02:06:55.857
+Então aqui. ó, ele vai começar. Olha os Metrics.
+
+
+1443
+02:06:55.857 --> 02:06:58.857
+Ele já começou a trabalhar nas atividades.
+
+
+1444
+02:06:58.857 --> 02:07:02.857
+Olá. Então, Raw Pavement Source escreveu.
+
+
+1445
+02:07:02.857 --> 02:07:06.857
+Então ele tinha que escrever um Staging Ross source.
+
+
+1446
+02:07:06.857 --> 02:07:10.857
+Então vamos lá ver enquanto está acontecendo.
+
+
+1447
+02:07:10.857 --> 02:07:12.857
+Então, o Dbt.
+
+
+1448
+02:07:12.857 --> 02:07:21.857
+Models Macros. Aonde é? Calma aí.
+
+
+1449
+02:07:21.857 --> 02:07:25.857
+Staging Underscore Worse fascina.
+
+
+1450
+02:07:25.857 --> 02:07:28.857
+Foda, né.
+
+
+1451
+02:07:28.857 --> 02:07:31.857
+Eu acho muito foda.
+
+
+1452
+02:07:31.857 --> 02:07:41.857
+Uma unidade atômica, consegue se testar, validar, fazer todo o processo que a gente literalmente pediu.
+
+
+1453
+02:07:41.857 --> 02:07:46.857
+E aí vamos deixar executar enquanto a gente vai conversar. Exatamente isso.
+
+
+1454
+02:07:46.857 --> 02:07:50.857
+Então vamos olhar um pouco o futuro. Daqui para frente.
+
+
+1455
+02:07:50.857 --> 02:07:56.857
+Então só trazer algumas coisas importantes para vocês. Para vocês ficarem, né?
+
+
+1456
+02:07:56.857 --> 02:07:58.857
+No local certo, né.
+
+
+1457
+02:07:58.857 --> 02:08:04.857
+A primeira coisa que aconteceu nos últimos trinta dias. O que está acontecendo.
+
+
+1458
+02:08:04.857 --> 02:08:09.857
+Então, a primeira coisa que o mercado.
+
+
+1459
+02:08:09.857 --> 02:08:13.857
+Tem mudado cada vez mais. A gente tem evolução no mercado.
+
+
+1460
+02:08:13.857 --> 02:08:19.857
+Path. E tudo que aconteceu nessa semana, que a gente veio até aqui.
+
+
+1461
+02:08:19.857 --> 02:08:22.857
+Tudo isso, literalmente, são sinais que a gente tem.
+
+
+1462
+02:08:22.857 --> 02:08:26.857
+Da evolução da engenharia.
+
+
+1463
+02:08:26.857 --> 02:08:30.857
+Tanto na parte de looping quanto na parte de unidades atômicas.
+
+
+1464
+02:08:30.857 --> 02:08:32.857
+Quanto na parte de voz.
+
+
+1465
+02:08:32.857 --> 02:08:35.857
+Quanto na parte de looping.
+
+
+1466
+02:08:35.857 --> 02:08:37.857
+Quanto na parte de especificação.
+
+
+1467
+02:08:37.857 --> 02:08:44.857
+Quanto na parte de Forward Engineering, tá? Quem fica até o final vai ter acesso ao ao Brief Spec, que Eu Já Vou Explicar.
+
+
+1468
+02:08:44.857 --> 02:08:47.857
+Então, na verdade, isso já está acontecendo.
+
+
+1469
+02:08:47.857 --> 02:08:53.857
+Por quê? Vocês entenderam agora que o código é extremamente barato absorver esse código.
+
+
+1470
+02:08:53.857 --> 02:08:55.857
+Faz sentido. Agora. Por favor, gente.
+
+
+1471
+02:08:55.857 --> 02:08:58.857
+São dez e trinta e três. Vamos.
+
+
+1472
+02:08:58.857 --> 02:09:01.857
+Sim ou não? Ficou claro? Coloque aí no chat.
+
+
+1473
+02:09:01.857 --> 02:09:05.857
+O código. é barato. Absorver esse código não é barato.
+
+
+1474
+02:09:05.857 --> 02:09:08.857
+Como que a gente absorve essa informação.
+
+
+1475
+02:09:08.857 --> 02:09:12.857
+O Rafa mostrou. Estou mostrando um pedaço disso.
+
+
+1476
+02:09:12.857 --> 02:09:15.857
+Escreveu o código ficou basicamente de graça.
+
+
+1477
+02:09:15.857 --> 02:09:18.857
+Né.
+
+
+1478
+02:09:18.857 --> 02:09:26.857
+Um pouco difícil. Mais de conseguir ter. O quê? Um processo de validar o código.
+
+
+1479
+02:09:26.857 --> 02:09:28.857
+Não dá mais para absorver isso.
+
+
+1480
+02:09:28.857 --> 02:09:35.857
+Então, basicamente, você tem uma Iá que escreve código numa velocidade muito mais rápida do que nós humanos.
+
+
+1481
+02:09:35.857 --> 02:09:40.857
+Conseguimos revisar. Então, nesse caso, a gente precisa delegar essa informação.
+
+
+1482
+02:09:40.857 --> 02:09:44.857
+Fazer com que a gente tenha um Spec que consiga traduzir isso.
+
+
+1483
+02:09:44.857 --> 02:09:49.857
+E quem vai salvar você? De que? Olha só que em Sight foda.
+
+
+1484
+02:09:49.857 --> 02:09:52.857
+O green check is still a claim.
+
+
+1485
+02:09:52.857 --> 02:09:57.857
+Então o que você vai ter que fazer? Criar Vols Gates e processos para justamente fazer isso.
+
+
+1486
+02:09:57.857 --> 02:10:01.857
+Isso justifica o porquê que a gente precisa olhar.
+
+
+1487
+02:10:01.857 --> 02:10:03.857
+Então, quais são os passos que a gente vai fazer?
+
+
+1488
+02:10:03.857 --> 02:10:08.857
+Entender contexto, entender hardness, entender especificação.
+
+
+1489
+02:10:08.857 --> 02:10:12.857
+Entender, Lupe e Vol. Por favor, seja sincero.
+
+
+1490
+02:10:12.857 --> 02:10:20.857
+No final desse dia. Agora vocês começam a entender um pouquinho como as coisas se conectam. Claro, eu não quero Que Vocês Saia Assim Pô Eu Entendi Tudo Né.
+
+
+1491
+02:10:20.857 --> 02:10:26.857
+Mas deu para eu começar a entender, na vida real. Contexto gráfico Hardness.
+
+
+1492
+02:10:26.857 --> 02:10:29.857
+Spec loop e vol. Por quê?
+
+
+1493
+02:10:29.857 --> 02:10:31.857
+Para quê? Qual a necessidade?
+
+
+1494
+02:10:31.857 --> 02:10:34.857
+é um bocado de nome. Não.
+
+
+1495
+02:10:34.857 --> 02:10:37.857
+Me digam aí no chat, se realmente faz sentido.
+
+
+1496
+02:10:37.857 --> 02:10:40.857
+Para depois a gente construir.
+
+
+1497
+02:10:40.857 --> 02:10:46.857
+A fábrica. E aí, o que o mercado fala? O que vai acontecer daqui para frente?
+
+
+1498
+02:10:46.857 --> 02:10:51.857
+Isso aqui é a minha pesquisa extensiva com diferentes nove llms. Tá só pra vocês terem uma ideia.
+
+
+1499
+02:10:51.857 --> 02:10:55.857
+Então a primeira coisa é que a ontologia vem primeiro.
+
+
+1500
+02:10:55.857 --> 02:10:59.857
+O Harness vive dentro do seu repositório.
+
+
+1501
+02:10:59.857 --> 02:11:02.857
+Oráculo fica!
+
+
+1502
+02:11:02.857 --> 02:11:04.857
+Fora do looping.
+
+
+1503
+02:11:04.857 --> 02:11:09.857
+Julgando essa informação, que é o Flywheel que a gente mostrou.
+
+
+1504
+02:11:09.857 --> 02:11:11.857
+Então, não só a execução.
+
+
+1505
+02:11:11.857 --> 02:11:14.857
+Mas você tem que ter alguma coisa para julgar.
+
+
+1506
+02:11:14.857 --> 02:11:16.857
+é o que a gente vai começar a ver daqui pra frente.
+
+
+1507
+02:11:16.857 --> 02:11:18.857
+Quer ver uma prova disso.
+
+
+1508
+02:11:18.857 --> 02:11:24.857
+Se vocês olharem. Olha só.
+
+
+1509
+02:11:24.857 --> 02:11:32.857
+Cloud Code, Feature Regarding Observer.
+
+
+1510
+02:11:32.857 --> 02:11:40.857
+Olha isso. Aqui em Cloud Code the Observer concept typically refresh a background observer agents looking or logging hooks.
+
+
+1511
+02:11:40.857 --> 02:11:43.857
+Isso é uma Fit completamente nova que muita gente não sabe.
+
+
+1512
+02:11:43.857 --> 02:11:48.857
+Que agora o Cloud implementou uma Fitch chamada Observer.
+
+
+1513
+02:11:48.857 --> 02:11:54.857
+Que ele fica vendo o que você está fazendo. Ou seja, é o modelo fractal que eu falava muito tempo atrás.
+
+
+1514
+02:11:54.857 --> 02:11:57.857
+Um vigia, o outro que vigia o outro.
+
+
+1515
+02:11:57.857 --> 02:12:02.857
+Então isso é uma das coisas que vai acontecer que já estou. Acabei de falar aqui, que já acabou de Ser Lançado Quer Ver.
+
+
+1516
+02:12:02.857 --> 02:12:08.857
+Cloud code featured released recently regarding observer.
+
+
+1517
+02:12:08.857 --> 02:12:34.857
+Deixa eu ver se consigo pegar aqui.
+
+
+1518
+02:12:34.857 --> 02:12:48.857
+Não estou ficando can you find the link that points to the cloud code observer feature that has been implemented On Cloud Code Recently.
+
+
+1519
+02:12:48.857 --> 02:13:02.857
+Caraca, Geminai, pelo amor de Deus, eu tô tentando te dar uma chance, bicho.
+
+
+1520
+02:13:02.857 --> 02:13:04.857
+Ai, meu.
+
+
+1521
+02:13:04.857 --> 02:13:11.857
+Saco.
+
+
+1522
+02:13:11.857 --> 02:13:14.857
+Parabéns.
+
+
+1523
+02:13:14.857 --> 02:13:20.857
+Muito bom.
+
+
+1524
+02:13:20.857 --> 02:13:35.857
+Cara. O Jamie Nye é um anti Llm. Não é possível, velho. Sério, eu tento. Eu já tentei tanto com eles.
+
+
+1525
+02:13:35.857 --> 02:13:40.857
+To Actually pesquisar para ver se eu tô noiado ou se eu tô falando. Se eu não tô falando besteira, né?
+
+
+1526
+02:13:40.857 --> 02:13:42.857
+E aí uma outra coisa.
+
+
+1527
+02:13:42.857 --> 02:13:47.857
+é método.
+
+
+1528
+02:13:47.857 --> 02:13:49.857
+é importante.
+
+
+1529
+02:13:49.857 --> 02:13:51.857
+E a gente fecha vários ciclos, né?
+
+
+1530
+02:13:51.857 --> 02:13:58.857
+A gente viu que na verdade, tudo que a gente falou está olhando para o futuro. Olha que loucura. Tudo Que Eu Falei Aqui Está Olhando Para O Futuro.
+
+
+1531
+02:13:58.857 --> 02:14:03.857
+Então, desde a Spec ao contexto.
+
+
+1532
+02:14:03.857 --> 02:14:07.857
+Ao Harness, ao Eval. E a gente falou muito pouco de gráfico gráfico. Vai ter no Boot Camp.
+
+
+1533
+02:14:07.857 --> 02:14:12.857
+Mas basicamente, o que o grafo vai fazer. Ele vai pegar tudo isso e ele vai criar.
+
+
+1534
+02:14:12.857 --> 02:14:15.857
+Uma sequência de execuções autônomas.
+
+
+1535
+02:14:15.857 --> 02:14:20.857
+Então é basicamente ali. O gráfo seria a fábrica.
+
+
+1536
+02:14:20.857 --> 02:14:25.857
+Você tem um gráfico que é gerado e ele executa. Tem um gráfico, é gerado e ele executa.
+
+
+1537
+02:14:25.857 --> 02:14:28.857
+Então, basicamente é isso.
+
+
+1538
+02:14:28.857 --> 02:14:33.857
+E aí eu acredito muito que vocês entenderam, né?
+
+
+1539
+02:14:33.857 --> 02:14:36.857
+A grande sacada do processo como um todo.
+
+
+1540
+02:14:36.857 --> 02:14:39.857
+Que é entender que.
+
+
+1541
+02:14:39.857 --> 02:14:42.857
+Não é sobre mais agentes, mas é como você constrói o sistema.
+
+
+1542
+02:14:42.857 --> 02:14:45.857
+é como você entende o processo.
+
+
+1543
+02:14:45.857 --> 02:14:47.857
+Então se eu for deixar para vocês aqui.
+
+
+1544
+02:14:47.857 --> 02:14:49.857
+Pontos importantes. é.
+
+
+1545
+02:14:49.857 --> 02:14:51.857
+Seja curioso.
+
+
+1546
+02:14:51.857 --> 02:14:53.857
+Estude os seus gaps. Você tem a Ia.
+
+
+1547
+02:14:53.857 --> 02:14:58.857
+Cara. O que você implementou? O que funciona? O que é uma mutação? Não entendi. Task Spec.
+
+
+1548
+02:14:58.857 --> 02:15:01.857
+Simplifica explica, de uma outra forma.
+
+
+1549
+02:15:01.857 --> 02:15:05.857
+Explica como se fosse uma criança de dois anos de idade.
+
+
+1550
+02:15:05.857 --> 02:15:13.857
+Como que seja curioso. Aprenda enquanto a Llm vai escrevendo para você. Esse é o primeiro ponto. Segundo, entenda o problema.
+
+
+1551
+02:15:13.857 --> 02:15:18.857
+Entenda o problema o máximo possível. Terceiro, cria um processo para isso.
+
+
+1552
+02:15:18.857 --> 02:15:22.857
+Então os Boot Camps e os treinamentos são justamente para você não gastar.
+
+
+1553
+02:15:22.857 --> 02:15:26.857
+Todo o tempo que eu gastei vai ser disponibilizado para você.
+
+
+1554
+02:15:26.857 --> 02:15:31.857
+Então você não precisa gastar esse tempo. Você tem um framework. Você vai aprender um framework que já foi criado.
+
+
+1555
+02:15:31.857 --> 02:15:34.857
+E obviamente que uma vez que você entende tudo isso, você pode mudar.
+
+
+1556
+02:15:34.857 --> 02:15:37.857
+Você pode melhorar. Você pode fazer o que você quiser.
+
+
+1557
+02:15:37.857 --> 02:15:43.857
+Mas você já tem noventa e cinco que o passo mandado. Então Framework para você trabalhar com as atividades.
+
+
+1558
+02:15:43.857 --> 02:15:45.857
+Trabalhar com as criações, enfim.
+
+
+1559
+02:15:45.857 --> 02:15:50.857
+E por fim, cara. Sempre, sempre saber o que estudar.
+
+
+1560
+02:15:50.857 --> 02:15:53.857
+Não é só estudar. é saber o que estudar.
+
+
+1561
+02:15:53.857 --> 02:15:58.857
+E aí para isso. Eu vou convidar vocês para amanhã.
+
+
+1562
+02:15:58.857 --> 02:16:00.857
+Tá.
+
+
+1563
+02:16:00.857 --> 02:16:07.857
+Todo mundo aqui. Eu vou trazer o algimar. O Rafael conhece o algimar algimar? Sabe, um pouquinho.
+
+
+1564
+02:16:07.857 --> 02:16:10.857
+Como você classificaria o alg.
+
+
+1565
+02:16:10.857 --> 02:16:12.857
+Raphael.
+
+
+1566
+02:16:12.857 --> 02:16:20.857
+Eu me sinto muito mais burro que assim se a gente fosse classificar, eu sou o mais burro da turma. Então Como Você Classifica O Algimar.
+
+
+1567
+02:16:20.857 --> 02:16:23.857
+O algimar. Pega aí o e Luan.
+
+
+1568
+02:16:23.857 --> 02:16:26.857
+Bota na mesma proporção em desenvolvimento de sistemas. Outro monstro.
+
+
+1569
+02:16:26.857 --> 02:16:28.857
+Ele é.
+
+
+1570
+02:16:28.857 --> 02:16:31.857
+Ele é um cara diferenciado.
+
+
+1571
+02:16:31.857 --> 02:16:41.857
+é muito diferenciado, tá? Vocês vão ter a oportunidade de conhecer eles. A gente vai falar um pouquinho. Já tem Um Round Table Para Falar De Carreira Para Falar O Que Está Acontecendo Coisas Que Eu Ainda Não Trouxe.
+
+
+1572
+02:16:41.857 --> 02:16:48.857
+Ele vai trazer um pouquinho da experiência dele como desenvolvedor e criador do Acrit. Vocês vão conhecer o Acrit.
+
+
+1573
+02:16:48.857 --> 02:16:52.857
+Não tem como não amar. Não existe no mercado que ele desenvolveu.
+
+
+1574
+02:16:52.857 --> 02:16:59.857
+Então é uma parada da experiência do que ele fez. As ferramentas que ele fez das curadorias que ele fez.
+
+
+1575
+02:16:59.857 --> 02:17:01.857
+Acredite, vale cada minuto.
+
+
+1576
+02:17:01.857 --> 02:17:08.857
+Então ele vai falar de tudo sobre isso. A gente vai falar um pouquinho do dia a dia. O Rafa Vai Falar Um Pouquinho Do Dia A Dia Dele.
+
+
+1577
+02:17:08.857 --> 02:17:11.857
+Enfim. Então vai ser uma conversa muito, muito fera.
+
+
+1578
+02:17:11.857 --> 02:17:15.857
+Para vocês. E como todo mundo ficou aqui, né?
+
+
+1579
+02:17:15.857 --> 02:17:21.857
+Eu vou só terminar aqui explicando para vocês o que é o Brief Spec, né?
+
+
+1580
+02:17:21.857 --> 02:17:22.857
+Que muita gente me perguntou.
+
+
+1581
+02:17:22.857 --> 02:17:25.857
+Bem a grande ideia do Brief Spec.
+
+
+1582
+02:17:25.857 --> 02:17:29.857
+é basicamente transformar.
+
+
+1583
+02:17:29.857 --> 02:17:35.857
+O que o Codex. O que o Cloud Code? O que o Mypie? O que. O Grok? O que o Kim.
+
+
+1584
+02:17:35.857 --> 02:17:40.857
+E vários outros Hardness escrevem em uma forma padronizada.
+
+
+1585
+02:17:40.857 --> 02:17:48.857
+Então, toda vez em que você pergunta para a L, ela vai te responder.
+
+
+1586
+02:17:48.857 --> 02:17:50.857
+Deixa eu ver se eu consigo achar aqui.
+
+
+1587
+02:17:50.857 --> 02:17:54.857
+Aqui. ó.
+
+
+1588
+02:17:54.857 --> 02:17:56.857
+Sim, tem inveja, Rafael.
+
+
+1589
+02:17:56.857 --> 02:18:00.857
+Eu perguntei para ele me descer aquilo que. Quem? Voz, né?
+
+
+1590
+02:18:00.857 --> 02:18:03.857
+Para eu conversar com vocês aí. O que. Que. O.
+
+
+1591
+02:18:03.857 --> 02:18:07.857
+Pode sentir inveja. Eu deixo, tá? O que o Brief Spec fez.
+
+
+1592
+02:18:07.857 --> 02:18:09.857
+Colapsou. Tudo o que ele ia falar.
+
+
+1593
+02:18:09.857 --> 02:18:13.857
+E na hora que ele foi cuspir, ele falou o seguinte questão.
+
+
+1594
+02:18:13.857 --> 02:18:16.857
+Qual foi a questão que eu falei?
+
+
+1595
+02:18:16.857 --> 02:18:18.857
+Qual é a síntese.
+
+
+1596
+02:18:18.857 --> 02:18:23.857
+Quebrou em camada, mostrou em tabela as medidas.
+
+
+1597
+02:18:23.857 --> 02:18:25.857
+Escrever um gráfico em Mermate.
+
+
+1598
+02:18:25.857 --> 02:18:27.857
+Mostrou os pilares.
+
+
+1599
+02:18:27.857 --> 02:18:31.857
+Daí veio, mostrando as capacidades.
+
+
+1600
+02:18:31.857 --> 02:18:34.857
+Comandos. Nível dois.
+
+
+1601
+02:18:34.857 --> 02:18:37.857
+Mais gráfico.
+
+
+1602
+02:18:37.857 --> 02:18:40.857
+Explicou. Enfim.
+
+
+1603
+02:18:40.857 --> 02:18:44.857
+Chega no final aqui. Como ele entende que é uma explicação que você pediu.
+
+
+1604
+02:18:44.857 --> 02:18:49.857
+Eu pedi uma bem grande, tá? Foi porque eu pedi.
+
+
+1605
+02:18:49.857 --> 02:18:53.857
+E no final, aqui ele vai colapsar num Outcome Brief também. Status, Donny.
+
+
+1606
+02:18:53.857 --> 02:18:56.857
+Co outcome que eu queria.
+
+
+1607
+02:18:56.857 --> 02:18:58.857
+Qual é a ação do humano.
+
+
+1608
+02:18:58.857 --> 02:19:02.857
+Qual é a prova do que eu perguntei? Quais são os gaps? O que é próximo.
+
+
+1609
+02:19:02.857 --> 02:19:07.857
+Então, basicamente, o que ele faz é, ele entende uma intenção do que você está pedindo.
+
+
+1610
+02:19:07.857 --> 02:19:14.857
+E a partir disso, ele vai construindo de forma dinâmica, como ele vai responder para você. Só que não há resposta toda.
+
+
+1611
+02:19:14.857 --> 02:19:23.857
+Feia jogada que nem a gente tem das llms. é algo extremamente padronizado. E aí você tem várias coisas, né?
+
+
+1612
+02:19:23.857 --> 02:19:25.857
+Você tem os setups que já estão funcionando.
+
+
+1613
+02:19:25.857 --> 02:19:28.857
+Você tem uma estrutura.
+
+
+1614
+02:19:28.857 --> 02:19:35.857
+Para você aprender. Então imagina agora que agora você está trabalhando com várias llms. Mas agora você tem uma estrutura só para aprender.
+
+
+1615
+02:19:35.857 --> 02:19:46.857
+Para ler. E aí você tem vários tipos aqui. Agora você tem geral. Você tem de exploração. Você tem de Review Você Tem De Implementação Você Tem De Debug Você Tem De Planejamento De Pesquisa De Operação.
+
+
+1616
+02:19:46.857 --> 02:19:53.857
+Então, quando ele entende que você está fazendo esses tipos de perguntas com o Llm, ele vai moldando a resposta da melhor forma.
+
+
+1617
+02:19:53.857 --> 02:19:59.857
+De você receber essa informação, então. Ah, eu quero fazer um review no Github. Um pull request.
+
+
+1618
+02:19:59.857 --> 02:20:06.857
+Então, na verdade, quando ele entender que você está querendo fazer um review, ele vai formatar a resposta para você De Uma Forma Com Que Fique Fácil De Você.
+
+
+1619
+02:20:06.857 --> 02:20:13.857
+Revisar, tá? E aí ele tem várias outras formas de ensino. Como você pode fazer.
+
+
+1620
+02:20:13.857 --> 02:20:16.857
+E já está disponível em várias coisas. Já.
+
+
+1621
+02:20:16.857 --> 02:20:21.857
+E eu continuo crescendo. Esse cara. E eu vou dar acesso para vocês. Agora.
+
+
+1622
+02:20:21.857 --> 02:20:24.857
+Nele. Tá? Então.
+
+
+1623
+02:20:24.857 --> 02:20:26.857
+é um cara que eu uso toda hora.
+
+
+1624
+02:20:26.857 --> 02:20:30.857
+Ele é instalado global, tá? Ele não é instalação global.
+
+
+1625
+02:20:30.857 --> 02:20:32.857
+Então todos os meus projetos herdam.
+
+
+1626
+02:20:32.857 --> 02:20:40.857
+Ele. Então pô. Eu tô no codec. Eu tô no Kimi. Eu tô no Grok. Eu tô no All my Pie Eu Tô Em Qualquer Coisa Ele Já Pega.
+
+
+1627
+02:20:40.857 --> 02:20:43.857
+E essa é a forma com que eu leio agora.
+
+
+1628
+02:20:43.857 --> 02:20:45.857
+é uma forma gostosa de ler.
+
+
+1629
+02:20:45.857 --> 02:20:48.857
+Então eu consigo. Basicamente.
+
+
+1630
+02:20:48.857 --> 02:20:55.857
+Ter muito mais facilidade ao longo a cauda longa na leitura, tá, então tá aí disponível para todo mundo.
+
+
+1631
+02:20:55.857 --> 02:21:00.857
+Rafa quer falar alguma coisa.
+
+
+1632
+02:21:00.857 --> 02:21:01.857
+Para fechar.
+
+
+1633
+02:21:01.857 --> 02:21:06.857
+Não, cara. Eu só queria agradecer aqui a oportunidade de ter participado. Gostei bastante. Espero que tenham gostado da apresentação.
+
+
+1634
+02:21:06.857 --> 02:21:10.857
+Eu adorei.
+
+
+1635
+02:21:10.857 --> 02:21:11.857
+E é.
+
+
+1636
+02:21:11.857 --> 02:21:16.857
+E é isso aí, cara. Ia é testar, botar a mão na massa e fazer. Não tenho muito pra onde correr. Não.
+
+
+1637
+02:21:16.857 --> 02:21:20.857
+Boa. Se eu fosse, a gente ia falar disso amanhã. Mas se eu fosse te falar assim, cara.
+
+
+1638
+02:21:20.857 --> 02:21:24.857
+Sei lá.
+
+
+1639
+02:21:24.857 --> 02:21:26.857
+Assistir todo esse conteúdo.
+
+
+1640
+02:21:26.857 --> 02:21:31.857
+Muita coisa na minha cabeça. Muito bom e tal, mas.
+
+
+1641
+02:21:31.857 --> 02:21:33.857
+Como que eu começo?
+
+
+1642
+02:21:33.857 --> 02:21:39.857
+O que você falaria para a galera? Como que eu começo.
+
+
+1643
+02:21:39.857 --> 02:21:49.857
+Cara. Acho que o primeiro passo é testar assim tudo que você mostrou. Bota, pega um cloud, paga uma assinatura aí.
+
+
+1644
+02:21:49.857 --> 02:21:51.857
+Melhor que você puder.
+
+
+1645
+02:21:51.857 --> 02:21:58.857
+Toda ideia que você tem bota para fazer. Pelo menos eu comecei assim. Eu sei que você começou assim.
+
+
+1646
+02:21:58.857 --> 02:21:59.857
+E assim.
+
+
+1647
+02:21:59.857 --> 02:22:00.857
+Comecei assim também.
+
+
+1648
+02:22:00.857 --> 02:22:07.857
+Coisas vão surgindo e vai tendo curiosidade, cara, apareceu alguma coisa diferente. Entende o que foi feito e faz o ciclo.
+
+
+1649
+02:22:07.857 --> 02:22:10.857
+Acho que o processo é como você falou. é loop, né? é um loop.
+
+
+1650
+02:22:10.857 --> 02:22:13.857
+é, é. E é todo dia, né?
+
+
+1651
+02:22:13.857 --> 02:22:14.857
+Então. Boa.
+
+
+1652
+02:22:14.857 --> 02:22:15.857
+Você faz, observa inteira e faz de novo.
+
+
+1653
+02:22:15.857 --> 02:22:19.857
+é. é exatamente. E vai achando processos. Enfim.
+
+
+1654
+02:22:19.857 --> 02:22:21.857
+Então, assim o que o Rafa falou.
+
+
+1655
+02:22:21.857 --> 02:22:29.857
+Basicamente acaba aonde a gente está. Então você vai começar a sua carreira. Você vai experimentando tal tal tal tal E Daqui A Um Tempo Você Vai Começar A Querer Padronizar.
+
+
+1656
+02:22:29.857 --> 02:22:36.857
+Você vai querer aprender a melhorar. Enfim. E a gente já está nessa carreira para ensinar vocês aqui. Por isso Que A Gente Está Aqui Na Frente De Vocês.
+
+
+1657
+02:22:36.857 --> 02:22:40.857
+Só para deixar claro essa diferença do Brief Spec para o Task Spec.
+
+
+1658
+02:22:40.857 --> 02:22:44.857
+O Task Spec é para você criar atividades para serem executadas para Ia.
+
+
+1659
+02:22:44.857 --> 02:22:47.857
+Então você trabalha junto com a Ia.
+
+
+1660
+02:22:47.857 --> 02:22:50.857
+Ela cria as atividades e executa.
+
+
+1661
+02:22:50.857 --> 02:22:54.857
+O Brief Spec. é para você ler informações da Llm.
+
+
+1662
+02:22:54.857 --> 02:22:58.857
+Então, toda vez que a Llm vai cuspir alguma informação para você.
+
+
+1663
+02:22:58.857 --> 02:23:00.857
+Ela vai cuspir de uma forma.
+
+
+1664
+02:23:00.857 --> 02:23:03.857
+Muito bonita e agradável de ler.
+
+
+1665
+02:23:03.857 --> 02:23:11.857
+Porque se você for lá no Deep, ele vai cuspir uma parada assim você vai no cloud, ele vai cuspir Outra Parada E Você Vai No.
+
+
+1666
+02:23:11.857 --> 02:23:14.857
+No no codec. Você vai cuspir uma outra parada.
+
+
+1667
+02:23:14.857 --> 02:23:20.857
+E não somente isso. às vezes não é estruturado, não é organizado nem Bullet Point. Não é em tabela. Enfim.
+
+
+1668
+02:23:20.857 --> 02:23:25.857
+Então o Brief Spec faz exatamente esse meio de que, na hora em que a mensagem chegue.
+
+
+1669
+02:23:25.857 --> 02:23:31.857
+Ela chega, toda estruturada e bonitinha.
+
+
+1670
+02:23:31.857 --> 02:23:32.857
+Beleza.
+
+
+1671
+02:23:32.857 --> 02:23:39.857
+Para a gente que trabalha muito com vários llms do Riftec. Ele é ótimo para diminuir a capacidade cognitiva que você gasta.
+
+
+1672
+02:23:39.857 --> 02:23:43.857
+Ler approach de vários Llms.
+
+
+1673
+02:23:43.857 --> 02:23:46.857
+é exatamente. Tá.
+
+
+1674
+02:23:46.857 --> 02:23:54.857
+Hoje eu não vou abrir para perguntas, porque amanhã a gente vai ter um dia inteiro só para perguntas. Então Peguem As Perguntas Que Vocês Têm Guardem Elas.
+
+
+1675
+02:23:54.857 --> 02:23:59.857
+Porque amanhã a gente vai ter uma hora para poder fazer isso. Beleza.
+
+
+1676
+02:23:59.857 --> 02:24:01.857
+Galera Brigadão.
+
+
+1677
+02:24:01.857 --> 02:24:07.857
+Vejo vocês amanhã. Não deixem de participar. Eu vou estar em Curitiba, mas eu vou estar aqui.
+
+
+1678
+02:24:07.857 --> 02:24:11.857
+Participando. Eu estou indo para um evento da codecom amanhã. Então quem tiver.
+
+
+1679
+02:24:11.857 --> 02:24:13.857
+Perto ou foi de Curitiba quiser.
+
+
+1680
+02:24:13.857 --> 02:24:17.857
+E lá me conhecer pessoalmente, falar comigo. Quem estiver lá também.
+
+
+1681
+02:24:17.857 --> 02:24:21.857
+Eu vou estar lá no evento amanhã, e eu vou apresentar no sábado.
+
+
+1682
+02:24:21.857 --> 02:24:26.857
+Então, só para mostrar para vocês, aqui vai ser na codecom.
+
+
+1683
+02:24:26.857 --> 02:24:30.857
+Eu vou apresentar.
+
+
+1684
+02:24:30.857 --> 02:24:35.857
+Programação. Eu vou apresentar no sábado. Eu vou apresentar no sábado.
+
+
+1685
+02:24:35.857 --> 02:24:38.857
+As nove e meia sobre engenharia genética.
+
+
+1686
+02:24:38.857 --> 02:24:43.857
+Então vou falar um pouquinho de algumas coisas que eu ainda não falei. Aqui.
+
+
+1687
+02:24:43.857 --> 02:24:53.857
+Obviamente. Mas, cara, é um evento muito legal que, se você puder participar, vale muito, muito a pena, sem dúvida Alguma Tá é Num Lugar Gigantesco Lá Então Vai Ser Muito Foda.
+
+
+1688
+02:24:53.857 --> 02:24:56.857
+E quem for, eu aguardo vocês lá.
+
+
+1689
+02:24:56.857 --> 02:24:59.857
+Beleza. é o Rafa. é foda, né? Ficou fácil. Aí.
+
+
+1690
+02:24:59.857 --> 02:25:02.857
+E obviamente, se você quiser acessar.
+
+
+1691
+02:25:02.857 --> 02:25:08.857
+Rafa está comigo justamente na formação. Então ele fez vários módulos. A gente ainda está entregando alguns.
+
+
+1692
+02:25:08.857 --> 02:25:15.857
+Alguns workshops. E se eu não me engano? Você tem um workshop de quatro horas de voz para entregar, não é.
+
+
+1693
+02:25:15.857 --> 02:25:17.857
+Temos. Temos juntos, na verdade, né? Somos nós dois.
+
+
+1694
+02:25:17.857 --> 02:25:19.857
+Temos juntos de volta e de.
+
+
+1695
+02:25:19.857 --> 02:25:22.857
+De Val e de telemetria, não é.
+
+
+1696
+02:25:22.857 --> 02:25:25.857
+Isso.
+
+
+1697
+02:25:25.857 --> 02:25:27.857
+Então é isso.
+
+
+1698
+02:25:27.857 --> 02:25:31.857
+Beijo pra vocês. Bom descanso. Até mais. Obrigado, Rafa.
+
+
+1699
+02:25:31.857 --> 02:25:35.857
+Gente valeu, gente.
+
+
+
